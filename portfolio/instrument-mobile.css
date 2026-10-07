@@ -1,6 +1,6 @@
-/* Mobile uses the desktop scroll choreography in a touch-safe sticky scene. */
+/* The same phone layout covers narrow views and short coarse-touch landscape. */
 .mobile-intro{display:none}
-@media(max-width:900px){
+@media(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse){
   html{scrollbar-gutter:auto}
   .scroll-score{height:auto}
   .scroll-score.is-enhanced{height:820svh}
@@ -54,7 +54,7 @@
   .project-pane{width:100%;max-width:560px}
   .pane-body{padding:24px}
 }
-@media(max-width:900px) and (max-height:560px) and (orientation:landscape){
+@media(max-width:900px) and (max-height:560px) and (orientation:landscape), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse){
   .scroll-score .instrument{padding:0 20px 4px}
   .instrument header{display:flex;gap:20px;padding:0;min-height:44px}
   .instrument .sigil{width:85px}
@@ -69,7 +69,7 @@
   .scroll-score .project-labels{inset:auto 20px 176px;display:flex;justify-content:space-between;gap:12px}
   .scroll-score .social-card{top:54px}
 }
-@media(max-width:900px) and (prefers-reduced-motion:reduce){
+@media(max-width:900px) and (prefers-reduced-motion:reduce), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse) and (prefers-reduced-motion:reduce){
   .scroll-score.is-enhanced{height:auto}
   .scroll-score .instrument{position:relative;height:auto}
   .scroll-score .sculpture,.scroll-score .three-active .sculpture{flex:none;height:clamp(280px,43svh,430px)}
@@ -78,7 +78,7 @@
 }
 
 /* Keep the mobile model unobstructed; the existing header opens the archive. */
-@media(max-width:900px){
+@media(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse){
   .scroll-score .social-card,
   .scroll-score .explode-control,
   .scroll-score .chapter-stops,
@@ -103,12 +103,7 @@
     clip:auto;clip-path:none;white-space:normal
   }
 }
-@media(max-width:900px) and (prefers-reduced-motion:reduce){
+@media(max-width:900px) and (prefers-reduced-motion:reduce), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse) and (prefers-reduced-motion:reduce){
   /* Explicit controls remain when the user opts out of scroll animation. */
   .scroll-score .chapter-stops{display:grid}
-}
-
-/* A touch phone can exceed 900px in landscape; the tour needs no slider. */
-@media(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse){
-  .scroll-score .explode-control{display:none}
 }

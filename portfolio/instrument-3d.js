@@ -27,7 +27,7 @@ const root=document.querySelector('.scroll-score'), stage=document.querySelector
 const surface=document.querySelector('.sculpture'), status=document.querySelector('.render-status');
 const slider=document.querySelector('#explosion'), reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const names=['geo','light','elements','song','combat','scenes'];
-const mobileLayout=matchMedia('(max-width:900px)');
+const mobileLayout=matchMedia('(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse)');
 const startup={started:performance.now(),phase:'metadata',geometry:{},phases:{}};
 window.instrumentStartup=startup;
 let canvasVisible=true;
