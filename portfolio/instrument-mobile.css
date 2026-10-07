@@ -76,3 +76,35 @@
   .scroll-score .scroll-position>span:last-child{font-size:10px}
   .scroll-score .scroll-position>span:last-child::after{content:none}
 }
+
+/* Keep the mobile model unobstructed; the existing header opens the archive. */
+@media(max-width:900px){
+  .scroll-score .social-card,
+  .scroll-score .explode-control,
+  .scroll-score .chapter-stops,
+  .scroll-score .scroll-position,
+  .scroll-score .project-labels,
+  body>footer.instrument-footer{display:none}
+  .scroll-score .instrument{padding-bottom:0}
+  /* Details remain available to keyboard and screen-reader users on focus. */
+  .scroll-score .study-link,.scroll-score .three-active .study-link,
+  .scroll-score .render-status,.scroll-score .render-status:empty{
+    position:absolute;inset:auto;width:1px;height:1px;min-height:0;
+    margin:-1px;padding:0;border:0;overflow:hidden;
+    clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap
+  }
+  .scroll-score .study-link:focus-visible,.scroll-score .three-active .study-link:focus-visible{
+    inset:auto 20px 8px;width:auto;height:auto;min-height:44px;
+    margin:0;padding:8px 10px;border:1px solid var(--ink);
+    clip:auto;clip-path:none;white-space:normal;outline:2px solid var(--ink)
+  }
+  .scroll-score:not(.is-enhanced) .render-status:not(:empty){
+    position:relative;width:auto;height:auto;min-height:24px;margin:0;
+    clip:auto;clip-path:none;white-space:normal
+  }
+}
+@media(max-width:900px) and (prefers-reduced-motion:reduce){
+  /* Explicit controls remain when the user opts out of scroll animation. */
+  .scroll-score .explode-control{display:flex}
+  .scroll-score .chapter-stops{display:grid}
+}
