@@ -36,3 +36,21 @@ receipt describes the PR #2 runtime.
 Physical Android, cold-network performance and final pixel parity remain
 unverified. The earlier native reflection refinement and memory limits remain;
 this focused change does not claim to resolve them.
+
+## Physical-phone scroll report and correction
+
+The user reported that the published version 8 still could not scroll on their
+phone. An emulated laptop touch pass does not establish phone usability. The
+published reduced-motion mobile CSS removed page travel, and the controller
+ignored native scroll in that mode. The phone's actual preference is unknown.
+
+Mobile now retains its native sticky scroll distance with vh/svh fallbacks.
+With reduced motion, user scrolling selects immediate views through the
+existing render path, without eased transitions; live motion preferences
+remain respected. Desktop reduced-motion behavior is unchanged. The canvas
+lets gestures reach its native pan-y surface, and scroll-driven GEO installs
+no pointer capture or canvas drag handlers. Manual GEO rotation remains.
+
+Physical-phone acceptance is pending. Prior input acknowledgment and wide
+screenshot failures are preserved. Current checks and native receipts must
+be evaluated separately from the older successful scroll video above.

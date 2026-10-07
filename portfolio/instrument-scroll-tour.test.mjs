@@ -4,9 +4,9 @@ import {createScrollTour} from './instrument-scroll-tour.mjs';
 
 function fixture(){
   const states=[],viewport={scrollY:80,scrollTo({top}){this.scrollY=top;}},root={offsetHeight:8200,getBoundingClientRect(){return{top:80-viewport.scrollY};}},stage={offsetHeight:1000};
-  let reduced=false,paused=false;
-  const tour=createScrollTour({root,stage,viewport,onProgress:p=>states.push(p),isReduced:()=>reduced,isPaused:()=>paused});tour.measure();
-  return{tour,viewport,root,stage,states,reduced:value=>reduced=value,paused:value=>paused=value};
+  let reduced=false,paused=false,staticMobile=false;
+  const tour=createScrollTour({root,stage,viewport,onProgress:p=>states.push(p),isReduced:()=>reduced,allowReducedScroll:()=>staticMobile,isPaused:()=>paused});tour.measure();
+  return{tour,viewport,root,stage,states,reduced:value=>reduced=value,paused:value=>paused=value,staticMobile:value=>staticMobile=value};
 }
 test('ordinary page coordinates advance intermediate choreography and reverse without chapter quantization',()=>{
   const h=fixture();
@@ -30,4 +30,13 @@ test('modal and reduced-motion pauses retain explicit controls and resume the pa
   h.paused(false);h.tour.scroll();assert.equal(h.states.at(-1),.5);
   h.reduced(true);h.viewport.scrollY=4400;h.tour.scroll();assert.equal(h.states.at(-1),.5);
   h.tour.jump(.8);assert.equal(h.states.at(-1),.8);assert.equal(h.viewport.scrollY,4400);
+});
+
+test('reduced-motion mobile keeps native scrolling, explicit anchoring and reverse coordinates',()=>{
+  const h=fixture();h.reduced(true);h.staticMobile(true);
+  h.viewport.scrollY=80+7200*.23;h.tour.scroll();assert.equal(h.states.at(-1),.23);
+  assert.equal(h.tour.snapshot().enabled,true);
+  h.tour.jump(.49);assert.equal(h.viewport.scrollY,80+7200*.49);
+  h.viewport.scrollY=80+7200*.12;h.tour.scroll();assert.equal(h.states.at(-1),.12);
+  h.paused(true);h.viewport.scrollY=4400;h.tour.scroll();assert.equal(h.states.at(-1),.12);
 });
