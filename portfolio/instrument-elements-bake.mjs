@@ -4,7 +4,7 @@ import * as THREE from './vendor/three-r180/three.module.min.js';
  * No background keying and no live combustion/pressure dispatches.
  * Angular interpolation and weighted ray depth remain approximations.
  */
-export async function loadElementsFire({group,schedule,reduced,onFrame,base='./assets/instrument-elements-bake/fire/'}){
+export async function loadElementsFire({group,schedule,reduced,onFrame,visibleOnly=false,base='./assets/instrument-elements-bake/fire/'}){
  const response=await fetch(base+'manifest.json',{cache:'no-store'});if(!response.ok)throw Error('Fire bake manifest unavailable');
  const m=await response.json();if(!m.complete||m.angles.length!==8||m.frames<2)throw Error('Incomplete native fire bake');
  const video=document.createElement('video');video.muted=true;video.loop=true;video.playsInline=true;video.preload='auto';video.src=base+m.video+'?v='+m.sha256;
@@ -46,9 +46,9 @@ void main(){
  mesh.matrixAutoUpdate=false;mesh.matrix.copy(simToCad);group.add(mesh);
  // Recorded radiance drives a bounded local direct-light approximation.
  const light=new THREE.PointLight(0xffae68,0,48,2);light.name='CYBR baked flame direct light';light.position.set(0,0,baseZ+3);light.castShadow=false;group.add(light);
- let paused=false,active=false,disposed=false,decoded=0,lastFrame=-1,failed=null,frameCallback=0,fallbackTimer=0,lastAz=NaN,presenting=false;
+ let paused=false,active=false,inView=true,disposed=false,decoded=0,lastFrame=-1,failed=null,frameCallback=0,fallbackTimer=0,lastAz=NaN,presenting=false;
  const maximumEnergy=Math.max(...m.energyCurve),localEye=new THREE.Vector3(),right=new THREE.Vector3(),up=new THREE.Vector3(),forward=new THREE.Vector3(),eye=new THREE.Vector3(),point=new THREE.Vector3(),center=new THREE.Vector3();
- function state(){return{enabled:active,source:m.lineage.source,frames:m.frames,fps:m.fps,time:video.currentTime,decodedFrames:decoded,displayedFrame:lastFrame,ready:video.readyState>=2,failed,views:uniforms.views.value.toArray(),viewBlend:uniforms.viewBlend.value,videoBytes:m.bytes,background:false,sharedColorMatteDepthClock:true,liveSimulation:false,depth:'weighted ray distance; approximate partial volume occlusion',viewElevationDegrees:Math.atan2(m.camera.height,m.camera.distance)*180/Math.PI,lighting:'recorded energy curve drives local direct light; full GI is not baked'};}
+ function state(){return{enabled:active,inView,visibleOnly,source:m.lineage.source,frames:m.frames,fps:m.fps,time:video.currentTime,decodedFrames:decoded,displayedFrame:lastFrame,ready:video.readyState>=2,failed,views:uniforms.views.value.toArray(),viewBlend:uniforms.viewBlend.value,videoBytes:m.bytes,background:false,sharedColorMatteDepthClock:true,liveSimulation:false,depth:'weighted ray distance; approximate partial volume occlusion',viewElevationDegrees:Math.atan2(m.camera.height,m.camera.distance)*180/Math.PI,lighting:'recorded energy curve drives local direct light; full GI is not baked'};}
  async function delivered(now,metadata){
   if(disposed||presenting)return;presenting=true;
   const time=metadata?.mediaTime??video.currentTime;
@@ -66,13 +66,18 @@ void main(){
  if(video.requestVideoFrameCallback)frameCallback=video.requestVideoFrameCallback(delivered);
  video.addEventListener('error',()=>{failed='Baked fire video could not decode';mesh.visible=false;light.intensity=0;console.error(failed);schedule();});
  video.addEventListener('loadeddata',()=>{texture.needsUpdate=true;if(reduced.matches)video.currentTime=1.1;schedule();});
- function playback(){const shouldPlay=active&&!paused&&!presenting&&!failed&&!document.hidden&&!reduced.matches;
+ function playback(){const shouldPlay=active&&inView&&!paused&&!presenting&&!failed&&!document.hidden&&!reduced.matches;
   if(shouldPlay&&video.paused){void video.play().catch(error=>{failed=error.message;schedule();});if(!video.requestVideoFrameCallback&&!fallbackTimer)fallbackTimer=setInterval(delivered,1000/m.fps);}
   else if(!shouldPlay&&!video.paused){video.pause();clearInterval(fallbackTimer);fallbackTimer=0;}
  }
  function update(camera,progress){
+  group.updateWorldMatrix(true,false);camera.updateMatrixWorld();
+  // The whole component and the flame's conservative native bound must be
+  // outside the view before its shared fire/water clock can pause. The last
+  // authored radiance and direct light remain available to neighboring parts.
+  inView=!visibleOnly||elementsInView(camera,group,mesh);
   active=progress>.48&&progress<.72;mesh.visible=active&&video.readyState>=2&&!failed;
-  playback();group.updateWorldMatrix(true,false);localEye.copy(camera.position);group.worldToLocal(localEye);
+  playback();localEye.copy(camera.position);group.worldToLocal(localEye);
   const az=Math.atan2(localEye.x,-localEye.y);const normalized=((az*180/Math.PI)%360+360)%360,view=normalized/45;
   uniforms.views.value.set(Math.floor(view)%8,(Math.floor(view)+1)%8);uniforms.viewBlend.value=view-Math.floor(view);
   eye.set(Math.sin(az)*m.camera.distance,m.camera.targetY+m.camera.height,Math.cos(az)*m.camera.distance);
@@ -89,4 +94,14 @@ void main(){
  }
  const visibility=()=>playback();document.addEventListener('visibilitychange',visibility);reduced.addEventListener('change',visibility);video.load();
  return{update,snapshot:state,setPaused(value){paused=value;playback();},dispose(){disposed=true;video.pause();video.cancelVideoFrameCallback?.(frameCallback);clearInterval(fallbackTimer);video.removeAttribute('src');video.load();video.remove();document.removeEventListener('visibilitychange',visibility);reduced.removeEventListener('change',visibility);geometry.dispose();material.dispose();texture.dispose();group.remove(mesh,light);}};
+}
+
+export function elementsInView(camera,group,fireMesh){
+ const frustum=new THREE.Frustum().setFromProjectionMatrix(new THREE.Matrix4().multiplyMatrices(camera.projectionMatrix,camera.matrixWorldInverse));
+ const bounds=new THREE.Box3().setFromObject(group,false);
+ if(frustum.intersectsBox(bounds))return true;
+ const sphere=fireMesh.geometry.boundingSphere.clone().applyMatrix4(fireMesh.matrixWorld);
+ // The bounded point light can still affect visible adjacent native parts.
+ sphere.radius=Math.max(sphere.radius,48);
+ return frustum.intersectsSphere(sphere);
 }

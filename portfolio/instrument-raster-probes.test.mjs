@@ -45,7 +45,7 @@ test('rejects malformed cube readback and nonfinite radiance', () => {
   assert.equal(opticalMaterial({transmission:0,opacity:1}),false);
 });
 
-function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback=false,reflectionWeight,diffuseWeight}={}) {
+function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback=false,reflectionWeight,diffuseWeight,sliceCapture=false}={}) {
   let clockNow=0;
   const THREE={...NativeThree}, scene=new THREE.Scene(),groups=new Map(),objects=[];
   for(const [name,x,size] of [['geo',0,20],['elements',40,30],['combat',90,20]]) {
@@ -112,7 +112,7 @@ function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback
   };
   THREE.WebGLCubeRenderTarget=class extends NativeThree.WebGLCubeRenderTarget {dispose(){cubeDisposed++;super.dispose();}};
   const camera=new THREE.PerspectiveCamera();camera.position.set(-15,-80,40);camera.lookAt(40,0,0);camera.updateMatrixWorld();
-  const probes=setupRasterProbes({THREE,renderer,scene,objects,groups,environment,reflectionWeight,diffuseWeight,
+  const probes=setupRasterProbes({THREE,renderer,scene,objects,groups,environment,reflectionWeight,diffuseWeight,sliceCapture,
     schedule:()=>schedules++,clock:()=>clockNow});
   function assertRestored() {
     assert.equal(renderer.target,originalTarget);assert.equal(renderer.face,3);assert.equal(renderer.mip,2);
@@ -352,4 +352,40 @@ test('IBL hook blends independent CubeUV atlases and measured world-space irradi
   assert.equal(shader.uniforms.cadProbeBlend.value,.4);assert.equal(shader.uniforms.cadProbeDiffuseBlend.value,.4);
   near(shader.uniforms.cadProbeCubeUV.value.toArray(),[1/384,1/512,7]);
   h.probes.dispose();assert.equal(shader.uniforms.cadProbeBlend.value,0);
+});
+
+test('mobile capture restores native scene state after every face and blends only the complete cube',()=>{
+  const h=harness({sliceCapture:true,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});probes.update(camera,{now:749});assert.equal(probes.snapshot().faceRenders,0);
+  for(let face=0;face<6;face++){
+    probes.update(camera,{now:750+face*16});h.assertRestored();
+    assert.equal(probes.snapshot().faceRenders,face+1);assert.equal(probes.snapshot().captures,0);
+    assert.equal(probes.snapshot().captureFace,face+1);assert.equal(probes.snapshot().blend,0);
+    assert.equal(h.convolved.length,0,'convolution follows all six original 128px faces');
+  }
+  probes.update(camera,{now:846});h.assertRestored();assert.equal(probes.snapshot().captures,1);
+  assert.equal(probes.snapshot().faceRenders,6);assert.equal(h.convolved.length,1);assert.equal(probes.snapshot().pixelReads,0);
+  probes.update(camera,{now:1096});assert.equal(probes.snapshot().blend,.15);
+  assert.equal(probes.needsFrame(),false);probes.dispose();assert.equal(h.convolved[0].disposes,1);
+});
+test('navigation cancels a partial mobile cube and starts a new coherent capture epoch',()=>{
+  const h=harness({sliceCapture:true,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});probes.update(camera,{now:750});probes.update(camera,{now:766});
+  probes.update(camera,{now:780,moving:true,geometryChanged:true});h.assertRestored();
+  assert.equal(probes.snapshot().captureFace,null);assert.equal(probes.snapshot().discardedCaptures,1);
+  assert.equal(probes.snapshot().captures,0);assert.equal(h.convolved.length,0);
+  probes.update(camera,{now:800});
+  for(let i=0;i<7;i++)probes.update(camera,{now:1530+i*16});
+  assert.equal(probes.snapshot().captures,1);assert.equal(probes.snapshot().faceRenders,8);
+  h.assertRestored();probes.dispose();
+});
+test('partial mobile capture disposal and face failures restore state without publishing an incomplete map',()=>{
+  for(const failRender of [false,true]){
+    const h=harness({sliceCapture:true,failRender,reflectionWeight:.15,diffuseWeight:0});
+    h.probes.update(h.camera,{now:0});h.probes.update(h.camera,{now:750});
+    if(failRender){h.probes.update(h.camera,{now:766});assert.equal(h.probes.snapshot().failures,1);}
+    h.assertRestored();h.probes.dispose();h.probes.dispose();
+    assert.equal(h.probes.snapshot().captures,0);assert.equal(h.probes.needsFrame(),false);
+    assert.equal(h.counts().cubeDisposed,1);assert.equal(h.counts().pmremDisposed,1);assert.equal(h.convolved.length,0);
+  }
 });

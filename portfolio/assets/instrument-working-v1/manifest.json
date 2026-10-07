@@ -32647,5 +32647,14 @@
     "sha256": "bbaeb51c4af49f2170f8babea4af9bc93cfa1c17bda4d1b2e2434ccf2760244f",
     "originalCompressedBytes": 44827908,
     "decodedSHA256": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756"
+  },
+  "progressiveGeo": {
+    "format": "attribute-xor-byteplanes-gzip-v1",
+    "file": "geo.lossless-v1.bin.gz",
+    "bytes": 1288028,
+    "sha256": "50e89111df1dd28246db444178670bb50bbf6a99f8ed9001f4fe57364c36b4e3",
+    "sha256Decoded": "0f058ab81c583fc70e7afccbf68f19002c0301a101af0715a6ea0c4e4585f335",
+    "decodedBytes": 6987616,
+    "meshes": 6
   }
 }

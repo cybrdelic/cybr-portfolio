@@ -26,5 +26,19 @@ name='instrument.lossless-v1.bin.gz'
 manifest['losslessTransfer']=dict(format='attribute-xor-byteplanes-gzip-v1',file=name,bytes=len(packed),
     sha256=hashlib.sha256(packed).hexdigest(),originalCompressedBytes=len(original),
     decodedSHA256=manifest['stats']['sha256'])
+# GEO is the contiguous native prefix. Require this layout explicitly;
+# future exports must not silently bundle another component into the starter.
+geo=[mesh for mesh in manifest['meshes'] if mesh['module']=='geo']
+segments=[(spec['offset'],spec['offset']+spec['count']*(2 if spec['dtype']=='int16' else 4))
+    for mesh in geo for key,spec in mesh.items() if key in strides]
+geo_end=max(end for start,end in segments)
+assert min(start for start,end in segments)==0
+assert all(spec['offset']>=geo_end for mesh in manifest['meshes'] if mesh['module']!='geo'
+    for key,spec in mesh.items() if key in strides)
+geo_raw=raw[:geo_end];geo_packed=gzip.compress(encoded[:geo_end],compresslevel=6,mtime=0)
+geo_name='geo.lossless-v1.bin.gz';(BASE/geo_name).write_bytes(geo_packed)
+manifest['progressiveGeo']=dict(format='attribute-xor-byteplanes-gzip-v1',file=geo_name,
+    bytes=len(geo_packed),sha256=hashlib.sha256(geo_packed).hexdigest(),
+    sha256Decoded=hashlib.sha256(geo_raw).hexdigest(),decodedBytes=geo_end,meshes=len(geo))
 path.write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(manifest['losslessTransfer'],indent=2))

@@ -117,7 +117,7 @@ vec3 cadProbeIrradiance(vec3 n) {
 `;
 
 export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes = [], groups, environment,
-  reflectionWeight=LOCAL_WEIGHT, diffuseWeight=LOCAL_WEIGHT, schedule = () => {}, clock = nowTime }) {
+  reflectionWeight=LOCAL_WEIGHT, diffuseWeight=LOCAL_WEIGHT, schedule = () => {}, clock = nowTime, sliceCapture=false }) {
   if (!THREE || !renderer || !scene || !(groups instanceof Map) || !Array.isArray(objects)) throw Error('Invalid raster-probe scene');
   if(!Number.isFinite(reflectionWeight)||!Number.isFinite(diffuseWeight)||reflectionWeight<0||reflectionWeight>1||diffuseWeight<0||diffuseWeight>1)
     throw Error('Probe reflection and diffuse weights must be finite values from zero to one');
@@ -138,11 +138,11 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
   const localMap = {value:originalEnvironment}, cubeUV = {value:new THREE.Vector3(1/768,1/512,7)};
   const shUniform = {value:Array.from({length:9},() => new THREE.Vector3())};
   // Internal blend is a normalized fade shared by independent radiance weights.
-  let filteredTarget, inFlight, disposed = false, pending = true, selectedName = '', selectedGroup, captureGroup = '',
+  let filteredTarget, inFlight, captureQueue, disposed = false, pending = true, selectedName = '', selectedGroup, captureGroup = '',
     epoch = 0, capturedEpoch = -1, lastChange = -Infinity, lastUpdate = NaN, lastMoving = false,
     blend = 0, blendTarget = 0, irradianceReady = false, captureCenters, anchorArray, lastError;
   const counters = {attempts:0,captures:0,faceRenders:0,environmentPreparationRenders:0,pixelReads:0,invalidations:0,largePoseInvalidations:0,
-    failures:0,discardedCaptures:0,lastCaptureMs:0,totalCaptureMs:0,lastCaptureSubmitMs:0,lastReadbackMs:0,lastSHIntegrationMs:0,
+    failures:0,discardedCaptures:0,lastSliceMs:0,maxSliceMs:0,lastCaptureMs:0,totalCaptureMs:0,lastCaptureSubmitMs:0,lastReadbackMs:0,lastSHIntegrationMs:0,
     lastCaptureAt:null,opticalExcluded:0};
   const asynchronousReadback=measureIrradiance&&typeof renderer.readRenderTargetPixelsAsync==='function';
   function receiver(camera, progress) {
@@ -188,20 +188,20 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     record.shaders.add(shader);
   }
   function capture(now) {
-    counters.attempts++;
-    counters.lastReadbackMs=0;counters.lastSHIntegrationMs=0;
-    const started = clock(), visibility = new Map(), envMaps = new Map(), blends = new Map(), lightShadows = [];
+    let record=sliceCapture?captureQueue:undefined;
+    if(!record){counters.attempts++;counters.lastReadbackMs=0;counters.lastSHIntegrationMs=0;
+      record={epoch,name:selectedName,group:selectedGroup,started:clock(),now,candidate:undefined,face:0,submitTotal:0,lights:new Map()};}
+    const started=record.started,stepStarted=clock(),visibility=new Map(),envMaps=new Map(),blends=new Map(),lightShadows=[],lightValues=[];
     const state = {target:renderer.getRenderTarget(),face:renderer.getActiveCubeFace?.() ?? 0,mip:renderer.getActiveMipmapLevel?.() ?? 0,
       viewport:renderer.getViewport?.(new THREE.Vector4()),scissor:renderer.getScissor?.(new THREE.Vector4()),scissorTest:renderer.getScissorTest?.(),
       autoClear:renderer.autoClear,toneMapping:renderer.toneMapping,toneMappingExposure:renderer.toneMappingExposure,
       outputColorSpace:renderer.outputColorSpace,xr:renderer.xr?.enabled,shadowAuto:renderer.shadowMap?.autoUpdate,shadowNeeds:renderer.shadowMap?.needsUpdate,
       background:scene.background,backgroundRotation:scene.backgroundRotation?.clone(),backgroundIntensity:scene.backgroundIntensity,
       backgroundBlurriness:scene.backgroundBlurriness,environment:scene.environment};
-    const record={epoch,name:selectedName,group:selectedGroup,started,now,candidate:undefined};
     let countedRender, error;
     try {
       scene.updateMatrixWorld(true);
-      const anchor = chooseProbeAnchor(THREE,selectedGroup,meshes);
+      const anchor=record.anchor?new THREE.Vector3(...record.anchor):chooseProbeAnchor(THREE,selectedGroup,meshes);record.anchor=anchor.toArray();
       cubeCamera.position.copy(anchor);cubeCamera.updateMatrixWorld();
       const allBounds = new THREE.Box3();for (const mesh of meshes) allBounds.expandByObject(mesh,false);
       const far = Math.max(2000,allBounds.getSize(new THREE.Vector3()).length()*4);
@@ -216,6 +216,11 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
           });
           if (optical) counters.opticalExcluded++;
           if (!allowed.has(object) || optical) object.visible=false;
+        }
+        if(sliceCapture&&object.isLight){
+          lightValues.push([object,object.intensity,object.color.clone()]);
+          if(!record.lights.has(object))record.lights.set(object,{intensity:object.intensity,color:object.color.clone()});
+          const frozen=record.lights.get(object);object.intensity=frozen.intensity;object.color.copy(frozen.color);
         }
         if (object.isLight && object.shadow) {
           lightShadows.push([object.shadow,object.shadow.autoUpdate,object.shadow.needsUpdate]);
@@ -240,8 +245,18 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
         return render.apply(renderer,args);
       };
       renderer.render=countedRender;
-      try {cubeCamera.update(renderer,scene);} finally {renderer.render=render;countedRender=undefined;}
-      record.candidate=pmrem.fromCubemap(cubeTarget.texture);
+      try {
+        if(!sliceCapture)cubeCamera.update(renderer,scene);
+        else if(record.face<6){
+          if(cubeCamera.coordinateSystem!==renderer.coordinateSystem){cubeCamera.coordinateSystem=renderer.coordinateSystem;cubeCamera.updateCoordinateSystem();}
+          cubeTarget.texture.generateMipmaps=false;
+          renderer.setRenderTarget(cubeTarget,record.face,cubeCamera.activeMipmapLevel);
+          renderer.render(scene,cubeCamera.children[record.face]);record.face++;
+          if(record.face===6)cubeTarget.texture.needsPMREMUpdate=true;
+        }
+      }finally{renderer.render=render;countedRender=undefined;}
+      if(!sliceCapture||record.face===6&&record.convolve){record.candidate=pmrem.fromCubemap(cubeTarget.texture);}
+      else if(record.face===6)record.convolve=true;
       record.centers=centers();record.anchor=anchor.toArray();record.environmentIntensity=scene.environmentIntensity ?? 1;
     } catch (caught) {
       error=caught;
@@ -249,6 +264,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
       for (const [object,visible] of visibility) object.visible=visible;
       for (const [material,envMap] of envMaps) material.envMap=envMap;
       for (const [record,values] of blends) [record.blend.value,record.diffuseBlend.value]=values;
+      for(const [light,intensity,color] of lightValues){light.intensity=intensity;light.color.copy(color);}
       for (const [shadow,autoUpdate,needsUpdate] of lightShadows) {shadow.autoUpdate=autoUpdate;shadow.needsUpdate=needsUpdate;}
       scene.background=state.background;scene.environment=state.environment;
       scene.backgroundIntensity=state.backgroundIntensity;scene.backgroundBlurriness=state.backgroundBlurriness;
@@ -261,9 +277,11 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
       if (state.viewport) renderer.setViewport(state.viewport);
       if (state.scissor) renderer.setScissor(state.scissor);
       if (state.scissorTest !== undefined) renderer.setScissorTest(state.scissorTest);
-      record.submitted=clock();counters.lastCaptureSubmitMs=Math.max(0,record.submitted-started);
+      record.submitted=clock();const sliceMs=Math.max(0,record.submitted-stepStarted);record.submitTotal+=sliceMs;
+      counters.lastSliceMs=sliceMs;counters.maxSliceMs=Math.max(counters.maxSliceMs,sliceMs);counters.lastCaptureSubmitMs=record.submitTotal;
     }
-    inFlight=record;
+    if(sliceCapture&&!error&&!record.candidate){captureQueue=record;schedule();return;}
+    captureQueue=undefined;inFlight=record;
     if(error){finishCapture(record,undefined,error);return;}
     if(!measureIrradiance){finishCapture(record);return;}
     const faces=Array.from({length:6},()=>new Uint16Array(FACE_SIZE*FACE_SIZE*4));
@@ -330,6 +348,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     scene.updateMatrixWorld(true);
     const [name,group]=receiver(camera,progress), changedGroup=name!==selectedName;
     if (geometryChanged || changedGroup || (moving&&!lastMoving)) {
+      if(captureQueue){captureQueue.candidate?.dispose();captureQueue=undefined;counters.discardedCaptures++;}
       epoch++;counters.invalidations++;pending=true;lastChange=now;blendTarget=0;
       if (changedGroup) {blend=0;irradianceReady=false;}
       else if (captureCenters) {
@@ -341,7 +360,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     selectedName=name;selectedGroup=group;lastMoving=!!moving;
     if (moving) {blendTarget=0;lastChange=now;}
     else if (!pending && capturedEpoch===epoch && captureGroup===selectedName) blendTarget=influenceTarget;
-    if (pending && !inFlight && !moving && now-lastChange>=SETTLE_MS && (!filteredTarget || blend<=1e-5)) capture(now);
+    if (pending && !inFlight && !moving && now-lastChange>=(sliceCapture?750:SETTLE_MS) && (!filteredTarget || blend<=1e-5)) capture(now);
     const dt=Number.isFinite(lastUpdate)?Math.max(0,Math.min(BLEND_MS,now-lastUpdate)):0;
     if (blend<blendTarget) blend=Math.min(blendTarget,blend+dt/BLEND_MS);
     else if (blend>blendTarget) blend=Math.max(blendTarget,blend-dt/BLEND_MS);
@@ -352,7 +371,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     if (needsFrame()) schedule();
   }
   function needsFrame() {return !disposed && ((pending&&!inFlight&&!lastMoving) || Math.abs(blend-blendTarget)>1e-5);}
-  function snapshot() {return {...counters,mode:measureIrradiance?'settled opaque CAD reflection and SH irradiance':'settled opaque CAD reflection only',faceSize:FACE_SIZE,
+  function snapshot() {return {...counters,timeSliced:sliceCapture,captureFace:captureQueue?.face??null,mode:measureIrradiance?'settled opaque CAD reflection and SH irradiance':'settled opaque CAD reflection only',faceSize:FACE_SIZE,
     geometryEpoch:epoch,capturedEpoch,pending,readbackPending:!!inFlight,asynchronousReadback,
     readbackMode:!measureIrradiance?'skipped-reflection-only':asynchronousReadback?'async-pbo-fence':'synchronous-api-fallback',
     moving:lastMoving,receiverModule:selectedName,capturedModule:captureGroup,
@@ -361,7 +380,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
   function dispose() {
     if (disposed) return;
     disposed=true;blend=blendTarget=0;pending=false;setBlend();
-    inFlight?.candidate?.dispose();if(inFlight)inFlight.candidate=undefined;
+    captureQueue?.candidate?.dispose();captureQueue=undefined;inFlight?.candidate?.dispose();if(inFlight)inFlight.candidate=undefined;
     filteredTarget?.dispose();cubeTarget.dispose();pmrem.dispose();
     localMap.value=originalEnvironment;
     for (const record of materialRecords.values()) record.shaders.clear();

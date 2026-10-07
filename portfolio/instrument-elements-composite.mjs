@@ -1,9 +1,9 @@
 import {loadElementsFire} from './instrument-elements-bake.mjs?v=shared-3';
 import {createElementsTimeline} from './instrument-elements-timeline.mjs';
 
-export async function loadElementsComposite({group,fluid,schedule,reduced}){
+export async function loadElementsComposite({group,fluid,schedule,reduced,visibleOnly=false}){
  let timeline,sample={waterFrame:0,time:0,cycle:0},held=false;
- const fire=await loadElementsFire({group,schedule,reduced,onFrame:async(time,manifest)=>{
+ const fire=await loadElementsFire({group,schedule,reduced,visibleOnly,onFrame:async(time,manifest)=>{
    timeline??=createElementsTimeline({duration:manifest.duration,waterFrames:fluid.frameCount});
    sample=timeline.sample(time);held=true;
    try{

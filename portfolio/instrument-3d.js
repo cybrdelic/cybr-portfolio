@@ -3,6 +3,7 @@ import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
 import {loadElementsComposite} from './instrument-elements-composite.mjs?v=shared-3';
 import {createHdrComposite} from './instrument-hdr-composite.mjs?v=1';
+import {opticalGeometryInView} from './instrument-visible-bounds.mjs';
 import {span,takeup,takeupForLength,internal,length as routeLength} from './instrument-routing.js';
 import {volumeDepth} from './instrument-volume.js';
 import {loadPathBake} from './instrument-path-bake.js?v=4';
@@ -55,6 +56,8 @@ let renderer,scene,camera,manifest,frame=0,current=0,target=0,lastTime=0,ready=f
 let pathTracer,lastTracePose=-1;
 let rasterLighting,rasterTiming,rasterProbes,rasterOptics,rasterTransport,rasterThickness,hitPbrArrays,lastRasterPose=-1;
 let nativeStartup;
+let geoStarter;
+window.addEventListener('pagehide',event=>{if(!event.persisted)geoStarter?.dispose();});
 let interfacePaused=false;
 let elementPlayback,elementFrameDirty=false,elementAudit,hdrComposite;
 const samplerInventory=new Map();
@@ -84,7 +87,7 @@ let fluid,glassShell,opticalLens,layeredTarget,workingOuterTarget,optics,working
 let rasterEnvironmentTarget,rasterSourceEnvironment,rasterPaperBackground,rasterResourcesDisposed=false;
 function disposeRasterResources(){
   if(rasterResourcesDisposed)return;
-  rasterResourcesDisposed=true;
+  rasterResourcesDisposed=true;geoStarter?.dispose();geoStarter=undefined;
   pbrAssets?.dispose();
   pbrWearAssets?.dispose();
   elementPlayback?.dispose();fluid?.dispose?.();
@@ -442,15 +445,24 @@ function drawScene(){
   rasterTransport?.setScale?.(Number(query.get('optics-scale'))|| (moving ? (stagedGeometryOptics ? .18 : .35) : .5));
   rasterTiming?.begin(lastRasterPose<0?'startup':moving?'moving':rasterProbes?.snapshot().pending?'probe-update':'stationary');
   try{
+    const beforeProbe=rasterProbes?.snapshot();
     rasterProbes?.update(camera,{progress:current,moving,geometryChanged,now});
-    drawRasterScene();lastRasterPose=current;
+    const afterProbe=rasterProbes?.snapshot();
+    // Cube capture writes another target. Present the retained full-resolution
+    // HDR image when no visible scene state changed, including a partial cube.
+    const retained=mobileLayout.matches&&bakedElements&&afterProbe?.timeSliced&&!moving&&!geometryChanged&&!elementFrameDirty&&
+      !rasterLighting?.needsFrame()&&beforeProbe?.blend===afterProbe.blend&&beforeProbe?.diffuseBlend===afterProbe.diffuseBlend&&hdrComposite?.present(renderer);
+    if(retained){frameCalls+=retained.calls;frameTriangles+=retained.triangles;}
+    else drawRasterScene();
+    lastRasterPose=current;
   }finally{rasterTiming?.end();}
   return true;
 }
 function drawRasterScene(){
   optics?.prepare();
   let transportRendered=false;
-  if(workingMotion){
+  const opticalInView=!mobileLayout.matches||!bakedElements||opticalGeometryInView({THREE,objects,camera});
+  if(workingMotion&&opticalInView){
     const size=renderer.getDrawingBufferSize(new THREE.Vector2());
     if(layeredTarget.width!==size.x||layeredTarget.height!==size.y)layeredTarget.setSize(size.x,size.y);
     if(workingOuterTarget.width!==size.x||workingOuterTarget.height!==size.y)workingOuterTarget.setSize(size.x,size.y);
@@ -486,7 +498,7 @@ function drawRasterScene(){
       optical.forEach(({object,visible})=>object.visible=visible);scene.background=background;renderer.setRenderTarget(previousTarget);
     }
   }
-  if(rasterTransport&&!transportRendered){const info=rasterTransport.render(camera,{sourceRevision:current});if(info){frameCalls+=info.calls;frameTriangles+=info.triangles;}}
+  if(rasterTransport&&opticalInView&&!transportRendered){const info=rasterTransport.render(camera,{sourceRevision:current});if(info){frameCalls+=info.calls;frameTriangles+=info.triangles;}}
   const volumeSize=renderer.getDrawingBufferSize(new THREE.Vector2());
   for(const pass of volumePasses){const info=pass.render(renderer,camera,volumeSize);frameCalls+=info.calls;frameTriangles+=info.triangles;}
   if(glassShell&&fluid&&!optics&&!workingMotion){
@@ -509,8 +521,9 @@ function measureScroll(){scrollOrigin=root.offsetTop;scrollDistance=Math.max(1,r
 function setTarget(p){const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);if(wasSettled)lastTime=0;schedule();}
 function scroll(){if(!mobileLayout.matches&&!reduced.matches&&!interfacePaused)setTarget((window.scrollY-scrollOrigin)/scrollDistance);}
 function jump(p){
+  if(geoStarter&&!ready){geoStarter.reset();return;}
   setTarget(p);
-  if(mobileLayout.matches){if(reduced.matches)current=target;schedule();}
+  if(mobileLayout.matches){current=target;schedule();}
   else if(reduced.matches){current=target;schedule();}
   else{window.scrollTo({top:scrollOrigin+target*scrollDistance,behavior:'instant'});schedule();}
 }
@@ -543,14 +556,47 @@ async function init(){
   const photographedEnvironment={file:'./assets/pbr-metal/studio/studio_small_08-1024x512-rgba.f32.gz',width:1024,height:512,sha256:'a924864ac722d9bb7706b308c5be65df3d0feb27408c02ce34eed8a8158b7a5f',source:'Poly Haven Studio Small 08',author:'Sergej Majboroda',license:'CC0 1.0',method:'photographed HDR studio',rotationX:90,rotationZ:0,intensity:.38};
   renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});
   const customPbr=manifest.workingGeometry&&!qualityMode&&!debugNoFinish&&!['legacy','procedural'].includes(query.get('metal'));
+  const progressive=mobileLayout.matches&&bakedElements&&photographedStudio&&manifest.progressiveGeo&&typeof Worker!=='undefined'&&globalThis.crypto?.subtle&&query.get('startup')!=='full';
+  let seed;
+  if(progressive){
+    startupPhase('geo-assets','Loading the complete GEO component.');
+    const geoManifest={...manifest,meshes:manifest.meshes.filter(mesh=>mesh.module==='geo'),
+      losslessTransfer:manifest.progressiveGeo,stats:{...manifest.stats,decodedGeometryBytes:manifest.progressiveGeo.decodedBytes,sha256:manifest.progressiveGeo.sha256Decoded}};
+    startup.geo={};
+    const [geoBuffer,environment,texture]=await Promise.all([
+      loadGeometry(geoManifest,geometryBase,{onProgress:message=>status.textContent=message,metrics:startup.geo}),
+      inflate(photographedEnvironment.file),
+      new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`)
+    ]);
+    seed={environment,texture};
+    const {createGeoStarter}=await import('./instrument-geo-starter.mjs');
+    startupPhase('geo-setup','Preparing the complete GEO component.');
+    geoStarter=await createGeoStarter({THREE,renderer,surface,manifest,buffer:geoBuffer,environment,texture,slider,reduced,
+      makeMaterial:materialFor,forgetMaterial:material=>{const index=materials.indexOf(material);if(index>=0)materials.splice(index,1);}});
+    startupPhase('first-usable-3d');startup.firstUsable3DMs=performance.now()-startup.started;
+    stage.classList.add('three-ready','geo-starter');
+    interfaceController.ready(['geo']);interfaceController.update(.49,0);
+    document.querySelector('.phase-name').textContent='01 / GEO component';
+    const study=document.querySelector('.study-link');study.tabIndex=0;study.setAttribute('aria-hidden','false');
+    study.dataset.project='geo';study.querySelector('.study-description').textContent='Complete native GEO component';
+    document.querySelectorAll('[data-end]').forEach(button=>button.disabled=true);
+    window.instrument3D={setProgress:jump,snapshot:()=>({...geoStarter.snapshot(),mobileLayout:true,
+      renderMode:'native-geo-progressive-webgl2',fullGeometryVerified:false,geometryVerificationScope:'GEO only'})};
+    status.textContent='GEO is interactive. Loading the full instrument and finishes.';
+    // Allow the real model and its controls to paint before starting the large background transfer.
+    await new Promise(resolve=>requestAnimationFrame(resolve));
+  }
   startupPhase('assets','Loading the full CAD and original materials.');
   const [buffer,environment,texture,customAssets,wearAssets]=await Promise.all([
-    loadGeometry(manifest,geometryBase,{onProgress:message=>status.textContent=message,legacy:query.get('transfer')==='legacy',metrics:startup.geometry}),photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
-    new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`),
+    loadGeometry(manifest,geometryBase,{onProgress:message=>status.textContent=(progressive?'GEO is interactive. ':'')+message,legacy:query.get('transfer')==='legacy',metrics:startup.geometry}),seed?Promise.resolve(seed.environment):photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
+    seed?Promise.resolve(seed.texture):new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`),
     customPbr?loadInstrumentPbrAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrAssets=value;return value;}):null,
     customPbr&&query.get('wear')!=='clean'?loadInstrumentPbrWearAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrWearAssets=value;return value;}):null
   ]);pbrAssets=customAssets;pbrWearAssets=wearAssets;
-  startupPhase('mesh-setup','Preparing the full CAD geometry.');
+  startupPhase('mesh-setup','Preparing the complete instrument.');
+  geoStarter?.dispose();geoStarter=undefined;
+  stage.classList.remove('geo-starter');slider.disabled=true;
+  window.instrument3D=undefined;
   if(buffer.byteLength!==manifest.stats.decodedGeometryBytes)throw new Error('Mesh package revision mismatch. Reload to fetch matching assets.');
   // Full native raster resolution with hardware edge AA. Explicit higher
   // sampling remains available for matched offline comparisons.
@@ -633,6 +679,7 @@ async function init(){
     }
     const object=new THREE.Mesh(geometry,meshMaterial);object.name=mesh.module+'/'+mesh.feature+'/'+mesh.material;groups.get(mesh.module).add(object);
     object.userData.meshRecord=mesh;objects.push(object);
+    if(progressive)await new Promise(resolve=>setTimeout(resolve,0));
     if(query.has('wireframe'))for(const activeMaterial of Array.isArray(object.material)?object.material:[object.material])activeMaterial.wireframe=true;
     if(mesh.assemblyShiftX)assemblyDetails.push({object,shift:mesh.assemblyShiftX});
     if(mesh.module==='elements'&&mesh.material===3){glassShell=object;object.renderOrder=2;}
@@ -657,7 +704,7 @@ async function init(){
     waterMaterial.customProgramCacheKey=()=> 'CYBR-native-FLIP-live-optics-v1';materials.push(waterMaterial);
     fluid=await loadFluid(groups.get('elements'),()=>{elementFrameDirty=true;schedule();},{base:'./assets/instrument-elements-bake/water-shared-v3/',material:waterMaterial});
     objects.push(fluid.mesh);
-    elementPlayback=await loadElementsComposite({group:groups.get('elements'),fluid,reduced,schedule:()=>{elementFrameDirty=true;schedule();}});
+    elementPlayback=await loadElementsComposite({group:groups.get('elements'),fluid,reduced,visibleOnly:mobileLayout.matches,schedule:()=>{elementFrameDirty=true;schedule();}});
     if(query.has('audit')){elementAudit=document.createElement('output');elementAudit.id='elements-bake-output';elementAudit.hidden=true;document.body.append(elementAudit);}
   }
   if(pathBake)optics=['c','legacy-c'].includes(cartridgeChoice)
@@ -685,7 +732,7 @@ async function init(){
       rasterTiming=createRasterTiming(renderer);
       rasterLighting=setupRasterLighting({THREE,renderer,scene,objects,cableMeshes:cables.map(c=>c.mesh),groups,schedule,studio:studioLighting});
       const {setupRasterProbes}=await import('./instrument-raster-probes.mjs?v=depth-3');
-      if(query.get('probes')!=='off')rasterProbes=setupRasterProbes({THREE,renderer,scene,objects,cableMeshes:cables.map(c=>c.mesh),groups,environment:env,schedule,reflectionWeight:.15,diffuseWeight:0});
+      if(query.get('probes')!=='off')rasterProbes=setupRasterProbes({THREE,renderer,scene,objects,cableMeshes:cables.map(c=>c.mesh),groups,environment:env,schedule,reflectionWeight:.15,diffuseWeight:0,sliceCapture:mobileLayout.matches});
       // Rasterized CAD exit depths preserve physical thickness without BVH
       // traversal. Existing HDR depth buffers reject foreground sample leaks.
       if(rasterOpticalMode==='thickness'||partialRayOptics){
@@ -756,7 +803,9 @@ async function init(){
   root.classList.add('is-enhanced');ready=true;
   const initialSubmit=performance.now();drawScene();lastRender=performance.now()-initialSubmit;drawCount++;
   stage.classList.add('three-ready');status.textContent='';
-  startupPhase('ready');startup.readyMs=performance.now()-startup.started;
+  startupPhase('ready');startup.readyMs=performance.now()-startup.started;startup.fullReadyMs=startup.readyMs;
+  if(!startup.firstUsable3DMs)startup.firstUsable3DMs=startup.readyMs;
+  slider.disabled=false;document.querySelectorAll('[data-end]').forEach(button=>button.disabled=false);
   measureScroll();interfaceController.ready();
   document.querySelector('[data-end="100"]').textContent='Next →';
   document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Use the 3D controls':'Scroll to assemble & inspect ↓';
@@ -779,7 +828,7 @@ async function init(){
   window.addEventListener('pagehide',event=>{if(!event.persisted){pathTracer?.dispose();rasterTiming?.dispose();rasterLighting?.dispose();rasterProbes?.dispose();rasterTransport?.dispose();rasterOptics?.dispose();rasterThickness?.dispose();disposeRasterResources();}});
   reduced.addEventListener('change',()=>{measureScroll();current=target=0;jump(0);schedule();});
   if(!rasterResourcesDisposed)renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();fallback('3D context lost. Reload to restore the instrument, or use the project links.');});
-  window.instrument3D={setProgress:jump,snapshot:()=>({ready,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
+  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready,preview:false,fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
     meshes:manifest.meshes.length,sourceParts:manifest.stats.sourceParts,triangles:manifest.stats.triangles,
     calls:frameCalls,submittedTriangles:frameTriangles,
     drawCount,submitMs:lastRender,submitSamples:frameTimes.slice(-120),
@@ -825,5 +874,5 @@ async function init(){
   };
   if(query.has('resume'))jump(current);else scroll();schedule();
 }
-const interfaceController=createInstrumentInterface({stage,root,jump,isReady:()=>ready,getTarget:()=>target,reduced,onInspect:()=>{if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});},onPaneChange:open=>{interfacePaused=open;elementPlayback?.setPaused(open||!canvasVisible);if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
+const interfaceController=createInstrumentInterface({stage,root,jump,isReady:name=>ready||!!geoStarter&&(!name||name==='geo'),getTarget:()=>target,reduced,onInspect:()=>{if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});},onPaneChange:open=>{interfacePaused=open;elementPlayback?.setPaused(open||!canvasVisible);if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
 init().catch(error=>{console.error(error);if(qualityMode&&/gpu|adapter|device|context/i.test(error.message||''))recoverQuality(error);else if(/creating WebGL context|context.*lost/i.test(error.message||''))fallback('This browser cannot start 3D graphics. Reopen the browser to retry, or explore the project links below.');else fallback('3D could not load. Use the project links or reload to retry.'+(query.has('audit')?' '+error.message:''));});
