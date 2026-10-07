@@ -75,9 +75,12 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
   fit();surface.append(renderer.domElement);await renderer.compileAsync(scene,camera);render();
   slider.disabled=false;slider.value=angle;slider.setAttribute('aria-label',scrollDriven?'Instrument tour progress':'Rotate the GEO component');
   slider.addEventListener('input',input);window.addEventListener('resize',schedule);document.addEventListener('visibilitychange',visibility);
-  const canvas=renderer.domElement;canvas.style.pointerEvents='auto';canvas.style.touchAction='pan-y';
-  canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);
-  canvas.addEventListener('pointerup',pointerEnd);canvas.addEventListener('pointercancel',pointerEnd);
+  const canvas=renderer.domElement;canvas.style.pointerEvents=scrollDriven?'none':'auto';canvas.style.touchAction='pan-y';
+  // A scroll-driven preview never captures a canvas gesture.
+  if(!scrollDriven){
+    canvas.addEventListener('pointerdown',pointerDown,{passive:true});canvas.addEventListener('pointermove',pointerMove,{passive:true});
+    canvas.addEventListener('pointerup',pointerEnd,{passive:true});canvas.addEventListener('pointercancel',pointerEnd,{passive:true});
+  }
   return{reset(){slider.value=scrollDriven?0:50;rotate();},setProgress(p){slider.value=Math.max(0,Math.min(1,p))*100;rotate();},snapshot(){return{ready:true,preview:true,fullReady:false,adapter,module:'geo',meshes:objects.length,camera:camera.position.toArray(),scrollDriven,
     triangles:manifest.meshes.filter(mesh=>mesh.module==='geo').reduce((n,mesh)=>n+mesh.indices.count/3,0),drawCount,target:angle/100,progress:angle/100,
     geometryHash:manifest.stats.sha256,verifiedGeometryHash:manifest.progressiveGeo.sha256Decoded,geometryVerificationScope:'GEO only',startup:window.instrumentStartup};},

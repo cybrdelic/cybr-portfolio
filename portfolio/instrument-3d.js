@@ -1,5 +1,5 @@
 import {createRenderGate} from './instrument-render-gate.mjs';
-import {createScrollTour} from './instrument-scroll-tour.mjs';
+import {createScrollTour} from './instrument-scroll-tour.mjs?v=native-touch-1';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
@@ -565,7 +565,7 @@ for(const type of ['pointerup','pointercancel'])document.addEventListener(type,e
   if(event.pointerId!==controlPointer)return;controlPointer=undefined;renderGate?.endInteraction(120);
 },{capture:true,passive:true});
 document.addEventListener('keydown',event=>{if(event.target.closest('button,input,a'))deferMobileRender();},{capture:true});
-const scrollTour=createScrollTour({root,stage,viewport:window,onProgress:setTarget,isReduced:()=>reduced.matches,isPaused:()=>interfacePaused});
+const scrollTour=createScrollTour({root,stage,viewport:window,onProgress:setTarget,isReduced:()=>reduced.matches,allowReducedScroll:()=>mobileLayout.matches,isPaused:()=>interfacePaused});
 function measureScroll(){scrollTour.measure();}
 function setTarget(p){
   const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);
@@ -620,7 +620,7 @@ async function init(){
       new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`)
     ]);
     seed={environment,texture};
-    const {createGeoStarter}=await import('./instrument-geo-starter.mjs');
+    const {createGeoStarter}=await import('./instrument-geo-starter.mjs?v=native-touch-1');
     startupPhase('geo-setup','Preparing the complete GEO component.');
     geoStarter=await createGeoStarter({THREE,renderer,surface,manifest,buffer:geoBuffer,environment,texture,slider,reduced,
       makeMaterial:materialFor,forgetMaterial:material=>{const index=materials.indexOf(material);if(index>=0)materials.splice(index,1);},scrollDriven:true,onProgress:jump});
@@ -855,7 +855,7 @@ async function init(){
   }
   startupPhase('first-frame','Rendering the instrument.');
   root.classList.add('is-enhanced');measureScroll();
-  if(!reduced.matches){current=target=scrollTour.progress();resize();pose(current,surface.clientWidth/surface.clientHeight);elementPlayback?.update(camera,current);}
+  if(!reduced.matches||mobileLayout.matches){current=target=scrollTour.progress();resize();pose(current,surface.clientWidth/surface.clientHeight);elementPlayback?.update(camera,current);}
   ready=true;configureRenderGate();
   const initialSubmit=performance.now();drawScene();lastRender=performance.now()-initialSubmit;drawCount++;
   renderGate?.submitted({progress:current});if(!renderGate){displayedProgress=current;fullFrameComplete=true;}

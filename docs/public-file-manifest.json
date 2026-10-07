@@ -1754,8 +1754,10 @@
     },
     {
       "path": "docs/MOBILE_SCROLL_TOUR.md",
-      "bytes": 2394,
-      "sha256": "aa7fcf6da358475aec1a056fa1756a232f4f2d80193d2eede0b3a935d957a291"
+      "bytes": 3438,
+      "sha256": "ee4da465e6f6f757b392d58ccd5760eeb2ff863007eea3d79bfddb0b63ff499c",
+      "native_touch_baseline_sha256": "aa7fcf6da358475aec1a056fa1756a232f4f2d80193d2eede0b3a935d957a291",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "docs/MOBILE_STARTUP.md",
@@ -1824,8 +1826,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 491756,
-      "sha256": "cc35b169f95359c4a089af9c3b7a820a5e2a06ba3b3034c43ab019e717f444d5"
+      "bytes": 493947,
+      "sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -6374,14 +6376,16 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6432,
-      "sha256": "fbf9dd75b46b519549428a2d9cb9f4d31071b0805308a2a04c7ae46d4e60b1dc",
+      "bytes": 6431,
+      "sha256": "2b6937ef4e9d09e1384285252722c7b2e727c70965757463e2255b5502640dab",
       "mobile_declutter_baseline_sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
       "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained",
       "mobile_slider_baseline_sha256": "fbdd37c26ad7b507dd15c6b3ade76ce193223c583d062741d488bdeeed079c19",
       "mobile_slider_update": "Hide the mobile tour slider in reduced-motion and wide touch-landscape paths; scroll runtime and assets retained",
       "phone_media_baseline_sha256": "3d4ce89e85b71ffeb230f12f008cb9063708afcf85e624546b5f5620dc02ccea",
-      "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained"
+      "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
+      "native_touch_baseline_sha256": "fbf9dd75b46b519549428a2d9cb9f4d31071b0805308a2a04c7ae46d4e60b1dc",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -6395,10 +6399,12 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 78409,
-      "sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
+      "bytes": 78509,
+      "sha256": "dee0f29d281bedfe56aeeba415a75c1761ae15e7e8042c84fdc1d0b08537c91f",
       "phone_media_baseline_sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
-      "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained"
+      "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
+      "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -6447,13 +6453,17 @@
     },
     {
       "path": "portfolio/instrument-geo-starter.mjs",
-      "bytes": 7714,
-      "sha256": "3ca8cff00f2c80eba5fadb28b0976d813599178dc0190e4bee040f704aacf68b"
+      "bytes": 7885,
+      "sha256": "28d93d1a6f6db14ee8b695d369e630f99036a92fe5f71edee99addc0ce098a11",
+      "native_touch_baseline_sha256": "3ca8cff00f2c80eba5fadb28b0976d813599178dc0190e4bee040f704aacf68b",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-geo-starter.test.mjs",
-      "bytes": 5407,
-      "sha256": "697e29b9c912408a35714320df7013ce183c12fe45eb7cc126a7c3370ea200e0"
+      "bytes": 5618,
+      "sha256": "eb00bf5f50b9c0f38a5ce8d318c0dc6d937505089c6941c3dcf9ea2195e6ce2d",
+      "native_touch_baseline_sha256": "697e29b9c912408a35714320df7013ce183c12fe45eb7cc126a7c3370ea200e0",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-geometry-codec.mjs",
@@ -6532,14 +6542,16 @@
     },
     {
       "path": "portfolio/instrument-mobile.css",
-      "bytes": 8964,
-      "sha256": "5255f8e400908ebdc1e69c5e51f031b3e15c43b54ea324412d2f9826d2f89114",
+      "bytes": 8990,
+      "sha256": "6b41bf0fe7d1968ca5ba393dafe1197342bec06cb468c5813b26da7ec9d49467",
       "mobile_declutter_baseline_sha256": "bfa1b1c2fb51b0490a92b6bede1a790068dd053d6b680a43368fdb5bb4b17aff",
       "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained",
       "mobile_slider_baseline_sha256": "8026242403065c47d66464c8e20b33965db7f42c02fec6cef6cb6fa054842e67",
       "mobile_slider_update": "Hide the mobile tour slider in reduced-motion and wide touch-landscape paths; scroll runtime and assets retained",
       "phone_media_baseline_sha256": "1140aa4397a4519e5410d965ab711fd98c16aa591b5eef98732b9dacccbc832e",
-      "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained"
+      "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
+      "native_touch_baseline_sha256": "5255f8e400908ebdc1e69c5e51f031b3e15c43b54ea324412d2f9826d2f89114",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-native-geometry-transport.mjs",
@@ -6778,13 +6790,17 @@
     },
     {
       "path": "portfolio/instrument-scroll-tour.mjs",
-      "bytes": 1426,
-      "sha256": "9aa72336c58b15a6ec7dd0edbef2da227cbb69fd3fb0cef60bfda76dfbf6f79e"
+      "bytes": 1525,
+      "sha256": "fab23a346eb784d33d10cb087b826c4ea6a4c54397ad6b8838d2db4dc34b6d68",
+      "native_touch_baseline_sha256": "9aa72336c58b15a6ec7dd0edbef2da227cbb69fd3fb0cef60bfda76dfbf6f79e",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-scroll-tour.test.mjs",
-      "bytes": 2276,
-      "sha256": "a536db4d29bbc90e072ce3f36fc91613559579f0b6a4503d8658d358802b7adf"
+      "bytes": 2917,
+      "sha256": "210ca9764b345c475261d3a888c751b19b8724e0fff7060e9ffee1ea06bac0b0",
+      "native_touch_baseline_sha256": "a536db4d29bbc90e072ce3f36fc91613559579f0b6a4503d8658d358802b7adf",
+      "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
     },
     {
       "path": "portfolio/instrument-studio-environment.mjs",
@@ -7696,5 +7712,6 @@
   "mobile_scroll_tour_baseline_commit": "20516d3bb1a3d67271234fd4cfba8790c0dce68e",
   "mobile_declutter_baseline_commit": "146861d2bc0826c356562617aeb03f057f73de29",
   "mobile_no_slider_baseline_commit": "b3ef5457ea9be2df3b105fecd9f5aa79216ac03a",
-  "phone_media_baseline_commit": "91981b66312f9e87779762d02a009cd38adb7664"
+  "phone_media_baseline_commit": "91981b66312f9e87779762d02a009cd38adb7664",
+  "native_touch_baseline_commit": "980614dae51b7048e20d7916890e08e1a9891074"
 }

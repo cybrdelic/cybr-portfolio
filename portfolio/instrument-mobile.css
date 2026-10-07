@@ -3,8 +3,8 @@
 @media(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse){
   html{scrollbar-gutter:auto}
   .scroll-score{height:auto}
-  .scroll-score.is-enhanced{height:820svh}
-  .scroll-score .instrument{position:sticky;top:0;height:100svh;min-height:0;aspect-ratio:auto;display:flex;flex-direction:column;overflow:clip;padding:0 20px 10px}
+  .scroll-score.is-enhanced{height:820vh;height:820svh}
+  .scroll-score .instrument{position:sticky;top:0;height:100vh;height:100svh;min-height:0;aspect-ratio:auto;display:flex;flex-direction:column;overflow:clip;padding:0 20px 10px}
   .instrument header{position:relative;inset:auto;order:0;flex:none;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;padding:12px 0 4px}
   .instrument header::after,.instrument header nav::before{display:none}
   .instrument .sigil{width:110px;margin:0}
@@ -13,7 +13,7 @@
   .instrument header nav{grid-column:1/-1;grid-row:2;display:flex;justify-content:space-between;gap:4px;padding:0;font-size:12px;letter-spacing:.015em}
   .instrument header nav a{display:flex;align-items:center;min-height:44px;padding:8px 4px}
   .scroll-score .sculpture,.scroll-score .three-active .sculpture{position:relative;inset:auto;order:1;flex:1 1 0;min-height:120px;width:calc(100% + 40px);margin:0 -20px;height:auto;aspect-ratio:auto;transform:none;pointer-events:auto;touch-action:pan-y}
-  .scroll-score .sculpture canvas{pointer-events:auto;touch-action:pan-y}
+  .scroll-score .sculpture canvas{pointer-events:none;touch-action:pan-y}
   .scroll-score .rulers,.scroll-score .drafting,.scroll-score .inspection-note,.scroll-score .registration,.scroll-score .rail-art,.scroll-score .plate-credit{display:none}
   .scroll-score .scroll-position{position:relative;inset:auto;order:2;flex:none;gap:8px;margin:0;min-height:24px;font-size:10px;letter-spacing:.01em}
   .scroll-score .scroll-position>span:last-child{font-size:10px;max-width:none;text-align:right}
@@ -70,9 +70,9 @@
   .scroll-score .social-card{top:54px}
 }
 @media(max-width:900px) and (prefers-reduced-motion:reduce), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse) and (prefers-reduced-motion:reduce){
-  .scroll-score.is-enhanced{height:auto}
-  .scroll-score .instrument{position:relative;height:auto}
-  .scroll-score .sculpture,.scroll-score .three-active .sculpture{flex:none;height:clamp(280px,43svh,430px)}
+  /* Keep native page travel; reduced motion uses immediate user-controlled views. */
+  .scroll-score.is-enhanced{height:820vh;height:820svh}
+  .scroll-score .instrument{position:sticky;height:100vh;height:100svh}
   .scroll-score .scroll-position>span:last-child{font-size:10px}
   .scroll-score .scroll-position>span:last-child::after{content:none}
 }
@@ -104,6 +104,6 @@
   }
 }
 @media(max-width:900px) and (prefers-reduced-motion:reduce), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse) and (prefers-reduced-motion:reduce){
-  /* Explicit controls remain when the user opts out of scroll animation. */
+  /* Explicit shortcuts remain alongside static scroll-driven views. */
   .scroll-score .chapter-stops{display:grid}
 }

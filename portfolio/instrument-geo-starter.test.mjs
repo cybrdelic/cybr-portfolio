@@ -45,12 +45,17 @@ for(const scrollDriven of [false,true])test(`starter retains original GEO geomet
       assert.ok(lastCamera.position.distanceTo(previousCamera)>1);assert.equal(starter.snapshot().progress,p);
     }
     assert.deepEqual(userProgress,[.7],'scroll synchronization must not recursively publish slider input');
-    canvas.listeners.get('pointerdown')({pointerId:7,clientX:100,clientY:200});
-    canvas.listeners.get('pointermove')({pointerId:7,clientX:102,clientY:130});
-    assert.equal(starter.snapshot().progress,.31,'a vertical swipe leaves native document scrolling in control');
-    canvas.listeners.get('pointercancel')();
-    canvas.listeners.get('pointermove')({pointerId:7,clientX:220,clientY:130});
-    assert.equal(starter.snapshot().progress,.31,'cancellation clears the captured drag state');
+    if(scrollDriven){
+      assert.equal(canvas.style.pointerEvents,'none');
+      assert.equal(canvas.listeners.size,0,'the scroll-driven canvas cannot capture native touch');
+    }else{
+      canvas.listeners.get('pointerdown')({pointerId:7,clientX:100,clientY:200});
+      canvas.listeners.get('pointermove')({pointerId:7,clientX:102,clientY:130});
+      assert.equal(starter.snapshot().progress,.31,'a vertical swipe leaves native document scrolling in control');
+      canvas.listeners.get('pointercancel')();
+      canvas.listeners.get('pointermove')({pointerId:7,clientX:220,clientY:130});
+      assert.equal(starter.snapshot().progress,.31,'cancellation clears the captured drag state');
+    }
     const materialCount=new Set(meshes.map(mesh=>mesh.material)).size;
     starter.dispose();starter.dispose();assert.equal(forgotten,materialCount);assert.equal(pmremDisposes,1);
     assert.equal(textureDisposed,false,'the shared original roughness texture belongs to the full instrument');
