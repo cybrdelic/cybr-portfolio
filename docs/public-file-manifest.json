@@ -1855,7 +1855,7 @@
     {
       "path": "docs/source-manifest.json",
       "bytes": 504714,
-      "sha256": "20b7e61417b9d6ae528b56bbc4b6bd512e8f2e009999e3ae03a72d85ec931db1",
+      "sha256": "d215f77d75d2ab66df104c8644978c077f73d1c0a880e5b1c59d27a5d97b86dd",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -6815,8 +6815,8 @@
     },
     {
       "path": "portfolio/instrument-raster-thickness.mjs",
-      "bytes": 31488,
-      "sha256": "13567449e141027fa3389235fd1286875fd7880d12e26ee534b4897bd514d7f2",
+      "bytes": 31224,
+      "sha256": "342b1e58a7d794462d9d13bea0f3b6ff156e0e278293aff6f2b14f7e65af78d5",
       "local_startup_repair_previous_sha256": "330256ff33f1b29da5b11d2856556eb83e8d03b590570d522c9cb395532e50ad",
       "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },

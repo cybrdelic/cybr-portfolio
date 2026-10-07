@@ -9881,8 +9881,8 @@
     {
       "path": "portfolio/instrument-raster-thickness.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 31488,
-      "sha256": "13567449e141027fa3389235fd1286875fd7880d12e26ee534b4897bd514d7f2",
+      "bytes": 31224,
+      "sha256": "342b1e58a7d794462d9d13bea0f3b6ff156e0e278293aff6f2b14f7e65af78d5",
       "local_startup_repair_previous_sha256": "330256ff33f1b29da5b11d2856556eb83e8d03b590570d522c9cb395532e50ad",
       "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
