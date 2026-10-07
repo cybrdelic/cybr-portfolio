@@ -3875,6 +3875,24 @@
       "sha256": "2862d0b568e67f43ba7c38eab29844f48fcd304f0fa9b586196eaf4b7618c323"
     },
     {
+      "path": "docs/NATIVE_ACCEPTANCE.json",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 2696,
+      "sha256": "2d88e7490b8ffbb2d249384fd5c17dc04868e8a3197234e89175ce79d2f6952c"
+    },
+    {
+      "path": "docs/assets/mobile-native-landscape.png",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 49880,
+      "sha256": "93fe0db9ca71fe47acdd3b72c2f1730fe7d72d08892459e4005b0260556f4f39"
+    },
+    {
+      "path": "docs/assets/mobile-native-scenes.png",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 127195,
+      "sha256": "eac62fe7ce587a7536c42dddb210e8ba6c62ca8170cddae7579b677063c61a61"
+    },
+    {
       "path": "portfolio/LIVE-STUDIES.md",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 2424,

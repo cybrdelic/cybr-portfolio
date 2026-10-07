@@ -7,7 +7,8 @@ cached ELEMENTS water/fire playback, and six project pages. The publication base
 A subsequent mobile update adds normal page scrolling and a lossless geometry
 transfer while retaining the full model and materials. See
 [mobile and startup notes](docs/MOBILE_STARTUP.md) for scope and verification.
-The published portfolio uses this source; final art quality is not certified.
+Source publication and Site versioning are separate; this PR does not deploy
+a Site. Final art quality is not certified.
 
 ## Run the current version
 

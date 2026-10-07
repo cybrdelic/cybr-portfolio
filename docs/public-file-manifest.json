@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4846,
-      "sha256": "76df12577de531cc8d42cbda8c71fa27e3c5628dce97a39a0e2299c43a6ace16"
+      "bytes": 4890,
+      "sha256": "55db8ccd06a6a9ac4db5ab7367c1d8f3214fa65d7815569660cd6398566adea7"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1739,8 +1739,8 @@
     },
     {
       "path": "docs/KNOWN_ISSUES.md",
-      "bytes": 3330,
-      "sha256": "daee66e869a3d6cac5bcbc5795c7d1caec47833fc1b4b257585ab7fd7134a18f"
+      "bytes": 4197,
+      "sha256": "e0488550e9fda1cef3fb2290e194c1b4483e781ce401f9a363984d4c3a0f25c4"
     },
     {
       "path": "docs/LICENSE_INVENTORY.md",
@@ -1749,8 +1749,13 @@
     },
     {
       "path": "docs/MOBILE_STARTUP.md",
-      "bytes": 9628,
-      "sha256": "f5e179c3b5be0619931c6d49f22245cae2b6e0bfc79893ee266477eb6c52ec2f"
+      "bytes": 13473,
+      "sha256": "7baaabb34a78c0996c1e3eb78c8f339595ec85121d0c2e928845e4746ec4bd54"
+    },
+    {
+      "path": "docs/NATIVE_ACCEPTANCE.json",
+      "bytes": 2696,
+      "sha256": "2d88e7490b8ffbb2d249384fd5c17dc04868e8a3197234e89175ce79d2f6952c"
     },
     {
       "path": "docs/PUBLICATION.md",
@@ -1766,6 +1771,16 @@
       "path": "docs/VALIDATION.md",
       "bytes": 4839,
       "sha256": "b825867606797d58f272847035ce1a34a7fe3cf6d02ac03cdeeb8884b2dddfcc"
+    },
+    {
+      "path": "docs/assets/mobile-native-landscape.png",
+      "bytes": 49880,
+      "sha256": "93fe0db9ca71fe47acdd3b72c2f1730fe7d72d08892459e4005b0260556f4f39"
+    },
+    {
+      "path": "docs/assets/mobile-native-scenes.png",
+      "bytes": 127195,
+      "sha256": "eac62fe7ce587a7536c42dddb210e8ba6c62ca8170cddae7579b677063c61a61"
     },
     {
       "path": "docs/browser-state-comparison.json",
@@ -1794,8 +1809,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 486407,
-      "sha256": "6bd38c30e7ded5f82a73496b90dc4a61c660db919c1d0da2bf8c914d6df7dba6"
+      "bytes": 487187,
+      "sha256": "a3130e5ad6c1d140962d3052afb582f4ba9b36f652872f5a30ae8ca0ddfe1e4d"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",

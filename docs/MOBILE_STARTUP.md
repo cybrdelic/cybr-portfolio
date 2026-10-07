@@ -34,8 +34,8 @@ All 56 mesh records and all final textures, material groups, shadow resolution,
 transmission settings and reflection resolution remain retained. Progress shows
 actual transferred bytes and separate first-usable/full-ready timestamps.
 
-On mobile, reflection refinement waits for a settled pose and captures one of
-the original six 128 px cube faces per frame, then convolves the complete cube.
+On mobile, reflection refinement waits for a settled pose and captures bounded pieces of
+the original six 128 px cube faces, then convolves the complete cube.
 Navigation discards partial captures. Each face restores all live renderer,
 material, light and scene state. Refinement presents the existing full-resolution
 HDR image when no visible scene state changed. Transmission read passes are
@@ -63,10 +63,10 @@ construction and disposal of all six GEO meshes, partial-capture cancellation,
 per-face state restoration, conservative bounds and retained HDR presentation.
 The prior full-transfer-only candidate failed the matched browser comparison:
 layout improved, but first readiness did not improve and a LIGHT tap timed out.
-This progressive revision has not yet completed browser acceptance. No measured
-startup or input-latency improvement is claimed until a matched 10 Mbps aggregate,
-80 ms latency, CPU x4 comparison records first usable real 3D, navigation latency,
-full readiness and peak memory. SwiftShader emulation does not establish physical
+The final runtime completed the native Intel mobile-viewport checks recorded
+below. Its current cold-network acceptance remains unverified. The historical
+10 Mbps / 80 ms / CPU x4 comparison is a partial failed earlier candidate,
+not a current performance claim. SwiftShader emulation does not establish physical
 Android GPU performance; physical-device and optional WebGPU coverage remain open.
 
 
@@ -85,7 +85,7 @@ metrics without disjoint/query polling. The long task occurred outside the
 measured draw submission and closely matched the 22.75 s startup GPU duration.
 That correlation alone does not identify the driver, compositor or another
 process as the cause. The later focused run below separates handler execution
-from browser visual feedback; a short trace is still required. The measurement harness now uses cached adapter
+from browser visual feedback; the later trace below identifies a software readback interval. The measurement harness now uses cached adapter
 metadata instead of making its own WebGL queries.
 
 Reflection work now yields between at most 8,192 original triangles per
@@ -98,8 +98,8 @@ or viewport change reuses the original 2048 px shadow map only when every tracke
 world matrix, geometry/attribute identity, buffer version and visibility flag is
 unchanged. Actual geometry changes invalidate it.
 
-315 CPU regressions pass after the backpressure follow-up below. Browser
-acceptance of that candidate remains pending.
+315 CPU regressions pass after the backpressure follow-up below. Native browser acceptance of that runtime is recorded below; the earlier
+software and harness failures remain preserved.
 The focused full-loaded chapter/landscape check retains the 5 s responsiveness
 timeout and requires chapter tap actions below 1 s. It omits the repeated cold
 baseline. A separate cold candidate check retains 10 Mbps aggregate / 80 ms /
@@ -120,7 +120,7 @@ pushed or deployed.
 Recorded click handlers took 1.6-2.2 ms, with 11.5-48.2 ms from event timestamp
 to processing. Browser EventTiming reported 2.45-3.60 s from input to paint.
 Playwright's action span also includes waiting before the browser issues input.
-The next check records that pre-event wait, handler timing, actual browser
+The later checks record pre-event wait, handler timing, actual browser
 input-to-paint and selected geometry completion separately. A missing duration
 inside JavaScript measurements is not proof of compositor causality.
 
@@ -145,7 +145,68 @@ path-tracing routes keep their previous scheduling.
 CPU tests cover one-frame ownership, zero-timeout checks, coalescing, interaction
 holds, visibility/modal pauses, idle frames, context failure and owned-resource
 disposal. Probe tests check retained partial captures and invalidation on resume.
-The pending focused browser check requires all six actual selected poses to
-complete, keeps the existing 5 s canvas check and sub-second tap criterion,
-checks landscape/reduced-motion playback, and records a short Chrome trace.
-No new browser improvement or final visual equivalence is claimed yet.
+The native checks below required all six selected poses to complete, kept
+the 5 s canvas check and sub-second tap criterion, and checked landscape
+and reduced-motion playback. Exact final pixel equivalence is not certified.
+
+## Recorded native acceptance
+
+The tested runtime is `d9b73508b4c0282e6d8620a09f25ccbb1ef1eb08` on top of
+the publication baseline above. Documentation-only successors retain these
+results. Chrome 154 used Intel UHD Graphics / ANGLE D3D11, a 390 x 844 touch
+viewport, DPR 1, main-target CPU x4, disabled caches and 80 ms request latency.
+Local transfer was unthrottled. This is desktop hardware emulating a viewport,
+not a physical Android result; dedicated-worker throttling is not established.
+
+The preserved native baseline passed six chapters with tap actions of 58-398 ms
+and showed its complete instrument at 18.08 s from navigation. The candidate
+showed complete native GEO at 2.45 s and its full instrument at 20.14 s. First
+usable geometry improved in this local setup; total full-model readiness did
+not. App-relative markers were 1.40 s / 19.08 s and use a different origin.
+Peak aggregate browser RSS was 2.93 GB baseline / 3.14 GB candidate; shared
+pages may be double-counted. This remains a heavy complete scene.
+
+All six candidate chapter poses completed on the GPU, with tap actions of
+37-207 ms. The visible shared fire/water clock advanced. The final SCENES
+reflection completed all six original 128 px faces, with matching captured
+and geometry epochs and blend 0.15. It took 67.08 s to settle; its maximum
+timed refinement step was 6.46 s. This native performance limitation remains
+documented. Original full geometry bytes, meshes, finishes, optics and shadow
+and reflection resolutions remain retained; visual evidence does not establish
+exact pixel parity or photographic transport.
+
+A narrow follow-up completed on the same Intel adapter. Direct trusted native
+touch scrolled ordinary content 199 px and the 3D area 206 px while retaining
+the selected pose. Hit testing found the ordinary paragraph and the underlying
+main element, respectively, with `touch-action:auto`; no gesture was prevented.
+Landscape at 844 x 390 had no overflow. Visible playback stopped advancing
+under reduced motion. Early/fully-loaded Close actions took 426 ms / 341 ms.
+An earlier early Close took 1.11 s: 628 ms before event issuance, 416 ms queued
+before processing and 1.6 ms in the handler, all during startup mesh setup.
+That transient queueing observation is retained rather than generalized to
+ongoing controls. No uncaught page JavaScript error occurred in these checks.
+
+The CDP synthesized-scroll diagnostic failed in both ordinary and 3D areas.
+It logged touch-start/end without touch-move events and moved neither page.
+The separate trusted touch-start/move/end sequence scrolled both. The failed
+protocol diagnostic remains a harness limitation; it is not evidence of an
+application scroll trap. The previous handoff assertion also failed because
+the temporary diagnostic object is absent during full mesh construction;
+DOM/navigation continuity and established full readiness passed afterward.
+
+The SwiftShader run retained slow pre-event waits (up to 8.34 s), despite
+1-5.2 ms click handlers and 16-56 ms browser click-to-paint. Its trace recorded
+a 4.97 s `GLES2::ReadPixels`/`WaitForCmd` interval inside
+`LayerTreeHost::DoUpdateLayers`. That locates a software readback wait in this
+run; it does not establish physical-device compositor performance or dismiss
+the separate native refinement cost.
+
+![Actual settled native SCENES capture](assets/mobile-native-scenes.png)
+
+![Actual native landscape layout](assets/mobile-native-landscape.png)
+
+Both images are unedited browser captures of the existing model. Receipt hashes,
+the exact runtime and recovered snapshot provenance are retained in
+[native acceptance metadata](NATIVE_ACCEPTANCE.json). GPU/browser resources
+were closed between coordinated checks. Publication and deployment are separate
+from the validation results; physical-device and cold-network coverage remain open.
