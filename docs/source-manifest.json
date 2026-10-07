@@ -9966,17 +9966,21 @@
     },
     {
       "path": "portfolio/instrument-startup.mjs",
-      "bytes": 2547,
-      "sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
+      "bytes": 2570,
+      "sha256": "d500d5ef29791f487185ecbcbbe6ddab386356dae4973f658f97f91b23036d54",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
-      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
+      "startup_depth_guard_previous_sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 3571,
-      "sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",
+      "bytes": 3810,
+      "sha256": "c385dacf34399d31f53d96cdf9b77622e66125220a0b9200edeaea546ef9c5b3",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
-      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
+      "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
     },
     {
       "path": "portfolio/instrument-studio-environment.mjs",

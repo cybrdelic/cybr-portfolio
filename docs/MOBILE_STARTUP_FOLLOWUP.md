@@ -34,7 +34,7 @@ by a later 35.8 ms refinement; it does not measure the first draw.
   initializes each unique original material texture across scheduled tasks.
   It targets a four-ms cumulative task budget. Individual GL uploads are atomic
   and can exceed it; the measured maximum is reported without a responsiveness
-  guarantee. Render-target, framebuffer and video textures are excluded.
+  guarantee. Render-target/depth, framebuffer and video textures are excluded.
 - Ordinary visits keep texture preparation disabled. Original texture bytes,
   mesh data, materials, camera/pacing, resolution and ready/completion semantics
   remain. There is no placeholder, resolution reduction or early ready flag.

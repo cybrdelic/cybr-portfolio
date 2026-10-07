@@ -5,7 +5,7 @@ export function collectStartupTextures(materials){
     if(!value||typeof value!=='object'||seen.has(value))return;
     seen.add(value);
     if(value.isTexture){
-      if(!value.isRenderTargetTexture&&!value.isVideoTexture&&!value.isFramebufferTexture&&value.image)textures.add(value);
+      if(!value.isRenderTargetTexture&&!value.isDepthTexture&&!value.isVideoTexture&&!value.isFramebufferTexture&&value.image)textures.add(value);
       return;
     }
     if(depth>8||ArrayBuffer.isView(value)||value instanceof ArrayBuffer)return;

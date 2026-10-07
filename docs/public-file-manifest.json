@@ -1781,10 +1781,12 @@
     },
     {
       "path": "docs/MOBILE_STARTUP_FOLLOWUP.md",
-      "bytes": 4331,
-      "sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",
+      "bytes": 4337,
+      "sha256": "31feb2e14bdd2bacff82007782c6fe92639d4436fdf2e286c36ed9ec1ca12322",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
-      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
+      "startup_depth_guard_previous_sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
     },
     {
       "path": "docs/NATIVE_ACCEPTANCE.json",
@@ -1848,14 +1850,16 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 499821,
-      "sha256": "fdcc1594c1d6ad9bde2c84745e180bd8e628bd68ca3d176c4565c6d78ca01871",
+      "bytes": 500379,
+      "sha256": "75f17d58234dc06bb5b279cfc4737f9a1709a9cc35e444d6a94f088d967f5ec2",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
       "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged",
       "startup_followup_baseline_sha256": "132ce08ec94cf175d45444a2ddd7755b4da97255ab028fbdf39ec84b22add70a",
-      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
+      "startup_depth_guard_previous_sha256": "fdcc1594c1d6ad9bde2c84745e180bd8e628bd68ca3d176c4565c6d78ca01871",
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -6874,17 +6878,21 @@
     },
     {
       "path": "portfolio/instrument-startup.mjs",
-      "bytes": 2547,
-      "sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
+      "bytes": 2570,
+      "sha256": "d500d5ef29791f487185ecbcbbe6ddab386356dae4973f658f97f91b23036d54",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
-      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
+      "startup_depth_guard_previous_sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 3571,
-      "sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",
+      "bytes": 3810,
+      "sha256": "c385dacf34399d31f53d96cdf9b77622e66125220a0b9200edeaea546ef9c5b3",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
-      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
+      "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
     },
     {
       "path": "portfolio/instrument-studio-environment.mjs",

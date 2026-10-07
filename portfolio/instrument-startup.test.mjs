@@ -1,12 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {DepthTexture} from './vendor/three-r180/three.module.min.js';
 import {collectStartupTextures,prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs';
 
 const texture=name=>({isTexture:true,name,image:{width:1024,height:1024}});
 test('startup preparation finds original material and compiled uniform textures once, without touching video or render targets',()=>{
-  const color=texture('color'),normal=texture('normal'),video={...texture('video'),isVideoTexture:true},target={...texture('target'),isRenderTargetTexture:true},framebuffer={...texture('framebuffer'),isFramebufferTexture:true};
+  const color=texture('color'),normal=texture('normal'),video={...texture('video'),isVideoTexture:true},target={...texture('target'),isRenderTargetTexture:true},framebuffer={...texture('framebuffer'),isFramebufferTexture:true},depth=new DepthTexture(390,692);
+  assert.equal(depth.isRenderTargetTexture,false,'real depth textures do not carry the color render-target marker');
   const nested={value:normal};nested.circular=nested;
-  const material={map:color,userData:{shader:{uniforms:{normal:nested,color:{value:color},target:{value:target},video:{value:video},framebuffer:{value:framebuffer}}}}};
+  const material={map:color,userData:{shader:{uniforms:{normal:nested,color:{value:color},target:{value:target},depth:{value:depth},video:{value:video},framebuffer:{value:framebuffer}}}}};
   const before=[material.map,material.userData.shader.uniforms.normal.value];
   assert.deepEqual(collectStartupTextures([material,material,{normalMap:normal}]),[color,normal]);
   assert.deepEqual([material.map,material.userData.shader.uniforms.normal.value],before);
