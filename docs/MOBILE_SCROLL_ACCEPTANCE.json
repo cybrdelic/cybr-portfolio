@@ -1,0 +1,108 @@
+{
+  "runtime_commit": "93b940f3895aeeb5bbe61a98f91fd35cf2020266",
+  "baseline_commit": "20516d3bb1a3d67271234fd4cfba8790c0dce68e",
+  "desktop_pose_equations_sha256": "373c007b118046e02196ddac6e6e1a91ee8353c1cafb8b5052edfde62d67df8f",
+  "adapter": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A8) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "viewport": [
+    390,
+    844
+  ],
+  "landscape": [
+    844,
+    390
+  ],
+  "main_target_cpu_throttle": 4,
+  "request_latency_ms": 80,
+  "network_mbps": null,
+  "physical_android": false,
+  "acceptance_passed": true,
+  "cpu_tests_passed": 320,
+  "native_elapsed_seconds": 38.157850299961865,
+  "closed_utc": "2026-10-07T08:52:39Z",
+  "owned_browser_and_server_closed": true,
+  "page_errors": [],
+  "steps": [
+    {
+      "name": "early native scroll and GEO/full handoff DOM continuity",
+      "passed": true,
+      "scroll_delta_px": 135,
+      "handoffDiagnosticHookGapObserved": true,
+      "geoAnimationObservedBeforeHandoff": true
+    },
+    {
+      "name": "native assembly scroll",
+      "passed": true,
+      "scroll_delta_px": 165,
+      "before_progress": 0.022214908672042125,
+      "after_progress": 0.049332916034167854
+    },
+    {
+      "name": "continuous intermediate camera/model choreography",
+      "passed": true,
+      "sampled_progress": [
+        0.11986443115504497,
+        0.2299844832221129,
+        0.3899439014483362,
+        0.4728541346498924,
+        0.5369425703472108,
+        0.6170451193733525,
+        0.7600297891418545,
+        0.8599236622618311,
+        0.6171214940760474
+      ],
+      "unique_camera_positions": 9
+    },
+    {
+      "name": "native inspection scroll",
+      "passed": true,
+      "scroll_delta_px": 165,
+      "before_progress": 0.5369425703472108,
+      "after_progress": 0.5640372009192394
+    },
+    {
+      "name": "native reverse scroll with touch cancellation",
+      "passed": true,
+      "scroll_delta_px": -165,
+      "before_progress": 0.5640941253908178,
+      "after_progress": 0.5369765651428244
+    },
+    {
+      "name": "native scroll resumes after cancellation",
+      "passed": true,
+      "scroll_delta_px": 165,
+      "before_progress": 0.5369425703472108,
+      "after_progress": 0.5640560122653893
+    },
+    {
+      "name": "landscape scroll and portrait return",
+      "passed": true,
+      "scroll_delta_px": -1844,
+      "before_progress": 0.5640941253908178,
+      "after_progress": 0.5641025641025641
+    }
+  ],
+  "geometry": {
+    "meshes": 56,
+    "decoded_sha256": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+    "current_page_fraction_retained_at_full_ready": true
+  },
+  "video": {
+    "path": "assets/mobile-scroll-native.mp4",
+    "frames": 90,
+    "width": 390,
+    "height": 844,
+    "timestamp_span_seconds": 4.525182008743286,
+    "encoded_duration_seconds": 4.525136,
+    "max_pts_error_seconds": 4.700874328644744e-05,
+    "sha256": "2210a1e61352eff58fdbf632be120f98bd7c1759b354d239674ef25f3d89ebd8",
+    "timing": "Variable frame rate using actual browser timestamps, no interpolation or speed change",
+    "cpu_encoded_after_hardware_closed": true
+  },
+  "private_receipt_sha256": "546aaa4a308e4e6cf28e994c4ea45b651dc2fb2fc60d24b85b7f23fee066af67",
+  "motion_capture_manifest_sha256": "2575176ed3f06f42f49054e640638e98789c14b3c9bb68e2c158e142b5f8e680",
+  "limits": [
+    "Desktop Chrome with native Intel D3D11 and a touch viewport is not physical Android.",
+    "Current cold-network performance, independent worker throttling and exact final pixel parity remain unverified.",
+    "The prior slow reflection refinement, high memory use and startup/input stalls remain documented; this check does not recertify those limits."
+  ]
+}

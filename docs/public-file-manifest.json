@@ -1748,9 +1748,14 @@
       "sha256": "6b54a6ab81899df7f8f34b39f2141a362564ff394bf42c2693b85a6a5eb7302a"
     },
     {
+      "path": "docs/MOBILE_SCROLL_ACCEPTANCE.json",
+      "bytes": 3696,
+      "sha256": "00d4f97a73a82c4a4be77a84fe0fc785fd0d3d0577c1e6c996e37754104b833d"
+    },
+    {
       "path": "docs/MOBILE_SCROLL_TOUR.md",
-      "bytes": 1935,
-      "sha256": "f275e8b6a19bc547001622a94ad39eebaf510fe3d85e17f4c252150f3f5ca472"
+      "bytes": 2394,
+      "sha256": "aa7fcf6da358475aec1a056fa1756a232f4f2d80193d2eede0b3a935d957a291"
     },
     {
       "path": "docs/MOBILE_STARTUP.md",
@@ -1788,6 +1793,11 @@
       "sha256": "eac62fe7ce587a7536c42dddb210e8ba6c62ca8170cddae7579b677063c61a61"
     },
     {
+      "path": "docs/assets/mobile-scroll-native.mp4",
+      "bytes": 561404,
+      "sha256": "2210a1e61352eff58fdbf632be120f98bd7c1759b354d239674ef25f3d89ebd8"
+    },
+    {
       "path": "docs/browser-state-comparison.json",
       "bytes": 20663,
       "sha256": "13cea90ceae67b715fd03ccb00b40c6cbcf21ec572fd15845168a33a4aeb508e"
@@ -1814,8 +1824,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 489161,
-      "sha256": "fd2faf3bfe45a17dcfeac79a5ca8de31da1b5d1a8c373346414d206c2e2ef368"
+      "bytes": 489653,
+      "sha256": "eb21797b9d118d5393e683f9128ad746f88cbc41120466e1c13376c7dfb81ef8"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",

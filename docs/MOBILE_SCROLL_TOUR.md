@@ -22,9 +22,16 @@ not claim to depict the other five components before their bytes are ready.
 CPU checks cover continuous intermediate/reverse coordinates, control-to-scroll
 continuation, orientation clamping, modal/reduced-motion behavior, GEO input
 cancellation and resource ownership, and exact geometry reconstruction. Source
-references and films are checked separately. Native browser acceptance of this
-correction is pending; the earlier `NATIVE_ACCEPTANCE.json` receipt describes
-the PR #2 runtime and cannot certify the restored scroll experience.
+references and films are checked separately. Native Intel / ANGLE D3D11
+acceptance passed with a touch viewport, CPU x4 and 80 ms request latency.
+Actual swipes advanced GPU-completed poses before finger release; reverse
+scroll, cancellation/resumption, intermediate camera/model states, sticky
+layout, landscape and progressive handoff passed without page errors.
+See [the measured receipt](MOBILE_SCROLL_ACCEPTANCE.json) and
+[the actual 4.53-second scroll capture](assets/mobile-scroll-native.mp4).
+The video retains all 90 captured frames at their recorded timestamps, with
+no speed change or interpolation. The earlier `NATIVE_ACCEPTANCE.json`
+receipt describes the PR #2 runtime.
 
 Physical Android, cold-network performance and final pixel parity remain
 unverified. The earlier native reflection refinement and memory limits remain;
