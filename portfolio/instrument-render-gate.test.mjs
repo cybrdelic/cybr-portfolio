@@ -18,7 +18,8 @@ test('one outstanding frame coalesces requests until a nonblocking completion',(
   h.tick(16);assert.equal(h.counts().ready,0);assert.deepEqual(h.waits,[[0,0]]);
   assert.throws(()=>h.gate.submitted(.55),/one WebGL frame/);
   h.signal();h.tick(16);assert.deepEqual(h.counts(),{ready:1,complete:[.49]});assert.equal(h.gate.canSubmit(),true);
-  assert.equal(h.deleted.length,1);assert.equal(h.gate.snapshot().coalesced,9);h.gate.dispose();
+  assert.equal(h.deleted.length,1);assert.equal(h.gate.snapshot().coalesced,9);
+  assert.equal(h.gate.snapshot().maxCompletionWaitMs,32);h.gate.dispose();
 });
 test('gestures and quiet intervals stop both submission and polling until controls can paint',()=>{
   const h=harness();h.gate.submitted(.28);h.gate.request();h.gate.beginInteraction();h.signal();

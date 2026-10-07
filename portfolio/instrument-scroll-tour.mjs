@@ -2,14 +2,15 @@ const clamp=value=>Math.max(0,Math.min(1,value));
 
 // The same continuous page coordinate drives desktop and mobile choreography.
 // This controller never cancels a native touch gesture or waits for a GPU frame.
-export function createScrollTour({root,stage,viewport,onProgress,isReduced=()=>false,allowReducedScroll=()=>false,isPaused=()=>false}){
+export function createScrollTour({root,stage,viewport,onProgress,isReduced=()=>false,allowReducedScroll=()=>false,isPaused=()=>false,mapProgress=value=>value,unmapProgress=value=>value}){
   let origin=0,distance=1,measured=false,lastProgress=0;
   function measure(){
     origin=root.getBoundingClientRect().top+viewport.scrollY;
     distance=Math.max(1,root.offsetHeight-stage.offsetHeight);measured=true;
   }
-  const progress=()=>clamp((viewport.scrollY-origin)/distance);
-  const top=p=>origin+clamp(p)*distance;
+  const pageProgress=()=>clamp((viewport.scrollY-origin)/distance);
+  const progress=()=>clamp(mapProgress(pageProgress()));
+  const top=p=>origin+clamp(unmapProgress(clamp(p)))*distance;
   const scrollEnabled=()=>!isPaused()&&(!isReduced()||allowReducedScroll());
   function scroll(){if(scrollEnabled()){lastProgress=progress();onProgress(lastProgress);}}
   return{
@@ -22,6 +23,6 @@ export function createScrollTour({root,stage,viewport,onProgress,isReduced=()=>f
       if(preserve&&wasMeasured&&scrollEnabled())viewport.scrollTo({top:top(previous),behavior:'instant'});
       scroll();
     },
-    snapshot:()=>({origin,distance,scrollY:viewport.scrollY,progress:progress(),enabled:scrollEnabled()})
+    snapshot:()=>({origin,distance,scrollY:viewport.scrollY,pageProgress:pageProgress(),progress:progress(),enabled:scrollEnabled()})
   };
 }
