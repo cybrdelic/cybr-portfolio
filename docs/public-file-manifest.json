@@ -1749,8 +1749,8 @@
     },
     {
       "path": "docs/PUBLICATION.md",
-      "bytes": 3090,
-      "sha256": "6da8f6c06faa785a1d7b9438b27a67f46fee01825ca1264e51f00b4c77f5f406"
+      "bytes": 4027,
+      "sha256": "dedeae1ef691f0d0e47835c32c99c5ca57708d118268c5bebcfe6ed3ce6ac091"
     },
     {
       "path": "docs/SOURCE_SCOPE.md",
@@ -1759,8 +1759,8 @@
     },
     {
       "path": "docs/VALIDATION.md",
-      "bytes": 2807,
-      "sha256": "f0d5d9936691b43f8d071e091327f7ba9c74785097d364fd30454c28732cb913"
+      "bytes": 4839,
+      "sha256": "b825867606797d58f272847035ce1a34a7fe3cf6d02ac03cdeeb8884b2dddfcc"
     },
     {
       "path": "docs/browser-state-comparison.json",

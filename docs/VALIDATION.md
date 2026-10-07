@@ -35,3 +35,38 @@ was CPU encoded, all 1,856 frames decoded successfully, representative frames
 were visually inspected, and the mobile-playable file was saved to Library.
 No performance claim, full mobile tap tour, optional WebGPU validation or
 normalized archive/film visual acceptance is made.
+
+## Final curated public-source checks
+
+The curated public payload was validated on 2026-10-07 using CPU-only checks.
+No further browser or GPU session was started.
+
+| Check | Result |
+| --- | --- |
+| Retained Node suite | 286 passed, zero failed |
+| Page/media closure | 15 pages, 1,254 references, zero missing, nine valid films |
+| Extended HTML/static-module closure | 1,407 references, zero missing |
+| Source allowlist | 1,489 files; current assets preserved |
+| Public Git baseline | Exactly 1,510 files, including documentation/manifests |
+| Credential/personal-path scan | Zero flags in the candidate public files |
+| Allowlisted build | 1,489 files copied; no runtime asset regeneration |
+| Built-package validator | Same 15-page/1,254-reference/nine-film pass |
+| Loopback HTTP byte smoke | Current entry, geometry, HDR, shaders, fire and sampled water files matched |
+| Inspector invariants | Executable scripts, geometry and non-validation scene data unchanged |
+| Optical fixture/recipe invariants | Numeric data unchanged; provenance checksum refreshed |
+
+The Inspector's packed geometry SHA-256 remains
+`f4f72a0a98b0ce87032f01b432676d41771823db977ff1145785498698544118`.
+Source-manifest SHA-256 after publication curation:
+`beccb03118acf38a647a78ea82c19da0f8baee38930e4fb976f4377cfdbd8248`.
+
+An initial restricted Node run could not spawn test workers. The same suite
+ran with authorized process permissions; a descriptor provenance checksum
+was then refreshed after personal-path normalization, and all 286 tests passed.
+The public package excludes three machine-specific Python-environment files
+that the older selection had retained, as well as the four approved unused
+historical model exports. None was removed from original/private copies.
+
+These are local validation results. No GitHub Actions workflow is configured.
+The earlier native/browser results above remain separate and retain their
+stated limits. No new deployment, full optical bake or art-quality claim is made.
