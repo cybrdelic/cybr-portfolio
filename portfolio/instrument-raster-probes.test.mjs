@@ -434,3 +434,29 @@ test('capture shader warmup restores live scene before awaiting, including compi
     assert.equal(compiles,fail?1:3);h.probes.dispose();
   }
 });
+
+test('render backpressure holds partial cube state and stops deferred probe wakes',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});h.setClock(750);t.mock.timers.tick(750);probes.update(camera,{now:750});
+  const before=probes.snapshot(),renders=h.renderer.renderCalls,schedules=h.counts().schedules;
+  probes.setPaused(true);t.mock.timers.tick(1000);probes.update(camera,{now:1750});
+  assert.equal(probes.needsFrame(),false);assert.equal(probes.snapshot().captureWaiting,false);
+  assert.equal(h.renderer.renderCalls,renders);assert.equal(h.counts().schedules,schedules);
+  assert.equal(probes.snapshot().captureFace,before.captureFace);assert.equal(probes.snapshot().captureDraw,before.captureDraw);
+  assert.equal(probes.snapshot().discardedCaptures,0);h.assertRestored();probes.setPaused(false);
+  let now=1800,steps=0;
+  while(probes.snapshot().captures===0&&steps++<200){h.setClock(now);t.mock.timers.tick(32);probes.update(camera,{now});now+=32;}
+  assert.equal(probes.snapshot().captures,1);assert.equal(probes.snapshot().faceRenders,6);
+  assert.equal(probes.snapshot().discardedCaptures,0);h.assertRestored();probes.dispose();
+});
+
+test('resuming with a changed pose discards the paused cube before another draw',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});h.setClock(750);t.mock.timers.tick(750);probes.update(camera,{now:750});
+  const renders=h.renderer.renderCalls;probes.setPaused(true);t.mock.timers.tick(1000);probes.setPaused(false);
+  probes.update(camera,{now:1750,progress:.6,moving:true,geometryChanged:true});
+  assert.equal(probes.snapshot().discardedCaptures,1);assert.equal(probes.snapshot().captures,0);
+  assert.equal(probes.snapshot().captureDraw,null);assert.equal(h.renderer.renderCalls,renders);h.assertRestored();probes.dispose();
+});

@@ -89,6 +89,11 @@ export function createInstrumentInterface({stage, root, jump, isReady, getTarget
     if(isReady(PROJECT_STOPS[next].name))jump(PROJECT_STOPS[next].at);else open(next,buttons[next]);
   });
   return {
+    target(p){
+      const project=PROJECT_STOPS.find(project=>Math.abs(project.at-p)<.005);if(!project)return;
+      route.querySelectorAll('button').forEach(button=>{if(button.dataset.routeProject===project.name)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');});
+      root.dataset.targetChapter=String(PROJECT_STOPS.indexOf(project)+1);
+    },
     ready(available=PROJECT_STOPS.map(project=>project.name)){
       route.querySelectorAll('button').forEach(button=>{
         button.disabled=false;

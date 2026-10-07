@@ -9340,7 +9340,7 @@
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 6427,
-      "sha256": "263718b3c2a2021d5e5a03357bc61708d03e09014c10132a7b9cb085acbde20e",
+      "sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
@@ -9359,8 +9359,8 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 75361,
-      "sha256": "05eeb063ae8a25b68baaa6e0f5bc5559db0eb25d0277499484ae1920b092eeba",
+      "bytes": 78134,
+      "sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
@@ -9504,8 +9504,8 @@
     {
       "path": "portfolio/instrument-interface.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 10451,
-      "sha256": "52edbc6434e68aafaea243382e2c2a6e2ca831053142a0217a8a9642d0378825",
+      "bytes": 10838,
+      "sha256": "51cc1bd1fccda54554e2eba9d635e4704895bf6542b3a7194f0de42ec548f404",
       "mobile_baseline_sha256": "b3ad500d6e5843c4b5cc2b48129debb1ab574821278311e940c1252555671e38",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
@@ -9751,16 +9751,16 @@
     {
       "path": "portfolio/instrument-raster-probes.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 31212,
-      "sha256": "35ddb8b4beff518334492509899ee27ec5c556b4874237e2c4d2a11f4f6fe243",
+      "bytes": 31532,
+      "sha256": "2af2ee71ef6f84098ce43dbb2ce3f36cbc2693ca9e1435ab50c27fd1038da20a",
       "mobile_baseline_sha256": "295219b9b06ba37ee32f22a3444fe9835822595532712647fb668a4446ea4377",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
     {
       "path": "portfolio/instrument-raster-probes.test.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 31707,
-      "sha256": "77e2578c7f5dbe3915212edc2b4a2e270ef8ae9674df3a8870ee94e82f8379cf",
+      "bytes": 33784,
+      "sha256": "9ee495b0e219a7df7122da79e88822a3b63b33583c395d038cabf26b5539cdec",
       "mobile_baseline_sha256": "f58b8c77a0ded8555c5836fd3447f8e2bc0ffb4a6e6f85cac871b1abb8ad83e2",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
@@ -9809,6 +9809,18 @@
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 7697,
       "sha256": "a762ab236732b0e5f08ea56b8251c89d0d553a7bfa962922e57b74c68078a1d7"
+    },
+    {
+      "path": "portfolio/instrument-render-gate.mjs",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 3393,
+      "sha256": "5a99a0e01bb2796d915f308ae966d0569987a297206ccb73f66d076a3f589824"
+    },
+    {
+      "path": "portfolio/instrument-render-gate.test.mjs",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 4314,
+      "sha256": "f488d931d88095ee42e3fcf0e45814d3bd098cd61cc3776604245432cbb4059b"
     },
     {
       "path": "portfolio/instrument-route.json",

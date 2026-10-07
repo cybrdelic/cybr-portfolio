@@ -135,10 +135,10 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
   if(!Number.isInteger(captureTriangles)||captureTriangles<0||!Number.isFinite(captureDelayMs)||captureDelayMs<0)throw Error('Invalid probe slice budget');
   const chunked=sliceCapture&&captureTriangles>0;
   const background=chunked?createProbeBackground(THREE,renderer,environment):null;
-  let captureTimer=0,captureReady=!chunked;
+  let captureTimer=0,captureReady=!chunked,capturePaused=false;
   function cancelWake(){if(captureTimer)clearTimeout(captureTimer);captureTimer=0;if(chunked)captureReady=false;}
   function armWake(delay){
-    if(!chunked||disposed||captureTimer)return;captureReady=false;
+    if(!chunked||disposed||capturePaused||captureTimer)return;captureReady=false;
     captureTimer=setTimeout(()=>{captureTimer=0;captureReady=true;if(!disposed)schedule();},Math.max(0,delay));
   }
 
@@ -378,7 +378,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     }
   }
   function update(camera,{progress=0,moving=false,geometryChanged=false,now=clock()}={}) {
-    if (disposed) return;
+    if (disposed||capturePaused) return;
     if (!Number.isFinite(now) || !Number.isFinite(progress)) throw Error('Invalid probe update time/progress');
     scene.updateMatrixWorld(true);
     const [name,group]=receiver(camera,progress), changedGroup=name!==selectedName;
@@ -407,8 +407,8 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     if(chunked&&pending&&!inFlight&&!moving&&!captureReady)armWake(Math.max(captureDelayMs,750-(now-lastChange)));
     if (needsFrame()) schedule();
   }
-  function needsFrame() {return !disposed && ((pending&&!inFlight&&!lastMoving&&(!chunked||captureReady)) || Math.abs(blend-blendTarget)>1e-5);}
-  function snapshot() {return {...counters,timeSliced:sliceCapture,triangleBudget:captureTriangles,backgroundFace:background?.face??null,captureWaiting:!!captureTimer,captureDraw:captureQueue?.drawIndex??null,captureFace:captureQueue?.face??null,mode:measureIrradiance?'settled opaque CAD reflection and SH irradiance':'settled opaque CAD reflection only',faceSize:FACE_SIZE,
+  function needsFrame() {return !disposed&&!capturePaused && ((pending&&!inFlight&&!lastMoving&&(!chunked||captureReady)) || Math.abs(blend-blendTarget)>1e-5);}
+  function snapshot() {return {...counters,timeSliced:sliceCapture,capturePaused,triangleBudget:captureTriangles,backgroundFace:background?.face??null,captureWaiting:!!captureTimer,captureDraw:captureQueue?.drawIndex??null,captureFace:captureQueue?.face??null,mode:measureIrradiance?'settled opaque CAD reflection and SH irradiance':'settled opaque CAD reflection only',faceSize:FACE_SIZE,
     geometryEpoch:epoch,capturedEpoch,pending,readbackPending:!!inFlight,asynchronousReadback,
     readbackMode:!measureIrradiance?'skipped-reflection-only':asynchronousReadback?'async-pbo-fence':'synchronous-api-fallback',
     moving:lastMoving,receiverModule:selectedName,capturedModule:captureGroup,
@@ -452,5 +452,11 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
       await promise;
     }
   }
-  return {update,needsFrame,snapshot,dispose,bindMaterialShader,prepare};
+  function setPaused(value){
+    if(disposed||capturePaused===!!value)return;capturePaused=!!value;
+    if(capturePaused)cancelWake();
+    else if(chunked&&pending)armWake(captureDelayMs);
+    else if(needsFrame())schedule();
+  }
+  return {update,needsFrame,snapshot,dispose,bindMaterialShader,prepare,setPaused};
 }

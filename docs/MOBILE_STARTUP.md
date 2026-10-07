@@ -82,9 +82,10 @@ total full readiness was not improved. Those partial receipts remain preserved.
 
 The follow-up keeps mobile GPU timing opt-in (`?timing=gpu`), retaining CPU
 metrics without disjoint/query polling. The long task occurred outside the
-measured draw submission and closely matched the 22.75 s startup GPU duration;
-GPU driver/query synchronization is the leading explanation, to be verified
-with new per-phase CPU markers. The measurement harness now uses cached adapter
+measured draw submission and closely matched the 22.75 s startup GPU duration.
+That correlation alone does not identify the driver, compositor or another
+process as the cause. The later focused run below separates handler execution
+from browser visual feedback; a short trace is still required. The measurement harness now uses cached adapter
 metadata instead of making its own WebGL queries.
 
 Reflection work now yields between at most 8,192 original triangles per
@@ -97,7 +98,8 @@ or viewport change reuses the original 2048 px shadow map only when every tracke
 world matrix, geometry/attribute identity, buffer version and visibility flag is
 unchanged. Actual geometry changes invalidate it.
 
-305 CPU regressions pass. Browser acceptance of this follow-up remains pending.
+315 CPU regressions pass after the backpressure follow-up below. Browser
+acceptance of that candidate remains pending.
 The focused full-loaded chapter/landscape check retains the 5 s responsiveness
 timeout and requires chapter tap actions below 1 s. It omits the repeated cold
 baseline. A separate cold candidate check retains 10 Mbps aggregate / 80 ms /
@@ -105,3 +107,45 @@ CPU x4 conditions. The original baseline assertion tolerance is transparently
 corrected to 0.001 to allow scroll pixel rounding (0.490044 vs 0.49). Previous
 failure evidence is not overwritten. SwiftShader does not establish physical
 Android GPU performance.
+
+## Bounded mobile rendering candidate
+
+The focused check of `fd4278d` completed and released its owned browser/server
+in 53.91 s. Reflection slices took at most 16.4 ms of CPU submission time,
+and mobile GPU timing queries were disabled. The 5 s canvas check and GEO tap
+passed, but LIGHT took 4.81 s, ELEMENTS 9.74 s and SONG timed out at 10 s.
+All-chapter and landscape acceptance therefore failed; this candidate was not
+pushed or deployed.
+
+Recorded click handlers took 1.6-2.2 ms, with 11.5-48.2 ms from event timestamp
+to processing. Browser EventTiming reported 2.45-3.60 s from input to paint.
+Playwright's action span also includes waiting before the browser issues input.
+The next check records that pre-event wait, handler timing, actual browser
+input-to-paint and selected geometry completion separately. A missing duration
+inside JavaScript measurements is not proof of compositor causality.
+
+The new mobile gate allows one outstanding WebGL frame, using zero-timeout
+fence checks and coalescing subsequent requests to the latest target. It holds
+submission and polling through a pointer gesture and for 120 ms afterward,
+so chapter selection can paint immediate accessible feedback. Hidden canvases,
+hidden documents and open project details pause waits and playback. Reflection
+captures retain coherent partial work while paused; a new pose invalidates it
+before resuming. Completed static frames do not request another render. Existing
+reduced-motion behavior still stops the shared fire/water playback clock.
+
+The gate retains the native final geometry, materials, buffers, optical settings
+and shadow/reflection resolutions. It does not cancel commands already submitted
+to WebGL. GPU fences establish when a selected pose has finished rendering;
+they do not establish when the browser composites that image. Startup records
+CPU setup and first GPU completion separately. Completion-wait duration includes
+intentional interaction pauses and is not a hardware GPU duration measurement.
+`?frame-gate=off` is available for a controlled comparison. Desktop and optional
+path-tracing routes keep their previous scheduling.
+
+CPU tests cover one-frame ownership, zero-timeout checks, coalescing, interaction
+holds, visibility/modal pauses, idle frames, context failure and owned-resource
+disposal. Probe tests check retained partial captures and invalidation on resume.
+The pending focused browser check requires all six actual selected poses to
+complete, keeps the existing 5 s canvas check and sub-second tap criterion,
+checks landscape/reduced-motion playback, and records a short Chrome trace.
+No new browser improvement or final visual equivalence is claimed yet.

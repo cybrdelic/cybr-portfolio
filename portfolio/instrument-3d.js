@@ -1,3 +1,4 @@
+import {createRenderGate} from './instrument-render-gate.mjs';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
@@ -56,7 +57,7 @@ let renderer,scene,camera,manifest,frame=0,current=0,target=0,lastTime=0,ready=f
 let pathTracer,lastTracePose=-1;
 let rasterLighting,rasterTiming,rasterProbes,rasterOptics,rasterTransport,rasterThickness,hitPbrArrays,lastRasterPose=-1;
 let nativeStartup;
-let geoStarter;
+let geoStarter,renderGate,displayedProgress,fullFrameComplete=false;
 window.addEventListener('pagehide',event=>{if(!event.persisted)geoStarter?.dispose();});
 let interfacePaused=false;
 let elementPlayback,elementFrameDirty=false,elementAudit,hdrComposite;
@@ -87,7 +88,7 @@ let fluid,glassShell,opticalLens,layeredTarget,workingOuterTarget,optics,working
 let rasterEnvironmentTarget,rasterSourceEnvironment,rasterPaperBackground,rasterResourcesDisposed=false;
 function disposeRasterResources(){
   if(rasterResourcesDisposed)return;
-  rasterResourcesDisposed=true;geoStarter?.dispose();geoStarter=undefined;
+  rasterResourcesDisposed=true;renderGate?.dispose();renderGate=undefined;geoStarter?.dispose();geoStarter=undefined;
   pbrAssets?.dispose();
   pbrWearAssets?.dispose();
   elementPlayback?.dispose();fluid?.dispose?.();
@@ -405,6 +406,7 @@ function resize(){
 const frameWork=[];
 function render(now){
   frame=0;if(!ready||document.hidden||interfacePaused||!canvasVisible)return;
+  if(renderGate&&!renderGate.canSubmit()){renderGate.request();return;}
   let phaseAt=performance.now();const work={at:phaseAt},phase=name=>{const next=performance.now();work[name]=next-phaseAt;phaseAt=next;};
   const dt=Math.min(.25,(now-(lastTime||now-16))/1000);lastTime=now;
   const proposed=reduced.matches?target:mix(current,target,1-Math.exp(-dt/0.10));
@@ -425,6 +427,8 @@ function render(now){
   const moving=Math.abs(current-target)>.000025;
   const begin=performance.now(),submitted=pathTracer||!workingMotion||current!==lastRasterPose||elementFrameDirty||rasterProbes?.needsFrame()||rasterLighting?.needsFrame()?drawScene():false;
   phase('drawMs');elementFrameDirty=false;
+  if(submitted!==false){if(renderGate)renderGate.submitted({progress:current});else displayedProgress=current;}
+  phase('gateSubmitMs');
   if(elementAudit)elementAudit.textContent=JSON.stringify({water:fluid?.snapshot(),fire:elementPlayback?.snapshot(),progress:current,optics:rasterOpticalMode,paused:interfacePaused});
   if(submitted!==false){lastRender=performance.now()-begin;drawCount++;if(frameTimes.length<1000)frameTimes.push(lastRender);rasterTiming?.recordFrame({now,moving,submitMs:lastRender});}
   if(auditElement&&window.instrument3D)auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());
@@ -518,11 +522,46 @@ function drawRasterScene(){
   else{renderer.render(scene,camera);frameCalls+=renderer.info.render.calls;frameTriangles+=renderer.info.render.triangles;}
   if(auditElement&&window.instrument3D)auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());
 }
-function schedule(){if(!frame&&ready&&!document.hidden&&!interfacePaused&&canvasVisible)frame=requestAnimationFrame(render);}
+function schedule(){
+  if(frame||!ready||document.hidden||interfacePaused||!canvasVisible)return;
+  if(renderGate&&!renderGate.canSubmit()){renderGate.request();return;}
+  frame=requestAnimationFrame(render);
+}
+function updateRenderDependents(gate=renderGate?.snapshot()){
+  const base=interfacePaused||!canvasVisible||document.hidden;
+  const blocked=base||!!gate&&(gate.inFlight||gate.paused||gate.held||gate.quietUntil>performance.now()||!!gate.error);
+  elementPlayback?.setPaused(blocked);rasterProbes?.setPaused(blocked);
+  if(gate?.error)status.textContent='3D rendering paused. Reload to restore the instrument, or use the project links.';
+}
+function updateRenderPause(){
+  renderGate?.setPaused(interfacePaused||!canvasVisible||document.hidden);
+  updateRenderDependents();
+}
+function configureRenderGate(){
+  const enabled=mobileLayout.matches&&bakedElements&&workingMotion&&!pathTracer&&query.get('frame-gate')!=='off';
+  if(!enabled){renderGate?.dispose();renderGate=undefined;updateRenderPause();return;}
+  if(renderGate)return;
+  renderGate=createRenderGate({gl:renderer.getContext(),onReady:schedule,onState:updateRenderDependents,
+    onComplete:job=>{
+      displayedProgress=job.progress;
+      if(!fullFrameComplete){fullFrameComplete=true;startup.fullReadyMs=performance.now()-startup.started;startup.gpuFullReadyMs=startup.fullReadyMs;}
+      if(Math.abs(displayedProgress-target)<.000025)status.textContent='';
+    }});
+  updateRenderPause();
+}
+function deferMobileRender(){
+  if(!renderGate)return;cancelAnimationFrame(frame);frame=0;renderGate.hold(120);
+}
+document.addEventListener('pointerdown',event=>{
+  if(!renderGate||!event.target.closest('button,input,a,.sculpture'))return;
+  cancelAnimationFrame(frame);frame=0;renderGate.beginInteraction();
+},{capture:true,passive:true});
+for(const type of ['pointerup','pointercancel'])document.addEventListener(type,()=>renderGate?.endInteraction(120),{capture:true,passive:true});
+document.addEventListener('keydown',event=>{if(event.target.closest('button,input,a'))deferMobileRender();},{capture:true});
 let scrollOrigin=0,scrollDistance=1;
 function measureScroll(){scrollOrigin=root.offsetTop;scrollDistance=Math.max(1,root.offsetHeight-stage.offsetHeight);}
-function setTarget(p){const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);if(wasSettled)lastTime=0;schedule();}
-function scroll(){if(!mobileLayout.matches&&!reduced.matches&&!interfacePaused)setTarget((window.scrollY-scrollOrigin)/scrollDistance);}
+function setTarget(p){deferMobileRender();if(mobileLayout.matches)interfaceController.target(p);if(renderGate)status.textContent='Preparing the selected view.';const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);if(wasSettled)lastTime=0;schedule();}
+function scroll(){if(mobileLayout.matches)deferMobileRender();if(!mobileLayout.matches&&!reduced.matches&&!interfacePaused)setTarget((window.scrollY-scrollOrigin)/scrollDistance);}
 function jump(p){
   if(geoStarter&&!ready){geoStarter.reset();return;}
   setTarget(p);
@@ -806,9 +845,11 @@ async function init(){
   }
   startupPhase('first-frame','Rendering the instrument.');
   root.classList.add('is-enhanced');ready=true;
+  configureRenderGate();
   const initialSubmit=performance.now();drawScene();lastRender=performance.now()-initialSubmit;drawCount++;
+  renderGate?.submitted({progress:current});if(!renderGate){displayedProgress=current;fullFrameComplete=true;}
   stage.classList.add('three-ready');status.textContent='';
-  startupPhase('ready');startup.readyMs=performance.now()-startup.started;startup.fullReadyMs=startup.readyMs;
+  startupPhase('ready');startup.readyMs=performance.now()-startup.started;startup.cpuFullReadyMs=startup.readyMs;if(!renderGate)startup.fullReadyMs=startup.readyMs;
   if(!startup.firstUsable3DMs)startup.firstUsable3DMs=startup.readyMs;
   slider.disabled=false;document.querySelectorAll('[data-end]').forEach(button=>button.disabled=false);
   measureScroll();interfaceController.ready();
@@ -822,18 +863,18 @@ async function init(){
   if(typeof IntersectionObserver!=='undefined'){
     const observer=new IntersectionObserver(([entry])=>{
       canvasVisible=!mobileLayout.matches||entry.isIntersecting;
-      elementPlayback?.setPaused(interfacePaused||!canvasVisible);lastTime=0;
+      updateRenderPause();lastTime=0;
       if(canvasVisible)schedule();else{cancelAnimationFrame(frame);frame=0;}
     });observer.observe(surface);
     window.addEventListener('pagehide',event=>{if(!event.persisted)observer.disconnect();});
   }
-  mobileLayout.addEventListener('change',()=>{const rect=surface.getBoundingClientRect();canvasVisible=!mobileLayout.matches||rect.bottom>0&&rect.top<innerHeight;elementPlayback?.setPaused(interfacePaused||!canvasVisible);measureScroll();scroll();schedule();
+  mobileLayout.addEventListener('change',()=>{configureRenderGate();const rect=surface.getBoundingClientRect();canvasVisible=!mobileLayout.matches||rect.bottom>0&&rect.top<innerHeight;updateRenderPause();measureScroll();scroll();schedule();
     document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Use the 3D controls':'Scroll to assemble & inspect ↓';});
-  document.addEventListener('visibilitychange',()=>{lastTime=0;if(!document.hidden)schedule();});
+  document.addEventListener('visibilitychange',()=>{lastTime=0;updateRenderPause();if(!document.hidden)schedule();});
   window.addEventListener('pagehide',event=>{if(!event.persisted){pathTracer?.dispose();rasterTiming?.dispose();rasterLighting?.dispose();rasterProbes?.dispose();rasterTransport?.dispose();rasterOptics?.dispose();rasterThickness?.dispose();disposeRasterResources();}});
   reduced.addEventListener('change',()=>{measureScroll();current=target=0;jump(0);schedule();});
   if(!rasterResourcesDisposed)renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();fallback('3D context lost. Reload to restore the instrument, or use the project links.');});
-  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready,preview:false,frameWork,fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
+  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready&&fullFrameComplete,viewReady:fullFrameComplete&&Math.abs((displayedProgress??-1)-target)<.000025,displayedProgress,renderGate:renderGate?.snapshot(),preview:false,frameWork,fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
     meshes:manifest.meshes.length,sourceParts:manifest.stats.sourceParts,triangles:manifest.stats.triangles,
     calls:frameCalls,submittedTriangles:frameTriangles,
     drawCount,submitMs:lastRender,submitSamples:frameTimes.slice(-120),
@@ -879,5 +920,5 @@ async function init(){
   };
   if(query.has('resume'))jump(current);else scroll();schedule();
 }
-const interfaceController=createInstrumentInterface({stage,root,jump,isReady:name=>ready||!!geoStarter&&(!name||name==='geo'),getTarget:()=>target,reduced,onInspect:()=>{if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});},onPaneChange:open=>{interfacePaused=open;elementPlayback?.setPaused(open||!canvasVisible);if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
+const interfaceController=createInstrumentInterface({stage,root,jump,isReady:name=>ready||!!geoStarter&&(!name||name==='geo'),getTarget:()=>target,reduced,onInspect:()=>{if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});},onPaneChange:open=>{interfacePaused=open;updateRenderPause();if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
 init().catch(error=>{console.error(error);if(qualityMode&&/gpu|adapter|device|context/i.test(error.message||''))recoverQuality(error);else if(/creating WebGL context|context.*lost/i.test(error.message||''))fallback('This browser cannot start 3D graphics. Reopen the browser to retry, or explore the project links below.');else fallback('3D could not load. Use the project links or reload to retry.'+(query.has('audit')?' '+error.message:''));});
