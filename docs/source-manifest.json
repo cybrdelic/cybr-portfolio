@@ -3875,6 +3875,12 @@
       "sha256": "2862d0b568e67f43ba7c38eab29844f48fcd304f0fa9b586196eaf4b7618c323"
     },
     {
+      "path": "docs/MOBILE_SCROLL_TOUR.md",
+      "reason": "Focused restoration of the continuous mobile scroll tour",
+      "bytes": 1935,
+      "sha256": "f275e8b6a19bc547001622a94ad39eebaf510fe3d85e17f4c252150f3f5ca472"
+    },
+    {
       "path": "docs/NATIVE_ACCEPTANCE.json",
       "reason": "Explicit mobile/startup source or lossless derived runtime asset",
       "bytes": 2696,
@@ -9357,10 +9363,12 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6427,
-      "sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
+      "bytes": 6432,
+      "sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
-      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
+      "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -9377,10 +9385,12 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 78134,
-      "sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
+      "bytes": 78323,
+      "sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
-      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
+      "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -9444,16 +9454,20 @@
     {
       "path": "portfolio/instrument-geo-starter.mjs",
       "reason": "Explicit mobile/startup source or lossless derived runtime asset",
-      "bytes": 7421,
-      "sha256": "215919dd874cec93088969573430da8da5e615033f9cd150e31bb2949a5d8b53",
+      "bytes": 7714,
+      "sha256": "3ca8cff00f2c80eba5fadb28b0976d813599178dc0190e4bee040f704aacf68b",
       "mobile_baseline_sha256": "492576f701e744fb48d7b5b673c47c59fe085f3424d3b9e189e6014dce7d9491",
-      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
+      "mobile_scroll_baseline_sha256": "215919dd874cec93088969573430da8da5e615033f9cd150e31bb2949a5d8b53",
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
     },
     {
       "path": "portfolio/instrument-geo-starter.test.mjs",
       "reason": "Explicit mobile/startup source or lossless derived runtime asset",
-      "bytes": 4341,
-      "sha256": "5f909fb7930f93e209a5a040fd73cf25a1a256ba53491e36557f15dbc3e4a038"
+      "bytes": 5407,
+      "sha256": "697e29b9c912408a35714320df7013ce183c12fe45eb7cc126a7c3370ea200e0",
+      "mobile_scroll_baseline_sha256": "5f909fb7930f93e209a5a040fd73cf25a1a256ba53491e36557f15dbc3e4a038",
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
     },
     {
       "path": "portfolio/instrument-geometry-codec.mjs",
@@ -9554,8 +9568,10 @@
     {
       "path": "portfolio/instrument-mobile.css",
       "reason": "Explicit mobile/startup source or lossless derived runtime asset",
-      "bytes": 5472,
-      "sha256": "e686ab3d12dd46afb60fd67bc72a1018b156931a929e153eee46fcb99194e016"
+      "bytes": 7023,
+      "sha256": "bfa1b1c2fb51b0490a92b6bede1a790068dd053d6b680a43368fdb5bb4b17aff",
+      "mobile_scroll_baseline_sha256": "e686ab3d12dd46afb60fd67bc72a1018b156931a929e153eee46fcb99194e016",
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
     },
     {
       "path": "portfolio/instrument-native-geometry-transport.mjs",
@@ -9851,6 +9867,18 @@
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 1240,
       "sha256": "7e2d686aac46218d621177ff7d889efecc69cf4d4233a5af9bb17ebfbd14be50"
+    },
+    {
+      "path": "portfolio/instrument-scroll-tour.mjs",
+      "reason": "Focused restoration of the continuous mobile scroll tour",
+      "bytes": 1426,
+      "sha256": "9aa72336c58b15a6ec7dd0edbef2da227cbb69fd3fb0cef60bfda76dfbf6f79e"
+    },
+    {
+      "path": "portfolio/instrument-scroll-tour.test.mjs",
+      "reason": "Focused restoration of the continuous mobile scroll tour",
+      "bytes": 2276,
+      "sha256": "a536db4d29bbc90e072ce3f36fc91613559579f0b6a4503d8658d358802b7adf"
     },
     {
       "path": "portfolio/instrument-studio-environment.mjs",
@@ -10940,5 +10968,6 @@
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     }
   ],
-  "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f"
+  "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f",
+  "mobile_scroll_tour_baseline_commit": "20516d3bb1a3d67271234fd4cfba8790c0dce68e"
 }

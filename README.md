@@ -2,11 +2,12 @@
 
 The current laptop portfolio, organized as a self-contained source tree. The
 main entry is `portfolio/index.html`, loading
-`instrument-3d.js?v=mobile-progressive-4`. It presents the working CAD instrument,
+`instrument-3d.js?v=mobile-scroll-1`. It presents the working CAD instrument,
 cached ELEMENTS water/fire playback, and six project pages. The publication baseline preserves the original behavior and known defects.
-A subsequent mobile update adds normal page scrolling and a lossless geometry
-transfer while retaining the full model and materials. See
-[mobile and startup notes](docs/MOBILE_STARTUP.md) for scope and verification.
+Mobile uses the continuous scroll-driven assembly and camera tour, with a
+sticky touch-safe scene. Progressive real GEO and lossless full geometry remain.
+See [scroll-tour correction](docs/MOBILE_SCROLL_TOUR.md) and
+[startup notes](docs/MOBILE_STARTUP.md) for scope and verification.
 Source publication and Site versioning are separate; this PR does not deploy
 a Site. Final art quality is not certified.
 

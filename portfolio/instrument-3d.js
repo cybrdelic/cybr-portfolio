@@ -1,4 +1,5 @@
 import {createRenderGate} from './instrument-render-gate.mjs';
+import {createScrollTour} from './instrument-scroll-tour.mjs';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
@@ -370,10 +371,11 @@ function pose(p,aspect){
     link.querySelector('.study-description').textContent=annotations[active];lastUI=active;
   }
   const readable=mobileLayout.matches;
+  const labelsAvailable=plate>.5;
   document.querySelector('.study-link').tabIndex=readable||p>.4&&p<.9?0:-1;
   document.querySelector('.study-link').setAttribute('aria-hidden',String(!(readable||p>.4&&p<.9)));
-  document.querySelectorAll('[data-label]').forEach(el=>{el.tabIndex=readable||plate>.5?0:-1;el.setAttribute('aria-hidden',String(!readable&&plate<=.5));});
-  document.querySelector('.social-card').inert=!readable&&plate<.5;
+  document.querySelectorAll('[data-label]').forEach(el=>{el.tabIndex=labelsAvailable?0:-1;el.setAttribute('aria-hidden',String(!labelsAvailable));});
+  document.querySelector('.social-card').inert=plate<.5;
   interfaceController.update(p,active);
 }
 function resize(){
@@ -552,22 +554,29 @@ function configureRenderGate(){
 function deferMobileRender(){
   if(!renderGate)return;cancelAnimationFrame(frame);frame=0;renderGate.hold(120);
 }
+let controlPointer;
 document.addEventListener('pointerdown',event=>{
-  if(!renderGate||!event.target.closest('button,input,a,.sculpture'))return;
-  cancelAnimationFrame(frame);frame=0;renderGate.beginInteraction();
+  // Canvas/document swipes keep rendering the scroll choreography. Only a
+  // pressed button or link pauses work until its release/cancellation.
+  if(!renderGate||!event.target.closest('button,a'))return;
+  controlPointer=event.pointerId;cancelAnimationFrame(frame);frame=0;renderGate.beginInteraction();
 },{capture:true,passive:true});
-for(const type of ['pointerup','pointercancel'])document.addEventListener(type,()=>renderGate?.endInteraction(120),{capture:true,passive:true});
+for(const type of ['pointerup','pointercancel'])document.addEventListener(type,event=>{
+  if(event.pointerId!==controlPointer)return;controlPointer=undefined;renderGate?.endInteraction(120);
+},{capture:true,passive:true});
 document.addEventListener('keydown',event=>{if(event.target.closest('button,input,a'))deferMobileRender();},{capture:true});
-let scrollOrigin=0,scrollDistance=1;
-function measureScroll(){scrollOrigin=root.offsetTop;scrollDistance=Math.max(1,root.offsetHeight-stage.offsetHeight);}
-function setTarget(p){deferMobileRender();if(mobileLayout.matches)interfaceController.target(p);if(renderGate)status.textContent='Preparing the selected view.';const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);if(wasSettled)lastTime=0;schedule();}
-function scroll(){if(mobileLayout.matches)deferMobileRender();if(!mobileLayout.matches&&!reduced.matches&&!interfacePaused)setTarget((window.scrollY-scrollOrigin)/scrollDistance);}
+const scrollTour=createScrollTour({root,stage,viewport:window,onProgress:setTarget,isReduced:()=>reduced.matches,isPaused:()=>interfacePaused});
+function measureScroll(){scrollTour.measure();}
+function setTarget(p){
+  const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);
+  if(mobileLayout.matches)interfaceController.target(target);
+  if(geoStarter&&!ready)geoStarter.setProgress(target);
+  if(wasSettled)lastTime=0;schedule();
+}
+function scroll(){scrollTour.scroll();}
 function jump(p){
-  if(geoStarter&&!ready){geoStarter.reset();return;}
-  setTarget(p);
-  if(mobileLayout.matches){current=target;schedule();}
-  else if(reduced.matches){current=target;schedule();}
-  else{window.scrollTo({top:scrollOrigin+target*scrollDistance,behavior:'instant'});schedule();}
+  measureScroll();scrollTour.jump(p);
+  if(reduced.matches){current=target;schedule();}
 }
 function fallback(message){
   ready=false;cancelAnimationFrame(frame);frame=0;
@@ -614,17 +623,18 @@ async function init(){
     const {createGeoStarter}=await import('./instrument-geo-starter.mjs');
     startupPhase('geo-setup','Preparing the complete GEO component.');
     geoStarter=await createGeoStarter({THREE,renderer,surface,manifest,buffer:geoBuffer,environment,texture,slider,reduced,
-      makeMaterial:materialFor,forgetMaterial:material=>{const index=materials.indexOf(material);if(index>=0)materials.splice(index,1);}});
+      makeMaterial:materialFor,forgetMaterial:material=>{const index=materials.indexOf(material);if(index>=0)materials.splice(index,1);},scrollDriven:true,onProgress:jump});
     startupPhase('first-usable-3d');startup.firstUsable3DMs=performance.now()-startup.started;
-    stage.classList.add('three-ready','geo-starter');
-    interfaceController.ready(['geo']);interfaceController.update(.49,0);
+    stage.classList.add('three-ready','geo-starter');root.classList.add('is-enhanced');
+    measureScroll();scroll();
+    interfaceController.ready(['geo']);interfaceController.update(target,0);
     document.querySelector('.phase-name').textContent='01 / GEO component';
-    document.querySelector('.scroll-position>span:last-child').textContent='Drag GEO or use the slider';
+    document.querySelector('.scroll-position>span:last-child').textContent='Scroll to explore ↓';
     const study=document.querySelector('.study-link');study.tabIndex=0;study.setAttribute('aria-hidden','false');
     study.dataset.project='geo';study.querySelector('.study-description').textContent='Complete native GEO component';
     document.querySelectorAll('[data-end]').forEach(button=>button.disabled=true);
     window.instrument3D={setProgress:jump,snapshot:()=>({...geoStarter.snapshot(),mobileLayout:true,
-      renderMode:'native-geo-progressive-webgl2',fullGeometryVerified:false,geometryVerificationScope:'GEO only'})};
+      renderMode:'native-geo-progressive-webgl2',scrollTour:scrollTour.snapshot(),fullGeometryVerified:false,geometryVerificationScope:'GEO only'})};
     status.textContent='GEO is interactive. Loading the full instrument and finishes.';
     // Allow the real model and its controls to paint before starting the large background transfer.
     await new Promise(resolve=>requestAnimationFrame(resolve));
@@ -756,7 +766,7 @@ async function init(){
   makeCable(['takeup',[0,0,0]],['takeup',[0,0,0]],takeup(1).length-1);
   for(let i=0;i<names.length-1;i++)makeCable([names[i],routeSpec.ports[names[i]][1]],[names[i+1],routeSpec.ports[names[i+1]][0]]);
   if(working){workingMotion=createWorkingMotion({manifest,route:routeSpec,groups,objects,cables});assembled=workingMotion.assembled;}
-  current=target=query.has('resume')?clamp(Number(query.get('resume'))||0):mobileLayout.matches?.28:0;
+  measureScroll();current=target=query.has('resume')?clamp(Number(query.get('resume'))||0):reduced.matches?target:scrollTour.progress();
   startupPhase('lighting','Preparing native lighting and optics.');
   resize();pose(current,surface.clientWidth/surface.clientHeight);
   elementPlayback?.update(camera,current);
@@ -844,8 +854,9 @@ async function init(){
     }
   }
   startupPhase('first-frame','Rendering the instrument.');
-  root.classList.add('is-enhanced');ready=true;
-  configureRenderGate();
+  root.classList.add('is-enhanced');measureScroll();
+  if(!reduced.matches){current=target=scrollTour.progress();resize();pose(current,surface.clientWidth/surface.clientHeight);elementPlayback?.update(camera,current);}
+  ready=true;configureRenderGate();
   const initialSubmit=performance.now();drawScene();lastRender=performance.now()-initialSubmit;drawCount++;
   renderGate?.submitted({progress:current});if(!renderGate){displayedProgress=current;fullFrameComplete=true;}
   stage.classList.add('three-ready');status.textContent='';
@@ -854,12 +865,11 @@ async function init(){
   slider.disabled=false;document.querySelectorAll('[data-end]').forEach(button=>button.disabled=false);
   measureScroll();interfaceController.ready();
   document.querySelector('[data-end="100"]').textContent='Next →';
-  document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Use the 3D controls':'Scroll to assemble & inspect ↓';
+  document.querySelector('.scroll-position>span:last-child').textContent='Scroll to assemble & inspect ↓';
   slider.addEventListener('input',()=>jump(Number(slider.value)/100));
   document.querySelectorAll('[data-end]').forEach(b=>b.addEventListener('click',()=>b.dataset.end==='100'?interfaceController.next():jump(0)));
-  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();jump(.49);if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});}));
-  document.querySelectorAll('a[href="#projects"]').forEach(b=>b.addEventListener('click',e=>{if(!mobileLayout.matches){e.preventDefault();jump(0);}}));
-  window.addEventListener('scroll',scroll,{passive:true});window.addEventListener('resize',()=>{measureScroll();schedule();},{passive:true});
+  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();jump(.49);}));
+  document.querySelectorAll('a[href="#projects"]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();jump(0);}));
   if(typeof IntersectionObserver!=='undefined'){
     const observer=new IntersectionObserver(([entry])=>{
       canvasVisible=!mobileLayout.matches||entry.isIntersecting;
@@ -869,12 +879,12 @@ async function init(){
     window.addEventListener('pagehide',event=>{if(!event.persisted)observer.disconnect();});
   }
   mobileLayout.addEventListener('change',()=>{configureRenderGate();const rect=surface.getBoundingClientRect();canvasVisible=!mobileLayout.matches||rect.bottom>0&&rect.top<innerHeight;updateRenderPause();measureScroll();scroll();schedule();
-    document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Use the 3D controls':'Scroll to assemble & inspect ↓';});
+    document.querySelector('.scroll-position>span:last-child').textContent='Scroll to assemble & inspect ↓';});
   document.addEventListener('visibilitychange',()=>{lastTime=0;updateRenderPause();if(!document.hidden)schedule();});
   window.addEventListener('pagehide',event=>{if(!event.persisted){pathTracer?.dispose();rasterTiming?.dispose();rasterLighting?.dispose();rasterProbes?.dispose();rasterTransport?.dispose();rasterOptics?.dispose();rasterThickness?.dispose();disposeRasterResources();}});
   reduced.addEventListener('change',()=>{measureScroll();current=target=0;jump(0);schedule();});
   if(!rasterResourcesDisposed)renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();fallback('3D context lost. Reload to restore the instrument, or use the project links.');});
-  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready&&fullFrameComplete,viewReady:fullFrameComplete&&Math.abs((displayedProgress??-1)-target)<.000025,displayedProgress,renderGate:renderGate?.snapshot(),preview:false,frameWork,fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
+  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready&&fullFrameComplete,viewReady:fullFrameComplete&&Math.abs((displayedProgress??-1)-target)<.000025,displayedProgress,renderGate:renderGate?.snapshot(),preview:false,frameWork,scrollTour:scrollTour.snapshot(),fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
     meshes:manifest.meshes.length,sourceParts:manifest.stats.sourceParts,triangles:manifest.stats.triangles,
     calls:frameCalls,submittedTriangles:frameTriangles,
     drawCount,submitMs:lastRender,submitSamples:frameTimes.slice(-120),
@@ -920,5 +930,7 @@ async function init(){
   };
   if(query.has('resume'))jump(current);else scroll();schedule();
 }
-const interfaceController=createInstrumentInterface({stage,root,jump,isReady:name=>ready||!!geoStarter&&(!name||name==='geo'),getTarget:()=>target,reduced,onInspect:()=>{if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});},onPaneChange:open=>{interfacePaused=open;updateRenderPause();if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
+const interfaceController=createInstrumentInterface({stage,root,jump,isReady:name=>ready||!!geoStarter&&(!name||name==='geo'),getTarget:()=>target,reduced,onInspect:()=>{},onPaneChange:open=>{interfacePaused=open;updateRenderPause();if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
+measureScroll();window.addEventListener('scroll',scroll,{passive:true});
+window.addEventListener('resize',()=>{scrollTour.resize({preserve:mobileLayout.matches});schedule();},{passive:true});
 init().catch(error=>{console.error(error);if(qualityMode&&/gpu|adapter|device|context/i.test(error.message||''))recoverQuality(error);else if(/creating WebGL context|context.*lost/i.test(error.message||''))fallback('This browser cannot start 3D graphics. Reopen the browser to retry, or explore the project links below.');else fallback('3D could not load. Use the project links or reload to retry.'+(query.has('audit')?' '+error.message:''));});
