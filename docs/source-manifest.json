@@ -7801,6 +7801,12 @@
       "sha256": "5bf6ff4e270644a9d0799033a0cf8c9e36e9ebf9369d41053617b729fda824d9"
     },
     {
+      "path": "portfolio/assets/instrument-working-v1/instrument.lossless-v1.bin.gz",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 34808214,
+      "sha256": "bbaeb51c4af49f2170f8babea4af9bc93cfa1c17bda4d1b2e2434ccf2760244f"
+    },
+    {
       "path": "portfolio/assets/instrument-working-v1/machined-roughness.png",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 727057,
@@ -7809,8 +7815,10 @@
     {
       "path": "portfolio/assets/instrument-working-v1/manifest.json",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 1202573,
-      "sha256": "680ea3e1cb8bfbd61366e88733686cf84e963cc62a8a591de27e799f72b77a5b"
+      "bytes": 1202939,
+      "sha256": "8c5fc4f46a11e9c651ff49e23166636a43b3a89e074a0927253c9022d539b319",
+      "mobile_baseline_sha256": "680ea3e1cb8bfbd61366e88733686cf84e963cc62a8a591de27e799f72b77a5b",
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
     {
       "path": "portfolio/assets/instrument-working-v1/route.json",
@@ -9325,8 +9333,10 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6217,
-      "sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09"
+      "bytes": 6424,
+      "sha256": "2d74605238a083ffa8522448275388e3ea4f0f178868e9bff32a5ae86295f278",
+      "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -9343,8 +9353,10 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 67241,
-      "sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac"
+      "bytes": 70550,
+      "sha256": "16dd460cbe0aa50bc791cedcbc77678b081e8f141d48eed259f839ec838fd857",
+      "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -9402,6 +9414,30 @@
       "sha256": "d0f93526e672a3dcef45732b044fac637de0362828d9470bc83aea56f42f6a98"
     },
     {
+      "path": "portfolio/instrument-geometry-codec.mjs",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 1484,
+      "sha256": "9143319bee8b8cb2f392ca86f8d94ab4020080da09ff5b63984e6ced68380ebc"
+    },
+    {
+      "path": "portfolio/instrument-geometry-codec.test.mjs",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 1809,
+      "sha256": "6d6b30fdeeab6b9416a73cf200905e54962e9a2f248997cec793250c09ad878f"
+    },
+    {
+      "path": "portfolio/instrument-geometry-loader.mjs",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 1899,
+      "sha256": "3e51ce0a173ac38fcdf15d78486a52fae991b9d086189ee86714b8602fdce26f"
+    },
+    {
+      "path": "portfolio/instrument-geometry-worker.mjs",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 1562,
+      "sha256": "41c744c8932f03de8e67b4d68978fdacc38a0a24bbd41281cd477e470fa5f41a"
+    },
+    {
       "path": "portfolio/instrument-hdr-composite.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 1954,
@@ -9434,8 +9470,10 @@
     {
       "path": "portfolio/instrument-interface.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 9846,
-      "sha256": "b3ad500d6e5843c4b5cc2b48129debb1ab574821278311e940c1252555671e38"
+      "bytes": 9876,
+      "sha256": "41664c27f242e348715cb94c42404c91308b12f836cc236f153b497de38e67f3",
+      "mobile_baseline_sha256": "b3ad500d6e5843c4b5cc2b48129debb1ab574821278311e940c1252555671e38",
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
     },
     {
       "path": "portfolio/instrument-metal-coordinates.mjs",
@@ -9460,6 +9498,12 @@
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 11626,
       "sha256": "ca3eaa0f492a36d3cf45aef4d4d33c4c7e6ac24c01ac8522a43fe08a08e0f2cd"
+    },
+    {
+      "path": "portfolio/instrument-mobile.css",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 5472,
+      "sha256": "e686ab3d12dd46afb60fd67bc72a1018b156931a929e153eee46fcb99194e016"
     },
     {
       "path": "portfolio/instrument-native-geometry-transport.mjs",
@@ -10786,6 +10830,13 @@
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 78227,
       "sha256": "2839f3ad35566ed40f5c2a64c94ecc6ae72a1f36fb476e55899e77f5a5e3c654"
+    },
+    {
+      "path": "tools/pack_geometry.py",
+      "reason": "Explicit mobile/startup source or lossless derived runtime asset",
+      "bytes": 1575,
+      "sha256": "67eab791b9cc3166a5a5387ba517726c6bf2a2ed13f29463362fdf4d80475f19"
     }
-  ]
+  ],
+  "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f"
 }

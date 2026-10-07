@@ -1,4 +1,5 @@
 import * as THREE from './vendor/three-r180/three.module.min.js';
+import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
 import {loadElementsComposite} from './instrument-elements-composite.mjs?v=shared-3';
 import {createHdrComposite} from './instrument-hdr-composite.mjs?v=1';
@@ -23,6 +24,13 @@ const root=document.querySelector('.scroll-score'), stage=document.querySelector
 const surface=document.querySelector('.sculpture'), status=document.querySelector('.render-status');
 const slider=document.querySelector('#explosion'), reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const names=['geo','light','elements','song','combat','scenes'];
+const mobileLayout=matchMedia('(max-width:900px)');
+const startup={started:performance.now(),phase:'metadata',geometry:{},phases:{}};
+window.instrumentStartup=startup;
+let canvasVisible=true;
+function startupPhase(phase,message){startup.phases[phase]=performance.now()-startup.started;startup.phase=phase;if(message)status.textContent=message;}
+// A fixed mobile canvas avoids resizing GPU targets on every scroll frame.
+stage.append(status);
 const query=new URLSearchParams(location.search),cartridgeChoice=query.get('cartridges')||'working';
 const bakedElements=cartridgeChoice==='working'&&query.get('elements')!=='static'&&!['pathtrace','pathtracer','quality'].includes(query.get('renderer'))&&(!query.has('optics')||query.get('optics')==='thickness');
 const rasterOpticalMode=query.get('optics')||(bakedElements?'thickness':'staged');
@@ -357,15 +365,23 @@ function pose(p,aspect){
     link.querySelector('.study-number').textContent=`0${active+1} / 06`;
     link.querySelector('.study-description').textContent=annotations[active];lastUI=active;
   }
-  document.querySelector('.study-link').tabIndex=p>.4&&p<.9?0:-1;
-  document.querySelector('.study-link').setAttribute('aria-hidden',String(!(p>.4&&p<.9)));
-  document.querySelectorAll('[data-label]').forEach(el=>{el.tabIndex=plate>.5?0:-1;el.setAttribute('aria-hidden',String(plate<=.5));});
-  document.querySelector('.social-card').inert=plate<.5;
+  const readable=mobileLayout.matches;
+  document.querySelector('.study-link').tabIndex=readable||p>.4&&p<.9?0:-1;
+  document.querySelector('.study-link').setAttribute('aria-hidden',String(!(readable||p>.4&&p<.9)));
+  document.querySelectorAll('[data-label]').forEach(el=>{el.tabIndex=readable||plate>.5?0:-1;el.setAttribute('aria-hidden',String(!readable&&plate<=.5));});
+  document.querySelector('.social-card').inert=!readable&&plate<.5;
   interfaceController.update(p,active);
 }
 function resize(){
   const active=current>.24&&!reduced.matches;stage.classList.toggle('three-active',active);
   const expansion=reduced.matches?0:smooth((current-.24)/.12),stageHeight=stage.clientHeight;
+  if(mobileLayout.matches){
+    surface.style.removeProperty('height');surface.style.removeProperty('top');surface.style.removeProperty('transform');
+    const w=surface.clientWidth,h=surface.clientHeight;
+    if(pathTracer)pathTracer.resize(w,h);
+    else if(w!==lastWidth||h!==lastHeight){renderer.setSize(w,h,false);lastWidth=w;lastHeight=h;lastRasterPose=-1;}
+    return w/h;
+  }
   const baseHeight=surface.clientWidth/1.6;
   surface.style.height=`${mix(baseHeight,stageHeight,expansion)}px`;
   surface.style.top=`${mix(innerWidth<=900?stageHeight*.1+baseHeight/2:stageHeight*.42,stageHeight*.5,expansion)}px`;
@@ -384,7 +400,7 @@ function resize(){
   return w/h;
 }
 function render(now){
-  frame=0;if(!ready||document.hidden||interfacePaused)return;
+  frame=0;if(!ready||document.hidden||interfacePaused||!canvasVisible)return;
   const dt=Math.min(.25,(now-(lastTime||now-16))/1000);lastTime=now;
   const proposed=reduced.matches?target:mix(current,target,1-Math.exp(-dt/0.10));
   optics?.requestProgress?.(proposed);
@@ -487,14 +503,15 @@ function drawRasterScene(){
   else{renderer.render(scene,camera);frameCalls+=renderer.info.render.calls;frameTriangles+=renderer.info.render.triangles;}
   if(auditElement&&window.instrument3D)auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());
 }
-function schedule(){if(!frame&&ready&&!document.hidden&&!interfacePaused)frame=requestAnimationFrame(render);}
+function schedule(){if(!frame&&ready&&!document.hidden&&!interfacePaused&&canvasVisible)frame=requestAnimationFrame(render);}
 let scrollOrigin=0,scrollDistance=1;
 function measureScroll(){scrollOrigin=root.offsetTop;scrollDistance=Math.max(1,root.offsetHeight-stage.offsetHeight);}
 function setTarget(p){const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);if(wasSettled)lastTime=0;schedule();}
-function scroll(){if(!reduced.matches&&!interfacePaused)setTarget((window.scrollY-scrollOrigin)/scrollDistance);}
+function scroll(){if(!mobileLayout.matches&&!reduced.matches&&!interfacePaused)setTarget((window.scrollY-scrollOrigin)/scrollDistance);}
 function jump(p){
   setTarget(p);
-  if(reduced.matches){current=target;schedule();}
+  if(mobileLayout.matches){if(reduced.matches)current=target;schedule();}
+  else if(reduced.matches){current=target;schedule();}
   else{window.scrollTo({top:scrollOrigin+target*scrollDistance,behavior:'instant'});schedule();}
 }
 function fallback(message){
@@ -513,8 +530,10 @@ function fallback(message){
 }
 
 async function init(){
-  routeSpec=await fetch(cartridgePreview?geometryBase+'route.json':'./instrument-route.json',{cache:'no-store'}).then(r=>r.json());assembled=routeSpec.assembled;
-  manifest=await fetch(geometryBase+'manifest.json',{cache:'no-store'}).then(r=>r.json());
+  [routeSpec,manifest]=await Promise.all([
+    fetch(cartridgePreview?geometryBase+'route.json':'./instrument-route.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('Route unavailable: '+r.status);return r.json();}),
+    fetch(geometryBase+'manifest.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('CAD manifest unavailable: '+r.status);return r.json();})
+  ]);assembled=routeSpec.assembled;
   if(manifest.workingGeometry){
     const thumbnails=document.querySelectorAll('.rail-art img');
     for(const [index,name] of[[3,'song'],[4,'combat'],[5,'scenes']])if(thumbnails[index])thumbnails[index].src=`${geometryBase}thumb-${name}.webp?v=${manifest.stats.sha256}`;
@@ -522,12 +541,17 @@ async function init(){
   const studioLighting=manifest.workingGeometry&&!qualityMode&&query.get('lighting')!=='workshop';
   const photographedStudio=studioLighting&&query.get('pbr-env')!=='authored';
   const photographedEnvironment={file:'./assets/pbr-metal/studio/studio_small_08-1024x512-rgba.f32.gz',width:1024,height:512,sha256:'a924864ac722d9bb7706b308c5be65df3d0feb27408c02ce34eed8a8158b7a5f',source:'Poly Haven Studio Small 08',author:'Sergej Majboroda',license:'CC0 1.0',method:'photographed HDR studio',rotationX:90,rotationZ:0,intensity:.38};
-  const [buffer,environment,texture]=await Promise.all([
-    inflate(`${geometryBase}instrument.bin.gz?v=${manifest.stats.sha256}`),photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
-    new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`)
-  ]);
-  if(buffer.byteLength!==manifest.stats.decodedGeometryBytes)throw new Error('Mesh package revision mismatch. Reload to fetch matching assets.');
   renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});
+  const customPbr=manifest.workingGeometry&&!qualityMode&&!debugNoFinish&&!['legacy','procedural'].includes(query.get('metal'));
+  startupPhase('assets','Loading the full CAD and original materials.');
+  const [buffer,environment,texture,customAssets,wearAssets]=await Promise.all([
+    loadGeometry(manifest,geometryBase,{onProgress:message=>status.textContent=message,legacy:query.get('transfer')==='legacy',metrics:startup.geometry}),photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
+    new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`),
+    customPbr?loadInstrumentPbrAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrAssets=value;return value;}):null,
+    customPbr&&query.get('wear')!=='clean'?loadInstrumentPbrWearAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrWearAssets=value;return value;}):null
+  ]);pbrAssets=customAssets;pbrWearAssets=wearAssets;
+  startupPhase('mesh-setup','Preparing the full CAD geometry.');
+  if(buffer.byteLength!==manifest.stats.decodedGeometryBytes)throw new Error('Mesh package revision mismatch. Reload to fetch matching assets.');
   // Full native raster resolution with hardware edge AA. Explicit higher
   // sampling remains available for matched offline comparisons.
   const sampleOverride=Number(new URLSearchParams(location.search).get('samples'));
@@ -568,8 +592,7 @@ async function init(){
   const materialCache=new Map();
   texture.colorSpace=THREE.NoColorSpace;texture.wrapS=texture.wrapT=THREE.RepeatWrapping;
   texture.anisotropy=Math.min(8,renderer.capabilities.getMaxAnisotropy());
-  if(manifest.workingGeometry&&!qualityMode&&!debugNoFinish&&!['legacy','procedural'].includes(query.get('metal')))pbrAssets=await loadInstrumentPbrAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()});
-  if(pbrAssets&&query.get('wear')!=='clean')pbrWearAssets=await loadInstrumentPbrWearAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()});
+
   for(const mesh of manifest.meshes){
     const key=mesh.module+mesh.material;
     if(!materialCache.has(key))materialCache.set(key,materialFor(mesh.material,texture,mesh.module));
@@ -616,6 +639,7 @@ async function init(){
     if(mesh.module==='light'&&mesh.material===3)opticalLens=object;
     if(mesh.module==='elements'&&mesh.material===7||manifest.customMaterials?.[mesh.material]?.role==='springs-water')object.userData.staticWater=true;
   }
+  startupPhase('playback','Preparing cached water and fire.');
   const params=new URLSearchParams(location.search),bakeAuthor=params.has('bake-author'),working=!!manifest.workingGeometry,pathBake=!working&&!bakeAuthor&&!params.has('live-optics');
   if(!working&&!bakeAuthor&&!pathBake)fluid=await loadFluid(groups.get('elements'),schedule);
   if(!working&&!bakeAuthor&&!pathBake&&!new URLSearchParams(location.search).has('screen-optics')){
@@ -642,7 +666,8 @@ async function init(){
   makeCable(['takeup',[0,0,0]],['takeup',[0,0,0]],takeup(1).length-1);
   for(let i=0;i<names.length-1;i++)makeCable([names[i],routeSpec.ports[names[i]][1]],[names[i+1],routeSpec.ports[names[i+1]][0]]);
   if(working){workingMotion=createWorkingMotion({manifest,route:routeSpec,groups,objects,cables});assembled=workingMotion.assembled;}
-  current=target=clamp(Number(query.get('resume'))||0);
+  current=target=query.has('resume')?clamp(Number(query.get('resume'))||0):mobileLayout.matches?.28:0;
+  startupPhase('lighting','Preparing native lighting and optics.');
   resize();pose(current,surface.clientWidth/surface.clientHeight);
   elementPlayback?.update(camera,current);
   if(working&&qualityMode){
@@ -707,6 +732,7 @@ async function init(){
         }
       }
     }
+    startupPhase('shader-compile','Compiling the original materials.');
     const shaderCompileStarted=performance.now();
     await renderer.compileAsync(scene,camera);
     if(nativeGeometryOptics){
@@ -726,22 +752,34 @@ async function init(){
       await new Promise(resolve=>setTimeout(resolve,0));
     }
   }
+  startupPhase('first-frame','Rendering the instrument.');
   root.classList.add('is-enhanced');ready=true;
   const initialSubmit=performance.now();drawScene();lastRender=performance.now()-initialSubmit;drawCount++;
   stage.classList.add('three-ready');status.textContent='';
+  startupPhase('ready');startup.readyMs=performance.now()-startup.started;
   measureScroll();interfaceController.ready();
   document.querySelector('[data-end="100"]').textContent='Next →';
-  document.querySelector('.scroll-position>span:last-child').textContent='Scroll to assemble & inspect ↓';
+  document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Use the 3D controls':'Scroll to assemble & inspect ↓';
   slider.addEventListener('input',()=>jump(Number(slider.value)/100));
   document.querySelectorAll('[data-end]').forEach(b=>b.addEventListener('click',()=>b.dataset.end==='100'?interfaceController.next():jump(0)));
-  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();jump(.49);}));
-  document.querySelectorAll('a[href="#projects"]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();jump(0);}));
+  document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();jump(.49);if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});}));
+  document.querySelectorAll('a[href="#projects"]').forEach(b=>b.addEventListener('click',e=>{if(!mobileLayout.matches){e.preventDefault();jump(0);}}));
   window.addEventListener('scroll',scroll,{passive:true});window.addEventListener('resize',()=>{measureScroll();schedule();},{passive:true});
+  if(typeof IntersectionObserver!=='undefined'){
+    const observer=new IntersectionObserver(([entry])=>{
+      canvasVisible=!mobileLayout.matches||entry.isIntersecting;
+      elementPlayback?.setPaused(interfacePaused||!canvasVisible);lastTime=0;
+      if(canvasVisible)schedule();else{cancelAnimationFrame(frame);frame=0;}
+    });observer.observe(surface);
+    window.addEventListener('pagehide',event=>{if(!event.persisted)observer.disconnect();});
+  }
+  mobileLayout.addEventListener('change',()=>{const rect=surface.getBoundingClientRect();canvasVisible=!mobileLayout.matches||rect.bottom>0&&rect.top<innerHeight;elementPlayback?.setPaused(interfacePaused||!canvasVisible);measureScroll();scroll();schedule();
+    document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Use the 3D controls':'Scroll to assemble & inspect ↓';});
   document.addEventListener('visibilitychange',()=>{lastTime=0;if(!document.hidden)schedule();});
   window.addEventListener('pagehide',event=>{if(!event.persisted){pathTracer?.dispose();rasterTiming?.dispose();rasterLighting?.dispose();rasterProbes?.dispose();rasterTransport?.dispose();rasterOptics?.dispose();rasterThickness?.dispose();disposeRasterResources();}});
   reduced.addEventListener('change',()=>{measureScroll();current=target=0;jump(0);schedule();});
   if(!rasterResourcesDisposed)renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();fallback('3D context lost. Reload to restore the instrument, or use the project links.');});
-  window.instrument3D={setProgress:jump,snapshot:()=>({ready,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
+  window.instrument3D={setProgress:jump,snapshot:()=>({ready,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
     meshes:manifest.meshes.length,sourceParts:manifest.stats.sourceParts,triangles:manifest.stats.triangles,
     calls:frameCalls,submittedTriangles:frameTriangles,
     drawCount,submitMs:lastRender,submitSamples:frameTimes.slice(-120),
@@ -787,5 +825,5 @@ async function init(){
   };
   if(query.has('resume'))jump(current);else scroll();schedule();
 }
-const interfaceController=createInstrumentInterface({stage,root,jump,isReady:()=>ready,getTarget:()=>target,reduced,onPaneChange:open=>{interfacePaused=open;elementPlayback?.setPaused(open);if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
+const interfaceController=createInstrumentInterface({stage,root,jump,isReady:()=>ready,getTarget:()=>target,reduced,onInspect:()=>{if(mobileLayout.matches)surface.scrollIntoView({block:'start',behavior:'auto'});},onPaneChange:open=>{interfacePaused=open;elementPlayback?.setPaused(open||!canvasVisible);if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
 init().catch(error=>{console.error(error);if(qualityMode&&/gpu|adapter|device|context/i.test(error.message||''))recoverQuality(error);else if(/creating WebGL context|context.*lost/i.test(error.message||''))fallback('This browser cannot start 3D graphics. Reopen the browser to retry, or explore the project links below.');else fallback('3D could not load. Use the project links or reload to retry.'+(query.has('audit')?' '+error.message:''));});

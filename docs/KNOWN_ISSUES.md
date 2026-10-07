@@ -30,7 +30,9 @@ in local staging and are not reported as pre-existing rendering defects.
 The default desktop main workflow passed the observed six-chapter traversal,
 dialog controls, keyboard End/Plate reset and Notes checks against the frozen
 baseline. The emulated reduced-motion mobile view loaded without overflow and
-matched its screenshot. Main runtime source is unchanged. See the
+matched its screenshot. Main runtime source was unchanged in that publication-baseline comparison.
+The later mobile/startup update is documented separately in
+[MOBILE_STARTUP.md](MOBILE_STARTUP.md); its browser acceptance is pending. See the
 [exact comparison](BROWSER_COMPARISON.md) for images, states and counts.
 
 Both baseline and staged runs produced WebGL texture-storage/copy warnings.

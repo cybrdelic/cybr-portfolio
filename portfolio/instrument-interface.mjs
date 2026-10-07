@@ -12,7 +12,7 @@ export function nextProjectStop(progress, direction=1) {
   return direction<0 ? [...stops].reverse().find(at=>at<progress-.005)??0 : stops.find(at=>at>progress+.005)??1;
 }
 
-export function createInstrumentInterface({stage, root, jump, isReady, getTarget, reduced, onPaneChange}) {
+export function createInstrumentInterface({stage, root, jump, isReady, getTarget, reduced, onPaneChange, onInspect=()=>{}}) {
   const route=document.createElement('nav');
   route.className='chapter-stops';route.setAttribute('aria-label','Inspect a project in 3D');
   route.innerHTML=PROJECT_STOPS.map((project,index)=>`<button type="button" data-route-project="${project.name}" aria-label="Inspect ${project.title} in 3D" disabled><span>0${index+1}</span>${project.title}</button>`).join('');
@@ -56,7 +56,7 @@ export function createInstrumentInterface({stage, root, jump, isReady, getTarget
     dialog.close();document.documentElement.classList.remove('has-project-pane');closing=false;
     window.scrollTo({top:savedScrollY,behavior:'instant'});onPaneChange(false);
     opener?.focus({preventScroll:true});
-    if(inspect){jump(PROJECT_STOPS[selected].at);route.querySelector(`[data-route-project="${PROJECT_STOPS[selected].name}"]`).focus({preventScroll:true});}
+    if(inspect){jump(PROJECT_STOPS[selected].at);route.querySelector(`[data-route-project="${PROJECT_STOPS[selected].name}"]`).focus({preventScroll:true});onInspect();}
   }
   query('.pane-close').addEventListener('click',()=>close());
   query('.pane-inspect').addEventListener('click',()=>close({inspect:true}));

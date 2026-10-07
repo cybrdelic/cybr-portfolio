@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4605,
-      "sha256": "7a3bea8a670a8d2b46c72cad55e43faa5cbe4589fb471846161b1021d441ed40"
+      "bytes": 4843,
+      "sha256": "5868974d96af1de2cea9f50093346fdd6b5a28efcddc5252630350268fe121f5"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1724,8 +1724,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 2037,
-      "sha256": "5996a72b906f164f0aba226cbbcd1754a37f89d7789ef2ebb96e333934b9d731"
+      "bytes": 2218,
+      "sha256": "044242c8a0e895e45e213f0ec73abfbf6bd38e44fa9de6c476ffaf3ce3570e79"
     },
     {
       "path": "docs/BROWSER_COMPARISON.md",
@@ -1739,13 +1739,18 @@
     },
     {
       "path": "docs/KNOWN_ISSUES.md",
-      "bytes": 3152,
-      "sha256": "542caefb1033cc77fb053227fbdf111c0c8440de5452cb770aaf404e95b70190"
+      "bytes": 3330,
+      "sha256": "daee66e869a3d6cac5bcbc5795c7d1caec47833fc1b4b257585ab7fd7134a18f"
     },
     {
       "path": "docs/LICENSE_INVENTORY.md",
       "bytes": 3012,
       "sha256": "6b54a6ab81899df7f8f34b39f2141a362564ff394bf42c2693b85a6a5eb7302a"
+    },
+    {
+      "path": "docs/MOBILE_STARTUP.md",
+      "bytes": 2559,
+      "sha256": "1a74426e05368949755c6d36b88a64975e34c5c9fe4a41cc1e67df3f69b17a8f"
     },
     {
       "path": "docs/PUBLICATION.md",
@@ -1789,8 +1794,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 478128,
-      "sha256": "beccb03118acf38a647a78ea82c19da0f8baee38930e4fb976f4377cfdbd8248"
+      "bytes": 480987,
+      "sha256": "ec62b06312f04bf9f81f09d8a3c470535c82adf2888bae0d7d25e504559af0c7"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -5063,14 +5068,19 @@
       "sha256": "5bf6ff4e270644a9d0799033a0cf8c9e36e9ebf9369d41053617b729fda824d9"
     },
     {
+      "path": "portfolio/assets/instrument-working-v1/instrument.lossless-v1.bin.gz",
+      "bytes": 34808214,
+      "sha256": "bbaeb51c4af49f2170f8babea4af9bc93cfa1c17bda4d1b2e2434ccf2760244f"
+    },
+    {
       "path": "portfolio/assets/instrument-working-v1/machined-roughness.png",
       "bytes": 727057,
       "sha256": "cf572da6140254d49538561465284f7c5f45e553bcf0d7c4af4f8be182a968f7"
     },
     {
       "path": "portfolio/assets/instrument-working-v1/manifest.json",
-      "bytes": 1202573,
-      "sha256": "680ea3e1cb8bfbd61366e88733686cf84e963cc62a8a591de27e799f72b77a5b"
+      "bytes": 1202939,
+      "sha256": "8c5fc4f46a11e9c651ff49e23166636a43b3a89e074a0927253c9022d539b319"
     },
     {
       "path": "portfolio/assets/instrument-working-v1/route.json",
@@ -6329,8 +6339,8 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6217,
-      "sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09"
+      "bytes": 6424,
+      "sha256": "2d74605238a083ffa8522448275388e3ea4f0f178868e9bff32a5ae86295f278"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -6344,8 +6354,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 67241,
-      "sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac"
+      "bytes": 70550,
+      "sha256": "16dd460cbe0aa50bc791cedcbc77678b081e8f141d48eed259f839ec838fd857"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -6393,6 +6403,26 @@
       "sha256": "d0f93526e672a3dcef45732b044fac637de0362828d9470bc83aea56f42f6a98"
     },
     {
+      "path": "portfolio/instrument-geometry-codec.mjs",
+      "bytes": 1484,
+      "sha256": "9143319bee8b8cb2f392ca86f8d94ab4020080da09ff5b63984e6ced68380ebc"
+    },
+    {
+      "path": "portfolio/instrument-geometry-codec.test.mjs",
+      "bytes": 1809,
+      "sha256": "6d6b30fdeeab6b9416a73cf200905e54962e9a2f248997cec793250c09ad878f"
+    },
+    {
+      "path": "portfolio/instrument-geometry-loader.mjs",
+      "bytes": 1899,
+      "sha256": "3e51ce0a173ac38fcdf15d78486a52fae991b9d086189ee86714b8602fdce26f"
+    },
+    {
+      "path": "portfolio/instrument-geometry-worker.mjs",
+      "bytes": 1562,
+      "sha256": "41c744c8932f03de8e67b4d68978fdacc38a0a24bbd41281cd477e470fa5f41a"
+    },
+    {
       "path": "portfolio/instrument-hdr-composite.mjs",
       "bytes": 1954,
       "sha256": "2e5860eeb90f6bc9f9d01ad565e0ff32df3657f9e0eb045a54f54f7cf9af9c52"
@@ -6419,8 +6449,8 @@
     },
     {
       "path": "portfolio/instrument-interface.mjs",
-      "bytes": 9846,
-      "sha256": "b3ad500d6e5843c4b5cc2b48129debb1ab574821278311e940c1252555671e38"
+      "bytes": 9876,
+      "sha256": "41664c27f242e348715cb94c42404c91308b12f836cc236f153b497de38e67f3"
     },
     {
       "path": "portfolio/instrument-metal-coordinates.mjs",
@@ -6441,6 +6471,11 @@
       "path": "portfolio/instrument-metal-finish.test.mjs",
       "bytes": 11626,
       "sha256": "ca3eaa0f492a36d3cf45aef4d4d33c4c7e6ac24c01ac8522a43fe08a08e0f2cd"
+    },
+    {
+      "path": "portfolio/instrument-mobile.css",
+      "bytes": 5472,
+      "sha256": "e686ab3d12dd46afb60fd67bc72a1018b156931a929e153eee46fcb99194e016"
     },
     {
       "path": "portfolio/instrument-native-geometry-transport.mjs",
@@ -7538,6 +7573,11 @@
       "sha256": "2aaeee025c434440e54d595bf53dd61b16a87cdb78890a1d762c66234621d96a"
     },
     {
+      "path": "tools/pack_geometry.py",
+      "bytes": 1575,
+      "sha256": "67eab791b9cc3166a5a5387ba517726c6bf2a2ed13f29463362fdf4d80475f19"
+    },
+    {
       "path": "tools/requirements-native-smoke.txt",
       "bytes": 32,
       "sha256": "7c1cc912ac6f6cbcfd990d304cb9f59dd0841e9bbcdc07e40016b2aa115a038d"
@@ -7547,5 +7587,6 @@
       "bytes": 4690,
       "sha256": "5ca0b6938a657c55fbe096c2e0b496d7e303134fb5e12e9d6b2364a8cd59679c"
     }
-  ]
+  ],
+  "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f"
 }

@@ -2,9 +2,12 @@
 
 The current laptop portfolio, organized as a self-contained source tree. The
 main entry is `portfolio/index.html`, loading
-`instrument-3d.js?v=elements-shared-4`. It presents the working CAD instrument,
-cached ELEMENTS water/fire playback, and six project pages. This source publication preserves the current behavior and known defects.
-It does not deploy a live site or certify final art quality.
+`instrument-3d.js?v=mobile-lossless-1`. It presents the working CAD instrument,
+cached ELEMENTS water/fire playback, and six project pages. The publication baseline preserves the original behavior and known defects.
+A subsequent mobile update adds normal page scrolling and a lossless geometry
+transfer while retaining the full model and materials. See
+[mobile and startup notes](docs/MOBILE_STARTUP.md) for scope and verification.
+The published portfolio uses this source; final art quality is not certified.
 
 ## Run the current version
 

@@ -32639,5 +32639,13 @@
       }
     ]
   },
-  "validationScope": "Geometric fit, rigid closure, cable routing and native mesh integrity; no force dynamics"
+  "validationScope": "Geometric fit, rigid closure, cable routing and native mesh integrity; no force dynamics",
+  "losslessTransfer": {
+    "format": "attribute-xor-byteplanes-gzip-v1",
+    "file": "instrument.lossless-v1.bin.gz",
+    "bytes": 34808214,
+    "sha256": "bbaeb51c4af49f2170f8babea4af9bc93cfa1c17bda4d1b2e2434ccf2760244f",
+    "originalCompressedBytes": 44827908,
+    "decodedSHA256": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756"
+  }
 }
