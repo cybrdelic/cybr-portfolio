@@ -5,7 +5,7 @@ import {createRasterPaper} from './instrument-raster-paper.mjs';
 // A complete real GEO component while the full instrument loads. It shares
 // the renderer and exact native mesh bytes; no image or reduced mesh is used.
 export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,environment,texture,
-  makeMaterial,forgetMaterial,slider,reduced,onFrame=()=>{}}){
+  makeMaterial,forgetMaterial,slider,reduced,onFrame=()=>{},scrollDriven=false,onProgress=()=>{}}){
   const scene=new THREE.Scene(),group=new THREE.Group();scene.add(group);
   const objects=[],materials=new Map(),camera=new THREE.OrthographicCamera();
   const geometryFor=record=>{
@@ -45,7 +45,7 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
   scene.updateMatrixWorld(true);
   const bounds=new THREE.Box3().setFromObject(group,false),center=bounds.getCenter(new THREE.Vector3()),size=bounds.getSize(new THREE.Vector3());
   const radius=size.length()*.5,lighting=setupRasterLighting({THREE,renderer,scene,objects,groups:new Map([['geo',group]]),studio:true});
-  let yaw=Math.atan2(-80,50),pitch=.57,frame=0,disposed=false,drawCount=0,angle=50,lastWidth=0,lastHeight=0,drag;
+  let yaw=Math.atan2(-80,50),pitch=.57,frame=0,disposed=false,drawCount=0,angle=scrollDriven?0:50,lastWidth=0,lastHeight=0,drag;
   function fit(){
     const width=surface.clientWidth,height=surface.clientHeight,aspect=width/height;
     if(width!==lastWidth||height!==lastHeight){renderer.setSize(width,height,false);lastWidth=width;lastHeight=height;}
@@ -61,26 +61,27 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
     renderer.setRenderTarget(null);renderer.render(scene,camera);drawCount++;onFrame();
   }
   function schedule(){if(!frame&&!disposed)frame=requestAnimationFrame(render);}
-  function rotate(){angle=Number(slider.value);yaw=Math.atan2(-80,50)+(angle-50)/100*Math.PI*2;slider.setAttribute('aria-valuetext',`Rotate GEO: ${Math.round((angle-50)*3.6)} degrees`);schedule();}
+  function rotate(){angle=Number(slider.value);yaw=Math.atan2(-80,50)+(scrollDriven?angle:angle-50)/100*Math.PI*2;slider.setAttribute('aria-valuetext',`Rotate GEO: ${Math.round((angle-50)*3.6)} degrees`);schedule();}
+  function input(){rotate();onProgress(angle/100);}
   function pointerDown(event){drag={id:event.pointerId,x:event.clientX,y:event.clientY,angle};}
   function pointerMove(event){
     if(!drag||drag.id!==event.pointerId)return;
     const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
     if(Math.abs(dx)<8||Math.abs(dx)<Math.abs(dy))return;
-    renderer.domElement.setPointerCapture(event.pointerId);slider.value=Math.max(0,Math.min(100,drag.angle+dx/surface.clientWidth*100));rotate();
+    renderer.domElement.setPointerCapture(event.pointerId);slider.value=Math.max(0,Math.min(100,drag.angle+dx/surface.clientWidth*100));input();
   }
   function pointerEnd(){drag=undefined;}
   function visibility(){if(!document.hidden)schedule();}
   fit();surface.append(renderer.domElement);await renderer.compileAsync(scene,camera);render();
-  slider.disabled=false;slider.value=50;slider.setAttribute('aria-label','Rotate the GEO component');
-  slider.addEventListener('input',rotate);window.addEventListener('resize',schedule);document.addEventListener('visibilitychange',visibility);
+  slider.disabled=false;slider.value=angle;slider.setAttribute('aria-label',scrollDriven?'Instrument tour progress':'Rotate the GEO component');
+  slider.addEventListener('input',input);window.addEventListener('resize',schedule);document.addEventListener('visibilitychange',visibility);
   const canvas=renderer.domElement;canvas.style.pointerEvents='auto';canvas.style.touchAction='pan-y';
   canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);
   canvas.addEventListener('pointerup',pointerEnd);canvas.addEventListener('pointercancel',pointerEnd);
-  return{reset(){slider.value=50;rotate();},snapshot(){return{ready:true,preview:true,fullReady:false,adapter,module:'geo',meshes:objects.length,
+  return{reset(){slider.value=scrollDriven?0:50;rotate();},setProgress(p){slider.value=Math.max(0,Math.min(1,p))*100;rotate();},snapshot(){return{ready:true,preview:true,fullReady:false,adapter,module:'geo',meshes:objects.length,camera:camera.position.toArray(),scrollDriven,
     triangles:manifest.meshes.filter(mesh=>mesh.module==='geo').reduce((n,mesh)=>n+mesh.indices.count/3,0),drawCount,target:angle/100,progress:angle/100,
     geometryHash:manifest.stats.sha256,verifiedGeometryHash:manifest.progressiveGeo.sha256Decoded,geometryVerificationScope:'GEO only',startup:window.instrumentStartup};},
-    dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);slider.removeEventListener('input',rotate);slider.removeAttribute('aria-label');
+    dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);slider.removeEventListener('input',input);slider.removeAttribute('aria-label');
       window.removeEventListener('resize',schedule);document.removeEventListener('visibilitychange',visibility);
       canvas.removeEventListener('pointerdown',pointerDown);canvas.removeEventListener('pointermove',pointerMove);canvas.removeEventListener('pointerup',pointerEnd);canvas.removeEventListener('pointercancel',pointerEnd);
       canvas.style.removeProperty('pointer-events');canvas.style.removeProperty('touch-action');

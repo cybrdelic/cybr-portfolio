@@ -1,3 +1,7 @@
+> The scroll-tour correction supersedes this update's ordinary mobile layout.
+> See [MOBILE_SCROLL_TOUR.md](MOBILE_SCROLL_TOUR.md); the native receipts below
+> describe the preceding PR #2 runtime.
+
 # Mobile layout and progressive native geometry
 
 The source-publication baseline is commit

@@ -1,0 +1,26 @@
+const clamp=value=>Math.max(0,Math.min(1,value));
+
+// The same continuous page coordinate drives desktop and mobile choreography.
+// This controller never cancels a native touch gesture or waits for a GPU frame.
+export function createScrollTour({root,stage,viewport,onProgress,isReduced=()=>false,isPaused=()=>false}){
+  let origin=0,distance=1,measured=false,lastProgress=0;
+  function measure(){
+    origin=root.getBoundingClientRect().top+viewport.scrollY;
+    distance=Math.max(1,root.offsetHeight-stage.offsetHeight);measured=true;
+  }
+  const progress=()=>clamp((viewport.scrollY-origin)/distance);
+  const top=p=>origin+clamp(p)*distance;
+  function scroll(){if(!isReduced()&&!isPaused()){lastProgress=progress();onProgress(lastProgress);}}
+  return{
+    measure,progress,scroll,
+    jump(p){p=clamp(p);lastProgress=p;onProgress(p);if(!isReduced())viewport.scrollTo({top:top(p),behavior:'instant'});},
+    resize({preserve=false}={}){
+      // Browsers can clamp scrollY before dispatching an orientation resize.
+      // Preserve the last published pose rather than the already-clamped Y.
+      const previous=lastProgress,wasMeasured=measured;measure();
+      if(preserve&&wasMeasured&&!isReduced()&&!isPaused())viewport.scrollTo({top:top(previous),behavior:'instant'});
+      scroll();
+    },
+    snapshot:()=>({origin,distance,scrollY:viewport.scrollY,progress:progress(),enabled:!isReduced()&&!isPaused()})
+  };
+}
