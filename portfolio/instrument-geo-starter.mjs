@@ -20,6 +20,11 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
     if([0,1,2,5,8,9].includes(record.material))attachMetalCoordinates({THREE,geometry,mesh:record,materialIndex:record.material});
     return geometry;
   };
+  let adapter;
+  try{
+    const gl=renderer.getContext?.(),debug=gl?.getExtension('WEBGL_debug_renderer_info');
+    if(gl)adapter={renderer:String(gl.getParameter(debug?.UNMASKED_RENDERER_WEBGL??gl.RENDERER))};
+  }catch{ /* Diagnostic metadata is optional and collected before any draw. */ }
   renderer.setPixelRatio(1);renderer.setClearColor(0xf4f4f2,0);
   renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1;
   scene.background=createRasterPaper(THREE,{color:0xf4f4f2,exposure:1});
@@ -72,7 +77,7 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
   const canvas=renderer.domElement;canvas.style.pointerEvents='auto';canvas.style.touchAction='pan-y';
   canvas.addEventListener('pointerdown',pointerDown);canvas.addEventListener('pointermove',pointerMove);
   canvas.addEventListener('pointerup',pointerEnd);canvas.addEventListener('pointercancel',pointerEnd);
-  return{reset(){slider.value=50;rotate();},snapshot(){return{ready:true,preview:true,fullReady:false,module:'geo',meshes:objects.length,
+  return{reset(){slider.value=50;rotate();},snapshot(){return{ready:true,preview:true,fullReady:false,adapter,module:'geo',meshes:objects.length,
     triangles:manifest.meshes.filter(mesh=>mesh.module==='geo').reduce((n,mesh)=>n+mesh.indices.count/3,0),drawCount,target:angle/100,progress:angle/100,
     geometryHash:manifest.stats.sha256,verifiedGeometryHash:manifest.progressiveGeo.sha256Decoded,geometryVerificationScope:'GEO only',startup:window.instrumentStartup};},
     dispose(){if(disposed)return;disposed=true;cancelAnimationFrame(frame);slider.removeEventListener('input',rotate);slider.removeAttribute('aria-label');

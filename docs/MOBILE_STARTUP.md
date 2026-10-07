@@ -68,3 +68,40 @@ startup or input-latency improvement is claimed until a matched 10 Mbps aggregat
 80 ms latency, CPU x4 comparison records first usable real 3D, navigation latency,
 full readiness and peak memory. SwiftShader emulation does not establish physical
 Android GPU performance; physical-device and optional WebGPU coverage remain open.
+
+
+## Post-load responsiveness follow-up
+
+The matched SwiftShader comparison of `62083f3` observed complete GEO at 9.43 s
+from navigation (captured at 9.61 s), compared with 78.58 s for the baseline's
+first complete instrument. Early navigation actions took 57–295 ms. Full-scene
+acceptance failed: a 24.44 s main-thread task followed full readiness, and the
+existing canvas lookup/scroll timed out after 5 s. This was an unresponsive page,
+not a missing canvas. Full-model ready timestamps were 64.37 s / 65.96 s, so
+total full readiness was not improved. Those partial receipts remain preserved.
+
+The follow-up keeps mobile GPU timing opt-in (`?timing=gpu`), retaining CPU
+metrics without disjoint/query polling. The long task occurred outside the
+measured draw submission and closely matched the 22.75 s startup GPU duration;
+GPU driver/query synchronization is the leading explanation, to be verified
+with new per-phase CPU markers. The measurement harness now uses cached adapter
+metadata instead of making its own WebGL queries.
+
+Reflection work now yields between at most 8,192 original triangles per
+submission, in the vendored renderer's original opaque order. All six 128 px
+faces, original background conversion, depth state and complete-cube convolution
+remain retained. Background conversion also yields by native face. Capture
+shader variants warm asynchronously before use; live state is restored before
+awaiting. Navigation cancels partial geometry pieces and deferred work. A camera
+or viewport change reuses the original 2048 px shadow map only when every tracked
+world matrix, geometry/attribute identity, buffer version and visibility flag is
+unchanged. Actual geometry changes invalidate it.
+
+305 CPU regressions pass. Browser acceptance of this follow-up remains pending.
+The focused full-loaded chapter/landscape check retains the 5 s responsiveness
+timeout and requires chapter tap actions below 1 s. It omits the repeated cold
+baseline. A separate cold candidate check retains 10 Mbps aggregate / 80 ms /
+CPU x4 conditions. The original baseline assertion tolerance is transparently
+corrected to 0.001 to allow scroll pixel rounding (0.490044 vs 0.49). Previous
+failure evidence is not overwritten. SwiftShader does not establish physical
+Android GPU performance.

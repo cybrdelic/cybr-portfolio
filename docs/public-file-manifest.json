@@ -15,7 +15,7 @@
     {
       "path": "README.md",
       "bytes": 4846,
-      "sha256": "bc49d5fde5dcc76aca41f5b101f6034bd2224c16466700308f0c8b68c1f43d29"
+      "sha256": "2d5d757bb2671aeb613cfcc34276d3371d957f7105818fc0681f50d2a9d0a723"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1749,8 +1749,8 @@
     },
     {
       "path": "docs/MOBILE_STARTUP.md",
-      "bytes": 4429,
-      "sha256": "7ac6366560f56d148d35cc33be9a20c96a159b5eb93bd7517ff8e0acd6c49126"
+      "bytes": 6756,
+      "sha256": "75278e1780a13e1656208f21a225b6895194d759e380f5606a13d2cda2a54666"
     },
     {
       "path": "docs/PUBLICATION.md",
@@ -1794,8 +1794,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 484208,
-      "sha256": "5f1f92ef072d634200f19f3f898d2530c8dcd59f6e354ac0d75e386a7637a50b"
+      "bytes": 485880,
+      "sha256": "ea2f92a475c0604d8a099dfd6dd9e3ee56ca9c48dbc3f3bb8d149675214ae618"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -6345,7 +6345,7 @@
     {
       "path": "portfolio/index.html",
       "bytes": 6427,
-      "sha256": "bd2c0dfab05440f7289a095688933e1b9a05fc694167fe1da50b47d3a44141ed"
+      "sha256": "263718b3c2a2021d5e5a03357bc61708d03e09014c10132a7b9cb085acbde20e"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -6359,8 +6359,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 74755,
-      "sha256": "2f66c79855c029bb4f1e017408ef9c609859f636f111e9c41187e6afada67313"
+      "bytes": 75361,
+      "sha256": "05eeb063ae8a25b68baaa6e0f5bc5559db0eb25d0277499484ae1920b092eeba"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -6409,8 +6409,8 @@
     },
     {
       "path": "portfolio/instrument-geo-starter.mjs",
-      "bytes": 7121,
-      "sha256": "492576f701e744fb48d7b5b673c47c59fe085f3424d3b9e189e6014dce7d9491"
+      "bytes": 7421,
+      "sha256": "215919dd874cec93088969573430da8da5e615033f9cd150e31bb2949a5d8b53"
     },
     {
       "path": "portfolio/instrument-geo-starter.test.mjs",
@@ -6603,6 +6603,16 @@
       "sha256": "fec21b5474c5f91d2d495b88109cf1a34003dec27af419e13144d7e574895e22"
     },
     {
+      "path": "portfolio/instrument-probe-draws.mjs",
+      "bytes": 4875,
+      "sha256": "29c7428e0dd115afbf37ce094db414e6ecf63170db317e809d4191adf0ec00be"
+    },
+    {
+      "path": "portfolio/instrument-probe-draws.test.mjs",
+      "bytes": 4018,
+      "sha256": "edfa324c1852e097fa664dbd4d8bbad4eb0268265ab60b8ca2414828aca2a7ca"
+    },
+    {
       "path": "portfolio/instrument-qa.js",
       "bytes": 1749,
       "sha256": "1bb87ef72503b5b962902ba9cf881f81e847c1056d3af91979fb833b3f834697"
@@ -6629,13 +6639,13 @@
     },
     {
       "path": "portfolio/instrument-raster-lighting.mjs",
-      "bytes": 7793,
-      "sha256": "24e6703aa22a4d7e628f5927605231d368c6da32ca1bd0f64e90b8634bfb5a91"
+      "bytes": 8766,
+      "sha256": "0989b3a4c576c7e30e077cfd4aa84ef2036a3d4bb39f8c353677c7aafadaf262"
     },
     {
       "path": "portfolio/instrument-raster-lighting.test.mjs",
-      "bytes": 7339,
-      "sha256": "34a510ca80a006947a2d97dd93a41ef5bc09299b62c31dce520c4b0f34656e80"
+      "bytes": 8782,
+      "sha256": "5b5dbde0b2a266ff0746fadef8eb8521a007ce3c1ecd53b766c326c6e283ff5a"
     },
     {
       "path": "portfolio/instrument-raster-optics.mjs",
@@ -6659,13 +6669,13 @@
     },
     {
       "path": "portfolio/instrument-raster-probes.mjs",
-      "bytes": 26145,
-      "sha256": "3534d031e5ef66b3f5687a810b66a088df30b10978a5aa257e195af1ec382fb0"
+      "bytes": 31212,
+      "sha256": "35ddb8b4beff518334492509899ee27ec5c556b4874237e2c4d2a11f4f6fe243"
     },
     {
       "path": "portfolio/instrument-raster-probes.test.mjs",
-      "bytes": 28085,
-      "sha256": "bcb1b5c1f90aad3eedcbe4f0074ac7bd23232804da1f9c90f036d8c10dccaa52"
+      "bytes": 31707,
+      "sha256": "77e2578c7f5dbe3915212edc2b4a2e270ef8ae9674df3a8870ee94e82f8379cf"
     },
     {
       "path": "portfolio/instrument-raster-thickness.mjs",
@@ -6679,13 +6689,13 @@
     },
     {
       "path": "portfolio/instrument-raster-timing.mjs",
-      "bytes": 6967,
-      "sha256": "3fa0d7772536f91e53fa66eee69c289b328362297b79c42667e4cc1bdeabbe28"
+      "bytes": 7032,
+      "sha256": "c9eb121b9ae9dc245f843c24502bb4c2db98f3f213b8786e6a2144d9aa953927"
     },
     {
       "path": "portfolio/instrument-raster-timing.test.mjs",
-      "bytes": 7550,
-      "sha256": "92fb35746b319cac71241a1761ff6f4344216151dd02ed206f408d6013b906e2"
+      "bytes": 8583,
+      "sha256": "5a409b303c0129760973a0257e6098ea557a20585b8d19d5784e88d4e359e3f2"
     },
     {
       "path": "portfolio/instrument-raster-transport.mjs",

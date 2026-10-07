@@ -402,8 +402,10 @@ function resize(){
   }
   return w/h;
 }
+const frameWork=[];
 function render(now){
   frame=0;if(!ready||document.hidden||interfacePaused||!canvasVisible)return;
+  let phaseAt=performance.now();const work={at:phaseAt},phase=name=>{const next=performance.now();work[name]=next-phaseAt;phaseAt=next;};
   const dt=Math.min(.25,(now-(lastTime||now-16))/1000);lastTime=now;
   const proposed=reduced.matches?target:mix(current,target,1-Math.exp(-dt/0.10));
   optics?.requestProgress?.(proposed);
@@ -415,17 +417,18 @@ function render(now){
   }else if(optics?.resolveProgress)status.textContent='';
   current=resolved;
   if(Math.abs(current-target)<.000025)current=target;
-  const aspect=resize();pose(current,aspect);
+  const aspect=resize();pose(current,aspect);phase('poseMs');
   if(!optics&&!bakedElements)fluid?.setProgress(current);
   elementPlayback?.update(camera,current);
   optics?.setProgress(current);
-  rasterTiming?.poll();
+  phase('playbackMs');rasterTiming?.poll();phase('timerPollMs');
   const moving=Math.abs(current-target)>.000025;
   const begin=performance.now(),submitted=pathTracer||!workingMotion||current!==lastRasterPose||elementFrameDirty||rasterProbes?.needsFrame()||rasterLighting?.needsFrame()?drawScene():false;
-  elementFrameDirty=false;
+  phase('drawMs');elementFrameDirty=false;
   if(elementAudit)elementAudit.textContent=JSON.stringify({water:fluid?.snapshot(),fire:elementPlayback?.snapshot(),progress:current,optics:rasterOpticalMode,paused:interfacePaused});
   if(submitted!==false){lastRender=performance.now()-begin;drawCount++;if(frameTimes.length<1000)frameTimes.push(lastRender);rasterTiming?.recordFrame({now,moving,submitMs:lastRender});}
   if(auditElement&&window.instrument3D)auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());
+  phase('auditMs');frameWork.push(work);if(frameWork.length>12)frameWork.shift();
   if(moving||pathTracer?.needsFrame()||rasterProbes?.needsFrame()||rasterLighting?.needsFrame()||rasterTiming?.snapshot().pendingQueries)schedule();
 }
 function drawScene(){
@@ -577,6 +580,7 @@ async function init(){
     stage.classList.add('three-ready','geo-starter');
     interfaceController.ready(['geo']);interfaceController.update(.49,0);
     document.querySelector('.phase-name').textContent='01 / GEO component';
+    document.querySelector('.scroll-position>span:last-child').textContent='Drag GEO or use the slider';
     const study=document.querySelector('.study-link');study.tabIndex=0;study.setAttribute('aria-hidden','false');
     study.dataset.project='geo';study.querySelector('.study-description').textContent='Complete native GEO component';
     document.querySelectorAll('[data-end]').forEach(button=>button.disabled=true);
@@ -729,10 +733,11 @@ async function init(){
     renderer.domElement.remove();disposeRasterResources();surface.append(pathTracer.canvas);resize();pose(current,surface.clientWidth/surface.clientHeight);
   }else{
     if(working){
-      rasterTiming=createRasterTiming(renderer);
+      rasterTiming=createRasterTiming(renderer,{gpuQueries:!mobileLayout.matches||query.get('timing')==='gpu'});
       rasterLighting=setupRasterLighting({THREE,renderer,scene,objects,cableMeshes:cables.map(c=>c.mesh),groups,schedule,studio:studioLighting});
       const {setupRasterProbes}=await import('./instrument-raster-probes.mjs?v=depth-3');
-      if(query.get('probes')!=='off')rasterProbes=setupRasterProbes({THREE,renderer,scene,objects,cableMeshes:cables.map(c=>c.mesh),groups,environment:env,schedule,reflectionWeight:.15,diffuseWeight:0,sliceCapture:mobileLayout.matches});
+      if(query.get('probes')!=='off')rasterProbes=setupRasterProbes({THREE,renderer,scene,objects,cableMeshes:cables.map(c=>c.mesh),groups,environment:env,schedule,reflectionWeight:.15,diffuseWeight:0,sliceCapture:mobileLayout.matches,captureTriangles:mobileLayout.matches&&query.get('probe-chunks')!=='off'?8192:0});
+      await rasterProbes?.prepare();
       // Rasterized CAD exit depths preserve physical thickness without BVH
       // traversal. Existing HDR depth buffers reject foreground sample leaks.
       if(rasterOpticalMode==='thickness'||partialRayOptics){
@@ -828,7 +833,7 @@ async function init(){
   window.addEventListener('pagehide',event=>{if(!event.persisted){pathTracer?.dispose();rasterTiming?.dispose();rasterLighting?.dispose();rasterProbes?.dispose();rasterTransport?.dispose();rasterOptics?.dispose();rasterThickness?.dispose();disposeRasterResources();}});
   reduced.addEventListener('change',()=>{measureScroll();current=target=0;jump(0);schedule();});
   if(!rasterResourcesDisposed)renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();fallback('3D context lost. Reload to restore the instrument, or use the project links.');});
-  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready,preview:false,fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
+  window.instrument3D={setProgress:jump,snapshot:()=>({ready,fullReady:ready,preview:false,frameWork,fullGeometryVerified:!!startup.geometry.decodedSHA256,startup,mobileLayout:mobileLayout.matches,canvasVisible,progress:current,target,renderMode:pathTracer?'cybr-light-webgpu-pathtracer':working?'working-cad-hybrid-raster-webgl2':pathBake?'camera-path-bake':'live-optics',
     meshes:manifest.meshes.length,sourceParts:manifest.stats.sourceParts,triangles:manifest.stats.triangles,
     calls:frameCalls,submittedTriangles:frameTriangles,
     drawCount,submitMs:lastRender,submitSamples:frameTimes.slice(-120),

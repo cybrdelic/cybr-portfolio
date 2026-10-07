@@ -45,7 +45,7 @@ test('rejects malformed cube readback and nonfinite radiance', () => {
   assert.equal(opticalMaterial({transmission:0,opacity:1}),false);
 });
 
-function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback=false,reflectionWeight,diffuseWeight,sliceCapture=false}={}) {
+function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback=false,reflectionWeight,diffuseWeight,sliceCapture=false,captureTriangles=0,captureWakeDelayMs=32}={}) {
   let clockNow=0;
   const THREE={...NativeThree}, scene=new THREE.Scene(),groups=new Map(),objects=[];
   for(const [name,x,size] of [['geo',0,20],['elements',40,30],['combat',90,20]]) {
@@ -76,7 +76,7 @@ function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback
       assert.equal(groups.get(probes.snapshot().receiverModule).visible,false);
       assert.equal(optical.visible,false);assert.equal(helper.visible,false);
       assert.equal(objects[0].material.envMap,null);
-      assert.equal(scene.background,environment);assert.equal(scene.environment,originalEnv);
+      assert.ok(scene.background===environment||captureTriangles>0&&scene.background===null);assert.equal(scene.environment,originalEnv);
       assert.equal(this.toneMapping,THREE.NoToneMapping);assert.equal(this.xr.enabled,false);
       assert.equal(light.shadow.autoUpdate,false);
       if(failRender && this.renderCalls===2)throw Error('Injected second face failure');
@@ -112,7 +112,7 @@ function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback
   };
   THREE.WebGLCubeRenderTarget=class extends NativeThree.WebGLCubeRenderTarget {dispose(){cubeDisposed++;super.dispose();}};
   const camera=new THREE.PerspectiveCamera();camera.position.set(-15,-80,40);camera.lookAt(40,0,0);camera.updateMatrixWorld();
-  const probes=setupRasterProbes({THREE,renderer,scene,objects,groups,environment,reflectionWeight,diffuseWeight,sliceCapture,
+  const probes=setupRasterProbes({THREE,renderer,scene,objects,groups,environment,reflectionWeight,diffuseWeight,sliceCapture,captureTriangles,captureDelayMs:captureWakeDelayMs,
     schedule:()=>schedules++,clock:()=>clockNow});
   function assertRestored() {
     assert.equal(renderer.target,originalTarget);assert.equal(renderer.face,3);assert.equal(renderer.mip,2);
@@ -387,5 +387,50 @@ test('partial mobile capture disposal and face failures restore state without pu
     h.assertRestored();h.probes.dispose();h.probes.dispose();
     assert.equal(h.probes.snapshot().captures,0);assert.equal(h.probes.needsFrame(),false);
     assert.equal(h.counts().cubeDisposed,1);assert.equal(h.counts().pmremDisposed,1);assert.equal(h.convolved.length,0);
+  }
+});
+
+test('bounded probe draws yield between submissions and publish only all six original faces',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,captureDelayMs:32,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  const materials=h.objects.map(object=>object.material),ranges=h.objects.map(object=>({...object.geometry.drawRange}));
+  probes.update(camera,{now:0});assert.equal(probes.needsFrame(),false);assert.equal(probes.snapshot().captureWaiting,true);
+  let now=750,steps=0;
+  while(probes.snapshot().captures===0&&steps<200){
+    h.setClock(now);t.mock.timers.tick(steps===0?750:32);
+    const before=h.renderer.renderCalls;probes.update(camera,{now});
+    assert.ok(h.renderer.renderCalls-before<=1,'one native submission per wake');h.assertRestored();
+    h.objects.forEach((object,i)=>{assert.equal(object.material,materials[i]);assert.deepEqual(object.geometry.drawRange,ranges[i]);});
+    if(probes.snapshot().captures===0){assert.equal(probes.needsFrame(),false);assert.equal(probes.snapshot().blend,0);}
+    steps++;now+=32;
+  }
+  assert.equal(probes.snapshot().captures,1);assert.equal(probes.snapshot().faceRenders,6);assert.equal(probes.snapshot().triangleBudget,2);
+  assert.ok(probes.snapshot().drawSlices>6);assert.equal(probes.snapshot().pixelReads,0);assert.equal(h.convolved.length,1);
+  probes.update(camera,{now:now+250});assert.equal(probes.snapshot().blend,.15);probes.dispose();
+});
+test('navigation and disposal cancel deferred geometry pieces without stale map publication',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});h.setClock(750);t.mock.timers.tick(750);probes.update(camera,{now:750});
+  assert.equal(probes.snapshot().captures,0);assert.equal(probes.snapshot().captureWaiting,true);
+  probes.update(camera,{now:760,moving:true,geometryChanged:true});assert.equal(probes.snapshot().discardedCaptures,1);
+  const schedules=h.counts().schedules;t.mock.timers.tick(1000);assert.equal(h.counts().schedules,schedules);
+  assert.equal(probes.snapshot().captureDraw,null);assert.equal(probes.snapshot().captures,0);h.assertRestored();
+  probes.update(camera,{now:1800});assert.equal(probes.snapshot().captureWaiting,true);
+  const before=h.counts().schedules;probes.dispose();t.mock.timers.tick(1000);assert.equal(h.counts().schedules,before);
+  assert.equal(probes.snapshot().captureWaiting,false);assert.equal(probes.needsFrame(),false);
+});
+
+test('capture shader warmup restores live scene before awaiting, including compilation failure',async()=>{
+  for(const fail of [false,true]){
+    const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0});let compiles=0;
+    h.renderer.compileAsync=(scene,camera)=>{
+      compiles++;assert.equal(scene.background,null);assert.equal(h.objects[0].material.envMap,null);
+      assert.equal(h.renderer.toneMapping,h.THREE.NoToneMapping);assert.ok(camera.isPerspectiveCamera);
+      return Promise.resolve().then(()=>{h.assertRestored();if(fail)throw Error('shader failure');});
+    };
+    if(fail)await assert.rejects(h.probes.prepare(),/shader failure/);else await h.probes.prepare();
+    h.assertRestored();assert.equal(h.probes.snapshot().captures,0);assert.equal(h.renderer.renderCalls,0);
+    assert.equal(compiles,fail?1:3);h.probes.dispose();
   }
 });

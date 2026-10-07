@@ -2,7 +2,7 @@
 
 The current laptop portfolio, organized as a self-contained source tree. The
 main entry is `portfolio/index.html`, loading
-`instrument-3d.js?v=mobile-progressive-2`. It presents the working CAD instrument,
+`instrument-3d.js?v=mobile-progressive-3`. It presents the working CAD instrument,
 cached ELEMENTS water/fire playback, and six project pages. The publication baseline preserves the original behavior and known defects.
 A subsequent mobile update adds normal page scrolling and a lossless geometry
 transfer while retaining the full model and materials. See

@@ -1,3 +1,4 @@
+import {planProbeDraws,createProbeBackground} from './instrument-probe-draws.mjs';
 // One settled local probe supplies actual opaque-neighbor reflections and
 // measured low-frequency incident radiance. It is a single spatial sample,
 // not a multi-bounce GI solver. The original HDR remains the moving baseline.
@@ -117,7 +118,7 @@ vec3 cadProbeIrradiance(vec3 n) {
 `;
 
 export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes = [], groups, environment,
-  reflectionWeight=LOCAL_WEIGHT, diffuseWeight=LOCAL_WEIGHT, schedule = () => {}, clock = nowTime, sliceCapture=false }) {
+  reflectionWeight=LOCAL_WEIGHT, diffuseWeight=LOCAL_WEIGHT, schedule = () => {}, clock = nowTime, sliceCapture=false, captureTriangles=0, captureDelayMs=32 }) {
   if (!THREE || !renderer || !scene || !(groups instanceof Map) || !Array.isArray(objects)) throw Error('Invalid raster-probe scene');
   if(!Number.isFinite(reflectionWeight)||!Number.isFinite(diffuseWeight)||reflectionWeight<0||reflectionWeight>1||diffuseWeight<0||diffuseWeight>1)
     throw Error('Probe reflection and diffuse weights must be finite values from zero to one');
@@ -131,6 +132,16 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     });
   });
   const originalEnvironment = scene.environment;
+  if(!Number.isInteger(captureTriangles)||captureTriangles<0||!Number.isFinite(captureDelayMs)||captureDelayMs<0)throw Error('Invalid probe slice budget');
+  const chunked=sliceCapture&&captureTriangles>0;
+  const background=chunked?createProbeBackground(THREE,renderer,environment):null;
+  let captureTimer=0,captureReady=!chunked;
+  function cancelWake(){if(captureTimer)clearTimeout(captureTimer);captureTimer=0;if(chunked)captureReady=false;}
+  function armWake(delay){
+    if(!chunked||disposed||captureTimer)return;captureReady=false;
+    captureTimer=setTimeout(()=>{captureTimer=0;captureReady=true;if(!disposed)schedule();},Math.max(0,delay));
+  }
+
   const cubeTarget = new THREE.WebGLCubeRenderTarget(FACE_SIZE,{type:THREE.HalfFloatType,format:THREE.RGBAFormat,
     minFilter:THREE.LinearFilter,magFilter:THREE.LinearFilter,generateMipmaps:false});
   cubeTarget.texture.colorSpace = THREE.LinearSRGBColorSpace;
@@ -141,7 +152,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
   let filteredTarget, inFlight, captureQueue, disposed = false, pending = true, selectedName = '', selectedGroup, captureGroup = '',
     epoch = 0, capturedEpoch = -1, lastChange = -Infinity, lastUpdate = NaN, lastMoving = false,
     blend = 0, blendTarget = 0, irradianceReady = false, captureCenters, anchorArray, lastError;
-  const counters = {attempts:0,captures:0,faceRenders:0,environmentPreparationRenders:0,pixelReads:0,invalidations:0,largePoseInvalidations:0,
+  const counters = {attempts:0,captures:0,faceRenders:0,drawSlices:0,slicedTriangles:0,environmentPreparationRenders:0,pixelReads:0,invalidations:0,largePoseInvalidations:0,
     failures:0,discardedCaptures:0,lastSliceMs:0,maxSliceMs:0,lastCaptureMs:0,totalCaptureMs:0,lastCaptureSubmitMs:0,lastReadbackMs:0,lastSHIntegrationMs:0,
     lastCaptureAt:null,opticalExcluded:0};
   const asynchronousReadback=measureIrradiance&&typeof renderer.readRenderTargetPixelsAsync==='function';
@@ -188,10 +199,11 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     record.shaders.add(shader);
   }
   function capture(now) {
+    if(chunked)captureReady=false;
     let record=sliceCapture?captureQueue:undefined;
     if(!record){counters.attempts++;counters.lastReadbackMs=0;counters.lastSHIntegrationMs=0;
       record={epoch,name:selectedName,group:selectedGroup,started:clock(),now,candidate:undefined,face:0,submitTotal:0,lights:new Map()};}
-    const started=record.started,stepStarted=clock(),visibility=new Map(),envMaps=new Map(),blends=new Map(),lightShadows=[],lightValues=[];
+    const started=record.started,stepStarted=clock(),visibility=new Map(),envMaps=new Map(),blends=new Map(),drawMaterials=new Map(),drawRanges=new Map(),lightShadows=[],lightValues=[];
     const state = {target:renderer.getRenderTarget(),face:renderer.getActiveCubeFace?.() ?? 0,mip:renderer.getActiveMipmapLevel?.() ?? 0,
       viewport:renderer.getViewport?.(new THREE.Vector4()),scissor:renderer.getScissor?.(new THREE.Vector4()),scissorTest:renderer.getScissorTest?.(),
       autoClear:renderer.autoClear,toneMapping:renderer.toneMapping,toneMappingExposure:renderer.toneMappingExposure,
@@ -240,13 +252,34 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
       if (renderer.shadowMap) {renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=false;}
       const render = renderer.render;
       countedRender = (...args) => {
-        if (cubeCamera.children.includes(args[1])) counters.faceRenders++;
+        if(cubeCamera.children.includes(args[1])){if(!chunked)counters.faceRenders++;}
         else counters.environmentPreparationRenders++;
         return render.apply(renderer,args);
       };
       renderer.render=countedRender;
       try {
-        if(!sliceCapture)cubeCamera.update(renderer,scene);
+        if(chunked){
+          if(background&&!background.ready)background.step();
+          else if(record.face<6){
+            if(cubeCamera.coordinateSystem!==renderer.coordinateSystem){cubeCamera.coordinateSystem=renderer.coordinateSystem;cubeCamera.updateCoordinateSystem();}
+            const faceCamera=cubeCamera.children[record.face];
+            if(!record.draws){record.draws=planProbeDraws({THREE,scene,meshes,camera:faceCamera,maxTriangles:captureTriangles,sortObjects:renderer.sortObjects!==false});record.drawIndex=0;record.faceStarted=false;}
+            for(const mesh of meshes)mesh.visible=false;
+            cubeTarget.texture.generateMipmaps=false;renderer.setRenderTarget(cubeTarget,record.face,cubeCamera.activeMipmapLevel);
+            if(!record.faceStarted){
+              scene.background=background?.texture??environment;renderer.autoClear=true;
+              renderer.render(scene,faceCamera);record.faceStarted=true;
+            }else{
+              const draw=record.draws[record.drawIndex++],object=draw.object,geometry=object.geometry;
+              drawMaterials.set(object,object.material);drawRanges.set(geometry,{...geometry.drawRange});
+              object.material=draw.material;object.visible=true;geometry.setDrawRange(draw.start,draw.count);
+              scene.background=null;renderer.autoClear=false;renderer.render(scene,faceCamera);counters.slicedTriangles+=draw.count/3;
+            }
+            counters.drawSlices++;
+            if(record.drawIndex===record.draws.length){record.face++;record.draws=undefined;record.faceStarted=false;counters.faceRenders++;}
+            if(record.face===6)cubeTarget.texture.needsPMREMUpdate=true;
+          }
+        }else if(!sliceCapture)cubeCamera.update(renderer,scene);
         else if(record.face<6){
           if(cubeCamera.coordinateSystem!==renderer.coordinateSystem){cubeCamera.coordinateSystem=renderer.coordinateSystem;cubeCamera.updateCoordinateSystem();}
           cubeTarget.texture.generateMipmaps=false;
@@ -261,6 +294,8 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     } catch (caught) {
       error=caught;
     } finally {
+      for(const [object,material] of drawMaterials)object.material=material;
+      for(const [geometry,range] of drawRanges)geometry.setDrawRange(range.start,range.count);
       for (const [object,visible] of visibility) object.visible=visible;
       for (const [material,envMap] of envMaps) material.envMap=envMap;
       for (const [record,values] of blends) [record.blend.value,record.diffuseBlend.value]=values;
@@ -280,7 +315,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
       record.submitted=clock();const sliceMs=Math.max(0,record.submitted-stepStarted);record.submitTotal+=sliceMs;
       counters.lastSliceMs=sliceMs;counters.maxSliceMs=Math.max(counters.maxSliceMs,sliceMs);counters.lastCaptureSubmitMs=record.submitTotal;
     }
-    if(sliceCapture&&!error&&!record.candidate){captureQueue=record;schedule();return;}
+    if(sliceCapture&&!error&&!record.candidate){captureQueue=record;if(chunked)armWake(captureDelayMs);else schedule();return;}
     captureQueue=undefined;inFlight=record;
     if(error){finishCapture(record,undefined,error);return;}
     if(!measureIrradiance){finishCapture(record);return;}
@@ -348,6 +383,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     scene.updateMatrixWorld(true);
     const [name,group]=receiver(camera,progress), changedGroup=name!==selectedName;
     if (geometryChanged || changedGroup || (moving&&!lastMoving)) {
+      cancelWake();
       if(captureQueue){captureQueue.candidate?.dispose();captureQueue=undefined;counters.discardedCaptures++;}
       epoch++;counters.invalidations++;pending=true;lastChange=now;blendTarget=0;
       if (changedGroup) {blend=0;irradianceReady=false;}
@@ -360,7 +396,7 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     selectedName=name;selectedGroup=group;lastMoving=!!moving;
     if (moving) {blendTarget=0;lastChange=now;}
     else if (!pending && capturedEpoch===epoch && captureGroup===selectedName) blendTarget=influenceTarget;
-    if (pending && !inFlight && !moving && now-lastChange>=(sliceCapture?750:SETTLE_MS) && (!filteredTarget || blend<=1e-5)) capture(now);
+    if (pending && !inFlight && !moving && (!chunked||captureReady) && now-lastChange>=(sliceCapture?750:SETTLE_MS) && (!filteredTarget || blend<=1e-5)) capture(now);
     const dt=Number.isFinite(lastUpdate)?Math.max(0,Math.min(BLEND_MS,now-lastUpdate)):0;
     if (blend<blendTarget) blend=Math.min(blendTarget,blend+dt/BLEND_MS);
     else if (blend>blendTarget) blend=Math.max(blendTarget,blend-dt/BLEND_MS);
@@ -368,10 +404,11 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     // Capture may set a completion timestamp after this frame's start time.
     // Preserve it so the next fade step excludes the blocking readback cost.
     lastUpdate=Number.isFinite(lastUpdate)?Math.max(now,lastUpdate):now;setBlend();
+    if(chunked&&pending&&!inFlight&&!moving&&!captureReady)armWake(Math.max(captureDelayMs,750-(now-lastChange)));
     if (needsFrame()) schedule();
   }
-  function needsFrame() {return !disposed && ((pending&&!inFlight&&!lastMoving) || Math.abs(blend-blendTarget)>1e-5);}
-  function snapshot() {return {...counters,timeSliced:sliceCapture,captureFace:captureQueue?.face??null,mode:measureIrradiance?'settled opaque CAD reflection and SH irradiance':'settled opaque CAD reflection only',faceSize:FACE_SIZE,
+  function needsFrame() {return !disposed && ((pending&&!inFlight&&!lastMoving&&(!chunked||captureReady)) || Math.abs(blend-blendTarget)>1e-5);}
+  function snapshot() {return {...counters,timeSliced:sliceCapture,triangleBudget:captureTriangles,backgroundFace:background?.face??null,captureWaiting:!!captureTimer,captureDraw:captureQueue?.drawIndex??null,captureFace:captureQueue?.face??null,mode:measureIrradiance?'settled opaque CAD reflection and SH irradiance':'settled opaque CAD reflection only',faceSize:FACE_SIZE,
     geometryEpoch:epoch,capturedEpoch,pending,readbackPending:!!inFlight,asynchronousReadback,
     readbackMode:!measureIrradiance?'skipped-reflection-only':asynchronousReadback?'async-pbo-fence':'synchronous-api-fallback',
     moving:lastMoving,receiverModule:selectedName,capturedModule:captureGroup,
@@ -379,11 +416,41 @@ export function setupRasterProbes({ THREE, renderer, scene, objects, cableMeshes
     reflectionWeight,diffuseWeight,irradianceReady,anchor:anchorArray,lastError,disposed,singleSpatialSample:true,parallaxCorrection:false,multipleBounces:false};}
   function dispose() {
     if (disposed) return;
-    disposed=true;blend=blendTarget=0;pending=false;setBlend();
+    disposed=true;cancelWake();background?.dispose();blend=blendTarget=0;pending=false;setBlend();
     captureQueue?.candidate?.dispose();captureQueue=undefined;inFlight?.candidate?.dispose();if(inFlight)inFlight.candidate=undefined;
     filteredTarget?.dispose();cubeTarget.dispose();pmrem.dispose();
     localMap.value=originalEnvironment;
     for (const record of materialRecords.values()) record.shaders.clear();
   }
-  return {update,needsFrame,snapshot,dispose,bindMaterialShader};
+  async function prepare(){
+    if(!chunked||disposed)return;
+    await background?.prepare();
+    if(typeof renderer.compileAsync!=='function'||disposed)return;
+    // Warm the exact capture shader variants without drawing. Hiding ELEMENTS
+    // changes the native point-light count; two other receivers cover the
+    // remaining material variants. Restore live state before awaiting.
+    const receivers=[groups.get('elements'),...[...groups].filter(([name])=>name!=='elements').slice(0,2).map(([,group])=>group)].filter(Boolean);
+    for(const receiver of receivers){
+      if(disposed)return;
+      const visibility=new Map(),envMaps=new Map(),state={environment:scene.environment,background:scene.background,
+        toneMapping:renderer.toneMapping,outputColorSpace:renderer.outputColorSpace};
+      let promise;
+      try{
+        scene.traverse(object=>{
+          if(!object.isMesh)return;visibility.set(object,object.visible);
+          let optical=false;eachMaterial(object,material=>{optical ||= opticalMaterial(material);if(!envMaps.has(material)){envMaps.set(material,material.envMap);material.envMap=null;}});
+          if(!allowed.has(object)||optical)object.visible=false;
+        });
+        visibility.set(receiver,receiver.visible);receiver.visible=false;
+        scene.environment=originalEnvironment;scene.background=null;renderer.toneMapping=THREE.NoToneMapping;renderer.outputColorSpace=THREE.LinearSRGBColorSpace;
+        promise=renderer.compileAsync(scene,cubeCamera.children[0]);
+      }finally{
+        for(const [object,visible] of visibility)object.visible=visible;
+        for(const [material,envMap] of envMaps)material.envMap=envMap;
+        scene.environment=state.environment;scene.background=state.background;renderer.toneMapping=state.toneMapping;renderer.outputColorSpace=state.outputColorSpace;
+      }
+      await promise;
+    }
+  }
+  return {update,needsFrame,snapshot,dispose,bindMaterialShader,prepare};
 }

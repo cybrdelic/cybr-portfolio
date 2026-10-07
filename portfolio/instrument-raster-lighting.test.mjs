@@ -62,3 +62,18 @@ test('opaque hardware and cables cast once per geometry update, optics are exclu
 test('invalid or degenerate shadow-fitting inputs fail explicitly',()=>{
  assert.throws(()=>fitRasterShadowBounds([]),/Invalid/);assert.throws(()=>fitRasterShadowBounds([{min:[1,0,0],max:[0,1,1]}]),/Invalid/);assert.throws(()=>shadowBasis([0,0,1]),/parallel/);
 });
+
+test('camera and viewport changes reuse the identical native shadow; world or buffer changes invalidate it',()=>{
+ const scene=new THREE.Scene(),object=new THREE.Mesh(new THREE.BoxGeometry(20,20,20),new THREE.MeshPhysicalMaterial());scene.add(object);
+ const renderer={shadowMap:{enabled:false,autoUpdate:false,needsUpdate:false}},lighting=setupRasterLighting({THREE,renderer,scene,objects:[object]});
+ const camera=new THREE.PerspectiveCamera();lighting.update(camera,{geometryChanged:true,now:0});
+ const key=scene.children.find(o=>o.name==='CYBR raster studio key');renderer.shadowMap.needsUpdate=false;key.shadow.needsUpdate=false;
+ const before=lighting.snapshot();camera.position.z=100;camera.aspect=2;camera.updateProjectionMatrix();
+ assert.equal(lighting.update(camera,{geometryChanged:true,now:1}),false);
+ assert.equal(lighting.snapshot().shadowUpdateRequests,before.shadowUpdateRequests);assert.equal(lighting.snapshot().geometryCacheHits,1);
+ assert.deepEqual(lighting.snapshot().shadowMapSize,[2048,2048]);assert.deepEqual(lighting.snapshot().fit,before.fit);
+ object.position.x=5;assert.equal(lighting.update(camera,{geometryChanged:true,now:2}),true);
+ object.geometry.attributes.position.needsUpdate=true;assert.equal(lighting.update(camera,{geometryChanged:true,now:3}),true);
+ object.geometry=new THREE.BoxGeometry(30,20,20);assert.equal(lighting.update(camera,{geometryChanged:true,now:4}),true);
+ lighting.dispose();
+});

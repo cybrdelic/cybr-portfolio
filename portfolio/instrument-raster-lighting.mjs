@@ -33,7 +33,7 @@ export function setupRasterLighting({THREE,renderer,scene,objects=[],cableMeshes
  const fill=new THREE.DirectionalLight(studio?new THREE.Color(1,1,1):new THREE.Color(.72,.8,1),studio?.075:.16);fill.name='CYBR raster studio fill';fill.castShadow=false;
  scene.add(key,key.target,fill,fill.target);
  renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.shadowMap.autoUpdate=false;
- let disposed=false,lastFit=null,pending=false,requests=0,observed=0,lastProgress=null,lastMoving=false,lastFitTime=null;
+ let disposed=false,lastFit=null,pending=false,requests=0,observed=0,lastProgress=null,lastMoving=false,lastFitTime=null,lastGeometryState,geometryCacheHits=0;
  const point=new THREE.Vector3(),worldBox=new THREE.Box3();
  function observe(){if(pending&&!renderer.shadowMap.needsUpdate&&!key.shadow.needsUpdate){pending=false;observed++;}}
  function request(){renderer.shadowMap.needsUpdate=true;key.shadow.needsUpdate=true;pending=true;requests++;schedule();}
@@ -42,7 +42,18 @@ export function setupRasterLighting({THREE,renderer,scene,objects=[],cableMeshes
  function update(camera,{progress,moving=false,geometryChanged=false,now=0}={}){
   if(disposed)return false;observe();lastProgress=progress??lastProgress;lastMoving=!!moving;
   if(lastFit&&!geometryChanged)return false;
-  const boxes=collectBounds(geometryChanged);if(!boxes.length)return false;
+  scene.updateMatrixWorld(true);
+ const geometryState=tracked.map(object=>({geometry:object.geometry,position:object.geometry?.attributes?.position,index:object.geometry?.index,
+  positionVersion:object.geometry?.attributes?.position?.version,indexVersion:object.geometry?.index?.version,
+  visible:object.visible,castShadow:object.castShadow,matrix:[...object.matrixWorld.elements]}));
+ const unchanged=lastGeometryState&&geometryState.every((state,i)=>{
+  const before=lastGeometryState[i];return state.geometry===before.geometry&&state.position===before.position&&state.index===before.index&&
+   state.positionVersion===before.positionVersion&&state.indexVersion===before.indexVersion&&state.visible===before.visible&&state.castShadow===before.castShadow&&
+   state.matrix.every((value,k)=>value===before.matrix[k]);
+ });
+ if(lastFit&&unchanged){geometryCacheHits++;return false;}
+ lastGeometryState=geometryState;
+ const boxes=collectBounds(geometryChanged);if(!boxes.length)return false;
   lastFit=fitRasterShadowBounds(boxes);lastFitTime=now;
   worldPosition(key,lastFit.position);worldPosition(key.target,lastFit.target);
   const {up,...projection}=lastFit.camera;Object.assign(key.shadow.camera,projection);key.shadow.camera.up.set(...up);key.shadow.camera.updateProjectionMatrix();
@@ -50,7 +61,7 @@ export function setupRasterLighting({THREE,renderer,scene,objects=[],cableMeshes
   key.updateMatrixWorld();key.target.updateMatrixWorld();fill.updateMatrixWorld();fill.target.updateMatrixWorld();request();return true;
  }
  function needsFrame(){if(disposed)return false;observe();return pending||!lastFit;}
- function snapshot(){observe();return{enabled:!disposed,lighting:studio?'sculptural strip studio plus grazing shadow key':'original HDR IBL plus restrained direct studio key/fill',bounceGI:false,keyIntensity:key.intensity,fillIntensity:fill.intensity,keyDirection:[...RASTER_KEY_DIRECTION],fillColor:fill.color.toArray(),shadowType:'2048 PCFSoft on actual opaque CAD and cables',shadowMapSize:[RASTER_SHADOW_RESOLUTION,RASTER_SHADOW_RESOLUTION],opaqueCasters:opaqueCount,opticalNonCasters:opticalCount,trackedObjects:tracked.length,groups:groups?.size??groups?.length??null,shadowAutoUpdate:false,shadowUpdateRequests:requests,shadowUpdatesObserved:observed,pendingShadowUpdate:pending,progress:lastProgress,moving:lastMoving,lastFitTime,fit:lastFit?{camera:lastFit.camera,target:lastFit.target,extents:lastFit.extents,texelSizeMM:lastFit.texelSizeMM}:null};}
+ function snapshot(){observe();return{enabled:!disposed,lighting:studio?'sculptural strip studio plus grazing shadow key':'original HDR IBL plus restrained direct studio key/fill',bounceGI:false,keyIntensity:key.intensity,fillIntensity:fill.intensity,keyDirection:[...RASTER_KEY_DIRECTION],fillColor:fill.color.toArray(),shadowType:'2048 PCFSoft on actual opaque CAD and cables',shadowMapSize:[RASTER_SHADOW_RESOLUTION,RASTER_SHADOW_RESOLUTION],opaqueCasters:opaqueCount,opticalNonCasters:opticalCount,trackedObjects:tracked.length,groups:groups?.size??groups?.length??null,shadowAutoUpdate:false,shadowUpdateRequests:requests,geometryCacheHits,shadowUpdatesObserved:observed,pendingShadowUpdate:pending,progress:lastProgress,moving:lastMoving,lastFitTime,fit:lastFit?{camera:lastFit.camera,target:lastFit.target,extents:lastFit.extents,texelSizeMM:lastFit.texelSizeMM}:null};}
  function dispose(){if(disposed)return;disposed=true;scene.remove(key,key.target,fill,fill.target);key.shadow.dispose();for(const record of previousFlags){record.object.castShadow=record.castShadow;record.object.receiveShadow=record.receiveShadow;}Object.assign(renderer.shadowMap,oldShadow);}
  schedule();return{update,needsFrame,snapshot,dispose};
 }
