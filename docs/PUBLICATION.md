@@ -53,3 +53,21 @@ Existing defects and earlier browser/native evidence are retained in
 [browser comparison](BROWSER_COMPARISON.md). Publication checks use CPU tests,
 source/asset closure, HTTP byte smoke and allowlisted local build. No additional
 browser or GPU work is required or claimed.
+
+## Published baseline and review history
+
+The public source baseline is commit
+`33872f4e30dd9124c7cbecf56e7d2382c3a7a8f0` in
+[cybrdelic/cybr-portfolio](https://github.com/cybrdelic/cybr-portfolio).
+It contains exactly 1,510 approved files. All privacy, license-boundary and
+required attribution changes were made before this first public commit,
+preventing uncertain exports or personal paths from entering Git history.
+
+The cleanup validation follow-up changes only this document, the validation
+receipt and their entries in the public-file manifest. It is offered as a
+separate draft PR for parent review and merge. The source/asset tree remains
+the validated baseline. No GitHub Pages site is enabled or deployed.
+
+Three machine-specific Python-environment files were also excluded from the
+candidate. Their original hashes are recorded separately in
+`publication-exclusions.json`; private snapshots remain intact.
