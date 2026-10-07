@@ -9376,11 +9376,13 @@
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 6432,
-      "sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
+      "sha256": "fbdd37c26ad7b507dd15c6b3ade76ce193223c583d062741d488bdeeed079c19",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
-      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained",
+      "mobile_declutter_baseline_sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
+      "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -9580,10 +9582,12 @@
     {
       "path": "portfolio/instrument-mobile.css",
       "reason": "Explicit mobile/startup source or lossless derived runtime asset",
-      "bytes": 7023,
-      "sha256": "bfa1b1c2fb51b0490a92b6bede1a790068dd053d6b680a43368fdb5bb4b17aff",
+      "bytes": 8507,
+      "sha256": "8026242403065c47d66464c8e20b33965db7f42c02fec6cef6cb6fa054842e67",
       "mobile_scroll_baseline_sha256": "e686ab3d12dd46afb60fd67bc72a1018b156931a929e153eee46fcb99194e016",
-      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained"
+      "mobile_scroll_update": "Restored continuous scroll tour; original camera/model equations and assets retained",
+      "mobile_declutter_baseline_sha256": "bfa1b1c2fb51b0490a92b6bede1a790068dd053d6b680a43368fdb5bb4b17aff",
+      "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained"
     },
     {
       "path": "portfolio/instrument-native-geometry-transport.mjs",
@@ -10981,5 +10985,6 @@
     }
   ],
   "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f",
-  "mobile_scroll_tour_baseline_commit": "20516d3bb1a3d67271234fd4cfba8790c0dce68e"
+  "mobile_scroll_tour_baseline_commit": "20516d3bb1a3d67271234fd4cfba8790c0dce68e",
+  "mobile_declutter_baseline_commit": "146861d2bc0826c356562617aeb03f057f73de29"
 }
