@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {runInNewContext} from 'node:vm';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {PROJECT_STOPS} from './instrument-interface.mjs';
 import {MOBILE_PAGE_STOPS,mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs';
@@ -11,6 +12,16 @@ test('opening copy retains its sentence separator when the wide layout hides its
   const heading=html.match(/<div class="mobile-intro">[\s\S]*?<h2>(.*?)<\/h2>/)?.[1];
   assert.ok(heading,'the mobile opening heading exists');
   assert.equal(heading.replace(/<br\s*\/?\s*>/gi,'').replace(/\s+/g,' ').trim(),'Six systems. One instrument.');
+});
+
+test('runtime prelude updates preserve word separators for wide layouts after loading and scroll changes',()=>{
+  const source=readFileSync(new URL('./instrument-3d.js',import.meta.url),'utf8');
+  const expression=source.match(/mobileIntro\.querySelector\('h2'\)\.innerHTML=(.*?);/)?.[1];
+  assert.ok(expression,'the actual runtime heading assignment exists');
+  for(const [p,preview,expected]of[[0,false,'Six systems. One instrument.'],[.35,false,'Follow the cable.'],[.8,false,'One connected instrument.'],[0,true,'GEO']]){
+    const rendered=runInNewContext(expression,{p,preview}).replace(/<br\s*\/?\s*>/gi,'').replace(/\s+/g,' ').trim();
+    assert.equal(rendered,expected);
+  }
 });
 
 test('mobile pacing is continuous, monotone, reversible and preserves all six physical destinations',()=>{

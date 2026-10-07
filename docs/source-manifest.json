@@ -9377,8 +9377,8 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6558,
-      "sha256": "9d304ea569bda4f5e21e3ba8d22bce30de3325d778eae18a55e131ca869c062e",
+      "bytes": 6561,
+      "sha256": "a57be4029a3bb734d72daa7aa9d6116aceb859cf9311c703aed0a90f4bc1155f",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
@@ -9394,7 +9394,9 @@
       "mobile_experience_baseline_sha256": "2b6937ef4e9d09e1384285252722c7b2e727c70965757463e2255b5502640dab",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
-      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged",
+      "startup_followup_baseline_sha256": "9d304ea569bda4f5e21e3ba8d22bce30de3325d778eae18a55e131ca869c062e",
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -9411,8 +9413,8 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 81571,
-      "sha256": "d53c6cc7c0760afdc0e4f91e867cba415122967de810aec72ccdadae4765b627",
+      "bytes": 82781,
+      "sha256": "54af4a86c0c63073e0d48b0d057ee65edfa94535a2da8ef908f99f8769170078",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
@@ -9422,7 +9424,9 @@
       "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
       "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture",
       "mobile_experience_baseline_sha256": "dee0f29d281bedfe56aeeba415a75c1761ae15e7e8042c84fdc1d0b08537c91f",
-      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending"
+      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
+      "startup_followup_baseline_sha256": "d53c6cc7c0760afdc0e4f91e867cba415122967de810aec72ccdadae4765b627",
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -9614,12 +9618,14 @@
     },
     {
       "path": "portfolio/instrument-mobile-story.test.mjs",
-      "bytes": 4534,
-      "sha256": "ec64b01f825a5f9f363b28501c16f5d40f2f7f21b1aa11173a8080381ee328ee",
+      "bytes": 5264,
+      "sha256": "10fae10d8a52c9562c3c5c86bf82d491adfa7ca007acd2cd9f77e04ab87985e4",
       "reason": "Authored mobile camera/pacing source, numerical regressions or scope notes",
       "provenance": "Mobile experience pass from live version9; no imported or regenerated assets",
       "mobile_experience_review_baseline_sha256": "4bb606460d50246f44ad6c7ea34c8a85a20f76efc68c58a21bf2b51525b1b800",
-      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged",
+      "startup_followup_baseline_sha256": "ec64b01f825a5f9f363b28501c16f5d40f2f7f21b1aa11173a8080381ee328ee",
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
     },
     {
       "path": "portfolio/instrument-mobile.css",
@@ -9957,6 +9963,20 @@
       "sha256": "210ca9764b345c475261d3a888c751b19b8724e0fff7060e9ffee1ea06bac0b0",
       "native_touch_baseline_sha256": "a536db4d29bbc90e072ce3f36fc91613559579f0b6a4503d8658d358802b7adf",
       "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
+    },
+    {
+      "path": "portfolio/instrument-startup.mjs",
+      "bytes": 2547,
+      "sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
+      "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
+    },
+    {
+      "path": "portfolio/instrument-startup.test.mjs",
+      "bytes": 3571,
+      "sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",
+      "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
+      "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets"
     },
     {
       "path": "portfolio/instrument-studio-environment.mjs",
@@ -11054,5 +11074,6 @@
   "mobile_no_slider_baseline_commit": "b3ef5457ea9be2df3b105fecd9f5aa79216ac03a",
   "phone_media_baseline_commit": "91981b66312f9e87779762d02a009cd38adb7664",
   "native_touch_baseline_commit": "980614dae51b7048e20d7916890e08e1a9891074",
-  "mobile_experience_baseline_commit": "55b89affd81a0aa1398414fe229fe71d4a00655b"
+  "mobile_experience_baseline_commit": "55b89affd81a0aa1398414fe229fe71d4a00655b",
+  "startup_followup_baseline_commit": "fb4734942cc3ee3f34af2d9693bf11b97452ebb1"
 }
