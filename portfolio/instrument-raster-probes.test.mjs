@@ -45,7 +45,7 @@ test('rejects malformed cube readback and nonfinite radiance', () => {
   assert.equal(opticalMaterial({transmission:0,opacity:1}),false);
 });
 
-function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback=false,reflectionWeight,diffuseWeight}={}) {
+function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback=false,reflectionWeight,diffuseWeight,sliceCapture=false,captureTriangles=0,captureWakeDelayMs=32}={}) {
   let clockNow=0;
   const THREE={...NativeThree}, scene=new THREE.Scene(),groups=new Map(),objects=[];
   for(const [name,x,size] of [['geo',0,20],['elements',40,30],['combat',90,20]]) {
@@ -76,7 +76,7 @@ function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback
       assert.equal(groups.get(probes.snapshot().receiverModule).visible,false);
       assert.equal(optical.visible,false);assert.equal(helper.visible,false);
       assert.equal(objects[0].material.envMap,null);
-      assert.equal(scene.background,environment);assert.equal(scene.environment,originalEnv);
+      assert.ok(scene.background===environment||captureTriangles>0&&scene.background===null);assert.equal(scene.environment,originalEnv);
       assert.equal(this.toneMapping,THREE.NoToneMapping);assert.equal(this.xr.enabled,false);
       assert.equal(light.shadow.autoUpdate,false);
       if(failRender && this.renderCalls===2)throw Error('Injected second face failure');
@@ -112,7 +112,7 @@ function harness({failRender=false,failRead=false,captureDelayMs=0,asyncReadback
   };
   THREE.WebGLCubeRenderTarget=class extends NativeThree.WebGLCubeRenderTarget {dispose(){cubeDisposed++;super.dispose();}};
   const camera=new THREE.PerspectiveCamera();camera.position.set(-15,-80,40);camera.lookAt(40,0,0);camera.updateMatrixWorld();
-  const probes=setupRasterProbes({THREE,renderer,scene,objects,groups,environment,reflectionWeight,diffuseWeight,
+  const probes=setupRasterProbes({THREE,renderer,scene,objects,groups,environment,reflectionWeight,diffuseWeight,sliceCapture,captureTriangles,captureDelayMs:captureWakeDelayMs,
     schedule:()=>schedules++,clock:()=>clockNow});
   function assertRestored() {
     assert.equal(renderer.target,originalTarget);assert.equal(renderer.face,3);assert.equal(renderer.mip,2);
@@ -352,4 +352,111 @@ test('IBL hook blends independent CubeUV atlases and measured world-space irradi
   assert.equal(shader.uniforms.cadProbeBlend.value,.4);assert.equal(shader.uniforms.cadProbeDiffuseBlend.value,.4);
   near(shader.uniforms.cadProbeCubeUV.value.toArray(),[1/384,1/512,7]);
   h.probes.dispose();assert.equal(shader.uniforms.cadProbeBlend.value,0);
+});
+
+test('mobile capture restores native scene state after every face and blends only the complete cube',()=>{
+  const h=harness({sliceCapture:true,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});probes.update(camera,{now:749});assert.equal(probes.snapshot().faceRenders,0);
+  for(let face=0;face<6;face++){
+    probes.update(camera,{now:750+face*16});h.assertRestored();
+    assert.equal(probes.snapshot().faceRenders,face+1);assert.equal(probes.snapshot().captures,0);
+    assert.equal(probes.snapshot().captureFace,face+1);assert.equal(probes.snapshot().blend,0);
+    assert.equal(h.convolved.length,0,'convolution follows all six original 128px faces');
+  }
+  probes.update(camera,{now:846});h.assertRestored();assert.equal(probes.snapshot().captures,1);
+  assert.equal(probes.snapshot().faceRenders,6);assert.equal(h.convolved.length,1);assert.equal(probes.snapshot().pixelReads,0);
+  probes.update(camera,{now:1096});assert.equal(probes.snapshot().blend,.15);
+  assert.equal(probes.needsFrame(),false);probes.dispose();assert.equal(h.convolved[0].disposes,1);
+});
+test('navigation cancels a partial mobile cube and starts a new coherent capture epoch',()=>{
+  const h=harness({sliceCapture:true,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});probes.update(camera,{now:750});probes.update(camera,{now:766});
+  probes.update(camera,{now:780,moving:true,geometryChanged:true});h.assertRestored();
+  assert.equal(probes.snapshot().captureFace,null);assert.equal(probes.snapshot().discardedCaptures,1);
+  assert.equal(probes.snapshot().captures,0);assert.equal(h.convolved.length,0);
+  probes.update(camera,{now:800});
+  for(let i=0;i<7;i++)probes.update(camera,{now:1530+i*16});
+  assert.equal(probes.snapshot().captures,1);assert.equal(probes.snapshot().faceRenders,8);
+  h.assertRestored();probes.dispose();
+});
+test('partial mobile capture disposal and face failures restore state without publishing an incomplete map',()=>{
+  for(const failRender of [false,true]){
+    const h=harness({sliceCapture:true,failRender,reflectionWeight:.15,diffuseWeight:0});
+    h.probes.update(h.camera,{now:0});h.probes.update(h.camera,{now:750});
+    if(failRender){h.probes.update(h.camera,{now:766});assert.equal(h.probes.snapshot().failures,1);}
+    h.assertRestored();h.probes.dispose();h.probes.dispose();
+    assert.equal(h.probes.snapshot().captures,0);assert.equal(h.probes.needsFrame(),false);
+    assert.equal(h.counts().cubeDisposed,1);assert.equal(h.counts().pmremDisposed,1);assert.equal(h.convolved.length,0);
+  }
+});
+
+test('bounded probe draws yield between submissions and publish only all six original faces',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,captureDelayMs:32,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  const materials=h.objects.map(object=>object.material),ranges=h.objects.map(object=>({...object.geometry.drawRange}));
+  probes.update(camera,{now:0});assert.equal(probes.needsFrame(),false);assert.equal(probes.snapshot().captureWaiting,true);
+  let now=750,steps=0;
+  while(probes.snapshot().captures===0&&steps<200){
+    h.setClock(now);t.mock.timers.tick(steps===0?750:32);
+    const before=h.renderer.renderCalls;probes.update(camera,{now});
+    assert.ok(h.renderer.renderCalls-before<=1,'one native submission per wake');h.assertRestored();
+    h.objects.forEach((object,i)=>{assert.equal(object.material,materials[i]);assert.deepEqual(object.geometry.drawRange,ranges[i]);});
+    if(probes.snapshot().captures===0){assert.equal(probes.needsFrame(),false);assert.equal(probes.snapshot().blend,0);}
+    steps++;now+=32;
+  }
+  assert.equal(probes.snapshot().captures,1);assert.equal(probes.snapshot().faceRenders,6);assert.equal(probes.snapshot().triangleBudget,2);
+  assert.ok(probes.snapshot().drawSlices>6);assert.equal(probes.snapshot().pixelReads,0);assert.equal(h.convolved.length,1);
+  probes.update(camera,{now:now+250});assert.equal(probes.snapshot().blend,.15);probes.dispose();
+});
+test('navigation and disposal cancel deferred geometry pieces without stale map publication',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});h.setClock(750);t.mock.timers.tick(750);probes.update(camera,{now:750});
+  assert.equal(probes.snapshot().captures,0);assert.equal(probes.snapshot().captureWaiting,true);
+  probes.update(camera,{now:760,moving:true,geometryChanged:true});assert.equal(probes.snapshot().discardedCaptures,1);
+  const schedules=h.counts().schedules;t.mock.timers.tick(1000);assert.equal(h.counts().schedules,schedules);
+  assert.equal(probes.snapshot().captureDraw,null);assert.equal(probes.snapshot().captures,0);h.assertRestored();
+  probes.update(camera,{now:1800});assert.equal(probes.snapshot().captureWaiting,true);
+  const before=h.counts().schedules;probes.dispose();t.mock.timers.tick(1000);assert.equal(h.counts().schedules,before);
+  assert.equal(probes.snapshot().captureWaiting,false);assert.equal(probes.needsFrame(),false);
+});
+
+test('capture shader warmup restores live scene before awaiting, including compilation failure',async()=>{
+  for(const fail of [false,true]){
+    const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0});let compiles=0;
+    h.renderer.compileAsync=(scene,camera)=>{
+      compiles++;assert.equal(scene.background,null);assert.equal(h.objects[0].material.envMap,null);
+      assert.equal(h.renderer.toneMapping,h.THREE.NoToneMapping);assert.ok(camera.isPerspectiveCamera);
+      return Promise.resolve().then(()=>{h.assertRestored();if(fail)throw Error('shader failure');});
+    };
+    if(fail)await assert.rejects(h.probes.prepare(),/shader failure/);else await h.probes.prepare();
+    h.assertRestored();assert.equal(h.probes.snapshot().captures,0);assert.equal(h.renderer.renderCalls,0);
+    assert.equal(compiles,fail?1:3);h.probes.dispose();
+  }
+});
+
+test('render backpressure holds partial cube state and stops deferred probe wakes',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});h.setClock(750);t.mock.timers.tick(750);probes.update(camera,{now:750});
+  const before=probes.snapshot(),renders=h.renderer.renderCalls,schedules=h.counts().schedules;
+  probes.setPaused(true);t.mock.timers.tick(1000);probes.update(camera,{now:1750});
+  assert.equal(probes.needsFrame(),false);assert.equal(probes.snapshot().captureWaiting,false);
+  assert.equal(h.renderer.renderCalls,renders);assert.equal(h.counts().schedules,schedules);
+  assert.equal(probes.snapshot().captureFace,before.captureFace);assert.equal(probes.snapshot().captureDraw,before.captureDraw);
+  assert.equal(probes.snapshot().discardedCaptures,0);h.assertRestored();probes.setPaused(false);
+  let now=1800,steps=0;
+  while(probes.snapshot().captures===0&&steps++<200){h.setClock(now);t.mock.timers.tick(32);probes.update(camera,{now});now+=32;}
+  assert.equal(probes.snapshot().captures,1);assert.equal(probes.snapshot().faceRenders,6);
+  assert.equal(probes.snapshot().discardedCaptures,0);h.assertRestored();probes.dispose();
+});
+
+test('resuming with a changed pose discards the paused cube before another draw',(t)=>{
+  t.mock.timers.enable({apis:['setTimeout']});
+  const h=harness({sliceCapture:true,captureTriangles:2,reflectionWeight:.15,diffuseWeight:0}),{probes,camera}=h;
+  probes.update(camera,{now:0});h.setClock(750);t.mock.timers.tick(750);probes.update(camera,{now:750});
+  const renders=h.renderer.renderCalls;probes.setPaused(true);t.mock.timers.tick(1000);probes.setPaused(false);
+  probes.update(camera,{now:1750,progress:.6,moving:true,geometryChanged:true});
+  assert.equal(probes.snapshot().discardedCaptures,1);assert.equal(probes.snapshot().captures,0);
+  assert.equal(probes.snapshot().captureDraw,null);assert.equal(h.renderer.renderCalls,renders);h.assertRestored();probes.dispose();
 });

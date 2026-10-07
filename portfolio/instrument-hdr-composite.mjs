@@ -14,6 +14,7 @@ void main(){gl_FragColor=vec4(texture2D(source,screenUV).rgb,1.);
 }`});
  const display=new THREE.Scene(),camera=new THREE.Camera(),mesh=new THREE.Mesh(geometry,material);mesh.frustumCulled=false;display.add(mesh);
  const size=new THREE.Vector2();
+ let hasFrame=false;
  return{render(renderer,scene,sceneCamera,paper){
    renderer.getDrawingBufferSize(size);if(target.width!==size.x||target.height!==size.y)target.setSize(size.x,size.y);
    const previous=renderer.getRenderTarget(),background=scene.background;
@@ -21,9 +22,14 @@ void main(){gl_FragColor=vec4(texture2D(source,screenUV).rgb,1.);
    try{
     scene.background=paper;renderer.setRenderTarget(target);renderer.render(scene,sceneCamera);
     calls+=renderer.info.render.calls;triangles+=renderer.info.render.triangles;
-    renderer.setRenderTarget(previous);renderer.render(display,camera);
+    renderer.setRenderTarget(previous);renderer.render(display,camera);hasFrame=true;
     calls+=renderer.info.render.calls;triangles+=renderer.info.render.triangles;
    }finally{scene.background=background;renderer.setRenderTarget(previous);}
    return{calls,triangles};
+  },present(renderer){
+   renderer.getDrawingBufferSize(size);
+   if(!hasFrame||target.width!==size.x||target.height!==size.y)return false;
+   renderer.render(display,camera);
+   return{calls:renderer.info.render.calls,triangles:renderer.info.render.triangles};
   },dispose(){target.dispose();geometry.dispose();material.dispose();}};
 }

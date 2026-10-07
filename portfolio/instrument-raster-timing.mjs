@@ -8,7 +8,7 @@ function append(values, value) { values.push(value); if (values.length > WINDOW)
 const phaseOf = label => ['moving', 'stationary', 'frame'].includes(label) ? label : 'other';
 const emptyPhase = () => ({ gpu: [], submit: [], gpuSamples: 0, submitSamples: 0 });
 
-export function createRasterTiming(renderer) {
+export function createRasterTiming(renderer,{gpuQueries=true}={}) {
   let gl, extension, adapter = null, error = null;
   try {
     gl = renderer?.getContext?.();
@@ -20,7 +20,7 @@ export function createRasterTiming(renderer) {
     }
   } catch (cause) { error = String(cause?.message ?? cause).slice(0, 160); }
   const supported = !!extension && ['createQuery', 'beginQuery', 'endQuery', 'getQueryParameter', 'deleteQuery'].every(name => typeof gl?.[name] === 'function');
-  let enabled = supported, disposed = false, active = null, wasDisjoint = false, lastMovingAt = null;
+  let enabled = supported&&gpuQueries, disposed = false, active = null, wasDisjoint = false, lastMovingAt = null;
   let rejectedQueries = 0, skippedQueries = 0, disjointEvents = 0, gpuSamples = 0, submitSamples = 0, cadenceSamples = 0;
   const pending = [], gpu = [], submit = [], cadence = [], phases = { moving: emptyPhase(), stationary: emptyPhase(), frame: emptyPhase(), other: emptyPhase() };
   let latestLabel = null;
@@ -103,7 +103,7 @@ export function createRasterTiming(renderer) {
     lastMovingAt = now;
   }
   function snapshot() {
-    return { supported, enabled: enabled && !disposed, extension: supported ? EXTENSION : null, adapter, error, disposed, contextLost: contextLost(),
+    return { supported, gpuQueriesRequested:gpuQueries, enabled: enabled && !disposed, extension: supported ? EXTENSION : null, adapter, error, disposed, contextLost: contextLost(),
       gpuMs: gpu.at(-1) ?? null, meanGpuMs: average(gpu), gpuSamples, latestLabel,
       pendingQueries: pending.length, activeQuery: !!active, maxQueries: MAX_PENDING, rejectedQueries, skippedQueries, disjointEvents,
       cpuSubmitMs: submit.at(-1) ?? null, meanCpuSubmitMs: average(submit), submitSamples,

@@ -12,7 +12,7 @@ export function nextProjectStop(progress, direction=1) {
   return direction<0 ? [...stops].reverse().find(at=>at<progress-.005)??0 : stops.find(at=>at>progress+.005)??1;
 }
 
-export function createInstrumentInterface({stage, root, jump, isReady, getTarget, reduced, onPaneChange}) {
+export function createInstrumentInterface({stage, root, jump, isReady, getTarget, reduced, onPaneChange, onInspect=()=>{}}) {
   const route=document.createElement('nav');
   route.className='chapter-stops';route.setAttribute('aria-label','Inspect a project in 3D');
   route.innerHTML=PROJECT_STOPS.map((project,index)=>`<button type="button" data-route-project="${project.name}" aria-label="Inspect ${project.title} in 3D" disabled><span>0${index+1}</span>${project.title}</button>`).join('');
@@ -34,7 +34,7 @@ export function createInstrumentInterface({stage, root, jump, isReady, getTarget
     query('.pane-description').textContent=project.description;
     query('.pane-facts').replaceChildren(...project.facts.map(fact=>{const item=document.createElement('li');item.textContent=fact;return item;}));
     query('.pane-project').href=`${project.name}.html`;
-    query('.pane-inspect').disabled=!isReady();
+    query('.pane-inspect').disabled=!isReady(project.name);
     query('.pane-count').textContent=`0${selected+1} / 06`;
     if(dialog.open&&!reduced.matches)query('.pane-body').animate([{opacity:.3},{opacity:1}],{duration:180,easing:'ease-out'});
   }
@@ -56,7 +56,7 @@ export function createInstrumentInterface({stage, root, jump, isReady, getTarget
     dialog.close();document.documentElement.classList.remove('has-project-pane');closing=false;
     window.scrollTo({top:savedScrollY,behavior:'instant'});onPaneChange(false);
     opener?.focus({preventScroll:true});
-    if(inspect){jump(PROJECT_STOPS[selected].at);route.querySelector(`[data-route-project="${PROJECT_STOPS[selected].name}"]`).focus({preventScroll:true});}
+    if(inspect){jump(PROJECT_STOPS[selected].at);route.querySelector(`[data-route-project="${PROJECT_STOPS[selected].name}"]`).focus({preventScroll:true});onInspect();}
   }
   query('.pane-close').addEventListener('click',()=>close());
   query('.pane-inspect').addEventListener('click',()=>close({inspect:true}));
@@ -76,15 +76,32 @@ export function createInstrumentInterface({stage, root, jump, isReady, getTarget
       open(PROJECT_STOPS.findIndex(project=>project.name===name),link);
     });
   });
-  route.addEventListener('click',event=>{const button=event.target.closest('[data-route-project]');if(button)jump(PROJECT_STOPS.find(project=>project.name===button.dataset.routeProject).at);});
+  route.addEventListener('click',event=>{
+    const button=event.target.closest('[data-route-project]');if(!button)return;
+    const index=PROJECT_STOPS.findIndex(project=>project.name===button.dataset.routeProject),project=PROJECT_STOPS[index];
+    if(isReady(project.name))jump(project.at);else open(index,button);
+  });
   route.addEventListener('keydown',event=>{
     if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
     event.preventDefault();const buttons=[...route.querySelectorAll('button')],index=buttons.indexOf(document.activeElement);
     const next=event.key==='Home'?0:event.key==='End'?buttons.length-1:Math.max(0,Math.min(buttons.length-1,index+(event.key==='ArrowLeft'?-1:1)));
-    buttons[next].focus({preventScroll:true});jump(PROJECT_STOPS[next].at);
+    buttons[next].focus({preventScroll:true});
+    if(isReady(PROJECT_STOPS[next].name))jump(PROJECT_STOPS[next].at);else open(next,buttons[next]);
   });
   return {
-    ready(){route.querySelectorAll('button').forEach(button=>button.disabled=false);query('.pane-inspect').disabled=false;stage.classList.add('interface-ready');},
+    target(p){
+      const project=PROJECT_STOPS.find(project=>Math.abs(project.at-p)<.005);if(!project)return;
+      route.querySelectorAll('button').forEach(button=>{if(button.dataset.routeProject===project.name)button.setAttribute('aria-current','true');else button.removeAttribute('aria-current');});
+      root.dataset.targetChapter=String(PROJECT_STOPS.indexOf(project)+1);
+    },
+    ready(available=PROJECT_STOPS.map(project=>project.name)){
+      route.querySelectorAll('button').forEach(button=>{
+        button.disabled=false;
+        const name=button.dataset.routeProject,title=PROJECT_STOPS.find(project=>project.name===name).title;
+        button.setAttribute('aria-label',available.includes(name)?`Inspect ${title} in 3D`:`View ${title} details while 3D loads`);
+      });
+      query('.pane-inspect').disabled=!isReady(PROJECT_STOPS[selected].name);stage.classList.add('interface-ready');
+    },
     update(p,active){
       root.dataset.targetChapter=String(active+1);
       document.querySelector('[data-end="100"]').textContent=p>=.995?'Replay ↺':'Next →';

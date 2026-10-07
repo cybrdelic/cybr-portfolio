@@ -90,3 +90,15 @@ test('invalid GPU results are rejected and bounded means cover the newest 120 va
   for (let i = 1; i <= 130; i++) { timing.begin('moving'); timing.end(); context.complete(context.queries.length - 1, i * 1e6); timing.poll(); }
   assert.equal(timing.snapshot().gpuSamples, 130); assert.equal(timing.snapshot().meanGpuMs, 70.5); assert.equal(timing.snapshot().phases.moving.meanGpuMs, 70.5);
 });
+
+test('CPU-only measurement never polls GPU state or allocates queries while preserving CPU metrics',()=>{
+  const context=fakeContext(),original=context.gl.getParameter;
+  context.gl.getParameter=key=>{if(key===0x8fbb)assert.fail('CPU-only mode must not ask for driver disjoint state');return original(key);};
+  context.gl.getQueryParameter=()=>assert.fail('CPU-only mode must not poll GPU queries');
+  const timing=createRasterTiming({getContext:()=>context.gl},{gpuQueries:false});
+  assert.equal(timing.begin(),false);assert.equal(timing.end(),false);assert.equal(timing.poll(),0);
+  timing.recordFrame({now:100,moving:true,submitMs:2});timing.recordFrame({now:120,moving:true,submitMs:4});
+  const state=timing.snapshot();assert.equal(state.supported,true);assert.equal(state.enabled,false);
+  assert.equal(state.gpuQueriesRequested,false);assert.equal(state.meanCpuSubmitMs,3);assert.equal(state.meanMovingFrameIntervalMs,20);
+  assert.equal(state.pendingQueries,0);assert.equal(context.queries.length,0);timing.dispose();
+});

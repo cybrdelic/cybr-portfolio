@@ -17,7 +17,9 @@
 The main default uses working CAD with WebGL2 hybrid raster optics and shared
 cached ELEMENTS playback. Query-selected geometry variants and the optional
 WebGPU path tracer remain available. No renderer, material, camera, motion or
-layout source was redesigned in this cleanup. Bundled assets keep their original
+layout source was redesigned in the initial cleanup. The subsequent
+[mobile update](MOBILE_STARTUP.md) changes mobile layout and startup delivery;
+its restored geometry bytes and full material prescriptions remain identical. Bundled assets keep their original
 paths, including cross-project `../` links. The independent `portfolio-next`
 variant and the Fire Studio deployment copy are outside this package.
 

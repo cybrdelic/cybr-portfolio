@@ -1,0 +1,81 @@
+{
+  "runtime_commit": "d9b73508b4c0282e6d8620a09f25ccbb1ef1eb08",
+  "publication_baseline": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f",
+  "recovered_snapshot_summary_sha256": "61ee2c8f2858e84d365bcc1a8e40bba918088bd71204c137249b0ce6c5bbfb2c",
+  "original_laptop_checkouts_modified": false,
+  "adapter": "Intel UHD Graphics / ANGLE D3D11",
+  "physical_android": false,
+  "viewport": [
+    390,
+    844
+  ],
+  "landscape": [
+    844,
+    390
+  ],
+  "dpr": 1,
+  "main_target_cpu_throttle": 4,
+  "request_latency_ms": 80,
+  "network_mbps": null,
+  "full_geometry_sha256": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+  "geo_geometry_sha256": "0f058ab81c583fc70e7afccbf68f19002c0301a101af0715a6ea0c4e4585f335",
+  "cpu_tests_passed": 315,
+  "native_chapters": 6,
+  "native_ui_followup_acceptance": true,
+  "synthesized_scroll_diagnostic_passed": false,
+  "observations": {
+    "first_usable_navigation_ms": 2446.7,
+    "full_ready_navigation_ms": 20144.6,
+    "native_chapter_tap_ms_range": [
+      37,
+      207
+    ],
+    "touch_scroll_px": [
+      199,
+      206
+    ],
+    "close_followup_ms": [
+      425.8741,
+      340.8321
+    ],
+    "earlier_close_ms": 1111.0448,
+    "reflection_settle_ms": 67084.804,
+    "max_timed_refinement_step_ms": 6458
+  },
+  "private_receipt_hashes": [
+    {
+      "name": "output/native-intel-comparison-1/progressive-browser-receipt.json",
+      "sha256": "8f5bfec7c9e88245db239300cfa53d0f7d7d9c2152bf391cfbab9b5b43a38d27"
+    },
+    {
+      "name": "output/native-intel-candidate-2/progressive-browser-receipt.json",
+      "sha256": "4ff6c6fc0396d8d4ca9d2cec9ab514090c46f8ba62bcdffcecb338ef939e1b2d"
+    },
+    {
+      "name": "output/native-ui-followup-1/remaining-ui-receipt.json",
+      "sha256": "a332be5482da6379efeafaf0b87fe7bc86592be396ebcb8607887236b002de14"
+    },
+    {
+      "name": "output/frame-gate-focused/progressive-browser-receipt.json",
+      "sha256": "f595b0edfbe2214094fd93de322faa12bf2ad41d2edadcbe8ebc38929f9b7f73"
+    }
+  ],
+  "images": [
+    {
+      "path": "docs/assets/mobile-native-scenes.png",
+      "sha256": "eac62fe7ce587a7536c42dddb210e8ba6c62ca8170cddae7579b677063c61a61"
+    },
+    {
+      "path": "docs/assets/mobile-native-landscape.png",
+      "sha256": "93fe0db9ca71fe47acdd3b72c2f1730fe7d72d08892459e4005b0260556f4f39"
+    }
+  ],
+  "limitations": [
+    "Physical Android unverified",
+    "Current cold-network acceptance unverified",
+    "Worker CPU throttle unverified",
+    "Exact pixel parity unverified",
+    "Native memory and reflection costs retained",
+    "Historical software/protocol failures retained"
+  ]
+}

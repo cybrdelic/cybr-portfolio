@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4605,
-      "sha256": "7a3bea8a670a8d2b46c72cad55e43faa5cbe4589fb471846161b1021d441ed40"
+      "bytes": 4890,
+      "sha256": "55db8ccd06a6a9ac4db5ab7367c1d8f3214fa65d7815569660cd6398566adea7"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1724,8 +1724,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 2037,
-      "sha256": "5996a72b906f164f0aba226cbbcd1754a37f89d7789ef2ebb96e333934b9d731"
+      "bytes": 2218,
+      "sha256": "044242c8a0e895e45e213f0ec73abfbf6bd38e44fa9de6c476ffaf3ce3570e79"
     },
     {
       "path": "docs/BROWSER_COMPARISON.md",
@@ -1739,13 +1739,23 @@
     },
     {
       "path": "docs/KNOWN_ISSUES.md",
-      "bytes": 3152,
-      "sha256": "542caefb1033cc77fb053227fbdf111c0c8440de5452cb770aaf404e95b70190"
+      "bytes": 4197,
+      "sha256": "e0488550e9fda1cef3fb2290e194c1b4483e781ce401f9a363984d4c3a0f25c4"
     },
     {
       "path": "docs/LICENSE_INVENTORY.md",
       "bytes": 3012,
       "sha256": "6b54a6ab81899df7f8f34b39f2141a362564ff394bf42c2693b85a6a5eb7302a"
+    },
+    {
+      "path": "docs/MOBILE_STARTUP.md",
+      "bytes": 13473,
+      "sha256": "7baaabb34a78c0996c1e3eb78c8f339595ec85121d0c2e928845e4746ec4bd54"
+    },
+    {
+      "path": "docs/NATIVE_ACCEPTANCE.json",
+      "bytes": 2696,
+      "sha256": "2d88e7490b8ffbb2d249384fd5c17dc04868e8a3197234e89175ce79d2f6952c"
     },
     {
       "path": "docs/PUBLICATION.md",
@@ -1761,6 +1771,16 @@
       "path": "docs/VALIDATION.md",
       "bytes": 4839,
       "sha256": "b825867606797d58f272847035ce1a34a7fe3cf6d02ac03cdeeb8884b2dddfcc"
+    },
+    {
+      "path": "docs/assets/mobile-native-landscape.png",
+      "bytes": 49880,
+      "sha256": "93fe0db9ca71fe47acdd3b72c2f1730fe7d72d08892459e4005b0260556f4f39"
+    },
+    {
+      "path": "docs/assets/mobile-native-scenes.png",
+      "bytes": 127195,
+      "sha256": "eac62fe7ce587a7536c42dddb210e8ba6c62ca8170cddae7579b677063c61a61"
     },
     {
       "path": "docs/browser-state-comparison.json",
@@ -1789,8 +1809,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 478128,
-      "sha256": "beccb03118acf38a647a78ea82c19da0f8baee38930e4fb976f4377cfdbd8248"
+      "bytes": 487187,
+      "sha256": "a3130e5ad6c1d140962d3052afb582f4ba9b36f652872f5a30ae8ca0ddfe1e4d"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -5058,9 +5078,19 @@
       "sha256": "8cf410522a9fcaa0dc5501590f793a329f7d6257a985afd4df4e1e9235295673"
     },
     {
+      "path": "portfolio/assets/instrument-working-v1/geo.lossless-v1.bin.gz",
+      "bytes": 1288028,
+      "sha256": "50e89111df1dd28246db444178670bb50bbf6a99f8ed9001f4fe57364c36b4e3"
+    },
+    {
       "path": "portfolio/assets/instrument-working-v1/instrument.bin.gz",
       "bytes": 44827908,
       "sha256": "5bf6ff4e270644a9d0799033a0cf8c9e36e9ebf9369d41053617b729fda824d9"
+    },
+    {
+      "path": "portfolio/assets/instrument-working-v1/instrument.lossless-v1.bin.gz",
+      "bytes": 34808214,
+      "sha256": "bbaeb51c4af49f2170f8babea4af9bc93cfa1c17bda4d1b2e2434ccf2760244f"
     },
     {
       "path": "portfolio/assets/instrument-working-v1/machined-roughness.png",
@@ -5069,8 +5099,8 @@
     },
     {
       "path": "portfolio/assets/instrument-working-v1/manifest.json",
-      "bytes": 1202573,
-      "sha256": "680ea3e1cb8bfbd61366e88733686cf84e963cc62a8a591de27e799f72b77a5b"
+      "bytes": 1203301,
+      "sha256": "c1e71b6408b711f0ac5b77f33f0048325e0aa56750e9a25b726989957eb747c0"
     },
     {
       "path": "portfolio/assets/instrument-working-v1/route.json",
@@ -6329,8 +6359,8 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6217,
-      "sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09"
+      "bytes": 6427,
+      "sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -6344,8 +6374,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 67241,
-      "sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac"
+      "bytes": 78134,
+      "sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -6369,13 +6399,13 @@
     },
     {
       "path": "portfolio/instrument-elements-bake.mjs",
-      "bytes": 9398,
-      "sha256": "ded4f6ee72b36802653306df1382f43aff7c185ea428a3aabc737bb44ce0dc40"
+      "bytes": 10339,
+      "sha256": "5633f4e8c175f488b13bf062287847ef513421497e156fd4f8c04bbde4365eb2"
     },
     {
       "path": "portfolio/instrument-elements-composite.mjs",
-      "bytes": 1166,
-      "sha256": "ffa47edbf41a0cb16b6b8e38f176704593582d144319e082ea86d6632982cc2b"
+      "bytes": 1196,
+      "sha256": "36f7d5fcd39348e32e579d1157fbbf5ae79f06672a68e554c44cb166c83416e7"
     },
     {
       "path": "portfolio/instrument-elements-movie.mjs",
@@ -6393,9 +6423,44 @@
       "sha256": "d0f93526e672a3dcef45732b044fac637de0362828d9470bc83aea56f42f6a98"
     },
     {
+      "path": "portfolio/instrument-geo-starter.mjs",
+      "bytes": 7421,
+      "sha256": "215919dd874cec93088969573430da8da5e615033f9cd150e31bb2949a5d8b53"
+    },
+    {
+      "path": "portfolio/instrument-geo-starter.test.mjs",
+      "bytes": 4341,
+      "sha256": "5f909fb7930f93e209a5a040fd73cf25a1a256ba53491e36557f15dbc3e4a038"
+    },
+    {
+      "path": "portfolio/instrument-geometry-codec.mjs",
+      "bytes": 1484,
+      "sha256": "9143319bee8b8cb2f392ca86f8d94ab4020080da09ff5b63984e6ced68380ebc"
+    },
+    {
+      "path": "portfolio/instrument-geometry-codec.test.mjs",
+      "bytes": 3142,
+      "sha256": "9cc18355b8070a26182ef14c608f0d32abfec7a3a66d73ab8ec7ac1ef89c1b60"
+    },
+    {
+      "path": "portfolio/instrument-geometry-loader.mjs",
+      "bytes": 1899,
+      "sha256": "3e51ce0a173ac38fcdf15d78486a52fae991b9d086189ee86714b8602fdce26f"
+    },
+    {
+      "path": "portfolio/instrument-geometry-worker.mjs",
+      "bytes": 1562,
+      "sha256": "41c744c8932f03de8e67b4d68978fdacc38a0a24bbd41281cd477e470fa5f41a"
+    },
+    {
       "path": "portfolio/instrument-hdr-composite.mjs",
-      "bytes": 1954,
-      "sha256": "2e5860eeb90f6bc9f9d01ad565e0ff32df3657f9e0eb045a54f54f7cf9af9c52"
+      "bytes": 2251,
+      "sha256": "79274e147323c28aef576dc47c2b8064b3b8511ee37e355de9249eb927b8b8bd"
+    },
+    {
+      "path": "portfolio/instrument-hdr-composite.test.mjs",
+      "bytes": 1626,
+      "sha256": "34f57d371f2b6277ca480ee9888d6de452a7b8ea7fb2922ca895dd42c1138a68"
     },
     {
       "path": "portfolio/instrument-hit-pbr.mjs",
@@ -6419,8 +6484,8 @@
     },
     {
       "path": "portfolio/instrument-interface.mjs",
-      "bytes": 9846,
-      "sha256": "b3ad500d6e5843c4b5cc2b48129debb1ab574821278311e940c1252555671e38"
+      "bytes": 10838,
+      "sha256": "51cc1bd1fccda54554e2eba9d635e4704895bf6542b3a7194f0de42ec548f404"
     },
     {
       "path": "portfolio/instrument-metal-coordinates.mjs",
@@ -6441,6 +6506,11 @@
       "path": "portfolio/instrument-metal-finish.test.mjs",
       "bytes": 11626,
       "sha256": "ca3eaa0f492a36d3cf45aef4d4d33c4c7e6ac24c01ac8522a43fe08a08e0f2cd"
+    },
+    {
+      "path": "portfolio/instrument-mobile.css",
+      "bytes": 5472,
+      "sha256": "e686ab3d12dd46afb60fd67bc72a1018b156931a929e153eee46fcb99194e016"
     },
     {
       "path": "portfolio/instrument-native-geometry-transport.mjs",
@@ -6548,6 +6618,16 @@
       "sha256": "fec21b5474c5f91d2d495b88109cf1a34003dec27af419e13144d7e574895e22"
     },
     {
+      "path": "portfolio/instrument-probe-draws.mjs",
+      "bytes": 4875,
+      "sha256": "29c7428e0dd115afbf37ce094db414e6ecf63170db317e809d4191adf0ec00be"
+    },
+    {
+      "path": "portfolio/instrument-probe-draws.test.mjs",
+      "bytes": 4018,
+      "sha256": "edfa324c1852e097fa664dbd4d8bbad4eb0268265ab60b8ca2414828aca2a7ca"
+    },
+    {
       "path": "portfolio/instrument-qa.js",
       "bytes": 1749,
       "sha256": "1bb87ef72503b5b962902ba9cf881f81e847c1056d3af91979fb833b3f834697"
@@ -6574,13 +6654,13 @@
     },
     {
       "path": "portfolio/instrument-raster-lighting.mjs",
-      "bytes": 7793,
-      "sha256": "24e6703aa22a4d7e628f5927605231d368c6da32ca1bd0f64e90b8634bfb5a91"
+      "bytes": 8766,
+      "sha256": "0989b3a4c576c7e30e077cfd4aa84ef2036a3d4bb39f8c353677c7aafadaf262"
     },
     {
       "path": "portfolio/instrument-raster-lighting.test.mjs",
-      "bytes": 7339,
-      "sha256": "34a510ca80a006947a2d97dd93a41ef5bc09299b62c31dce520c4b0f34656e80"
+      "bytes": 8782,
+      "sha256": "5b5dbde0b2a266ff0746fadef8eb8521a007ce3c1ecd53b766c326c6e283ff5a"
     },
     {
       "path": "portfolio/instrument-raster-optics.mjs",
@@ -6604,13 +6684,13 @@
     },
     {
       "path": "portfolio/instrument-raster-probes.mjs",
-      "bytes": 24248,
-      "sha256": "295219b9b06ba37ee32f22a3444fe9835822595532712647fb668a4446ea4377"
+      "bytes": 31532,
+      "sha256": "2af2ee71ef6f84098ce43dbb2ce3f36cbc2693ca9e1435ab50c27fd1038da20a"
     },
     {
       "path": "portfolio/instrument-raster-probes.test.mjs",
-      "bytes": 25450,
-      "sha256": "f58b8c77a0ded8555c5836fd3447f8e2bc0ffb4a6e6f85cac871b1abb8ad83e2"
+      "bytes": 33784,
+      "sha256": "9ee495b0e219a7df7122da79e88822a3b63b33583c395d038cabf26b5539cdec"
     },
     {
       "path": "portfolio/instrument-raster-thickness.mjs",
@@ -6624,13 +6704,13 @@
     },
     {
       "path": "portfolio/instrument-raster-timing.mjs",
-      "bytes": 6967,
-      "sha256": "3fa0d7772536f91e53fa66eee69c289b328362297b79c42667e4cc1bdeabbe28"
+      "bytes": 7032,
+      "sha256": "c9eb121b9ae9dc245f843c24502bb4c2db98f3f213b8786e6a2144d9aa953927"
     },
     {
       "path": "portfolio/instrument-raster-timing.test.mjs",
-      "bytes": 7550,
-      "sha256": "92fb35746b319cac71241a1761ff6f4344216151dd02ed206f408d6013b906e2"
+      "bytes": 8583,
+      "sha256": "5a409b303c0129760973a0257e6098ea557a20585b8d19d5784e88d4e359e3f2"
     },
     {
       "path": "portfolio/instrument-raster-transport.mjs",
@@ -6646,6 +6726,16 @@
       "path": "portfolio/instrument-ray-optics.js",
       "bytes": 7697,
       "sha256": "a762ab236732b0e5f08ea56b8251c89d0d553a7bfa962922e57b74c68078a1d7"
+    },
+    {
+      "path": "portfolio/instrument-render-gate.mjs",
+      "bytes": 3393,
+      "sha256": "5a99a0e01bb2796d915f308ae966d0569987a297206ccb73f66d076a3f589824"
+    },
+    {
+      "path": "portfolio/instrument-render-gate.test.mjs",
+      "bytes": 4314,
+      "sha256": "f488d931d88095ee42e3fcf0e45814d3bd098cd61cc3776604245432cbb4059b"
     },
     {
       "path": "portfolio/instrument-route.json",
@@ -6721,6 +6811,16 @@
       "path": "portfolio/instrument-traversal.test.mjs",
       "bytes": 14886,
       "sha256": "d89fac4a167f142c6e47a3b8eb0798eadb8c1d7bc0357a81dd4362ec86bf8791"
+    },
+    {
+      "path": "portfolio/instrument-visible-bounds.mjs",
+      "bytes": 716,
+      "sha256": "672e979ea99f34e200ee916434c7e135fd04f0b3cd46668fcdf6d7751a2e1a65"
+    },
+    {
+      "path": "portfolio/instrument-visible-bounds.test.mjs",
+      "bytes": 2160,
+      "sha256": "e55c34cb5737196bbfb3c0935a993f735fdd2df3a0b197dcdfd6fb52d00d9e66"
     },
     {
       "path": "portfolio/instrument-volume.js",
@@ -7538,14 +7638,20 @@
       "sha256": "2aaeee025c434440e54d595bf53dd61b16a87cdb78890a1d762c66234621d96a"
     },
     {
+      "path": "tools/pack_geometry.py",
+      "bytes": 2603,
+      "sha256": "f684ff3df7050f3b98231a4c43233b5331c13f498010dc9bbad4c049d5c7a512"
+    },
+    {
       "path": "tools/requirements-native-smoke.txt",
       "bytes": 32,
       "sha256": "7c1cc912ac6f6cbcfd990d304cb9f59dd0841e9bbcdc07e40016b2aa115a038d"
     },
     {
       "path": "tools/tasks.py",
-      "bytes": 4690,
-      "sha256": "5ca0b6938a657c55fbe096c2e0b496d7e303134fb5e12e9d6b2364a8cd59679c"
+      "bytes": 4965,
+      "sha256": "0b98a49fcf0fa4ab51a1fa2e8ae2b6b57a1812eda2410e29710bbd3af1eea44d"
     }
-  ]
+  ],
+  "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f"
 }
