@@ -1,101 +1,88 @@
-# First-frame startup investigation
+# Mobile startup repair
 
-This separate candidate follows merged mobile PR8, source
-`fb4734942cc3ee3f34af2d9693bf11b97452ebb1`. Approved Site version 10 stays live.
-This candidate is CPU-validated only; it is not deployed and does not establish
-a startup speedup or a solved phone experience.
+This candidate follows merged mobile PR8 and is reviewed in
+[draft PR9](https://github.com/cybrdelic/cybr-portfolio/pull/9).
+It moves the existing water boundary classifier to a worker and prepares the
+actual mobile raster shader variants before the first full draw. Native
+functional acceptance passed at implementation
+`b5665dc38bf188ba2fa0293a37934b080d074012`; the review update changes only
+documentation and its hash manifests. Site version 10 is the deployment
+rollback. Saving a candidate Site version does not deploy it.
 
-The exact native implementation `fabfe6391a9cd56953a52db315bbf864c999a6ef`
-recorded a main-thread long task from navigation time 10,707.8 to 15,747.8 ms,
-duration 5,040 ms. Its `first-frame` mark was 10,708.0 ms and `ready` mark
-15,737.8 ms: 5,029.8 ms between those marks. Source runs initial `drawScene()`
-between them. This localizes the first-frame handoff, not the deepest call.
-The run's observer recorded start/duration without a sampled JavaScript stack.
-Older touch/chapter traces cover different postload work and cannot supply it.
+## Implementation and preserved behavior
 
-The geometry worker already downloads, inflates, restores and verifies the
-96,899,824-byte original buffer, then transfers it without cloning. Recorded
-worker restore/verify times were 139/90.3 ms. Moving this work to another worker
-does not address the later first-frame task. Mesh setup also has a yield after
-each mesh. Individual chart/group operations may still be long; their costs
-must be measured separately before a worker transformation is justified.
+`waterOuterBoundaryIndices` moved verbatim into a pure module. A module worker
+classifies the selected ELEMENTS and SCENES optical water before mobile
+thickness setup. Only copies of position/index arrays are transferred; the
+original CAD buffers remain attached to the main renderer. Every derived index
+byte and audit value matches the original synchronous implementation on both
+actual water geometries. Unchanged results retain the original index identity.
+Geometry/attribute versions reject stale results, and missing workers or
+interleaved input retain the original synchronous compatibility path. Workers
+terminate after success, failure or cancellation.
 
-First draw calls lighting and probe updates, optical exit fields, original
-opaque/water HDR passes and the final HDR composite. First-use texture/buffer
-uploads, render-target initialization, shadow/optical shader variants and
-driver waits are hypotheses. The old snapshot's submit duration was overwritten
-by a later 35.8 ms refinement; it does not measure the first draw.
-
-## CPU candidate
-
-- `?startup=profile` records inclusive synchronous first-frame substep timings
-  and retains `startup.initialSubmitMs` separately from later frames.
-- `?startup=warmup` adds the same timings and, on native mobile raster only,
-  initializes each unique original material texture across scheduled tasks.
-  It targets a four-ms cumulative task budget. Individual GL uploads are atomic
-  and can exceed it; the measured maximum is reported without a responsiveness
-  guarantee. Render-target/depth, framebuffer and video textures are excluded.
-- Ordinary visits keep texture preparation disabled. Original texture bytes,
-  mesh data, materials, camera/pacing, resolution and ready/completion semantics
-  remain. There is no placeholder, resolution reduction or early ready flag.
-- Runtime prelude strings retain spaces when a wide layout hides line breaks.
-  The regression evaluates the actual runtime assignment, including loading
-  and later scroll captions. PR8's HTML-only check missed those rewrites.
-
-Tests exercise deduplication through compiled uniforms, retained identities,
-yield ordering, oversized atomic uploads, cancellation/failure propagation and
-inclusive nested timing. They do not initialize WebGL or establish actual
-texture-upload cost.
-
-## Next evidence and fixes
-
-Request an exclusive bounded native slot before running a browser. Compare
-fresh `profile` and `warmup` contexts from one frozen source with the exact full
-CAD, original pixel density, matched viewport/latency and actual geometry hash.
-Capture from navigation through full-ready using Chrome tracing and sampled
-JavaScript stacks, retain phase/upload metrics and exercise trusted scrolling
-during startup. Capture actual GEO/full assembly and close all owned resources.
-Reject a shifted stall or premature readiness as an improvement.
-
-If the first-frame cost is predominantly an unwarmed optical/HDR/shadow variant,
-prepare that exact variant with asynchronous compilation and restore all live
-renderer/material state before awaiting. If texture preparation accounts for
-it, validate the task queue and input response before considering it a default.
-If pure chart/material grouping dominates earlier mesh tasks, transfer only
-new derived arrays from a worker and compare every byte and material-group order
-with the original implementation. The existing verified CAD buffer stays owned
-by the main renderer. An OffscreenCanvas migration is outside this experiment.
-
-Physical-phone performance, memory pressure, inherited optics and cold mobile
-network delivery remain open issues. A single sequential laptop pair cannot
-establish a causal speedup.
-
-## Local repair candidate
-
-The local successor moves `waterOuterBoundaryIndices` verbatim into a pure
-module and runs it in a module worker before mobile thickness setup. Only
-copies of selected water position/index arrays are transferred. The original
-CAD buffers remain attached to the main renderer. Derived indices and every
-audit value are compared with the synchronous implementation on the actual
-ELEMENTS and SCENES water; unchanged-index results retain original identity.
-Geometry/attribute versions prevent stale results from being reused. A
-synchronous compatibility path remains for missing workers/interleaved inputs.
-
-Mobile default raster also prepares the actual glass/water exit targets,
-opaque/water HDR targets, retained full HDR target and display transform.
-Compilation uses proxies with original geometry/material identities and the
+Default mobile raster prepares the actual glass/water thickness targets,
+opaque/water HDR targets, full HDR scene target and display transform.
+Compilation proxies share original geometry/material identities and use the
 real scene's lights/environment. Live target, cube face/mip, viewport, scissor,
-background, override material, shadow and XR state are restored before waiting
-for asynchronous shader readiness. Lazy uniform/attribute reflection follows
-readiness in separate tasks; one GL query can still exceed a task budget.
-Preparation does not render a frame or advance readiness/completion flags.
-Explicit ray/pathtrace modes retain their existing preparation.
+background, override material, tone/output settings, shadow and XR state are
+restored before awaiting asynchronous shader readiness. Lazy uniform/attribute
+reflection then runs in separate yielded tasks. Preparation does not render or
+advance readiness/completion flags. Explicit ray/pathtrace preparation remains.
 
-Texture upload warmup remains opt-in. No startup or responsiveness benefit is
-claimed until a separately approved native comparison measures first usable
-GEO, completed full frame, loading input and all startup tasks. The corrected
-postload probe must cross the existing pose 0.035 assembly hold using trusted
-page pans. The earlier failed diagnostic receipt stays unchanged.
+`?startup=profile` records inclusive first-draw substep timings and retains the
+initial submit duration separately from later frames. Texture initialization
+remains opt-in with `?startup=warmup`; ordinary visits keep it disabled. Original
+texture bytes, mesh data, materials, camera/pacing, resolution and completion
+semantics remain. The loading caption reads "Preparing the instrument."
+Runtime caption spaces survive wide layouts that hide line breaks.
 
-This candidate is local-only. The parent coordinates any later transfer or
-publication; no new source upload, public PR, push or deployment is included.
+## Validation and actual visual evidence
+
+All 338 CPU tests, syntax checks, source references and actual HTTP byte smoke
+passed. Worker equivalence tests used the native ELEMENTS and SCENES meshes;
+2,841,156 bytes of copied worker inputs left the original arrays unchanged.
+All tracked source hashes and the two provenance manifests were verified.
+Assets and sibling CYBR dependencies are unchanged from the earlier PR9 head.
+
+One sequential native comparison ran the earlier PR9 control
+`dccc509405689d1c32c0b85c6f5e50f6cb971cc0`, then the repaired implementation.
+Both contexts used fresh disabled caches, a 390 x 844 touch viewport, DPR1,
+CPU x4, native Intel UHD ANGLE D3D11 and 80ms local request latency with no
+bandwidth cap. Both used `?startup=profile&audit`, with texture warmup disabled.
+
+| Observation | Control | Repair |
+| --- | ---: | ---: |
+| GEO image captured (host upper bound) | 2,415.4ms | 2,212.0ms |
+| GPU-completed full-ready from navigation | 18,459.0ms | 13,305.8ms |
+| First full draw submission | 5,687.3ms | 3,136.0ms |
+| Touchstart processing delay near 8s | 380.1ms | 13.9ms |
+| Touchstart processing delay near 14s | 4,314.5ms | 10.4ms |
+
+The 8s repair input occurred during shader preparation. The 14s repair input
+occurred after full-ready, so it does not establish input responsiveness during
+the remaining first-draw stall. Shared driver warmth, profiling overhead and
+the fixed control-then-repair order prevent a causal speedup claim.
+
+Both contexts retained 56 meshes and 2,096,316 triangles, with decoded geometry
+SHA256 `486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756`.
+Paired actual GEO images and full-opening images were byte-identical and
+visually inspected. No synthetic images were used. A trusted 470px page pan
+advanced the document 455px and pose to 0.04495, crossing the existing 0.035
+opening hold. GPU-completed camera/model motion and condensation advanced in
+both contexts, with no page errors. The earlier short-pan diagnostic failure
+remains preserved; this new probe supplies the passing functional acceptance.
+
+## Remaining issues and limits
+
+Startup is still heavy. The repair's first-draw main-thread task lasted about
+3.15 seconds, predominantly sampled `texSubImage2D` texture upload (~2.98s).
+The water worker and shader preparation address earlier classification and
+late shader reflection; they do not solve this remaining upload stall. A
+single GL upload/query is atomic and can exceed a scheduling budget. Keep
+texture warmup opt-in until independently validated during that phase.
+
+Physical-phone performance, memory pressure, cold mobile network delivery and
+inherited optical refinement remain unverified. This laptop pair establishes
+functional preservation and the observed timings, not a solved phone experience
+or final art acceptance. Merge and Site deployment are coordinated separately.

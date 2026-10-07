@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5116,
-      "sha256": "4a6b804db13623df6c8dc66b02735e5862e1c335076bfbc76a13b4a3fd25a2eb",
+      "bytes": 5115,
+      "sha256": "5410f1ed8982ea68718507f53aecaf1e69e94a3084967a0aba508765371552cb",
       "mobile_experience_baseline_sha256": "2c64166dfb6abb53eee393a1e82a3730c9e8d20c9c895ac5022e75eeb4804266",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "93dba6fc317a05334d77f16db5ef4c9d8aadd798ad5de47cc0a3a7539914b2bf",
@@ -23,7 +23,9 @@
       "startup_followup_baseline_sha256": "305aed0320c3f43d08d0cfb11faded8562a3108f709ba70d008e7bcc102ee97a",
       "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
       "local_startup_repair_previous_sha256": "fc6e6f5db368021765c11874e90d62e8fbaaedf6cd539640603686ab9c58bcb4",
-      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment",
+      "startup_repair_review_previous_sha256": "4a6b804db13623df6c8dc66b02735e5862e1c335076bfbc76a13b4a3fd25a2eb",
+      "startup_repair_review_update": "Native functional acceptance at b5665dc; one sequential pair and remaining 3.15s upload stall disclosed; runtime unchanged"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1783,14 +1785,16 @@
     },
     {
       "path": "docs/MOBILE_STARTUP_FOLLOWUP.md",
-      "bytes": 6173,
-      "sha256": "da087367889c3343e277b8d702778811369e1748f2426d0ec104b41317929741",
+      "bytes": 5217,
+      "sha256": "6b26d42831b85d966ab2110de31ed8097d2641e3a077acf7838c99348b058b30",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",
       "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release",
       "local_startup_repair_previous_sha256": "31feb2e14bdd2bacff82007782c6fe92639d4436fdf2e286c36ed9ec1ca12322",
-      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment",
+      "startup_repair_review_previous_sha256": "da087367889c3343e277b8d702778811369e1748f2426d0ec104b41317929741",
+      "startup_repair_review_update": "Native functional acceptance at b5665dc; one sequential pair and remaining 3.15s upload stall disclosed; runtime unchanged"
     },
     {
       "path": "docs/NATIVE_ACCEPTANCE.json",
