@@ -7,7 +7,7 @@ cached ELEMENTS water/fire playback, and six project pages. The publication base
 Mobile uses the continuous scroll-driven assembly and camera tour, with a
 sticky touch-safe scene. Progressive real GEO and lossless full geometry remain.
 See [scroll-tour correction](docs/MOBILE_SCROLL_TOUR.md) and
-[startup notes](docs/MOBILE_STARTUP.md), and the pending
+[startup notes](docs/MOBILE_STARTUP.md), and the validated
 [mobile experience pass](docs/MOBILE_EXPERIENCE.md) for scope and verification.
 Source publication and Site versioning are separate; this PR does not deploy
 a Site. Final art quality is not certified.

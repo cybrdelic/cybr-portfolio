@@ -9377,8 +9377,8 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6557,
-      "sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
+      "bytes": 6558,
+      "sha256": "9d304ea569bda4f5e21e3ba8d22bce30de3325d778eae18a55e131ca869c062e",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
@@ -9392,7 +9392,9 @@
       "native_touch_baseline_sha256": "fbf9dd75b46b519549428a2d9cb9f4d31071b0805308a2a04c7ae46d4e60b1dc",
       "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture",
       "mobile_experience_baseline_sha256": "2b6937ef4e9d09e1384285252722c7b2e727c70965757463e2255b5502640dab",
-      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending"
+      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
+      "mobile_experience_review_baseline_sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -9612,10 +9614,12 @@
     },
     {
       "path": "portfolio/instrument-mobile-story.test.mjs",
-      "bytes": 4060,
-      "sha256": "4bb606460d50246f44ad6c7ea34c8a85a20f76efc68c58a21bf2b51525b1b800",
+      "bytes": 4534,
+      "sha256": "ec64b01f825a5f9f363b28501c16f5d40f2f7f21b1aa11173a8080381ee328ee",
       "reason": "Authored mobile camera/pacing source, numerical regressions or scope notes",
-      "provenance": "Mobile experience pass from live version9; no imported or regenerated assets"
+      "provenance": "Mobile experience pass from live version9; no imported or regenerated assets",
+      "mobile_experience_review_baseline_sha256": "4bb606460d50246f44ad6c7ea34c8a85a20f76efc68c58a21bf2b51525b1b800",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "portfolio/instrument-mobile.css",

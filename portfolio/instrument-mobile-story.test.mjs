@@ -1,9 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {PROJECT_STOPS} from './instrument-interface.mjs';
 import {MOBILE_PAGE_STOPS,mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs';
 import {createScrollTour} from './instrument-scroll-tour.mjs';
+
+test('opening copy retains its sentence separator when the wide layout hides its line break',()=>{
+  const html=readFileSync(new URL('./index.html',import.meta.url),'utf8');
+  const heading=html.match(/<div class="mobile-intro">[\s\S]*?<h2>(.*?)<\/h2>/)?.[1];
+  assert.ok(heading,'the mobile opening heading exists');
+  assert.equal(heading.replace(/<br\s*\/?\s*>/gi,'').replace(/\s+/g,' ').trim(),'Six systems. One instrument.');
+});
 
 test('mobile pacing is continuous, monotone, reversible and preserves all six physical destinations',()=>{
   let previous=-1;

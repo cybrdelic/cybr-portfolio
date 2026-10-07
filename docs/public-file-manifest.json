@@ -14,10 +14,12 @@
     },
     {
       "path": "README.md",
-      "bytes": 5023,
-      "sha256": "93dba6fc317a05334d77f16db5ef4c9d8aadd798ad5de47cc0a3a7539914b2bf",
+      "bytes": 5025,
+      "sha256": "305aed0320c3f43d08d0cfb11faded8562a3108f709ba70d008e7bcc102ee97a",
       "mobile_experience_baseline_sha256": "2c64166dfb6abb53eee393a1e82a3730c9e8d20c9c895ac5022e75eeb4804266",
-      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending"
+      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
+      "mobile_experience_review_baseline_sha256": "93dba6fc317a05334d77f16db5ef4c9d8aadd798ad5de47cc0a3a7539914b2bf",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1751,10 +1753,12 @@
     },
     {
       "path": "docs/MOBILE_EXPERIENCE.md",
-      "bytes": 3474,
-      "sha256": "629d8b4091f3a851637731aa04bc1cb1dda0e057ad93c04ff4bd1f456f3bdfb1",
+      "bytes": 5775,
+      "sha256": "afe585b9966113d1d22fba84f3fcd4dfdc70a5fb2b0cc2f94abd0313161f164c",
       "reason": "Authored mobile camera/pacing source, numerical regressions or scope notes",
-      "provenance": "Mobile experience pass from live version9; no imported or regenerated assets"
+      "provenance": "Mobile experience pass from live version9; no imported or regenerated assets",
+      "mobile_experience_review_baseline_sha256": "629d8b4091f3a851637731aa04bc1cb1dda0e057ad93c04ff4bd1f456f3bdfb1",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "docs/MOBILE_SCROLL_ACCEPTANCE.json",
@@ -1835,10 +1839,12 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 497662,
-      "sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
+      "bytes": 498214,
+      "sha256": "132ce08ec94cf175d45444a2ddd7755b4da97255ab028fbdf39ec84b22add70a",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
-      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending"
+      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
+      "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -6387,8 +6393,8 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6557,
-      "sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
+      "bytes": 6558,
+      "sha256": "9d304ea569bda4f5e21e3ba8d22bce30de3325d778eae18a55e131ca869c062e",
       "mobile_declutter_baseline_sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
       "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained",
       "mobile_slider_baseline_sha256": "fbdd37c26ad7b507dd15c6b3ade76ce193223c583d062741d488bdeeed079c19",
@@ -6398,7 +6404,9 @@
       "native_touch_baseline_sha256": "fbf9dd75b46b519549428a2d9cb9f4d31071b0805308a2a04c7ae46d4e60b1dc",
       "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture",
       "mobile_experience_baseline_sha256": "2b6937ef4e9d09e1384285252722c7b2e727c70965757463e2255b5502640dab",
-      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending"
+      "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
+      "mobile_experience_review_baseline_sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -6568,10 +6576,12 @@
     },
     {
       "path": "portfolio/instrument-mobile-story.test.mjs",
-      "bytes": 4060,
-      "sha256": "4bb606460d50246f44ad6c7ea34c8a85a20f76efc68c58a21bf2b51525b1b800",
+      "bytes": 4534,
+      "sha256": "ec64b01f825a5f9f363b28501c16f5d40f2f7f21b1aa11173a8080381ee328ee",
       "reason": "Authored mobile camera/pacing source, numerical regressions or scope notes",
-      "provenance": "Mobile experience pass from live version9; no imported or regenerated assets"
+      "provenance": "Mobile experience pass from live version9; no imported or regenerated assets",
+      "mobile_experience_review_baseline_sha256": "4bb606460d50246f44ad6c7ea34c8a85a20f76efc68c58a21bf2b51525b1b800",
+      "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged"
     },
     {
       "path": "portfolio/instrument-mobile.css",
