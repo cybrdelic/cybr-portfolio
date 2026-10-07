@@ -829,7 +829,7 @@ async function init(){
         const thicknessObjects=partialRayOptics?objects.filter(o=>o.userData.meshRecord.module==='scenes'):objects;
         let waterBoundaries;
         if(mobileLayout.matches){
-          startupPhase('water-boundary-preparation','Preparing the original water boundaries.');
+          startupPhase('water-boundary-preparation','Preparing the instrument.');
           startup.waterBoundaryPreparation={};
           waterBoundaries=await prepareWaterBoundaries(thicknessObjects,{metrics:startup.waterBoundaryPreparation,cancelled:()=>rasterResourcesDisposed});
         }
@@ -879,7 +879,7 @@ async function init(){
     const shaderCompileStarted=performance.now();
     await renderer.compileAsync(scene,camera);
     if(mobileLayout.matches&&working&&hdrComposite&&!rasterOptics&&!rasterTransport){
-      startupPhase('shader-variant-preparation','Preparing the original rendering passes.');
+      startupPhase('shader-variant-preparation','Preparing the instrument.');
       const size=renderer.getDrawingBufferSize(new THREE.Vector2());
       if(layeredTarget.width!==size.x||layeredTarget.height!==size.y)layeredTarget.setSize(size.x,size.y);
       if(workingOuterTarget.width!==size.x||workingOuterTarget.height!==size.y)workingOuterTarget.setSize(size.x,size.y);

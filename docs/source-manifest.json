@@ -9415,8 +9415,8 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 84798,
-      "sha256": "51b372fae3a907c10ad7eafa3192e2a0bbadf95721c352e42bb2b480ececb430",
+      "bytes": 84768,
+      "sha256": "2013116d791746119e7c37edffc131c67ed7e5a2f145c73739d4a1695967f492",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
