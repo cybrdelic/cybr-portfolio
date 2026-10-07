@@ -14,14 +14,16 @@
     },
     {
       "path": "README.md",
-      "bytes": 5111,
-      "sha256": "fc6e6f5db368021765c11874e90d62e8fbaaedf6cd539640603686ab9c58bcb4",
+      "bytes": 5116,
+      "sha256": "4a6b804db13623df6c8dc66b02735e5862e1c335076bfbc76a13b4a3fd25a2eb",
       "mobile_experience_baseline_sha256": "2c64166dfb6abb53eee393a1e82a3730c9e8d20c9c895ac5022e75eeb4804266",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "93dba6fc317a05334d77f16db5ef4c9d8aadd798ad5de47cc0a3a7539914b2bf",
       "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged",
       "startup_followup_baseline_sha256": "305aed0320c3f43d08d0cfb11faded8562a3108f709ba70d008e7bcc102ee97a",
-      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
+      "local_startup_repair_previous_sha256": "fc6e6f5db368021765c11874e90d62e8fbaaedf6cd539640603686ab9c58bcb4",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "cybr-combat/CONTACT_Inspector.html",
@@ -1781,12 +1783,14 @@
     },
     {
       "path": "docs/MOBILE_STARTUP_FOLLOWUP.md",
-      "bytes": 4337,
-      "sha256": "31feb2e14bdd2bacff82007782c6fe92639d4436fdf2e286c36ed9ec1ca12322",
+      "bytes": 6173,
+      "sha256": "da087367889c3343e277b8d702778811369e1748f2426d0ec104b41317929741",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",
-      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release",
+      "local_startup_repair_previous_sha256": "31feb2e14bdd2bacff82007782c6fe92639d4436fdf2e286c36ed9ec1ca12322",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "docs/NATIVE_ACCEPTANCE.json",
@@ -1850,8 +1854,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 500379,
-      "sha256": "75f17d58234dc06bb5b279cfc4737f9a1709a9cc35e444d6a94f088d967f5ec2",
+      "bytes": 504714,
+      "sha256": "20b7e61417b9d6ae528b56bbc4b6bd512e8f2e009999e3ae03a72d85ec931db1",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -1859,7 +1863,9 @@
       "startup_followup_baseline_sha256": "132ce08ec94cf175d45444a2ddd7755b4da97255ab028fbdf39ec84b22add70a",
       "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
       "startup_depth_guard_previous_sha256": "fdcc1594c1d6ad9bde2c84745e180bd8e628bd68ca3d176c4565c6d78ca01871",
-      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release"
+      "startup_depth_guard_update": "Exclude actual Three depth textures from material-image preparation; native source remains CPU-only pending approval/release",
+      "local_startup_repair_previous_sha256": "75f17d58234dc06bb5b279cfc4737f9a1709a9cc35e444d6a94f088d967f5ec2",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/LIVE-STUDIES.md",
@@ -6408,8 +6414,8 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6561,
-      "sha256": "a57be4029a3bb734d72daa7aa9d6116aceb859cf9311c703aed0a90f4bc1155f",
+      "bytes": 6567,
+      "sha256": "d2ff0961cb117e93cc3a0693ca2c592522dd3be48aff2a828782f1c5717bcd5a",
       "mobile_declutter_baseline_sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
       "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained",
       "mobile_slider_baseline_sha256": "fbdd37c26ad7b507dd15c6b3ade76ce193223c583d062741d488bdeeed079c19",
@@ -6423,7 +6429,9 @@
       "mobile_experience_review_baseline_sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
       "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged",
       "startup_followup_baseline_sha256": "9d304ea569bda4f5e21e3ba8d22bce30de3325d778eae18a55e131ca869c062e",
-      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
+      "local_startup_repair_previous_sha256": "a57be4029a3bb734d72daa7aa9d6116aceb859cf9311c703aed0a90f4bc1155f",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -6437,8 +6445,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 82781,
-      "sha256": "54af4a86c0c63073e0d48b0d057ee65edfa94535a2da8ef908f99f8769170078",
+      "bytes": 84798,
+      "sha256": "51b372fae3a907c10ad7eafa3192e2a0bbadf95721c352e42bb2b480ececb430",
       "phone_media_baseline_sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
       "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
       "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
@@ -6446,7 +6454,9 @@
       "mobile_experience_baseline_sha256": "dee0f29d281bedfe56aeeba415a75c1761ae15e7e8042c84fdc1d0b08537c91f",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "startup_followup_baseline_sha256": "d53c6cc7c0760afdc0e4f91e867cba415122967de810aec72ccdadae4765b627",
-      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
+      "local_startup_repair_previous_sha256": "54af4a86c0c63073e0d48b0d057ee65edfa94535a2da8ef908f99f8769170078",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -6533,8 +6543,10 @@
     },
     {
       "path": "portfolio/instrument-hdr-composite.mjs",
-      "bytes": 2251,
-      "sha256": "79274e147323c28aef576dc47c2b8064b3b8511ee37e355de9249eb927b8b8bd"
+      "bytes": 2630,
+      "sha256": "605dccc204d4574f6c75fade21f458600657f1242c6f027987e8a4410b24d13c",
+      "local_startup_repair_previous_sha256": "79274e147323c28aef576dc47c2b8064b3b8511ee37e355de9249eb927b8b8bd",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-hdr-composite.test.mjs",
@@ -6803,13 +6815,17 @@
     },
     {
       "path": "portfolio/instrument-raster-thickness.mjs",
-      "bytes": 36567,
-      "sha256": "330256ff33f1b29da5b11d2856556eb83e8d03b590570d522c9cb395532e50ad"
+      "bytes": 31488,
+      "sha256": "13567449e141027fa3389235fd1286875fd7880d12e26ee534b4897bd514d7f2",
+      "local_startup_repair_previous_sha256": "330256ff33f1b29da5b11d2856556eb83e8d03b590570d522c9cb395532e50ad",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-raster-thickness.test.mjs",
-      "bytes": 32260,
-      "sha256": "ff1b4f441e87992104f60196f52fbdc04eff77c8bf352fe34799dbc1d43a083e"
+      "bytes": 33369,
+      "sha256": "090850c0c9affeec48d85018f51266145181c5b34370cff3c9e46becc9a203dc",
+      "local_startup_repair_previous_sha256": "ff1b4f441e87992104f60196f52fbdc04eff77c8bf352fe34799dbc1d43a083e",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-raster-timing.mjs",
@@ -6875,6 +6891,22 @@
       "sha256": "210ca9764b345c475261d3a888c751b19b8724e0fff7060e9ffee1ea06bac0b0",
       "native_touch_baseline_sha256": "a536db4d29bbc90e072ce3f36fc91613559579f0b6a4503d8658d358802b7adf",
       "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
+    },
+    {
+      "path": "portfolio/instrument-shader-preparation.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 4138,
+      "sha256": "2688547d1f17f4983634801a7a22a9c2add63f2df318185357f583c19be52e42",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-shader-preparation.test.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 5857,
+      "sha256": "89b36a6d33bf5a224e2d5119053f49cb450b6d3984df8989a7fbaf66f28b4358",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-startup.mjs",
@@ -6978,6 +7010,38 @@
       "path": "portfolio/instrument-water-boundary-classifier.test.mjs",
       "bytes": 5508,
       "sha256": "af79742d553574e268a207cbdbdadb832f21fd20a4587a939b856fb4180c143f"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary-preparation.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 4257,
+      "sha256": "418d3d5ea3851e3501540ed1207714186e222b6c6e5cc95fea5d90c20057a335",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary-preparation.test.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 6424,
+      "sha256": "7b2e691c3d864fe1123166e4dffd584f517e5ade767b8d3bbda9964613529f05",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary-worker.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 1070,
+      "sha256": "7eb8807d913402f8f0d15d82336587a87392cbdf7110e803961df01d366f4b00",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 6275,
+      "sha256": "3c2e9bc2553e74ff2f79af89f191784925d32a56f4a2603da8a1f5eacecc6774",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-working-motion.js",
@@ -7798,8 +7862,10 @@
     },
     {
       "path": "tools/tasks.py",
-      "bytes": 4965,
-      "sha256": "0b98a49fcf0fa4ab51a1fa2e8ae2b6b57a1812eda2410e29710bbd3af1eea44d"
+      "bytes": 5262,
+      "sha256": "2c3b232c3716171ee9c7e6ca1ec4bfc662044bfd6215bb8a4da0072e8d5ca67d",
+      "local_startup_repair_previous_sha256": "0b98a49fcf0fa4ab51a1fa2e8ae2b6b57a1812eda2410e29710bbd3af1eea44d",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     }
   ],
   "mobile_update_baseline_commit": "d9cd9874d411d194b1b2a82ea6aaf97b9c3c8f7f",
@@ -7809,5 +7875,6 @@
   "phone_media_baseline_commit": "91981b66312f9e87779762d02a009cd38adb7664",
   "native_touch_baseline_commit": "980614dae51b7048e20d7916890e08e1a9891074",
   "mobile_experience_baseline_commit": "55b89affd81a0aa1398414fe229fe71d4a00655b",
-  "startup_followup_baseline_commit": "fb4734942cc3ee3f34af2d9693bf11b97452ebb1"
+  "startup_followup_baseline_commit": "fb4734942cc3ee3f34af2d9693bf11b97452ebb1",
+  "local_startup_repair_baseline_commit": "dccc509405689d1c32c0b85c6f5e50f6cb971cc0"
 }

@@ -15,7 +15,11 @@ void main(){gl_FragColor=vec4(texture2D(source,screenUV).rgb,1.);
  const display=new THREE.Scene(),camera=new THREE.Camera(),mesh=new THREE.Mesh(geometry,material);mesh.frustumCulled=false;display.add(mesh);
  const size=new THREE.Vector2();
  let hasFrame=false;
- return{render(renderer,scene,sceneCamera,paper){
+ return{startupVariants(renderer,scene,sceneCamera,paper,objects){
+   renderer.getDrawingBufferSize(size);if(target.width!==size.x||target.height!==size.y)target.setSize(size.x,size.y);
+   return[{name:'final-HDR-scene',scene,camera:sceneCamera,target,background:paper,objects},
+     {name:'final-HDR-display',scene:display,camera,target:renderer.getRenderTarget(),objects:[mesh]}];
+  },render(renderer,scene,sceneCamera,paper){
    renderer.getDrawingBufferSize(size);if(target.width!==size.x||target.height!==size.y)target.setSize(size.x,size.y);
    const previous=renderer.getRenderTarget(),background=scene.background;
    let calls=0,triangles=0;

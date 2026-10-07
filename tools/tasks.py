@@ -43,6 +43,9 @@ elif args.action=='smoke':
       'portfolio/assets/instrument-working-v1/geo.lossless-v1.bin.gz',
       'portfolio/instrument-geo-starter.mjs','portfolio/instrument-mobile.css',
       'portfolio/instrument-render-gate.mjs',
+      'portfolio/instrument-water-boundary.mjs','portfolio/instrument-water-boundary-worker.mjs',
+      'portfolio/instrument-water-boundary-preparation.mjs','portfolio/instrument-shader-preparation.mjs',
+      'portfolio/instrument-raster-thickness.mjs','portfolio/instrument-hdr-composite.mjs',
       'portfolio/assets/pbr-metal/studio/studio_small_08-1024x512-rgba.f32.gz',
       'cybr-light/browser/trace.wgsl']
     fire_base='portfolio/assets/instrument-elements-bake/fire/'

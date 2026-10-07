@@ -9377,8 +9377,8 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6561,
-      "sha256": "a57be4029a3bb734d72daa7aa9d6116aceb859cf9311c703aed0a90f4bc1155f",
+      "bytes": 6567,
+      "sha256": "d2ff0961cb117e93cc3a0693ca2c592522dd3be48aff2a828782f1c5717bcd5a",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
@@ -9396,7 +9396,9 @@
       "mobile_experience_review_baseline_sha256": "613fb72a2009d8bef2d4fa30f927755ba650f486546c877266d0d4c995be9137",
       "mobile_experience_review_update": "Separate wide-copy separator regression and actual native validation notes; tested runtime and assets unchanged",
       "startup_followup_baseline_sha256": "9d304ea569bda4f5e21e3ba8d22bce30de3325d778eae18a55e131ca869c062e",
-      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
+      "local_startup_repair_previous_sha256": "a57be4029a3bb734d72daa7aa9d6116aceb859cf9311c703aed0a90f4bc1155f",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-3d.css",
@@ -9413,8 +9415,8 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 82781,
-      "sha256": "54af4a86c0c63073e0d48b0d057ee65edfa94535a2da8ef908f99f8769170078",
+      "bytes": 84798,
+      "sha256": "51b372fae3a907c10ad7eafa3192e2a0bbadf95721c352e42bb2b480ececb430",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
@@ -9426,7 +9428,9 @@
       "mobile_experience_baseline_sha256": "dee0f29d281bedfe56aeeba415a75c1761ae15e7e8042c84fdc1d0b08537c91f",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "startup_followup_baseline_sha256": "d53c6cc7c0760afdc0e4f91e867cba415122967de810aec72ccdadae4765b627",
-      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established"
+      "startup_followup_update": "CPU-only opt-in first-frame diagnostics/texture task queue and runtime copy regression; no speedup established",
+      "local_startup_repair_previous_sha256": "54af4a86c0c63073e0d48b0d057ee65edfa94535a2da8ef908f99f8769170078",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-adaptive.mjs",
@@ -9542,10 +9546,12 @@
     {
       "path": "portfolio/instrument-hdr-composite.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 2251,
-      "sha256": "79274e147323c28aef576dc47c2b8064b3b8511ee37e355de9249eb927b8b8bd",
+      "bytes": 2630,
+      "sha256": "605dccc204d4574f6c75fade21f458600657f1242c6f027987e8a4410b24d13c",
       "mobile_baseline_sha256": "2e5860eeb90f6bc9f9d01ad565e0ff32df3657f9e0eb045a54f54f7cf9af9c52",
-      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git"
+      "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
+      "local_startup_repair_previous_sha256": "79274e147323c28aef576dc47c2b8064b3b8511ee37e355de9249eb927b8b8bd",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-hdr-composite.test.mjs",
@@ -9875,14 +9881,18 @@
     {
       "path": "portfolio/instrument-raster-thickness.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 36567,
-      "sha256": "330256ff33f1b29da5b11d2856556eb83e8d03b590570d522c9cb395532e50ad"
+      "bytes": 31488,
+      "sha256": "13567449e141027fa3389235fd1286875fd7880d12e26ee534b4897bd514d7f2",
+      "local_startup_repair_previous_sha256": "330256ff33f1b29da5b11d2856556eb83e8d03b590570d522c9cb395532e50ad",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-raster-thickness.test.mjs",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 32260,
-      "sha256": "ff1b4f441e87992104f60196f52fbdc04eff77c8bf352fe34799dbc1d43a083e"
+      "bytes": 33369,
+      "sha256": "090850c0c9affeec48d85018f51266145181c5b34370cff3c9e46becc9a203dc",
+      "local_startup_repair_previous_sha256": "ff1b4f441e87992104f60196f52fbdc04eff77c8bf352fe34799dbc1d43a083e",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-raster-timing.mjs",
@@ -9963,6 +9973,22 @@
       "sha256": "210ca9764b345c475261d3a888c751b19b8724e0fff7060e9ffee1ea06bac0b0",
       "native_touch_baseline_sha256": "a536db4d29bbc90e072ce3f36fc91613559579f0b6a4503d8658d358802b7adf",
       "native_touch_update": "Preserve native vertical page scrolling and immediate reduced-motion mobile views; remove scroll-driven canvas drag capture"
+    },
+    {
+      "path": "portfolio/instrument-shader-preparation.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 4138,
+      "sha256": "2688547d1f17f4983634801a7a22a9c2add63f2df318185357f583c19be52e42",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-shader-preparation.test.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 5857,
+      "sha256": "89b36a6d33bf5a224e2d5119053f49cb450b6d3984df8989a7fbaf66f28b4358",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-startup.mjs",
@@ -10083,6 +10109,38 @@
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 5508,
       "sha256": "af79742d553574e268a207cbdbdadb832f21fd20a4587a939b856fb4180c143f"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary-preparation.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 4257,
+      "sha256": "418d3d5ea3851e3501540ed1207714186e222b6c6e5cc95fea5d90c20057a335",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary-preparation.test.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 6424,
+      "sha256": "7b2e691c3d864fe1123166e4dffd584f517e5ade767b8d3bbda9964613529f05",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary-worker.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 1070,
+      "sha256": "7eb8807d913402f8f0d15d82336587a87392cbdf7110e803961df01d366f4b00",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
+    },
+    {
+      "path": "portfolio/instrument-water-boundary.mjs",
+      "reason": "Authored local-only startup repair or equivalence regression",
+      "provenance": "Local worker classification and exact shader preparation; no imported/regenerated assets",
+      "bytes": 6275,
+      "sha256": "3c2e9bc2553e74ff2f79af89f191784925d32a56f4a2603da8a1f5eacecc6774",
+      "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
       "path": "portfolio/instrument-working-motion.js",
@@ -11079,5 +11137,6 @@
   "phone_media_baseline_commit": "91981b66312f9e87779762d02a009cd38adb7664",
   "native_touch_baseline_commit": "980614dae51b7048e20d7916890e08e1a9891074",
   "mobile_experience_baseline_commit": "55b89affd81a0aa1398414fe229fe71d4a00655b",
-  "startup_followup_baseline_commit": "fb4734942cc3ee3f34af2d9693bf11b97452ebb1"
+  "startup_followup_baseline_commit": "fb4734942cc3ee3f34af2d9693bf11b97452ebb1",
+  "local_startup_repair_baseline_commit": "dccc509405689d1c32c0b85c6f5e50f6cb971cc0"
 }

@@ -2,7 +2,7 @@
 
 The current laptop portfolio, organized as a self-contained source tree. The
 main entry is `portfolio/index.html`, loading
-`instrument-3d.js?v=startup-profile-1`. It presents the working CAD instrument,
+`instrument-3d.js?v=startup-repair-local-1`. It presents the working CAD instrument,
 cached ELEMENTS water/fire playback, and six project pages. The publication baseline preserves the original behavior and known defects.
 Mobile uses the continuous scroll-driven assembly and camera tour, with a
 sticky touch-safe scene. Progressive real GEO and lossless full geometry remain.

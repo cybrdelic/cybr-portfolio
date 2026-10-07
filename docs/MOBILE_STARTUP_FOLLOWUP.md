@@ -69,3 +69,33 @@ by the main renderer. An OffscreenCanvas migration is outside this experiment.
 Physical-phone performance, memory pressure, inherited optics and cold mobile
 network delivery remain open issues. A single sequential laptop pair cannot
 establish a causal speedup.
+
+## Local repair candidate
+
+The local successor moves `waterOuterBoundaryIndices` verbatim into a pure
+module and runs it in a module worker before mobile thickness setup. Only
+copies of selected water position/index arrays are transferred. The original
+CAD buffers remain attached to the main renderer. Derived indices and every
+audit value are compared with the synchronous implementation on the actual
+ELEMENTS and SCENES water; unchanged-index results retain original identity.
+Geometry/attribute versions prevent stale results from being reused. A
+synchronous compatibility path remains for missing workers/interleaved inputs.
+
+Mobile default raster also prepares the actual glass/water exit targets,
+opaque/water HDR targets, retained full HDR target and display transform.
+Compilation uses proxies with original geometry/material identities and the
+real scene's lights/environment. Live target, cube face/mip, viewport, scissor,
+background, override material, shadow and XR state are restored before waiting
+for asynchronous shader readiness. Lazy uniform/attribute reflection follows
+readiness in separate tasks; one GL query can still exceed a task budget.
+Preparation does not render a frame or advance readiness/completion flags.
+Explicit ray/pathtrace modes retain their existing preparation.
+
+Texture upload warmup remains opt-in. No startup or responsiveness benefit is
+claimed until a separately approved native comparison measures first usable
+GEO, completed full frame, loading input and all startup tasks. The corrected
+postload probe must cross the existing pose 0.035 assembly hold using trusted
+page pans. The earlier failed diagnostic receipt stays unchanged.
+
+This candidate is local-only. The parent coordinates any later transfer or
+publication; no new source upload, public PR, push or deployment is included.

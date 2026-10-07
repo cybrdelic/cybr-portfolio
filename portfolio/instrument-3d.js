@@ -1,12 +1,14 @@
 import {mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs?v=story-1';
 import {createRenderGate} from './instrument-render-gate.mjs';
 import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=1';
+import {prepareWaterBoundaries} from './instrument-water-boundary-preparation.mjs';
+import {prepareShaderVariants,visibleShaderObjects} from './instrument-shader-preparation.mjs';
 import {createScrollTour} from './instrument-scroll-tour.mjs?v=story-1';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
 import {loadElementsComposite} from './instrument-elements-composite.mjs?v=shared-3';
-import {createHdrComposite} from './instrument-hdr-composite.mjs?v=1';
+import {createHdrComposite} from './instrument-hdr-composite.mjs?v=startup-variants-1';
 import {opticalGeometryInView} from './instrument-visible-bounds.mjs';
 import {span,takeup,takeupForLength,internal,length as routeLength} from './instrument-routing.js';
 import {volumeDepth} from './instrument-volume.js';
@@ -823,8 +825,15 @@ async function init(){
       // Rasterized CAD exit depths preserve physical thickness without BVH
       // traversal. Existing HDR depth buffers reject foreground sample leaks.
       if(rasterOpticalMode==='thickness'||partialRayOptics){
-        const {setupRasterThickness}=await import('./instrument-raster-thickness.mjs?v=water-boundary-11');
-        rasterThickness=setupRasterThickness({THREE,renderer,scene,objects:partialRayOptics?objects.filter(o=>o.userData.meshRecord.module==='scenes'):objects,fullSize:layeredSize,schedule,innerDepth:{value:layeredTarget.depthTexture},outerDepth:{value:workingOuterTarget.depthTexture},paperColor:rasterPaperBackground});
+        const {setupRasterThickness}=await import('./instrument-raster-thickness.mjs?v=water-worker-1');
+        const thicknessObjects=partialRayOptics?objects.filter(o=>o.userData.meshRecord.module==='scenes'):objects;
+        let waterBoundaries;
+        if(mobileLayout.matches){
+          startupPhase('water-boundary-preparation','Preparing the original water boundaries.');
+          startup.waterBoundaryPreparation={};
+          waterBoundaries=await prepareWaterBoundaries(thicknessObjects,{metrics:startup.waterBoundaryPreparation,cancelled:()=>rasterResourcesDisposed});
+        }
+        rasterThickness=setupRasterThickness({THREE,renderer,scene,objects:thicknessObjects,waterBoundaries,fullSize:layeredSize,schedule,innerDepth:{value:layeredTarget.depthTexture},outerDepth:{value:workingOuterTarget.depthTexture},paperColor:rasterPaperBackground});
       }
       // Expensive ray candidates remain available for explicit inspection.
       if(['ray','boundary'].includes(rasterOpticalMode)){
@@ -869,6 +878,20 @@ async function init(){
     startupPhase('shader-compile','Compiling the original materials.');
     const shaderCompileStarted=performance.now();
     await renderer.compileAsync(scene,camera);
+    if(mobileLayout.matches&&working&&hdrComposite&&!rasterOptics&&!rasterTransport){
+      startupPhase('shader-variant-preparation','Preparing the original rendering passes.');
+      const size=renderer.getDrawingBufferSize(new THREE.Vector2());
+      if(layeredTarget.width!==size.x||layeredTarget.height!==size.y)layeredTarget.setSize(size.x,size.y);
+      if(workingOuterTarget.width!==size.x||workingOuterTarget.height!==size.y)workingOuterTarget.setSize(size.x,size.y);
+      layeredSize.value.copy(size);
+      const visible=visibleShaderObjects(scene,camera),isOptical=object=>!Array.isArray(object.material)&&(object.material.userData.cadTransmission??object.material.transmission)>0;
+      const opaque=visible.filter(object=>!isOptical(object)),water=visible.filter(object=>!isOptical(object)||object.userData.staticWater);
+      const variants=[...(rasterThickness?.startupVariants(camera)??[]),
+        {name:'opaque-HDR',scene,camera,target:layeredTarget,background:rasterPaperBackground,objects:opaque},
+        {name:'water-HDR',scene,camera,target:workingOuterTarget,background:rasterPaperBackground,objects:water},
+        ...hdrComposite.startupVariants(renderer,scene,camera,rasterPaperBackground,visible)];
+      startup.shaderPreparation=await prepareShaderVariants({THREE,renderer,variants,cancelled:()=>rasterResourcesDisposed});
+    }
     if(nativeGeometryOptics){
       nativeStartup.mainCompileMs=performance.now()-shaderCompileStarted;
       status.textContent='Compiling native glass and water…';
