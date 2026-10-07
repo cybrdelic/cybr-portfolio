@@ -1,0 +1,120 @@
+{
+  "layers": [
+    {
+      "name": "geo",
+      "source": "D:\\CYBR-build\\exploded-instrument\\renders\\geo\\geo-v9-800-96spp.webp",
+      "finish_profile": "studio",
+      "bytes": 64794,
+      "sha256": "13fd49f8bfb4ad4c7f5a446fff123bf1e8e8aeb4e04ee03b5239ed4374b9191e",
+      "bounds_px": [
+        42.157415996502095,
+        183.11611371989136,
+        375.9074159965021,
+        458.74111371989136
+      ],
+      "source_crop_px": [
+        27,
+        8,
+        739,
+        596
+      ]
+    },
+    {
+      "name": "light",
+      "source": "D:\\CYBR-build\\exploded-instrument\\renders\\light\\light-v9-800-96spp.webp",
+      "finish_profile": "studio",
+      "bytes": 47688,
+      "sha256": "e9c85ea1a34048dfd5942d1fafdb01fa0cfb474f895362ac8f0ccd0c5d60d6c9",
+      "bounds_px": [
+        389.78433511824466,
+        292.65700033190103,
+        625.0968351182446,
+        536.407000331901
+      ],
+      "source_crop_px": [
+        149,
+        70,
+        651,
+        590
+      ]
+    },
+    {
+      "name": "elements",
+      "source": "D:\\CYBR-build\\exploded-instrument\\renders\\elements\\elements-v9-800-96spp.webp",
+      "finish_profile": "studio",
+      "bytes": 61504,
+      "sha256": "c87e07340114a3b157366776935740fafe480fddc2dee66ca5072c47caab229c",
+      "bounds_px": [
+        620.7626165996502,
+        378.87411137198916,
+        864.5126165996502,
+        588.8741113719891
+      ],
+      "source_crop_px": [
+        142,
+        98,
+        662,
+        546
+      ]
+    },
+    {
+      "name": "song",
+      "source": "D:\\CYBR-build\\exploded-instrument\\renders\\song\\song-v9-800-96spp.webp",
+      "finish_profile": "studio",
+      "bytes": 62438,
+      "sha256": "0d48cf0b962fde9a45ef611dc2e254898a4be23ec9463ff1ff1a086fd3d1d5a0",
+      "bounds_px": [
+        857.6484256409731,
+        435.4359947288302,
+        1064.835925640973,
+        650.5922447288302
+      ],
+      "source_crop_px": [
+        177,
+        81,
+        619,
+        540
+      ]
+    },
+    {
+      "name": "combat",
+      "source": "D:\\CYBR-build\\exploded-instrument\\renders\\combat\\combat-v9-800-96spp.webp",
+      "finish_profile": "studio",
+      "bytes": 36994,
+      "sha256": "fe62fb1b48cc9ef7d8a1b2658b3f3ed7935ac15a52f8ee525e8afc8e62ca373c",
+      "bounds_px": [
+        1083.2829599501456,
+        530.7051403609013,
+        1377.6579599501456,
+        758.0488903609013
+      ],
+      "source_crop_px": [
+        67,
+        136,
+        695,
+        621
+      ]
+    },
+    {
+      "name": "scenes",
+      "source": "D:\\CYBR-build\\exploded-instrument\\renders\\scenes\\scenes-v9-800-96spp.webp",
+      "finish_profile": "studio",
+      "bytes": 32892,
+      "sha256": "7097518ffe9d5f22c59314615eadea2b3276db65599edd69d6bce927fb673494",
+      "bounds_px": [
+        1362.9799356039432,
+        603.7571763521224,
+        1567.8236856039432,
+        787.0384263521224
+      ],
+      "source_crop_px": [
+        199,
+        131,
+        636,
+        522
+      ]
+    }
+  ],
+  "decoded_rgba_bytes": 6363924,
+  "note": "Independent CYBR Light bakes. SVG external cable spans are length-constrained presentation geometry, not a physics simulation. Reflections are baked."
+}

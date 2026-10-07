@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "matchedNativeEvents": 60,
+  "referenceRays": 12,
+  "maxRejectedBeforeValid": 3,
+  "maxRawCandidates": 12,
+  "normalProbeMM": 0.0005,
+  "budget": 8192,
+  "possibleElementRoots": 6032,
+  "compilerScope": "complete CSG predicate at one wrapper site; raw primitive roots unchanged",
+  "gpuVerified": false
+}

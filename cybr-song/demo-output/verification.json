@@ -1,0 +1,11 @@
+{
+  "master_constant_gain_db": 7.374376881136573,
+  "lufs": -19.20999976261289,
+  "true_peak_dbfs": -4.416037445553975,
+  "sample_peak_dbfs": -4.4163713455200195,
+  "finite": true,
+  "clipped_samples": 0,
+  "duration": 17.63479166666667,
+  "note_attacks": 33,
+  "title": "Lantern Steps"
+}

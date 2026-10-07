@@ -1,0 +1,271 @@
+{
+  "meshes": [
+    {
+      "name": "body",
+      "material": 0,
+      "position": {
+        "offset": 0,
+        "count": 134601,
+        "size": 3
+      },
+      "normal": {
+        "offset": 538404,
+        "count": 134601,
+        "size": 3
+      },
+      "uv": {
+        "offset": 1076808,
+        "count": 89734,
+        "size": 2
+      },
+      "index": {
+        "offset": 1435744,
+        "count": 268374,
+        "size": 1
+      }
+    },
+    {
+      "name": "shirt",
+      "material": 1,
+      "position": {
+        "offset": 2509240,
+        "count": 51852,
+        "size": 3
+      },
+      "normal": {
+        "offset": 2716648,
+        "count": 51852,
+        "size": 3
+      },
+      "uv": {
+        "offset": 2924056,
+        "count": 34568,
+        "size": 2
+      },
+      "index": {
+        "offset": 3062328,
+        "count": 97248,
+        "size": 1
+      }
+    },
+    {
+      "name": "shirt",
+      "material": 3,
+      "position": {
+        "offset": 3451320,
+        "count": 4860,
+        "size": 3
+      },
+      "normal": {
+        "offset": 3470760,
+        "count": 4860,
+        "size": 3
+      },
+      "uv": {
+        "offset": 3490200,
+        "count": 3240,
+        "size": 2
+      },
+      "index": {
+        "offset": 3503160,
+        "count": 6480,
+        "size": 1
+      }
+    },
+    {
+      "name": "shorts",
+      "material": 2,
+      "position": {
+        "offset": 3529080,
+        "count": 24690,
+        "size": 3
+      },
+      "normal": {
+        "offset": 3627840,
+        "count": 24690,
+        "size": 3
+      },
+      "uv": {
+        "offset": 3726600,
+        "count": 16460,
+        "size": 2
+      },
+      "index": {
+        "offset": 3792440,
+        "count": 45120,
+        "size": 1
+      }
+    },
+    {
+      "name": "shorts",
+      "material": 3,
+      "position": {
+        "offset": 3972920,
+        "count": 3204,
+        "size": 3
+      },
+      "normal": {
+        "offset": 3985736,
+        "count": 3204,
+        "size": 3
+      },
+      "uv": {
+        "offset": 3998552,
+        "count": 2136,
+        "size": 2
+      },
+      "index": {
+        "offset": 4007096,
+        "count": 4272,
+        "size": 1
+      }
+    }
+  ],
+  "materials": [
+    [
+      1,
+      0.46,
+      0.5,
+      0.54,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.18489999999999998,
+      0.0,
+      0.0,
+      -1,
+      -1,
+      0.0,
+      0.0,
+      -1
+    ],
+    [
+      1,
+      0.055,
+      0.16,
+      0.19,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7395999999999999,
+      0.0,
+      0.0,
+      -1,
+      -1,
+      0.0,
+      0.0,
+      -1
+    ],
+    [
+      1,
+      0.035,
+      0.045,
+      0.065,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7395999999999999,
+      0.0,
+      0.0,
+      -1,
+      -1,
+      0.0,
+      0.0,
+      -1
+    ],
+    [
+      1,
+      0.025,
+      0.055,
+      0.065,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.7395999999999999,
+      0.0,
+      0.0,
+      -1,
+      -1,
+      0.0,
+      0.0,
+      -1
+    ],
+    [
+      1,
+      0.1,
+      0.125,
+      0.15,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.6889,
+      0.0,
+      0.0,
+      -1,
+      -1,
+      0.0,
+      0.0,
+      -1
+    ]
+  ],
+  "source": "cybr-combat/preview",
+  "sourceModel": "cybr-combat/assets/cybr_mannequin_male.glb",
+  "modelSHA256": "d8f06b3ce06df61cd8e1a34365e426724a7d3bf926e995ce3bc27cf8ea8ca23b",
+  "geometrySHA256": "252e30af1f1ea8860c63953b3ab784164317863ba8a18487a5f211538c74fa41",
+  "frame": 3210,
+  "take": "Original / step-in cross",
+  "currentMannequin": true,
+  "poseMode": "Static skinned vertex bake of the current rig; no added weapon or armor",
+  "triangles": 140498,
+  "sha256": "0565e439a48f5130ccdbb56743ac23b4b7409c9f3c63207ff594b2fdeab83ab4"
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "id": "lava",
+    "title": "Lava",
+    "group": "Earth",
+    "note": "Hot flow breaks through a cooling basalt crust.",
+    "video": "refined-lava.mp4?v=4ffbc8043d",
+    "poster": "refined-lava.jpg?v=4ffbc8043d",
+    "previous": "lava.mp4"
+  },
+  {
+    "id": "ice",
+    "title": "Ice",
+    "group": "Water",
+    "note": "Clear ice with trapped air, fractures, and rough patches.",
+    "video": "photo-ice.mp4?v=02b89896f5",
+    "poster": "photo-ice.jpg?v=02b89896f5",
+    "previous": "ice.mp4"
+  },
+  {
+    "id": "foam",
+    "title": "Foam",
+    "group": "Water",
+    "note": "Fine wet foam with varied bubble sizes.",
+    "video": "photo-foam.mp4?v=78461932b9",
+    "poster": "photo-foam.jpg?v=78461932b9",
+    "previous": "foam.mp4"
+  },
+  {
+    "id": "metal",
+    "title": "Metal",
+    "group": "Earth",
+    "note": "Brushed steel with rolled edges.",
+    "video": "photo-metal.mp4?v=b1d600b4fe",
+    "poster": "photo-metal.jpg?v=b1d600b4fe",
+    "previous": "metal.mp4"
+  },
+  {
+    "id": "combustion",
+    "title": "Combustion",
+    "group": "Fire",
+    "note": "A focused source followed by turbulent ignition.",
+    "video": "combustion-volume.mp4?v=48828f6e98",
+    "poster": "combustion-volume.jpg?v=48828f6e98"
+  },
+  {
+    "id": "lightning",
+    "title": "Lightning",
+    "group": "Fire",
+    "note": "Branching discharges with a narrow luminous core.",
+    "video": "photo-lightning.mp4?v=34d118ac35",
+    "poster": "photo-lightning.jpg?v=34d118ac35",
+    "previous": "lightning.mp4"
+  },
+  {
+    "id": "blue-fire",
+    "title": "Blue fire",
+    "group": "Fire",
+    "note": "Blue flame sheets curl and break apart.",
+    "video": "blue-fire.mp4?v=9f0f6076d5",
+    "poster": "blue-fire.jpg?v=9f0f6076d5"
+  },
+  {
+    "id": "sand",
+    "title": "Sand",
+    "group": "Earth",
+    "note": "Fine mineral grains disperse and settle.",
+    "video": "sand.mp4?v=280ce41b3e",
+    "poster": "sand.jpg?v=280ce41b3e"
+  },
+  {
+    "id": "mud",
+    "title": "Mud",
+    "group": "Earth",
+    "note": "Wet earth with fine grit and subdued highlights.",
+    "video": "photo-mud.mp4?v=1d5effed7c",
+    "poster": "photo-mud.jpg?v=1d5effed7c",
+    "previous": "mud.mp4"
+  },
+  {
+    "id": "plants",
+    "title": "Plants",
+    "group": "Water",
+    "note": "Curved leaves with translucent edges and growing vines.",
+    "video": "photo-plants.mp4?v=b9ae83db96",
+    "poster": "photo-plants.jpg?v=b9ae83db96",
+    "previous": "plants.mp4"
+  },
+  {
+    "id": "steam",
+    "title": "Steam / cloud",
+    "group": "Water",
+    "note": "Backlit vapor with fine rolling structure.",
+    "video": "steam.mp4?v=8eb032f59f",
+    "poster": "steam.jpg?v=8eb032f59f"
+  },
+  {
+    "id": "smoke",
+    "title": "Smoke",
+    "group": "Fire",
+    "note": "Dense smoke scatters and absorbs light.",
+    "video": "smoke.mp4?v=a71f4b28a7",
+    "poster": "smoke.jpg?v=a71f4b28a7"
+  },
+  {
+    "id": "snow",
+    "title": "Snow",
+    "group": "Water",
+    "note": "Light powder disperses slowly.",
+    "video": "snow.mp4?v=a0491b96f9",
+    "poster": "snow.jpg?v=a0491b96f9"
+  },
+  {
+    "id": "glass",
+    "title": "Glass",
+    "group": "Earth",
+    "note": "Thin panes with fractured, beveled edges.",
+    "video": "photo-glass.mp4?v=f2606bcfb7",
+    "poster": "photo-glass.jpg?v=f2606bcfb7",
+    "previous": "glass.mp4"
+  },
+  {
+    "id": "crystal",
+    "title": "Crystal",
+    "group": "Earth",
+    "note": "Intergrown mineral clusters with violet interiors.",
+    "video": "photo-crystal.mp4?v=8dae5e23eb",
+    "poster": "photo-crystal.jpg?v=8dae5e23eb"
+  },
+  {
+    "id": "blood",
+    "title": "Blood",
+    "group": "Water",
+    "note": "Dark fluid with wet surface highlights.",
+    "video": "photo-blood.mp4?v=d7b0d45dcb",
+    "poster": "photo-blood.jpg?v=d7b0d45dcb",
+    "previous": "blood.mp4"
+  },
+  {
+    "id": "healing",
+    "title": "Healing",
+    "group": "Techniques",
+    "note": "Broken fibers reconnect behind a traveling restoration front.",
+    "video": "field-healing.mp4?v=02bd58cb0c",
+    "poster": "field-healing.jpg?v=02bd58cb0c",
+    "previous": "healing.mp4"
+  },
+  {
+    "id": "spirit",
+    "title": "Spiritbending",
+    "group": "Techniques",
+    "note": "A tangled structure reorganizes into coherent luminous filaments.",
+    "video": "field-spirit.mp4?v=805790d794",
+    "poster": "field-spirit.jpg?v=805790d794",
+    "previous": "spirit.mp4"
+  },
+  {
+    "id": "energy",
+    "title": "Energybending",
+    "group": "Techniques",
+    "note": "Opposing amber and blue fields exchange along the gesture.",
+    "video": "field-energy.mp4?v=6c58d8ca1f",
+    "poster": "field-energy.jpg?v=6c58d8ca1f",
+    "previous": "energy.mp4"
+  },
+  {
+    "id": "lightning-redirection",
+    "title": "Lightning redirection",
+    "group": "Techniques",
+    "note": "Branching discharges travel back through the gesture.",
+    "video": "photo-lightning-redirection.mp4?v=349adb55cb",
+    "poster": "photo-lightning-redirection.jpg?v=349adb55cb",
+    "previous": "lightning-redirection.mp4"
+  },
+  {
+    "id": "seismic",
+    "title": "Seismic sense",
+    "group": "Techniques",
+    "note": "Propagating ground-wave visualization.",
+    "video": "seismic.mp4?v=f715a7d84b",
+    "poster": "seismic.jpg?v=f715a7d84b"
+  },
+  {
+    "id": "sound",
+    "title": "Sound",
+    "group": "Techniques",
+    "note": "Repeated compression-wave visualization.",
+    "video": "sound.mp4?v=6920656f63",
+    "poster": "sound.jpg?v=6920656f63"
+  },
+  {
+    "id": "flight",
+    "title": "Flight",
+    "group": "Techniques",
+    "note": "A fine air wake disperses behind the shared gesture.",
+    "video": "flight.mp4?v=558a2086d7",
+    "poster": "flight.jpg?v=558a2086d7"
+  },
+  {
+    "id": "spirit-projection",
+    "title": "Spirit projection",
+    "group": "Techniques",
+    "note": "A translucent luminous wake.",
+    "video": "spirit-projection.mp4?v=6fe7d93c4f",
+    "poster": "spirit-projection.jpg?v=6fe7d93c4f"
+  },
+  {
+    "id": "pressure",
+    "title": "Pressure / vacuum",
+    "group": "Techniques",
+    "note": "Inward-moving pressure fronts visualize evacuation.",
+    "video": "pressure.mp4?v=9f42818ea5",
+    "poster": "pressure.jpg?v=9f42818ea5"
+  },
+  {
+    "id": "heat",
+    "title": "Heat",
+    "group": "Techniques",
+    "note": "Heat shimmer against a lit backdrop.",
+    "video": "heat.mp4?v=3d8d19ad5a",
+    "poster": "heat.jpg?v=3d8d19ad5a"
+  }
+]

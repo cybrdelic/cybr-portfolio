@@ -1,0 +1,52 @@
+{
+  "asset": "BronzeWear",
+  "source": "../source.json",
+  "maps": {
+    "colorCoverage": {
+      "path": "assets/pbr-custom-worn/BronzeWear/runtime/color-coverage.webp",
+      "sha256": "889f943dbfbe934b2cf164854e497cba4a4d6aee2c76c3cba1ad58839097f04b",
+      "bytes": 95654,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "surface": {
+      "path": "assets/pbr-custom-worn/BronzeWear/runtime/surface.webp",
+      "sha256": "75004ad360a0bd6106e4b7043ec4f3e66042228412c3b52c9413674d6175d8ae",
+      "bytes": 379852,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "normal": {
+      "path": "assets/pbr-custom-worn/BronzeWear/runtime/normal.webp",
+      "sha256": "8749a1dc1bedd637c130bb11aac9b28c2732ddcf911c5d5ba215800358195afd",
+      "bytes": 90364,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "losslessPixelEquality": true
+    }
+  },
+  "channels": {
+    "colorCoverage": {
+      "RGB": "sRGB target color, pale/neutral metal film or localized contaminant",
+      "A": "linear color coverage; <=.035 pure oil, paired with G for deposit cores"
+    },
+    "surface": {
+      "R": "target roughness; linear",
+      "G": "opaque deposit coverage; dielectric core response",
+      "B": "thin oil/fingerprint roughness coverage; retains substrate metalness",
+      "A": "255 reserved"
+    },
+    "normal": "OpenGL +Y tangent normal from independent abrasion and pit height; linear"
+  }
+}

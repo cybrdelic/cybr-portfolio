@@ -1,0 +1,262 @@
+{
+  "meshes": [
+    {
+      "name": "Continuous fused terrain and ridge",
+      "material": "baked",
+      "position": {
+        "offset": 0,
+        "count": 1866525,
+        "size": 3
+      },
+      "normal": {
+        "offset": 7466100,
+        "count": 1866525,
+        "size": 3
+      },
+      "color": {
+        "offset": 14932200,
+        "count": 1866525,
+        "size": 3
+      },
+      "index": {
+        "offset": 22398300,
+        "count": 3723930,
+        "size": 1
+      }
+    },
+    {
+      "name": "Single air-water interface",
+      "material": "water",
+      "sourceMaterial": 6,
+      "sourceTriangles": 739328,
+      "position": {
+        "offset": 37294020,
+        "count": 64431,
+        "size": 3
+      },
+      "normal": {
+        "offset": 37551744,
+        "count": 64431,
+        "size": 3
+      },
+      "index": {
+        "offset": 37809468,
+        "count": 125784,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_1",
+      "material": "baked",
+      "sourceMaterial": 1,
+      "sourceTriangles": 2524558,
+      "position": {
+        "offset": 38312604,
+        "count": 288027,
+        "size": 3
+      },
+      "normal": {
+        "offset": 39464712,
+        "count": 288027,
+        "size": 3
+      },
+      "index": {
+        "offset": 40616820,
+        "count": 450000,
+        "size": 1
+      },
+      "color": {
+        "offset": 42416820,
+        "count": 288027,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_2",
+      "material": "baked",
+      "sourceMaterial": 2,
+      "sourceTriangles": 1541174,
+      "position": {
+        "offset": 43568928,
+        "count": 173691,
+        "size": 3
+      },
+      "normal": {
+        "offset": 44263692,
+        "count": 173691,
+        "size": 3
+      },
+      "index": {
+        "offset": 44958456,
+        "count": 299997,
+        "size": 1
+      },
+      "color": {
+        "offset": 46158444,
+        "count": 173691,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_4",
+      "material": "baked",
+      "sourceMaterial": 4,
+      "sourceTriangles": 50320,
+      "position": {
+        "offset": 46853208,
+        "count": 71274,
+        "size": 3
+      },
+      "normal": {
+        "offset": 47138304,
+        "count": 71274,
+        "size": 3
+      },
+      "index": {
+        "offset": 47423400,
+        "count": 135000,
+        "size": 1
+      },
+      "color": {
+        "offset": 47963400,
+        "count": 71274,
+        "size": 3
+      }
+    },
+    {
+      "name": "Cupped_dry_mud_microplates",
+      "material": "baked",
+      "sourceMaterial": 0,
+      "sourceTriangles": 40374,
+      "position": {
+        "offset": 48248496,
+        "count": 82995,
+        "size": 3
+      },
+      "normal": {
+        "offset": 48580476,
+        "count": 82995,
+        "size": 3
+      },
+      "index": {
+        "offset": 48912456,
+        "count": 121122,
+        "size": 1
+      },
+      "color": {
+        "offset": 49396944,
+        "count": 82995,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curved_dry_grass",
+      "material": "baked",
+      "sourceMaterial": 3,
+      "sourceTriangles": 20726,
+      "position": {
+        "offset": 49728924,
+        "count": 72576,
+        "size": 3
+      },
+      "normal": {
+        "offset": 50019228,
+        "count": 72576,
+        "size": 3
+      },
+      "index": {
+        "offset": 50309532,
+        "count": 62178,
+        "size": 1
+      },
+      "color": {
+        "offset": 50558244,
+        "count": 72576,
+        "size": 3
+      }
+    },
+    {
+      "name": "Desert_shrub_branches",
+      "material": "baked",
+      "sourceMaterial": 8,
+      "sourceTriangles": 165543,
+      "position": {
+        "offset": 50848548,
+        "count": 496635,
+        "size": 3
+      },
+      "normal": {
+        "offset": 52835088,
+        "count": 496635,
+        "size": 3
+      },
+      "index": {
+        "offset": 54821628,
+        "count": 496629,
+        "size": 1
+      },
+      "color": {
+        "offset": 56808144,
+        "count": 496635,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curled_small_leaves",
+      "material": "baked",
+      "sourceMaterial": 9,
+      "sourceTriangles": 641167,
+      "position": {
+        "offset": 58794684,
+        "count": 2405001,
+        "size": 3
+      },
+      "normal": {
+        "offset": 68414688,
+        "count": 2405001,
+        "size": 3
+      },
+      "index": {
+        "offset": 78034692,
+        "count": 1923501,
+        "size": 1
+      },
+      "color": {
+        "offset": 85728696,
+        "count": 2405001,
+        "size": 3
+      }
+    },
+    {
+      "name": "Sealed mineral section",
+      "material": "baked",
+      "position": {
+        "offset": 95348700,
+        "count": 36456,
+        "size": 3
+      },
+      "normal": {
+        "offset": 95494524,
+        "count": 36456,
+        "size": 3
+      },
+      "color": {
+        "offset": 95640348,
+        "count": 36456,
+        "size": 3
+      },
+      "index": {
+        "offset": 95786172,
+        "count": 18228,
+        "size": 1
+      }
+    }
+  ],
+  "triangles": 2452123,
+  "decodedBytes": 95859084,
+  "sha256": "1fce84e36d31133c866db73becd66c37175ebc03605f28acd9bde422ed2717fd",
+  "source": "Recovered full CYBR GEO scene NPZ + R2 mineral deformation",
+  "bake": "Native material evaluation, sun visibility and 24-sample cosine sky visibility. Diffuse surface lighting; not full path tracing, water caustics or steam.",
+  "mountains": "Source ridge fused into foreground in object space with a buried, smoothly graded transition. Authored miniature; not uniform geographic scale.",
+  "sprites": false
+}

@@ -1,0 +1,105 @@
+{
+  "assetId": "SteelWear",
+  "revision": "microstructure-v6-sparse",
+  "source": "Original CYBR material wear",
+  "customMadeFor": "CYBR portfolio instrument",
+  "creationMethod": "Original ImageGen semantic smear/ridge coverage and steel oxide color plus independently authored granular deposits, abrasion and physical pits",
+  "downloadedInputs": [],
+  "alloy": "steel",
+  "authoredTileMM": [
+    128.0,
+    128.0
+  ],
+  "runtimeMaps": {
+    "colorCoverage": {
+      "path": "assets/pbr-custom-worn/SteelWear/runtime/color-coverage.webp",
+      "sha256": "c8988da0b23836e364af7a5c8720c5b32944e02b93c59121c6595e9bd7409887",
+      "bytes": 143404,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "surface": {
+      "path": "assets/pbr-custom-worn/SteelWear/runtime/surface.webp",
+      "sha256": "1e7f1513c2b7e49395dfc5772a7b4bdc77f3bdbeb2009568ad10c3fa47956e3a",
+      "bytes": 433124,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "normal": {
+      "path": "assets/pbr-custom-worn/SteelWear/runtime/normal.webp",
+      "sha256": "9e28fb9645b46d80bc2b67a8c6c078a140e2277de8686c7b5afbbb6054973fbe",
+      "bytes": 138882,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "losslessPixelEquality": true
+    }
+  },
+  "channels": {
+    "colorCoverage": {
+      "RGB": "sRGB target color, pale/neutral metal film or localized contaminant",
+      "A": "linear color coverage; <=.035 pure oil, paired with G for deposit cores"
+    },
+    "surface": {
+      "R": "target roughness; linear",
+      "G": "opaque deposit coverage; dielectric core response",
+      "B": "thin oil/fingerprint roughness coverage; retains substrate metalness",
+      "A": "255 reserved"
+    },
+    "normal": "OpenGL +Y tangent normal from independent abrasion and pit height; linear"
+  },
+  "normalConvention": "OpenGL tangent +Y upward",
+  "normalScale": [
+    1,
+    1
+  ],
+  "originalInputs": [
+    {
+      "path": "assets/pbr-custom-worn/source-appearance/contamination-imagegen.png",
+      "sha256": "14725da475150ad586df7511df347d948006aa38a2d3afdc08dcf16890ca0376",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "nativeMode": "RGB",
+      "generator": "OpenAI ImageGen",
+      "prompt": "assets/pbr-custom-worn/source-appearance/contamination-prompt.txt",
+      "promptSHA256": "0b72fb5f6e1e8edcca8013d6933b357ecfd3e0cd71b25e8533d6c603a84eaed2"
+    },
+    {
+      "path": "assets/pbr-custom-worn/source-appearance/rust-imagegen.png",
+      "sha256": "e35a0dce9798f6f4534ccabc7c0aec1ba591827fecb755695d18c67e32f2d683",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "nativeMode": "RGB",
+      "generator": "OpenAI ImageGen",
+      "prompt": "assets/pbr-custom-worn/source-appearance/rust-prompt.txt",
+      "promptSHA256": "7c8e3c3e2592646c9228f7d06a87eb4d3899d1e9863fde690229545f63e5ed41"
+    }
+  ],
+  "recipe": "assets/pbr-custom-worn/SteelWear/source/recipe.json",
+  "recipeSHA256": "de32fe3e5129424e41f3fee5c33c1741e8810bb90f826f097ee2aa778f835915",
+  "authoringScriptSHA256": "d318e39114e93a78de1ba1c65c5642debb608bdf1edf478e0c696a138ef094ee",
+  "geometryInferenceFromAppearance": false,
+  "geometryDisplacement": false,
+  "physicalScaleNote": "Ridge pitch, footprints, pit relief and layer properties are authored values, not measured. Exact chart scale is supplied by renderer.",
+  "cleanPackPreserved": true,
+  "fineSourceSets": [
+    "BrushedMetal",
+    "LatheMetal",
+    "DiamondKnurl",
+    "DiamondEtch"
+  ]
+}

@@ -1,0 +1,5 @@
+@font-face{font-family:'Cybrdelic Sigil';src:url('./fonts/CybrdelicSigil-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Cybrdelic Cut';src:url('./fonts/CybrdelicCut-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+.cybrdelic-sigil{font-family:'Cybrdelic Sigil',serif;font-weight:400}
+.cybrdelic-cut{font-family:'Cybrdelic Cut',serif;font-weight:400}
+.cybrdelic-wordmark{font-feature-settings:'dlig' 1}

@@ -1,0 +1,407 @@
+{
+  "scope": "Executed custom microstructure-wear provenance, alloy, channel, deposit/film coherence, central opaque coverage/component size, physical abrasion/pit normals, 16-bit height, wrap and clean-pack byte-invariance checks. Live renderer evidence is maintained separately.",
+  "revision": "microstructure-v6-sparse",
+  "tests": {
+    "run": 10,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "log": "material-tests.txt"
+  },
+  "checks": {
+    "allWearMapTestsPass": true,
+    "threeAlloyMacroSets": true,
+    "nineRuntimeMaps2K": true,
+    "allOriginalImageGenInputsNative1254": true,
+    "ironRustOnlyOnSteel": true,
+    "normalAngularErrorUnderHalfDegree": true,
+    "pureFilmColorCoverageAtMost035": true,
+    "centralDepositCoverageInSparseRange": true,
+    "noBroadConnectedDepositSilhouettes": true,
+    "cleanPackHashRecordsUnchanged": true
+  },
+  "runtimeMapCount": 9,
+  "originalImageGenSourceCount": 2,
+  "cleanPackHashRecordCount": 41,
+  "materials": {
+    "AluminumWear": {
+      "alloy": "aluminum",
+      "revision": "microstructure-v6-sparse",
+      "tileMM": [
+        128.0,
+        128.0
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "seed": 17093,
+      "originalSourceSizes": [
+        [
+          1254,
+          1254
+        ]
+      ],
+      "usesRustAppearance": false,
+      "fingerprints": [
+        {
+          "centerMM": [
+            42,
+            43
+          ],
+          "footprintMM": [
+            16,
+            20
+          ],
+          "angleDegrees": 20,
+          "sourceCropUV": [
+            0.13,
+            0.07,
+            0.57,
+            0.63
+          ]
+        },
+        {
+          "centerMM": [
+            91,
+            67
+          ],
+          "footprintMM": [
+            14,
+            18
+          ],
+          "angleDegrees": -41,
+          "sourceCropUV": [
+            0.49,
+            0.51,
+            0.87,
+            0.92
+          ]
+        },
+        {
+          "centerMM": [
+            60,
+            95
+          ],
+          "footprintMM": [
+            16,
+            20
+          ],
+          "angleDegrees": 86,
+          "sourceCropUV": [
+            0.13,
+            0.07,
+            0.57,
+            0.63
+          ]
+        }
+      ],
+      "pitCount": 30,
+      "abrasionCount": 1050,
+      "singlePitDepthMicrons": [
+        0.4,
+        2.0
+      ],
+      "abrasionDepthMicrons": [
+        0.5,
+        2.5
+      ],
+      "compositeHeightPeakToValleyMicrons": 6.6912975162267685,
+      "coverageStats": {
+        "wholeTile": {
+          "opaqueAreaFractionOverHalf": 0.0008866786956787109,
+          "oilAreaFractionOverHalf": 0.002649068832397461,
+          "meanColorCoverage": 0.0014989571645855904,
+          "meanOpaqueCoverage": 0.0008719686302356422
+        },
+        "central64MM": {
+          "opaqueAreaFractionOverHalf": 0.0028018951416015625,
+          "oilAreaFractionOverHalf": 0.009371757507324219,
+          "meanColorCoverage": 0.00506630027666688,
+          "meanOpaqueCoverage": 0.002751515945419669
+        }
+      },
+      "depositComponents": {
+        "threshold": 0.5,
+        "count": 289,
+        "largestAreaMM2": 0.18359375,
+        "largestExtentMM": 0.6875
+      },
+      "saturatedDepositTexels": 149,
+      "pureFilmMaxColorCoverage": 0.029049905017018318,
+      "pureFilmTargetRoughnessRange": [
+        0.11999999731779099,
+        0.3110000193119049
+      ],
+      "targetRoughnessRange": [
+        0.11999999731779099,
+        0.8953520059585571
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.31775417309838594,
+        "mean": 0.3013838462962137,
+        "p99": 0.31775186651307125
+      },
+      "geometryDisplacement": false,
+      "appearanceToHeightInference": false,
+      "runtimeMapCount": 3
+    },
+    "SteelWear": {
+      "alloy": "steel",
+      "revision": "microstructure-v6-sparse",
+      "tileMM": [
+        128.0,
+        128.0
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "seed": 29101,
+      "originalSourceSizes": [
+        [
+          1254,
+          1254
+        ],
+        [
+          1254,
+          1254
+        ]
+      ],
+      "usesRustAppearance": true,
+      "fingerprints": [
+        {
+          "centerMM": [
+            42,
+            43
+          ],
+          "footprintMM": [
+            16,
+            20
+          ],
+          "angleDegrees": 20,
+          "sourceCropUV": [
+            0.13,
+            0.07,
+            0.57,
+            0.63
+          ]
+        },
+        {
+          "centerMM": [
+            91,
+            67
+          ],
+          "footprintMM": [
+            14,
+            18
+          ],
+          "angleDegrees": -41,
+          "sourceCropUV": [
+            0.49,
+            0.51,
+            0.87,
+            0.92
+          ]
+        },
+        {
+          "centerMM": [
+            60,
+            95
+          ],
+          "footprintMM": [
+            16,
+            20
+          ],
+          "angleDegrees": 86,
+          "sourceCropUV": [
+            0.13,
+            0.07,
+            0.57,
+            0.63
+          ]
+        }
+      ],
+      "pitCount": 60,
+      "abrasionCount": 1450,
+      "singlePitDepthMicrons": [
+        1.0,
+        4.0
+      ],
+      "abrasionDepthMicrons": [
+        0.5,
+        2.5
+      ],
+      "compositeHeightPeakToValleyMicrons": 7.345175836235285,
+      "coverageStats": {
+        "wholeTile": {
+          "opaqueAreaFractionOverHalf": 0.002966642379760742,
+          "oilAreaFractionOverHalf": 0.002586841583251953,
+          "meanColorCoverage": 0.0035451233852654696,
+          "meanOpaqueCoverage": 0.002923802472651005
+        },
+        "central64MM": {
+          "opaqueAreaFractionOverHalf": 0.010156631469726562,
+          "oilAreaFractionOverHalf": 0.009119987487792969,
+          "meanColorCoverage": 0.012283233925700188,
+          "meanOpaqueCoverage": 0.009990542195737362
+        }
+      },
+      "depositComponents": {
+        "threshold": 0.5,
+        "count": 534,
+        "largestAreaMM2": 1.71484375,
+        "largestExtentMM": 2.375
+      },
+      "saturatedDepositTexels": 573,
+      "pureFilmMaxColorCoverage": 0.029049905017018318,
+      "pureFilmTargetRoughnessRange": [
+        0.11999998986721039,
+        0.3109999895095825
+      ],
+      "targetRoughnessRange": [
+        0.11999998986721039,
+        0.9000000357627869
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.3177541950268847,
+        "mean": 0.29704052055594915,
+        "p99": 0.31775186307313474
+      },
+      "geometryDisplacement": false,
+      "appearanceToHeightInference": false,
+      "runtimeMapCount": 3
+    },
+    "BronzeWear": {
+      "alloy": "bronze",
+      "revision": "microstructure-v6-sparse",
+      "tileMM": [
+        128.0,
+        128.0
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "seed": 39019,
+      "originalSourceSizes": [
+        [
+          1254,
+          1254
+        ]
+      ],
+      "usesRustAppearance": false,
+      "fingerprints": [
+        {
+          "centerMM": [
+            42,
+            43
+          ],
+          "footprintMM": [
+            16,
+            20
+          ],
+          "angleDegrees": 20,
+          "sourceCropUV": [
+            0.13,
+            0.07,
+            0.57,
+            0.63
+          ]
+        },
+        {
+          "centerMM": [
+            91,
+            67
+          ],
+          "footprintMM": [
+            14,
+            18
+          ],
+          "angleDegrees": -41,
+          "sourceCropUV": [
+            0.49,
+            0.51,
+            0.87,
+            0.92
+          ]
+        },
+        {
+          "centerMM": [
+            60,
+            95
+          ],
+          "footprintMM": [
+            16,
+            20
+          ],
+          "angleDegrees": 86,
+          "sourceCropUV": [
+            0.13,
+            0.07,
+            0.57,
+            0.63
+          ]
+        }
+      ],
+      "pitCount": 36,
+      "abrasionCount": 800,
+      "singlePitDepthMicrons": [
+        0.6,
+        2.8
+      ],
+      "abrasionDepthMicrons": [
+        0.5,
+        2.5
+      ],
+      "compositeHeightPeakToValleyMicrons": 6.397151853889227,
+      "coverageStats": {
+        "wholeTile": {
+          "opaqueAreaFractionOverHalf": 0.0011839866638183594,
+          "oilAreaFractionOverHalf": 0.0026481151580810547,
+          "meanColorCoverage": 0.0018001736607402563,
+          "meanOpaqueCoverage": 0.0011738042812794447
+        },
+        "central64MM": {
+          "opaqueAreaFractionOverHalf": 0.004004478454589844,
+          "oilAreaFractionOverHalf": 0.009369850158691406,
+          "meanColorCoverage": 0.006278115790337324,
+          "meanOpaqueCoverage": 0.003965668845921755
+        }
+      },
+      "depositComponents": {
+        "threshold": 0.5,
+        "count": 379,
+        "largestAreaMM2": 0.16796875,
+        "largestExtentMM": 0.6875
+      },
+      "saturatedDepositTexels": 160,
+      "pureFilmMaxColorCoverage": 0.029049905017018318,
+      "pureFilmTargetRoughnessRange": [
+        0.11999999731779099,
+        0.31099849939346313
+      ],
+      "targetRoughnessRange": [
+        0.11999999731779099,
+        0.8999999761581421
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.31775422136792114,
+        "mean": 0.304669414361123,
+        "p99": 0.3177518645699567
+      },
+      "geometryDisplacement": false,
+      "appearanceToHeightInference": false,
+      "runtimeMapCount": 3
+    }
+  },
+  "limitations": [
+    "These are original authored maps, not scanned damage or measured alloy reflectance.",
+    "Source footprints, layer roughness, grain dimensions and micron relief are authoring values. Actual mapped barrel scale is supplied by the renderer.",
+    "Original generated gray is explicit semantic coverage. Local contrast separation preserves its print contacts; it is never converted into physical height.",
+    "Steel rust color uses the original generated oxide appearance; aluminum and bronze never read that image.",
+    "The 1254-square originals are resampled into 2048-square runtime maps. Independent abrasion/pit fields are authored natively at 2048.",
+    "Normals add optical relief without native CAD displacement.",
+    "Contact sheets are diagnostic composites/data views, not PBR renders or motion-quality evidence."
+  ]
+}

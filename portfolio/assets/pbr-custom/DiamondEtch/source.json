@@ -1,0 +1,107 @@
+{
+  "assetId": "DiamondEtch",
+  "revision": "machining-v2",
+  "source": "Original CYBR material",
+  "customMadeFor": "CYBR portfolio instrument",
+  "creationMethod": "AI unlit appearance plus independently authored physical height, multi-scale finishing roughness and fine-scale cavity fields",
+  "downloadedInputs": [],
+  "authoredTileMM": [
+    10.4,
+    6.5
+  ],
+  "normalConvention": "OpenGL tangent +Y upward",
+  "normalScale": [
+    1,
+    1
+  ],
+  "heightNormals": true,
+  "cavity": true,
+  "physicalDimensionsKnown": false,
+  "physicalDimensionsAuthored": true,
+  "physicalScaleNote": "Tile dimensions and relief are explicit authoring values, not measurements of a manufactured alloy.",
+  "heightUnits": "millimeters",
+  "recipe": "assets/pbr-custom/DiamondEtch/source/recipe.json",
+  "recipeSHA256": "a326cba2a97861751bdc58ae9e42202f0fabead33c8068ca517b657e3fd0ac89",
+  "heightPNG": {
+    "path": "assets/pbr-custom/DiamondEtch/source/height.png",
+    "sha256": "298b0167daeb2b0a9e90c74168d6f6b80cde58ec387b0c6622e1b3250da7ccba",
+    "bits": 16
+  },
+  "roughnessPNG": {
+    "path": "assets/pbr-custom/DiamondEtch/source/roughness.png",
+    "sha256": "39165ebabbf3477d2ef96641a2511ee64c2e66e46b94b27a32ffeaa3d7e0a9e2"
+  },
+  "cavityPNG": {
+    "path": "assets/pbr-custom/DiamondEtch/source/cavity.png",
+    "sha256": "64b41dc1a456edef9f08d443f30e1a529707aaaadf3121311c5fecc0a0507c81"
+  },
+  "runtimeMaps": {
+    "normal": {
+      "path": "assets/pbr-custom/DiamondEtch/runtime/normal.webp",
+      "bytes": 950376,
+      "sha256": "b86d040c7723a4f91807fa4daa038f9d08c182e152bd7caa928e29a8baed2393",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/DiamondEtch/runtime/roughness-metallic.webp",
+      "bytes": 717750,
+      "sha256": "b71f2ab91947d1bf0731e82906267aa663caa41c5d216719e0fc839bc0eb42f9",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/DiamondEtch/runtime/baseColor.webp",
+      "bytes": 2448616,
+      "sha256": "312c5942b550a8ff9f5ed265059f5ae5aef9223ca00b9ed68a5e924b84ea1a77",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "appearancePending": false,
+  "geometryDisplacement": false,
+  "geometryInferenceFromAppearance": false,
+  "authorship": "CYBR custom numerical material authoring; OpenAI ImageGen appearance directed for this project.",
+  "license": "Original custom project assets; no third-party material maps.",
+  "appearance": {
+    "file": "assets/pbr-custom/source-appearance/crosshatch-imagegen.png",
+    "sha256": "fb474e44f598f8def204dec1262b4f9e658cf7034d4a62c071f1efb87a33b7a5",
+    "nativeSize": [
+      1254,
+      1254
+    ],
+    "nativeMode": "RGB",
+    "generator": "OpenAI ImageGen",
+    "promptFile": "assets/pbr-custom/source-appearance/crosshatch-prompt.txt",
+    "promptSHA256": "cfd222e3d7fc511acf50da26e2a1134807e4fccb0da74c02bf57802bd58c1a03",
+    "heightInferenceFromImage": false,
+    "runtimeResize": "Lanczos to 2048 square; actual native dimensions retained above",
+    "calibration": {
+      "inputInterpretation": "sRGB appearance",
+      "linearReflectanceTargetRGB": [
+        0.63,
+        0.66,
+        0.71
+      ],
+      "method": "Periodic log-luminance correction and bounded normalized detail/mesoscopic components (2.9% and 1.9% RMS coefficients); mean-preserving metal reflectance calibration with coherent independent height marks. First/last edge texels share their average. No source brightness-to-height conversion.",
+      "reflectanceIsMeasured": false,
+      "imageCenterControlsHeight": false,
+      "pairedEdgeTexelsEqual": true
+    }
+  },
+  "authoringScriptSHA256": "4b7a76c005cd7292e1171f8d5884531dfcf7e681e2de72a95bb7f37624d84687"
+}

@@ -1,0 +1,10 @@
+{
+  "baseline_visual_match": true,
+  "reviewed_individually": ["cybr-scenes/environments/renders/desert-hot-springs/hero/hero.png", "D:/CYBR-build/exploded-instrument/springs-faithful-v1/hero.png"],
+  "preserved": ["mountain silhouette", "hero boulder placement", "vegetation placement", "irregular mineral banks", "submerged shelves", "water depth and turquoise absorption", "steam", "camera composition"],
+  "bit_identical": false,
+  "cartridge_approved": false,
+  "browser_replacement_complete": false,
+  "native_full_render_clean_exit": false,
+  "note": "Completed radiance recovered after allocator shutdown fault; buffers verified and cleanup regression passes. See SPRINGS-FIDELITY.md."
+}

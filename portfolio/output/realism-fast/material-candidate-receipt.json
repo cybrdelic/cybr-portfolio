@@ -1,0 +1,238 @@
+{
+  "candidate": "Custom PBR directional reflection and flat-height decode",
+  "status": "CPU contracts verified; parent handles actual browser comparison",
+  "changes": [
+    "Height-derived RGB8 normals 127/128 and their mip interpolation map to zero lateral slope; physical slopes outside that interval are retained. Generic tangent normals unaffected.",
+    "Directional GGX anisotropy brushed .28 to .52, barrel .22 to .44, turned .20 to .32, bronze .18 to .30. Mapping/rotation, metalness, reflectance textures and wear untouched.",
+    "Secondary native opaque-hit shader uses identical height-normal neutral decoding before normalScale; same arrays, sampler count and map reads."
+  ],
+  "notChanged": [
+    "Generated custom maps",
+    "UI and geometry",
+    "Lighting and optics",
+    "Macro wear color, opacity, pits or film contracts"
+  ],
+  "tests": [
+    {
+      "file": "instrument-pbr-materials.test.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "instrument-pbr-custom-assets.test.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "instrument-pbr-wear.test.mjs",
+      "exitCode": 0
+    },
+    {
+      "file": "instrument-hit-pbr.test.mjs",
+      "exitCode": 0
+    }
+  ],
+  "versions": {
+    "shader": "native-pbr-mm-v8",
+    "customProfiles": "cybr-custom-pbr-v4",
+    "secondary": "secondary-native-pbr-v2"
+  },
+  "hashes": {
+    "instrument-pbr-materials.mjs": "217faf58c4ba889fb1fb8362596ef16efb6dc2109e8a2b6e6d3a3c24d3d35d1f",
+    "instrument-pbr-custom-assets.mjs": "b25898fbf37837c237da9db1d6388ccc9c0ba06e0e4fa3f53f2789b8d74e1935",
+    "instrument-pbr-materials.test.mjs": "a200cecd69a0bfa1ff9792b0440ce2cba0f8d2f76539b73ed5029987661cf0de",
+    "instrument-hit-pbr.mjs": "c628362fed9d5506a0695aa9c5b72302b5338fa74a39c173ed618de34c39a2fd"
+  },
+  "anisotropyDecision": "Higher broad/perpendicular roughness direction is an authored visual candidate; no claim of measured alloy BRDF. Existing pi/2 anisotropy rotation was inspected and retained because brush grain is U and lathe tangent is azimuth.",
+  "wearAudit": {
+    "aluminumOpaqueAverage": 0.00087195097,
+    "filmAverage": 0.0179148833,
+    "colorAlphaMedian": 0,
+    "colorAlphaP95": 0.00392156863,
+    "pitSlopeMax": 0.0372032666
+  },
+  "fineMapAudit": {
+    "brushedNormalStdXY": [
+      0.00196954572,
+      0.0165492862
+    ],
+    "normalInterpretation": "Height slope std after encoded remap is twice these values. Dominant lateral direction has 8.4 times the deviation."
+  },
+  "sourceNotesUpdate": {
+    "file": "portfolio/evidence.html",
+    "scope": "Existing custom materials and lighting source notes only",
+    "prefixBytesUnchanged": 87289,
+    "prefixSHA256": "e7efc7fa8ee5b9d1242c05f8f3ead48c17f83511ad0ca8e89778692524121c5a",
+    "content": [
+      "Retained v8 RGB8 flat-height neutral decoder correction and generic isolation",
+      "Authored directional GGX parameters, originalroughness restored after rejected coarsetrial",
+      "Photographed Studio Small 08 default .38, authoredv5comparison, directkey .95/actualopaqueCADshadows"
+    ],
+    "creditsRetained": [
+      "Three ImageGen appearance originals for custom fine materials",
+      "Two ImageGen coverage/oxide originals for macro wear",
+      "Photographed comparison Studio Small 08, Sergej Majboroda, Poly Haven CC0",
+      "Retired ambientCG Metal010/Metal051A CC0",
+      "Retired Julio Sillet Metal Knurled 01 03 CC-BY via MatSynth"
+    ],
+    "notClaimed": [
+      "Photorealism",
+      "Optical runtime success",
+      "Measured alloy scattering"
+    ],
+    "localLinksChecked": 23,
+    "missingLocalLinks": [],
+    "creditVerification": "Existing local Studio Small 08 and Julio material source records checked; named authors, distribution and license strings preserved."
+  },
+  "latheMacroCandidate": {
+    "status": "Rejected for default: matched live ROI mean absolute pixel change1.22/255 did not resolve clouding. Profiles restore originalroughness channel; helper remains unused bydefault.",
+    "versions": {
+      "primary": "native-pbr-mm-v9",
+      "customProfiles": "cybr-custom-pbr-v5",
+      "secondary": "secondary-native-pbr-v3"
+    },
+    "tests": [
+      {
+        "file": "instrument-pbr-materials.test.mjs",
+        "exitCode": 0
+      },
+      {
+        "file": "instrument-pbr-custom-assets.test.mjs",
+        "exitCode": 0
+      },
+      {
+        "file": "instrument-pbr-wear.test.mjs",
+        "exitCode": 0
+      },
+      {
+        "file": "instrument-hit-pbr.test.mjs",
+        "exitCode": 0
+      },
+      {
+        "file": "instrument-pbr-macro.test.mjs",
+        "exitCode": 0
+      }
+    ],
+    "measurementReceipt": "lathe-macro-roughness-receipt.json",
+    "sourceChanges": [
+      "Lathe only coarse roughness contrast .45 at2.8mm filter",
+      "Native fine residual, charts, F0, height normals and wear retained",
+      "Same primary and secondary formula before independentwear",
+      "Existing9texelmaterialtable+same primary/secondarysamplers; oneconditionalextraexistingRM/surfacearrayread"
+    ],
+    "hashes": {
+      "instrument-pbr-materials.mjs": "7737afd18f0a0792dae8886fd7e9eb80279f630396fc061d33073f001071dab4",
+      "instrument-pbr-custom-assets.mjs": "e1155d80add7a3382c34d4c5033a7362020c80bc1971ed1a0f076d703ad9ff47",
+      "instrument-hit-pbr.mjs": "36800394c21c4f4056a7e653ba8874e13b5288cfe6448bd32c201ed378f92b9e"
+    }
+  },
+  "flatF0Ablation": {
+    "status": "PrimaryAPIready; awaiting actualrender rootquerywire",
+    "option": "configurePbrMetal constantBaseReflectance:[.69,.72,.76] for LatheMetal only",
+    "queryHandledByRoot": "metal-f0=flat",
+    "defaultChanges": false,
+    "preserved": [
+      "Fine/RM/heightnormaltextureidentity",
+      "Current LatheMetal roughness/height charts",
+      "Existing alloy materialcolor multiplier",
+      "Independent opaque/oil response"
+    ],
+    "tests": {
+      "primary": 17,
+      "macroAndFlatF0": 4,
+      "exitCode": 0
+    },
+    "secondaryParity": "Not active until requested by parent after visual result"
+  },
+  "finalDefaultDecision": {
+    "customProfiles": "cybr-custom-pbr-v7",
+    "retained": [
+      "RGB8 flat-height decoder correction",
+      "Brushed .52/barrel .44/turned .32/bronze .30 anisotropy",
+      "All original custom fine/wear maps",
+      "Brushed+barrel shadedrelief .35/effectivePTV4.9203298666\u00b5m, unchangedsourceheightmaps"
+    ],
+    "rejected": [
+      "Lathe coarse roughness compression"
+    ],
+    "lighting": {
+      "source": "Studio Small 08",
+      "author": "Sergej Majboroda",
+      "provider": "Poly Haven",
+      "license": "CC0 1.0",
+      "runtimeIntensity": 0.38,
+      "scope": "Photographed HDR illumination only; custom materials unchanged",
+      "authoredComparison": "?pbr-env=authored",
+      "directKey": 0.95
+    },
+    "notClaimed": [
+      "Photorealism",
+      "Optical runtime success"
+    ],
+    "primaryHitCodeUnchangedByThisFinalDecision": true,
+    "profileContractTests": {
+      "count": 4,
+      "exitCode": 0,
+      "confirmed": [
+        "Original Lathe roughness profiles have no macrooverride",
+        "Compiled primary Lathe shader has no pbrMacroSample/no extra RM read",
+        "No macro uniform or metadata set on default material",
+        "All custom map inputs and authored height/color contracts retained"
+      ]
+    },
+    "profileSHA256": "e6557ff38e7b46f2be4a809a21757e4919ac3e4bc7bbb2fac7769efe35a01c48"
+  },
+  "brushedReliefCandidate": {
+    "status": "Retained by parent after actual visual review",
+    "customProfiles": "cybr-custom-pbr-v7",
+    "changedProfiles": [
+      "brushed",
+      "barrel"
+    ],
+    "normalScale": [
+      0.35,
+      0.35
+    ],
+    "sourceHeightPeakToValleyMicrons": 14.058085333090276,
+    "shadedEffectiveHeightPeakToValleyMicrons": 4.920329866581596,
+    "sourceMapBytesUnchanged": true,
+    "physicalClaim": "Authoredshadedreliefscale; neither sourceheight nor shadedheight is a specimenmeasurement",
+    "unchanged": [
+      "Lathecoherentconcentricheight/rings",
+      "Knurl/etchedheights/cavitycontrast",
+      "AllsourceF0/RM/normalmaps",
+      "Sparsemacrocorrosion/film/pitlayers",
+      "Lighting/geometry/UI"
+    ],
+    "secondaryParity": "Read-onlyverified packHitPbrMaterialTable copies actual material.normalScale into texel3.xy; existinghitGLSL multipliesfineN.xy by p.normalScale. No secondary sourceedited.",
+    "tests": {
+      "profileContracts": 4,
+      "exitCode": 0
+    },
+    "profileSHA256": "b321096a280dac376c4a4dfde7ee87522d1e8d7df3652d2203cafe4dc6bd8725"
+  },
+  "opticsSourceNotes": {
+    "source": "NativeactualGPUinventory native-upload-water.json plus stagedtransport source",
+    "sourceGeometryCounts": {
+      "opticalMeshes": 3,
+      "opticalTriangles": 44694,
+      "opaqueTriangles": 1936852
+    },
+    "methods": [
+      "RetainedCADtriangleboundary and opaqueBVHintersection",
+      "Smoothsourceopticalnormals",
+      "IOR/Snell,Fresnel,BeerLambertpertransmittedpath",
+      "CustomPBRatactualopaquehit",
+      "NativeIOR-dependentroughnessHDRbicubicmips"
+    ],
+    "limits": [
+      "Single transmitted branch per color channel",
+      "TIRfollowsreflectedray; nonTIRreflectionbranchesnotrecursivelytraced",
+      "Directrastershadows/HDR/localreflections only, not fullbounceGI",
+      "SCENES layeredthicknessapproximation"
+    ],
+    "notClaimed": [
+      "Photorealism",
+      "Allenergytraced",
+      "ExactanalyticBREPboundaryintersections"
+    ]
+  }
+}

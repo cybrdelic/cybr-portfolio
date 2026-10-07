@@ -1,0 +1,27 @@
+[
+  {
+    "id": "fire",
+    "title": "Fire",
+    "video": "fire-shared.mp4",
+    "note": "Combustion follows the common moving source; the wake burns out."
+  },
+  {
+    "id": "water",
+    "title": "Water",
+    "video": "water-shared.mp4",
+    "note": "The same moving source injects a continuous FLIP jet; the liquid then releases."
+  },
+  {
+    "id": "air",
+    "title": "Air",
+    "video": "air-shared.mp4",
+    "note": "The same moving source replaces the isolated vortex pulse; the tracer wake disperses."
+  },
+  {
+    "id": "earth",
+    "title": "Earth",
+    "video": "earth-packed.mp4",
+    "note": "Larger, warmer stone fragments form a tighter trail, with an advected dust wake and rigid-body release.",
+    "poster": "earth-packed-poster.jpg"
+  }
+]

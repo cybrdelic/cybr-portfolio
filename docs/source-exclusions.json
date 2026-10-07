@@ -1,0 +1,30 @@
+{
+  "count": 8566,
+  "categories": [
+    {
+      "reason": "Stale generated report or superseded entrypoint documentation",
+      "files": 3
+    },
+    {
+      "reason": "Superseded comparative experiment; active implementations and tests retained",
+      "files": 9
+    },
+    {
+      "reason": "Generated diagnostics, caches, environment packages and iteration history",
+      "files": 8428
+    },
+    {
+      "reason": "Obsolete diagnostic/probe artifact; current workflow verification is authored separately",
+      "files": 32
+    },
+    {
+      "reason": "Generated diagnostic/build history",
+      "files": 2
+    },
+    {
+      "reason": "Machine-specific native build/cache; portable CMake source is retained",
+      "files": 92
+    }
+  ],
+  "full_selection_plan": "Private recovery evidence outside this project; originals/backups retained."
+}

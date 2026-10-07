@@ -1,0 +1,5146 @@
+{
+  "exported_pose_count": 1742,
+  "sampled_poses": 1742,
+  "frame_step": 1,
+  "source": "Exact float32 pose/mesh buffers read by preview/index.html",
+  "imported_animation_count": 0,
+  "maximum_skin_weight_sum_error": 1.7881393432617188e-07,
+  "maximum_screen_extent": 0.9009586036303027,
+  "minimum_weapon_height": 0.04386215006983313,
+  "minimum_body_height": 0.0005238248820336933,
+  "arm_torso_crossings": [
+    {
+      "frame": 468,
+      "time": 15.6,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8273181558866474,
+      "body_min_y": 0.0029058214911338717,
+      "screen_min": [
+        -0.2790258565294061,
+        -0.6187933894109799
+      ],
+      "screen_max": [
+        0.16427449770544292,
+        0.297492470171135
+      ],
+      "nearest_camera_depth": 4.825884031102385
+    },
+    {
+      "frame": 511,
+      "time": 17.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 8,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8300986786857734,
+      "body_min_y": 0.0028956357874908934,
+      "screen_min": [
+        -0.2813423804300152,
+        -0.633621786731232
+      ],
+      "screen_max": [
+        0.16751191322090217,
+        0.2967469242823043
+      ],
+      "nearest_camera_depth": 4.74541813325463
+    },
+    {
+      "frame": 512,
+      "time": 17.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8282914871229328,
+      "body_min_y": 0.0029026244326377302,
+      "screen_min": [
+        -0.281681774814595,
+        -0.631937984282325
+      ],
+      "screen_max": [
+        0.16702923783689913,
+        0.29663979187293976
+      ],
+      "nearest_camera_depth": 4.760231645501039
+    },
+    {
+      "frame": 513,
+      "time": 17.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8427377802792754,
+      "body_min_y": 0.0015200272067678595,
+      "screen_min": [
+        -0.15515764196016155,
+        -0.5671729813373348
+      ],
+      "screen_max": [
+        0.0938199799202207,
+        0.38693203281117416
+      ],
+      "nearest_camera_depth": 4.741511716198261
+    },
+    {
+      "frame": 514,
+      "time": 17.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 28,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7621808138957753,
+      "body_min_y": 0.0014935878573175284,
+      "screen_min": [
+        -0.1433171032097915,
+        -0.5662550398837963
+      ],
+      "screen_max": [
+        0.11469653883312875,
+        0.3682254031042208
+      ],
+      "nearest_camera_depth": 4.679966822659311
+    },
+    {
+      "frame": 515,
+      "time": 17.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 43,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6126269708013784,
+      "body_min_y": 0.009926752629294032,
+      "screen_min": [
+        -0.19504075478438124,
+        -0.5908678723180805
+      ],
+      "screen_max": [
+        0.1371852775340674,
+        0.3238728154959485
+      ],
+      "nearest_camera_depth": 4.751784828990959
+    },
+    {
+      "frame": 516,
+      "time": 17.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 78,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.5308891061440388,
+      "body_min_y": 0.018696198109652395,
+      "screen_min": [
+        -0.275117141274861,
+        -0.6136022197641015
+      ],
+      "screen_max": [
+        0.11000709395633665,
+        0.2462673561866169
+      ],
+      "nearest_camera_depth": 4.608728359655224
+    },
+    {
+      "frame": 517,
+      "time": 17.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 94,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.5865502476864131,
+      "body_min_y": 0.021543506104194858,
+      "screen_min": [
+        -0.2645570726905993,
+        -0.6386653049868428
+      ],
+      "screen_max": [
+        0.09489268695686051,
+        0.1570168808542548
+      ],
+      "nearest_camera_depth": 4.491824880729285
+    },
+    {
+      "frame": 518,
+      "time": 17.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 70,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.5823450010635247,
+      "body_min_y": 0.02143668241852488,
+      "screen_min": [
+        -0.20309603478769178,
+        -0.6709329378255972
+      ],
+      "screen_max": [
+        0.10016364658269936,
+        0.0947617770128563
+      ],
+      "nearest_camera_depth": 4.409455391252596
+    },
+    {
+      "frame": 522,
+      "time": 17.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 2,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3014917427848727,
+      "body_min_y": 0.003360338438375676,
+      "screen_min": [
+        -0.09695781485591291,
+        -0.6797385242751925
+      ],
+      "screen_max": [
+        0.13855773783984665,
+        0.5260944055448538
+      ],
+      "nearest_camera_depth": 4.596078477701361
+    },
+    {
+      "frame": 523,
+      "time": 17.433333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 8,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2937244477132837,
+      "body_min_y": 0.003325273096553544,
+      "screen_min": [
+        -0.10057947727652218,
+        -0.6735252439489479
+      ],
+      "screen_max": [
+        0.1371894832583265,
+        0.5275061189483529
+      ],
+      "nearest_camera_depth": 4.620148160764325
+    },
+    {
+      "frame": 524,
+      "time": 17.466666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 27,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2703845968088816,
+      "body_min_y": 0.0032730450886449807,
+      "screen_min": [
+        -0.10883668662075975,
+        -0.6678571014540675
+      ],
+      "screen_max": [
+        0.13759795242975972,
+        0.5191120020447842
+      ],
+      "nearest_camera_depth": 4.644983350799208
+    },
+    {
+      "frame": 525,
+      "time": 17.5,
+      "reference": true,
+      "arm_torso": {
+        "Right": 48,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2208315115418322,
+      "body_min_y": 0.0032136887075658333,
+      "screen_min": [
+        -0.11194434132603717,
+        -0.6632976122526173
+      ],
+      "screen_max": [
+        0.13710247231011166,
+        0.5016223664366608
+      ],
+      "nearest_camera_depth": 4.665587481712341
+    },
+    {
+      "frame": 526,
+      "time": 17.533333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 54,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1501163233105014,
+      "body_min_y": 0.0032072613921228215,
+      "screen_min": [
+        -0.11266305648980701,
+        -0.6597928440673427
+      ],
+      "screen_max": [
+        0.13522588634899907,
+        0.4680030284784104
+      ],
+      "nearest_camera_depth": 4.707217240049522
+    },
+    {
+      "frame": 527,
+      "time": 17.566666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 52,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.048869472319434,
+      "body_min_y": 0.0032612848269537686,
+      "screen_min": [
+        -0.11010921023612584,
+        -0.6573291972046288
+      ],
+      "screen_max": [
+        0.13160233717129377,
+        0.40200885226578276
+      ],
+      "nearest_camera_depth": 4.748369137415439
+    },
+    {
+      "frame": 528,
+      "time": 17.6,
+      "reference": true,
+      "arm_torso": {
+        "Right": 55,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.9411345881455953,
+      "body_min_y": 0.0033504916363456287,
+      "screen_min": [
+        -0.1002894969682388,
+        -0.6556693937527025
+      ],
+      "screen_max": [
+        0.12631485673945295,
+        0.3113017128260542
+      ],
+      "nearest_camera_depth": 4.755770635490086
+    },
+    {
+      "frame": 529,
+      "time": 17.633333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 57,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8552039531313683,
+      "body_min_y": 0.0034403975147483546,
+      "screen_min": [
+        -0.08707203004778322,
+        -0.6545427848121416
+      ],
+      "screen_max": [
+        0.11853363325657058,
+        0.21917828433568318
+      ],
+      "nearest_camera_depth": 4.7606894916801235
+    },
+    {
+      "frame": 530,
+      "time": 17.666666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 72,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8135179267198542,
+      "body_min_y": 0.0035021733790162085,
+      "screen_min": [
+        -0.09398239655166947,
+        -0.653668989875251
+      ],
+      "screen_max": [
+        0.10999165288698858,
+        0.1631075332692452
+      ],
+      "nearest_camera_depth": 4.764507756552467
+    },
+    {
+      "frame": 531,
+      "time": 17.7,
+      "reference": true,
+      "arm_torso": {
+        "Right": 112,
+        "Left": 50
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.832797764214077,
+      "body_min_y": 0.010634611387774818,
+      "screen_min": [
+        -0.10842904306959891,
+        -0.6489108112002531
+      ],
+      "screen_max": [
+        0.10586847986504236,
+        0.1425304637549251
+      ],
+      "nearest_camera_depth": 4.767326736491171
+    },
+    {
+      "frame": 532,
+      "time": 17.733333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 153,
+        "Left": 140
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8383886153907096,
+      "body_min_y": 0.017982082470664427,
+      "screen_min": [
+        -0.10355982168351593,
+        -0.6392664957651726
+      ],
+      "screen_max": [
+        0.11783709624304274,
+        0.10549882877089622
+      ],
+      "nearest_camera_depth": 4.775366843268743
+    },
+    {
+      "frame": 533,
+      "time": 17.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 124,
+        "Left": 87
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8240003580553901,
+      "body_min_y": 0.018851904302547382,
+      "screen_min": [
+        -0.08346987525784197,
+        -0.6225994263572163
+      ],
+      "screen_max": [
+        0.15519992609476402,
+        0.05003555031124807
+      ],
+      "nearest_camera_depth": 4.740233372457853
+    },
+    {
+      "frame": 534,
+      "time": 17.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7918436258184608,
+      "body_min_y": 0.02000811463285192,
+      "screen_min": [
+        -0.08353313372097351,
+        -0.6069592162518289
+      ],
+      "screen_max": [
+        0.3105280264074921,
+        0.032310562228570885
+      ],
+      "nearest_camera_depth": 4.4175304519399665
+    },
+    {
+      "frame": 561,
+      "time": 18.7,
+      "reference": true,
+      "arm_torso": {
+        "Right": 53,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3649396214228233,
+      "body_min_y": 0.05331482881236979,
+      "screen_min": [
+        -0.1485782866971492,
+        -0.6245368482188409
+      ],
+      "screen_max": [
+        0.30464533404464106,
+        0.14337043741611927
+      ],
+      "nearest_camera_depth": 4.19561278194528
+    },
+    {
+      "frame": 562,
+      "time": 18.733333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 139,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2315452398828436,
+      "body_min_y": 0.0649477358875901,
+      "screen_min": [
+        -0.15190793730001037,
+        -0.6240017585535234
+      ],
+      "screen_max": [
+        0.31204066579789697,
+        0.1359482917417374
+      ],
+      "nearest_camera_depth": 4.4837297843744
+    },
+    {
+      "frame": 563,
+      "time": 18.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 173,
+        "Left": 0
+      },
+      "weapon_torso": 101,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.20158479468499413,
+      "body_min_y": 0.07500115275911387,
+      "screen_min": [
+        -0.15460399225183655,
+        -0.6194827611843204
+      ],
+      "screen_max": [
+        0.2819473831525725,
+        0.16190403263684428
+      ],
+      "nearest_camera_depth": 4.500717287137518
+    },
+    {
+      "frame": 564,
+      "time": 18.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 212,
+        "Left": 0
+      },
+      "weapon_torso": 224,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.21068768121476705,
+      "body_min_y": 0.08113966005066778,
+      "screen_min": [
+        -0.1567093317911385,
+        -0.6113622726391357
+      ],
+      "screen_max": [
+        0.25137958953307366,
+        0.19108805294346312
+      ],
+      "nearest_camera_depth": 4.525109243484936
+    },
+    {
+      "frame": 565,
+      "time": 18.833333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 222,
+        "Left": 0
+      },
+      "weapon_torso": 210,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2134793787880136,
+      "body_min_y": 0.08369335870722236,
+      "screen_min": [
+        -0.1583945504590068,
+        -0.6062709652777242
+      ],
+      "screen_max": [
+        0.23874967749776818,
+        0.20120639562366222
+      ],
+      "nearest_camera_depth": 4.547891712363983
+    },
+    {
+      "frame": 566,
+      "time": 18.866666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 223,
+        "Left": 0
+      },
+      "weapon_torso": 361,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.21571326979773936,
+      "body_min_y": 0.08345045626015543,
+      "screen_min": [
+        -0.15970785517966266,
+        -0.6035438222968407
+      ],
+      "screen_max": [
+        0.2311760745186562,
+        0.20959363632215738
+      ],
+      "nearest_camera_depth": 4.567089933568474
+    },
+    {
+      "frame": 567,
+      "time": 18.9,
+      "reference": true,
+      "arm_torso": {
+        "Right": 225,
+        "Left": 0
+      },
+      "weapon_torso": 348,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2210277447339027,
+      "body_min_y": 0.08316902515220889,
+      "screen_min": [
+        -0.16074131198071692,
+        -0.601506232279528
+      ],
+      "screen_max": [
+        0.22592847735535496,
+        0.21517311011815818
+      ],
+      "nearest_camera_depth": 4.581634371451145
+    },
+    {
+      "frame": 568,
+      "time": 18.933333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 409,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.228359980537101,
+      "body_min_y": 0.08285907718888952,
+      "screen_min": [
+        -0.1615951026697095,
+        -0.6000305002832197
+      ],
+      "screen_max": [
+        0.2228423119107428,
+        0.2182153528189691
+      ],
+      "nearest_camera_depth": 4.592581876627762
+    },
+    {
+      "frame": 569,
+      "time": 18.966666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 231,
+        "Left": 0
+      },
+      "weapon_torso": 385,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.23709997879337097,
+      "body_min_y": 0.08253173859764781,
+      "screen_min": [
+        -0.16237692021807118,
+        -0.5989974123381606
+      ],
+      "screen_max": [
+        0.2213351137967825,
+        0.2189668635603543
+      ],
+      "nearest_camera_depth": 4.600555448199702
+    },
+    {
+      "frame": 570,
+      "time": 19.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 384,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.24672094409873374,
+      "body_min_y": 0.08214252122917443,
+      "screen_min": [
+        -0.1631787891917908,
+        -0.5983351984148554
+      ],
+      "screen_max": [
+        0.22070363030554568,
+        0.2177293220250115
+      ],
+      "nearest_camera_depth": 4.606180084087533
+    },
+    {
+      "frame": 571,
+      "time": 19.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 314,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2566010009565224,
+      "body_min_y": 0.08181096651153433,
+      "screen_min": [
+        -0.1640910479970972,
+        -0.5978845332275549
+      ],
+      "screen_max": [
+        0.22024882897119755,
+        0.21477105526560625
+      ],
+      "nearest_camera_depth": 4.610041811818049
+    },
+    {
+      "frame": 572,
+      "time": 19.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 309,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.26600033327933875,
+      "body_min_y": 0.08149865149438865,
+      "screen_min": [
+        -0.16518835082025182,
+        -0.5975990709276116
+      ],
+      "screen_max": [
+        0.21933370481022474,
+        0.21001673966676068
+      ],
+      "nearest_camera_depth": 4.612660502745775
+    },
+    {
+      "frame": 573,
+      "time": 19.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 226,
+        "Left": 0
+      },
+      "weapon_torso": 292,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2651641609491041,
+      "body_min_y": 0.08125422780490442,
+      "screen_min": [
+        -0.16276508690441124,
+        -0.5973774503956154
+      ],
+      "screen_max": [
+        0.2195079182991894,
+        0.20245204704143616
+      ],
+      "nearest_camera_depth": 4.614651592758424
+    },
+    {
+      "frame": 574,
+      "time": 19.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 194,
+        "Left": 0
+      },
+      "weapon_torso": 276,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2544658845252794,
+      "body_min_y": 0.05105721154918247,
+      "screen_min": [
+        -0.1539629677814316,
+        -0.5975011340127817
+      ],
+      "screen_max": [
+        0.22312794038997963,
+        0.19325716194878695
+      ],
+      "nearest_camera_depth": 4.614796104685686
+    },
+    {
+      "frame": 575,
+      "time": 19.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 185,
+        "Left": 0
+      },
+      "weapon_torso": 129,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.24653062251594926,
+      "body_min_y": 0.009696328377122199,
+      "screen_min": [
+        -0.139060540368557,
+        -0.5982540886159474
+      ],
+      "screen_max": [
+        0.22956308284271293,
+        0.1838712927489373
+      ],
+      "nearest_camera_depth": 4.613406754350518
+    },
+    {
+      "frame": 576,
+      "time": 19.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 139,
+        "Left": 0
+      },
+      "weapon_torso": 76,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2657583015764115,
+      "body_min_y": 0.0069290741769690856,
+      "screen_min": [
+        -0.11937653811388564,
+        -0.5898012899333336
+      ],
+      "screen_max": [
+        0.23990123874630767,
+        0.1894196876308285
+      ],
+      "nearest_camera_depth": 4.609501432056064
+    },
+    {
+      "frame": 577,
+      "time": 19.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 123,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.27443470564052214,
+      "body_min_y": 0.006999996770284289,
+      "screen_min": [
+        -0.09823308736646436,
+        -0.5965402920091467
+      ],
+      "screen_max": [
+        0.24984369257726938,
+        0.20823245079256034
+      ],
+      "nearest_camera_depth": 4.611561096783206
+    },
+    {
+      "frame": 578,
+      "time": 19.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 96,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3031532779881338,
+      "body_min_y": 0.024636111585053078,
+      "screen_min": [
+        -0.0878350151759094,
+        -0.6036457041024778
+      ],
+      "screen_max": [
+        0.25255628411463016,
+        0.23528900631861557
+      ],
+      "nearest_camera_depth": 4.617410963940067
+    },
+    {
+      "frame": 579,
+      "time": 19.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 76,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3590308451746824,
+      "body_min_y": 0.04290869647220905,
+      "screen_min": [
+        -0.085797730371461,
+        -0.6062540789706491
+      ],
+      "screen_max": [
+        0.24553790618527316,
+        0.2671225931604123
+      ],
+      "nearest_camera_depth": 4.626084399672292
+    },
+    {
+      "frame": 580,
+      "time": 19.333333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 51,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.4260574224546402,
+      "body_min_y": 0.04253317795671688,
+      "screen_min": [
+        -0.08364296675233925,
+        -0.6087724174459115
+      ],
+      "screen_max": [
+        0.22858022600987105,
+        0.29627123902682984
+      ],
+      "nearest_camera_depth": 4.5316160753164265
+    },
+    {
+      "frame": 581,
+      "time": 19.366666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 37,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.49538902546919894,
+      "body_min_y": 0.03636431909821379,
+      "screen_min": [
+        -0.08130498058029016,
+        -0.6109438782774412
+      ],
+      "screen_max": [
+        0.20404490030171707,
+        0.320710603998644
+      ],
+      "nearest_camera_depth": 4.444922233775178
+    },
+    {
+      "frame": 582,
+      "time": 19.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 8,
+        "Left": 5
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.5575896302412595,
+      "body_min_y": 0.03032418769029805,
+      "screen_min": [
+        -0.07904440712910461,
+        -0.6127678860825501
+      ],
+      "screen_max": [
+        0.17613636460187718,
+        0.3387154275199478
+      ],
+      "nearest_camera_depth": 4.389314016579743
+    },
+    {
+      "frame": 583,
+      "time": 19.433333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6069983087120324,
+      "body_min_y": 0.02465651430525227,
+      "screen_min": [
+        -0.07688745012719479,
+        -0.6131719515869831
+      ],
+      "screen_max": [
+        0.1497831388572048,
+        0.35018313456220806
+      ],
+      "nearest_camera_depth": 4.37679709722223
+    },
+    {
+      "frame": 584,
+      "time": 19.466666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 14
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6488391850244182,
+      "body_min_y": 0.019432904631925256,
+      "screen_min": [
+        -0.09405452917036085,
+        -0.6138320396324869
+      ],
+      "screen_max": [
+        0.1319994845827873,
+        0.3587264642871687
+      ],
+      "nearest_camera_depth": 4.391475280972087
+    },
+    {
+      "frame": 585,
+      "time": 19.5,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 19
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6838150321579786,
+      "body_min_y": 0.014684049041558648,
+      "screen_min": [
+        -0.10978813912395853,
+        -0.61496377314973
+      ],
+      "screen_max": [
+        0.142454665533745,
+        0.36467777378905264
+      ],
+      "nearest_camera_depth": 4.422822784174788
+    },
+    {
+      "frame": 586,
+      "time": 19.533333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7136592357679745,
+      "body_min_y": 0.01047761773812866,
+      "screen_min": [
+        -0.1200007684791743,
+        -0.6167055548030781
+      ],
+      "screen_max": [
+        0.14946480213929736,
+        0.3684172936192394
+      ],
+      "nearest_camera_depth": 4.459784170378761
+    },
+    {
+      "frame": 587,
+      "time": 19.566666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 11,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7398348100524698,
+      "body_min_y": 0.006811662399065371,
+      "screen_min": [
+        -0.12556344656940643,
+        -0.6188671092679678
+      ],
+      "screen_max": [
+        0.15106300680728213,
+        0.37037602941752185
+      ],
+      "nearest_camera_depth": 4.49315828950971
+    },
+    {
+      "frame": 588,
+      "time": 19.6,
+      "reference": true,
+      "arm_torso": {
+        "Right": 17,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7625205822992438,
+      "body_min_y": 0.0036619486281194305,
+      "screen_min": [
+        -0.1278021095208638,
+        -0.6210523531418672
+      ],
+      "screen_max": [
+        0.14938071149931753,
+        0.37110151575233435
+      ],
+      "nearest_camera_depth": 4.517439617399568
+    },
+    {
+      "frame": 589,
+      "time": 19.633333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 19,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7815320247391275,
+      "body_min_y": 0.001827727523184423,
+      "screen_min": [
+        -0.12840404311280007,
+        -0.6224442398293757
+      ],
+      "screen_max": [
+        0.14778740928531353,
+        0.3716567644498514
+      ],
+      "nearest_camera_depth": 4.52968287713651
+    },
+    {
+      "frame": 590,
+      "time": 19.666666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7963656215424966,
+      "body_min_y": 0.0017592536650910635,
+      "screen_min": [
+        -0.1293404885972295,
+        -0.622608108913752
+      ],
+      "screen_max": [
+        0.14620018543891275,
+        0.3728602831595757
+      ],
+      "nearest_camera_depth": 4.527653206235857
+    },
+    {
+      "frame": 591,
+      "time": 19.7,
+      "reference": true,
+      "arm_torso": {
+        "Right": 19,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8063556826591168,
+      "body_min_y": 0.0016875235973118556,
+      "screen_min": [
+        -0.13072894524688025,
+        -0.6222561117274207
+      ],
+      "screen_max": [
+        0.14459478856135388,
+        0.37427309776862144
+      ],
+      "nearest_camera_depth": 4.518998247480358
+    },
+    {
+      "frame": 592,
+      "time": 19.733333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 19,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8106729249909087,
+      "body_min_y": 0.001606444841303028,
+      "screen_min": [
+        -0.1316559048812591,
+        -0.6215263755895664
+      ],
+      "screen_max": [
+        0.14306163554026857,
+        0.376015407647248
+      ],
+      "nearest_camera_depth": 4.511927169729745
+    },
+    {
+      "frame": 593,
+      "time": 19.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8156398269292505,
+      "body_min_y": 0.001518031675509777,
+      "screen_min": [
+        -0.13221432457447552,
+        -0.6206913108823702
+      ],
+      "screen_max": [
+        0.14165768132131593,
+        0.37801905312610035
+      ],
+      "nearest_camera_depth": 4.506012814086432
+    },
+    {
+      "frame": 594,
+      "time": 19.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8211179695186076,
+      "body_min_y": 0.0014206423235917842,
+      "screen_min": [
+        -0.13252648295738104,
+        -0.6197558474791529
+      ],
+      "screen_max": [
+        0.14037722812389694,
+        0.38027907415298073
+      ],
+      "nearest_camera_depth": 4.5010892201122426
+    },
+    {
+      "frame": 595,
+      "time": 19.833333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8268532428448953,
+      "body_min_y": 0.001353947174477721,
+      "screen_min": [
+        -0.13271525908054893,
+        -0.6187482434947582
+      ],
+      "screen_max": [
+        0.13921284316833318,
+        0.38270608585908267
+      ],
+      "nearest_camera_depth": 4.497116204289853
+    },
+    {
+      "frame": 596,
+      "time": 19.866666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8325070845790928,
+      "body_min_y": 0.0013268955832006022,
+      "screen_min": [
+        -0.13282964443676443,
+        -0.6177171006914504
+      ],
+      "screen_max": [
+        0.1381564445250639,
+        0.3850887911625334
+      ],
+      "nearest_camera_depth": 4.4945648112722765
+    },
+    {
+      "frame": 597,
+      "time": 19.9,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8377177931054822,
+      "body_min_y": 0.0013399781098947885,
+      "screen_min": [
+        -0.13293711136069866,
+        -0.6166795148842975
+      ],
+      "screen_max": [
+        0.13720096139448082,
+        0.38727762289250606
+      ],
+      "nearest_camera_depth": 4.493496025693693
+    },
+    {
+      "frame": 598,
+      "time": 19.933333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8421215634707577,
+      "body_min_y": 0.001405616509655357,
+      "screen_min": [
+        -0.1330475057271995,
+        -0.6156766145923984
+      ],
+      "screen_max": [
+        0.136346059212557,
+        0.3891310478778303
+      ],
+      "nearest_camera_depth": 4.49335994103533
+    },
+    {
+      "frame": 599,
+      "time": 19.966666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8452276240725102,
+      "body_min_y": 0.0014012893825993697,
+      "screen_min": [
+        -0.13316976695693925,
+        -0.6147516559827716
+      ],
+      "screen_max": [
+        0.13558668723284567,
+        0.3904448296511697
+      ],
+      "nearest_camera_depth": 4.493694873774755
+    },
+    {
+      "frame": 600,
+      "time": 20.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8465492029251753,
+      "body_min_y": 0.0013876563799149876,
+      "screen_min": [
+        -0.13329389333070513,
+        -0.6139748974754651
+      ],
+      "screen_max": [
+        0.13492153384779454,
+        0.39102261463352533
+      ],
+      "nearest_camera_depth": 4.494103052997434
+    },
+    {
+      "frame": 601,
+      "time": 20.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8465568323197066,
+      "body_min_y": 0.0013875071871429993,
+      "screen_min": [
+        -0.1336496655870839,
+        -0.6134752690566211
+      ],
+      "screen_max": [
+        0.13434578249885587,
+        0.3910160644209415
+      ],
+      "nearest_camera_depth": 4.496683676653275
+    },
+    {
+      "frame": 602,
+      "time": 20.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8465628523888289,
+      "body_min_y": 0.0013873789586522412,
+      "screen_min": [
+        -0.13395008758892782,
+        -0.6130512307511774
+      ],
+      "screen_max": [
+        0.133869733297121,
+        0.3910102764409172
+      ],
+      "nearest_camera_depth": 4.498862442168077
+    },
+    {
+      "frame": 603,
+      "time": 20.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 23
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8463819971724469,
+      "body_min_y": 0.0013754312316630827,
+      "screen_min": [
+        -0.15402293314983173,
+        -0.5977921566006089
+      ],
+      "screen_max": [
+        0.10355290192076856,
+        0.3905627858105052
+      ],
+      "nearest_camera_depth": 4.585661644449723
+    },
+    {
+      "frame": 604,
+      "time": 20.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 25,
+        "Left": 21
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8325595068557212,
+      "body_min_y": 0.0015416761604111098,
+      "screen_min": [
+        -0.15123140404523322,
+        -0.5962075398432143
+      ],
+      "screen_max": [
+        0.09941316306294072,
+        0.3854946062626453
+      ],
+      "nearest_camera_depth": 4.571513925795598
+    },
+    {
+      "frame": 605,
+      "time": 20.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 24,
+        "Left": 15
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.79661691591426,
+      "body_min_y": 0.001682055018237903,
+      "screen_min": [
+        -0.18433040659144062,
+        -0.5978302616472253
+      ],
+      "screen_max": [
+        0.1020961499241657,
+        0.3723271825258406
+      ],
+      "nearest_camera_depth": 4.582380050831602
+    },
+    {
+      "frame": 606,
+      "time": 20.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 29,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7505299645733561,
+      "body_min_y": 0.001887013272953192,
+      "screen_min": [
+        -0.28320316484007635,
+        -0.6019336362922095
+      ],
+      "screen_max": [
+        0.11416555913341223,
+        0.3526080545917445
+      ],
+      "nearest_camera_depth": 4.788609818554204
+    },
+    {
+      "frame": 607,
+      "time": 20.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 30,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7081347776578069,
+      "body_min_y": 0.002005594349635405,
+      "screen_min": [
+        -0.3128472408923871,
+        -0.6082624426464558
+      ],
+      "screen_max": [
+        0.1160014018052408,
+        0.32677415912023555
+      ],
+      "nearest_camera_depth": 4.867185128837813
+    },
+    {
+      "frame": 608,
+      "time": 20.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 22,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6772667161298856,
+      "body_min_y": 0.004758667519362251,
+      "screen_min": [
+        -0.24546152845166955,
+        -0.6137888091225381
+      ],
+      "screen_max": [
+        0.10636742797187551,
+        0.2968877990164196
+      ],
+      "nearest_camera_depth": 4.72917853314197
+    },
+    {
+      "frame": 609,
+      "time": 20.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6360657795180242,
+      "body_min_y": 0.008445648463558001,
+      "screen_min": [
+        -0.18421443982882893,
+        -0.6196683309312282
+      ],
+      "screen_max": [
+        0.09308300895743837,
+        0.2556606559258895
+      ],
+      "nearest_camera_depth": 4.639666046545146
+    },
+    {
+      "frame": 630,
+      "time": 21.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 14,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6384277912574169,
+      "body_min_y": 0.0033118239745709823,
+      "screen_min": [
+        -0.13330522347065346,
+        -0.6136106968499658
+      ],
+      "screen_max": [
+        0.10821506200559483,
+        0.19823626056782317
+      ],
+      "nearest_camera_depth": 4.8416230965325715
+    },
+    {
+      "frame": 631,
+      "time": 21.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 23,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6526576687606278,
+      "body_min_y": 0.0035879788879531467,
+      "screen_min": [
+        -0.12174931510129099,
+        -0.6035235058867644
+      ],
+      "screen_max": [
+        0.10637502818690105,
+        0.18658555889467746
+      ],
+      "nearest_camera_depth": 4.885494658991385
+    },
+    {
+      "frame": 632,
+      "time": 21.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 20,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6525222491015399,
+      "body_min_y": 0.0044343216268596195,
+      "screen_min": [
+        -0.10274419273210048,
+        -0.5915758123540784
+      ],
+      "screen_max": [
+        0.10314086595659595,
+        0.16419807807884496
+      ],
+      "nearest_camera_depth": 4.938083258253651
+    },
+    {
+      "frame": 633,
+      "time": 21.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7055700862638214,
+      "body_min_y": 0.04751788946994742,
+      "screen_min": [
+        -0.09699921923671817,
+        -0.5792415487195937
+      ],
+      "screen_max": [
+        0.11590368957190061,
+        0.16848497907195945
+      ],
+      "nearest_camera_depth": 5.008937860742357
+    },
+    {
+      "frame": 634,
+      "time": 21.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 7,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8590325130518459,
+      "body_min_y": 0.03921404515585403,
+      "screen_min": [
+        -0.10211024381658865,
+        -0.5674511573692952
+      ],
+      "screen_max": [
+        0.12671595296474733,
+        0.17789261779687823
+      ],
+      "nearest_camera_depth": 4.996258205909676
+    },
+    {
+      "frame": 635,
+      "time": 21.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 13,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7508801675903796,
+      "body_min_y": 0.006714657109297195,
+      "screen_min": [
+        -0.10533727312899105,
+        -0.5621809533886519
+      ],
+      "screen_max": [
+        0.11899184018865586,
+        0.19524623619790352
+      ],
+      "nearest_camera_depth": 4.874465617741307
+    },
+    {
+      "frame": 636,
+      "time": 21.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7604349311759633,
+      "body_min_y": 0.025801766311386976,
+      "screen_min": [
+        -0.10139861643372082,
+        -0.5581327964126568
+      ],
+      "screen_max": [
+        0.14752766137132595,
+        0.20456751795295003
+      ],
+      "nearest_camera_depth": 4.836501753392953
+    },
+    {
+      "frame": 641,
+      "time": 21.366666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 18,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6426665547854615,
+      "body_min_y": 0.014747883616064283,
+      "screen_min": [
+        -0.13261518039055026,
+        -0.63487965885304
+      ],
+      "screen_max": [
+        0.17338329817006626,
+        0.28464228170788186
+      ],
+      "nearest_camera_depth": 4.661228622397639
+    },
+    {
+      "frame": 642,
+      "time": 21.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.5810877031831734,
+      "body_min_y": 0.012698544535436323,
+      "screen_min": [
+        -0.12666215376967715,
+        -0.6156236689859202
+      ],
+      "screen_max": [
+        0.1958767893705699,
+        0.2931187727437461
+      ],
+      "nearest_camera_depth": 4.6752247800977855
+    },
+    {
+      "frame": 643,
+      "time": 21.433333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 15,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.6653656747581629,
+      "body_min_y": 0.02018646390303483,
+      "screen_min": [
+        -0.1432971962066761,
+        -0.5863716545168082
+      ],
+      "screen_max": [
+        0.23243928736335578,
+        0.2918745227924527
+      ],
+      "nearest_camera_depth": 4.715564353209033
+    },
+    {
+      "frame": 654,
+      "time": 21.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 96
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8975276105194756,
+      "body_min_y": 0.046832968292737406,
+      "screen_min": [
+        -0.1501809501242837,
+        -0.6273978450032779
+      ],
+      "screen_max": [
+        0.13560832471698325,
+        0.14538945860722874
+      ],
+      "nearest_camera_depth": 4.785067607181765
+    },
+    {
+      "frame": 655,
+      "time": 21.833333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 142
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8608951208179265,
+      "body_min_y": 0.051574945554576944,
+      "screen_min": [
+        -0.1414381295140273,
+        -0.6062115264077677
+      ],
+      "screen_max": [
+        0.14755359912930718,
+        0.13385512032043625
+      ],
+      "nearest_camera_depth": 4.838117020258452
+    },
+    {
+      "frame": 660,
+      "time": 22.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 18,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0927662804270548,
+      "body_min_y": 0.08338050091976007,
+      "screen_min": [
+        -0.12810571112855146,
+        -0.6704663770951667
+      ],
+      "screen_max": [
+        0.18924684372536374,
+        0.10339665203086497
+      ],
+      "nearest_camera_depth": 4.317186309495506
+    },
+    {
+      "frame": 661,
+      "time": 22.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 23,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1739787585400265,
+      "body_min_y": 0.08354886875651057,
+      "screen_min": [
+        -0.13732760905124278,
+        -0.6611789717782544
+      ],
+      "screen_max": [
+        0.23738718576459245,
+        0.12885305753118081
+      ],
+      "nearest_camera_depth": 4.440739351274169
+    },
+    {
+      "frame": 662,
+      "time": 22.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 24,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2222751950522646,
+      "body_min_y": 0.0843997278487328,
+      "screen_min": [
+        -0.14662047738642084,
+        -0.650508829561074
+      ],
+      "screen_max": [
+        0.23663190352276653,
+        0.15612360172991474
+      ],
+      "nearest_camera_depth": 4.51585846019415
+    },
+    {
+      "frame": 663,
+      "time": 22.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 22,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.242233818367379,
+      "body_min_y": 0.08494384080247801,
+      "screen_min": [
+        -0.1546387949751698,
+        -0.6413523525506054
+      ],
+      "screen_max": [
+        0.23078079828826492,
+        0.1679261258777081
+      ],
+      "nearest_camera_depth": 4.576821982655445
+    },
+    {
+      "frame": 664,
+      "time": 22.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 23,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2108341629472918,
+      "body_min_y": 0.08521241200379599,
+      "screen_min": [
+        -0.16128687394198146,
+        -0.633521724151703
+      ],
+      "screen_max": [
+        0.22260940757521136,
+        0.14957065191932617
+      ],
+      "nearest_camera_depth": 4.623340262795535
+    },
+    {
+      "frame": 665,
+      "time": 22.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 18,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1554490624242826,
+      "body_min_y": 0.08530571923946838,
+      "screen_min": [
+        -0.16659033723695632,
+        -0.6268312097525867
+      ],
+      "screen_max": [
+        0.20937992556511695,
+        0.1511036137528679
+      ],
+      "nearest_camera_depth": 4.656546737154488
+    },
+    {
+      "frame": 666,
+      "time": 22.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 15,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.093850112090903,
+      "body_min_y": 0.08519412273464742,
+      "screen_min": [
+        -0.17065822692680474,
+        -0.6210406305899429
+      ],
+      "screen_max": [
+        0.19198045401002728,
+        0.1641302607291449
+      ],
+      "nearest_camera_depth": 4.68193374223947
+    },
+    {
+      "frame": 667,
+      "time": 22.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.9768634588350273,
+      "body_min_y": 0.07961437825050292,
+      "screen_min": [
+        -0.17531072279792173,
+        -0.61971954955007
+      ],
+      "screen_max": [
+        0.17213362752817768,
+        0.19404098369483463
+      ],
+      "nearest_camera_depth": 4.700983353263598
+    },
+    {
+      "frame": 668,
+      "time": 22.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7817071136483434,
+      "body_min_y": 0.06554507125450522,
+      "screen_min": [
+        -0.17976033703371694,
+        -0.6246556905998809
+      ],
+      "screen_max": [
+        0.14268797464775168,
+        0.2383454952914448
+      ],
+      "nearest_camera_depth": 4.716328266980855
+    },
+    {
+      "frame": 669,
+      "time": 22.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 9
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.5927662496598629,
+      "body_min_y": 0.04715833607762052,
+      "screen_min": [
+        -0.1822450440890262,
+        -0.6317309701519821
+      ],
+      "screen_max": [
+        0.09676244883577824,
+        0.27342911340863885
+      ],
+      "nearest_camera_depth": 4.733710097451047
+    },
+    {
+      "frame": 670,
+      "time": 22.333333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 9
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.46515263520892597,
+      "body_min_y": 0.029266472667900174,
+      "screen_min": [
+        -0.18474219604381448,
+        -0.6366955677033247
+      ],
+      "screen_max": [
+        0.08585088770593187,
+        0.29672328006099613
+      ],
+      "nearest_camera_depth": 4.760142369468678
+    },
+    {
+      "frame": 720,
+      "time": 24.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 6
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7717321156889152,
+      "body_min_y": 0.0016741690797700732,
+      "screen_min": [
+        -0.1652415659659826,
+        -0.6168667039381786
+      ],
+      "screen_max": [
+        0.15191587082542737,
+        0.3741090364638992
+      ],
+      "nearest_camera_depth": 4.487687167245643
+    },
+    {
+      "frame": 721,
+      "time": 24.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.7974096455564452,
+      "body_min_y": 0.0015447554605541175,
+      "screen_min": [
+        -0.15758268576367096,
+        -0.6161385274960335
+      ],
+      "screen_max": [
+        0.1481897035020784,
+        0.37868545128784226
+      ],
+      "nearest_camera_depth": 4.493724910164379
+    },
+    {
+      "frame": 722,
+      "time": 24.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 6,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8150304323139127,
+      "body_min_y": 0.0014864416469294217,
+      "screen_min": [
+        -0.15084375263521588,
+        -0.6155687221171398
+      ],
+      "screen_max": [
+        0.1449885370727152,
+        0.3818816805977265
+      ],
+      "nearest_camera_depth": 4.498357545255918
+    },
+    {
+      "frame": 723,
+      "time": 24.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8281683020978451,
+      "body_min_y": 0.001462150678811484,
+      "screen_min": [
+        -0.1463561380753556,
+        -0.6151616912728723
+      ],
+      "screen_max": [
+        0.1422899440644295,
+        0.3839614439774766
+      ],
+      "nearest_camera_depth": 4.501408950347981
+    },
+    {
+      "frame": 724,
+      "time": 24.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8370716282752018,
+      "body_min_y": 0.0014554928625746377,
+      "screen_min": [
+        -0.1453147071953232,
+        -0.6148659951003095
+      ],
+      "screen_max": [
+        0.1400599715893022,
+        0.3852885569394546
+      ],
+      "nearest_camera_depth": 4.502567317651467
+    },
+    {
+      "frame": 725,
+      "time": 24.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8431199912746024,
+      "body_min_y": 0.0014706966781115971,
+      "screen_min": [
+        -0.1463378440530342,
+        -0.6146200040507905
+      ],
+      "screen_max": [
+        0.13826144758974276,
+        0.38635635837765925
+      ],
+      "nearest_camera_depth": 4.502440478590735
+    },
+    {
+      "frame": 726,
+      "time": 24.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8485707637911183,
+      "body_min_y": 0.001481027210149109,
+      "screen_min": [
+        -0.14736725629531233,
+        -0.6143829515119544
+      ],
+      "screen_max": [
+        0.13685022269859676,
+        0.3874385906704987
+      ],
+      "nearest_camera_depth": 4.501885253279218
+    },
+    {
+      "frame": 727,
+      "time": 24.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8534369284065904,
+      "body_min_y": 0.0014876293663886966,
+      "screen_min": [
+        -0.148344488018261,
+        -0.6141636773960969
+      ],
+      "screen_max": [
+        0.1357760535864949,
+        0.3885200662958156
+      ],
+      "nearest_camera_depth": 4.500994310304366
+    },
+    {
+      "frame": 728,
+      "time": 24.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8577473821012849,
+      "body_min_y": 0.0014918952887663644,
+      "screen_min": [
+        -0.1492658532073628,
+        -0.6139431880176736
+      ],
+      "screen_max": [
+        0.13498557157999275,
+        0.38961350942976997
+      ],
+      "nearest_camera_depth": 4.49985544462963
+    },
+    {
+      "frame": 729,
+      "time": 24.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8615103036846329,
+      "body_min_y": 0.0014941926514561834,
+      "screen_min": [
+        -0.15012512039347695,
+        -0.6136943995696897
+      ],
+      "screen_max": [
+        0.1344276245644576,
+        0.39070603207460325
+      ],
+      "nearest_camera_depth": 4.498569435810199
+    },
+    {
+      "frame": 730,
+      "time": 24.333333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8647035091071418,
+      "body_min_y": 0.0014586510687851924,
+      "screen_min": [
+        -0.1509125586087129,
+        -0.6134468245012754
+      ],
+      "screen_max": [
+        0.1340542224834208,
+        0.39175708856904695
+      ],
+      "nearest_camera_depth": 4.49724362262086
+    },
+    {
+      "frame": 731,
+      "time": 24.366666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8673181066801927,
+      "body_min_y": 0.0014259216572077226,
+      "screen_min": [
+        -0.15161645238741298,
+        -0.6132123328694375
+      ],
+      "screen_max": [
+        0.13382204047639495,
+        0.3927242743996535
+      ],
+      "nearest_camera_depth": 4.495994681861289
+    },
+    {
+      "frame": 732,
+      "time": 24.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 7
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8691234739928386,
+      "body_min_y": 0.001397049211767249,
+      "screen_min": [
+        -0.1522091831369609,
+        -0.6129731766300676
+      ],
+      "screen_max": [
+        0.13369171534030422,
+        0.39356781160791954
+      ],
+      "nearest_camera_depth": 4.494945963678183
+    },
+    {
+      "frame": 926,
+      "time": 30.866666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 107,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.080825751925711,
+      "body_min_y": 0.005227082336365023,
+      "screen_min": [
+        -0.4223945567243338,
+        -0.6878155660419498
+      ],
+      "screen_max": [
+        -0.14670943889563248,
+        0.243317436724956
+      ],
+      "nearest_camera_depth": 5.409083702778863
+    },
+    {
+      "frame": 927,
+      "time": 30.9,
+      "reference": true,
+      "arm_torso": {
+        "Right": 124,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1941589739162206,
+      "body_min_y": 0.0073217141442073145,
+      "screen_min": [
+        -0.4421230048490391,
+        -0.6768327398057904
+      ],
+      "screen_max": [
+        -0.1358532428970578,
+        0.2738367808904403
+      ],
+      "nearest_camera_depth": 5.4040764015760745
+    },
+    {
+      "frame": 928,
+      "time": 30.933333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 127,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2076627241655564,
+      "body_min_y": 0.007356871438496911,
+      "screen_min": [
+        -0.4359102089127143,
+        -0.6731435762778772
+      ],
+      "screen_max": [
+        -0.1292076105763407,
+        0.2820055969661236
+      ],
+      "nearest_camera_depth": 5.42422985316474
+    },
+    {
+      "frame": 929,
+      "time": 30.966666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 111,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2179632261771491,
+      "body_min_y": 0.007386953229195221,
+      "screen_min": [
+        -0.42730600263516333,
+        -0.6689531205510687
+      ],
+      "screen_max": [
+        -0.12121758806218351,
+        0.28932423120395573
+      ],
+      "nearest_camera_depth": 5.450402049275104
+    },
+    {
+      "frame": 930,
+      "time": 31.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 108,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2267091286960452,
+      "body_min_y": 0.007412055109512735,
+      "screen_min": [
+        -0.418146812904021,
+        -0.6645161656841084
+      ],
+      "screen_max": [
+        -0.11284131185778873,
+        0.29449034747732744
+      ],
+      "nearest_camera_depth": 5.478042827592831
+    },
+    {
+      "frame": 931,
+      "time": 31.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 126,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2500348480785486,
+      "body_min_y": 0.00742288815662142,
+      "screen_min": [
+        -0.4095562174032515,
+        -0.6604192948723178
+      ],
+      "screen_max": [
+        -0.10376465777509197,
+        0.27098104248082544
+      ],
+      "nearest_camera_depth": 5.502748824863946
+    },
+    {
+      "frame": 932,
+      "time": 31.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 88,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.289728645714392,
+      "body_min_y": 0.00746386275789226,
+      "screen_min": [
+        -0.39765831112494354,
+        -0.6574503984061937
+      ],
+      "screen_max": [
+        -0.06259505174211376,
+        0.1287839229450682
+      ],
+      "nearest_camera_depth": 5.532562551337042
+    },
+    {
+      "frame": 933,
+      "time": 31.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2567902495492587,
+      "body_min_y": 0.008172172685181466,
+      "screen_min": [
+        -0.39474133224163843,
+        -0.6531805872795172
+      ],
+      "screen_max": [
+        0.02139965107242027,
+        0.04742059517453731
+      ],
+      "nearest_camera_depth": 5.565139619987945
+    },
+    {
+      "frame": 942,
+      "time": 31.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0795790187933287,
+      "body_min_y": 0.006352008224542217,
+      "screen_min": [
+        -0.36811778768033754,
+        -0.6661508600118576
+      ],
+      "screen_max": [
+        0.05473745430832792,
+        0.1523033226881341
+      ],
+      "nearest_camera_depth": 5.591525308301024
+    },
+    {
+      "frame": 943,
+      "time": 31.433333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1012679198854172,
+      "body_min_y": 0.006090683146944085,
+      "screen_min": [
+        -0.36449016400797685,
+        -0.6702557477123812
+      ],
+      "screen_max": [
+        0.05125406817108407,
+        0.15897400893282984
+      ],
+      "nearest_camera_depth": 5.581173286927133
+    },
+    {
+      "frame": 944,
+      "time": 31.466666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 22,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1167743009338216,
+      "body_min_y": 0.005867358339173256,
+      "screen_min": [
+        -0.3615308032408846,
+        -0.6747606900562002
+      ],
+      "screen_max": [
+        0.053351703597023584,
+        0.1646458739905083
+      ],
+      "nearest_camera_depth": 5.540274643676269
+    },
+    {
+      "frame": 990,
+      "time": 33.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 96,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.087634707596306,
+      "body_min_y": 0.0459505909413892,
+      "screen_min": [
+        -0.15729386574854326,
+        -0.4093470778903263
+      ],
+      "screen_max": [
+        0.20453705254669916,
+        0.2440428390784916
+      ],
+      "nearest_camera_depth": 6.724961221249088
+    },
+    {
+      "frame": 991,
+      "time": 33.03333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 43,
+        "Left": 0
+      },
+      "weapon_torso": 87,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0947729634296055,
+      "body_min_y": 0.08369923117194139,
+      "screen_min": [
+        -0.15323137042281737,
+        -0.3896283504777503
+      ],
+      "screen_max": [
+        0.20597088210442155,
+        0.2434715341268226
+      ],
+      "nearest_camera_depth": 6.783525719159589
+    },
+    {
+      "frame": 992,
+      "time": 33.06666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 52,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1411792684122317,
+      "body_min_y": 0.10072532218930963,
+      "screen_min": [
+        -0.1475923879864269,
+        -0.3815575421343247
+      ],
+      "screen_max": [
+        0.20997522867191182,
+        0.24147769271505953
+      ],
+      "nearest_camera_depth": 6.787451636190498
+    },
+    {
+      "frame": 993,
+      "time": 33.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 69,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.329911424655198,
+      "body_min_y": 0.08893324849359452,
+      "screen_min": [
+        -0.14951601751194823,
+        -0.3868411484394559
+      ],
+      "screen_max": [
+        0.19232782524594394,
+        0.24391963916231
+      ],
+      "nearest_camera_depth": 6.784490946915984
+    },
+    {
+      "frame": 994,
+      "time": 33.13333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 51,
+        "Left": 0
+      },
+      "weapon_torso": 84,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8702455508737872,
+      "body_min_y": 0.07347849421980662,
+      "screen_min": [
+        -0.14543262299949902,
+        -0.398881952258547
+      ],
+      "screen_max": [
+        0.17765624920965756,
+        0.24169704305364936
+      ],
+      "nearest_camera_depth": 6.829823942385893
+    },
+    {
+      "frame": 998,
+      "time": 33.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 131,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3874433165254838,
+      "body_min_y": 0.07839915243371894,
+      "screen_min": [
+        -0.17095604137464057,
+        -0.41997044084000645
+      ],
+      "screen_max": [
+        0.1194301747486162,
+        0.13721561243024366
+      ],
+      "nearest_camera_depth": 6.958036993976663
+    },
+    {
+      "frame": 999,
+      "time": 33.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 219,
+        "Left": 0
+      },
+      "weapon_torso": 284,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.40290713102390363,
+      "body_min_y": 0.09619429328711943,
+      "screen_min": [
+        -0.16956780667436666,
+        -0.41553316008380986
+      ],
+      "screen_max": [
+        0.12537863671622967,
+        0.16526599619522128
+      ],
+      "nearest_camera_depth": 6.982080414130748
+    },
+    {
+      "frame": 1000,
+      "time": 33.333333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 214,
+        "Left": 0
+      },
+      "weapon_torso": 266,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2917846309977046,
+      "body_min_y": 0.09443634181135874,
+      "screen_min": [
+        -0.16332404859157956,
+        -0.41512998909514387
+      ],
+      "screen_max": [
+        0.1265938778198495,
+        0.1518338134596357
+      ],
+      "nearest_camera_depth": 6.994668571683252
+    },
+    {
+      "frame": 1001,
+      "time": 33.36666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 202,
+        "Left": 0
+      },
+      "weapon_torso": 148,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.17766514145942197,
+      "body_min_y": 0.04194363464161455,
+      "screen_min": [
+        -0.14035553068184153,
+        -0.43210966284366364
+      ],
+      "screen_max": [
+        0.12510628931291878,
+        0.13040328175241145
+      ],
+      "nearest_camera_depth": 7.042949676261738
+    },
+    {
+      "frame": 1002,
+      "time": 33.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 86,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3034172206273237,
+      "body_min_y": 0.0108947370680188,
+      "screen_min": [
+        -0.08532161977305948,
+        -0.42100565206783364
+      ],
+      "screen_max": [
+        0.17137185125770663,
+        0.19691051966582757
+      ],
+      "nearest_camera_depth": 7.030572170011227
+    },
+    {
+      "frame": 1084,
+      "time": 36.13333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 39,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.074145117848832,
+      "body_min_y": 0.0459505909413892,
+      "screen_min": [
+        -0.3626915833157506,
+        -0.618875797420421
+      ],
+      "screen_max": [
+        0.08965981299200168,
+        0.15548623128253283
+      ],
+      "nearest_camera_depth": 5.411565120242882
+    },
+    {
+      "frame": 1085,
+      "time": 36.166666666666664,
+      "reference": true,
+      "arm_torso": {
+        "Right": 81,
+        "Left": 0
+      },
+      "weapon_torso": 78,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0855961813235042,
+      "body_min_y": 0.08369923117194139,
+      "screen_min": [
+        -0.3657155140640707,
+        -0.5983428268571132
+      ],
+      "screen_max": [
+        0.08934626635134872,
+        0.1544461801525674
+      ],
+      "nearest_camera_depth": 5.677418119563113
+    },
+    {
+      "frame": 1086,
+      "time": 36.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 129,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1356425477178416,
+      "body_min_y": 0.10072532218930963,
+      "screen_min": [
+        -0.36585694286156556,
+        -0.5916461277110072
+      ],
+      "screen_max": [
+        0.0912808148481924,
+        0.15431684583912317
+      ],
+      "nearest_camera_depth": 5.762788200926521
+    },
+    {
+      "frame": 1087,
+      "time": 36.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 60,
+        "Left": 0
+      },
+      "weapon_torso": 43,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3317458951593792,
+      "body_min_y": 0.08893324849359452,
+      "screen_min": [
+        -0.36086563840319413,
+        -0.6012196838413468
+      ],
+      "screen_max": [
+        0.06547184089906713,
+        0.15723165851250392
+      ],
+      "nearest_camera_depth": 5.772064396423911
+    },
+    {
+      "frame": 1088,
+      "time": 36.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 41,
+        "Left": 0
+      },
+      "weapon_torso": 16,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8774920633725609,
+      "body_min_y": 0.07347849421980662,
+      "screen_min": [
+        -0.35620348785466344,
+        -0.620141107168908
+      ],
+      "screen_max": [
+        0.049939198833575865,
+        0.15365731382032735
+      ],
+      "nearest_camera_depth": 5.759440943888672
+    },
+    {
+      "frame": 1092,
+      "time": 36.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 131,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3874433165254838,
+      "body_min_y": 0.07839915243371894,
+      "screen_min": [
+        -0.39469740245274504,
+        -0.6596437851657321
+      ],
+      "screen_max": [
+        -0.02502984608524827,
+        0.02615594743749091
+      ],
+      "nearest_camera_depth": 5.691493851393045
+    },
+    {
+      "frame": 1093,
+      "time": 36.43333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 219,
+        "Left": 0
+      },
+      "weapon_torso": 284,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.40290713102390363,
+      "body_min_y": 0.09619429328711943,
+      "screen_min": [
+        -0.3916090878080467,
+        -0.6539786608601913
+      ],
+      "screen_max": [
+        -0.017291792836195412,
+        0.05829488374152976
+      ],
+      "nearest_camera_depth": 5.712189413165527
+    },
+    {
+      "frame": 1094,
+      "time": 36.46666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 214,
+        "Left": 0
+      },
+      "weapon_torso": 266,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.29157244399927174,
+      "body_min_y": 0.0944747804901211,
+      "screen_min": [
+        -0.383412275643671,
+        -0.6535912519470511
+      ],
+      "screen_max": [
+        -0.01627928787751248,
+        0.042980824953619975
+      ],
+      "nearest_camera_depth": 5.722118877295769
+    },
+    {
+      "frame": 1095,
+      "time": 36.5,
+      "reference": true,
+      "arm_torso": {
+        "Right": 202,
+        "Left": 0
+      },
+      "weapon_torso": 156,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.17615485683711513,
+      "body_min_y": 0.041065266576026827,
+      "screen_min": [
+        -0.35346724267147206,
+        -0.6731518851407716
+      ],
+      "screen_max": [
+        -0.01944365598491838,
+        0.016822806652708557
+      ],
+      "nearest_camera_depth": 5.767779670308543
+    },
+    {
+      "frame": 1096,
+      "time": 36.53333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 90,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.3026879853335783,
+      "body_min_y": 0.01090055928428213,
+      "screen_min": [
+        -0.26467247572224034,
+        -0.6550529078054647
+      ],
+      "screen_max": [
+        0.04280068929185198,
+        0.09643495562669017
+      ],
+      "nearest_camera_depth": 5.750013849029103
+    },
+    {
+      "frame": 1208,
+      "time": 40.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 63,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.113311901582203,
+      "body_min_y": 0.007179938646954466,
+      "screen_min": [
+        -0.33531621934724987,
+        -0.6509526368282346
+      ],
+      "screen_max": [
+        -0.06334622143152926,
+        0.27576347995808365
+      ],
+      "nearest_camera_depth": 5.625198632231043
+    },
+    {
+      "frame": 1209,
+      "time": 40.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 114,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2225490251075002,
+      "body_min_y": 0.007393143135350881,
+      "screen_min": [
+        -0.3561160159094129,
+        -0.6413129203627046
+      ],
+      "screen_max": [
+        -0.05992601027187879,
+        0.30074451518788137
+      ],
+      "nearest_camera_depth": 5.5899714327792625
+    },
+    {
+      "frame": 1210,
+      "time": 40.333333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 125,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2354043766117924,
+      "body_min_y": 0.007415942501841232,
+      "screen_min": [
+        -0.35746094442676074,
+        -0.6418025397747886
+      ],
+      "screen_max": [
+        -0.058953175003781416,
+        0.29716805722226897
+      ],
+      "nearest_camera_depth": 5.592845609515856
+    },
+    {
+      "frame": 1211,
+      "time": 40.36666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 131,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.27868840556223,
+      "body_min_y": 0.007448698011487341,
+      "screen_min": [
+        -0.3589197736734054,
+        -0.6426421420557115
+      ],
+      "screen_max": [
+        -0.056839832845324754,
+        0.22510014539875386
+      ],
+      "nearest_camera_depth": 5.599902618701958
+    },
+    {
+      "frame": 1212,
+      "time": 40.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 50,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.294575849429171,
+      "body_min_y": 0.0074752269364241454,
+      "screen_min": [
+        -0.3500978964787721,
+        -0.6431205242312912
+      ],
+      "screen_max": [
+        0.0028130852181143984,
+        0.04483286452289606
+      ],
+      "nearest_camera_depth": 5.61483692541107
+    },
+    {
+      "frame": 1219,
+      "time": 40.63333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 11,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1168813610932458,
+      "body_min_y": 0.009989605228273551,
+      "screen_min": [
+        -0.3602368200399811,
+        -0.6333351698658127
+      ],
+      "screen_max": [
+        0.09797545524035146,
+        0.1263845271720361
+      ],
+      "nearest_camera_depth": 5.6707028403792545
+    },
+    {
+      "frame": 1222,
+      "time": 40.733333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.080999720075263,
+      "body_min_y": 0.00651255078505127,
+      "screen_min": [
+        -0.3319596416811771,
+        -0.6565424292889179
+      ],
+      "screen_max": [
+        0.0902433249955868,
+        0.15175254014324044
+      ],
+      "nearest_camera_depth": 5.631182907623193
+    },
+    {
+      "frame": 1223,
+      "time": 40.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 16,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0932638752279047,
+      "body_min_y": 0.006227426394059865,
+      "screen_min": [
+        -0.3275296681706341,
+        -0.6601932760248743
+      ],
+      "screen_max": [
+        0.08554536732945886,
+        0.15891914837148974
+      ],
+      "nearest_camera_depth": 5.626008515359422
+    },
+    {
+      "frame": 1224,
+      "time": 40.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1235467084923023,
+      "body_min_y": 0.005979697121850183,
+      "screen_min": [
+        -0.32377942162245343,
+        -0.6643647544807524
+      ],
+      "screen_max": [
+        0.08610410009432223,
+        0.16506699532394437
+      ],
+      "nearest_camera_depth": 5.601083002074875
+    },
+    {
+      "frame": 1225,
+      "time": 40.833333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 18,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.066540019761064,
+      "body_min_y": 0.005771590104282997,
+      "screen_min": [
+        -0.32066699296747997,
+        -0.6688724107405079
+      ],
+      "screen_max": [
+        0.09066496621866521,
+        0.1702417819454868
+      ],
+      "nearest_camera_depth": 5.55178895420213
+    },
+    {
+      "frame": 1320,
+      "time": 44.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 351,
+      "weapon_min_y": 1.4980693465439971,
+      "body_min_y": 0.10072532218930963,
+      "screen_min": [
+        -0.3658421573920032,
+        -0.593432735385612
+      ],
+      "screen_max": [
+        0.07246990519743841,
+        0.19032099222497367
+      ],
+      "nearest_camera_depth": 5.7552377049487475
+    },
+    {
+      "frame": 1321,
+      "time": 44.03333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 6,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 468,
+      "weapon_min_y": 1.5585309805089134,
+      "body_min_y": 0.08893324849359452,
+      "screen_min": [
+        -0.36765754739460205,
+        -0.6032024784597375
+      ],
+      "screen_max": [
+        0.048524116143487936,
+        0.22802697103261577
+      ],
+      "nearest_camera_depth": 5.763755242385504
+    },
+    {
+      "frame": 1333,
+      "time": 44.43333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 1,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3781939927019609,
+      "body_min_y": 0.03017976636870712,
+      "screen_min": [
+        -0.3936991533136441,
+        -0.6106451194443796
+      ],
+      "screen_max": [
+        0.08056369388547643,
+        0.14257913667219704
+      ],
+      "nearest_camera_depth": 5.664282144501739
+    },
+    {
+      "frame": 1334,
+      "time": 44.46666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3896285984268728,
+      "body_min_y": 0.032629037402580996,
+      "screen_min": [
+        -0.39322733746667443,
+        -0.6105228969694843
+      ],
+      "screen_max": [
+        0.07915298518988315,
+        0.16529204598850272
+      ],
+      "nearest_camera_depth": 5.662761993379922
+    },
+    {
+      "frame": 1335,
+      "time": 44.5,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3888299576772913,
+      "body_min_y": 0.03506286786987619,
+      "screen_min": [
+        -0.39272772073928486,
+        -0.6113701843150434
+      ],
+      "screen_max": [
+        0.07594206679499303,
+        0.1815076610662987
+      ],
+      "nearest_camera_depth": 5.661191325606307
+    },
+    {
+      "frame": 1336,
+      "time": 44.53333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.394058588536159,
+      "body_min_y": 0.03269817521465343,
+      "screen_min": [
+        -0.39336381515829405,
+        -0.6143247932648955
+      ],
+      "screen_max": [
+        0.07381379851065817,
+        0.19761997049151458
+      ],
+      "nearest_camera_depth": 5.659980621948169
+    },
+    {
+      "frame": 1337,
+      "time": 44.56666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.407745734238278,
+      "body_min_y": 0.02440864342714373,
+      "screen_min": [
+        -0.39391429064528777,
+        -0.6192715435697
+      ],
+      "screen_max": [
+        0.07355675764921694,
+        0.21540432669490447
+      ],
+      "nearest_camera_depth": 5.659432881961256
+    },
+    {
+      "frame": 1338,
+      "time": 44.6,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4243676604887723,
+      "body_min_y": 0.02323353418442274,
+      "screen_min": [
+        -0.39024317156518945,
+        -0.624714859304902
+      ],
+      "screen_max": [
+        0.07436094866096718,
+        0.2322136883633552
+      ],
+      "nearest_camera_depth": 5.660896960987244
+    },
+    {
+      "frame": 1339,
+      "time": 44.63333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 5,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4389959175258533,
+      "body_min_y": 0.02568756897012435,
+      "screen_min": [
+        -0.38638343786742557,
+        -0.6301386663118689
+      ],
+      "screen_max": [
+        0.08779904667792032,
+        0.2373353377444237
+      ],
+      "nearest_camera_depth": 5.651844320874911
+    },
+    {
+      "frame": 1357,
+      "time": 45.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 5,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1227783876408814,
+      "body_min_y": 0.006352008224542217,
+      "screen_min": [
+        -0.31239877646295866,
+        -0.6544381149148473
+      ],
+      "screen_max": [
+        0.09359428022546437,
+        0.15694100381743212
+      ],
+      "nearest_camera_depth": 5.643377247825993
+    },
+    {
+      "frame": 1358,
+      "time": 45.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 13,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1553253577799472,
+      "body_min_y": 0.006090683146944085,
+      "screen_min": [
+        -0.30944696307412795,
+        -0.6585833736164017
+      ],
+      "screen_max": [
+        0.0914360870996425,
+        0.16350212966488895
+      ],
+      "nearest_camera_depth": 5.627603904639665
+    },
+    {
+      "frame": 1359,
+      "time": 45.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1312237534617884,
+      "body_min_y": 0.005867358339173256,
+      "screen_min": [
+        -0.3069801422549242,
+        -0.6631013761353185
+      ],
+      "screen_max": [
+        0.09549645088929506,
+        0.16909093212843643
+      ],
+      "nearest_camera_depth": 5.588507286610162
+    },
+    {
+      "frame": 1460,
+      "time": 48.666666666666664,
+      "reference": true,
+      "arm_torso": {
+        "Right": 107,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.080825751925711,
+      "body_min_y": 0.005227082336365023,
+      "screen_min": [
+        -0.4223945567243338,
+        -0.6878155660419498
+      ],
+      "screen_max": [
+        -0.14670943889563248,
+        0.243317436724956
+      ],
+      "nearest_camera_depth": 5.409083702778863
+    },
+    {
+      "frame": 1461,
+      "time": 48.7,
+      "reference": true,
+      "arm_torso": {
+        "Right": 124,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1941589739162206,
+      "body_min_y": 0.0073217141442073145,
+      "screen_min": [
+        -0.4421230048490391,
+        -0.6768327398057904
+      ],
+      "screen_max": [
+        -0.1358532428970578,
+        0.2738367808904403
+      ],
+      "nearest_camera_depth": 5.4040764015760745
+    },
+    {
+      "frame": 1462,
+      "time": 48.733333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 127,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2076627241655564,
+      "body_min_y": 0.007356871438496911,
+      "screen_min": [
+        -0.4359102089127143,
+        -0.6731435762778772
+      ],
+      "screen_max": [
+        -0.1292076105763407,
+        0.2820055969661236
+      ],
+      "nearest_camera_depth": 5.42422985316474
+    },
+    {
+      "frame": 1463,
+      "time": 48.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 111,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2179632261771491,
+      "body_min_y": 0.007386953229195221,
+      "screen_min": [
+        -0.42730600263516333,
+        -0.6689531205510687
+      ],
+      "screen_max": [
+        -0.12121758806218351,
+        0.28932423120395573
+      ],
+      "nearest_camera_depth": 5.450402049275104
+    },
+    {
+      "frame": 1464,
+      "time": 48.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 108,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2267091286960452,
+      "body_min_y": 0.007412055109512735,
+      "screen_min": [
+        -0.418146812904021,
+        -0.6645161656841084
+      ],
+      "screen_max": [
+        -0.11284131185778873,
+        0.29449034747732744
+      ],
+      "nearest_camera_depth": 5.478042827592831
+    },
+    {
+      "frame": 1465,
+      "time": 48.833333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 126,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2500348480785486,
+      "body_min_y": 0.00742288815662142,
+      "screen_min": [
+        -0.4095562174032515,
+        -0.6604192948723178
+      ],
+      "screen_max": [
+        -0.10376465777509197,
+        0.27098104248082544
+      ],
+      "nearest_camera_depth": 5.502748824863946
+    },
+    {
+      "frame": 1466,
+      "time": 48.86666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 88,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.289728645714392,
+      "body_min_y": 0.00746386275789226,
+      "screen_min": [
+        -0.39765831112494354,
+        -0.6574503984061937
+      ],
+      "screen_max": [
+        -0.06259505174211376,
+        0.1287839229450682
+      ],
+      "nearest_camera_depth": 5.532562551337042
+    },
+    {
+      "frame": 1467,
+      "time": 48.9,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.2567902495492587,
+      "body_min_y": 0.008172172685181466,
+      "screen_min": [
+        -0.39474133224163843,
+        -0.6531805872795172
+      ],
+      "screen_max": [
+        0.02139965107242027,
+        0.04742059517453731
+      ],
+      "nearest_camera_depth": 5.565139619987945
+    },
+    {
+      "frame": 1477,
+      "time": 49.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0871460233479138,
+      "body_min_y": 0.006352008224542217,
+      "screen_min": [
+        -0.36161177806215866,
+        -0.6648160409364336
+      ],
+      "screen_max": [
+        0.06644690081866464,
+        0.1528426528189912
+      ],
+      "nearest_camera_depth": 5.598394310878417
+    },
+    {
+      "frame": 1478,
+      "time": 49.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 22,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1071895886471825,
+      "body_min_y": 0.006090683146944085,
+      "screen_min": [
+        -0.3568998093748587,
+        -0.6686923337936344
+      ],
+      "screen_max": [
+        0.06429502634042138,
+        0.15958943757956545
+      ],
+      "nearest_camera_depth": 5.5911381562538915
+    },
+    {
+      "frame": 1479,
+      "time": 49.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1186898500209357,
+      "body_min_y": 0.005867358339173256,
+      "screen_min": [
+        -0.35298101430749124,
+        -0.6729982149242865
+      ],
+      "screen_max": [
+        0.06758702408644127,
+        0.16532770593096027
+      ],
+      "nearest_camera_depth": 5.550732259981857
+    },
+    {
+      "frame": 1597,
+      "time": 53.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 281,
+      "weapon_min_y": 1.4531744184617925,
+      "body_min_y": 0.09633224083931696,
+      "screen_min": [
+        -0.37747576045736936,
+        -0.5944566932409233
+      ],
+      "screen_max": [
+        0.07777155228512038,
+        0.17019649876811677
+      ],
+      "nearest_camera_depth": 5.750291528407191
+    },
+    {
+      "frame": 1598,
+      "time": 53.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 1018,
+      "weapon_min_y": 1.5221827775242862,
+      "body_min_y": 0.09884175148300706,
+      "screen_min": [
+        -0.3716337041927577,
+        -0.5959951208510235
+      ],
+      "screen_max": [
+        0.05849250309684015,
+        0.20141825652172288
+      ],
+      "nearest_camera_depth": 5.757497597203954
+    },
+    {
+      "frame": 1610,
+      "time": 53.666666666666664,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.499398464061451,
+      "body_min_y": 0.007275514483562487,
+      "screen_min": [
+        -0.36461054843726487,
+        -0.6013119012882576
+      ],
+      "screen_max": [
+        0.08002276663820726,
+        0.2037686763763904
+      ],
+      "nearest_camera_depth": 5.637166680077714
+    },
+    {
+      "frame": 1611,
+      "time": 53.7,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4948852123128482,
+      "body_min_y": 0.006548682084995979,
+      "screen_min": [
+        -0.3639301548549082,
+        -0.6009801554762605
+      ],
+      "screen_max": [
+        0.0763659346682981,
+        0.2199037159942818
+      ],
+      "nearest_camera_depth": 5.635200885038085
+    },
+    {
+      "frame": 1612,
+      "time": 53.733333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4948517114025377,
+      "body_min_y": 0.0066578023257916185,
+      "screen_min": [
+        -0.36376855476302106,
+        -0.6008420594296474
+      ],
+      "screen_max": [
+        0.07313838314561341,
+        0.23581474570241645
+      ],
+      "nearest_camera_depth": 5.63447538878466
+    },
+    {
+      "frame": 1613,
+      "time": 53.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.5116922528633476,
+      "body_min_y": 0.0077495549232499406,
+      "screen_min": [
+        -0.36498049810398503,
+        -0.6001068380382101
+      ],
+      "screen_max": [
+        0.07160184031528752,
+        0.25670981048410985
+      ],
+      "nearest_camera_depth": 5.6314345189246495
+    },
+    {
+      "frame": 1614,
+      "time": 53.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.5415444773619393,
+      "body_min_y": 0.008651676462302797,
+      "screen_min": [
+        -0.36662511165892153,
+        -0.5980370185082313
+      ],
+      "screen_max": [
+        0.0716672055316706,
+        0.28161857748936475
+      ],
+      "nearest_camera_depth": 5.628416764568925
+    },
+    {
+      "frame": 1615,
+      "time": 53.833333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 4,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.5569283326964398,
+      "body_min_y": 0.01017064554093107,
+      "screen_min": [
+        -0.3636292011820415,
+        -0.5961619006565786
+      ],
+      "screen_max": [
+        0.07404747644579812,
+        0.2962334196140492
+      ],
+      "nearest_camera_depth": 5.628931409860206
+    },
+    {
+      "frame": 1616,
+      "time": 53.86666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 3,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.560791666792445,
+      "body_min_y": 0.00988842446099819,
+      "screen_min": [
+        -0.359325786388684,
+        -0.5948277620939488
+      ],
+      "screen_max": [
+        0.09952500919342137,
+        0.2853671621903039
+      ],
+      "nearest_camera_depth": 5.61024726624265
+    },
+    {
+      "frame": 1630,
+      "time": 54.333333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 2,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3010755338271538,
+      "body_min_y": 0.007496615434794237,
+      "screen_min": [
+        -0.331496781568594,
+        -0.645205547535461
+      ],
+      "screen_max": [
+        0.06958127423488028,
+        0.28282036790109955
+      ],
+      "nearest_camera_depth": 5.695461635804139
+    },
+    {
+      "frame": 1631,
+      "time": 54.36666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 11,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.346913447497668,
+      "body_min_y": 0.007160191872941202,
+      "screen_min": [
+        -0.32392517947536587,
+        -0.647702800335239
+      ],
+      "screen_max": [
+        0.06461559806165645,
+        0.28415706531841234
+      ],
+      "nearest_camera_depth": 5.685053593058681
+    },
+    {
+      "frame": 1632,
+      "time": 54.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 6,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4041708869412663,
+      "body_min_y": 0.0066528890597259,
+      "screen_min": [
+        -0.31673661055809776,
+        -0.6509004064406636
+      ],
+      "screen_max": [
+        0.06406799958682625,
+        0.2765417201552656
+      ],
+      "nearest_camera_depth": 5.656329347675394
+    },
+    {
+      "frame": 1633,
+      "time": 54.43333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 8,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4291244342678124,
+      "body_min_y": 0.006352008224542217,
+      "screen_min": [
+        -0.3131815503282984,
+        -0.6545488623951907
+      ],
+      "screen_max": [
+        0.06741352831667459,
+        0.2651901158415655
+      ],
+      "nearest_camera_depth": 5.646037216946573
+    },
+    {
+      "frame": 1634,
+      "time": 54.46666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.4134040939867762,
+      "body_min_y": 0.006090683146944085,
+      "screen_min": [
+        -0.31020757326514325,
+        -0.6586931056225791
+      ],
+      "screen_max": [
+        0.08221280835926932,
+        0.23056383332518832
+      ],
+      "nearest_camera_depth": 5.639426304109914
+    },
+    {
+      "frame": 1635,
+      "time": 54.5,
+      "reference": true,
+      "arm_torso": {
+        "Right": 3,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3140632078077767,
+      "body_min_y": 0.005867358339173256,
+      "screen_min": [
+        -0.30772410055310023,
+        -0.6632107240848675
+      ],
+      "screen_max": [
+        0.10880437981950203,
+        0.1690494797752862
+      ],
+      "nearest_camera_depth": 5.608838247763566
+    },
+    {
+      "frame": 1650,
+      "time": 55.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 51,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.1681256730150276,
+      "body_min_y": 0.06938488853080882,
+      "screen_min": [
+        -0.2926823853267597,
+        -0.5901779101874656
+      ],
+      "screen_max": [
+        0.13317668995572302,
+        0.16112619929453506
+      ],
+      "nearest_camera_depth": 5.611748384469311
+    },
+    {
+      "frame": 1651,
+      "time": 55.03333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 311,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 20,
+      "weapon_min_y": 1.201510659266802,
+      "body_min_y": 0.09633224083931696,
+      "screen_min": [
+        -0.2941467318758023,
+        -0.5776516581793898
+      ],
+      "screen_max": [
+        0.1330926751168146,
+        0.15937727916016758
+      ],
+      "nearest_camera_depth": 5.829903617066227
+    },
+    {
+      "frame": 1652,
+      "time": 55.06666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 2,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3303536792731292,
+      "body_min_y": 0.09884175148300706,
+      "screen_min": [
+        -0.30323716992067984,
+        -0.5794235882782981
+      ],
+      "screen_max": [
+        0.12050328855869887,
+        0.16108287582275155
+      ],
+      "nearest_camera_depth": 5.835433845760267
+    },
+    {
+      "frame": 1653,
+      "time": 55.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 365,
+        "Left": 0
+      },
+      "weapon_torso": 163,
+      "weapon_helmet": 695,
+      "weapon_min_y": 1.4366686630743872,
+      "body_min_y": 0.08362894422713851,
+      "screen_min": [
+        -0.30727560116176816,
+        -0.5941489491325899
+      ],
+      "screen_max": [
+        0.09768476409147223,
+        0.18173727407789872
+      ],
+      "nearest_camera_depth": 5.830371065992031
+    },
+    {
+      "frame": 1658,
+      "time": 55.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 201,
+        "Left": 0
+      },
+      "weapon_torso": 111,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.4321099150768011,
+      "body_min_y": 0.09336533927351122,
+      "screen_min": [
+        -0.3477814083529551,
+        -0.640399923577374
+      ],
+      "screen_max": [
+        0.019616735285574827,
+        0.06207747177479432
+      ],
+      "nearest_camera_depth": 5.771584990202201
+    },
+    {
+      "frame": 1659,
+      "time": 55.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 213,
+        "Left": 0
+      },
+      "weapon_torso": 312,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.353080772578613,
+      "body_min_y": 0.09591852318734827,
+      "screen_min": [
+        -0.3430268257813799,
+        -0.638784514147901
+      ],
+      "screen_max": [
+        0.02136750660431601,
+        0.060145497102646696
+      ],
+      "nearest_camera_depth": 5.779530458393952
+    },
+    {
+      "frame": 1660,
+      "time": 55.333333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 213,
+        "Left": 0
+      },
+      "weapon_torso": 138,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.22777567146598854,
+      "body_min_y": 0.09011500371396791,
+      "screen_min": [
+        -0.33310816197796983,
+        -0.6432521852080144
+      ],
+      "screen_max": [
+        0.02104766400804811,
+        0.032091338530347825
+      ],
+      "nearest_camera_depth": 5.795580361845374
+    },
+    {
+      "frame": 1661,
+      "time": 55.36666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 149,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.22041886838241337,
+      "body_min_y": 0.01087911521050633,
+      "screen_min": [
+        -0.2611941138924993,
+        -0.6549085521126088
+      ],
+      "screen_max": [
+        0.031501338064358286,
+        0.0720711969183252
+      ],
+      "nearest_camera_depth": 5.831120799165683
+    },
+    {
+      "frame": 1662,
+      "time": 55.4,
+      "reference": true,
+      "arm_torso": {
+        "Right": 21,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.44302788517616853,
+      "body_min_y": 0.030366662766967603,
+      "screen_min": [
+        -0.20072508988943347,
+        -0.6335441441667147
+      ],
+      "screen_max": [
+        0.11946887041372126,
+        0.12261735692955278
+      ],
+      "nearest_camera_depth": 5.767483116093321
+    }
+  ],
+  "weapon_torso_crossings": [
+    {
+      "frame": 563,
+      "time": 18.766666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 173,
+        "Left": 0
+      },
+      "weapon_torso": 101,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.20158479468499413,
+      "body_min_y": 0.07500115275911387,
+      "screen_min": [
+        -0.15460399225183655,
+        -0.6194827611843204
+      ],
+      "screen_max": [
+        0.2819473831525725,
+        0.16190403263684428
+      ],
+      "nearest_camera_depth": 4.500717287137518
+    },
+    {
+      "frame": 564,
+      "time": 18.8,
+      "reference": true,
+      "arm_torso": {
+        "Right": 212,
+        "Left": 0
+      },
+      "weapon_torso": 224,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.21068768121476705,
+      "body_min_y": 0.08113966005066778,
+      "screen_min": [
+        -0.1567093317911385,
+        -0.6113622726391357
+      ],
+      "screen_max": [
+        0.25137958953307366,
+        0.19108805294346312
+      ],
+      "nearest_camera_depth": 4.525109243484936
+    },
+    {
+      "frame": 565,
+      "time": 18.833333333333332,
+      "reference": true,
+      "arm_torso": {
+        "Right": 222,
+        "Left": 0
+      },
+      "weapon_torso": 210,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2134793787880136,
+      "body_min_y": 0.08369335870722236,
+      "screen_min": [
+        -0.1583945504590068,
+        -0.6062709652777242
+      ],
+      "screen_max": [
+        0.23874967749776818,
+        0.20120639562366222
+      ],
+      "nearest_camera_depth": 4.547891712363983
+    },
+    {
+      "frame": 566,
+      "time": 18.866666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 223,
+        "Left": 0
+      },
+      "weapon_torso": 361,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.21571326979773936,
+      "body_min_y": 0.08345045626015543,
+      "screen_min": [
+        -0.15970785517966266,
+        -0.6035438222968407
+      ],
+      "screen_max": [
+        0.2311760745186562,
+        0.20959363632215738
+      ],
+      "nearest_camera_depth": 4.567089933568474
+    },
+    {
+      "frame": 567,
+      "time": 18.9,
+      "reference": true,
+      "arm_torso": {
+        "Right": 225,
+        "Left": 0
+      },
+      "weapon_torso": 348,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2210277447339027,
+      "body_min_y": 0.08316902515220889,
+      "screen_min": [
+        -0.16074131198071692,
+        -0.601506232279528
+      ],
+      "screen_max": [
+        0.22592847735535496,
+        0.21517311011815818
+      ],
+      "nearest_camera_depth": 4.581634371451145
+    },
+    {
+      "frame": 568,
+      "time": 18.933333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 409,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.228359980537101,
+      "body_min_y": 0.08285907718888952,
+      "screen_min": [
+        -0.1615951026697095,
+        -0.6000305002832197
+      ],
+      "screen_max": [
+        0.2228423119107428,
+        0.2182153528189691
+      ],
+      "nearest_camera_depth": 4.592581876627762
+    },
+    {
+      "frame": 569,
+      "time": 18.966666666666665,
+      "reference": true,
+      "arm_torso": {
+        "Right": 231,
+        "Left": 0
+      },
+      "weapon_torso": 385,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.23709997879337097,
+      "body_min_y": 0.08253173859764781,
+      "screen_min": [
+        -0.16237692021807118,
+        -0.5989974123381606
+      ],
+      "screen_max": [
+        0.2213351137967825,
+        0.2189668635603543
+      ],
+      "nearest_camera_depth": 4.600555448199702
+    },
+    {
+      "frame": 570,
+      "time": 19.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 384,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.24672094409873374,
+      "body_min_y": 0.08214252122917443,
+      "screen_min": [
+        -0.1631787891917908,
+        -0.5983351984148554
+      ],
+      "screen_max": [
+        0.22070363030554568,
+        0.2177293220250115
+      ],
+      "nearest_camera_depth": 4.606180084087533
+    },
+    {
+      "frame": 571,
+      "time": 19.033333333333335,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 314,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2566010009565224,
+      "body_min_y": 0.08181096651153433,
+      "screen_min": [
+        -0.1640910479970972,
+        -0.5978845332275549
+      ],
+      "screen_max": [
+        0.22024882897119755,
+        0.21477105526560625
+      ],
+      "nearest_camera_depth": 4.610041811818049
+    },
+    {
+      "frame": 572,
+      "time": 19.066666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 229,
+        "Left": 0
+      },
+      "weapon_torso": 309,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.26600033327933875,
+      "body_min_y": 0.08149865149438865,
+      "screen_min": [
+        -0.16518835082025182,
+        -0.5975990709276116
+      ],
+      "screen_max": [
+        0.21933370481022474,
+        0.21001673966676068
+      ],
+      "nearest_camera_depth": 4.612660502745775
+    },
+    {
+      "frame": 573,
+      "time": 19.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 226,
+        "Left": 0
+      },
+      "weapon_torso": 292,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2651641609491041,
+      "body_min_y": 0.08125422780490442,
+      "screen_min": [
+        -0.16276508690441124,
+        -0.5973774503956154
+      ],
+      "screen_max": [
+        0.2195079182991894,
+        0.20245204704143616
+      ],
+      "nearest_camera_depth": 4.614651592758424
+    },
+    {
+      "frame": 574,
+      "time": 19.133333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 194,
+        "Left": 0
+      },
+      "weapon_torso": 276,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2544658845252794,
+      "body_min_y": 0.05105721154918247,
+      "screen_min": [
+        -0.1539629677814316,
+        -0.5975011340127817
+      ],
+      "screen_max": [
+        0.22312794038997963,
+        0.19325716194878695
+      ],
+      "nearest_camera_depth": 4.614796104685686
+    },
+    {
+      "frame": 575,
+      "time": 19.166666666666668,
+      "reference": true,
+      "arm_torso": {
+        "Right": 185,
+        "Left": 0
+      },
+      "weapon_torso": 129,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.24653062251594926,
+      "body_min_y": 0.009696328377122199,
+      "screen_min": [
+        -0.139060540368557,
+        -0.5982540886159474
+      ],
+      "screen_max": [
+        0.22956308284271293,
+        0.1838712927489373
+      ],
+      "nearest_camera_depth": 4.613406754350518
+    },
+    {
+      "frame": 576,
+      "time": 19.2,
+      "reference": true,
+      "arm_torso": {
+        "Right": 139,
+        "Left": 0
+      },
+      "weapon_torso": 76,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2657583015764115,
+      "body_min_y": 0.0069290741769690856,
+      "screen_min": [
+        -0.11937653811388564,
+        -0.5898012899333336
+      ],
+      "screen_max": [
+        0.23990123874630767,
+        0.1894196876308285
+      ],
+      "nearest_camera_depth": 4.609501432056064
+    },
+    {
+      "frame": 991,
+      "time": 33.03333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 43,
+        "Left": 0
+      },
+      "weapon_torso": 87,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0947729634296055,
+      "body_min_y": 0.08369923117194139,
+      "screen_min": [
+        -0.15323137042281737,
+        -0.3896283504777503
+      ],
+      "screen_max": [
+        0.20597088210442155,
+        0.2434715341268226
+      ],
+      "nearest_camera_depth": 6.783525719159589
+    },
+    {
+      "frame": 994,
+      "time": 33.13333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 51,
+        "Left": 0
+      },
+      "weapon_torso": 84,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8702455508737872,
+      "body_min_y": 0.07347849421980662,
+      "screen_min": [
+        -0.14543262299949902,
+        -0.398881952258547
+      ],
+      "screen_max": [
+        0.17765624920965756,
+        0.24169704305364936
+      ],
+      "nearest_camera_depth": 6.829823942385893
+    },
+    {
+      "frame": 999,
+      "time": 33.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 219,
+        "Left": 0
+      },
+      "weapon_torso": 284,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.40290713102390363,
+      "body_min_y": 0.09619429328711943,
+      "screen_min": [
+        -0.16956780667436666,
+        -0.41553316008380986
+      ],
+      "screen_max": [
+        0.12537863671622967,
+        0.16526599619522128
+      ],
+      "nearest_camera_depth": 6.982080414130748
+    },
+    {
+      "frame": 1000,
+      "time": 33.333333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 214,
+        "Left": 0
+      },
+      "weapon_torso": 266,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.2917846309977046,
+      "body_min_y": 0.09443634181135874,
+      "screen_min": [
+        -0.16332404859157956,
+        -0.41512998909514387
+      ],
+      "screen_max": [
+        0.1265938778198495,
+        0.1518338134596357
+      ],
+      "nearest_camera_depth": 6.994668571683252
+    },
+    {
+      "frame": 1001,
+      "time": 33.36666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 202,
+        "Left": 0
+      },
+      "weapon_torso": 148,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.17766514145942197,
+      "body_min_y": 0.04194363464161455,
+      "screen_min": [
+        -0.14035553068184153,
+        -0.43210966284366364
+      ],
+      "screen_max": [
+        0.12510628931291878,
+        0.13040328175241145
+      ],
+      "nearest_camera_depth": 7.042949676261738
+    },
+    {
+      "frame": 1085,
+      "time": 36.166666666666664,
+      "reference": true,
+      "arm_torso": {
+        "Right": 81,
+        "Left": 0
+      },
+      "weapon_torso": 78,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.0855961813235042,
+      "body_min_y": 0.08369923117194139,
+      "screen_min": [
+        -0.3657155140640707,
+        -0.5983428268571132
+      ],
+      "screen_max": [
+        0.08934626635134872,
+        0.1544461801525674
+      ],
+      "nearest_camera_depth": 5.677418119563113
+    },
+    {
+      "frame": 1087,
+      "time": 36.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 60,
+        "Left": 0
+      },
+      "weapon_torso": 43,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3317458951593792,
+      "body_min_y": 0.08893324849359452,
+      "screen_min": [
+        -0.36086563840319413,
+        -0.6012196838413468
+      ],
+      "screen_max": [
+        0.06547184089906713,
+        0.15723165851250392
+      ],
+      "nearest_camera_depth": 5.772064396423911
+    },
+    {
+      "frame": 1088,
+      "time": 36.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 41,
+        "Left": 0
+      },
+      "weapon_torso": 16,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.8774920633725609,
+      "body_min_y": 0.07347849421980662,
+      "screen_min": [
+        -0.35620348785466344,
+        -0.620141107168908
+      ],
+      "screen_max": [
+        0.049939198833575865,
+        0.15365731382032735
+      ],
+      "nearest_camera_depth": 5.759440943888672
+    },
+    {
+      "frame": 1093,
+      "time": 36.43333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 219,
+        "Left": 0
+      },
+      "weapon_torso": 284,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.40290713102390363,
+      "body_min_y": 0.09619429328711943,
+      "screen_min": [
+        -0.3916090878080467,
+        -0.6539786608601913
+      ],
+      "screen_max": [
+        -0.017291792836195412,
+        0.05829488374152976
+      ],
+      "nearest_camera_depth": 5.712189413165527
+    },
+    {
+      "frame": 1094,
+      "time": 36.46666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 214,
+        "Left": 0
+      },
+      "weapon_torso": 266,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.29157244399927174,
+      "body_min_y": 0.0944747804901211,
+      "screen_min": [
+        -0.383412275643671,
+        -0.6535912519470511
+      ],
+      "screen_max": [
+        -0.01627928787751248,
+        0.042980824953619975
+      ],
+      "nearest_camera_depth": 5.722118877295769
+    },
+    {
+      "frame": 1095,
+      "time": 36.5,
+      "reference": true,
+      "arm_torso": {
+        "Right": 202,
+        "Left": 0
+      },
+      "weapon_torso": 156,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.17615485683711513,
+      "body_min_y": 0.041065266576026827,
+      "screen_min": [
+        -0.35346724267147206,
+        -0.6731518851407716
+      ],
+      "screen_max": [
+        -0.01944365598491838,
+        0.016822806652708557
+      ],
+      "nearest_camera_depth": 5.767779670308543
+    },
+    {
+      "frame": 1652,
+      "time": 55.06666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 2,
+      "weapon_helmet": 0,
+      "weapon_min_y": 1.3303536792731292,
+      "body_min_y": 0.09884175148300706,
+      "screen_min": [
+        -0.30323716992067984,
+        -0.5794235882782981
+      ],
+      "screen_max": [
+        0.12050328855869887,
+        0.16108287582275155
+      ],
+      "nearest_camera_depth": 5.835433845760267
+    },
+    {
+      "frame": 1653,
+      "time": 55.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 365,
+        "Left": 0
+      },
+      "weapon_torso": 163,
+      "weapon_helmet": 695,
+      "weapon_min_y": 1.4366686630743872,
+      "body_min_y": 0.08362894422713851,
+      "screen_min": [
+        -0.30727560116176816,
+        -0.5941489491325899
+      ],
+      "screen_max": [
+        0.09768476409147223,
+        0.18173727407789872
+      ],
+      "nearest_camera_depth": 5.830371065992031
+    },
+    {
+      "frame": 1654,
+      "time": 55.13333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 0
+      },
+      "weapon_torso": 35,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.9827616530390318,
+      "body_min_y": 0.0742444343985742,
+      "screen_min": [
+        -0.3037374144901197,
+        -0.6170238244796746
+      ],
+      "screen_max": [
+        0.08113126526484966,
+        0.15032810246682982
+      ],
+      "nearest_camera_depth": 5.820173938858404
+    },
+    {
+      "frame": 1658,
+      "time": 55.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 201,
+        "Left": 0
+      },
+      "weapon_torso": 111,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.4321099150768011,
+      "body_min_y": 0.09336533927351122,
+      "screen_min": [
+        -0.3477814083529551,
+        -0.640399923577374
+      ],
+      "screen_max": [
+        0.019616735285574827,
+        0.06207747177479432
+      ],
+      "nearest_camera_depth": 5.771584990202201
+    },
+    {
+      "frame": 1659,
+      "time": 55.3,
+      "reference": true,
+      "arm_torso": {
+        "Right": 213,
+        "Left": 0
+      },
+      "weapon_torso": 312,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.353080772578613,
+      "body_min_y": 0.09591852318734827,
+      "screen_min": [
+        -0.3430268257813799,
+        -0.638784514147901
+      ],
+      "screen_max": [
+        0.02136750660431601,
+        0.060145497102646696
+      ],
+      "nearest_camera_depth": 5.779530458393952
+    },
+    {
+      "frame": 1660,
+      "time": 55.333333333333336,
+      "reference": true,
+      "arm_torso": {
+        "Right": 213,
+        "Left": 0
+      },
+      "weapon_torso": 138,
+      "weapon_helmet": 0,
+      "weapon_min_y": 0.22777567146598854,
+      "body_min_y": 0.09011500371396791,
+      "screen_min": [
+        -0.33310816197796983,
+        -0.6432521852080144
+      ],
+      "screen_max": [
+        0.02104766400804811,
+        0.032091338530347825
+      ],
+      "nearest_camera_depth": 5.795580361845374
+    }
+  ],
+  "weapon_helmet_crossings": [
+    {
+      "frame": 1319,
+      "time": 43.96666666666667,
+      "reference": true,
+      "arm_torso": {
+        "Right": 0,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 400,
+      "weapon_min_y": 1.4317464909222721,
+      "body_min_y": 0.08369923117194139,
+      "screen_min": [
+        -0.3657239884309372,
+        -0.5999121715938818
+      ],
+      "screen_max": [
+        0.07926869366627924,
+        0.16918458458361288
+      ],
+      "nearest_camera_depth": 5.673134802995738
+    },
+    {
+      "frame": 1320,
+      "time": 44.0,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 351,
+      "weapon_min_y": 1.4980693465439971,
+      "body_min_y": 0.10072532218930963,
+      "screen_min": [
+        -0.3658421573920032,
+        -0.593432735385612
+      ],
+      "screen_max": [
+        0.07246990519743841,
+        0.19032099222497367
+      ],
+      "nearest_camera_depth": 5.7552377049487475
+    },
+    {
+      "frame": 1321,
+      "time": 44.03333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 6,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 468,
+      "weapon_min_y": 1.5585309805089134,
+      "body_min_y": 0.08893324849359452,
+      "screen_min": [
+        -0.36765754739460205,
+        -0.6032024784597375
+      ],
+      "screen_max": [
+        0.048524116143487936,
+        0.22802697103261577
+      ],
+      "nearest_camera_depth": 5.763755242385504
+    },
+    {
+      "frame": 1597,
+      "time": 53.233333333333334,
+      "reference": true,
+      "arm_torso": {
+        "Right": 9,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 281,
+      "weapon_min_y": 1.4531744184617925,
+      "body_min_y": 0.09633224083931696,
+      "screen_min": [
+        -0.37747576045736936,
+        -0.5944566932409233
+      ],
+      "screen_max": [
+        0.07777155228512038,
+        0.17019649876811677
+      ],
+      "nearest_camera_depth": 5.750291528407191
+    },
+    {
+      "frame": 1598,
+      "time": 53.266666666666666,
+      "reference": true,
+      "arm_torso": {
+        "Right": 10,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 1018,
+      "weapon_min_y": 1.5221827775242862,
+      "body_min_y": 0.09884175148300706,
+      "screen_min": [
+        -0.3716337041927577,
+        -0.5959951208510235
+      ],
+      "screen_max": [
+        0.05849250309684015,
+        0.20141825652172288
+      ],
+      "nearest_camera_depth": 5.757497597203954
+    },
+    {
+      "frame": 1651,
+      "time": 55.03333333333333,
+      "reference": true,
+      "arm_torso": {
+        "Right": 311,
+        "Left": 0
+      },
+      "weapon_torso": 0,
+      "weapon_helmet": 20,
+      "weapon_min_y": 1.201510659266802,
+      "body_min_y": 0.09633224083931696,
+      "screen_min": [
+        -0.2941467318758023,
+        -0.5776516581793898
+      ],
+      "screen_max": [
+        0.1330926751168146,
+        0.15937727916016758
+      ],
+      "nearest_camera_depth": 5.829903617066227
+    },
+    {
+      "frame": 1653,
+      "time": 55.1,
+      "reference": true,
+      "arm_torso": {
+        "Right": 365,
+        "Left": 0
+      },
+      "weapon_torso": 163,
+      "weapon_helmet": 695,
+      "weapon_min_y": 1.4366686630743872,
+      "body_min_y": 0.08362894422713851,
+      "screen_min": [
+        -0.30727560116176816,
+        -0.5941489491325899
+      ],
+      "screen_max": [
+        0.09768476409147223,
+        0.18173727407789872
+      ],
+      "nearest_camera_depth": 5.830371065992031
+    }
+  ],
+  "framing_failures": [],
+  "scope": "Selected surface triangle tests at exported poses. Shared shoulder seams excluded, hand/grip contact not tested. No continuous collision, complete body self-collision, or inverse-dynamics certification.",
+  "seconds": 329.65802097320557
+}

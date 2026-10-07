@@ -1,0 +1,18 @@
+{
+  "name": "dielectrics",
+  "description": "Smooth/rough absorbing glass and nested air bubbles",
+  "backend": "native-cpp-cpu",
+  "preset": "preview",
+  "width": 480,
+  "height": 320,
+  "packets_per_pixel": 64,
+  "wavelengths_per_packet": 8,
+  "max_depth": 36,
+  "photon_count": 0,
+  "render_seconds": 59.853398706,
+  "raw_film_sha256": "fdc614a2491b81d757d88d5aab852eb0db46b968a11529241db1b2d9196814c3",
+  "preview_sha256": "52e873015915b91344858c083b665a9062b5de6ac2972f30b46ecedea1646269",
+  "raw_film_finite": true,
+  "denoised": false,
+  "preview_note": "Display transform only; no AI image generation or denoising"
+}

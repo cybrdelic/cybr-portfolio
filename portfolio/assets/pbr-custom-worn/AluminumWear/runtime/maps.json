@@ -1,0 +1,52 @@
+{
+  "asset": "AluminumWear",
+  "source": "../source.json",
+  "maps": {
+    "colorCoverage": {
+      "path": "assets/pbr-custom-worn/AluminumWear/runtime/color-coverage.webp",
+      "sha256": "b0eac1c6b511a2b3a8eed89e61544539d41c808c04e515b9719d6e5d8eec2ffc",
+      "bytes": 84918,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "surface": {
+      "path": "assets/pbr-custom-worn/AluminumWear/runtime/surface.webp",
+      "sha256": "aa3f722902c106791a7fa231b51441f9b3c1fd61dd99a6af06f4bdcb6dd40247",
+      "bytes": 377304,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "normal": {
+      "path": "assets/pbr-custom-worn/AluminumWear/runtime/normal.webp",
+      "sha256": "d03b37b221516e5a4f469a872b4938dd782696e19191add8357cdb9ed55f8ced",
+      "bytes": 110136,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "losslessPixelEquality": true
+    }
+  },
+  "channels": {
+    "colorCoverage": {
+      "RGB": "sRGB target color, pale/neutral metal film or localized contaminant",
+      "A": "linear color coverage; <=.035 pure oil, paired with G for deposit cores"
+    },
+    "surface": {
+      "R": "target roughness; linear",
+      "G": "opaque deposit coverage; dielectric core response",
+      "B": "thin oil/fingerprint roughness coverage; retains substrate metalness",
+      "A": "255 reserved"
+    },
+    "normal": "OpenGL +Y tangent normal from independent abrasion and pit height; linear"
+  }
+}

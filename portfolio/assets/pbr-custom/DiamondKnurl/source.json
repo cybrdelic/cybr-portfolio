@@ -1,0 +1,107 @@
+{
+  "assetId": "DiamondKnurl",
+  "revision": "machining-v2",
+  "source": "Original CYBR material",
+  "customMadeFor": "CYBR portfolio instrument",
+  "creationMethod": "AI unlit appearance plus independently authored physical height, multi-scale finishing roughness and fine-scale cavity fields",
+  "downloadedInputs": [],
+  "authoredTileMM": [
+    16.41176470588235,
+    10.0
+  ],
+  "normalConvention": "OpenGL tangent +Y upward",
+  "normalScale": [
+    1,
+    1
+  ],
+  "heightNormals": true,
+  "cavity": true,
+  "physicalDimensionsKnown": false,
+  "physicalDimensionsAuthored": true,
+  "physicalScaleNote": "Tile dimensions and relief are explicit authoring values, not measurements of a manufactured alloy.",
+  "heightUnits": "millimeters",
+  "recipe": "assets/pbr-custom/DiamondKnurl/source/recipe.json",
+  "recipeSHA256": "e91fd63cee382ef9735c33b5dc2b6e664717060ca60809e8ad8fa3d41b15beb5",
+  "heightPNG": {
+    "path": "assets/pbr-custom/DiamondKnurl/source/height.png",
+    "sha256": "8873c1727b88fba3eb990b61339b3530985dc03a30e72a0317f38bab2f0f3d41",
+    "bits": 16
+  },
+  "roughnessPNG": {
+    "path": "assets/pbr-custom/DiamondKnurl/source/roughness.png",
+    "sha256": "22d1b5df9ce49ee8392d26f3143967b210beb0ace8c3583eef62d31a685c5549"
+  },
+  "cavityPNG": {
+    "path": "assets/pbr-custom/DiamondKnurl/source/cavity.png",
+    "sha256": "26c58fd002c87428ecbb154669af95675daf51554606a25fdc956ee5101d8f49"
+  },
+  "runtimeMaps": {
+    "normal": {
+      "path": "assets/pbr-custom/DiamondKnurl/runtime/normal.webp",
+      "bytes": 1693276,
+      "sha256": "f3168bd1846a8c01596f54129ae99a1d85de93ea6d68958fd02c25f8525782e8",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/DiamondKnurl/runtime/roughness-metallic.webp",
+      "bytes": 1198244,
+      "sha256": "e0d9624edb99b61f8d5985611995520531b57de0f08f35d9e30c5a0b95ed6217",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/DiamondKnurl/runtime/baseColor.webp",
+      "bytes": 2520618,
+      "sha256": "f6e659dbcd6457365da26bf0b015207ca3b3abeab11ea9b1b91e26ff63977bbb",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "appearancePending": false,
+  "geometryDisplacement": false,
+  "geometryInferenceFromAppearance": false,
+  "authorship": "CYBR custom numerical material authoring; OpenAI ImageGen appearance directed for this project.",
+  "license": "Original custom project assets; no third-party material maps.",
+  "appearance": {
+    "file": "assets/pbr-custom/source-appearance/crosshatch-imagegen.png",
+    "sha256": "fb474e44f598f8def204dec1262b4f9e658cf7034d4a62c071f1efb87a33b7a5",
+    "nativeSize": [
+      1254,
+      1254
+    ],
+    "nativeMode": "RGB",
+    "generator": "OpenAI ImageGen",
+    "promptFile": "assets/pbr-custom/source-appearance/crosshatch-prompt.txt",
+    "promptSHA256": "cfd222e3d7fc511acf50da26e2a1134807e4fccb0da74c02bf57802bd58c1a03",
+    "heightInferenceFromImage": false,
+    "runtimeResize": "Lanczos to 2048 square; actual native dimensions retained above",
+    "calibration": {
+      "inputInterpretation": "sRGB appearance",
+      "linearReflectanceTargetRGB": [
+        0.58,
+        0.61,
+        0.65
+      ],
+      "method": "Periodic log-luminance correction and bounded normalized detail/mesoscopic components (2.9% and 1.9% RMS coefficients); mean-preserving metal reflectance calibration with coherent independent height marks. First/last edge texels share their average. No source brightness-to-height conversion.",
+      "reflectanceIsMeasured": false,
+      "imageCenterControlsHeight": false,
+      "pairedEdgeTexelsEqual": true
+    }
+  },
+  "authoringScriptSHA256": "4b7a76c005cd7292e1171f8d5884531dfcf7e681e2de72a95bb7f37624d84687"
+}

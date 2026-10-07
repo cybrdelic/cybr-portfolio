@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cybrdelic — Bending</title>
+<style>
+:root{color-scheme:dark;font-family:Arial,Helvetica,sans-serif;background:#000;color:#e9e7e3}*{box-sizing:border-box}body{margin:0;background:#000}main{max-width:1600px;margin:auto;padding:38px 32px 64px}header{display:flex;justify-content:space-between;align-items:start;gap:24px;padding-bottom:32px;border-bottom:1px solid #242424}.brand{font-size:12px;letter-spacing:.28em;font-weight:700}.edition{font-size:11px;color:#727272;letter-spacing:.12em}h1{font-size:clamp(36px,5vw,72px);font-weight:400;letter-spacing:-.06em;line-height:1.02;margin:25px 0 14px}p{color:#999;font-size:14px;line-height:1.6;margin:0}.controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:22px 0}button,a.download{font:inherit;color:inherit;background:#000;border:1px solid #363636;border-radius:0;padding:10px 15px;cursor:pointer;font-size:12px;text-decoration:none}button:hover,a.download:hover{background:#191919;border-color:#707070}button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}#playAll{background:#e9e7e3;color:#000;border-color:#e9e7e3}#scrub{flex:1;min-width:120px;max-width:380px;accent-color:#d4d4d4;margin-left:auto}#clock{font:11px monospace;color:#888;min-width:74px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}.card{min-width:0;border-top:1px solid #2b2b2b;padding-top:15px}.heading{display:flex;justify-content:space-between;align-items:center;padding-bottom:9px}h2{font-weight:400;font-size:19px;margin:0;letter-spacing:-.015em}.number{font:10px monospace;color:#747474;margin-right:12px}.dot{display:inline-block;width:5px;height:5px;background:var(--accent);border-radius:50%;margin-right:9px}.state{font-size:10px;letter-spacing:.1em;color:#666;text-transform:uppercase}.stage{background:#000;aspect-ratio:16/9;position:relative}video{width:100%;height:100%;display:block;background:#000;object-fit:contain}.card.active{border-color:var(--accent)}.actions{display:flex;gap:7px;align-items:center;margin-top:10px}.actions button,.actions a{font-size:11px;padding:8px 12px}.download{margin-left:auto}.card:last-child{grid-column:1/-1;width:calc(50% - 12px);justify-self:center}footer{border-top:1px solid #242424;margin-top:38px;padding-top:19px;display:flex;justify-content:space-between;gap:15px;font-size:11px;color:#626262}footer a{color:#aaa;text-decoration:none}@media(max-width:760px){main{padding:25px 16px 40px}.grid{grid-template-columns:1fr}.card:last-child{grid-column:auto;width:100%}header{padding-bottom:24px}.edition{max-width:110px;text-align:right;line-height:1.8}#scrub{order:5;max-width:none;margin-left:0;width:75%}.controls{gap:8px}h1{margin-top:20px}footer{flex-direction:column}}
+</style>
+<style>
+.versions{display:flex;gap:0;margin:2px 0 13px;width:max-content}.versions button{font-size:10px;padding:6px 10px;color:#777}.versions button+button{border-left:0}.versions button[aria-pressed="true"]{color:#eee;background:#202020;border-color:#555}.versions button:disabled{cursor:wait;opacity:.6}
+.card{display:flex;flex-direction:column}.stage{margin-top:auto;flex-shrink:0}
+</style>
+</head>
+<body><main>
+<header><div><div class="brand">CYBRDELIC</div><h1>Bending.</h1><p>Five elements. One movement.</p></div><div class="edition">MOTION STUDIES<br>01—05 / BLACK</div></header>
+<div class="controls"><button id="playAll">Play together</button><button id="pauseAll">Pause</button><button id="restartAll">Restart</button><input id="scrub" type="range" min="0" max="4" step="0.001" value="0" aria-label="Shared playback position"><output id="clock">0.00 / 4.00</output></div>
+<section class="grid" id="grid" aria-label="Bending videos"></section>
+<footer><span>1920 × 1080 · 30 fps · Individual playback and downloads</span><span><a href="sigils/02/" style="margin-right:22px">02 elemental sigils ↗</a><a href="../materials.html">Earlier material studies ↗</a></span></footer>
+</main>
+<script>
+const elements=[['earth','Earth','#ac8b60'],['fire','Fire','#fa874a'],['water','Water','#8faebf'],['air','Air','#d0dbe1'],['lightning','Lightning','#97adff']];
+const grid=document.querySelector('#grid');
+const variants={"earth": {"previous": "earth", "rebuilt": "earth-v5", "selected": "rebuilt"}, "fire": {"previous": "fire", "rebuilt": "fire-v5", "selected": "previous"}, "water": {"previous": "water-v4", "rebuilt": "water-v5", "selected": "rebuilt"}, "air": {"previous": "air", "rebuilt": "air-v5", "selected": "rebuilt"}, "lightning": {"previous": "lightning-v4", "rebuilt": "lightning-v5", "selected": "rebuilt"}};
+const revised=new Set(elements.map(e=>e[0]));
+grid.innerHTML=elements.map(([id,name,color],i)=>{const initial=variants[id].selected,stem=variants[id][initial];return `<article class="card" id="${id}" data-version="${initial}" style="--accent:${color}"><div class="heading"><h2><span class="number">0${i+1}</span><span class="dot"></span>${name}</h2><span class="state">Ready</span></div>${revised.has(id)?`<div class="versions" role="group" aria-label="${name} version"><button data-version="previous" aria-pressed="${initial==='previous'}">Previous</button><button data-version="rebuilt" aria-pressed="${initial==='rebuilt'}">Trial</button></div>`:''}<div class="stage"><video controls playsinline preload="metadata" poster="${stem}.jpg" aria-label="${name} bending" src="${stem}.mp4"></video></div><div class="actions"><button class="solo">Play solo</button><button class="replay">Replay</button><a class="download" href="${stem}.mp4" download="cybrdelic-${stem}-bending.mp4">Download ↓</a></div></article>`}).join('');
+const videos=[...document.querySelectorAll('video')],scrub=document.querySelector('#scrub'),clock=document.querySelector('#clock');
+let together=false,selected=videos[0],seeking=false;
+function pause(){together=false;videos.forEach(v=>v.pause())}
+function setTime(t){videos.forEach(v=>{if(v.readyState>=1)v.currentTime=Math.min(t,v.duration||4);v.closest('.card').querySelector('.state').textContent=t>=3.999?'Finished':'Paused'});scrub.value=t;clock.value=`${t.toFixed(2)} / 4.00`}
+async function solo(v,restart=false){pause();selected=v;if(restart||v.ended)v.currentTime=0;try{await v.play()}catch(e){v.closest('.card').querySelector('.state').textContent='Press video to play'}}
+async function all(restart=false){pause();together=true;const t=restart?0:Number(scrub.value);setTime(t>=3.99?0:t);selected=videos[0];await Promise.allSettled(videos.map(v=>v.play()))}
+videos.forEach(v=>{const card=v.closest('.card');card.querySelector('.solo').onclick=()=>solo(v);card.querySelector('.replay').onclick=()=>solo(v,true);v.addEventListener('play',()=>{if(!together){videos.filter(x=>x!==v).forEach(x=>x.pause());selected=v}card.classList.add('active');card.querySelector('.state').textContent='Playing'});v.addEventListener('pause',()=>{card.classList.remove('active');card.querySelector('.state').textContent=v.ended?'Finished':'Paused'});v.addEventListener('ended',()=>{card.classList.remove('active');card.querySelector('.state').textContent='Finished'});v.addEventListener('error',()=>card.querySelector('.state').textContent='Video unavailable')});
+async function version(v,kind){
+ const card=v.closest('.card');if(card.dataset.version===kind)return;
+ const buttons=[...card.querySelectorAll('.versions button')],wasTogether=together&&!selected.paused,wasPlaying=!v.paused,t=wasTogether?selected.currentTime:v.currentTime;
+ const priorSelected=selected;pause();seeking=true;buttons.forEach(b=>b.disabled=true);card.querySelector('.state').textContent='Loading';
+ const stem=variants[card.id][kind];
+ try{
+  await new Promise((resolve,reject)=>{const timer=setTimeout(()=>done(new Error('Load timeout')),15000);function done(error){clearTimeout(timer);v.removeEventListener('loadedmetadata',loaded);v.removeEventListener('error',failed);error?reject(error):resolve()}function loaded(){done()}function failed(){done(new Error('Video unavailable'))}v.addEventListener('loadedmetadata',loaded);v.addEventListener('error',failed);v.poster=stem+'.jpg';v.src=stem+'.mp4';v.load()});
+  v.currentTime=Math.min(t,v.duration);card.dataset.version=kind;buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.version===kind)));
+  const download=card.querySelector('.download');download.href=stem+'.mp4';download.download=`cybrdelic-${stem}-bending.mp4`;card.querySelector('.state').textContent=t>=3.999?'Finished':'Paused';
+  selected=priorSelected;if(wasTogether){setTime(t);await all()}else if(wasPlaying){await solo(v)}
+ }catch(error){card.querySelector('.state').textContent='Video unavailable'}finally{buttons.forEach(b=>b.disabled=false);seeking=false}
+}
+videos.forEach(v=>v.closest('.card').querySelectorAll('.versions button').forEach(b=>b.onclick=()=>version(v,b.dataset.version)));
+document.querySelector('#playAll').onclick=()=>all();document.querySelector('#pauseAll').onclick=pause;document.querySelector('#restartAll').onclick=()=>all(true);
+scrub.addEventListener('input',()=>{seeking=true;pause();setTime(Number(scrub.value));seeking=false});
+function tick(){if(!seeking&&selected){const t=selected.currentTime;scrub.value=t;clock.value=`${t.toFixed(2)} / 4.00`;if(together&&!selected.paused)videos.slice(1).forEach(v=>{if(v.readyState>=2&&Math.abs(v.currentTime-t)>.09)v.currentTime=t})}requestAnimationFrame(tick)}tick();
+window.BENDING={videos,elements,pause,solo,all,seek:setTime};
+</script></body></html>

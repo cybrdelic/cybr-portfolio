@@ -1,0 +1,570 @@
+{
+  "method": "Centered variable-feed radial tool cuts with sampled rounded widths, angularly varying depth and interrupted finishing arcs. Coherent mesoscopic polishing/tool pressure changes roughness; no color-derived geometry. One common physical face serves silver and bronze.",
+  "revision": "machining-v3-refined",
+  "centerMM": [
+    0,
+    0
+  ],
+  "centerUV": [
+    0.5,
+    0.5
+  ],
+  "nativeCenterSource": "Canonical Cartesian part center, independent of ImageGen appearance",
+  "feedGrooveCount": 197,
+  "feedSpacingMM": {
+    "min": 0.1999999999999993,
+    "mean": 0.28475711959781225,
+    "max": 0.4399999999999977
+  },
+  "grooveDepthMicrons": [
+    2.507747582421284,
+    6.487756740610501
+  ],
+  "sigmaWidthsMM": [
+    0.06574308377034527,
+    0.12496006048016806
+  ],
+  "roughnessCorrelationLengthsMM": [
+    [
+      3.8,
+      3.8
+    ],
+    [
+      0.55,
+      0.55
+    ]
+  ],
+  "outerGuardMM": [
+    52,
+    58
+  ],
+  "perimeter": "Height is exactly zero and roughness is constant outside radius 58 mm, giving a flat periodic image perimeter. Actual native face diameters fit within the untouched interior.",
+  "finishingArcs": [
+    {
+      "radiusMM": 28.370115871888608,
+      "centerAngleRadians": -2.1791790481756594,
+      "halfArcRadians": 0.4255569601327374,
+      "sigmaWidthMM": 0.15395697605966951,
+      "depthMM": 0.002828982806681429
+    },
+    {
+      "radiusMM": 16.84441038861092,
+      "centerAngleRadians": 1.4498800161218135,
+      "halfArcRadians": 0.560031110821441,
+      "sigmaWidthMM": 0.14594574806578556,
+      "depthMM": 0.002379066703862038
+    },
+    {
+      "radiusMM": 42.78381660811657,
+      "centerAngleRadians": 0.44915384142976045,
+      "halfArcRadians": 0.5808565821350984,
+      "sigmaWidthMM": 0.1649269368729906,
+      "depthMM": 0.0038244738126274208
+    },
+    {
+      "radiusMM": 14.45343701768494,
+      "centerAngleRadians": 1.8282894022060256,
+      "halfArcRadians": 0.5419408974685307,
+      "sigmaWidthMM": 0.17622001277228716,
+      "depthMM": 0.0019985769205401113
+    },
+    {
+      "radiusMM": 19.67686627833755,
+      "centerAngleRadians": -3.1146668756611633,
+      "halfArcRadians": 0.22319715142943403,
+      "sigmaWidthMM": 0.12285279745973485,
+      "depthMM": 0.0015311696073541793
+    },
+    {
+      "radiusMM": 42.33883693436852,
+      "centerAngleRadians": 2.51565189579342,
+      "halfArcRadians": 0.40179215802380625,
+      "sigmaWidthMM": 0.17055512645198875,
+      "depthMM": 0.004401673693282685
+    },
+    {
+      "radiusMM": 23.93364620898306,
+      "centerAngleRadians": -2.2912448168110267,
+      "halfArcRadians": 0.6086903665580575,
+      "sigmaWidthMM": 0.1491841020708011,
+      "depthMM": 0.004056223745487063
+    },
+    {
+      "radiusMM": 8.287741748705987,
+      "centerAngleRadians": -0.455506194729963,
+      "halfArcRadians": 0.3640704506503319,
+      "sigmaWidthMM": 0.10954538059775751,
+      "depthMM": 0.001948529928760555
+    },
+    {
+      "radiusMM": 40.13837320500059,
+      "centerAngleRadians": -1.9706748422267322,
+      "halfArcRadians": 0.19628012486233265,
+      "sigmaWidthMM": 0.10140827769395064,
+      "depthMM": 0.001552739231345029
+    },
+    {
+      "radiusMM": 38.57894064080051,
+      "centerAngleRadians": -0.8297345385219628,
+      "halfArcRadians": 0.3013731347189005,
+      "sigmaWidthMM": 0.0914870355781191,
+      "depthMM": 0.003999981096359816
+    },
+    {
+      "radiusMM": 13.343628781106846,
+      "centerAngleRadians": 1.8408364693844952,
+      "halfArcRadians": 0.36332743365147546,
+      "sigmaWidthMM": 0.1735754845445232,
+      "depthMM": 0.004785745333241868
+    },
+    {
+      "radiusMM": 37.713746825414354,
+      "centerAngleRadians": 1.0210646987069625,
+      "halfArcRadians": 0.34984034846322853,
+      "sigmaWidthMM": 0.1561798836406656,
+      "depthMM": 0.0032239777446894224
+    },
+    {
+      "radiusMM": 20.7365686837209,
+      "centerAngleRadians": 2.383131553959511,
+      "halfArcRadians": 0.44053400015375876,
+      "sigmaWidthMM": 0.15819122029116955,
+      "depthMM": 0.003337660885020452
+    },
+    {
+      "radiusMM": 25.237215755658337,
+      "centerAngleRadians": 1.8604058157694459,
+      "halfArcRadians": 0.3096861827948164,
+      "sigmaWidthMM": 0.12388557688728453,
+      "depthMM": 0.0037551946566157226
+    },
+    {
+      "radiusMM": 36.740096974820865,
+      "centerAngleRadians": -2.8240277036228125,
+      "halfArcRadians": 0.42909209699066964,
+      "sigmaWidthMM": 0.16073047259297485,
+      "depthMM": 0.0028078250665599276
+    },
+    {
+      "radiusMM": 33.4709857206598,
+      "centerAngleRadians": 3.0166559313272945,
+      "halfArcRadians": 0.2610075453265256,
+      "sigmaWidthMM": 0.11996722920921013,
+      "depthMM": 0.004010927950408338
+    },
+    {
+      "radiusMM": 46.97827024949767,
+      "centerAngleRadians": -2.11753788234755,
+      "halfArcRadians": 0.43749062169779107,
+      "sigmaWidthMM": 0.17752649596524311,
+      "depthMM": 0.004883813778047401
+    },
+    {
+      "radiusMM": 13.985390758283991,
+      "centerAngleRadians": -0.8487569468075797,
+      "halfArcRadians": 0.23841955114609067,
+      "sigmaWidthMM": 0.17878639514134126,
+      "depthMM": 0.0034230853242388686
+    },
+    {
+      "radiusMM": 31.59611508799967,
+      "centerAngleRadians": 3.1373235092920106,
+      "halfArcRadians": 0.4533962675265718,
+      "sigmaWidthMM": 0.12845654838464982,
+      "depthMM": 0.00416622257278024
+    },
+    {
+      "radiusMM": 13.882005817575758,
+      "centerAngleRadians": 2.71950674348128,
+      "halfArcRadians": 0.14251291104923092,
+      "sigmaWidthMM": 0.17091125692244097,
+      "depthMM": 0.0025346047865143
+    },
+    {
+      "radiusMM": 26.819460726531112,
+      "centerAngleRadians": 2.612124115954609,
+      "halfArcRadians": 0.6074400319584023,
+      "sigmaWidthMM": 0.11697128624675315,
+      "depthMM": 0.0017202822358468243
+    },
+    {
+      "radiusMM": 34.01708350083653,
+      "centerAngleRadians": 0.391342369123985,
+      "halfArcRadians": 0.28780519300735063,
+      "sigmaWidthMM": 0.1718326540364125,
+      "depthMM": 0.003843842787729415
+    },
+    {
+      "radiusMM": 45.70585456805302,
+      "centerAngleRadians": -1.7359228237868125,
+      "halfArcRadians": 0.34784466040947737,
+      "sigmaWidthMM": 0.14526122161895222,
+      "depthMM": 0.004840375397119026
+    },
+    {
+      "radiusMM": 22.322721351535012,
+      "centerAngleRadians": -1.0867495194041101,
+      "halfArcRadians": 0.5703542833455558,
+      "sigmaWidthMM": 0.16004941403151846,
+      "depthMM": 0.004413381940769592
+    },
+    {
+      "radiusMM": 46.92594142824714,
+      "centerAngleRadians": -1.9185558658903124,
+      "halfArcRadians": 0.5033093865836442,
+      "sigmaWidthMM": 0.14820579129004277,
+      "depthMM": 0.002148053236864843
+    },
+    {
+      "radiusMM": 30.99245042848464,
+      "centerAngleRadians": -0.8405336914074533,
+      "halfArcRadians": 0.5932127367066932,
+      "sigmaWidthMM": 0.10909538651135164,
+      "depthMM": 0.004668700858041064
+    },
+    {
+      "radiusMM": 33.92627318963203,
+      "centerAngleRadians": 0.24764129317516703,
+      "halfArcRadians": 0.13519498475223748,
+      "sigmaWidthMM": 0.12215221653419284,
+      "depthMM": 0.002325508564041862
+    },
+    {
+      "radiusMM": 32.134151318214,
+      "centerAngleRadians": 1.2647803061357896,
+      "halfArcRadians": 0.2531641213656267,
+      "sigmaWidthMM": 0.1547933955002203,
+      "depthMM": 0.004807947682481987
+    },
+    {
+      "radiusMM": 35.58471768270656,
+      "centerAngleRadians": 0.14956958998024206,
+      "halfArcRadians": 0.47684645553066485,
+      "sigmaWidthMM": 0.15179871765183506,
+      "depthMM": 0.002711476944220629
+    },
+    {
+      "radiusMM": 31.935417470113492,
+      "centerAngleRadians": 2.9873092668104713,
+      "halfArcRadians": 0.5369356860819927,
+      "sigmaWidthMM": 0.10503392152025978,
+      "depthMM": 0.003329529423375158
+    },
+    {
+      "radiusMM": 12.59476731620514,
+      "centerAngleRadians": -2.8217817375558734,
+      "halfArcRadians": 0.5032238003218887,
+      "sigmaWidthMM": 0.13032891785680184,
+      "depthMM": 0.0018718778164453103
+    },
+    {
+      "radiusMM": 41.71246628260033,
+      "centerAngleRadians": 1.068467266539388,
+      "halfArcRadians": 0.2821476091016897,
+      "sigmaWidthMM": 0.09602261279991174,
+      "depthMM": 0.0025849325761685134
+    },
+    {
+      "radiusMM": 15.63286755786016,
+      "centerAngleRadians": 1.4339849110705307,
+      "halfArcRadians": 0.47817078463917423,
+      "sigmaWidthMM": 0.10556101050448205,
+      "depthMM": 0.0015600087482986588
+    },
+    {
+      "radiusMM": 5.993945188509972,
+      "centerAngleRadians": -2.6426549652272375,
+      "halfArcRadians": 0.3926222425976895,
+      "sigmaWidthMM": 0.16736688161890012,
+      "depthMM": 0.0028684441594587513
+    },
+    {
+      "radiusMM": 6.5960891608800205,
+      "centerAngleRadians": 2.9038143898389484,
+      "halfArcRadians": 0.4473492412686252,
+      "sigmaWidthMM": 0.13319857578480132,
+      "depthMM": 0.0021927727559779247
+    },
+    {
+      "radiusMM": 9.182439817881749,
+      "centerAngleRadians": 0.8729642460187792,
+      "halfArcRadians": 0.22741594273170673,
+      "sigmaWidthMM": 0.10348031463275048,
+      "depthMM": 0.0035868212541561727
+    },
+    {
+      "radiusMM": 19.021283289849045,
+      "centerAngleRadians": -2.251902273159991,
+      "halfArcRadians": 0.5816718083322017,
+      "sigmaWidthMM": 0.12628873029654175,
+      "depthMM": 0.003926412134887843
+    },
+    {
+      "radiusMM": 23.675285213859684,
+      "centerAngleRadians": -1.7731968637028535,
+      "halfArcRadians": 0.6211186237653512,
+      "sigmaWidthMM": 0.12317031785424423,
+      "depthMM": 0.004044601692761577
+    },
+    {
+      "radiusMM": 8.273416154915699,
+      "centerAngleRadians": 1.263417706742989,
+      "halfArcRadians": 0.20423322169749764,
+      "sigmaWidthMM": 0.13930920472606334,
+      "depthMM": 0.0038506236677985925
+    },
+    {
+      "radiusMM": 34.40521178666762,
+      "centerAngleRadians": -1.6425029427991695,
+      "halfArcRadians": 0.40058606319516027,
+      "sigmaWidthMM": 0.1254918985052615,
+      "depthMM": 0.004739956824596898
+    },
+    {
+      "radiusMM": 17.23911901534335,
+      "centerAngleRadians": 2.1782116003755547,
+      "halfArcRadians": 0.28785228045314704,
+      "sigmaWidthMM": 0.16117768885813627,
+      "depthMM": 0.004921217617837163
+    },
+    {
+      "radiusMM": 22.412296707708272,
+      "centerAngleRadians": 1.6207096490601147,
+      "halfArcRadians": 0.43378561925083126,
+      "sigmaWidthMM": 0.14829712315242682,
+      "depthMM": 0.0038872296434996362
+    },
+    {
+      "radiusMM": 45.70556165688392,
+      "centerAngleRadians": 0.1774918180708518,
+      "halfArcRadians": 0.5523044316139518,
+      "sigmaWidthMM": 0.14283919875561732,
+      "depthMM": 0.0038427810907282005
+    },
+    {
+      "radiusMM": 23.508442407009973,
+      "centerAngleRadians": 1.2209386124522323,
+      "halfArcRadians": 0.4929663120169203,
+      "sigmaWidthMM": 0.1154615757671284,
+      "depthMM": 0.0035753650994917808
+    },
+    {
+      "radiusMM": 45.023514242732745,
+      "centerAngleRadians": -2.6985145699018562,
+      "halfArcRadians": 0.30381596349183626,
+      "sigmaWidthMM": 0.09720154166761842,
+      "depthMM": 0.004558447727153225
+    },
+    {
+      "radiusMM": 46.829463260811785,
+      "centerAngleRadians": 1.444149439733561,
+      "halfArcRadians": 0.15581560309044346,
+      "sigmaWidthMM": 0.0963805103130678,
+      "depthMM": 0.0029406171768781046
+    },
+    {
+      "radiusMM": 20.664267242823687,
+      "centerAngleRadians": 1.581768901235904,
+      "halfArcRadians": 0.19840642031325373,
+      "sigmaWidthMM": 0.13481640500412623,
+      "depthMM": 0.004837368452895523
+    },
+    {
+      "radiusMM": 39.02326067757567,
+      "centerAngleRadians": -2.0324844658570207,
+      "halfArcRadians": 0.5389115509894346,
+      "sigmaWidthMM": 0.14831080708081842,
+      "depthMM": 0.004437874358666576
+    },
+    {
+      "radiusMM": 16.022509080980246,
+      "centerAngleRadians": -1.0818208736557082,
+      "halfArcRadians": 0.4258438761280754,
+      "sigmaWidthMM": 0.17680914299872894,
+      "depthMM": 0.004059890875474281
+    },
+    {
+      "radiusMM": 13.177834226771887,
+      "centerAngleRadians": -2.723786496513208,
+      "halfArcRadians": 0.225578734990313,
+      "sigmaWidthMM": 0.1499647537862774,
+      "depthMM": 0.0016531703850622551
+    },
+    {
+      "radiusMM": 3.6987365894459607,
+      "centerAngleRadians": -2.43391050635398,
+      "halfArcRadians": 0.14655682143155668,
+      "sigmaWidthMM": 0.1274735043166475,
+      "depthMM": 0.004660190675648013
+    },
+    {
+      "radiusMM": 30.366510054208554,
+      "centerAngleRadians": -2.508993174524674,
+      "halfArcRadians": 0.6433746604186897,
+      "sigmaWidthMM": 0.16631571914364157,
+      "depthMM": 0.004920316548866362
+    },
+    {
+      "radiusMM": 11.686069531179157,
+      "centerAngleRadians": 2.8614181851738314,
+      "halfArcRadians": 0.5794467460107185,
+      "sigmaWidthMM": 0.11637788709787661,
+      "depthMM": 0.0024272092821671
+    },
+    {
+      "radiusMM": 3.9499502897678953,
+      "centerAngleRadians": -2.7650531338143143,
+      "halfArcRadians": 0.1808376511569827,
+      "sigmaWidthMM": 0.15230805462689484,
+      "depthMM": 0.003888952780970034
+    },
+    {
+      "radiusMM": 7.594405789156364,
+      "centerAngleRadians": -0.11262882955854492,
+      "halfArcRadians": 0.5496613190433548,
+      "sigmaWidthMM": 0.10548201158669585,
+      "depthMM": 0.0024034280281589266
+    },
+    {
+      "radiusMM": 18.928060058114742,
+      "centerAngleRadians": -0.802933560177856,
+      "halfArcRadians": 0.5463041856145263,
+      "sigmaWidthMM": 0.17990260579377104,
+      "depthMM": 0.002685239082388896
+    },
+    {
+      "radiusMM": 44.130819844013274,
+      "centerAngleRadians": -0.16822959217683042,
+      "halfArcRadians": 0.20160444180221374,
+      "sigmaWidthMM": 0.17108980626824744,
+      "depthMM": 0.004898480392314719
+    },
+    {
+      "radiusMM": 30.375618542965167,
+      "centerAngleRadians": -0.7301940888900882,
+      "halfArcRadians": 0.5584903501859149,
+      "sigmaWidthMM": 0.1572144549671049,
+      "depthMM": 0.0030477905843319534
+    },
+    {
+      "radiusMM": 36.94628885166554,
+      "centerAngleRadians": 0.7204405405399759,
+      "halfArcRadians": 0.15496017442959367,
+      "sigmaWidthMM": 0.17274415345284225,
+      "depthMM": 0.0018807089661607506
+    },
+    {
+      "radiusMM": 45.13117195230435,
+      "centerAngleRadians": -2.2015614720369796,
+      "halfArcRadians": 0.5030328793099632,
+      "sigmaWidthMM": 0.09956590258973716,
+      "depthMM": 0.003954876624598393
+    },
+    {
+      "radiusMM": 17.672092855847882,
+      "centerAngleRadians": -0.11994062688291862,
+      "halfArcRadians": 0.24607176609838632,
+      "sigmaWidthMM": 0.11577475536399659,
+      "depthMM": 0.0015984080959283806
+    },
+    {
+      "radiusMM": 24.381574522524815,
+      "centerAngleRadians": 0.4950320337618388,
+      "halfArcRadians": 0.4474449032621956,
+      "sigmaWidthMM": 0.14385115906479656,
+      "depthMM": 0.004031800535157049
+    },
+    {
+      "radiusMM": 28.010670099431827,
+      "centerAngleRadians": 2.9724338072979144,
+      "halfArcRadians": 0.5693945836531509,
+      "sigmaWidthMM": 0.10067483440804292,
+      "depthMM": 0.0019347050697167713
+    },
+    {
+      "radiusMM": 26.953001797068122,
+      "centerAngleRadians": 1.5016927905574633,
+      "halfArcRadians": 0.20635681769795639,
+      "sigmaWidthMM": 0.14402725667426866,
+      "depthMM": 0.001713340756430259
+    },
+    {
+      "radiusMM": 18.441818004078343,
+      "centerAngleRadians": -0.7719295886094133,
+      "halfArcRadians": 0.38747655715647167,
+      "sigmaWidthMM": 0.11554157881297884,
+      "depthMM": 0.0020705396988161795
+    }
+  ],
+  "roughnessCoarseCoefficient": 0.018,
+  "roughnessCoarseRefinement": "Reduced from .036 after live cap/bronze review showed smeared haze; centered cuts/arcs and F0 are retained.",
+  "seed": 5117,
+  "resolution": [
+    2048,
+    2048
+  ],
+  "tileMM": [
+    128.0,
+    128.0
+  ],
+  "coordinateConvention": "U is image-right; V is image-up. Physical-array rows increase +V, raster arrays are flipped vertically once.",
+  "normalDerivation": "OpenGL (-dh/dU, -dh/dV, 1), normalized; periodic centered differences in millimeters. No artist normalScale multiplier is baked.",
+  "heightUnits": "millimeters",
+  "heightPNGScale": {
+    "offsetMM": -0.01440652646124363,
+    "rangeMM": 0.01500813860911876,
+    "encoding": "16-bit unsigned linear, h=offset+code/65535*range"
+  },
+  "heightRangeMicrons": [
+    -14.40652646124363,
+    0.6016121478751302
+  ],
+  "heightPeakToValleyMicrons": 15.00813860911876,
+  "roughnessRange": [
+    0.23000000417232513,
+    0.4425821006298065
+  ],
+  "roughnessStd": 0.02253018505871296,
+  "cavityRange": [
+    1.0,
+    1.0
+  ],
+  "metallic": "constant 1 for bare metal",
+  "sourceHeightNPZ": "output/geo-working/pbr-custom/fields/LatheMetal.npz",
+  "heightSeams": {
+    "U": {
+      "boundaryMeanAbsolute": 0.0,
+      "adjacentMeanAbsolute": 0.0003203173400834203,
+      "ratio": 0.0
+    },
+    "V": {
+      "boundaryMeanAbsolute": 0.0,
+      "adjacentMeanAbsolute": 0.00032138332608155906,
+      "ratio": 0.0
+    }
+  },
+  "roughnessSeams": {
+    "U": {
+      "boundaryMeanAbsolute": 0.0,
+      "adjacentMeanAbsolute": 0.002054189797490835,
+      "ratio": 0.0
+    },
+    "V": {
+      "boundaryMeanAbsolute": 0.0,
+      "adjacentMeanAbsolute": 0.0020568622276186943,
+      "ratio": 0.0
+    }
+  },
+  "cavitySeams": {
+    "U": {
+      "boundaryMeanAbsolute": 0.0,
+      "adjacentMeanAbsolute": 0.0,
+      "ratio": 0.0
+    },
+    "V": {
+      "boundaryMeanAbsolute": 0.0,
+      "adjacentMeanAbsolute": 0.0,
+      "ratio": 0.0
+    }
+  }
+}

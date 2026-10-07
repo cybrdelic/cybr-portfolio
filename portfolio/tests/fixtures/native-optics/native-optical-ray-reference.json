@@ -1,0 +1,2808 @@
+{
+  "schema": 1,
+  "kind": "Native BREP straight-ray optical reference",
+  "units": "mm",
+  "method": "OCP IntCurvesFace_ShapeIntersector on exact trimmed BREP faces; outward normals from BRepGProp_Face at exact UV; transition and interval states verified with BRepClass3d_SolidClassifier",
+  "rayIntersectionToleranceMM": 1e-08,
+  "coincidentHitMergeToleranceMM": 1e-06,
+  "transitionProbeOffsetMM": 1e-05,
+  "sourceDescriptorPath": "portfolio/tests/fixtures/native-optics/native-optical-primitives.json",
+  "sourceDescriptorSHA256": "9382e1fde78c2054ada859a6829ee635eabd669eba41cc9ffc74c8d0401a3bb9",
+  "sources": {
+    "glass": {
+      "solidId": 1,
+      "partName": "elements__rounded_square_glass_vessel",
+      "brepPath": "portfolio/output/geo-working/core-cad/parts/elements__rounded_square_glass_vessel.brep",
+      "brepSHA256": "1d4e3802156e5e0e1e1c607c4767c129dec6002806e253676037206994d468e9"
+    },
+    "water": {
+      "solidId": 2,
+      "partName": "elements__water_with_free_surface_and_air_bubbles",
+      "brepPath": "portfolio/output/geo-working/core-cad/parts/elements__water_with_free_surface_and_air_bubbles.brep",
+      "brepSHA256": "dc04f46f8422e5dff9512a10ffcace69e174792274ca78fe503cdb83173c84e9"
+    },
+    "lens": {
+      "solidId": 3,
+      "partName": "light__biconvex_optical_lens",
+      "brepPath": "portfolio/output/geo-working/core-cad/parts/light__biconvex_optical_lens.brep",
+      "brepSHA256": "b37880670c0c7af59c45019a1834ee4c516cecf9d4391b3c440406c96214b602"
+    }
+  },
+  "solidIds": {
+    "glass": 1,
+    "water": 2,
+    "lens": 3
+  },
+  "rayCount": 12,
+  "rawNativeHitCount": 64,
+  "deduplicatedHitCount": 60,
+  "validation": {
+    "passed": true,
+    "normalTransitionFailures": 0,
+    "overlappingMediumIntervals": 0,
+    "nativeGlassWaterMinimumDistanceMM": 0.19999998393676083
+  },
+  "rays": [
+    {
+      "name": "elements-clear-planar-x",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        60.0,
+        0.0,
+        0.0
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.0,
+          "pointMM": [
+            30.0,
+            0.0,
+            0.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            29
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 33.5,
+          "pointMM": [
+            26.5,
+            0.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            49
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 33.7,
+          "pointMM": [
+            26.299999999999997,
+            0.0,
+            0.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            12
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 86.3,
+          "pointMM": [
+            -26.299999999999997,
+            0.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 86.5,
+          "pointMM": [
+            -26.5,
+            0.0,
+            0.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            14
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 90.0,
+          "pointMM": [
+            -30.0,
+            0.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 30.0,
+          "lengthMM": 30.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.0,
+          "endDistanceMM": 33.5,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 33.7,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.7,
+          "endDistanceMM": 86.3,
+          "lengthMM": 52.599999999999994,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.5,
+          "endDistanceMM": 90.0,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 90.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 50.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 33.7,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-bubble-x",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        60.0,
+        15.0,
+        0.0
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.0,
+          "pointMM": [
+            30.0,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            29
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 33.5,
+          "pointMM": [
+            26.5,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            49
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 33.7,
+          "pointMM": [
+            26.299999999999997,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            12
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 60.30933895416185,
+          "pointMM": [
+            -0.3093389541618521,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -0.8089287300661058,
+            -0.34161648359569663,
+            0.4784688995215348
+          ],
+          "normalDotRay": 0.8089287300661058,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            36
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 63.69066104583815,
+          "pointMM": [
+            -3.690661045838148,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            0.8089287300661058,
+            -0.34161648359569663,
+            0.4784688995215348
+          ],
+          "normalDotRay": -0.8089287300661058,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            36
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 86.3,
+          "pointMM": [
+            -26.299999999999997,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 86.5,
+          "pointMM": [
+            -26.5,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            14
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 90.0,
+          "pointMM": [
+            -30.0,
+            15.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 30.0,
+          "lengthMM": 30.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.0,
+          "endDistanceMM": 33.5,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 33.7,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.7,
+          "endDistanceMM": 60.30933895416185,
+          "lengthMM": 26.60933895416185,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 60.30933895416185,
+          "endDistanceMM": 63.69066104583815,
+          "lengthMM": 3.381322091676296,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 63.69066104583815,
+          "endDistanceMM": 86.3,
+          "lengthMM": 22.60933895416185,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.5,
+          "endDistanceMM": 90.0,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 90.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 50.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 33.7,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 60.30933895416185,
+          "endDistanceMM": 63.69066104583815,
+          "gapLengthMM": 3.381322091676296,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-cable-center-x",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        60.0,
+        -13.0,
+        -9.5
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.0,
+          "pointMM": [
+            30.0,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            29
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 33.5,
+          "pointMM": [
+            26.5,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            49
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 33.7,
+          "pointMM": [
+            26.299999999999997,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            12
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 46.64711519942876,
+          "pointMM": [
+            13.352884800571239,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            -0.3285944310473251,
+            0.5489626888460802,
+            0.7685477643839492
+          ],
+          "normalDotRay": 0.3285944310473251,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "BSPLINE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 73.35288479536946,
+          "pointMM": [
+            -13.352884795369462,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            0.32859443146694345,
+            0.5489626887611908,
+            0.7685477642651758
+          ],
+          "normalDotRay": -0.32859443146694345,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "BSPLINE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 86.3,
+          "pointMM": [
+            -26.299999999999997,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 86.5,
+          "pointMM": [
+            -26.5,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            14
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 90.0,
+          "pointMM": [
+            -30.0,
+            -13.0,
+            -9.5
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 30.0,
+          "lengthMM": 30.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.0,
+          "endDistanceMM": 33.5,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 33.7,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.7,
+          "endDistanceMM": 46.64711519942876,
+          "lengthMM": 12.947115199428758,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 46.64711519942876,
+          "endDistanceMM": 73.35288479536946,
+          "lengthMM": 26.7057695959407,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 73.35288479536946,
+          "endDistanceMM": 86.3,
+          "lengthMM": 12.947115204630535,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.5,
+          "endDistanceMM": 90.0,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 90.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 50.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 33.7,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 46.64711519942876,
+          "endDistanceMM": 73.35288479536946,
+          "gapLengthMM": 26.7057695959407,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-central-free-surface-z",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        0.0,
+        0.0,
+        60.0
+      ],
+      "directionUnit": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 27.0,
+          "pointMM": [
+            0.0,
+            0.0,
+            33.0
+          ],
+          "outwardNormal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            11
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.5,
+          "pointMM": [
+            0.0,
+            0.0,
+            29.5
+          ],
+          "outwardNormal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            37
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 46.649999999999714,
+          "pointMM": [
+            0.0,
+            0.0,
+            13.350000000000286
+          ],
+          "outwardNormal": [
+            -0.17904376471044886,
+            -0.0,
+            0.9838411103010026
+          ],
+          "normalDotRay": -0.9838411103010026,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            3,
+            5
+          ],
+          "surfaceKinds": [
+            "EXTRUSION"
+          ],
+          "rawCoincidentHitCount": 2,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 89.3,
+          "pointMM": [
+            0.0,
+            0.0,
+            -29.299999999999997
+          ],
+          "outwardNormal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            9
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 89.5,
+          "pointMM": [
+            0.0,
+            0.0,
+            -29.5
+          ],
+          "outwardNormal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            35
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 93.0,
+          "pointMM": [
+            0.0,
+            0.0,
+            -33.0
+          ],
+          "outwardNormal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            9
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 27.0,
+          "lengthMM": 27.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 27.0,
+          "endDistanceMM": 30.5,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.5,
+          "endDistanceMM": 46.649999999999714,
+          "lengthMM": 16.149999999999714,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 46.649999999999714,
+          "endDistanceMM": 89.3,
+          "lengthMM": 42.65000000000028,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 89.3,
+          "endDistanceMM": 89.5,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 89.5,
+          "endDistanceMM": 93.0,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 93.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 47.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 30.5,
+          "endDistanceMM": 46.649999999999714,
+          "gapLengthMM": 16.149999999999714,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 89.3,
+          "endDistanceMM": 89.5,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-cable-clearance-z",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        0.0,
+        -13.0,
+        60.0
+      ],
+      "directionUnit": [
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 27.0,
+          "pointMM": [
+            0.0,
+            -13.0,
+            33.0
+          ],
+          "outwardNormal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            11
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.5,
+          "pointMM": [
+            0.0,
+            -13.0,
+            29.5
+          ],
+          "outwardNormal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            37
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 46.649999999999714,
+          "pointMM": [
+            0.0,
+            -13.0,
+            13.350000000000286
+          ],
+          "outwardNormal": [
+            -0.17904376471044886,
+            -0.0,
+            0.9838411103010026
+          ],
+          "normalDotRay": -0.9838411103010026,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            3
+          ],
+          "surfaceKinds": [
+            "EXTRUSION"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 66.92000002609711,
+          "pointMM": [
+            0.0,
+            -13.0,
+            -6.920000026097114
+          ],
+          "outwardNormal": [
+            -2.1297550990299616e-11,
+            -1.5016328885692053e-08,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "BSPLINE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 72.0799999774456,
+          "pointMM": [
+            0.0,
+            -13.0,
+            -12.079999977445596
+          ],
+          "outwardNormal": [
+            5.139710861359292e-12,
+            1.2065411359621588e-08,
+            1.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "BSPLINE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 89.3,
+          "pointMM": [
+            0.0,
+            -13.0,
+            -29.299999999999997
+          ],
+          "outwardNormal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            9
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 89.5,
+          "pointMM": [
+            0.0,
+            -13.0,
+            -29.5
+          ],
+          "outwardNormal": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            35
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 93.0,
+          "pointMM": [
+            0.0,
+            -13.0,
+            -33.0
+          ],
+          "outwardNormal": [
+            -0.0,
+            -0.0,
+            -1.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            9
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 27.0,
+          "lengthMM": 27.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 27.0,
+          "endDistanceMM": 30.5,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.5,
+          "endDistanceMM": 46.649999999999714,
+          "lengthMM": 16.149999999999714,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 46.649999999999714,
+          "endDistanceMM": 66.92000002609711,
+          "lengthMM": 20.2700000260974,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 66.92000002609711,
+          "endDistanceMM": 72.0799999774456,
+          "lengthMM": 5.159999951348482,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 72.0799999774456,
+          "endDistanceMM": 89.3,
+          "lengthMM": 17.2200000225544,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 89.3,
+          "endDistanceMM": 89.5,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 89.5,
+          "endDistanceMM": 93.0,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 93.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 47.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 30.5,
+          "endDistanceMM": 46.649999999999714,
+          "gapLengthMM": 16.149999999999714,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 66.92000002609711,
+          "endDistanceMM": 72.0799999774456,
+          "gapLengthMM": 5.159999951348482,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 89.3,
+          "endDistanceMM": 89.5,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-open-glass-port-axis",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        60.0,
+        -8.0,
+        -2.5
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 38.352884800147116,
+          "pointMM": [
+            21.647115199852884,
+            -8.0,
+            -2.5
+          ],
+          "outwardNormal": [
+            0.328594430711107,
+            -0.5489626889139206,
+            -0.7685477644792427
+          ],
+          "normalDotRay": -0.328594430711107,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "BSPLINE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 81.64711520504183,
+          "pointMM": [
+            -21.64711520504183,
+            -8.0,
+            -2.5
+          ],
+          "outwardNormal": [
+            -0.3285944311298251,
+            -0.548962688829134,
+            -0.7685477643607806
+          ],
+          "normalDotRay": 0.3285944311298251,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "BSPLINE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 38.352884800147116,
+          "lengthMM": 38.352884800147116,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 38.352884800147116,
+          "endDistanceMM": 81.64711520504183,
+          "lengthMM": 43.29423040489471,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 81.64711520504183,
+          "endDistanceMM": 140.0,
+          "lengthMM": 58.35288479495817,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": []
+    },
+    {
+      "name": "elements-oblique-rounded-corner",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        70.0,
+        64.0,
+        65.0
+      ],
+      "directionUnit": [
+        -0.5968101098247812,
+        -0.5456549575540857,
+        -0.5882842511129985
+      ],
+      "maximumDistanceMM": 180,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 71.29245244378907,
+          "pointMM": [
+            27.451943627344242,
+            25.098919887857598,
+            23.059773004096478
+          ],
+          "outwardNormal": [
+            0.8039956636418656,
+            0.5460707606044312,
+            0.23536715416126772
+          ],
+          "normalDotRay": -0.9162617480382469,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            31
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 75.53193495184522,
+          "pointMM": [
+            24.921777606111014,
+            22.785625239872928,
+            20.56575221173801
+          ],
+          "outwardNormal": [
+            -0.8421777606111049,
+            -0.5285625239872951,
+            -0.10657522117380126
+          ],
+          "normalDotRay": 0.8537294875687016,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            53
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 86.286728764472,
+          "pointMM": [
+            18.503207929654344,
+            16.91721867854112,
+            14.23887638780215
+          ],
+          "outwardNormal": [
+            0.07813173685953098,
+            0.0,
+            0.9969430433556938
+          ],
+          "normalDotRay": -0.6331157021187556,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            5
+          ],
+          "surfaceKinds": [
+            "EXTRUSION"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 155.31181668448644,
+          "pointMM": [
+            -22.69166237255466,
+            -20.746662740621403,
+            -26.36749576723244
+          ],
+          "outwardNormal": [
+            -0.6318022829137278,
+            -0.33129211638993233,
+            -0.7007648742073775
+          ],
+          "normalDotRay": 0.9700861147894229,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            8
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 155.51785499980704,
+          "pointMM": [
+            -22.81462812214926,
+            -20.859088568822173,
+            -26.488704863261404
+          ],
+          "outwardNormal": [
+            0.6314628122149143,
+            0.33590885688221117,
+            0.6988704863261276
+          ],
+          "normalDotRay": -0.9712882240256957,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            32
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 159.44496334062615,
+          "pointMM": [
+            -25.15836608232732,
+            -23.001934703842124,
+            -28.798960852579768
+          ],
+          "outwardNormal": [
+            -0.6275666217174857,
+            -0.3847642079878555,
+            -0.6768431425061353
+          ],
+          "normalDotRay": 0.9826627632177145,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            6
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 71.29245244378907,
+          "lengthMM": 71.29245244378907,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 71.29245244378907,
+          "endDistanceMM": 75.53193495184522,
+          "lengthMM": 4.239482508056142,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 75.53193495184522,
+          "endDistanceMM": 86.286728764472,
+          "lengthMM": 10.754793812626787,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.286728764472,
+          "endDistanceMM": 155.31181668448644,
+          "lengthMM": 69.02508792001444,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 155.31181668448644,
+          "endDistanceMM": 155.51785499980704,
+          "lengthMM": 0.20603831532059758,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 155.51785499980704,
+          "endDistanceMM": 159.44496334062615,
+          "lengthMM": 3.927108340819103,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 159.44496334062615,
+          "endDistanceMM": 180.0,
+          "lengthMM": 20.555036659373854,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 75.53193495184522,
+          "endDistanceMM": 86.286728764472,
+          "gapLengthMM": 10.754793812626787,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 155.31181668448644,
+          "endDistanceMM": 155.51785499980704,
+          "gapLengthMM": 0.20603831532059758,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-waterline-multiple-intervals",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        60.0,
+        0.0,
+        13.0
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.0,
+          "pointMM": [
+            30.0,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            29
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 33.5,
+          "pointMM": [
+            26.5,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            49
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 35.39941481554379,
+          "pointMM": [
+            24.600585184456207,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            0.2762429282035403,
+            0.0,
+            0.9610878443813207
+          ],
+          "normalDotRay": -0.2762429282035403,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            3,
+            5
+          ],
+          "surfaceKinds": [
+            "EXTRUSION"
+          ],
+          "rawCoincidentHitCount": 2,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 61.6811354330391,
+          "pointMM": [
+            -1.6811354330391026,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            -0.22572017440993383,
+            -0.0,
+            0.9741921796362097
+          ],
+          "normalDotRay": 0.22572017440993383,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            3,
+            5
+          ],
+          "surfaceKinds": [
+            "EXTRUSION"
+          ],
+          "rawCoincidentHitCount": 2,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 82.79717444314741,
+          "pointMM": [
+            -22.797174443147412,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            0.10191203593328718,
+            0.0,
+            0.99479341419811
+          ],
+          "normalDotRay": -0.10191203593328718,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            3,
+            5
+          ],
+          "surfaceKinds": [
+            "EXTRUSION"
+          ],
+          "rawCoincidentHitCount": 2,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 2,
+          "solid": "water",
+          "distanceMM": 86.3,
+          "pointMM": [
+            -26.299999999999997,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 86.5,
+          "pointMM": [
+            -26.5,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "normalDotRay": -1.0,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            14
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 90.0,
+          "pointMM": [
+            -30.0,
+            0.0,
+            13.0
+          ],
+          "outwardNormal": [
+            -1.0,
+            -0.0,
+            0.0
+          ],
+          "normalDotRay": 1.0,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            0
+          ],
+          "surfaceKinds": [
+            "PLANE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 30.0,
+          "lengthMM": 30.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.0,
+          "endDistanceMM": 33.5,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 35.39941481554379,
+          "lengthMM": 1.8994148155437927,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 35.39941481554379,
+          "endDistanceMM": 61.6811354330391,
+          "lengthMM": 26.28172061749531,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 61.6811354330391,
+          "endDistanceMM": 82.79717444314741,
+          "lengthMM": 21.11603901010831,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 82.79717444314741,
+          "endDistanceMM": 86.3,
+          "lengthMM": 3.502825556852585,
+          "solidIds": [
+            2
+          ],
+          "medium": "water",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "lengthMM": 0.20000000000000284,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 86.5,
+          "endDistanceMM": 90.0,
+          "lengthMM": 3.5,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 90.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 50.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 33.5,
+          "endDistanceMM": 35.39941481554379,
+          "gapLengthMM": 1.8994148155437927,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 61.6811354330391,
+          "endDistanceMM": 82.79717444314741,
+          "gapLengthMM": 21.11603901010831,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        {
+          "startDistanceMM": 86.3,
+          "endDistanceMM": 86.5,
+          "gapLengthMM": 0.20000000000000284,
+          "betweenSolidIds": [
+            [
+              2
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "elements-air-headspace",
+      "moduleCoordinateFrame": "elements",
+      "originMM": [
+        60.0,
+        0.0,
+        24.0
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 30.63068312314702,
+          "pointMM": [
+            29.36931687685298,
+            0.0,
+            24.0
+          ],
+          "outwardNormal": [
+            0.9514859136040754,
+            -0.0,
+            0.3076923076923076
+          ],
+          "normalDotRay": -0.9514859136040754,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            21
+          ],
+          "surfaceKinds": [
+            "CYLINDER"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 34.569714450254125,
+          "pointMM": [
+            25.430285549745875,
+            0.0,
+            24.0
+          ],
+          "outwardNormal": [
+            -0.8930285549745876,
+            0.0,
+            -0.45000000000000034
+          ],
+          "normalDotRay": 0.8930285549745876,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            47
+          ],
+          "surfaceKinds": [
+            "CYLINDER"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 85.43028554974588,
+          "pointMM": [
+            -25.430285549745875,
+            0.0,
+            24.0
+          ],
+          "outwardNormal": [
+            0.8930285549745876,
+            -0.0,
+            -0.45
+          ],
+          "normalDotRay": -0.8930285549745876,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            25
+          ],
+          "surfaceKinds": [
+            "CYLINDER"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 1,
+          "solid": "glass",
+          "distanceMM": 89.36931687685298,
+          "pointMM": [
+            -29.369316876852977,
+            0.0,
+            24.0
+          ],
+          "outwardNormal": [
+            -0.9514859136040754,
+            0.0,
+            0.3076923076923077
+          ],
+          "normalDotRay": 0.9514859136040754,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            3
+          ],
+          "surfaceKinds": [
+            "CYLINDER"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 30.63068312314702,
+          "lengthMM": 30.63068312314702,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 30.63068312314702,
+          "endDistanceMM": 34.569714450254125,
+          "lengthMM": 3.939031327107106,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 34.569714450254125,
+          "endDistanceMM": 85.43028554974588,
+          "lengthMM": 50.86057109949175,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 85.43028554974588,
+          "endDistanceMM": 89.36931687685298,
+          "lengthMM": 3.9390313271071022,
+          "solidIds": [
+            1
+          ],
+          "medium": "glass",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 89.36931687685298,
+          "endDistanceMM": 140.0,
+          "lengthMM": 50.63068312314702,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": [
+        {
+          "startDistanceMM": 34.569714450254125,
+          "endDistanceMM": 85.43028554974588,
+          "gapLengthMM": 50.86057109949175,
+          "betweenSolidIds": [
+            [
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "light-off-axis-x-r20",
+      "moduleCoordinateFrame": "light",
+      "originMM": [
+        60.0,
+        20.0,
+        0.0
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 3,
+          "solid": "lens",
+          "distanceMM": 54.283461736080326,
+          "pointMM": [
+            5.716538263919674,
+            20.0,
+            0.0
+          ],
+          "outwardNormal": [
+            0.9833321660356334,
+            0.18181818181818182,
+            -0.0
+          ],
+          "normalDotRay": -0.9833321660356334,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            2
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 3,
+          "solid": "lens",
+          "distanceMM": 65.71653826391967,
+          "pointMM": [
+            -5.716538263919674,
+            20.0,
+            0.0
+          ],
+          "outwardNormal": [
+            -0.9833321660356334,
+            0.18181818181818163,
+            0.0
+          ],
+          "normalDotRay": 0.9833321660356334,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            1
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 54.283461736080326,
+          "lengthMM": 54.283461736080326,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 54.283461736080326,
+          "endDistanceMM": 65.71653826391967,
+          "lengthMM": 11.433076527839347,
+          "solidIds": [
+            3
+          ],
+          "medium": "lens",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 65.71653826391967,
+          "endDistanceMM": 140.0,
+          "lengthMM": 74.28346173608033,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": []
+    },
+    {
+      "name": "light-open-service-bore",
+      "moduleCoordinateFrame": "light",
+      "originMM": [
+        60.0,
+        0.0,
+        0.0
+      ],
+      "directionUnit": [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 140.0,
+          "lengthMM": 140.0,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": []
+    },
+    {
+      "name": "light-oblique-curved-lens",
+      "moduleCoordinateFrame": "light",
+      "originMM": [
+        60.0,
+        25.0,
+        8.0
+      ],
+      "directionUnit": [
+        -0.9920947376656812,
+        -0.11905136851988174,
+        -0.03968378950662725
+      ],
+      "maximumDistanceMM": 140,
+      "hits": [
+        {
+          "solidId": 3,
+          "solid": "lens",
+          "distanceMM": 54.605371639196235,
+          "pointMM": [
+            5.826298148474578,
+            18.499155777816952,
+            5.8330519259389835
+          ],
+          "outwardNormal": [
+            0.984329983167951,
+            0.1681741434346996,
+            0.0530277447812635
+          ],
+          "normalDotRay": -0.9986743002149434,
+          "transition": "enter",
+          "insideBefore": "outside",
+          "insideAfter": "inside",
+          "nativeFaceIndices": [
+            2
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        },
+        {
+          "solidId": 3,
+          "solid": "lens",
+          "distanceMM": 66.61197346309262,
+          "pointMM": [
+            -6.085388338260202,
+            17.069753399408775,
+            5.356584466469592
+          ],
+          "outwardNormal": [
+            -0.9866853485296383,
+            0.15517957635826155,
+            0.04869622242245084
+          ],
+          "normalDotRay": 0.9584785504359158,
+          "transition": "exit",
+          "insideBefore": "inside",
+          "insideAfter": "outside",
+          "nativeFaceIndices": [
+            1
+          ],
+          "surfaceKinds": [
+            "SPHERE"
+          ],
+          "rawCoincidentHitCount": 1,
+          "normalTransitionVerified": true
+        }
+      ],
+      "mediumIntervals": [
+        {
+          "startDistanceMM": 0.0,
+          "endDistanceMM": 54.605371639196235,
+          "lengthMM": 54.605371639196235,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 54.605371639196235,
+          "endDistanceMM": 66.61197346309262,
+          "lengthMM": 12.00660182389639,
+          "solidIds": [
+            3
+          ],
+          "medium": "lens",
+          "exactMidpointClassification": true
+        },
+        {
+          "startDistanceMM": 66.61197346309262,
+          "endDistanceMM": 140.0,
+          "lengthMM": 73.38802653690738,
+          "solidIds": [],
+          "medium": "air",
+          "exactMidpointClassification": true
+        }
+      ],
+      "boundedAirGaps": []
+    }
+  ],
+  "limitations": [
+    "These are straight input-ray intersections, not precomputed refracted paths. They validate primitive/BVH boundary solvers used by sequential Snell transport.",
+    "ELEMENTS and LIGHT are separate native module coordinate frames; their local coordinates must not be combined as colocated scene solids.",
+    "Air intervals include internal bubble, cable exclusion, glass cavity, and port voids. Opaque cable and surrounding hardware are not classified here.",
+    "Normals at native seam/edge coincidences may have multiple candidate faces; the face with largest absolute ray-normal dot is retained and all face IDs are recorded.",
+    "This extraction does not modify native CAD, mesh caches, package, runtime, or source."
+  ]
+}

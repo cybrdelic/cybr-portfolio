@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "javascript_errors": [],
+  "webgl_errors": [],
+  "desktop": [
+    1440,
+    900
+  ],
+  "mobile": [
+    390,
+    1100
+  ],
+  "checks": [
+    "V4 default take",
+    "combat showcase preset",
+    "take selection",
+    "new attacks import",
+    "combat hit seeking",
+    "enemy visibility toggle",
+    "combat FX toggle",
+    "Python/JS schedule parity",
+    "clip reorder/remove/update",
+    "trim/rate/camera authoring",
+    "JSON download roundtrip",
+    "invalid import atomicity",
+    "camera bookmark",
+    "sequence playback",
+    "telemetry",
+    "responsive layout",
+    "trim loop bounds",
+    "nonloop stop on last frame",
+    "PNG export",
+    "focus view",
+    "draft survives reload"
+  ],
+  "source_recipe_frames": 235
+}

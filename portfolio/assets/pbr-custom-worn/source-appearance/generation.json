@@ -1,0 +1,43 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "customMadeFor": "CYBR portfolio instrument",
+  "materialLibraryInputs": [],
+  "actualNativeDimensions": [
+    1254,
+    1254
+  ],
+  "images": [
+    {
+      "path": "assets/pbr-custom-worn/source-appearance/contamination-imagegen.png",
+      "sha256": "14725da475150ad586df7511df347d948006aa38a2d3afdc08dcf16890ca0376",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "nativeMode": "RGB",
+      "generator": "OpenAI ImageGen",
+      "prompt": "assets/pbr-custom-worn/source-appearance/contamination-prompt.txt",
+      "promptSHA256": "0b72fb5f6e1e8edcca8013d6933b357ecfd3e0cd71b25e8533d6c603a84eaed2",
+      "purpose": "Semantic coverage only; no height inference",
+      "toolReturnedOriginal": "exec-3beccb86-e09b-4adf-b122-05d7c43df804.png",
+      "toolReturnedOriginalPath": "private-source/generated_images/01a0ee97-dfbd-7672-9df1-511609a10672/exec-3beccb86-e09b-4adf-b122-05d7c43df804.png",
+      "copyByteEquality": true
+    },
+    {
+      "path": "assets/pbr-custom-worn/source-appearance/rust-imagegen.png",
+      "sha256": "e35a0dce9798f6f4534ccabc7c0aec1ba591827fecb755695d18c67e32f2d683",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "nativeMode": "RGB",
+      "generator": "OpenAI ImageGen",
+      "prompt": "assets/pbr-custom-worn/source-appearance/rust-prompt.txt",
+      "promptSHA256": "7c8e3c3e2592646c9228f7d06a87eb4d3899d1e9863fde690229545f63e5ed41",
+      "purpose": "Steel oxide color only; no height inference",
+      "toolReturnedOriginal": "exec-f1da435c-cdf6-4c8c-b9b1-9d5a3027606b.png",
+      "toolReturnedOriginalPath": "private-source/generated_images/01a0ee97-dfbd-7672-9df1-511609a10672/exec-f1da435c-cdf6-4c8c-b9b1-9d5a3027606b.png",
+      "copyByteEquality": true
+    }
+  ]
+}

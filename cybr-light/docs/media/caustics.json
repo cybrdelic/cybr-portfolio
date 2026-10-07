@@ -1,0 +1,18 @@
+{
+  "name": "caustics",
+  "description": "Camera-view dispersive surface photon mapping",
+  "backend": "native-cpp-cpu",
+  "preset": "preview",
+  "width": 480,
+  "height": 320,
+  "packets_per_pixel": 24,
+  "wavelengths_per_packet": 8,
+  "max_depth": 16,
+  "photon_count": 500000,
+  "render_seconds": 21.427465311,
+  "raw_film_sha256": "6f0031fdf9ed8112560c5a50108c73e29c7b7f62e33f3339480cba625001d827",
+  "preview_sha256": "28b7084c00db68aceed9875a79811d462ad97bdcb7290453f01d97e2322ca3b1",
+  "raw_film_finite": true,
+  "denoised": false,
+  "preview_note": "Display transform only; no AI image generation or denoising"
+}

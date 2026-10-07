@@ -1,0 +1,13 @@
+{
+  "samples": 936,
+  "hz": 60,
+  "crossings": [],
+  "max_reach_adjustment": {
+    "Right": 0.0822732575585613,
+    "Left": 0.0
+  },
+  "max_pelvis_adjustment": 0.04147456414819639,
+  "min_body_y": 0.002122700801982105,
+  "min_boot_y": 0.005982878354479852,
+  "scope": "Selected nonadjacent arm and torso triangles from the displayed skinned body. Connected shoulder seam excluded. Discrete sample times; no guarantee of no crossings between samples or of unrelated body regions."
+}

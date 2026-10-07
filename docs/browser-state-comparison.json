@@ -1,0 +1,681 @@
+{
+  "scope": "Observed default main workflow; live media clocks not synchronized",
+  "desktop_viewport": [
+    1280,
+    800
+  ],
+  "device_pixel_ratio": 1,
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "mobile_reduced_motion": true,
+  "render_mode": "working-cad-hybrid-raster-webgl2",
+  "observed_hardware": "Intel UHD via ANGLE/D3D11",
+  "runs": [
+    {
+      "label": "baseline",
+      "plate": {
+        "ready": true,
+        "progress": 0,
+        "target": 0,
+        "camera": [
+          2860.9718912538283,
+          -4495.611895592132,
+          2811.163581748256
+        ],
+        "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+        "renderMode": "working-cad-hybrid-raster-webgl2",
+        "fluidFrame": 0,
+        "fluidFailed": null,
+        "fireTime": 0,
+        "fireFrames": 1,
+        "fireFailed": null,
+        "overflow": false,
+        "canvas": true
+      },
+      "chapters": [
+        {
+          "name": "GEO",
+          "ready": true,
+          "progress": 0.48993055555555554,
+          "target": 0.48993055555555554,
+          "camera": [
+            -252.1388281797632,
+            -68.04636633734775,
+            41.895591860856605
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 6,
+          "fluidFailed": null,
+          "fireTime": 0.579778,
+          "fireFrames": 10,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "LIGHT",
+          "ready": true,
+          "progress": 0.55,
+          "target": 0.55,
+          "camera": [
+            -139.51189227892377,
+            -57.450952839087186,
+            55.672147595372856
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 50,
+          "fluidFailed": null,
+          "fireTime": 1.79654,
+          "fireFrames": 34,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "ELEMENTS",
+          "ready": true,
+          "progress": 0.6,
+          "target": 0.6,
+          "camera": [
+            -64.69762678802556,
+            -59.064395356164695,
+            59.08050819156546
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 94,
+          "fluidFailed": null,
+          "fireTime": 2.834948,
+          "fireFrames": 52,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "SONG",
+          "ready": true,
+          "progress": 0.7,
+          "target": 0.7,
+          "camera": [
+            83.98457710702661,
+            -46.832216267899824,
+            64.85941349901847
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 104,
+          "fluidFailed": null,
+          "fireTime": 0.507063,
+          "fireFrames": 79,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "COMBAT",
+          "ready": true,
+          "progress": 0.7800347222222223,
+          "target": 0.7800347222222223,
+          "camera": [
+            203.79416262909683,
+            -53.396177747822776,
+            47.572209980182166
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 90,
+          "fluidFailed": null,
+          "fireTime": 0.991576,
+          "fireFrames": 88,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "SCENES",
+          "ready": true,
+          "progress": 0.8600694444444444,
+          "target": 0.8600694444444444,
+          "camera": [
+            323.60374815115296,
+            -64.80369022649776,
+            22.909292608481294
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 90,
+          "fluidFailed": null,
+          "fireTime": 0.991576,
+          "fireFrames": 88,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        }
+      ],
+      "dialog": {
+        "first": "SCENES",
+        "previous": "COMBAT",
+        "next": "SCENES",
+        "closed": true
+      },
+      "end": {
+        "ready": true,
+        "progress": 1,
+        "target": 1,
+        "camera": [
+          686.8117751208044,
+          -419.9999999999998,
+          286.40614700317366
+        ],
+        "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+        "renderMode": "working-cad-hybrid-raster-webgl2",
+        "fluidFrame": 90,
+        "fluidFailed": null,
+        "fireTime": 0.991576,
+        "fireFrames": 88,
+        "fireFailed": null,
+        "overflow": false,
+        "canvas": true
+      },
+      "notes": {
+        "title": "Evidence library / Cybrdelic",
+        "receipts": 46
+      },
+      "archive": {
+        "title": "Portfolio / Cybrdelic",
+        "images": 137,
+        "videos": 2
+      },
+      "film": {
+        "src": "/portfolio/assets/play-combat-side-leap-study.mp4",
+        "ready": 4,
+        "playing": false,
+        "width": 640,
+        "height": 360
+      },
+      "mobile": {
+        "ready": true,
+        "progress": 0,
+        "target": 0,
+        "camera": [
+          2860.9718912538283,
+          -4495.611895592132,
+          2811.163581748256
+        ],
+        "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+        "renderMode": "working-cad-hybrid-raster-webgl2",
+        "fluidFrame": 0,
+        "fluidFailed": null,
+        "fireTime": 1.1,
+        "fireFrames": 1,
+        "fireFailed": null,
+        "overflow": false,
+        "canvas": true
+      }
+    },
+    {
+      "label": "staged",
+      "plate": {
+        "ready": true,
+        "progress": 0,
+        "target": 0,
+        "camera": [
+          2860.9718912538283,
+          -4495.611895592132,
+          2811.163581748256
+        ],
+        "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+        "renderMode": "working-cad-hybrid-raster-webgl2",
+        "fluidFrame": 0,
+        "fluidFailed": null,
+        "fireTime": 0,
+        "fireFrames": 1,
+        "fireFailed": null,
+        "overflow": false,
+        "canvas": true
+      },
+      "chapters": [
+        {
+          "name": "GEO",
+          "ready": true,
+          "progress": 0.48993055555555554,
+          "target": 0.48993055555555554,
+          "camera": [
+            -252.1388281797632,
+            -68.04636633734775,
+            41.895591860856605
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 7,
+          "fluidFailed": null,
+          "fireTime": 0.645748,
+          "fireFrames": 10,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "LIGHT",
+          "ready": true,
+          "progress": 0.55,
+          "target": 0.55,
+          "camera": [
+            -139.51189227892377,
+            -57.450952839087186,
+            55.672147595372856
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 47,
+          "fluidFailed": null,
+          "fireTime": 1.737109,
+          "fireFrames": 28,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "ELEMENTS",
+          "ready": true,
+          "progress": 0.6,
+          "target": 0.6,
+          "camera": [
+            -64.69762678802556,
+            -59.064395356164695,
+            59.08050819156546
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 83,
+          "fluidFailed": null,
+          "fireTime": 2.552487,
+          "fireFrames": 44,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "SONG",
+          "ready": true,
+          "progress": 0.7,
+          "target": 0.7,
+          "camera": [
+            83.98457710702661,
+            -46.832216267899824,
+            64.85941349901847
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 108,
+          "fluidFailed": null,
+          "fireTime": 0.099984,
+          "fireFrames": 70,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "COMBAT",
+          "ready": true,
+          "progress": 0.7800347222222223,
+          "target": 0.7800347222222223,
+          "camera": [
+            203.79416262909683,
+            -53.396177747822776,
+            47.572209980182166
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 100,
+          "fluidFailed": null,
+          "fireTime": 0.665306,
+          "fireFrames": 79,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        },
+        {
+          "name": "SCENES",
+          "ready": true,
+          "progress": 0.8600694444444444,
+          "target": 0.8600694444444444,
+          "camera": [
+            323.60374815115296,
+            -64.80369022649776,
+            22.909292608481294
+          ],
+          "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+          "renderMode": "working-cad-hybrid-raster-webgl2",
+          "fluidFrame": 100,
+          "fluidFailed": null,
+          "fireTime": 0.665306,
+          "fireFrames": 79,
+          "fireFailed": null,
+          "overflow": false,
+          "canvas": true
+        }
+      ],
+      "dialog": {
+        "first": "SCENES",
+        "previous": "COMBAT",
+        "next": "SCENES",
+        "closed": true
+      },
+      "end": {
+        "ready": true,
+        "progress": 1,
+        "target": 1,
+        "camera": [
+          686.8117751208044,
+          -419.9999999999998,
+          286.40614700317366
+        ],
+        "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+        "renderMode": "working-cad-hybrid-raster-webgl2",
+        "fluidFrame": 100,
+        "fluidFailed": null,
+        "fireTime": 0.665306,
+        "fireFrames": 79,
+        "fireFailed": null,
+        "overflow": false,
+        "canvas": true
+      },
+      "notes": {
+        "title": "Evidence library / Cybrdelic",
+        "receipts": 46
+      },
+      "archive": {
+        "title": "Portfolio / Cybrdelic",
+        "images": 137,
+        "videos": 2
+      },
+      "film": {
+        "src": "/portfolio/assets/play-combat-side-leap-study.mp4",
+        "ready": 4,
+        "playing": false,
+        "width": 640,
+        "height": 360
+      },
+      "mobile": {
+        "ready": true,
+        "progress": 0,
+        "target": 0,
+        "camera": [
+          2860.9718912538283,
+          -4495.611895592132,
+          2811.163581748256
+        ],
+        "geometryHash": "486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756",
+        "renderMode": "working-cad-hybrid-raster-webgl2",
+        "fluidFrame": 0,
+        "fluidFailed": null,
+        "fireTime": 0,
+        "fireFrames": 1,
+        "fireFailed": null,
+        "overflow": false,
+        "canvas": true
+      }
+    }
+  ],
+  "pixel_comparison": [
+    {
+      "view": "archive",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 727682,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 95.32819889322917,
+      "max_difference": 255,
+      "baseline_sha256": "afe34e2edb98fa7ac6a3120b2bfda0bdea7718fbab65f20f15b9367e8eb205ac",
+      "staged_sha256": "64eda6f408bc462b64da19dac69a1c869c0aefa48a9f676f1ccec13455a060c3"
+    },
+    {
+      "view": "combat-film",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 796749,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 122.04974641927083,
+      "max_difference": 245,
+      "baseline_sha256": "b3e6f9ef7f7ca26c264d917d0a75cf2f7493bb20a393e4eca5b983d9186f64d9",
+      "staged_sha256": "8e204d2e0a1f6349a21a14be8bf0c95a53481fe175f8f352472e131615216f23"
+    },
+    {
+      "view": "combat",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 0,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.0,
+      "max_difference": 0,
+      "baseline_sha256": "c8b43f89f322359a5f666745f50c50b2431a828d9754c03e1328876b542863e2",
+      "staged_sha256": "c8b43f89f322359a5f666745f50c50b2431a828d9754c03e1328876b542863e2"
+    },
+    {
+      "view": "dialog",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 50101,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 1.0930211588541667,
+      "max_difference": 32,
+      "baseline_sha256": "6f6fd362b77fb0e9aa7b1b15ac41a5b7eeb407c5b2db3b23fa3857e77d8b1669",
+      "staged_sha256": "7e0e122d76ed2bac46e43d0db8576b5ad92c5d10b350be6f58b29fa56a59cb94"
+    },
+    {
+      "view": "elements",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 24851,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.526828125,
+      "max_difference": 240,
+      "baseline_sha256": "17a3e348e403446bdb647d72a18cecb03ef00342ffeb1602387162a7dd614bd0",
+      "staged_sha256": "5a36806b149872c80347adc796b4ec58bf8523417c5b26883ec38550ec951b22"
+    },
+    {
+      "view": "end",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 2178,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.023935221354166668,
+      "max_difference": 123,
+      "baseline_sha256": "f57163b78b52e49c8a0211adc25edb32bbbda5f63d83901420a6e408b74d85eb",
+      "staged_sha256": "777b00f75a4f5d0b1235d85ea9b907c9e07989c8ee17e50af28f71bb29474c7e"
+    },
+    {
+      "view": "geo",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 7453,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.22199153645833333,
+      "max_difference": 215,
+      "baseline_sha256": "d9b0e93dd3861fa1be277d4e4a5066850eac426f2d3b0cc57851227e86bb04db",
+      "staged_sha256": "6ec97ace6e1228219fa17328b51e68d9a139cc71a2433ae1f09c2c2502f8048b"
+    },
+    {
+      "view": "light",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 1,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 6.510416666666666e-07,
+      "max_difference": 1,
+      "baseline_sha256": "d8585450188b2df7a0d40568444d79dacde0238c755fc378202eafc7900ae401",
+      "staged_sha256": "9ba3efaa228413b661fb5158fda42d161b110bd437d9611391ae32b416d6626e"
+    },
+    {
+      "view": "mobile-reduced",
+      "shape": [
+        844,
+        390,
+        3
+      ],
+      "pixels_changed": 0,
+      "total_pixels": 329160,
+      "mean_abs_channel_difference": 0.0,
+      "max_difference": 0,
+      "baseline_sha256": "92342c130dedcc2242b9af6ff2eefb813b9ef8889384fab0dab190ec772acde0",
+      "staged_sha256": "92342c130dedcc2242b9af6ff2eefb813b9ef8889384fab0dab190ec772acde0"
+    },
+    {
+      "view": "notes",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 0,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.0,
+      "max_difference": 0,
+      "baseline_sha256": "ab6b1bcd1192299162a1c80ab6ee727377d02e2d43737786ba2a0ef9026ac9d1",
+      "staged_sha256": "ab6b1bcd1192299162a1c80ab6ee727377d02e2d43737786ba2a0ef9026ac9d1"
+    },
+    {
+      "view": "plate",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 303,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.019598958333333333,
+      "max_difference": 219,
+      "baseline_sha256": "133b890ae0d874987fcbcaf5890b296ad33fcc0d439273702c94eab88b4506c6",
+      "staged_sha256": "76db23ef4f8c4d3a4f47acca8ef9cdc75b4b709b57c2cc96778ca0d5b331db03"
+    },
+    {
+      "view": "scenes",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 1,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 6.510416666666666e-07,
+      "max_difference": 1,
+      "baseline_sha256": "e0cc9410d102eaa423530b397100af8d2ea9eb5aa67542de0e64402f906d5bc9",
+      "staged_sha256": "fe670c867676b9e6965e7a26febb2cab309046e859cfe6f842a02c40db779411"
+    },
+    {
+      "view": "song",
+      "shape": [
+        800,
+        1280,
+        3
+      ],
+      "pixels_changed": 0,
+      "total_pixels": 1024000,
+      "mean_abs_channel_difference": 0.0,
+      "max_difference": 0,
+      "baseline_sha256": "aa9e22a4d1c3e611665b65da2a64b75cda671b817a09ddb82fd3152ae316092a",
+      "staged_sha256": "aa9e22a4d1c3e611665b65da2a64b75cda671b817a09ddb82fd3152ae316092a"
+    }
+  ],
+  "normalized_run_results": [
+    {
+      "label": "baseline",
+      "chapter_count": 6,
+      "dialog": {
+        "first": "SCENES",
+        "previous": "COMBAT",
+        "next": "SCENES",
+        "closed": true
+      },
+      "film": {
+        "src": "/portfolio/assets/play-combat-side-leap-study.mp4",
+        "ready": 4,
+        "playing": false,
+        "width": 640,
+        "height": 360
+      },
+      "missing_requests": [],
+      "issues": [
+        {
+          "type": "warning",
+          "text": "[.WebGL-CONTEXT] GL_INVALID_VALUE: glTexStorage2D: Texture dimensions must all be greater than zero.",
+          "count": 1
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-CONTEXT] GL_INVALID_OPERATION: glCopySubTextureCHROMIUM: The destination level of the destination texture must be defined.",
+          "count": 85
+        }
+      ],
+      "all_chapters_ready": true,
+      "mobile_no_overflow": true
+    },
+    {
+      "label": "staged",
+      "chapter_count": 6,
+      "dialog": {
+        "first": "SCENES",
+        "previous": "COMBAT",
+        "next": "SCENES",
+        "closed": true
+      },
+      "film": {
+        "src": "/portfolio/assets/play-combat-side-leap-study.mp4",
+        "ready": 4,
+        "playing": false,
+        "width": 640,
+        "height": 360
+      },
+      "missing_requests": [],
+      "issues": [
+        {
+          "type": "error",
+          "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+          "count": 1
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-CONTEXT] GL_INVALID_VALUE: glTexStorage2D: Texture dimensions must all be greater than zero.",
+          "count": 1
+        },
+        {
+          "type": "warning",
+          "text": "[.WebGL-CONTEXT] GL_INVALID_OPERATION: glCopySubTextureCHROMIUM: The destination level of the destination texture must be defined.",
+          "count": 79
+        }
+      ],
+      "all_chapters_ready": true,
+      "mobile_no_overflow": true
+    }
+  ],
+  "matched_camera_and_geometry": true
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "operation": "test-only path or output-directory setup",
+    "path": "portfolio/instrument-analytic-optics.test.mjs",
+    "source_sha256": "9539614793cf1940d896376bc0b5e5985ada8bf25638dd90253d0f25072b0f05",
+    "staged_sha256": "657ae8d7e760cb8c76068b1a32296bbc1c214dccb7b56da14c235b38fcd69e8d"
+  },
+  {
+    "operation": "test-only path or output-directory setup",
+    "path": "portfolio/instrument-native-membership-hoist.test.mjs",
+    "source_sha256": "de532c8c8f615f04369234b1eaf689d1ff38760be3668635f037076cc6b8a0ad",
+    "staged_sha256": "ab4b53c850561f90c886decd91e07a79e27275d217a37332bf89cd27bf0bcae1"
+  },
+  {
+    "operation": "test-only path or output-directory setup",
+    "path": "portfolio/instrument/test-elements-composite.mjs",
+    "source_sha256": "85f4486f3ea14a34e024de7f211e8069da72a0a65d6d5b02f754d14fed74c7c3",
+    "staged_sha256": "94f0e999487b7b9228c3652cd674a5144d95bb6ca8f1b384046070749575076e"
+  },
+  {
+    "operation": "test-only path or output-directory setup",
+    "path": "portfolio/instrument/test-elements-water.mjs",
+    "source_sha256": "48a80f10ace37e1e20b9f858186e15849c8d814ecb15103e64dfb30b054a80eb",
+    "staged_sha256": "54f56aaaefaf60fd814113c5f24db49101093f07ab03ac2c7e597633cbb762e2"
+  },
+  {
+    "operation": "move retained test fixture",
+    "from": "portfolio/output/geo-working/pbr-credible/native-membership-hoist-reference.json",
+    "to": "portfolio/tests/fixtures/native-optics/native-membership-hoist-reference.json",
+    "source_sha256": "c2c25651b3c9312b12f88be197b5c6220f990dc95bfbf8c17f1801570a36ef5d"
+  },
+  {
+    "operation": "move retained test fixture",
+    "from": "portfolio/output/geo-working/pbr-credible/native-optical-ray-reference.json",
+    "to": "portfolio/tests/fixtures/native-optics/native-optical-ray-reference.json",
+    "source_sha256": "2a66000d38a56550e5b7260cbb662e39c4b591846bd7b702a17c6c77066dc34c"
+  },
+  {
+    "operation": "move retained test fixture",
+    "from": "portfolio/output/geo-working/pbr-credible/native-optical-primitives.json",
+    "to": "portfolio/tests/fixtures/native-optics/native-optical-primitives.json",
+    "source_sha256": "a712a092b8be592c5a12d9e4380046ee3026d2d678f96402b3784cd44fcba5eb"
+  },
+  {
+    "operation": "omit redundant machine-specific native binary",
+    "path": "portfolio/instrument/native-msvc/Release/cybr-numerical.exe",
+    "recovery_sha256": "aae78b3dc2872a644ae86c4e22fff7201d4d0e67aace811bbc9211e2bb3645d5"
+  },
+  {
+    "operation": "omit redundant machine-specific native binary",
+    "path": "portfolio/instrument/native-msvc/Release/cybr-light.exe",
+    "recovery_sha256": "cc7c32303b8403d4a13d9a7ffbd12ade3958b4462ba474b2f3962fc03889025e"
+  }
+]

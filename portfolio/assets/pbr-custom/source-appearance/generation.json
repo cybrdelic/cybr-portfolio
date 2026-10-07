@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "materialLibraryInputs": [],
+  "images": [
+    {
+      "appearance": "brushed",
+      "file": "portfolio/assets/pbr-custom/source-appearance/brushed-imagegen.png",
+      "sha256": "c97cc3d23a4cfe6161864a04efa88456691bf503c355e343417ff601c8bf3f29",
+      "prompt": "portfolio/assets/pbr-custom/source-appearance/brushed-prompt.txt",
+      "promptSHA256": "f2bb7c70a871c7bf0d0618382ff0f55897c4f9c97f128de2f1a69f32524de742"
+    },
+    {
+      "appearance": "lathe",
+      "file": "portfolio/assets/pbr-custom/source-appearance/lathe-imagegen.png",
+      "sha256": "5189064eaf9c01b830f479212793c7c0e4006a176e842252bd068f9acc0077b5",
+      "prompt": "portfolio/assets/pbr-custom/source-appearance/lathe-prompt.txt",
+      "promptSHA256": "b8ca95a0d71219f92c582e4cbc11273afbec22b21d2efca0c6d820b2f747f005"
+    },
+    {
+      "appearance": "crosshatch",
+      "file": "portfolio/assets/pbr-custom/source-appearance/crosshatch-imagegen.png",
+      "sha256": "fb474e44f598f8def204dec1262b4f9e658cf7034d4a62c071f1efb87a33b7a5",
+      "prompt": "portfolio/assets/pbr-custom/source-appearance/crosshatch-prompt.txt",
+      "promptSHA256": "cfd222e3d7fc511acf50da26e2a1134807e4fccb0da74c02bf57802bd58c1a03"
+    }
+  ]
+}

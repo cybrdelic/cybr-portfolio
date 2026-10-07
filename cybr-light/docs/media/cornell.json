@@ -1,0 +1,18 @@
+{
+  "name": "cornell",
+  "description": "Diffuse indirect illumination and color bleeding",
+  "backend": "native-cpp-cpu",
+  "preset": "preview",
+  "width": 480,
+  "height": 320,
+  "packets_per_pixel": 64,
+  "wavelengths_per_packet": 8,
+  "max_depth": 32,
+  "photon_count": 0,
+  "render_seconds": 148.721676587,
+  "raw_film_sha256": "809a6430eb2a52304188f1bf61f09d227c52213d576cc2cc9c27853aac1774fb",
+  "preview_sha256": "c0e9ac4142fd7085e9fb0cd2e01099610d3785b50270d1834fd33f9ad3cdb1d7",
+  "raw_film_finite": true,
+  "denoised": false,
+  "preview_note": "Display transform only; no AI image generation or denoising"
+}

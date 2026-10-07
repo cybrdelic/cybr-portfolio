@@ -1,0 +1,107 @@
+{
+  "assetId": "LatheMetal",
+  "revision": "machining-v3-refined",
+  "source": "Original CYBR material",
+  "customMadeFor": "CYBR portfolio instrument",
+  "creationMethod": "AI unlit appearance plus independently authored physical height, multi-scale finishing roughness and fine-scale cavity fields",
+  "downloadedInputs": [],
+  "authoredTileMM": [
+    128.0,
+    128.0
+  ],
+  "normalConvention": "OpenGL tangent +Y upward",
+  "normalScale": [
+    1,
+    1
+  ],
+  "heightNormals": true,
+  "cavity": false,
+  "physicalDimensionsKnown": false,
+  "physicalDimensionsAuthored": true,
+  "physicalScaleNote": "Tile dimensions and relief are explicit authoring values, not measurements of a manufactured alloy.",
+  "heightUnits": "millimeters",
+  "recipe": "assets/pbr-custom/LatheMetal/source/recipe.json",
+  "recipeSHA256": "f0a90a658f55345a6fee6fdf65303cc4b8bddfb2b651a533e2c797ebdb4f664f",
+  "heightPNG": {
+    "path": "assets/pbr-custom/LatheMetal/source/height.png",
+    "sha256": "c688f599e5169e8205207e88a373a7ec891a9f1138033d2ee12dace92f6cb835",
+    "bits": 16
+  },
+  "roughnessPNG": {
+    "path": "assets/pbr-custom/LatheMetal/source/roughness.png",
+    "sha256": "2c87bbdeb6836f624611a0b7c4b8ca83cdbab73939368846c1235b78cd6e2a4a"
+  },
+  "cavityPNG": {
+    "path": "assets/pbr-custom/LatheMetal/source/cavity.png",
+    "sha256": "7368a2762f0210ba889788e2c23314e77fc184beecf5c6b5ffbe8279ed4f308a"
+  },
+  "runtimeMaps": {
+    "normal": {
+      "path": "assets/pbr-custom/LatheMetal/runtime/normal.webp",
+      "bytes": 652862,
+      "sha256": "62291b68233bf8075ac736c98fb472f8a3b5b3458ebd2ea53bd33a04019bf091",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/LatheMetal/runtime/roughness-metallic.webp",
+      "bytes": 485118,
+      "sha256": "cb11f6b252c8bc0eb7a837769765e0c142af40deb09565e35cd3403bc30f85bb",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/LatheMetal/runtime/baseColor.webp",
+      "bytes": 1597930,
+      "sha256": "4e479d9b99f2567d7cf35abfb94a508e64b3ac7b28a13226724fd60e69efee1e",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "appearancePending": false,
+  "geometryDisplacement": false,
+  "geometryInferenceFromAppearance": false,
+  "authorship": "CYBR custom numerical material authoring; OpenAI ImageGen appearance directed for this project.",
+  "license": "Original custom project assets; no third-party material maps.",
+  "appearance": {
+    "file": "assets/pbr-custom/source-appearance/lathe-imagegen.png",
+    "sha256": "5189064eaf9c01b830f479212793c7c0e4006a176e842252bd068f9acc0077b5",
+    "nativeSize": [
+      1254,
+      1254
+    ],
+    "nativeMode": "RGB",
+    "generator": "OpenAI ImageGen",
+    "promptFile": "assets/pbr-custom/source-appearance/lathe-prompt.txt",
+    "promptSHA256": "b8ca95a0d71219f92c582e4cbc11273afbec22b21d2efca0c6d820b2f747f005",
+    "heightInferenceFromImage": false,
+    "runtimeResize": "Lanczos to 2048 square; actual native dimensions retained above",
+    "calibration": {
+      "inputInterpretation": "sRGB appearance",
+      "linearReflectanceTargetRGB": [
+        0.69,
+        0.72,
+        0.76
+      ],
+      "method": "Periodic log-luminance correction and bounded normalized detail/mesoscopic components (2.9% and 1.9% RMS coefficients); mean-preserving metal reflectance calibration with coherent independent height marks. First/last edge texels share their average. No source brightness-to-height conversion.",
+      "reflectanceIsMeasured": false,
+      "imageCenterControlsHeight": false,
+      "pairedEdgeTexelsEqual": true
+    }
+  },
+  "authoringScriptSHA256": "9e62a0dd302fe6102ea6a517fcc6ff7179c7dd99c27f264e9f81d156301def78"
+}

@@ -1,0 +1,11 @@
+# Original wear source notice
+
+AluminumWear, SteelWear and BronzeWear are original materials made for the **CYBR portfolio instrument**. The current sparse-microstructure revision combines original OpenAI ImageGen coverage/steel oxide appearance with deterministic deposit masks, independent physical abrasion/pit heights and authored alloy properties. No downloaded material-library bytes enter these custom maps.
+
+The [contamination PNG](source-appearance/contamination-imagegen.png) and [prompt](source-appearance/contamination-prompt.txt) supply explicit contact coverage. Local contrast separation preserves irregular fingerprint ridge contacts; it does not produce geometry. The [oxide PNG](source-appearance/rust-imagegen.png) and [prompt](source-appearance/rust-prompt.txt) supply steel oxide color only. Both actual originals are 1254-square. [Generation records](source-appearance/generation.json) retain tool-returned filenames, source-copy equality and PNG/prompt hashes. These inputs are generated authoring assets, not photographs, measured human prints or scanned corrosion.
+
+Aluminum and bronze never read the steel oxide image. Their neutral oxide/dirt and brown/green patina colors are independently authored. All abrasion and pit height is numerical millimeter data independent of generated image brightness. Sparse pits have no artificial raised rim; the small added relief is normal shading only.
+
+Runtime transformations include semantic grayscale inversion, local coverage-contrast separation, physically sized feathered contact stamps, numerical granular deposits/streak concentration, sparse Gaussian pits and fine abrasion cuts, physical height gradients, sRGB target-color encoding, explicit linear surface packing and exact lossless WebP encoding. Pure contact film has color alpha at most 0.035; opaque grain cores have paired material/color coverage. Source recipes, float fields and SHA-256 hashes retain the editable chain.
+
+The [clean machining pack](../pbr-custom/NOTICE.md) remains separate and preserved. Downloaded ambientCG/Julio material trials in [pbr-metal](../pbr-metal/NOTICE.md) remain historical assets with retained source credits and licenses. Lighting sources and their active status are credited separately in the portfolio records; no lighting panorama is input data for these wear maps.

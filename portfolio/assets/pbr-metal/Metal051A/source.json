@@ -1,0 +1,43 @@
+{
+  "assetId": "Metal051A",
+  "source": "https://ambientcg.com/a/Metal051A",
+  "creationMethod": "PBRProcedural",
+  "license": "CC0-1.0",
+  "licenseURL": "https://docs.ambientcg.com/license/",
+  "downloadURL": "https://ambientcg.com/get?file=Metal051A_2K-PNG.zip",
+  "archiveSHA256": "94a6382e588d30dc1a8a1b1caf7fd4b770a45b19aa57c1b5b8244c6b690da082",
+  "sourceDimensions": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "physicalDimensionsKnown": false,
+  "normalConvention": "OpenGL",
+  "maps": [
+    {
+      "file": "Metal051A_2K-PNG_Color.png",
+      "bytes": 1708824,
+      "sha256": "93377bacb38626c823d7f2ac58bb097a2602e4104a23df7af5f296a278a6b818"
+    },
+    {
+      "file": "Metal051A_2K-PNG_Displacement.png",
+      "bytes": 5430834,
+      "sha256": "80006459dba77bdd85b746747c5ef7bd223db4590e8449f2031d04ee7c270550"
+    },
+    {
+      "file": "Metal051A_2K-PNG_Metalness.png",
+      "bytes": 24828,
+      "sha256": "a6ba15a7991712cc9396ddc8d3d3c02eed3486e65f09a83cd7cf09fe068c97ff"
+    },
+    {
+      "file": "Metal051A_2K-PNG_NormalGL.png",
+      "bytes": 17110884,
+      "sha256": "b591d6a23290cf817e14358354b3b23b399b29752a26110a1ac8177c606d3b22"
+    },
+    {
+      "file": "Metal051A_2K-PNG_Roughness.png",
+      "bytes": 1861522,
+      "sha256": "88082e2e7e74d579f8aff59a396cc5062d57b9d7a0439a5ac60fcb54257d9a91"
+    }
+  ]
+}

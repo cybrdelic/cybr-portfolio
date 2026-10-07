@@ -1,0 +1,47 @@
+{
+  "asset": "LatheMetal",
+  "source": "../source.json",
+  "maps": {
+    "normal": {
+      "path": "assets/pbr-custom/LatheMetal/runtime/normal.webp",
+      "bytes": 652862,
+      "sha256": "62291b68233bf8075ac736c98fb472f8a3b5b3458ebd2ea53bd33a04019bf091",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/LatheMetal/runtime/roughness-metallic.webp",
+      "bytes": 485118,
+      "sha256": "cb11f6b252c8bc0eb7a837769765e0c142af40deb09565e35cd3403bc30f85bb",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/LatheMetal/runtime/baseColor.webp",
+      "bytes": 1597930,
+      "sha256": "4e479d9b99f2567d7cf35abfb94a508e64b3ac7b28a13226724fd60e69efee1e",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "shaderSpaces": {
+    "baseColor": "sRGB",
+    "normal": "linear data",
+    "roughnessMetallic": "linear data"
+  },
+  "downloadedInputs": []
+}

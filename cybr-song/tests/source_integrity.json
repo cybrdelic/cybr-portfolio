@@ -1,0 +1,14 @@
+{
+  "Lacuna engine": {
+    "original_sha256": "5e6e0faef23a7903446d5624c7f4869f24e6b1aab52f27f4ce4cd1d577fcbd74",
+    "retained_sha256": "5e6e0faef23a7903446d5624c7f4869f24e6b1aab52f27f4ce4cd1d577fcbd74"
+  },
+  "Piano sampler": {
+    "original_sha256": "da3b8393db85cb522e5a0e87d105b02fc721ddf4f6d4e1177a5cf2cd8e98579e",
+    "retained_sha256": "da3b8393db85cb522e5a0e87d105b02fc721ddf4f6d4e1177a5cf2cd8e98579e"
+  },
+  "Composition": {
+    "original_sha256": "2519e1bbe7ea64315b92231a637a15f1cc2a0b30f8535682ba2d0cefef516169",
+    "retained_sha256": "2519e1bbe7ea64315b92231a637a15f1cc2a0b30f8535682ba2d0cefef516169"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "asset": "BrushedMetal",
+  "source": "../source.json",
+  "maps": {
+    "normal": {
+      "path": "assets/pbr-custom/BrushedMetal/runtime/normal.webp",
+      "bytes": 220000,
+      "sha256": "f0ab88d23b15274e993d122478e0b7cf844236bc3aa274728dac19e1b218a441",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/BrushedMetal/runtime/roughness-metallic.webp",
+      "bytes": 317240,
+      "sha256": "b6e5d909a6b243d23b56cff8c17abc744df05ccd8e458a99b5ef36482a721393",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/BrushedMetal/runtime/baseColor.webp",
+      "bytes": 1458730,
+      "sha256": "56df2fa1bd91566972ac2e564a828bf37e27322a4e749ceaf4a77667b12ccc24",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "shaderSpaces": {
+    "baseColor": "sRGB",
+    "normal": "linear data",
+    "roughnessMetallic": "linear data"
+  },
+  "downloadedInputs": []
+}

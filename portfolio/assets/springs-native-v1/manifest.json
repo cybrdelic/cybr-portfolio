@@ -1,0 +1,364 @@
+{
+  "meshes": [
+    {
+      "name": "Continuous fused terrain and ridge",
+      "material": "landscape",
+      "ior": 1.5,
+      "position": {
+        "offset": 0,
+        "count": 1866525,
+        "size": 3
+      },
+      "normal": {
+        "offset": 7466100,
+        "count": 1866525,
+        "size": 3
+      },
+      "index": {
+        "offset": 14932200,
+        "count": 3723930,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 29827920,
+        "count": 1866525,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 37294020,
+        "count": 1866525,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 44760120,
+        "count": 1866525,
+        "size": 3
+      }
+    },
+    {
+      "name": "Closed_water_0",
+      "material": "water",
+      "sourceMaterial": 6,
+      "sourceTriangles": 739328,
+      "position": {
+        "offset": 52226220,
+        "count": 67506,
+        "size": 3
+      },
+      "normal": {
+        "offset": 52496244,
+        "count": 67506,
+        "size": 3
+      },
+      "index": {
+        "offset": 52766268,
+        "count": 135000,
+        "size": 1
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_1",
+      "material": "landscape",
+      "sourceMaterial": 1,
+      "sourceTriangles": 2524558,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 53306268,
+        "count": 288027,
+        "size": 3
+      },
+      "normal": {
+        "offset": 54458376,
+        "count": 288027,
+        "size": 3
+      },
+      "index": {
+        "offset": 55610484,
+        "count": 450000,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 57410484,
+        "count": 288027,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 58562592,
+        "count": 288027,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 59714700,
+        "count": 288027,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_2",
+      "material": "landscape",
+      "sourceMaterial": 2,
+      "sourceTriangles": 1541174,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 60866808,
+        "count": 173691,
+        "size": 3
+      },
+      "normal": {
+        "offset": 61561572,
+        "count": 173691,
+        "size": 3
+      },
+      "index": {
+        "offset": 62256336,
+        "count": 299997,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 63456324,
+        "count": 173691,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 64151088,
+        "count": 173691,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 64845852,
+        "count": 173691,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_4",
+      "material": "landscape",
+      "sourceMaterial": 4,
+      "sourceTriangles": 50320,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 65540616,
+        "count": 71274,
+        "size": 3
+      },
+      "normal": {
+        "offset": 65825712,
+        "count": 71274,
+        "size": 3
+      },
+      "index": {
+        "offset": 66110808,
+        "count": 135000,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 66650808,
+        "count": 71274,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 66935904,
+        "count": 71274,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 67221000,
+        "count": 71274,
+        "size": 3
+      }
+    },
+    {
+      "name": "Cupped_dry_mud_microplates",
+      "material": "landscape",
+      "sourceMaterial": 0,
+      "sourceTriangles": 40374,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 67506096,
+        "count": 82995,
+        "size": 3
+      },
+      "normal": {
+        "offset": 67838076,
+        "count": 82995,
+        "size": 3
+      },
+      "index": {
+        "offset": 68170056,
+        "count": 121122,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 68654544,
+        "count": 82995,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 68986524,
+        "count": 82995,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 69318504,
+        "count": 82995,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curved_dry_grass",
+      "material": "landscape",
+      "sourceMaterial": 3,
+      "sourceTriangles": 20726,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 69650484,
+        "count": 72576,
+        "size": 3
+      },
+      "normal": {
+        "offset": 69940788,
+        "count": 72576,
+        "size": 3
+      },
+      "index": {
+        "offset": 70231092,
+        "count": 62178,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 70479804,
+        "count": 72576,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 70770108,
+        "count": 72576,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 71060412,
+        "count": 72576,
+        "size": 3
+      }
+    },
+    {
+      "name": "Desert_shrub_branches",
+      "material": "landscape",
+      "sourceMaterial": 8,
+      "sourceTriangles": 165543,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 71350716,
+        "count": 496635,
+        "size": 3
+      },
+      "normal": {
+        "offset": 73337256,
+        "count": 496635,
+        "size": 3
+      },
+      "index": {
+        "offset": 75323796,
+        "count": 496629,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 77310312,
+        "count": 496635,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 79296852,
+        "count": 496635,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 81283392,
+        "count": 496635,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curled_small_leaves",
+      "material": "landscape",
+      "sourceMaterial": 9,
+      "sourceTriangles": 641167,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 83269932,
+        "count": 2405001,
+        "size": 3
+      },
+      "normal": {
+        "offset": 92889936,
+        "count": 2405001,
+        "size": 3
+      },
+      "index": {
+        "offset": 102509940,
+        "count": 1923501,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 110203944,
+        "count": 2405001,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 119823948,
+        "count": 2405001,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 129443952,
+        "count": 2405001,
+        "size": 3
+      }
+    },
+    {
+      "name": "Sealed mineral section",
+      "material": "landscape",
+      "ior": 1.5,
+      "position": {
+        "offset": 139063956,
+        "count": 36456,
+        "size": 3
+      },
+      "normal": {
+        "offset": 139209780,
+        "count": 36456,
+        "size": 3
+      },
+      "index": {
+        "offset": 139355604,
+        "count": 18228,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 139428516,
+        "count": 36456,
+        "size": 3
+      },
+      "parameters": {
+        "offset": 139574340,
+        "count": 36456,
+        "size": 3
+      },
+      "shadingNormal": {
+        "offset": 139720164,
+        "count": 36456,
+        "size": 3
+      }
+    }
+  ],
+  "triangles": 2455195,
+  "decodedBytes": 139865988,
+  "sha256": "b97440fcf9e63af1c3d2ce321c51c64077d1fe22d5592d8fee95560ccb3bebaa",
+  "source": "Recovered full CYBR GEO scene NPZ + R2 mineral deformation",
+  "bake": "Unlit physical source material parameters; NOT baked radiance.",
+  "mountains": "Source ridge fused into foreground in object space with a buried, smoothly graded transition. Authored miniature; not uniform geographic scale.",
+  "sprites": false,
+  "sourceParametersSHA256": "00998b63184875ee23f0c32f3558dab7fd80f7bbfbaac16b86fbf78adffad8f4",
+  "closedWater": true,
+  "productionApproved": false
+}

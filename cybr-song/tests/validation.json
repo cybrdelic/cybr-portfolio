@@ -1,0 +1,81 @@
+{
+  "Velvet_Switchblade": {
+    "unchanged_note_schedule": true,
+    "master_finite_unclipped": true,
+    "duration_s": 150.04089583333334,
+    "video_full_decode": "passed",
+    "video_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        },
+        {
+          "codec_type": "data"
+        }
+      ],
+      "format": {
+        "duration": "150.041000"
+      }
+    }
+  },
+  "The_Orchard_Keeps_the_Rain": {
+    "unchanged_note_schedule": true,
+    "master_finite_unclipped": true,
+    "duration_s": 179.0368125,
+    "video_full_decode": "passed",
+    "video_probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        },
+        {
+          "codec_type": "data"
+        }
+      ],
+      "format": {
+        "duration": "179.037000"
+      }
+    }
+  },
+  "soft_attack_tests": [
+    {
+      "velocity": 32,
+      "attack_25ms_delta_db": -6.3806294807607955,
+      "tail_after_101ms_bit_identical": true,
+      "high_velocity_unchanged": false
+    },
+    {
+      "velocity": 56,
+      "attack_25ms_delta_db": -2.6220876793708903,
+      "tail_after_101ms_bit_identical": true,
+      "high_velocity_unchanged": false
+    },
+    {
+      "velocity": 72,
+      "attack_25ms_delta_db": -0.7896973222184871,
+      "tail_after_101ms_bit_identical": true,
+      "high_velocity_unchanged": false
+    },
+    {
+      "velocity": 96,
+      "attack_25ms_delta_db": 0.0,
+      "tail_after_101ms_bit_identical": true,
+      "high_velocity_unchanged": true
+    }
+  ],
+  "scope": "Numerical, provenance, timing and decode checks. No claim of perceptual validation."
+}

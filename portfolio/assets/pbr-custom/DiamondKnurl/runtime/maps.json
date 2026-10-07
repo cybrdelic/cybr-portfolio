@@ -1,0 +1,47 @@
+{
+  "asset": "DiamondKnurl",
+  "source": "../source.json",
+  "maps": {
+    "normal": {
+      "path": "assets/pbr-custom/DiamondKnurl/runtime/normal.webp",
+      "bytes": 1693276,
+      "sha256": "f3168bd1846a8c01596f54129ae99a1d85de93ea6d68958fd02c25f8525782e8",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/DiamondKnurl/runtime/roughness-metallic.webp",
+      "bytes": 1198244,
+      "sha256": "e0d9624edb99b61f8d5985611995520531b57de0f08f35d9e30c5a0b95ed6217",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/DiamondKnurl/runtime/baseColor.webp",
+      "bytes": 2520618,
+      "sha256": "f6e659dbcd6457365da26bf0b015207ca3b3abeab11ea9b1b91e26ff63977bbb",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "shaderSpaces": {
+    "baseColor": "sRGB",
+    "normal": "linear data",
+    "roughnessMetallic": "linear data"
+  },
+  "downloadedInputs": []
+}

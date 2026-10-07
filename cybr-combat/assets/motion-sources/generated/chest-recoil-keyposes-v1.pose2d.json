@@ -1,0 +1,3332 @@
+{
+  "schema_version": 1,
+  "kind": "generated_still_keyposes_2d",
+  "source": {
+    "path": "assets/motion-sources/generated/chest-recoil-keyposes-v1.png",
+    "sha256": "a3eb7db0adac42b25ef74d5589357e6f3002a7f1f4c11d05a49b24c0f7b6ec5f",
+    "size_bytes": 1913453,
+    "width_pixels": 1536,
+    "height_pixels": 1024,
+    "provenance": "AI-generated still keypose sheet supplied for CYBR chest-recoil authoring",
+    "not_film_or_motion_capture": true
+  },
+  "estimator": {
+    "name": "MediaPipe Pose GHUM",
+    "mode": "static_image",
+    "model_complexity": 2,
+    "landmark_names": [
+      "NOSE",
+      "LEFT_EYE_INNER",
+      "LEFT_EYE",
+      "LEFT_EYE_OUTER",
+      "RIGHT_EYE_INNER",
+      "RIGHT_EYE",
+      "RIGHT_EYE_OUTER",
+      "LEFT_EAR",
+      "RIGHT_EAR",
+      "MOUTH_LEFT",
+      "MOUTH_RIGHT",
+      "LEFT_SHOULDER",
+      "RIGHT_SHOULDER",
+      "LEFT_ELBOW",
+      "RIGHT_ELBOW",
+      "LEFT_WRIST",
+      "RIGHT_WRIST",
+      "LEFT_PINKY",
+      "RIGHT_PINKY",
+      "LEFT_INDEX",
+      "RIGHT_INDEX",
+      "LEFT_THUMB",
+      "RIGHT_THUMB",
+      "LEFT_HIP",
+      "RIGHT_HIP",
+      "LEFT_KNEE",
+      "RIGHT_KNEE",
+      "LEFT_ANKLE",
+      "RIGHT_ANKLE",
+      "LEFT_HEEL",
+      "RIGHT_HEEL",
+      "LEFT_FOOT_INDEX",
+      "RIGHT_FOOT_INDEX"
+    ],
+    "confidence_fields": [
+      "visibility",
+      "presence"
+    ],
+    "note": "2D landmark positions are source-image pixels. Hidden-side landmarks are model guesses, even when visibility is high; no depth or timing is inferred."
+  },
+  "layout": "six",
+  "action": "chest-recoil",
+  "pose_order_basis": "left-to-right then top-to-bottom panel order; duration and spacing unspecified",
+  "panels": [
+    {
+      "index": 0,
+      "display_order": 1,
+      "row": 0,
+      "column": 0,
+      "bounds_xyxy_pixels": [
+        0,
+        0,
+        506,
+        472
+      ],
+      "detected": true,
+      "timing_seconds": null,
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "NOSE",
+          "panel_xy_pixels": [
+            261.039,
+            68.554
+          ],
+          "source_xy_pixels": [
+            261.039,
+            68.554
+          ],
+          "visibility": 0.9991348385810852,
+          "presence": null
+        },
+        {
+          "index": 1,
+          "name": "LEFT_EYE_INNER",
+          "panel_xy_pixels": [
+            263.228,
+            57.342
+          ],
+          "source_xy_pixels": [
+            263.228,
+            57.342
+          ],
+          "visibility": 0.9985787868499756,
+          "presence": null
+        },
+        {
+          "index": 2,
+          "name": "LEFT_EYE",
+          "panel_xy_pixels": [
+            264.546,
+            57.099
+          ],
+          "source_xy_pixels": [
+            264.546,
+            57.099
+          ],
+          "visibility": 0.9986634254455566,
+          "presence": null
+        },
+        {
+          "index": 3,
+          "name": "LEFT_EYE_OUTER",
+          "panel_xy_pixels": [
+            266.198,
+            56.927
+          ],
+          "source_xy_pixels": [
+            266.198,
+            56.927
+          ],
+          "visibility": 0.9987702965736389,
+          "presence": null
+        },
+        {
+          "index": 4,
+          "name": "RIGHT_EYE_INNER",
+          "panel_xy_pixels": [
+            255.547,
+            56.288
+          ],
+          "source_xy_pixels": [
+            255.547,
+            56.288
+          ],
+          "visibility": 0.998755693435669,
+          "presence": null
+        },
+        {
+          "index": 5,
+          "name": "RIGHT_EYE",
+          "panel_xy_pixels": [
+            251.32,
+            55.614
+          ],
+          "source_xy_pixels": [
+            251.32,
+            55.614
+          ],
+          "visibility": 0.9989749193191528,
+          "presence": null
+        },
+        {
+          "index": 6,
+          "name": "RIGHT_EYE_OUTER",
+          "panel_xy_pixels": [
+            246.199,
+            55.299
+          ],
+          "source_xy_pixels": [
+            246.199,
+            55.299
+          ],
+          "visibility": 0.9988585710525513,
+          "presence": null
+        },
+        {
+          "index": 7,
+          "name": "LEFT_EAR",
+          "panel_xy_pixels": [
+            260.39,
+            57.8
+          ],
+          "source_xy_pixels": [
+            260.39,
+            57.8
+          ],
+          "visibility": 0.9993021488189697,
+          "presence": null
+        },
+        {
+          "index": 8,
+          "name": "RIGHT_EAR",
+          "panel_xy_pixels": [
+            232.34,
+            54.355
+          ],
+          "source_xy_pixels": [
+            232.34,
+            54.355
+          ],
+          "visibility": 0.9976453185081482,
+          "presence": null
+        },
+        {
+          "index": 9,
+          "name": "MOUTH_LEFT",
+          "panel_xy_pixels": [
+            261.464,
+            75.454
+          ],
+          "source_xy_pixels": [
+            261.464,
+            75.454
+          ],
+          "visibility": 0.9987967014312744,
+          "presence": null
+        },
+        {
+          "index": 10,
+          "name": "MOUTH_RIGHT",
+          "panel_xy_pixels": [
+            251.069,
+            75.108
+          ],
+          "source_xy_pixels": [
+            251.069,
+            75.108
+          ],
+          "visibility": 0.9985376596450806,
+          "presence": null
+        },
+        {
+          "index": 11,
+          "name": "LEFT_SHOULDER",
+          "panel_xy_pixels": [
+            283.057,
+            95.338
+          ],
+          "source_xy_pixels": [
+            283.057,
+            95.338
+          ],
+          "visibility": 0.999876856803894,
+          "presence": null
+        },
+        {
+          "index": 12,
+          "name": "RIGHT_SHOULDER",
+          "panel_xy_pixels": [
+            183.037,
+            94.097
+          ],
+          "source_xy_pixels": [
+            183.037,
+            94.097
+          ],
+          "visibility": 0.9987937211990356,
+          "presence": null
+        },
+        {
+          "index": 13,
+          "name": "LEFT_ELBOW",
+          "panel_xy_pixels": [
+            309.141,
+            163.596
+          ],
+          "source_xy_pixels": [
+            309.141,
+            163.596
+          ],
+          "visibility": 0.9345353245735168,
+          "presence": null
+        },
+        {
+          "index": 14,
+          "name": "RIGHT_ELBOW",
+          "panel_xy_pixels": [
+            184.883,
+            161.311
+          ],
+          "source_xy_pixels": [
+            184.883,
+            161.311
+          ],
+          "visibility": 0.944457471370697,
+          "presence": null
+        },
+        {
+          "index": 15,
+          "name": "LEFT_WRIST",
+          "panel_xy_pixels": [
+            287.25,
+            100.307
+          ],
+          "source_xy_pixels": [
+            287.25,
+            100.307
+          ],
+          "visibility": 0.9552252888679504,
+          "presence": null
+        },
+        {
+          "index": 16,
+          "name": "RIGHT_WRIST",
+          "panel_xy_pixels": [
+            219.074,
+            98.858
+          ],
+          "source_xy_pixels": [
+            219.074,
+            98.858
+          ],
+          "visibility": 0.9383374452590942,
+          "presence": null
+        },
+        {
+          "index": 17,
+          "name": "LEFT_PINKY",
+          "panel_xy_pixels": [
+            284.354,
+            80.721
+          ],
+          "source_xy_pixels": [
+            284.354,
+            80.721
+          ],
+          "visibility": 0.9315295219421387,
+          "presence": null
+        },
+        {
+          "index": 18,
+          "name": "RIGHT_PINKY",
+          "panel_xy_pixels": [
+            224.037,
+            82.221
+          ],
+          "source_xy_pixels": [
+            224.037,
+            82.221
+          ],
+          "visibility": 0.8977853059768677,
+          "presence": null
+        },
+        {
+          "index": 19,
+          "name": "LEFT_INDEX",
+          "panel_xy_pixels": [
+            282.134,
+            76.81
+          ],
+          "source_xy_pixels": [
+            282.134,
+            76.81
+          ],
+          "visibility": 0.9284619092941284,
+          "presence": null
+        },
+        {
+          "index": 20,
+          "name": "RIGHT_INDEX",
+          "panel_xy_pixels": [
+            222.311,
+            75.465
+          ],
+          "source_xy_pixels": [
+            222.311,
+            75.465
+          ],
+          "visibility": 0.8892495036125183,
+          "presence": null
+        },
+        {
+          "index": 21,
+          "name": "LEFT_THUMB",
+          "panel_xy_pixels": [
+            278.491,
+            83.851
+          ],
+          "source_xy_pixels": [
+            278.491,
+            83.851
+          ],
+          "visibility": 0.8821440935134888,
+          "presence": null
+        },
+        {
+          "index": 22,
+          "name": "RIGHT_THUMB",
+          "panel_xy_pixels": [
+            222.668,
+            82.213
+          ],
+          "source_xy_pixels": [
+            222.668,
+            82.213
+          ],
+          "visibility": 0.8168945908546448,
+          "presence": null
+        },
+        {
+          "index": 23,
+          "name": "LEFT_HIP",
+          "panel_xy_pixels": [
+            270.493,
+            226.204
+          ],
+          "source_xy_pixels": [
+            270.493,
+            226.204
+          ],
+          "visibility": 0.9996572732925415,
+          "presence": null
+        },
+        {
+          "index": 24,
+          "name": "RIGHT_HIP",
+          "panel_xy_pixels": [
+            209.741,
+            230.864
+          ],
+          "source_xy_pixels": [
+            209.741,
+            230.864
+          ],
+          "visibility": 0.9992334842681885,
+          "presence": null
+        },
+        {
+          "index": 25,
+          "name": "LEFT_KNEE",
+          "panel_xy_pixels": [
+            296.265,
+            311.703
+          ],
+          "source_xy_pixels": [
+            296.265,
+            311.703
+          ],
+          "visibility": 0.9952666759490967,
+          "presence": null
+        },
+        {
+          "index": 26,
+          "name": "RIGHT_KNEE",
+          "panel_xy_pixels": [
+            177.105,
+            328.991
+          ],
+          "source_xy_pixels": [
+            177.105,
+            328.991
+          ],
+          "visibility": 0.903752863407135,
+          "presence": null
+        },
+        {
+          "index": 27,
+          "name": "LEFT_ANKLE",
+          "panel_xy_pixels": [
+            321.512,
+            425.689
+          ],
+          "source_xy_pixels": [
+            321.512,
+            425.689
+          ],
+          "visibility": 0.9837599992752075,
+          "presence": null
+        },
+        {
+          "index": 28,
+          "name": "RIGHT_ANKLE",
+          "panel_xy_pixels": [
+            187.207,
+            400.333
+          ],
+          "source_xy_pixels": [
+            187.207,
+            400.333
+          ],
+          "visibility": 0.9312503337860107,
+          "presence": null
+        },
+        {
+          "index": 29,
+          "name": "LEFT_HEEL",
+          "panel_xy_pixels": [
+            319.8,
+            438.052
+          ],
+          "source_xy_pixels": [
+            319.8,
+            438.052
+          ],
+          "visibility": 0.8560358881950378,
+          "presence": null
+        },
+        {
+          "index": 30,
+          "name": "RIGHT_HEEL",
+          "panel_xy_pixels": [
+            195.46,
+            412.425
+          ],
+          "source_xy_pixels": [
+            195.46,
+            412.425
+          ],
+          "visibility": 0.7440804839134216,
+          "presence": null
+        },
+        {
+          "index": 31,
+          "name": "LEFT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            324.859,
+            467.477
+          ],
+          "source_xy_pixels": [
+            324.859,
+            467.477
+          ],
+          "visibility": 0.9700478315353394,
+          "presence": null
+        },
+        {
+          "index": 32,
+          "name": "RIGHT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            154.362,
+            423.81
+          ],
+          "source_xy_pixels": [
+            154.362,
+            423.81
+          ],
+          "visibility": 0.8563584089279175,
+          "presence": null
+        }
+      ],
+      "key_joint_visibility": {
+        "LEFT_SHOULDER": 0.999876856803894,
+        "RIGHT_SHOULDER": 0.9987937211990356,
+        "LEFT_ELBOW": 0.9345353245735168,
+        "RIGHT_ELBOW": 0.944457471370697,
+        "LEFT_WRIST": 0.9552252888679504,
+        "RIGHT_WRIST": 0.9383374452590942,
+        "LEFT_HIP": 0.9996572732925415,
+        "RIGHT_HIP": 0.9992334842681885,
+        "LEFT_KNEE": 0.9952666759490967,
+        "RIGHT_KNEE": 0.903752863407135,
+        "LEFT_ANKLE": 0.9837599992752075,
+        "RIGHT_ANKLE": 0.9312503337860107,
+        "LEFT_HEEL": 0.8560358881950378,
+        "RIGHT_HEEL": 0.7440804839134216,
+        "LEFT_FOOT_INDEX": 0.9700478315353394,
+        "RIGHT_FOOT_INDEX": 0.8563584089279175
+      },
+      "projected_segments": {
+        "LEFT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 73.23,
+            "length_pixels": 89.299,
+            "minimum_endpoint_visibility": 0.9953
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 77.51,
+            "length_pixels": 116.749,
+            "minimum_endpoint_visibility": 0.9838
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 69.09,
+            "length_pixels": 73.072,
+            "minimum_endpoint_visibility": 0.9345
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -109.08,
+            "length_pixels": 66.968,
+            "minimum_endpoint_visibility": 0.9345
+          }
+        },
+        "RIGHT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 108.4,
+            "length_pixels": 103.412,
+            "minimum_endpoint_visibility": 0.9038
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 81.94,
+            "length_pixels": 72.054,
+            "minimum_endpoint_visibility": 0.9038
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 88.43,
+            "length_pixels": 67.239,
+            "minimum_endpoint_visibility": 0.9445
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -61.3,
+            "length_pixels": 71.2,
+            "minimum_endpoint_visibility": 0.9383
+          }
+        }
+      },
+      "manual_corrections": []
+    },
+    {
+      "index": 1,
+      "display_order": 2,
+      "row": 0,
+      "column": 1,
+      "bounds_xyxy_pixels": [
+        513,
+        0,
+        1022,
+        472
+      ],
+      "detected": true,
+      "timing_seconds": null,
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "NOSE",
+          "panel_xy_pixels": [
+            244.908,
+            57.438
+          ],
+          "source_xy_pixels": [
+            757.908,
+            57.438
+          ],
+          "visibility": 0.9994268417358398,
+          "presence": null
+        },
+        {
+          "index": 1,
+          "name": "LEFT_EYE_INNER",
+          "panel_xy_pixels": [
+            243.711,
+            47.2
+          ],
+          "source_xy_pixels": [
+            756.711,
+            47.2
+          ],
+          "visibility": 0.9989627599716187,
+          "presence": null
+        },
+        {
+          "index": 2,
+          "name": "LEFT_EYE",
+          "panel_xy_pixels": [
+            245.229,
+            47.277
+          ],
+          "source_xy_pixels": [
+            758.229,
+            47.277
+          ],
+          "visibility": 0.9989235997200012,
+          "presence": null
+        },
+        {
+          "index": 3,
+          "name": "LEFT_EYE_OUTER",
+          "panel_xy_pixels": [
+            246.644,
+            47.281
+          ],
+          "source_xy_pixels": [
+            759.644,
+            47.281
+          ],
+          "visibility": 0.9991081357002258,
+          "presence": null
+        },
+        {
+          "index": 4,
+          "name": "RIGHT_EYE_INNER",
+          "panel_xy_pixels": [
+            236.613,
+            46.532
+          ],
+          "source_xy_pixels": [
+            749.613,
+            46.532
+          ],
+          "visibility": 0.9992606043815613,
+          "presence": null
+        },
+        {
+          "index": 5,
+          "name": "RIGHT_EYE",
+          "panel_xy_pixels": [
+            233.609,
+            46.397
+          ],
+          "source_xy_pixels": [
+            746.609,
+            46.397
+          ],
+          "visibility": 0.9993540644645691,
+          "presence": null
+        },
+        {
+          "index": 6,
+          "name": "RIGHT_EYE_OUTER",
+          "panel_xy_pixels": [
+            228.73,
+            46.64
+          ],
+          "source_xy_pixels": [
+            741.73,
+            46.64
+          ],
+          "visibility": 0.9993719458580017,
+          "presence": null
+        },
+        {
+          "index": 7,
+          "name": "LEFT_EAR",
+          "panel_xy_pixels": [
+            239.585,
+            52.602
+          ],
+          "source_xy_pixels": [
+            752.585,
+            52.602
+          ],
+          "visibility": 0.9995055198669434,
+          "presence": null
+        },
+        {
+          "index": 8,
+          "name": "RIGHT_EAR",
+          "panel_xy_pixels": [
+            213.237,
+            52.691
+          ],
+          "source_xy_pixels": [
+            726.237,
+            52.691
+          ],
+          "visibility": 0.9987358450889587,
+          "presence": null
+        },
+        {
+          "index": 9,
+          "name": "MOUTH_LEFT",
+          "panel_xy_pixels": [
+            246.215,
+            65.346
+          ],
+          "source_xy_pixels": [
+            759.215,
+            65.346
+          ],
+          "visibility": 0.9995368719100952,
+          "presence": null
+        },
+        {
+          "index": 10,
+          "name": "MOUTH_RIGHT",
+          "panel_xy_pixels": [
+            236.691,
+            66.344
+          ],
+          "source_xy_pixels": [
+            749.691,
+            66.344
+          ],
+          "visibility": 0.9994820952415466,
+          "presence": null
+        },
+        {
+          "index": 11,
+          "name": "LEFT_SHOULDER",
+          "panel_xy_pixels": [
+            268.05,
+            105.452
+          ],
+          "source_xy_pixels": [
+            781.05,
+            105.452
+          ],
+          "visibility": 0.9998764991760254,
+          "presence": null
+        },
+        {
+          "index": 12,
+          "name": "RIGHT_SHOULDER",
+          "panel_xy_pixels": [
+            176.062,
+            106.552
+          ],
+          "source_xy_pixels": [
+            689.062,
+            106.552
+          ],
+          "visibility": 0.9991170763969421,
+          "presence": null
+        },
+        {
+          "index": 13,
+          "name": "LEFT_ELBOW",
+          "panel_xy_pixels": [
+            297.184,
+            171.351
+          ],
+          "source_xy_pixels": [
+            810.184,
+            171.351
+          ],
+          "visibility": 0.9063141345977783,
+          "presence": null
+        },
+        {
+          "index": 14,
+          "name": "RIGHT_ELBOW",
+          "panel_xy_pixels": [
+            179.038,
+            170.754
+          ],
+          "source_xy_pixels": [
+            692.038,
+            170.754
+          ],
+          "visibility": 0.9405361413955688,
+          "presence": null
+        },
+        {
+          "index": 15,
+          "name": "LEFT_WRIST",
+          "panel_xy_pixels": [
+            280.528,
+            112.154
+          ],
+          "source_xy_pixels": [
+            793.528,
+            112.154
+          ],
+          "visibility": 0.9415966272354126,
+          "presence": null
+        },
+        {
+          "index": 16,
+          "name": "RIGHT_WRIST",
+          "panel_xy_pixels": [
+            210.313,
+            107.787
+          ],
+          "source_xy_pixels": [
+            723.313,
+            107.787
+          ],
+          "visibility": 0.9510141611099243,
+          "presence": null
+        },
+        {
+          "index": 17,
+          "name": "LEFT_PINKY",
+          "panel_xy_pixels": [
+            274.72,
+            96.564
+          ],
+          "source_xy_pixels": [
+            787.72,
+            96.564
+          ],
+          "visibility": 0.9277435541152954,
+          "presence": null
+        },
+        {
+          "index": 18,
+          "name": "RIGHT_PINKY",
+          "panel_xy_pixels": [
+            220.007,
+            95.311
+          ],
+          "source_xy_pixels": [
+            733.007,
+            95.311
+          ],
+          "visibility": 0.9238365888595581,
+          "presence": null
+        },
+        {
+          "index": 19,
+          "name": "LEFT_INDEX",
+          "panel_xy_pixels": [
+            274.517,
+            90.659
+          ],
+          "source_xy_pixels": [
+            787.517,
+            90.659
+          ],
+          "visibility": 0.922163188457489,
+          "presence": null
+        },
+        {
+          "index": 20,
+          "name": "RIGHT_INDEX",
+          "panel_xy_pixels": [
+            213.442,
+            87.583
+          ],
+          "source_xy_pixels": [
+            726.442,
+            87.583
+          ],
+          "visibility": 0.9142121076583862,
+          "presence": null
+        },
+        {
+          "index": 21,
+          "name": "LEFT_THUMB",
+          "panel_xy_pixels": [
+            272.271,
+            96.349
+          ],
+          "source_xy_pixels": [
+            785.271,
+            96.349
+          ],
+          "visibility": 0.8816925287246704,
+          "presence": null
+        },
+        {
+          "index": 22,
+          "name": "RIGHT_THUMB",
+          "panel_xy_pixels": [
+            213.445,
+            91.908
+          ],
+          "source_xy_pixels": [
+            726.445,
+            91.908
+          ],
+          "visibility": 0.8734704852104187,
+          "presence": null
+        },
+        {
+          "index": 23,
+          "name": "LEFT_HIP",
+          "panel_xy_pixels": [
+            276.059,
+            232.538
+          ],
+          "source_xy_pixels": [
+            789.059,
+            232.538
+          ],
+          "visibility": 0.9997609257698059,
+          "presence": null
+        },
+        {
+          "index": 24,
+          "name": "RIGHT_HIP",
+          "panel_xy_pixels": [
+            216.901,
+            240.154
+          ],
+          "source_xy_pixels": [
+            729.901,
+            240.154
+          ],
+          "visibility": 0.9995476603507996,
+          "presence": null
+        },
+        {
+          "index": 25,
+          "name": "LEFT_KNEE",
+          "panel_xy_pixels": [
+            325.919,
+            323.587
+          ],
+          "source_xy_pixels": [
+            838.919,
+            323.587
+          ],
+          "visibility": 0.9953742623329163,
+          "presence": null
+        },
+        {
+          "index": 26,
+          "name": "RIGHT_KNEE",
+          "panel_xy_pixels": [
+            186.251,
+            340.759
+          ],
+          "source_xy_pixels": [
+            699.251,
+            340.759
+          ],
+          "visibility": 0.9427868127822876,
+          "presence": null
+        },
+        {
+          "index": 27,
+          "name": "LEFT_ANKLE",
+          "panel_xy_pixels": [
+            365.034,
+            437.412
+          ],
+          "source_xy_pixels": [
+            878.034,
+            437.412
+          ],
+          "visibility": 0.9848122596740723,
+          "presence": null
+        },
+        {
+          "index": 28,
+          "name": "RIGHT_ANKLE",
+          "panel_xy_pixels": [
+            183.202,
+            416.611
+          ],
+          "source_xy_pixels": [
+            696.202,
+            416.611
+          ],
+          "visibility": 0.9097498655319214,
+          "presence": null
+        },
+        {
+          "index": 29,
+          "name": "LEFT_HEEL",
+          "panel_xy_pixels": [
+            361.331,
+            452.366
+          ],
+          "source_xy_pixels": [
+            874.331,
+            452.366
+          ],
+          "visibility": 0.8284503221511841,
+          "presence": null
+        },
+        {
+          "index": 30,
+          "name": "RIGHT_HEEL",
+          "panel_xy_pixels": [
+            191.467,
+            426.996
+          ],
+          "source_xy_pixels": [
+            704.467,
+            426.996
+          ],
+          "visibility": 0.6656182408332825,
+          "presence": null
+        },
+        {
+          "index": 31,
+          "name": "LEFT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            381.716,
+            474.624
+          ],
+          "source_xy_pixels": [
+            894.716,
+            474.624
+          ],
+          "visibility": 0.9606159925460815,
+          "presence": null
+        },
+        {
+          "index": 32,
+          "name": "RIGHT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            156.39,
+            443.814
+          ],
+          "source_xy_pixels": [
+            669.39,
+            443.814
+          ],
+          "visibility": 0.7951560616493225,
+          "presence": null
+        }
+      ],
+      "key_joint_visibility": {
+        "LEFT_SHOULDER": 0.9998764991760254,
+        "RIGHT_SHOULDER": 0.9991170763969421,
+        "LEFT_ELBOW": 0.9063141345977783,
+        "RIGHT_ELBOW": 0.9405361413955688,
+        "LEFT_WRIST": 0.9415966272354126,
+        "RIGHT_WRIST": 0.9510141611099243,
+        "LEFT_HIP": 0.9997609257698059,
+        "RIGHT_HIP": 0.9995476603507996,
+        "LEFT_KNEE": 0.9953742623329163,
+        "RIGHT_KNEE": 0.9427868127822876,
+        "LEFT_ANKLE": 0.9848122596740723,
+        "RIGHT_ANKLE": 0.9097498655319214,
+        "LEFT_HEEL": 0.8284503221511841,
+        "RIGHT_HEEL": 0.6656182408332825,
+        "LEFT_FOOT_INDEX": 0.9606159925460815,
+        "RIGHT_FOOT_INDEX": 0.7951560616493225
+      },
+      "projected_segments": {
+        "LEFT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 61.29,
+            "length_pixels": 103.807,
+            "minimum_endpoint_visibility": 0.9954
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 71.04,
+            "length_pixels": 120.358,
+            "minimum_endpoint_visibility": 0.9848
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 66.15,
+            "length_pixels": 72.052,
+            "minimum_endpoint_visibility": 0.9063
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -105.71,
+            "length_pixels": 61.496,
+            "minimum_endpoint_visibility": 0.9063
+          }
+        },
+        "RIGHT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 106.94,
+            "length_pixels": 105.17,
+            "minimum_endpoint_visibility": 0.9428
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 92.3,
+            "length_pixels": 75.913,
+            "minimum_endpoint_visibility": 0.9097
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 87.35,
+            "length_pixels": 64.271,
+            "minimum_endpoint_visibility": 0.9405
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -63.59,
+            "length_pixels": 70.306,
+            "minimum_endpoint_visibility": 0.9405
+          }
+        }
+      },
+      "manual_corrections": []
+    },
+    {
+      "index": 2,
+      "display_order": 3,
+      "row": 0,
+      "column": 2,
+      "bounds_xyxy_pixels": [
+        1030,
+        0,
+        1536,
+        472
+      ],
+      "detected": true,
+      "timing_seconds": null,
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "NOSE",
+          "panel_xy_pixels": [
+            151.882,
+            47.209
+          ],
+          "source_xy_pixels": [
+            1181.882,
+            47.209
+          ],
+          "visibility": 0.9993271827697754,
+          "presence": null
+        },
+        {
+          "index": 1,
+          "name": "LEFT_EYE_INNER",
+          "panel_xy_pixels": [
+            145.343,
+            41.344
+          ],
+          "source_xy_pixels": [
+            1175.343,
+            41.344
+          ],
+          "visibility": 0.9989802241325378,
+          "presence": null
+        },
+        {
+          "index": 2,
+          "name": "LEFT_EYE",
+          "panel_xy_pixels": [
+            146.062,
+            41.036
+          ],
+          "source_xy_pixels": [
+            1176.062,
+            41.036
+          ],
+          "visibility": 0.9987738728523254,
+          "presence": null
+        },
+        {
+          "index": 3,
+          "name": "LEFT_EYE_OUTER",
+          "panel_xy_pixels": [
+            147.042,
+            40.549
+          ],
+          "source_xy_pixels": [
+            1177.042,
+            40.549
+          ],
+          "visibility": 0.9993175268173218,
+          "presence": null
+        },
+        {
+          "index": 4,
+          "name": "RIGHT_EYE_INNER",
+          "panel_xy_pixels": [
+            142.193,
+            43.265
+          ],
+          "source_xy_pixels": [
+            1172.193,
+            43.265
+          ],
+          "visibility": 0.999323844909668,
+          "presence": null
+        },
+        {
+          "index": 5,
+          "name": "RIGHT_EYE",
+          "panel_xy_pixels": [
+            139.457,
+            45.298
+          ],
+          "source_xy_pixels": [
+            1169.457,
+            45.298
+          ],
+          "visibility": 0.9993681311607361,
+          "presence": null
+        },
+        {
+          "index": 6,
+          "name": "RIGHT_EYE_OUTER",
+          "panel_xy_pixels": [
+            136.319,
+            47.646
+          ],
+          "source_xy_pixels": [
+            1166.319,
+            47.646
+          ],
+          "visibility": 0.9994744658470154,
+          "presence": null
+        },
+        {
+          "index": 7,
+          "name": "LEFT_EAR",
+          "panel_xy_pixels": [
+            142.015,
+            50.595
+          ],
+          "source_xy_pixels": [
+            1172.015,
+            50.595
+          ],
+          "visibility": 0.9996287822723389,
+          "presence": null
+        },
+        {
+          "index": 8,
+          "name": "RIGHT_EAR",
+          "panel_xy_pixels": [
+            125.37,
+            62.037
+          ],
+          "source_xy_pixels": [
+            1155.37,
+            62.037
+          ],
+          "visibility": 0.9987542629241943,
+          "presence": null
+        },
+        {
+          "index": 9,
+          "name": "MOUTH_LEFT",
+          "panel_xy_pixels": [
+            157.651,
+            55.785
+          ],
+          "source_xy_pixels": [
+            1187.651,
+            55.785
+          ],
+          "visibility": 0.999685525894165,
+          "presence": null
+        },
+        {
+          "index": 10,
+          "name": "MOUTH_RIGHT",
+          "panel_xy_pixels": [
+            154.629,
+            59.876
+          ],
+          "source_xy_pixels": [
+            1184.629,
+            59.876
+          ],
+          "visibility": 0.999586284160614,
+          "presence": null
+        },
+        {
+          "index": 11,
+          "name": "LEFT_SHOULDER",
+          "panel_xy_pixels": [
+            209.539,
+            99.962
+          ],
+          "source_xy_pixels": [
+            1239.539,
+            99.962
+          ],
+          "visibility": 0.9999712705612183,
+          "presence": null
+        },
+        {
+          "index": 12,
+          "name": "RIGHT_SHOULDER",
+          "panel_xy_pixels": [
+            128.427,
+            121.723
+          ],
+          "source_xy_pixels": [
+            1158.427,
+            121.723
+          ],
+          "visibility": 0.9998090863227844,
+          "presence": null
+        },
+        {
+          "index": 13,
+          "name": "LEFT_ELBOW",
+          "panel_xy_pixels": [
+            267.7,
+            153.529
+          ],
+          "source_xy_pixels": [
+            1297.7,
+            153.529
+          ],
+          "visibility": 0.708471417427063,
+          "presence": null
+        },
+        {
+          "index": 14,
+          "name": "RIGHT_ELBOW",
+          "panel_xy_pixels": [
+            159.729,
+            181.54
+          ],
+          "source_xy_pixels": [
+            1189.729,
+            181.54
+          ],
+          "visibility": 0.9714664816856384,
+          "presence": null
+        },
+        {
+          "index": 15,
+          "name": "LEFT_WRIST",
+          "panel_xy_pixels": [
+            239.52,
+            94.942
+          ],
+          "source_xy_pixels": [
+            1269.52,
+            94.942
+          ],
+          "visibility": 0.894702672958374,
+          "presence": null
+        },
+        {
+          "index": 16,
+          "name": "RIGHT_WRIST",
+          "panel_xy_pixels": [
+            191.052,
+            110.365
+          ],
+          "source_xy_pixels": [
+            1221.052,
+            110.365
+          ],
+          "visibility": 0.9447230696678162,
+          "presence": null
+        },
+        {
+          "index": 17,
+          "name": "LEFT_PINKY",
+          "panel_xy_pixels": [
+            229.71,
+            80.691
+          ],
+          "source_xy_pixels": [
+            1259.71,
+            80.691
+          ],
+          "visibility": 0.8952741622924805,
+          "presence": null
+        },
+        {
+          "index": 18,
+          "name": "RIGHT_PINKY",
+          "panel_xy_pixels": [
+            199.561,
+            96.186
+          ],
+          "source_xy_pixels": [
+            1229.561,
+            96.186
+          ],
+          "visibility": 0.9129934906959534,
+          "presence": null
+        },
+        {
+          "index": 19,
+          "name": "LEFT_INDEX",
+          "panel_xy_pixels": [
+            226.29,
+            75.53
+          ],
+          "source_xy_pixels": [
+            1256.29,
+            75.53
+          ],
+          "visibility": 0.8873294591903687,
+          "presence": null
+        },
+        {
+          "index": 20,
+          "name": "RIGHT_INDEX",
+          "panel_xy_pixels": [
+            192.96,
+            92.331
+          ],
+          "source_xy_pixels": [
+            1222.96,
+            92.331
+          ],
+          "visibility": 0.9029371738433838,
+          "presence": null
+        },
+        {
+          "index": 21,
+          "name": "LEFT_THUMB",
+          "panel_xy_pixels": [
+            226.396,
+            82.768
+          ],
+          "source_xy_pixels": [
+            1256.396,
+            82.768
+          ],
+          "visibility": 0.8418678045272827,
+          "presence": null
+        },
+        {
+          "index": 22,
+          "name": "RIGHT_THUMB",
+          "panel_xy_pixels": [
+            192.893,
+            96.65
+          ],
+          "source_xy_pixels": [
+            1222.893,
+            96.65
+          ],
+          "visibility": 0.8438240885734558,
+          "presence": null
+        },
+        {
+          "index": 23,
+          "name": "LEFT_HIP",
+          "panel_xy_pixels": [
+            271.089,
+            225.199
+          ],
+          "source_xy_pixels": [
+            1301.089,
+            225.199
+          ],
+          "visibility": 0.9999879598617554,
+          "presence": null
+        },
+        {
+          "index": 24,
+          "name": "RIGHT_HIP",
+          "panel_xy_pixels": [
+            220.12,
+            240.559
+          ],
+          "source_xy_pixels": [
+            1250.12,
+            240.559
+          ],
+          "visibility": 0.9999765157699585,
+          "presence": null
+        },
+        {
+          "index": 25,
+          "name": "LEFT_KNEE",
+          "panel_xy_pixels": [
+            348.281,
+            309.068
+          ],
+          "source_xy_pixels": [
+            1378.281,
+            309.068
+          ],
+          "visibility": 0.9857388734817505,
+          "presence": null
+        },
+        {
+          "index": 26,
+          "name": "RIGHT_KNEE",
+          "panel_xy_pixels": [
+            234.384,
+            338.731
+          ],
+          "source_xy_pixels": [
+            1264.384,
+            338.731
+          ],
+          "visibility": 0.9900626540184021,
+          "presence": null
+        },
+        {
+          "index": 27,
+          "name": "LEFT_ANKLE",
+          "panel_xy_pixels": [
+            382.293,
+            422.581
+          ],
+          "source_xy_pixels": [
+            1412.293,
+            422.581
+          ],
+          "visibility": 0.9925704598426819,
+          "presence": null
+        },
+        {
+          "index": 28,
+          "name": "RIGHT_ANKLE",
+          "panel_xy_pixels": [
+            166.533,
+            401.874
+          ],
+          "source_xy_pixels": [
+            1196.533,
+            401.874
+          ],
+          "visibility": 0.9822419881820679,
+          "presence": null
+        },
+        {
+          "index": 29,
+          "name": "LEFT_HEEL",
+          "panel_xy_pixels": [
+            372.818,
+            442.339
+          ],
+          "source_xy_pixels": [
+            1402.818,
+            442.339
+          ],
+          "visibility": 0.9658709168434143,
+          "presence": null
+        },
+        {
+          "index": 30,
+          "name": "RIGHT_HEEL",
+          "panel_xy_pixels": [
+            150.275,
+            406.913
+          ],
+          "source_xy_pixels": [
+            1180.275,
+            406.913
+          ],
+          "visibility": 0.8542504906654358,
+          "presence": null
+        },
+        {
+          "index": 31,
+          "name": "LEFT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            430.479,
+            453.844
+          ],
+          "source_xy_pixels": [
+            1460.479,
+            453.844
+          ],
+          "visibility": 0.989433228969574,
+          "presence": null
+        },
+        {
+          "index": 32,
+          "name": "RIGHT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            185.939,
+            442.33
+          ],
+          "source_xy_pixels": [
+            1215.939,
+            442.33
+          ],
+          "visibility": 0.9764991402626038,
+          "presence": null
+        }
+      ],
+      "key_joint_visibility": {
+        "LEFT_SHOULDER": 0.9999712705612183,
+        "RIGHT_SHOULDER": 0.9998090863227844,
+        "LEFT_ELBOW": 0.708471417427063,
+        "RIGHT_ELBOW": 0.9714664816856384,
+        "LEFT_WRIST": 0.894702672958374,
+        "RIGHT_WRIST": 0.9447230696678162,
+        "LEFT_HIP": 0.9999879598617554,
+        "RIGHT_HIP": 0.9999765157699585,
+        "LEFT_KNEE": 0.9857388734817505,
+        "RIGHT_KNEE": 0.9900626540184021,
+        "LEFT_ANKLE": 0.9925704598426819,
+        "RIGHT_ANKLE": 0.9822419881820679,
+        "LEFT_HEEL": 0.9658709168434143,
+        "RIGHT_HEEL": 0.8542504906654358,
+        "LEFT_FOOT_INDEX": 0.989433228969574,
+        "RIGHT_FOOT_INDEX": 0.9764991402626038
+      },
+      "projected_segments": {
+        "LEFT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 47.37,
+            "length_pixels": 113.985,
+            "minimum_endpoint_visibility": 0.9857
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 73.32,
+            "length_pixels": 118.499,
+            "minimum_endpoint_visibility": 0.9857
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 42.65,
+            "length_pixels": 79.07,
+            "minimum_endpoint_visibility": 0.7085
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -115.69,
+            "length_pixels": 65.012,
+            "minimum_endpoint_visibility": 0.7085
+          }
+        },
+        "RIGHT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 81.73,
+            "length_pixels": 99.203,
+            "minimum_endpoint_visibility": 0.9901
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 137.06,
+            "length_pixels": 92.687,
+            "minimum_endpoint_visibility": 0.9822
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 62.38,
+            "length_pixels": 67.512,
+            "minimum_endpoint_visibility": 0.9715
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -66.25,
+            "length_pixels": 77.763,
+            "minimum_endpoint_visibility": 0.9447
+          }
+        }
+      },
+      "manual_corrections": []
+    },
+    {
+      "index": 3,
+      "display_order": 4,
+      "row": 1,
+      "column": 0,
+      "bounds_xyxy_pixels": [
+        0,
+        479,
+        506,
+        1024
+      ],
+      "detected": true,
+      "timing_seconds": null,
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "NOSE",
+          "panel_xy_pixels": [
+            241.041,
+            99.208
+          ],
+          "source_xy_pixels": [
+            241.041,
+            578.208
+          ],
+          "visibility": 0.999804675579071,
+          "presence": null
+        },
+        {
+          "index": 1,
+          "name": "LEFT_EYE_INNER",
+          "panel_xy_pixels": [
+            242.461,
+            88.202
+          ],
+          "source_xy_pixels": [
+            242.461,
+            567.202
+          ],
+          "visibility": 0.9994776844978333,
+          "presence": null
+        },
+        {
+          "index": 2,
+          "name": "LEFT_EYE",
+          "panel_xy_pixels": [
+            244.788,
+            87.316
+          ],
+          "source_xy_pixels": [
+            244.788,
+            566.316
+          ],
+          "visibility": 0.9995869994163513,
+          "presence": null
+        },
+        {
+          "index": 3,
+          "name": "LEFT_EYE_OUTER",
+          "panel_xy_pixels": [
+            247.162,
+            86.393
+          ],
+          "source_xy_pixels": [
+            247.162,
+            565.393
+          ],
+          "visibility": 0.9996427297592163,
+          "presence": null
+        },
+        {
+          "index": 4,
+          "name": "RIGHT_EYE_INNER",
+          "panel_xy_pixels": [
+            235.308,
+            88.829
+          ],
+          "source_xy_pixels": [
+            235.308,
+            567.829
+          ],
+          "visibility": 0.999504566192627,
+          "presence": null
+        },
+        {
+          "index": 5,
+          "name": "RIGHT_EYE",
+          "panel_xy_pixels": [
+            230.874,
+            88.635
+          ],
+          "source_xy_pixels": [
+            230.874,
+            567.635
+          ],
+          "visibility": 0.9996252059936523,
+          "presence": null
+        },
+        {
+          "index": 6,
+          "name": "RIGHT_EYE_OUTER",
+          "panel_xy_pixels": [
+            226.825,
+            88.273
+          ],
+          "source_xy_pixels": [
+            226.825,
+            567.273
+          ],
+          "visibility": 0.9995182752609253,
+          "presence": null
+        },
+        {
+          "index": 7,
+          "name": "LEFT_EAR",
+          "panel_xy_pixels": [
+            241.58,
+            86.839
+          ],
+          "source_xy_pixels": [
+            241.58,
+            565.839
+          ],
+          "visibility": 0.9998365640640259,
+          "presence": null
+        },
+        {
+          "index": 8,
+          "name": "RIGHT_EAR",
+          "panel_xy_pixels": [
+            213.221,
+            88.561
+          ],
+          "source_xy_pixels": [
+            213.221,
+            567.561
+          ],
+          "visibility": 0.9991453886032104,
+          "presence": null
+        },
+        {
+          "index": 9,
+          "name": "MOUTH_LEFT",
+          "panel_xy_pixels": [
+            243.211,
+            105.015
+          ],
+          "source_xy_pixels": [
+            243.211,
+            584.015
+          ],
+          "visibility": 0.9998008608818054,
+          "presence": null
+        },
+        {
+          "index": 10,
+          "name": "MOUTH_RIGHT",
+          "panel_xy_pixels": [
+            233.195,
+            107.593
+          ],
+          "source_xy_pixels": [
+            233.195,
+            586.593
+          ],
+          "visibility": 0.9997149109840393,
+          "presence": null
+        },
+        {
+          "index": 11,
+          "name": "LEFT_SHOULDER",
+          "panel_xy_pixels": [
+            278.747,
+            120.796
+          ],
+          "source_xy_pixels": [
+            278.747,
+            599.796
+          ],
+          "visibility": 0.9999943971633911,
+          "presence": null
+        },
+        {
+          "index": 12,
+          "name": "RIGHT_SHOULDER",
+          "panel_xy_pixels": [
+            179.588,
+            128.693
+          ],
+          "source_xy_pixels": [
+            179.588,
+            607.693
+          ],
+          "visibility": 0.9998451471328735,
+          "presence": null
+        },
+        {
+          "index": 13,
+          "name": "LEFT_ELBOW",
+          "panel_xy_pixels": [
+            334.493,
+            169.073
+          ],
+          "source_xy_pixels": [
+            334.493,
+            648.073
+          ],
+          "visibility": 0.9954699277877808,
+          "presence": null
+        },
+        {
+          "index": 14,
+          "name": "RIGHT_ELBOW",
+          "panel_xy_pixels": [
+            154.619,
+            192.407
+          ],
+          "source_xy_pixels": [
+            154.619,
+            671.407
+          ],
+          "visibility": 0.9547064900398254,
+          "presence": null
+        },
+        {
+          "index": 15,
+          "name": "LEFT_WRIST",
+          "panel_xy_pixels": [
+            325.225,
+            189.555
+          ],
+          "source_xy_pixels": [
+            325.225,
+            668.555
+          ],
+          "visibility": 0.9991528987884521,
+          "presence": null
+        },
+        {
+          "index": 16,
+          "name": "RIGHT_WRIST",
+          "panel_xy_pixels": [
+            187.428,
+            135.892
+          ],
+          "source_xy_pixels": [
+            187.428,
+            614.892
+          ],
+          "visibility": 0.994601845741272,
+          "presence": null
+        },
+        {
+          "index": 17,
+          "name": "LEFT_PINKY",
+          "panel_xy_pixels": [
+            323.273,
+            198.413
+          ],
+          "source_xy_pixels": [
+            323.273,
+            677.413
+          ],
+          "visibility": 0.9986530542373657,
+          "presence": null
+        },
+        {
+          "index": 18,
+          "name": "RIGHT_PINKY",
+          "panel_xy_pixels": [
+            200.888,
+            120.135
+          ],
+          "source_xy_pixels": [
+            200.888,
+            599.135
+          ],
+          "visibility": 0.9936115145683289,
+          "presence": null
+        },
+        {
+          "index": 19,
+          "name": "LEFT_INDEX",
+          "panel_xy_pixels": [
+            314.407,
+            191.141
+          ],
+          "source_xy_pixels": [
+            314.407,
+            670.141
+          ],
+          "visibility": 0.9987800717353821,
+          "presence": null
+        },
+        {
+          "index": 20,
+          "name": "RIGHT_INDEX",
+          "panel_xy_pixels": [
+            201.41,
+            113.334
+          ],
+          "source_xy_pixels": [
+            201.41,
+            592.334
+          ],
+          "visibility": 0.9933767914772034,
+          "presence": null
+        },
+        {
+          "index": 21,
+          "name": "LEFT_THUMB",
+          "panel_xy_pixels": [
+            311.958,
+            188.103
+          ],
+          "source_xy_pixels": [
+            311.958,
+            667.103
+          ],
+          "visibility": 0.9976518750190735,
+          "presence": null
+        },
+        {
+          "index": 22,
+          "name": "RIGHT_THUMB",
+          "panel_xy_pixels": [
+            199.092,
+            118.77
+          ],
+          "source_xy_pixels": [
+            199.092,
+            597.77
+          ],
+          "visibility": 0.9880762100219727,
+          "presence": null
+        },
+        {
+          "index": 23,
+          "name": "LEFT_HIP",
+          "panel_xy_pixels": [
+            276.205,
+            255.992
+          ],
+          "source_xy_pixels": [
+            276.205,
+            734.992
+          ],
+          "visibility": 0.9999110698699951,
+          "presence": null
+        },
+        {
+          "index": 24,
+          "name": "RIGHT_HIP",
+          "panel_xy_pixels": [
+            219.913,
+            260.004
+          ],
+          "source_xy_pixels": [
+            219.913,
+            739.004
+          ],
+          "visibility": 0.9998517036437988,
+          "presence": null
+        },
+        {
+          "index": 25,
+          "name": "LEFT_KNEE",
+          "panel_xy_pixels": [
+            315.203,
+            351.129
+          ],
+          "source_xy_pixels": [
+            315.203,
+            830.129
+          ],
+          "visibility": 0.9829588532447815,
+          "presence": null
+        },
+        {
+          "index": 26,
+          "name": "RIGHT_KNEE",
+          "panel_xy_pixels": [
+            166.408,
+            338.112
+          ],
+          "source_xy_pixels": [
+            166.408,
+            817.112
+          ],
+          "visibility": 0.9943724870681763,
+          "presence": null
+        },
+        {
+          "index": 27,
+          "name": "LEFT_ANKLE",
+          "panel_xy_pixels": [
+            365.347,
+            401.507
+          ],
+          "source_xy_pixels": [
+            365.347,
+            880.507
+          ],
+          "visibility": 0.9559414386749268,
+          "presence": null
+        },
+        {
+          "index": 28,
+          "name": "RIGHT_ANKLE",
+          "panel_xy_pixels": [
+            189.239,
+            437.547
+          ],
+          "source_xy_pixels": [
+            189.239,
+            916.547
+          ],
+          "visibility": 0.993506908416748,
+          "presence": null
+        },
+        {
+          "index": 29,
+          "name": "LEFT_HEEL",
+          "panel_xy_pixels": [
+            370.746,
+            402.263
+          ],
+          "source_xy_pixels": [
+            370.746,
+            881.263
+          ],
+          "visibility": 0.6674630641937256,
+          "presence": null
+        },
+        {
+          "index": 30,
+          "name": "RIGHT_HEEL",
+          "panel_xy_pixels": [
+            199.656,
+            454.636
+          ],
+          "source_xy_pixels": [
+            199.656,
+            933.636
+          ],
+          "visibility": 0.9523244500160217,
+          "presence": null
+        },
+        {
+          "index": 31,
+          "name": "LEFT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            361.66,
+            451.032
+          ],
+          "source_xy_pixels": [
+            361.66,
+            930.032
+          ],
+          "visibility": 0.9387546181678772,
+          "presence": null
+        },
+        {
+          "index": 32,
+          "name": "RIGHT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            147.823,
+            465.949
+          ],
+          "source_xy_pixels": [
+            147.823,
+            944.949
+          ],
+          "visibility": 0.9887720942497253,
+          "presence": null
+        }
+      ],
+      "key_joint_visibility": {
+        "LEFT_SHOULDER": 0.9999943971633911,
+        "RIGHT_SHOULDER": 0.9998451471328735,
+        "LEFT_ELBOW": 0.9954699277877808,
+        "RIGHT_ELBOW": 0.9547064900398254,
+        "LEFT_WRIST": 0.9991528987884521,
+        "RIGHT_WRIST": 0.994601845741272,
+        "LEFT_HIP": 0.9999110698699951,
+        "RIGHT_HIP": 0.9998517036437988,
+        "LEFT_KNEE": 0.9829588532447815,
+        "RIGHT_KNEE": 0.9943724870681763,
+        "LEFT_ANKLE": 0.9559414386749268,
+        "RIGHT_ANKLE": 0.993506908416748,
+        "LEFT_HEEL": 0.6674630641937256,
+        "RIGHT_HEEL": 0.9523244500160217,
+        "LEFT_FOOT_INDEX": 0.9387546181678772,
+        "RIGHT_FOOT_INDEX": 0.9887720942497253
+      },
+      "projected_segments": {
+        "LEFT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 67.71,
+            "length_pixels": 102.82,
+            "minimum_endpoint_visibility": 0.983
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 45.13,
+            "length_pixels": 71.08,
+            "minimum_endpoint_visibility": 0.9559
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 40.89,
+            "length_pixels": 73.745,
+            "minimum_endpoint_visibility": 0.9955
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": 114.35,
+            "length_pixels": 22.481,
+            "minimum_endpoint_visibility": 0.9955
+          }
+        },
+        "RIGHT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 124.41,
+            "length_pixels": 94.677,
+            "minimum_endpoint_visibility": 0.9944
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 77.07,
+            "length_pixels": 102.022,
+            "minimum_endpoint_visibility": 0.9935
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 111.4,
+            "length_pixels": 68.432,
+            "minimum_endpoint_visibility": 0.9547
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -59.86,
+            "length_pixels": 65.348,
+            "minimum_endpoint_visibility": 0.9547
+          }
+        }
+      },
+      "manual_corrections": []
+    },
+    {
+      "index": 4,
+      "display_order": 5,
+      "row": 1,
+      "column": 1,
+      "bounds_xyxy_pixels": [
+        513,
+        479,
+        1022,
+        1024
+      ],
+      "detected": true,
+      "timing_seconds": null,
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "NOSE",
+          "panel_xy_pixels": [
+            278.152,
+            116.334
+          ],
+          "source_xy_pixels": [
+            791.152,
+            595.334
+          ],
+          "visibility": 0.9974931478500366,
+          "presence": null
+        },
+        {
+          "index": 1,
+          "name": "LEFT_EYE_INNER",
+          "panel_xy_pixels": [
+            280.452,
+            106.77
+          ],
+          "source_xy_pixels": [
+            793.452,
+            585.77
+          ],
+          "visibility": 0.9959856867790222,
+          "presence": null
+        },
+        {
+          "index": 2,
+          "name": "LEFT_EYE",
+          "panel_xy_pixels": [
+            281.047,
+            106.51
+          ],
+          "source_xy_pixels": [
+            794.047,
+            585.51
+          ],
+          "visibility": 0.9958314299583435,
+          "presence": null
+        },
+        {
+          "index": 3,
+          "name": "LEFT_EYE_OUTER",
+          "panel_xy_pixels": [
+            281.907,
+            106.285
+          ],
+          "source_xy_pixels": [
+            794.907,
+            585.285
+          ],
+          "visibility": 0.9967376589775085,
+          "presence": null
+        },
+        {
+          "index": 4,
+          "name": "RIGHT_EYE_INNER",
+          "panel_xy_pixels": [
+            274.38,
+            105.786
+          ],
+          "source_xy_pixels": [
+            787.38,
+            584.786
+          ],
+          "visibility": 0.9977200627326965,
+          "presence": null
+        },
+        {
+          "index": 5,
+          "name": "RIGHT_EYE",
+          "panel_xy_pixels": [
+            271.168,
+            104.464
+          ],
+          "source_xy_pixels": [
+            784.168,
+            583.464
+          ],
+          "visibility": 0.9980772733688354,
+          "presence": null
+        },
+        {
+          "index": 6,
+          "name": "RIGHT_EYE_OUTER",
+          "panel_xy_pixels": [
+            267.16,
+            103.204
+          ],
+          "source_xy_pixels": [
+            780.16,
+            582.204
+          ],
+          "visibility": 0.9982763528823853,
+          "presence": null
+        },
+        {
+          "index": 7,
+          "name": "LEFT_EAR",
+          "panel_xy_pixels": [
+            272.03,
+            100.931
+          ],
+          "source_xy_pixels": [
+            785.03,
+            579.931
+          ],
+          "visibility": 0.9973673224449158,
+          "presence": null
+        },
+        {
+          "index": 8,
+          "name": "RIGHT_EAR",
+          "panel_xy_pixels": [
+            251.438,
+            97.474
+          ],
+          "source_xy_pixels": [
+            764.438,
+            576.474
+          ],
+          "visibility": 0.9960452914237976,
+          "presence": null
+        },
+        {
+          "index": 9,
+          "name": "MOUTH_LEFT",
+          "panel_xy_pixels": [
+            276.223,
+            120.413
+          ],
+          "source_xy_pixels": [
+            789.223,
+            599.413
+          ],
+          "visibility": 0.9976143836975098,
+          "presence": null
+        },
+        {
+          "index": 10,
+          "name": "MOUTH_RIGHT",
+          "panel_xy_pixels": [
+            267.828,
+            120.142
+          ],
+          "source_xy_pixels": [
+            780.828,
+            599.142
+          ],
+          "visibility": 0.9984692931175232,
+          "presence": null
+        },
+        {
+          "index": 11,
+          "name": "LEFT_SHOULDER",
+          "panel_xy_pixels": [
+            288.488,
+            127.91
+          ],
+          "source_xy_pixels": [
+            801.488,
+            606.91
+          ],
+          "visibility": 0.9999681711196899,
+          "presence": null
+        },
+        {
+          "index": 12,
+          "name": "RIGHT_SHOULDER",
+          "panel_xy_pixels": [
+            187.704,
+            122.43
+          ],
+          "source_xy_pixels": [
+            700.704,
+            601.43
+          ],
+          "visibility": 0.9998675584793091,
+          "presence": null
+        },
+        {
+          "index": 13,
+          "name": "LEFT_ELBOW",
+          "panel_xy_pixels": [
+            307.121,
+            207.105
+          ],
+          "source_xy_pixels": [
+            820.121,
+            686.105
+          ],
+          "visibility": 0.881303608417511,
+          "presence": null
+        },
+        {
+          "index": 14,
+          "name": "RIGHT_ELBOW",
+          "panel_xy_pixels": [
+            193.261,
+            200.67
+          ],
+          "source_xy_pixels": [
+            706.261,
+            679.67
+          ],
+          "visibility": 0.9807081818580627,
+          "presence": null
+        },
+        {
+          "index": 15,
+          "name": "LEFT_WRIST",
+          "panel_xy_pixels": [
+            298.82,
+            146.592
+          ],
+          "source_xy_pixels": [
+            811.82,
+            625.592
+          ],
+          "visibility": 0.8768386244773865,
+          "presence": null
+        },
+        {
+          "index": 16,
+          "name": "RIGHT_WRIST",
+          "panel_xy_pixels": [
+            238.764,
+            141.245
+          ],
+          "source_xy_pixels": [
+            751.764,
+            620.245
+          ],
+          "visibility": 0.9494046568870544,
+          "presence": null
+        },
+        {
+          "index": 17,
+          "name": "LEFT_PINKY",
+          "panel_xy_pixels": [
+            299.178,
+            129.837
+          ],
+          "source_xy_pixels": [
+            812.178,
+            608.837
+          ],
+          "visibility": 0.8052776455879211,
+          "presence": null
+        },
+        {
+          "index": 18,
+          "name": "RIGHT_PINKY",
+          "panel_xy_pixels": [
+            248.791,
+            128.804
+          ],
+          "source_xy_pixels": [
+            761.791,
+            607.804
+          ],
+          "visibility": 0.8603531122207642,
+          "presence": null
+        },
+        {
+          "index": 19,
+          "name": "LEFT_INDEX",
+          "panel_xy_pixels": [
+            297.305,
+            123.988
+          ],
+          "source_xy_pixels": [
+            810.305,
+            602.988
+          ],
+          "visibility": 0.7839610576629639,
+          "presence": null
+        },
+        {
+          "index": 20,
+          "name": "RIGHT_INDEX",
+          "panel_xy_pixels": [
+            243.263,
+            119.078
+          ],
+          "source_xy_pixels": [
+            756.263,
+            598.078
+          ],
+          "visibility": 0.8435975313186646,
+          "presence": null
+        },
+        {
+          "index": 21,
+          "name": "LEFT_THUMB",
+          "panel_xy_pixels": [
+            292.367,
+            129.027
+          ],
+          "source_xy_pixels": [
+            805.367,
+            608.027
+          ],
+          "visibility": 0.6263332962989807,
+          "presence": null
+        },
+        {
+          "index": 22,
+          "name": "RIGHT_THUMB",
+          "panel_xy_pixels": [
+            243.506,
+            123.924
+          ],
+          "source_xy_pixels": [
+            756.506,
+            602.924
+          ],
+          "visibility": 0.6802083849906921,
+          "presence": null
+        },
+        {
+          "index": 23,
+          "name": "LEFT_HIP",
+          "panel_xy_pixels": [
+            262.836,
+            246.736
+          ],
+          "source_xy_pixels": [
+            775.836,
+            725.736
+          ],
+          "visibility": 0.9998975992202759,
+          "presence": null
+        },
+        {
+          "index": 24,
+          "name": "RIGHT_HIP",
+          "panel_xy_pixels": [
+            204.446,
+            248.466
+          ],
+          "source_xy_pixels": [
+            717.446,
+            727.466
+          ],
+          "visibility": 0.9998883008956909,
+          "presence": null
+        },
+        {
+          "index": 25,
+          "name": "LEFT_KNEE",
+          "panel_xy_pixels": [
+            322.713,
+            338.0
+          ],
+          "source_xy_pixels": [
+            835.713,
+            817.0
+          ],
+          "visibility": 0.9019745588302612,
+          "presence": null
+        },
+        {
+          "index": 26,
+          "name": "RIGHT_KNEE",
+          "panel_xy_pixels": [
+            206.101,
+            334.902
+          ],
+          "source_xy_pixels": [
+            719.101,
+            813.902
+          ],
+          "visibility": 0.9915434122085571,
+          "presence": null
+        },
+        {
+          "index": 27,
+          "name": "LEFT_ANKLE",
+          "panel_xy_pixels": [
+            326.965,
+            418.854
+          ],
+          "source_xy_pixels": [
+            839.965,
+            897.854
+          ],
+          "visibility": 0.8956438302993774,
+          "presence": null
+        },
+        {
+          "index": 28,
+          "name": "RIGHT_ANKLE",
+          "panel_xy_pixels": [
+            172.626,
+            439.353
+          ],
+          "source_xy_pixels": [
+            685.626,
+            918.353
+          ],
+          "visibility": 0.9643834233283997,
+          "presence": null
+        },
+        {
+          "index": 29,
+          "name": "LEFT_HEEL",
+          "panel_xy_pixels": [
+            318.139,
+            432.367
+          ],
+          "source_xy_pixels": [
+            831.139,
+            911.367
+          ],
+          "visibility": 0.737989068031311,
+          "presence": null
+        },
+        {
+          "index": 30,
+          "name": "RIGHT_HEEL",
+          "panel_xy_pixels": [
+            166.857,
+            451.854
+          ],
+          "source_xy_pixels": [
+            679.857,
+            930.854
+          ],
+          "visibility": 0.6882479190826416,
+          "presence": null
+        },
+        {
+          "index": 31,
+          "name": "LEFT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            358.346,
+            447.454
+          ],
+          "source_xy_pixels": [
+            871.346,
+            926.454
+          ],
+          "visibility": 0.8737173080444336,
+          "presence": null
+        },
+        {
+          "index": 32,
+          "name": "RIGHT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            174.447,
+            480.374
+          ],
+          "source_xy_pixels": [
+            687.447,
+            959.374
+          ],
+          "visibility": 0.9353224635124207,
+          "presence": null
+        }
+      ],
+      "key_joint_visibility": {
+        "LEFT_SHOULDER": 0.9999681711196899,
+        "RIGHT_SHOULDER": 0.9998675584793091,
+        "LEFT_ELBOW": 0.881303608417511,
+        "RIGHT_ELBOW": 0.9807081818580627,
+        "LEFT_WRIST": 0.8768386244773865,
+        "RIGHT_WRIST": 0.9494046568870544,
+        "LEFT_HIP": 0.9998975992202759,
+        "RIGHT_HIP": 0.9998883008956909,
+        "LEFT_KNEE": 0.9019745588302612,
+        "RIGHT_KNEE": 0.9915434122085571,
+        "LEFT_ANKLE": 0.8956438302993774,
+        "RIGHT_ANKLE": 0.9643834233283997,
+        "LEFT_HEEL": 0.737989068031311,
+        "RIGHT_HEEL": 0.6882479190826416,
+        "LEFT_FOOT_INDEX": 0.8737173080444336,
+        "RIGHT_FOOT_INDEX": 0.9353224635124207
+      },
+      "projected_segments": {
+        "LEFT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 56.73,
+            "length_pixels": 109.153,
+            "minimum_endpoint_visibility": 0.902
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 86.99,
+            "length_pixels": 80.966,
+            "minimum_endpoint_visibility": 0.8956
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 76.76,
+            "length_pixels": 81.357,
+            "minimum_endpoint_visibility": 0.8813
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -97.81,
+            "length_pixels": 61.08,
+            "minimum_endpoint_visibility": 0.8768
+          }
+        },
+        "RIGHT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 88.9,
+            "length_pixels": 86.452,
+            "minimum_endpoint_visibility": 0.9915
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 107.77,
+            "length_pixels": 109.684,
+            "minimum_endpoint_visibility": 0.9644
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 85.94,
+            "length_pixels": 78.437,
+            "minimum_endpoint_visibility": 0.9807
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -52.56,
+            "length_pixels": 74.846,
+            "minimum_endpoint_visibility": 0.9494
+          }
+        }
+      },
+      "manual_corrections": []
+    },
+    {
+      "index": 5,
+      "display_order": 6,
+      "row": 1,
+      "column": 2,
+      "bounds_xyxy_pixels": [
+        1030,
+        479,
+        1536,
+        1024
+      ],
+      "detected": true,
+      "timing_seconds": null,
+      "landmarks": [
+        {
+          "index": 0,
+          "name": "NOSE",
+          "panel_xy_pixels": [
+            265.572,
+            98.051
+          ],
+          "source_xy_pixels": [
+            1295.572,
+            577.051
+          ],
+          "visibility": 0.9996007084846497,
+          "presence": null
+        },
+        {
+          "index": 1,
+          "name": "LEFT_EYE_INNER",
+          "panel_xy_pixels": [
+            270.251,
+            86.768
+          ],
+          "source_xy_pixels": [
+            1300.251,
+            565.768
+          ],
+          "visibility": 0.9994983673095703,
+          "presence": null
+        },
+        {
+          "index": 2,
+          "name": "LEFT_EYE",
+          "panel_xy_pixels": [
+            272.858,
+            86.483
+          ],
+          "source_xy_pixels": [
+            1302.858,
+            565.483
+          ],
+          "visibility": 0.999430239200592,
+          "presence": null
+        },
+        {
+          "index": 3,
+          "name": "LEFT_EYE_OUTER",
+          "panel_xy_pixels": [
+            275.431,
+            86.199
+          ],
+          "source_xy_pixels": [
+            1305.431,
+            565.199
+          ],
+          "visibility": 0.9995729327201843,
+          "presence": null
+        },
+        {
+          "index": 4,
+          "name": "RIGHT_EYE_INNER",
+          "panel_xy_pixels": [
+            260.343,
+            85.312
+          ],
+          "source_xy_pixels": [
+            1290.343,
+            564.312
+          ],
+          "visibility": 0.9994694590568542,
+          "presence": null
+        },
+        {
+          "index": 5,
+          "name": "RIGHT_EYE",
+          "panel_xy_pixels": [
+            255.277,
+            84.213
+          ],
+          "source_xy_pixels": [
+            1285.277,
+            563.213
+          ],
+          "visibility": 0.9994317889213562,
+          "presence": null
+        },
+        {
+          "index": 6,
+          "name": "RIGHT_EYE_OUTER",
+          "panel_xy_pixels": [
+            251.236,
+            83.726
+          ],
+          "source_xy_pixels": [
+            1281.236,
+            562.726
+          ],
+          "visibility": 0.9993952512741089,
+          "presence": null
+        },
+        {
+          "index": 7,
+          "name": "LEFT_EAR",
+          "panel_xy_pixels": [
+            272.913,
+            85.262
+          ],
+          "source_xy_pixels": [
+            1302.913,
+            564.262
+          ],
+          "visibility": 0.9997050166130066,
+          "presence": null
+        },
+        {
+          "index": 8,
+          "name": "RIGHT_EAR",
+          "panel_xy_pixels": [
+            239.699,
+            82.782
+          ],
+          "source_xy_pixels": [
+            1269.699,
+            561.782
+          ],
+          "visibility": 0.9979308843612671,
+          "presence": null
+        },
+        {
+          "index": 9,
+          "name": "MOUTH_LEFT",
+          "panel_xy_pixels": [
+            269.038,
+            104.342
+          ],
+          "source_xy_pixels": [
+            1299.038,
+            583.342
+          ],
+          "visibility": 0.9995272159576416,
+          "presence": null
+        },
+        {
+          "index": 10,
+          "name": "MOUTH_RIGHT",
+          "panel_xy_pixels": [
+            257.12,
+            105.251
+          ],
+          "source_xy_pixels": [
+            1287.12,
+            584.251
+          ],
+          "visibility": 0.9991587400436401,
+          "presence": null
+        },
+        {
+          "index": 11,
+          "name": "LEFT_SHOULDER",
+          "panel_xy_pixels": [
+            302.994,
+            123.036
+          ],
+          "source_xy_pixels": [
+            1332.994,
+            602.036
+          ],
+          "visibility": 0.9999500513076782,
+          "presence": null
+        },
+        {
+          "index": 12,
+          "name": "RIGHT_SHOULDER",
+          "panel_xy_pixels": [
+            199.831,
+            121.563
+          ],
+          "source_xy_pixels": [
+            1229.831,
+            600.563
+          ],
+          "visibility": 0.9990228414535522,
+          "presence": null
+        },
+        {
+          "index": 13,
+          "name": "LEFT_ELBOW",
+          "panel_xy_pixels": [
+            318.861,
+            197.734
+          ],
+          "source_xy_pixels": [
+            1348.861,
+            676.734
+          ],
+          "visibility": 0.9655265808105469,
+          "presence": null
+        },
+        {
+          "index": 14,
+          "name": "RIGHT_ELBOW",
+          "panel_xy_pixels": [
+            193.479,
+            191.892
+          ],
+          "source_xy_pixels": [
+            1223.479,
+            670.892
+          ],
+          "visibility": 0.8975250124931335,
+          "presence": null
+        },
+        {
+          "index": 15,
+          "name": "LEFT_WRIST",
+          "panel_xy_pixels": [
+            296.489,
+            133.484
+          ],
+          "source_xy_pixels": [
+            1326.489,
+            612.484
+          ],
+          "visibility": 0.9817124009132385,
+          "presence": null
+        },
+        {
+          "index": 16,
+          "name": "RIGHT_WRIST",
+          "panel_xy_pixels": [
+            224.295,
+            133.27
+          ],
+          "source_xy_pixels": [
+            1254.295,
+            612.27
+          ],
+          "visibility": 0.8597556948661804,
+          "presence": null
+        },
+        {
+          "index": 17,
+          "name": "LEFT_PINKY",
+          "panel_xy_pixels": [
+            292.354,
+            115.032
+          ],
+          "source_xy_pixels": [
+            1322.354,
+            594.032
+          ],
+          "visibility": 0.9693605899810791,
+          "presence": null
+        },
+        {
+          "index": 18,
+          "name": "RIGHT_PINKY",
+          "panel_xy_pixels": [
+            231.858,
+            118.77
+          ],
+          "source_xy_pixels": [
+            1261.858,
+            597.77
+          ],
+          "visibility": 0.7692035436630249,
+          "presence": null
+        },
+        {
+          "index": 19,
+          "name": "LEFT_INDEX",
+          "panel_xy_pixels": [
+            293.311,
+            109.969
+          ],
+          "source_xy_pixels": [
+            1323.311,
+            588.969
+          ],
+          "visibility": 0.9664174914360046,
+          "presence": null
+        },
+        {
+          "index": 20,
+          "name": "RIGHT_INDEX",
+          "panel_xy_pixels": [
+            229.125,
+            110.58
+          ],
+          "source_xy_pixels": [
+            1259.125,
+            589.58
+          ],
+          "visibility": 0.7491604685783386,
+          "presence": null
+        },
+        {
+          "index": 21,
+          "name": "LEFT_THUMB",
+          "panel_xy_pixels": [
+            289.842,
+            115.324
+          ],
+          "source_xy_pixels": [
+            1319.842,
+            594.324
+          ],
+          "visibility": 0.9087100028991699,
+          "presence": null
+        },
+        {
+          "index": 22,
+          "name": "RIGHT_THUMB",
+          "panel_xy_pixels": [
+            228.344,
+            115.983
+          ],
+          "source_xy_pixels": [
+            1258.344,
+            594.983
+          ],
+          "visibility": 0.5763925313949585,
+          "presence": null
+        },
+        {
+          "index": 23,
+          "name": "LEFT_HIP",
+          "panel_xy_pixels": [
+            285.866,
+            250.525
+          ],
+          "source_xy_pixels": [
+            1315.866,
+            729.525
+          ],
+          "visibility": 0.9997698664665222,
+          "presence": null
+        },
+        {
+          "index": 24,
+          "name": "RIGHT_HIP",
+          "panel_xy_pixels": [
+            225.439,
+            254.149
+          ],
+          "source_xy_pixels": [
+            1255.439,
+            733.149
+          ],
+          "visibility": 0.999228835105896,
+          "presence": null
+        },
+        {
+          "index": 25,
+          "name": "LEFT_KNEE",
+          "panel_xy_pixels": [
+            308.345,
+            332.794
+          ],
+          "source_xy_pixels": [
+            1338.345,
+            811.794
+          ],
+          "visibility": 0.9915390610694885,
+          "presence": null
+        },
+        {
+          "index": 26,
+          "name": "RIGHT_KNEE",
+          "panel_xy_pixels": [
+            190.748,
+            350.149
+          ],
+          "source_xy_pixels": [
+            1220.748,
+            829.149
+          ],
+          "visibility": 0.7660213112831116,
+          "presence": null
+        },
+        {
+          "index": 27,
+          "name": "LEFT_ANKLE",
+          "panel_xy_pixels": [
+            333.488,
+            451.07
+          ],
+          "source_xy_pixels": [
+            1363.488,
+            930.07
+          ],
+          "visibility": 0.9875767230987549,
+          "presence": null
+        },
+        {
+          "index": 28,
+          "name": "RIGHT_ANKLE",
+          "panel_xy_pixels": [
+            203.388,
+            420.024
+          ],
+          "source_xy_pixels": [
+            1233.388,
+            899.024
+          ],
+          "visibility": 0.674153745174408,
+          "presence": null
+        },
+        {
+          "index": 29,
+          "name": "LEFT_HEEL",
+          "panel_xy_pixels": [
+            331.581,
+            464.141
+          ],
+          "source_xy_pixels": [
+            1361.581,
+            943.141
+          ],
+          "visibility": 0.8587146997451782,
+          "presence": null
+        },
+        {
+          "index": 30,
+          "name": "RIGHT_HEEL",
+          "panel_xy_pixels": [
+            212.973,
+            432.531
+          ],
+          "source_xy_pixels": [
+            1242.973,
+            911.531
+          ],
+          "visibility": 0.517760694026947,
+          "presence": null
+        },
+        {
+          "index": 31,
+          "name": "LEFT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            332.774,
+            495.204
+          ],
+          "source_xy_pixels": [
+            1362.774,
+            974.204
+          ],
+          "visibility": 0.9840722680091858,
+          "presence": null
+        },
+        {
+          "index": 32,
+          "name": "RIGHT_FOOT_INDEX",
+          "panel_xy_pixels": [
+            169.114,
+            445.611
+          ],
+          "source_xy_pixels": [
+            1199.114,
+            924.611
+          ],
+          "visibility": 0.6426882743835449,
+          "presence": null
+        }
+      ],
+      "key_joint_visibility": {
+        "LEFT_SHOULDER": 0.9999500513076782,
+        "RIGHT_SHOULDER": 0.9990228414535522,
+        "LEFT_ELBOW": 0.9655265808105469,
+        "RIGHT_ELBOW": 0.8975250124931335,
+        "LEFT_WRIST": 0.9817124009132385,
+        "RIGHT_WRIST": 0.8597556948661804,
+        "LEFT_HIP": 0.9997698664665222,
+        "RIGHT_HIP": 0.999228835105896,
+        "LEFT_KNEE": 0.9915390610694885,
+        "RIGHT_KNEE": 0.7660213112831116,
+        "LEFT_ANKLE": 0.9875767230987549,
+        "RIGHT_ANKLE": 0.674153745174408,
+        "LEFT_HEEL": 0.8587146997451782,
+        "RIGHT_HEEL": 0.517760694026947,
+        "LEFT_FOOT_INDEX": 0.9840722680091858,
+        "RIGHT_FOOT_INDEX": 0.6426882743835449
+      },
+      "projected_segments": {
+        "LEFT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 74.72,
+            "length_pixels": 85.285,
+            "minimum_endpoint_visibility": 0.9915
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 78.0,
+            "length_pixels": 120.919,
+            "minimum_endpoint_visibility": 0.9876
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 78.01,
+            "length_pixels": 76.365,
+            "minimum_endpoint_visibility": 0.9655
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -109.2,
+            "length_pixels": 68.034,
+            "minimum_endpoint_visibility": 0.9655
+          }
+        },
+        "RIGHT": {
+          "HIP_TO_KNEE": {
+            "angle_degrees_image_xy": 109.87,
+            "length_pixels": 102.076,
+            "minimum_endpoint_visibility": 0.766
+          },
+          "KNEE_TO_ANKLE": {
+            "angle_degrees_image_xy": 79.75,
+            "length_pixels": 71.009,
+            "minimum_endpoint_visibility": 0.6742
+          },
+          "SHOULDER_TO_ELBOW": {
+            "angle_degrees_image_xy": 95.16,
+            "length_pixels": 70.615,
+            "minimum_endpoint_visibility": 0.8975
+          },
+          "ELBOW_TO_WRIST": {
+            "angle_degrees_image_xy": -62.27,
+            "length_pixels": 66.228,
+            "minimum_endpoint_visibility": 0.8598
+          }
+        }
+      },
+      "manual_corrections": []
+    }
+  ],
+  "qa": {
+    "detected_panels": 6,
+    "panel_count": 6,
+    "manual_corrections": [],
+    "laterality_note": "Generated panels are independent stills. Detector LEFT/RIGHT labels and occluded joints require human review before rig-side mapping.",
+    "limitations": [
+      "Generated images are not observations of physical continuity or contact forces.",
+      "Far-side arms and legs can be occluded or anatomically mislabeled.",
+      "Two-dimensional joint positions alone cannot determine 3D rotations or root trajectory."
+    ]
+  }
+}

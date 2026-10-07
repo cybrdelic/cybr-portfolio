@@ -1,0 +1,74 @@
+{
+  "colorchart": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Color%20Charts/studio_small_08.zip",
+    "size": 70298116,
+    "md5": "0d577cbaa27fef6830c07f690dc8596d"
+  },
+  "tonemapped": {
+    "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/extra/Tonemapped%20JPG/studio_small_08.jpg",
+    "size": 19327055,
+    "md5": "44a2195ac6e7dc9fa56054a692357f5d"
+  },
+  "hdri": {
+    "8k": {
+      "hdr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/8k/studio_small_08_8k.hdr",
+        "size": 91117781,
+        "md5": "6ee1ed1e9c308d99a7342f9c3e729970"
+      },
+      "exr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/8k/studio_small_08_8k.exr",
+        "size": 54941961,
+        "md5": "0d9f68ac18c04b610ddad437db65c214"
+      }
+    },
+    "16k": {
+      "hdr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/16k%2B/studio_small_08_16k.hdr",
+        "size": 319063540,
+        "md5": "4339208287a962c39fbdd816403e047c"
+      },
+      "exr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/16k%2B/studio_small_08_16k.exr",
+        "size": 190029173,
+        "md5": "68fe7c18804bf2c0763e4889a3d45045"
+      }
+    },
+    "4k": {
+      "hdr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/studio_small_08_4k.hdr",
+        "size": 23545064,
+        "md5": "03675606a83014ee631e140a876523b1"
+      },
+      "exr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/4k/studio_small_08_4k.exr",
+        "size": 14266631,
+        "md5": "f0c91bc6742a33b9a6c2a298bbefb99d"
+      }
+    },
+    "2k": {
+      "hdr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_08_2k.hdr",
+        "size": 5930381,
+        "md5": "18571cc63a24b0b7b9e9e7c909b3e8ee"
+      },
+      "exr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/2k/studio_small_08_2k.exr",
+        "size": 3766354,
+        "md5": "848c5313b410ac47bdab013b7aa0deec"
+      }
+    },
+    "1k": {
+      "hdr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_08_1k.hdr",
+        "size": 1508872,
+        "md5": "de3ba64222895aca876b1d1c2e0cf81a"
+      },
+      "exr": {
+        "url": "https://dl.polyhaven.org/file/ph-assets/HDRIs/exr/1k/studio_small_08_1k.exr",
+        "size": 1033507,
+        "md5": "40d8c35ba3ee4e150899fbbdf3e3fddb"
+      }
+    }
+  }
+}

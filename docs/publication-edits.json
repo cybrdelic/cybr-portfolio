@@ -1,0 +1,92 @@
+[
+  {
+    "path": "portfolio/assets/springs-faithful/comparison.json",
+    "operation": "Normalize personal machine paths in non-runtime provenance fields",
+    "source_sha256": "e9049eeacf2133e712605a335717a7533ec69631d54dfaf2b12f6178616543a3",
+    "public_sha256": "d3c9f02871860634ab4b36c327e790abea00dbdb1e55d0034e282efb2f2aeb75"
+  },
+  {
+    "path": "portfolio/assets/pbr-custom-worn/source-appearance/generation.json",
+    "operation": "Normalize personal machine paths in non-runtime provenance fields",
+    "source_sha256": "d32f69d24c5b286f8df9c9366940bcebee920c646457a4dcef4775e1c1db1df5",
+    "public_sha256": "e67519a5bd6cf8d149654a26447fb9c24ea3b08e6d92a5a90b564d183dca1082"
+  },
+  {
+    "path": "portfolio/tests/fixtures/native-optics/native-optical-primitives.json",
+    "operation": "Normalize personal machine paths in non-runtime provenance fields",
+    "source_sha256": "a712a092b8be592c5a12d9e4380046ee3026d2d678f96402b3784cd44fcba5eb",
+    "public_sha256": "9382e1fde78c2054ada859a6829ee635eabd669eba41cc9ffc74c8d0401a3bb9"
+  },
+  {
+    "path": "portfolio/tests/fixtures/native-optics/native-optical-ray-reference.json",
+    "operation": "Normalize personal machine paths in non-runtime provenance fields",
+    "source_sha256": "2a66000d38a56550e5b7260cbb662e39c4b591846bd7b702a17c6c77066dc34c",
+    "public_sha256": "dffcad61a5a8606faab8c66e3fc27721c8bb077712e645db4df89c938059de61"
+  },
+  {
+    "path": "cybr-combat/assets/motion-sources/video/barlund-footwork-2976-3068.json",
+    "operation": "Normalize personal machine paths in non-runtime provenance fields",
+    "source_sha256": "898be379a6c82110d3032561566447736ef44768c4eeda83563a2aa21e86d498",
+    "public_sha256": "40e10853397a79fdfa6a5d6b30889d33f81a0ad5975f715a7284d8dc206551e0"
+  },
+  {
+    "path": "cybr-combat/assets/motion-sources/video/piitulainen-footwork-722-73.json",
+    "operation": "Normalize personal machine paths in non-runtime provenance fields",
+    "source_sha256": "8eaabbe98a607fc8f8da6c950b08027f409d60d3386484d428022833a5201c25",
+    "public_sha256": "3813812ecb8162eeb33c4d17506eedfc00a44072267bfad1846339175aa77e2b"
+  },
+  {
+    "path": "cybr-combat/preview/scene.json",
+    "operation": "Normalize validation provenance; retain Yle attribution and license links",
+    "source_sha256": "c8a6623f49fcf294be4ec1d9553cde373b36b83778a859e7c93555a393f5e7b3",
+    "public_sha256": "3e8d0b6f50daa2f11348ed29173acde6c111cf45f68b8f2d0042960da0933c4d"
+  },
+  {
+    "path": "cybr-combat/CONTACT_Inspector.html",
+    "operation": "Change validation provenance only; embed and link complete motion credits; preserve geometry/playback code",
+    "source_sha256": "6ac8028c232adbbb49c2790561ffb3cf236911f15e745de74205413d9ac48dee",
+    "public_sha256": "3a336950e47c2626a527784020df3e5176da204807cf2e73bcc99d9d9d258a5d"
+  },
+  {
+    "path": "cybr-combat/MOTION_LICENSES.md",
+    "operation": "Add exact current motion attribution and source terms",
+    "source_sha256": null,
+    "public_sha256": "0371cc30bb648e85a48cabf7d4213b1e4447a507caf46aa79eeefe084221ff87"
+  },
+  {
+    "path": "docs/source-manifest.json",
+    "operation": "Refresh curated public source allowlist",
+    "source_sha256": "89b1206b8a85c733f915ab5df90128509c4a5cef68ff37c8fa4032bc42cc7129",
+    "public_sha256": "9de5def2f7e3b99fa70000f247e03bb5e12334a2442930968d7a9c8026ff2baa"
+  },
+  {
+    "path": "docs/publication-exclusions.json",
+    "operation": "Record approved historical model publication omissions",
+    "source_sha256": null,
+    "public_sha256": "46da320a77a269442eb0e5e7802cec92888098170c647de72e035a8ad01e2f60"
+  },
+  {
+    "path": "cybr-combat/THIRD_PARTY_NOTICES.md",
+    "operation": "Clarify historical/current notices and publication boundary",
+    "source_sha256": "02892bc5518e382dd3c38ccb4658c88afeae537ecf53cc5fa8707c94aa3380b8",
+    "public_sha256": "e2222d827622920aea3e5fce37220304acbb702823bceb4870fa98e825bbbb7e"
+  },
+  {
+    "path": "portfolio/instrument/DISPLAY-MODULES.md",
+    "operation": "Clarify historical/current notices and publication boundary",
+    "source_sha256": "7a7f1d6fa2a8be842d3cbe7b8c4c6eb1c82727b4499e9e1fdbffd1c324ff9818",
+    "public_sha256": "2a9095c3b049e64de40ae7c6596851a46639ed3955035ebd18454db915721195"
+  },
+  {
+    "path": "portfolio/assets/instrument-optical-primitives-v1/primitives.json",
+    "operation": "Update descriptor provenance checksum after personal-path normalization; numeric data unchanged",
+    "source_sha256": "24403e7177bfeade3569006b04ae5da3d94a4aa14553a03d0a4ccf10c7f6e282",
+    "public_sha256": "4ec91f37056e85ecba46415715f8e46027eaa7e47ae4bce8ec1bca969ad5d55d"
+  },
+  {
+    "path": "portfolio/tests/fixtures/native-optics/native-optical-ray-reference.json",
+    "operation": "Update descriptor provenance checksum after personal-path normalization; numeric data unchanged",
+    "source_sha256": "dffcad61a5a8606faab8c66e3fc27721c8bb077712e645db4df89c938059de61",
+    "public_sha256": "ebddd68d6f24bb61ee6e29aba93aa1cc3fde8b39f595d439991fd12736a8813d"
+  }
+]

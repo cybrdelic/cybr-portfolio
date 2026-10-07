@@ -1,0 +1,78 @@
+{
+  "complete": true,
+  "video": "elements-composite-linear-transmittance.mp4",
+  "frames": 218,
+  "fps": 30,
+  "duration": 7.266666666666667,
+  "tile": [
+    512,
+    512
+  ],
+  "width": 1024,
+  "height": 512,
+  "radianceScale": 32,
+  "encoding": "left: sqrt linear radiance; right: RGB transmittance; no backdrop",
+  "paper": [
+    2.3063714968538784,
+    2.30909739000271,
+    1.9700309520584305
+  ],
+  "proof": [
+    {
+      "frame": 0,
+      "waterFrame": 0,
+      "maxRadiance": 6.9375,
+      "transmissionRange": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "frame": 54,
+      "waterFrame": 53,
+      "maxRadiance": 7.75,
+      "transmissionRange": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "frame": 108,
+      "waterFrame": 108,
+      "maxRadiance": 6.9375,
+      "transmissionRange": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "frame": 162,
+      "waterFrame": 56,
+      "maxRadiance": 7.75,
+      "transmissionRange": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "frame": 217,
+      "waterFrame": 0,
+      "maxRadiance": 6.9375,
+      "transmissionRange": [
+        0.0,
+        1.0
+      ]
+    }
+  ],
+  "gpu": "Intel(R) UHD Graphics",
+  "waterSource": "portfolio\\assets\\instrument-elements-bake\\water-shared-v3",
+  "fireSource": "portfolio-fire-water-broad-v4",
+  "geometry": "Native FLIP surface fitted to the retained CAD cavity and native fire volume; effects only",
+  "limitation": "Native fixed camera raster preview; paired optical exits and weighted fire depth approximate multiple interfaces. Full hero uses live geometry and its own raster optics.",
+  "displayVideo": "elements-composite-alpha.webm",
+  "displayEncoding": "Straight RGBA: paper-calibrated water optics and independently tone-mapped emitter coverage for legibility on paper. Physical additive emission and RGB transmission remain in the linear master.",
+  "displayBytes": 14241534,
+  "displaySha256": "5290795d1f080b738616516434e63150be0b0bca79ad237362585d934b7517c8",
+  "displayAlphaThreshold": 0.011764705882352941,
+  "displayAlphaLossless": true
+}

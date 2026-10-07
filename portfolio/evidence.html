@@ -1,0 +1,1889 @@
+<!doctype html>
+
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="description" content="Evidence library — geometry, rendering, motion and music by Cybrdelic.">
+
+<title>Evidence library / Cybrdelic</title><link rel="stylesheet" href="exhibition.css"><link rel="stylesheet" href="portfolio-finish.css"></head>
+
+<body class="page-notes"><a class="skip-link" href="#top">Skip to content</a>
+
+<header class="studio-rail"><a class="rail-logo" href="index.html" aria-label="Cybrdelic home"><svg viewBox="400 425 1120 500" role="img" aria-label="Cybrdelic approved sigil 02"><image href="../cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/artwork-02.png" width="1920" height="1080"/></svg></a>
+
+<p class="rail-description">Independent work in<br>geometry, motion,<br>light & sound.</p>
+
+<nav class="rail-projects" aria-label="Projects"><a class="all-work" href="work.html#work">All work <span>↗</span></a><a href="geo.html" ><span>01</span>GEO</a><a href="scenes.html" ><span>02</span>Scenes</a><a href="light.html" ><span>03</span>Light</a><a href="elements.html" ><span>04</span>Elements</a><a href="combat.html" ><span>05</span>CONTACT</a><a href="song.html" ><span>06</span>Lacuna</a><a href="caldera.html" ><span>07</span>Sunken Caldera</a><a href="tidal.html" ><span>08</span>Tidal Engine</a></nav>
+
+<div class="rail-bottom"><a href="work.html#render-index">Image archive ↗</a><a href="evidence.html">Technical records ↗</a><span>8 projects / an ongoing practice</span></div>
+
+<details class="mobile-menu"><summary>Projects +</summary><nav><a href="geo.html" ><span>01</span>GEO</a><a href="scenes.html" ><span>02</span>Scenes</a><a href="light.html" ><span>03</span>Light</a><a href="elements.html" ><span>04</span>Elements</a><a href="combat.html" ><span>05</span>CONTACT</a><a href="song.html" ><span>06</span>Lacuna</a><a href="caldera.html" ><span>07</span>Sunken Caldera</a><a href="tidal.html" ><span>08</span>Tidal Engine</a><a href="evidence.html">Technical records</a></nav></details></header>
+
+<main id="top"><section class="detail-intro"><p class="eyebrow">Project documentation</p><h1>Technical notes</h1><p class="project-lead">Models, measurements and recorded checks. Forty source artifacts organized by project.</p><nav class="library-nav"><a href="#proof-geo">CYBR GEO ↘</a><a href="#proof-scenes">CYBR Scenes ↘</a><a href="#proof-light">CYBR Light ↘</a><a href="#proof-elements">CYBR Elements ↘</a><a href="#proof-combat">CYBR Combat / CONTACT ↘</a><a href="#proof-song">CYBR Song / Lacuna ↘</a><a href="#proof-caldera">The Sunken Caldera ↘</a><a href="#proof-tidal">The Tidal Engine ↘</a><a href="#proof-materials">Materials &amp; light ↘</a></nav></section><section class="library-project" id="proof-geo"><a href="geo.html">CYBR GEO / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>148</strong><span>named CAD parts</span></div><div><strong>3,188,510</strong><span>exported triangles</span></div><div><strong>331</strong><span>sampled service operations</span></div><div><strong>0</strong><span>reported sampled collisions</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Assembly geometry</strong><small>148 named parts and the exported triangle count. Geometry evidence for the inspection wrist.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-geo/docs/validation/orbit_v3/geometry-summary.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;model&quot;: &quot;cybr_orbit_inspection_wrist&quot;,
+
+  &quot;triangles&quot;: 3188510,
+
+  &quot;units&quot;: &quot;mm&quot;,
+
+  &quot;bounds_mm&quot;: &quot;2 entries \u2014 open full report&quot;,
+
+  &quot;truth&quot;: {
+
+    &quot;model&quot;: &quot;cybr_orbit_inspection_wrist&quot;,
+
+    &quot;requested_intent&quot;: &quot;inspection&quot;,
+
+    &quot;resolved_intent&quot;: &quot;inspection&quot;,
+
+    &quot;allow_estimates&quot;: false,
+
+    &quot;passed&quot;: true,
+
+    &quot;part_count&quot;: 148,
+
+    &quot;tier_counts&quot;: {
+
+      &quot;designed&quot;: 148
+
+    },
+
+    &quot;blocked&quot;: [],
+
+    &quot;uncertain&quot;: [],
+
+    &quot;claim&quot;: &quot;inspection output may contain estimates/unknowns and must not be presented as reference geometry&quot;
+
+  },
+
+  &quot;disclaimer&quot;: &quot;Geometry/transform/provenance checks only; not load, contact, fit or safety validation.&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Service-path audit</strong><small>Sampled CAD overlaps and tool access across the complete service sequence; not a continuous-motion or load certificate.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-geo/docs/validation/orbit_v3/ORBIT_service_validation.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;collisions&quot;: [],
+
+  &quot;tool_obstructions&quot;: [],
+
+  &quot;floor_collisions&quot;: [],
+
+  &quot;unchecked_mesh_parts&quot;: [],
+
+  &quot;passed&quot;: true,
+
+  &quot;linear_step_mm&quot;: 1,
+
+  &quot;angular_step_degrees&quot;: 15,
+
+  &quot;volume_tolerance_mm3&quot;: 0.0001,
+
+  &quot;checked_operations&quot;: 331,
+
+  &quot;total_operations&quot;: 331,
+
+  &quot;continuous_motion_certificate&quot;: false,
+
+  &quot;forces_simulated&quot;: false,
+
+  &quot;evidence_note&quot;: &quot;Complete fine audit; twelve withdrawal/lift/transfer operations for support screws were rerun after extending their withdrawal to 35 mm. All subsequent parked transforms are unchanged.&quot;,
+
+  &quot;source_sha256&quot;: {
+
+    &quot;examples/orbit_inspection_wrist.py&quot;: &quot;02110edd79460b0d12bd09058f418e01d3578564c290e08a98e165aa2c76e676&quot;,
+
+    &quot;examples/orbit_service_process.py&quot;: &quot;7a61fe475162cb84d864701e498d45e80552c65ede307f66e1efda26702373d2&quot;,
+
+    &quot;src/mechanism_lab/assembly_process.py&quot;: &quot;e8307598c678a0c447a52639503e767bd153e6106a29dad262d349b132cfb7ce&quot;
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Static assembly audit</strong><small>Nominal assembly checks retained with revision 3.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-geo/docs/validation/orbit_v3/ORBIT_static_validation.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;cad_tests&quot;: 433,
+
+  &quot;collisions&quot;: [],
+
+  &quot;volume_tolerance_mm3&quot;: 0.0001
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Animation validation</strong><small>Checks for the exported motion study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-geo/docs/validation/orbit_v3/ORBIT_animation_validation.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;maximum_position_error_m&quot;: 4.967083100382297e-08,
+
+  &quot;method&quot;: &quot;Decode serialized GLB meshes, hierarchy, TRS animation and world-unit transforms; compare beginning, two intermediate checkpoints and final inventory against service poses.&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">05</span><span><strong>ROAM manufacturing map</strong><small>Which workshop mechanisms cover each operation, and what is still outside their capability.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-geo/examples/roam/MANUFACTURING.md" target="_blank" rel="noopener">Open complete MD ↗</a></p><pre># Can this workshop manufacture the whole workstation?
+
+
+
+**No, not yet.** The seven prototypes do not cover the complete process chain. This map uses the preserved shared-spine design; the later DIY-metal design changes stock and adjustment methods and is not silently substituted here.
+
+
+
+| Workstation part family | Required operations | Current coverage | Missing capability / practical route |
+
+| --- | --- | --- | --- |
+
+| Shared spine, telescoping base tubes and arm tubes | Stock selection, straight square cuts, hole patterns, deburring | Measuring fixture is nominal; no cutting station | Buy suitable stock; develop a supported cutoff fence/length stop around a selected metal-rated saw; verify squareness on coupons |
+
+| Link end tongues, root blocks, slotted shelves, pitch cheeks | Plate profiling, slots, pockets, coaxial bores, datum control | X–Y stage has motion only | Outsource machining initially, or use a real mill with rated workholding; printed positioning parts do not establish metal-cutting capacity |
+
+| Bushings, spacers, shoulders and compression sleeves | Diameter/length control, facing, reaming and fit inspection | No qualified turning or reaming setup | Purchase dimensioned standard parts where compatible; custom sleeves require a lathe or supplier service |
+
+| Matched pivot holes and bearing seats | Drill, finish-ream coaxially, inspect alignment and fits | Manual spindle prototype cannot claim this process | Selected drill press, steel drill bushings, clamped paired-part jig, reamers and actual gauges; test joint coupon first |
+
+| Pitch/roll friction locks | Flat parallel faces, friction material preparation, retained preload | Vise/press geometry does not qualify holding torque | Source friction material; machine mating faces; instrument slip-torque and sustained-load tests before device installation |
+
+| Tray panel, webs and crossbeams | Panel cutting, edge finishing, drilling, attachment | No complete panel station | Saw/router with documented stock limits and workholding; PETG templates may guide setup |
+
+| Caster adapters and base assembly | Match chosen caster mount, hole access, bolted joints | Caster remains an unselected envelope | Select actual caster data before final hole template; torque-access and static stability review |
+
+| Linear guides, gas assists, fasteners | Select, buy, fit and retain | Nominal component envelopes only | Purchase these components; no attempt to print bearings, gas springs or structural screws |
+
+| Cables and strain relief | Cut/fit sleeves, route slack, edge protection, connector access | Cable routing study and PCB fixture only | Print clips/covers, buy suitable cables and electrical assemblies; test routes through usable motion |
+
+| Final assembly and verification | Alignment, fastener preload, fit, slip, deflection, stability | Specific CAD assembly/service probes | Build fixtures plus measuring equipment, torque tools and staged dummy loads; CAD cannot replace physical measurements |
+
+
+
+## Next tool designs tied to real parts
+
+
+
+1. **Tube cutoff setup:** metal-rated purchased saw/cutter, long stock support, adjustable length stop and replaceable sacrificial fence. Printed parts may locate/support away from heat and cutting contact. Actual tool geometry and mounting data are required before detail CAD.
+
+2. **Paired pivot drilling fixture:** two datum faces, positive end stop, replaceable steel guide bushings and through-clamping of matched plates. Specify drill-to-ream allowance from the chosen bearing fit; print a fit coupon before a full fixture.
+
+3. **Sleeve length and deburring fixture:** restrained stock, repeatable stop and access for purchased cutting/deburring tools. Inspect ends and lengths; do not represent it as producing precision diameters.
+
+4. **Joint qualification stand:** rigid purchased/metal support, representative pivot coupon, measured lever arm and independently measured applied force. Establish the required holding torque and allowable drift from actual device loads before testing. No proposed load rating is implied here.
+
+5. **Assembly datum fixture:** holds the base and mast square while bolts remain accessible; gauges tray/monitor adapters relative to the arm interfaces. Larger fixtures need joints compatible with the A1 build volume.
+
+
+
+These are scoped requirements, **not completed tool models**. Full manufacturing still requires purchased machine/tool capability or outsourced operations. To finish their geometry, choose the actual drill/saw and stock/interfaces first; the user has only confirmed a Bambu A1 and transparent PETG, not ownership of a drill press, saw, lathe or mill.
+
+
+
+The printable workshop is therefore a way to make useful jigs, fixtures and mechanisms around real tooling. It does not currently establish an all-printed manufacturing chain or a sub-$100 route to the workstation.</pre></div></details></div><div class="bench"><p class="eyebrow">SERVICE / OPERATION LOG</p><h3>ORBIT service sequence</h3><p>The first 12 operations of the 331-operation service audit. Every movement has a name and sampled overlap measurement. These discrete checks do not certify continuous clearance.</p><div class="bench-table-wrap"><table><thead><tr><th>Step</th><th>Operation</th><th>Samples</th><th>Max overlap / mm³</th></tr></thead><tbody><tr><td>001</td><td>Unscrew P00_-16.0_-26.0_Flange_screw</td><td>289</td><td>0.0</td></tr><tr><td>002</td><td>Withdraw P00_-16.0_-26.0_Flange_screw</td><td>111</td><td>0.0</td></tr><tr><td>003</td><td>Lift P00_-16.0_-26.0_Flange_screw</td><td>120</td><td>0.0</td></tr><tr><td>004</td><td>Transfer P00_-16.0_-26.0_Flange_screw</td><td>558</td><td>0.0</td></tr><tr><td>005</td><td>Place P00_-16.0_-26.0_Flange_screw</td><td>163</td><td>0.0</td></tr><tr><td>006</td><td>Unscrew P00_-16.0_26.0_Flange_screw</td><td>289</td><td>0.0</td></tr><tr><td>007</td><td>Withdraw P00_-16.0_26.0_Flange_screw</td><td>111</td><td>0.0</td></tr><tr><td>008</td><td>Lift P00_-16.0_26.0_Flange_screw</td><td>68</td><td>0.0</td></tr><tr><td>009</td><td>Transfer P00_-16.0_26.0_Flange_screw</td><td>515</td><td>0.0</td></tr><tr><td>010</td><td>Place P00_-16.0_26.0_Flange_screw</td><td>163</td><td>0.0</td></tr><tr><td>011</td><td>Unscrew P00_16.0_-26.0_Flange_screw</td><td>289</td><td>0.0</td></tr><tr><td>012</td><td>Withdraw P00_16.0_-26.0_Flange_screw</td><td>111</td><td>0.0</td></tr></tbody></table></div><a href="../cybr-geo/docs/validation/orbit_v3/ORBIT_service_validation.json">Inspect all 331 operations ↗</a></div></section></section><section class="library-project" id="proof-scenes"><a href="scenes.html">CYBR Scenes / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>1,072</strong><span>authored parts</span></div><div><strong>1,511,194</strong><span>authored triangles</span></div><div><strong>0.998319</strong><span>portal PDF integral</span></div><div><strong>0.040</strong><span>normal-incidence Fresnel</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Geometry &amp; transport</strong><small>Authored triangle count, part count and closed quartz boundary checks.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-scenes/scenes/observatory-iv/verification/geometry_and_transport.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;geometry&quot;: {
+
+    &quot;passed&quot;: true,
+
+    &quot;triangles_authored&quot;: 1511194,
+
+    &quot;degenerate_triangles_skipped_by_renderer&quot;: 480,
+
+    &quot;mesh_sha256&quot;: &quot;1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726&quot;,
+
+    &quot;finite_geometry&quot;: true,
+
+    &quot;nonunit_corner_normals&quot;: 0,
+
+    &quot;closed_quartz_components&quot;: &quot;5 entries \u2014 open full report&quot;,
+
+    &quot;texture_checks&quot;: &quot;11 entries \u2014 open full report&quot;,
+
+    &quot;continuous_machining_axis_groups&quot;: 378
+
+  },
+
+  &quot;numeric_transport&quot;: {
+
+    &quot;passed&quot;: true,
+
+    &quot;white_furnace_maximum&quot;: 0.828570664,
+
+    &quot;portal_pdf_integral&quot;: 0.998319126,
+
+    &quot;fresnel_normal&quot;: 0.0400000028,
+
+    &quot;quartz_ior_400&quot;: 1.55773079,
+
+    &quot;quartz_ior_700&quot;: 1.54061353
+
+  },
+
+  &quot;passed&quot;: true,
+
+  &quot;scope&quot;: &quot;Explicit geometry/material/numerical/raw-output tests; not a photorealism or convergence certification&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Optical numerical tests</strong><small>Portal PDF integration, Fresnel reflectance and wavelength-dependent quartz indices.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-scenes/scenes/observatory-iv/verification/numeric_tests.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;white_furnace_maximum&quot;: 0.828570664,
+
+  &quot;portal_pdf_integral&quot;: 0.998319126,
+
+  &quot;fresnel_normal&quot;: 0.0400000028,
+
+  &quot;quartz_ior_400&quot;: 1.55773079,
+
+  &quot;quartz_ior_700&quot;: 1.54061353
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Delivered image verification</strong><small>Checks retained alongside the Observatory delivery.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-scenes/scenes/observatory-iv/verification/delivery_verification.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;geometry&quot;: {
+
+    &quot;passed&quot;: true,
+
+    &quot;triangles_authored&quot;: 1511194,
+
+    &quot;near_zero_area_triangles_reference_float32&quot;: 480,
+
+    &quot;mesh_sha256&quot;: &quot;1cad20e08992074214b9006066139ac4217aa10f4773cf591f0315d5f64d8726&quot;,
+
+    &quot;finite_geometry&quot;: true,
+
+    &quot;nonunit_corner_normals&quot;: 0,
+
+    &quot;closed_quartz_components&quot;: &quot;5 entries \u2014 open full report&quot;,
+
+    &quot;texture_checks&quot;: &quot;11 entries \u2014 open full report&quot;,
+
+    &quot;continuous_machining_axis_groups&quot;: 378
+
+  },
+
+  &quot;numeric_transport&quot;: {
+
+    &quot;passed&quot;: true,
+
+    &quot;white_furnace_maximum&quot;: 0.828570664,
+
+    &quot;portal_pdf_integral&quot;: 0.998319126,
+
+    &quot;fresnel_normal&quot;: 0.0400000028,
+
+    &quot;quartz_ior_400&quot;: 1.55773079,
+
+    &quot;quartz_ior_700&quot;: 1.54061353
+
+  },
+
+  &quot;render&quot;: {
+
+    &quot;passed&quot;: true,
+
+    &quot;image_dimensions&quot;: [
+
+      1800,
+
+      1200
+
+    ],
+
+    &quot;png_sha256&quot;: &quot;f5a74ce6dcbe905d587c302f36d4339332f93ea4c5976bdb39f4e3b5be18b25d&quot;,
+
+    &quot;raw_sha256&quot;: &quot;018c060d8a42197b681e2c48b01db938ef1ef955df21ba33f038ef27ce398daa&quot;,
+
+    &quot;finite_raw&quot;: true,
+
+    &quot;aov_sum_max_abs_error&quot;: 0.0006849810015410185,
+
+    &quot;aov_sum_relative_error&quot;: 1.928482836766306e-06,
+
+    &quot;raw_exr_roundtrip_max_error&quot;: 0.0,
+
+    &quot;raw_not_clamped&quot;: true,
+
+    &quot;dominant_transmitted_guide_pixels&quot;: 15276,
+
+    &quot;native_resolution&quot;: true,
+
+    &quot;sampling&quot;: {
+
+      &quot;minimum_spp&quot;: 16,
+
+      &quot;mean_spp&quot;: 89.0226074074074,
+
+      &quot;maximum_spp&quot;: 768,
+
+      &quot;camera_samples&quot;: 192288832,
+
+      &quot;allocation&quot;: &quot;fixed primary-material allocation, not noisy adaptive stopping&quot;,
+
+      &quot;histogram&quot;: {
+
+        &quot;16&quot;: 16804,
+
+        &quot;72&quot;: 2002560,
+
+        &quot;288&quot;: 125360,
+
+        &quot;768&quot;: 15276
+
+      }
+
+    },
+
+    &quot;seconds&quot;: 973.268188,
+
+    &quot;triangles_actually_traced&quot;: 1510737
+
+  },
+
+  &quot;passed&quot;: true,
+
+  &quot;scope&quot;: &quot;Explicit geometry/material/numerical/raw-output tests; not a photorealism or convergence certification&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Environment reproduction</strong><small>Six fresh full-geometry verification renders and their receipts; distinct from production images.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-scenes/docs/recovery-proof/README.md" target="_blank" rel="noopener">Open complete MD ↗</a></p><pre># Fresh recovery verification
+
+
+
+Generated on 2026-09-22 UTC by [run 35670895190](https://github.com/cybrdelic/cybr-scenes/actions/runs/35670895190), not copied from historical renders. Each directory includes its output PNG, native execution receipt and verification JSON. All six passed: finite transport radiance, correct dimensions, nonblank images, positive triangle counts and zero reported nonfinite path samples. All were visually inspected.
+
+
+
+These 480-pixel, 24-sample/48-water-sample images prove complete execution of full geometry. Sampling noise remains, especially in foliage; they do not establish production image quality or physical-reference accuracy. Raw films and geometry are rebuilt by the workflow and are not duplicated in this small proof package.
+
+
+
+| Scene | Native triangles | Fresh image and evidence |
+
+| --- | ---: | --- |
+
+| Sandstone Passage | 8,108,728 | [Image](sandstone-passage/hero.png) · [Verification](sandstone-passage/verification.json) |
+
+| Basalt Tide | 11,644,696 | [Image](basalt-tide/hero.png) · [Verification](basalt-tide/verification.json) |
+
+| Fernwater | 20,400,077 | [Image](fernwater/hero.png) · [Verification](fernwater/verification.json) |
+
+| Desert Hot Springs | 23,690,858 | [Image](desert-hot-springs/hero.png) · [Verification](desert-hot-springs/verification.json) |
+
+| Obsidian Reach | 6,210,833 | [Image](obsidian-reach/hero.png) · [Verification](obsidian-reach/verification.json) |
+
+| Drowned Geode | 3,655,632 | [Image](drowned-geode/hero.png) · [Verification](drowned-geode/verification.json) |
+
+
+
+![Drowned Geode fresh proof](drowned-geode/hero.png)
+
+
+
+## New creation: Amber Passage
+
+
+
+[Successful creation run](https://github.com/cybrdelic/cybr-scenes/actions/runs/35671674210) · [Camera changes and verification](amber-passage/creation.json) · [Native receipt](amber-passage/receipt.json)
+
+
+
+This is a new camera/finishing composition using the recovered geometry, not a new geometry generator. Rendered at 640 × 400 and 32 samples per pixel. The default sandstone preset was not modified.
+
+
+
+![Amber Passage](amber-passage/hero.png)
+
+
+
+Tests: 36 Python tests passed; geo, hot, geode and obsidian C++ engines compiled; the first three also passed their implemented native self-tests. The existing Observatory IV was preserved without source changes; its separate pre-existing workflow remains available.</pre></div></details></div></section></section><section class="library-project" id="proof-light"><a href="light.html">CYBR Light / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>500,000</strong><span>caustics photons</span></div><div><strong>8</strong><span>wavelengths / packet</span></div><div><strong>24</strong><span>packets / pixel</span></div><div><strong>21.43s</strong><span>caustics preview render</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Caustics render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/caustics.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;caustics&quot;,
+
+  &quot;description&quot;: &quot;Camera-view dispersive surface photon mapping&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 24,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 16,
+
+  &quot;photon_count&quot;: 500000,
+
+  &quot;render_seconds&quot;: 21.427465311,
+
+  &quot;raw_film_sha256&quot;: &quot;6f0031fdf9ed8112560c5a50108c73e29c7b7f62e33f3339480cba625001d827&quot;,
+
+  &quot;preview_sha256&quot;: &quot;28b7084c00db68aceed9875a79811d462ad97bdcb7290453f01d97e2322ca3b1&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Anisotropy render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/anisotropy.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;anisotropy&quot;,
+
+  &quot;description&quot;: &quot;Analytic cylinders and anisotropic GGX conductors&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 64,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 12,
+
+  &quot;photon_count&quot;: 0,
+
+  &quot;render_seconds&quot;: 91.581645876,
+
+  &quot;raw_film_sha256&quot;: &quot;5cfceb28ca58ade935db8142d215ffa784e51cd4050b82f2b9f6d47250c36248&quot;,
+
+  &quot;preview_sha256&quot;: &quot;7bbf63782825e23d69a22b18f502e1e49d6967e69199b9fa6e2b3f149859adcd&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Dielectrics render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/dielectrics.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;dielectrics&quot;,
+
+  &quot;description&quot;: &quot;Smooth/rough absorbing glass and nested air bubbles&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 64,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 36,
+
+  &quot;photon_count&quot;: 0,
+
+  &quot;render_seconds&quot;: 59.853398706,
+
+  &quot;raw_film_sha256&quot;: &quot;fdc614a2491b81d757d88d5aab852eb0db46b968a11529241db1b2d9196814c3&quot;,
+
+  &quot;preview_sha256&quot;: &quot;52e873015915b91344858c083b665a9062b5de6ac2972f30b46ecedea1646269&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Materials render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/materials.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;materials&quot;,
+
+  &quot;description&quot;: &quot;UV textures, normal maps, and material mixtures&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 64,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 12,
+
+  &quot;photon_count&quot;: 0,
+
+  &quot;render_seconds&quot;: 81.334822849,
+
+  &quot;raw_film_sha256&quot;: &quot;8011780755a923742adf7ef40122e1e7a12cf48d2f62e9b726dd280a9effd233&quot;,
+
+  &quot;preview_sha256&quot;: &quot;3e7cdab010913da5fe9453686a336c9a5faec445ce00f98689f37752da464b2c&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">05</span><span><strong>Cornell render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/cornell.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;cornell&quot;,
+
+  &quot;description&quot;: &quot;Diffuse indirect illumination and color bleeding&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 64,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 32,
+
+  &quot;photon_count&quot;: 0,
+
+  &quot;render_seconds&quot;: 148.721676587,
+
+  &quot;raw_film_sha256&quot;: &quot;809a6430eb2a52304188f1bf61f09d227c52213d576cc2cc9c27853aac1774fb&quot;,
+
+  &quot;preview_sha256&quot;: &quot;c0e9ac4142fd7085e9fb0cd2e01099610d3785b50270d1834fd33f9ad3cdb1d7&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">06</span><span><strong>Cloud render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/cloud.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;cloud&quot;,
+
+  &quot;description&quot;: &quot;Authored heterogeneous multiple-scattering cloud&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 64,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 64,
+
+  &quot;photon_count&quot;: 0,
+
+  &quot;render_seconds&quot;: 406.376759356,
+
+  &quot;raw_film_sha256&quot;: &quot;1ccfe932431f976337d62cb05fef0f48a12a45ec7bae9fee48058b358de379e5&quot;,
+
+  &quot;preview_sha256&quot;: &quot;d6df2ffd03e1fb5f3c4557c77e5a85923b7dc0442bc34670319e8797ee42f5b9&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">07</span><span><strong>Xml render receipt</strong><small>Native backend, sample settings, render time and raw-film integrity for this study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-light/docs/media/xml.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;name&quot;: &quot;xml&quot;,
+
+  &quot;description&quot;: &quot;XML references, PLY geometry, transformed instances&quot;,
+
+  &quot;backend&quot;: &quot;native-cpp-cpu&quot;,
+
+  &quot;preset&quot;: &quot;preview&quot;,
+
+  &quot;width&quot;: 480,
+
+  &quot;height&quot;: 320,
+
+  &quot;packets_per_pixel&quot;: 64,
+
+  &quot;wavelengths_per_packet&quot;: 8,
+
+  &quot;max_depth&quot;: 9,
+
+  &quot;photon_count&quot;: 0,
+
+  &quot;render_seconds&quot;: 55.949763448,
+
+  &quot;raw_film_sha256&quot;: &quot;87dff006d8b41466749d7d2bd414672d6166dffc1f01abcd7e79c7042cdb1151&quot;,
+
+  &quot;preview_sha256&quot;: &quot;0ed285436d287ebe07dd9c26578bd0ad42ab0dc5bcc367a00d11540449f7fb50&quot;,
+
+  &quot;raw_film_finite&quot;: true,
+
+  &quot;denoised&quot;: false,
+
+  &quot;preview_note&quot;: &quot;Display transform only; no AI image generation or denoising&quot;
+
+}</pre></div></details></div><div class="bench"><p class="eyebrow">RENDER / RECORDED RUNS</p><h3>Recorded render settings</h3><p>Settings and elapsed times copied from each retained example run. These describe the recorded runs, not a standardized hardware benchmark.</p><div class="bench-table-wrap"><table><thead><tr><th>Study</th><th>Dimensions</th><th>Packets / pixel</th><th>Render time</th><th>Finite raw film</th></tr></thead><tbody><tr><td>caustics</td><td>480 × 320</td><td>24</td><td>21.43 s</td><td>true</td></tr><tr><td>anisotropy</td><td>480 × 320</td><td>64</td><td>91.58 s</td><td>true</td></tr><tr><td>dielectrics</td><td>480 × 320</td><td>64</td><td>59.85 s</td><td>true</td></tr><tr><td>materials</td><td>480 × 320</td><td>64</td><td>81.33 s</td><td>true</td></tr><tr><td>cornell</td><td>480 × 320</td><td>64</td><td>148.72 s</td><td>true</td></tr><tr><td>cloud</td><td>480 × 320</td><td>64</td><td>406.38 s</td><td>true</td></tr><tr><td>xml</td><td>480 × 320</td><td>64</td><td>55.95 s</td><td>true</td></tr></tbody></table></div></div></section></section><section class="library-project" id="proof-elements"><a href="elements.html">CYBR Elements / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>336</strong><span>water frames decoded</span></div><div><strong>300</strong><span>ice frames decoded</span></div><div><strong>1920 × 1080</strong><span>film dimensions</span></div><div><strong>30 fps</strong><span>frame rate</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Water film audit</strong><small>336 decoded frames, dimensions and per-frame luminance/motion measurements. Agent review is recorded; user acceptance is not.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-elements/work/element-motion/sigil-02-active-elements/water-audit.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;element&quot;: &quot;water&quot;,
+
+  &quot;metadata&quot;: {
+
+    &quot;programs&quot;: [],
+
+    &quot;stream_groups&quot;: [],
+
+    &quot;streams&quot;: &quot;1 entries \u2014 open full report&quot;,
+
+    &quot;format&quot;: {
+
+      &quot;duration&quot;: &quot;11.200000&quot;
+
+    }
+
+  },
+
+  &quot;decodedFrames&quot;: 336,
+
+  &quot;sha256&quot;: &quot;cf65de990127cea71f0dcf30cc14dcab6f8d02fad5c9a32d1294d9afc839e476&quot;,
+
+  &quot;blackCorners&quot;: 1,
+
+  &quot;visualStatus&quot;: &quot;agent-reviewed&quot;,
+
+  &quot;userAccepted&quot;: false,
+
+  &quot;visualReview&quot;: {
+
+    &quot;images&quot;: [
+
+      &quot;water-review.jpg&quot;,
+
+      &quot;water-transition-review.jpg&quot;,
+
+      &quot;water-hold-review.jpg&quot;
+
+    ],
+
+    &quot;observations&quot;: [
+
+      &quot;02 silhouette retained through active hold&quot;,
+
+      &quot;Small drops visible below lower tips; shedding remains deliberately restrained&quot;,
+
+      &quot;Floor breakup and pooling preserved&quot;,
+
+      &quot;Editorial opening transition visibly changes surface detail over 0.20 seconds; not one continuous forward solve&quot;
+
+    ],
+
+    &quot;limitations&quot;: [
+
+      &quot;Opening remains prior reverse-breakup edit&quot;,
+
+      &quot;Bending lift and selected droplet release are authored control forces, not a naturally supported fluid&quot;
+
+    ]
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Ice film audit</strong><small>Decoded frames and visual measurements for the fractured ice study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-elements/work/element-motion/sigil-02-active-elements/ice-audit.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;element&quot;: &quot;ice&quot;,
+
+  &quot;metadata&quot;: {
+
+    &quot;programs&quot;: [],
+
+    &quot;stream_groups&quot;: [],
+
+    &quot;streams&quot;: &quot;1 entries \u2014 open full report&quot;,
+
+    &quot;format&quot;: {
+
+      &quot;duration&quot;: &quot;10.000000&quot;
+
+    }
+
+  },
+
+  &quot;decodedFrames&quot;: 300,
+
+  &quot;sha256&quot;: &quot;9c011321e936c11051fd02f45d834b41bbc5f65ce3a20d1cbb781e0da1e37702&quot;,
+
+  &quot;blackCorners&quot;: 1,
+
+  &quot;visualStatus&quot;: &quot;agent-reviewed&quot;,
+
+  &quot;userAccepted&quot;: false,
+
+  &quot;visualReview&quot;: {
+
+    &quot;images&quot;: [
+
+      &quot;ice-review.jpg&quot;,
+
+      &quot;ice/final-volume-check/review.jpg&quot;,
+
+      &quot;ice/material-comparison.jpg&quot;,
+
+      &quot;ice/full-impact-review.jpg&quot;
+
+    ],
+
+    &quot;observations&quot;: [
+
+      &quot;Encoded hold preserves clear dark-blue depth and irregular frozen highlights&quot;,
+
+      &quot;Solid fragments assemble into the approved 02 form&quot;,
+
+      &quot;Release and settling pile remain within the camera frame&quot;,
+
+      &quot;Cold mist is restrained and follows the fragments&quot;
+
+    ],
+
+    &quot;limitations&quot;: [
+
+      &quot;Fractured rigid solids with a render-surface refinement and simulated gas, not thermodynamic freezing&quot;,
+
+      &quot;Dark reflective presentation on black; user acceptance remains pending&quot;
+
+    ]
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Lava film audit</strong><small>Decoded frames and visual measurements for the lava study.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-elements/work/element-motion/sigil-02-active-elements/lava-audit.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;element&quot;: &quot;lava&quot;,
+
+  &quot;metadata&quot;: {
+
+    &quot;programs&quot;: [],
+
+    &quot;stream_groups&quot;: [],
+
+    &quot;streams&quot;: &quot;1 entries \u2014 open full report&quot;,
+
+    &quot;format&quot;: {
+
+      &quot;duration&quot;: &quot;10.000000&quot;
+
+    }
+
+  },
+
+  &quot;decodedFrames&quot;: 300,
+
+  &quot;sha256&quot;: &quot;4230d8b13ee3909cc532f99e823fab7f3214b73012378a6e2212f892a2e407c8&quot;,
+
+  &quot;blackCorners&quot;: 1,
+
+  &quot;visualStatus&quot;: &quot;agent-reviewed&quot;,
+
+  &quot;userAccepted&quot;: false,
+
+  &quot;visualReview&quot;: {
+
+    &quot;images&quot;: [
+
+      &quot;lava-review.jpg&quot;,
+
+      &quot;lava/final-volume-check/review.jpg&quot;,
+
+      &quot;lava/full-late-hold-review.jpg&quot;,
+
+      &quot;lava/full-impact-review.jpg&quot;
+
+    ],
+
+    &quot;observations&quot;: [
+
+      &quot;Uneven hot seams beneath visible basalt relief&quot;,
+
+      &quot;Local smoke forms with the material and keeps rising after release&quot;,
+
+      &quot;Inter-body and floor collisions build a contained pile&quot;,
+
+      &quot;No hard gas-volume ceiling in reviewed frames&quot;
+
+    ],
+
+    &quot;limitations&quot;: [
+
+      &quot;Fractured solid basalt with authored interior heat/cooling, not liquid lava rheology or phase change&quot;
+
+    ]
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Lightning film audit</strong><small>Retained audit of the electrical-volume film.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-elements/work/element-motion/sigil-02-active-elements/lightning-audit.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;element&quot;: &quot;lightning&quot;,
+
+  &quot;metadata&quot;: {
+
+    &quot;programs&quot;: [],
+
+    &quot;stream_groups&quot;: [],
+
+    &quot;streams&quot;: &quot;1 entries \u2014 open full report&quot;,
+
+    &quot;format&quot;: {
+
+      &quot;duration&quot;: &quot;10.000000&quot;
+
+    }
+
+  },
+
+  &quot;decodedFrames&quot;: 300,
+
+  &quot;sha256&quot;: &quot;ad8661997eec512d5e9710acbaadb976da226c1a30881837fe34992af635095a&quot;,
+
+  &quot;blackCorners&quot;: 1,
+
+  &quot;visualStatus&quot;: &quot;agent-reviewed&quot;,
+
+  &quot;userAccepted&quot;: false,
+
+  &quot;visualReview&quot;: {
+
+    &quot;images&quot;: [
+
+      &quot;lightning-review.jpg&quot;,
+
+      &quot;lightning/final-volume-check/review.jpg&quot;
+
+    ],
+
+    &quot;observations&quot;: [
+
+      &quot;Discharges vary through the sequence with brighter trunks and finer forks&quot;,
+
+      &quot;Local illumination reveals surrounding advected cloud volume&quot;,
+
+      &quot;No hard cloud-box edge in inspected final frames&quot;,
+
+      &quot;Black exterior and dark ending retained&quot;
+
+    ],
+
+    &quot;limitations&quot;: [
+
+      &quot;Optical discharge visualization with authored current trains and fill lighting; not calibrated plasma simulation&quot;
+
+    ]
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">05</span><span><strong>Player verification</strong><small>Film dimensions, readiness and matching download links in the original player.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-elements/work/element-motion/sigil-02-active-elements/browser-verification.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;browser&quot;: &quot;Existing in-app sigil 02 player&quot;,
+
+  &quot;verified&quot;: {
+
+    &quot;water&quot;: {
+
+      &quot;movie&quot;: &quot;water-02-r8.mp4&quot;,
+
+      &quot;resolution&quot;: [
+
+        1920,
+
+        1080
+
+      ],
+
+      &quot;duration&quot;: 11.2,
+
+      &quot;readyState&quot;: 4,
+
+      &quot;error&quot;: null,
+
+      &quot;previousMovie&quot;: &quot;water-02-r7.mp4&quot;,
+
+      &quot;previousDuration&quot;: 10,
+
+      &quot;downloadLinkMatches&quot;: true
+
+    },
+
+    &quot;lightning&quot;: {
+
+      &quot;movie&quot;: &quot;lightning-02-r5.mp4&quot;,
+
+      &quot;resolution&quot;: [
+
+        1920,
+
+        1080
+
+      ],
+
+      &quot;duration&quot;: 10,
+
+      &quot;readyState&quot;: 4,
+
+      &quot;error&quot;: null,
+
+      &quot;previousMovie&quot;: &quot;lightning-02-r4.mp4&quot;,
+
+      &quot;downloadLinkMatches&quot;: true
+
+    },
+
+    &quot;lava&quot;: {
+
+      &quot;movie&quot;: &quot;lava-02.mp4&quot;,
+
+      &quot;resolution&quot;: [
+
+        1920,
+
+        1080
+
+      ],
+
+      &quot;duration&quot;: 10,
+
+      &quot;readyState&quot;: 4,
+
+      &quot;error&quot;: null,
+
+      &quot;downloadLinkMatches&quot;: true
+
+    },
+
+    &quot;ice&quot;: {
+
+      &quot;movie&quot;: &quot;ice-02.mp4&quot;,
+
+      &quot;resolution&quot;: [
+
+        1920,
+
+        1080
+
+      ],
+
+      &quot;duration&quot;: 10,
+
+      &quot;readyState&quot;: 4,
+
+      &quot;paused&quot;: false,
+
+      &quot;error&quot;: null,
+
+      &quot;downloadLinkMatches&quot;: true
+
+    }
+
+  },
+
+  &quot;elementButtons&quot;: [
+
+    &quot;fire&quot;,
+
+    &quot;water&quot;,
+
+    &quot;earth&quot;,
+
+    &quot;air&quot;,
+
+    &quot;ice&quot;,
+
+    &quot;lava&quot;,
+
+    &quot;lightning&quot;
+
+  ],
+
+  &quot;allRequestedFilmsVerified&quot;: true
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">06</span><span><strong>Simulation &amp; authored controls</strong><small>The precise boundaries between gas/liquid/rigid calculations and art-directed behavior.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-elements/docs/PIPELINES.md" target="_blank" rel="noopener">Open complete MD ↗</a></p><pre># Pipelines and rebuilding
+
+
+
+This is a working graphics research archive, not a packaged cross-platform
+
+simulation application. The static player runs immediately; production render
+
+scripts expect their inputs, output folders, dependencies and renderer settings.
+
+Earlier experiments are retained so decisions and failures can be inspected.
+
+
+
+## Current delivery
+
+
+
+The current output lives in
+
+`outputs/cybrdelic-type/elements/motion/bending/sigils/02/`.
+
+`work/element-motion/sigil-02-active-elements/README.md` contains the detailed
+
+delivery notes, limitations and validation receipts for the latest four films.
+
+
+
+| Material | Main sources | Method |
+
+| --- | --- | --- |
+
+| Fire | `sigil_02_source.py`, `sigil_02_build_v2.py`, `sigil_02_fire_v2.py` | Original sigil source fields, fuel transport, reaction, cooling, buoyancy and custom volume rendering |
+
+| Air | `sigil_02_air_v2.py` | 3D gas transport and turbulent smoke rendering |
+
+| Earth | `sigil_02_ground_earth_build.py`, `sigil_02_ground_earth_render.py`, later arrival revisions | Guided fragments followed by native rigid collisions and floor settling |
+
+| Water | `sigil_02_active_water.mjs`, `sigil_02_active_mesh.py`, `sigil_02_active_water_render.py` | Native APIC/FLIP, pressure projection, reconstructed liquid surface, Cycles optics |
+
+| Ice / lava | `sigil_02_new_materials.py`, `sigil_02_atmosphere.py` | Fractured solids, Bullet release, advected gas, material-specific surface rendering |
+
+| Lightning | `sigil_02_electric_tree_export.py`, `sigil_02_atmosphere.py`, `sigil_02_new_materials.py` | Retained Laplacian-growth trees, pulse timing, channel lights and volumetric clouds |
+
+
+
+All filenames in the table are relative to `work/element-motion/`.
+
+
+
+## What is simulated and what is authored
+
+
+
+**Water.** The latest forward segment evolves 138,022 parcels for 240 frames.
+
+Gravity stays active; bounded external forces recover sagging water toward the
+
+mark. A deterministic subset of parcels is exempted from upward recovery so
+
+small droplets can fall. Reconstruction accounts for both the main surface
+
+and isolated liquid clusters. The final edit reuses the previous 3.4-second
+
+opening and overlaps the new segment by 0.2 seconds. It is not one uninterrupted
+
+forward solve.</pre></div></details></div><div class="bench"><p class="eyebrow">SOURCE / MOTION SAMPLING</p><h3>Film sampling</h3><p>Each film has five frames sampled at 10%, 30%, 50%, 70% and 90% of its duration. The captions preserve the timestamps; the extraction manifest identifies the source clip for every frame.</p><a href="frame-provenance.json">Inspect frame timestamps and source films ↗</a></div></section></section><section class="library-project" id="proof-combat"><a href="combat.html">CYBR Combat / CONTACT / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>20</strong><span>workbench checks</span></div><div><strong>235</strong><span>workbench recipe frames</span></div><div><strong>0</strong><span>reported JavaScript errors</span></div><div><strong>0</strong><span>reported WebGL errors</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Motion workbench verification</strong><small>15 interaction checks including schedule parity, edits, persistence and JSON round trips.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-combat/demo-output/workbench/verification.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;javascript_errors&quot;: [],
+
+  &quot;webgl_errors&quot;: [],
+
+  &quot;desktop&quot;: [
+
+    1440,
+
+    900
+
+  ],
+
+  &quot;mobile&quot;: [
+
+    390,
+
+    1100
+
+  ],
+
+  &quot;checks&quot;: &quot;20 entries \u2014 open full report&quot;,
+
+  &quot;source_recipe_frames&quot;: 235
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Side-leap capture receipt</strong><small>The actual frames, dimensions and capture checks for the side-view clip.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-combat/demo-output/side-leap-study.capture.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;width&quot;: 640,
+
+  &quot;height&quot;: 360,
+
+  &quot;fps&quot;: 30,
+
+  &quot;encoded_frames&quot;: 102,
+
+  &quot;rendered_pose_samples&quot;: 102,
+
+  &quot;seconds&quot;: 44.79458427429199,
+
+  &quot;renderer&quot;: &quot;ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)&quot;,
+
+  &quot;triangles&quot;: 121386,
+
+  &quot;javascript_errors&quot;: [],
+
+  &quot;webgl_errors&quot;: [],
+
+  &quot;console_warnings&quot;: [],
+
+  &quot;motion_blur&quot;: &quot;disabled for joint inspection&quot;,
+
+  &quot;color&quot;: &quot;explicit sRGB to BT.709, limited-range YUV420, H.264&quot;,
+
+  &quot;image_generation&quot;: false,
+
+  &quot;blender&quot;: false
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Exported geometry audit</strong><small>Historical checks on the exported buffers consumed by the renderer.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-combat/archive/source-led-2026-09-22/evidence/export_geometry_step1.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;exported_pose_count&quot;: 914,
+
+  &quot;sampled_poses&quot;: 914,
+
+  &quot;frame_step&quot;: 1,
+
+  &quot;source&quot;: &quot;Exact float32 pose/mesh buffers read by preview/index.html&quot;,
+
+  &quot;imported_animation_count&quot;: 0,
+
+  &quot;maximum_skin_weight_sum_error&quot;: 1.7881393432617188e-07,
+
+  &quot;maximum_screen_extent&quot;: 0.9009586036303027,
+
+  &quot;minimum_weapon_height&quot;: 0.04386215006983313,
+
+  &quot;minimum_body_height&quot;: 0.0005238248820336933,
+
+  &quot;arm_torso_crossings&quot;: &quot;107 entries \u2014 open full report&quot;,
+
+  &quot;weapon_torso_crossings&quot;: &quot;14 entries \u2014 open full report&quot;,
+
+  &quot;weapon_helmet_crossings&quot;: [],
+
+  &quot;framing_failures&quot;: [],
+
+  &quot;scope&quot;: &quot;Selected surface triangle tests at exported poses. Shared shoulder seams excluded, hand/grip contact not tested. No continuous collision, complete body self-collision, or inverse-dynamics certification.&quot;,
+
+  &quot;seconds&quot;: 37.694419145584106
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>60 Hz motion audit</strong><small>Independent sampling of the authored motion path.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-combat/archive/source-led-2026-09-22/evidence/audit_60hz.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;samples&quot;: 936,
+
+  &quot;hz&quot;: 60,
+
+  &quot;crossings&quot;: [],
+
+  &quot;max_reach_adjustment&quot;: {
+
+    &quot;Right&quot;: 0.0822732575585613,
+
+    &quot;Left&quot;: 0.0
+
+  },
+
+  &quot;max_pelvis_adjustment&quot;: 0.04147456414819639,
+
+  &quot;min_body_y&quot;: 0.002122700801982105,
+
+  &quot;min_boot_y&quot;: 0.005982878354479852,
+
+  &quot;scope&quot;: &quot;Selected nonadjacent arm and torso triangles from the displayed skinned body. Connected shoulder seam excluded. Discrete sample times; no guarantee of no crossings between samples or of unrelated body regions.&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">05</span><span><strong>Character &amp; visual attribution</strong><small>Original choreography is distinguished from the licensed third-party character visuals.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-combat/THIRD_PARTY_NOTICES.md" target="_blank" rel="noopener">Open complete MD ↗</a></p><pre># Provenance and third-party visual assets
+
+
+
+## Animation in this revision
+
+
+
+The four preserved baseline takes are authored in `src/performance.py`.
+
+Two additional grounded studies are authored in `src/authored_v2.py`, without
+
+sampling imported poses. Three reference performances are retargeted from
+
+Quaternius Universal Animation Library 1 and 2, Standard editions, CC0-1.0.
+
+These are authored game animations, not claimed to be captured human motion.
+
+The character GLB remains bind-only; reference tracks live separately under
+
+`assets/motion-sources`. The export joins source-labeled takes into the library.
+
+
+
+Author and license: https://quaternius.com/packs/universalanimationlibrary.html
+
+and https://quaternius.com/packs/universalanimationlibrary2.html.
+
+Transport mirrors (free Standard files only):
+
+- J-Ponzo/gltf-universal-animation-library, revision
+
+  `e24c23cf2a1323488a3faa226ea7ea21f644b73e`, `glTF/`.
+
+- Barbatos6669/elderforge, revision
+
+  `bb2ce469f0ab2ccfc487faef55550ba07fae2483`,
+
+  `assets/animations/universal_animation_library_2/UAL2_Standard_RM.glb`.
+
+
+
+The source files and Quaternius license notice are retained locally for
+
+reproducibility. No paid collection or restricted source file was obtained.
+
+
+
+V4 additionally uses the bundled collections for motion-assisted player attacks
+
+and enemy reactions: sword regular A/B/C, sword idle, crouch idle, punch enter,
+
+punch cross, chest/head hits, death, knockback and get-up. These professional pose
+
+foundations remain credited to Quaternius; CYBR authors the combat assembly,
+
+timing, contact corrections, launch/juggle trajectories and state logic. The six
+
+V4 encounters are not represented as wholly original hand-keyed performances.
+
+
+
+## Retained character body and rig
+
+
+
+The body/rig and body texture data originate from the Mixamo Vanguard model</pre></div></details></div><div class="bench"><p class="eyebrow">WORKBENCH / INTERACTION COVERAGE</p><h3>Workbench interaction checks</h3><p>The retained browser report records these checks as passed. The source recipe contains 235 frames; that is a separate workbench sequence from the original four-take performance.</p><ul class="check-list"><li>V4 default take</li><li>combat showcase preset</li><li>take selection</li><li>combat hit seeking</li><li>enemy visibility toggle</li><li>combat FX toggle</li><li>Python/JS schedule parity</li><li>clip reorder/remove/update</li><li>trim/rate/camera authoring</li><li>JSON download roundtrip</li><li>invalid import atomicity</li><li>camera bookmark</li><li>sequence playback</li><li>telemetry</li><li>responsive layout</li><li>trim loop bounds</li><li>nonloop stop on last frame</li><li>PNG export</li><li>focus view</li><li>draft survives reload</li></ul></div></section></section><section class="library-project" id="proof-song"><a href="song.html">CYBR Song / Lacuna / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>33</strong><span>note attacks</span></div><div><strong>-19.21</strong><span>integrated LUFS</span></div><div><strong>-4.42 dBFS</strong><span>true peak</span></div><div><strong>0</strong><span>clipped samples</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Lantern Steps measurement</strong><small>Measured duration, note attacks, loudness, peak level and clipping count for the available FLAC.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-song/demo-output/verification.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;master_constant_gain_db&quot;: 7.374376881136573,
+
+  &quot;lufs&quot;: -19.20999976261289,
+
+  &quot;true_peak_dbfs&quot;: -4.416037445553975,
+
+  &quot;sample_peak_dbfs&quot;: -4.4163713455200195,
+
+  &quot;finite&quot;: true,
+
+  &quot;clipped_samples&quot;: 0,
+
+  &quot;duration&quot;: 17.63479166666667,
+
+  &quot;note_attacks&quot;: 33,
+
+  &quot;title&quot;: &quot;Lantern Steps&quot;
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Note-by-note score</strong><small>Pitches, instruments, tempo map and event timing behind the performance.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-song/demo-output/score.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;title&quot;: &quot;Lantern Steps&quot;,
+
+  &quot;slug&quot;: &quot;lantern-steps&quot;,
+
+  &quot;mix_profile&quot;: &quot;tango&quot;,
+
+  &quot;preset_guitar&quot;: &quot;electric&quot;,
+
+  &quot;bar_starts&quot;: [
+
+    0.7,
+
+    3.308695652173913,
+
+    5.917391304347826,
+
+    8.52608695652174,
+
+    11.134782608695652
+
+  ],
+
+  &quot;tempi&quot;: [
+
+    92,
+
+    92,
+
+    92,
+
+    92
+
+  ],
+
+  &quot;meters&quot;: &quot;4 entries \u2014 open full report&quot;,
+
+  &quot;segments&quot;: &quot;33 entries \u2014 open full report&quot;,
+
+  &quot;pedal&quot;: &quot;2 entries \u2014 open full report&quot;,
+
+  &quot;duration&quot;: 17.63478260869565,
+
+  &quot;sample_rate&quot;: 48000,
+
+  &quot;lead_in&quot;: 0.7,
+
+  &quot;tied_continuations&quot;: 0
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Source integrity</strong><small>Retained source hash checks for the restored instrument engine.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-song/tests/source_integrity.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;Lacuna engine&quot;: {
+
+    &quot;original_sha256&quot;: &quot;5e6e0faef23a7903446d5624c7f4869f24e6b1aab52f27f4ce4cd1d577fcbd74&quot;,
+
+    &quot;retained_sha256&quot;: &quot;5e6e0faef23a7903446d5624c7f4869f24e6b1aab52f27f4ce4cd1d577fcbd74&quot;
+
+  },
+
+  &quot;Piano sampler&quot;: {
+
+    &quot;original_sha256&quot;: &quot;da3b8393db85cb522e5a0e87d105b02fc721ddf4f6d4e1177a5cf2cd8e98579e&quot;,
+
+    &quot;retained_sha256&quot;: &quot;da3b8393db85cb522e5a0e87d105b02fc721ddf4f6d4e1177a5cf2cd8e98579e&quot;
+
+  },
+
+  &quot;Composition&quot;: {
+
+    &quot;original_sha256&quot;: &quot;2519e1bbe7ea64315b92231a637a15f1cc2a0b30f8535682ba2d0cefef516169&quot;,
+
+    &quot;retained_sha256&quot;: &quot;2519e1bbe7ea64315b92231a637a15f1cc2a0b30f8535682ba2d0cefef516169&quot;
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Audio validation</strong><small>Historical full-delivery validation and isolated attack-envelope tests.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <a href="../cybr-song/tests/validation.json" target="_blank" rel="noopener">Open complete JSON ↗</a></p><pre>{
+
+  &quot;Velvet_Switchblade&quot;: {
+
+    &quot;unchanged_note_schedule&quot;: true,
+
+    &quot;master_finite_unclipped&quot;: true,
+
+    &quot;duration_s&quot;: 150.04089583333334,
+
+    &quot;video_full_decode&quot;: &quot;passed&quot;,
+
+    &quot;video_probe&quot;: {
+
+      &quot;programs&quot;: [],
+
+      &quot;stream_groups&quot;: [],
+
+      &quot;streams&quot;: &quot;3 entries \u2014 open full report&quot;,
+
+      &quot;format&quot;: {
+
+        &quot;duration&quot;: &quot;150.041000&quot;
+
+      }
+
+    }
+
+  },
+
+  &quot;The_Orchard_Keeps_the_Rain&quot;: {
+
+    &quot;unchanged_note_schedule&quot;: true,
+
+    &quot;master_finite_unclipped&quot;: true,
+
+    &quot;duration_s&quot;: 179.0368125,
+
+    &quot;video_full_decode&quot;: &quot;passed&quot;,
+
+    &quot;video_probe&quot;: {
+
+      &quot;programs&quot;: [],
+
+      &quot;stream_groups&quot;: [],
+
+      &quot;streams&quot;: &quot;3 entries \u2014 open full report&quot;,
+
+      &quot;format&quot;: {
+
+        &quot;duration&quot;: &quot;179.037000&quot;
+
+      }
+
+    }
+
+  },
+
+  &quot;soft_attack_tests&quot;: &quot;4 entries \u2014 open full report&quot;,
+
+  &quot;scope&quot;: &quot;Numerical, provenance, timing and decode checks. No claim of perceptual validation.&quot;
+
+}</pre></div></details></div><div class="bench"><p class="eyebrow">SCORE → PERFORMANCE</p><h3>Lantern Steps: event timing</h3><p>The 33 events in Lantern Steps, plotted from the retained score. Horizontal length shows note duration; height shows MIDI pitch. Hover a note for instrument, pitch, timing and velocity.</p><div class="note-legend"><span>Piano / coral</span><span>Guitar / ice blue</span></div><svg class="piano-roll" role="img" aria-label="Lantern Steps: 33 note events plotted by time and pitch" viewBox="0 0 1000 315"><path d="M55.00 20V275" stroke="#394832"/><text x="55.00" y="298" fill="#a7bc98" font-size="10">0s</text><path d="M137.75 20V275" stroke="#394832"/><text x="137.75" y="298" fill="#a7bc98" font-size="10">1s</text><path d="M220.51 20V275" stroke="#394832"/><text x="220.51" y="298" fill="#a7bc98" font-size="10">2s</text><path d="M303.26 20V275" stroke="#394832"/><text x="303.26" y="298" fill="#a7bc98" font-size="10">3s</text><path d="M386.01 20V275" stroke="#394832"/><text x="386.01" y="298" fill="#a7bc98" font-size="10">4s</text><path d="M468.77 20V275" stroke="#394832"/><text x="468.77" y="298" fill="#a7bc98" font-size="10">5s</text><path d="M551.52 20V275" stroke="#394832"/><text x="551.52" y="298" fill="#a7bc98" font-size="10">6s</text><path d="M634.27 20V275" stroke="#394832"/><text x="634.27" y="298" fill="#a7bc98" font-size="10">7s</text><path d="M717.03 20V275" stroke="#394832"/><text x="717.03" y="298" fill="#a7bc98" font-size="10">8s</text><path d="M799.78 20V275" stroke="#394832"/><text x="799.78" y="298" fill="#a7bc98" font-size="10">9s</text><path d="M882.53 20V275" stroke="#394832"/><text x="882.53" y="298" fill="#a7bc98" font-size="10">10s</text><path d="M965.29 20V275" stroke="#394832"/><text x="965.29" y="298" fill="#a7bc98" font-size="10">11s</text><rect x="112.60" y="203.29" width="207.24" height="6" fill="#ff855d"><title>piano / C3 / 0.696–3.200s / velocity 58</title></rect><rect x="113.67" y="93.57" width="52.54" height="6" fill="#ff855d"><title>piano / E4 / 0.709–1.344s / velocity 74</title></rect><rect x="113.67" y="121.00" width="52.54" height="6" fill="#a8d8ca"><title>guitar / C4 / 0.709–1.344s / velocity 63</title></rect><rect x="168.40" y="73.00" width="50.83" height="6" fill="#ff855d"><title>piano / G4 / 1.370–1.984s / velocity 76</title></rect><rect x="168.40" y="93.57" width="50.83" height="6" fill="#a8d8ca"><title>guitar / E4 / 1.370–1.984s / velocity 63</title></rect><rect x="221.34" y="59.29" width="51.40" height="6" fill="#ff855d"><title>piano / A4 / 2.010–2.631s / velocity 76</title></rect><rect x="221.34" y="73.00" width="51.40" height="6" fill="#a8d8ca"><title>guitar / G4 / 2.010–2.631s / velocity 63</title></rect><rect x="274.88" y="73.00" width="52.48" height="6" fill="#ff855d"><title>piano / G4 / 2.657–3.291s / velocity 74</title></rect><rect x="274.88" y="93.57" width="52.48" height="6" fill="#a8d8ca"><title>guitar / E4 / 2.657–3.291s / velocity 63</title></rect><rect x="328.48" y="223.86" width="207.24" height="6" fill="#ff855d"><title>piano / A2 / 3.305–5.809s / velocity 58</title></rect><rect x="329.55" y="38.71" width="103.36" height="6" fill="#ff855d"><title>piano / C5 / 3.318–4.567s / velocity 74</title></rect><rect x="329.55" y="141.57" width="52.54" height="6" fill="#a8d8ca"><title>guitar / A3 / 3.318–3.953s / velocity 63</title></rect><rect x="384.28" y="121.00" width="50.83" height="6" fill="#a8d8ca"><title>guitar / C4 / 3.979–4.593s / velocity 63</title></rect><rect x="437.22" y="45.57" width="51.40" height="6" fill="#ff855d"><title>piano / B4 / 4.619–5.240s / velocity 76</title></rect><rect x="437.22" y="93.57" width="51.40" height="6" fill="#a8d8ca"><title>guitar / E4 / 4.619–5.240s / velocity 63</title></rect><rect x="490.76" y="59.29" width="52.48" height="6" fill="#ff855d"><title>piano / A4 / 5.266–5.900s / velocity 74</title></rect><rect x="490.76" y="121.00" width="52.48" height="6" fill="#a8d8ca"><title>guitar / C4 / 5.266–5.900s / velocity 63</title></rect><rect x="544.35" y="251.29" width="207.24" height="6" fill="#ff855d"><title>piano / F2 / 5.913–8.418s / velocity 58</title></rect><rect x="545.43" y="59.29" width="52.54" height="6" fill="#ff855d"><title>piano / A4 / 5.926–6.561s / velocity 74</title></rect><rect x="545.43" y="169.00" width="52.54" height="6" fill="#a8d8ca"><title>guitar / F3 / 5.926–6.561s / velocity 63</title></rect><rect x="600.15" y="73.00" width="50.83" height="6" fill="#ff855d"><title>piano / G4 / 6.588–7.202s / velocity 76</title></rect><rect x="600.15" y="141.57" width="50.83" height="6" fill="#a8d8ca"><title>guitar / A3 / 6.588–7.202s / velocity 63</title></rect><rect x="653.10" y="86.71" width="103.88" height="6" fill="#ff855d"><title>piano / F4 / 7.227–8.483s / velocity 74</title></rect><rect x="653.10" y="121.00" width="51.40" height="6" fill="#a8d8ca"><title>guitar / C4 / 7.227–7.849s / velocity 63</title></rect><rect x="706.64" y="141.57" width="52.48" height="6" fill="#a8d8ca"><title>guitar / A3 / 7.874–8.509s / velocity 63</title></rect><rect x="760.23" y="237.57" width="207.24" height="6" fill="#ff855d"><title>piano / G2 / 8.522–11.026s / velocity 58</title></rect><rect x="761.31" y="73.00" width="52.54" height="6" fill="#ff855d"><title>piano / G4 / 8.535–9.170s / velocity 74</title></rect><rect x="761.31" y="155.29" width="52.54" height="6" fill="#a8d8ca"><title>guitar / G3 / 8.535–9.170s / velocity 63</title></rect><rect x="816.03" y="107.29" width="50.83" height="6" fill="#ff855d"><title>piano / D4 / 9.196–9.811s / velocity 76</title></rect><rect x="816.03" y="127.86" width="50.83" height="6" fill="#a8d8ca"><title>guitar / B3 / 9.196–9.811s / velocity 63</title></rect><rect x="868.98" y="121.00" width="103.88" height="6" fill="#ff855d"><title>piano / C4 / 9.836–11.091s / velocity 74</title></rect><rect x="868.98" y="107.29" width="51.40" height="6" fill="#a8d8ca"><title>guitar / D4 / 9.836–10.457s / velocity 63</title></rect><rect x="922.52" y="155.29" width="52.48" height="6" fill="#a8d8ca"><title>guitar / G3 / 10.483–11.117s / velocity 63</title></rect></svg><a href="../cybr-song/demo-output/score.json">Open the exact note schedule ↗</a></div></section></section><section class="library-project" id="proof-caldera"><a href="caldera.html">The Sunken Caldera / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>2048 × 1536</strong><span>native image dimensions</span></div><div><strong>895.8s</strong><span>native render time</span></div><div><strong>3000</strong><span>BVH comparison rays</span></div><div><strong>0</strong><span>invalid paths</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Image &amp; transport verification</strong><small>Native resolution, finite radiance, BVH checks and water enclosure; includes remaining visual limits.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;finite_radiance&quot;: true,
+
+  &quot;raw_exr_bit_exact_to_pfm&quot;: true,
+
+  &quot;nonfinite_paths&quot;: 0,
+
+  &quot;bvh_comparison_rays&quot;: 3000,
+
+  &quot;aov_sum_max_abs_error&quot;: 2.384185791015625e-06,
+
+  &quot;size&quot;: [
+
+    2048,
+
+    1536
+
+  ],
+
+  &quot;native_render_seconds&quot;: 895.789001,
+
+  &quot;reconstruction_seconds&quot;: 145.6352972984314,
+
+  &quot;source_sha256&quot;: {
+
+    &quot;build_scene.py&quot;: &quot;f4cccf8242102cbca278430a7a11be3e0d49cbeadb6b51bd96f7e7e71c6b8d58&quot;,
+
+    &quot;prepare_engine.py&quot;: &quot;a43bbec798d5f98f2b5d1139de782b8d5fd7140f970a8b4132af062b8c6b5baf&quot;,
+
+    &quot;water_field.h&quot;: &quot;9ea5b1cde74b73824c54c7554d26a433037d1c4950b57f479fe3f452f328e757&quot;,
+
+    &quot;geo_water_connection.h&quot;: &quot;293db43b715d37fa74c0fc93e1f2fea5bc9d3b5da57bc92044d083849e4de8cc&quot;,
+
+    &quot;engine.cpp&quot;: &quot;2180b06d91b62f2ce90cb92209a6dedce42ea1aff3a0ce2e8c2d115941931d55&quot;,
+
+    &quot;finish.py&quot;: &quot;265d6c1eb22815234011097864cbe96de021480527abb19f2e0507547b8ee4f5&quot;
+
+  },
+
+  &quot;repository_revisions&quot;: {
+
+    &quot;cybr-scenes&quot;: &quot;bc0d88b5f385f9234863770ada3f888b169a05bb&quot;,
+
+    &quot;cybr-geo&quot;: &quot;7f246ebc78cbedf46ee3319c5e062a5313f6e789&quot;,
+
+    &quot;cybr-elements&quot;: &quot;280770daa8b78274339d26ad45a58f62aeeda39b&quot;,
+
+    &quot;cybr-light&quot;: &quot;38f29ee2f6559311513c1f570be7a36224194ce8&quot;
+
+  },
+
+  &quot;water_closed&quot;: true,
+
+  &quot;image_generation&quot;: false,
+
+  &quot;upscaling&quot;: false,
+
+  &quot;review&quot;: &quot;See REVIEW.md for visual observations, separate from numeric validation.&quot;,
+
+  &quot;visual_review&quot;: {
+
+    &quot;full_frame&quot;: &quot;renders/caldera-preview.jpg&quot;,
+
+    &quot;native_foreground_crop&quot;: &quot;renders/detail-review.jpg&quot;,
+
+    &quot;completed&quot;: true,
+
+    &quot;transmitted_guides_used&quot;: true,
+
+    &quot;transmitted_guides_retained&quot;: false,
+
+    &quot;remaining_visible_limits&quot;: [
+
+      &quot;Fine water glints&quot;,
+
+      &quot;Some close-range rock faceting&quot;,
+
+      &quot;Authored still cascade&quot;
+
+    ]
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Native self-tests</strong><small>Retained numerical tests for the renderer used by the scene.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;white_furnace_maximum&quot;: 0.828570664,
+
+  &quot;portal_pdf_integral&quot;: 0.998627288,
+
+  &quot;fresnel_normal&quot;: 0.0400000028,
+
+  &quot;quartz_ior_400&quot;: 1.55773079,
+
+  &quot;quartz_ior_700&quot;: 1.54061353
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Production render settings</strong><small>Actual sampling and timing for this render.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;renderer&quot;: &quot;CYBR Sunken Caldera / Scenes + GEO transport + Elements surfaces + Light optics&quot;,
+
+  &quot;width&quot;: 2048,
+
+  &quot;height&quot;: 1536,
+
+  &quot;max_depth&quot;: 12,
+
+  &quot;threads&quot;: 14,
+
+  &quot;seed&quot;: 71833,
+
+  &quot;view&quot;: &quot;hero&quot;,
+
+  &quot;seconds&quot;: 895.789001,
+
+  &quot;triangles&quot;: 3443770,
+
+  &quot;spectral_bands&quot;: 16,
+
+  &quot;dispersion&quot;: false,
+
+  &quot;fog_density_m_inverse&quot;: 0.00249999994,
+
+  &quot;camera&quot;: [
+
+    2.29999995,
+
+    -15,
+
+    3.5999999
+
+  ],
+
+  &quot;target&quot;: [
+
+    -0.5,
+
+    10,
+
+    4
+
+  ],
+
+  &quot;horizontal_fov_degrees&quot;: 68,
+
+  &quot;aperture_radius_m&quot;: 0,
+
+  &quot;exposure&quot;: 0.949999988,
+
+  &quot;film_white_rgb&quot;: [
+
+    1.04490995,
+
+    0.984612584,
+
+    1.02078414
+
+  ],
+
+  &quot;nonfinite_paths&quot;: 0,
+
+  &quot;clamped_path_contributions&quot;: 0,
+
+  &quot;image_generation&quot;: false,
+
+  &quot;texture_synthesis&quot;: &quot;deterministic mathematical material maps, no learned model&quot;,
+
+  &quot;spectral_method&quot;: &quot;16 fixed midpoint bins; common-random-number splitting at first dielectric interface; CYBR LIGHT Cauchy water IOR&quot;,
+
+  &quot;polarization_and_birefringence&quot;: false
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Visual review</strong><small>Image observations recorded separately from numerical verification.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete MD ↗ <small>(source unavailable)</small></span></p><pre># Visual iteration record
+
+
+
+The user&#x27;s references established the target: detailed natural landforms, foreground dressing, coherent water/terrain boundaries, and depth created by lighting and geometry.
+
+
+
+1. **Preview 01:** rejected evenly spaced cliff strata, striped ripples, excess haze, and chromatic water sampling artifacts.
+
+2. **Preview 02:** retained unequal fracture blocks and mixed-direction waves. Rejected overly blue rock and poorly illuminated submerged terrain. The dark water exposed a missing underwater sunlight sampling path, not a need for painted color.
+
+3. **Preview 03:** retained recovered GEO Snell connections against the Elements-reconstructed water mesh; underwater stones and transmitted sunlight became visible. Retained a less regular bridge cross-section and rooted shrubs.
+
+4. **Preview 04:** retained warmer mineral color. Rejected cascade placement above the distant cliff.
+
+5. **Preview 05:** retained the cascade emerging from a modeled rock face, with its base in the basin. Camera and geometry frozen for the full-resolution render.
+
+
+
+The native checks are separate from this visual review. They establish finite transport, BVH equivalence and refraction-connection accuracy; they do not measure artistic quality or establish that the scene is superior to the user&#x27;s references.
+
+
+
+Final inspection covered the complete 2048 × 1536 frame at a 1500-pixel review size and a native-resolution 1018 × 786 foreground crop. The final image retains submerged stone silhouettes, shaded cliff relief, distinct fern fronds, lit shoreline vegetation and the corrected cascade placement. Fine water glints and some close-range rock faceting remain visible. The waterfall is an authored still surface.
+
+
+
+Native rendering took 895.789 seconds; reconstruction took 145.635 seconds. All 3,000 BVH comparison rays and 40 sampled Snell connections passed. There were zero nonfinite paths. The raw EXR is bit-identical to the PFM radiance; direct + indirect + volume differs from the full buffer by at most 0.000002385 in scene-linear RGB. These are integrity checks, not an artistic ranking.
+
+
+
+The transmitted guide was used in reconstruction and then removed to recover disk space. It is reproducible using the documented `--guides-only` command. The full radiance and component PFM buffers are retained, as are the final and unfiltered images and scene-linear EXR.</pre></div></details></div></section></section><section class="library-project" id="proof-tidal"><a href="tidal.html">The Tidal Engine / VIEW PROJECT ↗</a><section class="evidence-section" ><div class="gallery-heading"><div><p class="eyebrow">PROJECT RECORDS</p><h2>Measurements & checks</h2></div><span>Original reports</span></div><div class="metric-grid"><div><strong>1800 × 1200</strong><span>native image dimensions</span></div><div><strong>552.8s</strong><span>native render time</span></div><div><strong>3000</strong><span>BVH comparison rays</span></div><div><strong>0</strong><span>invalid paths</span></div></div><p class="evidence-note">Values below come from the retained project reports. The original runs have not been rerun for this portfolio; open each artifact to inspect its scope.</p><div class="receipt-list"><details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Geometry &amp; image verification</strong><small>292,746 triangles, closed water and gear meshes, native dimensions and reconstruction settings.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;size&quot;: [
+
+    1800,
+
+    1200
+
+  ],
+
+  &quot;invalid_paths&quot;: 0,
+
+  &quot;bvh_equivalence_rays&quot;: 3000,
+
+  &quot;raw_exr_bit_exact&quot;: true,
+
+  &quot;water_closed&quot;: true,
+
+  &quot;geo_gears_closed&quot;: true,
+
+  &quot;triangles&quot;: 292746,
+
+  &quot;render_seconds&quot;: 552.838562,
+
+  &quot;reconstruction&quot;: {
+
+    &quot;method&quot;: &quot;Direct / indirect / volume separation with normal-depth-material-variance-guided a-trous reconstruction&quot;,
+
+    &quot;neural&quot;: false,
+
+    &quot;generative&quot;: false,
+
+    &quot;outlier_replacement&quot;: false,
+
+    &quot;path_radiance_clamping&quot;: false,
+
+    &quot;upscaling&quot;: false,
+
+    &quot;raw_changed&quot;: false,
+
+    &quot;dominant_transmitted_geometry_guides&quot;: true,
+
+    &quot;iterations&quot;: {
+
+      &quot;direct_diffuse&quot;: 2,
+
+      &quot;direct_glossy&quot;: 3,
+
+      &quot;indirect_diffuse&quot;: 6,
+
+      &quot;indirect_glossy&quot;: 3,
+
+      &quot;volume&quot;: 5
+
+    },
+
+    &quot;display&quot;: &quot;ACES fitted shoulder followed by exact sRGB transfer&quot;,
+
+    &quot;exposure&quot;: 1.70000005,
+
+    &quot;seconds&quot;: 101.52366638183594
+
+  },
+
+  &quot;native_resolution&quot;: true,
+
+  &quot;image_generation&quot;: false,
+
+  &quot;files&quot;: {
+
+    &quot;tidal-engine.png&quot;: {
+
+      &quot;bytes&quot;: 1756044,
+
+      &quot;sha256&quot;: &quot;62171ffc42adfc6329048f1406e16c008a1c51af92d29c4af13ffa1cbed82311&quot;
+
+    },
+
+    &quot;tidal-engine-preview.jpg&quot;: {
+
+      &quot;bytes&quot;: 287854,
+
+      &quot;sha256&quot;: &quot;8cf7e21738e915073ac6964023d9e4cc833bc0bd65e7589c27597cf2003f27aa&quot;
+
+    },
+
+    &quot;tidal-engine_unfiltered.png&quot;: {
+
+      &quot;bytes&quot;: 4140828,
+
+      &quot;sha256&quot;: &quot;c8dd23a43076f1753928359d2f6ec04a37144a3971854452efef4bfaf52f90af&quot;
+
+    },
+
+    &quot;tidal-engine.glb&quot;: {
+
+      &quot;bytes&quot;: 5368996,
+
+      &quot;sha256&quot;: &quot;29d4c06221e4bd8011f2fad0d6f0c98b6bbf0a0667f6cb7f9cca94c77ca3d836&quot;
+
+    }
+
+  },
+
+  &quot;visual_review&quot;: {
+
+    &quot;overview&quot;: &quot;renders/tidal-engine-preview.jpg&quot;,
+
+    &quot;native_detail&quot;: &quot;renders/final-detail.png&quot;,
+
+    &quot;gear_normal_defect_fixed&quot;: true,
+
+    &quot;remaining&quot;: &quot;Minor spectral sampling noise in small water highlights; static authored water geometry.&quot;
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Native self-tests</strong><small>Numerical checks for the integrated native renderer.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;passed&quot;: true,
+
+  &quot;white_furnace_maximum&quot;: 0.828570664,
+
+  &quot;portal_pdf_integral&quot;: 0.998408179,
+
+  &quot;fresnel_normal&quot;: 0.0400000028,
+
+  &quot;quartz_ior_400&quot;: 1.55773079,
+
+  &quot;quartz_ior_700&quot;: 1.54061353
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Production render settings</strong><small>Actual camera, sampling and timing metadata.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;renderer&quot;: &quot;CYBR Tidal Engine / Scenes transport + Light water optics&quot;,
+
+  &quot;width&quot;: 1800,
+
+  &quot;height&quot;: 1200,
+
+  &quot;max_depth&quot;: 12,
+
+  &quot;threads&quot;: 12,
+
+  &quot;seed&quot;: 71833,
+
+  &quot;view&quot;: &quot;hero&quot;,
+
+  &quot;seconds&quot;: 552.838562,
+
+  &quot;triangles&quot;: 292746,
+
+  &quot;spectral_bands&quot;: 16,
+
+  &quot;dispersion&quot;: true,
+
+  &quot;fog_density_m_inverse&quot;: 0.00899999961,
+
+  &quot;camera&quot;: [
+
+    3.04999995,
+
+    -5.5999999,
+
+    2.54999995
+
+  ],
+
+  &quot;target&quot;: [
+
+    -0.300000012,
+
+    1.20000005,
+
+    1.64999998
+
+  ],
+
+  &quot;horizontal_fov_degrees&quot;: 66,
+
+  &quot;aperture_radius_m&quot;: 0.00300000003,
+
+  &quot;exposure&quot;: 1.70000005,
+
+  &quot;film_white_rgb&quot;: [
+
+    1.04490995,
+
+    0.984612584,
+
+    1.02078414
+
+  ],
+
+  &quot;nonfinite_paths&quot;: 0,
+
+  &quot;clamped_path_contributions&quot;: 0,
+
+  &quot;image_generation&quot;: false,
+
+  &quot;texture_synthesis&quot;: &quot;deterministic mathematical material maps, no learned model&quot;,
+
+  &quot;spectral_method&quot;: &quot;16 fixed midpoint bins; common-random-number splitting at first dielectric interface; CYBR LIGHT Cauchy water IOR&quot;,
+
+  &quot;polarization_and_birefringence&quot;: false
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">04</span><span><strong>Source integration ledger</strong><small>Which source repositories and components contribute to the hall.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete JSON ↗ <small>(source unavailable)</small></span></p><pre>{
+
+  &quot;cybr-elements&quot;: {
+
+    &quot;url&quot;: &quot;https://github.com/cybrdelic/cybr-elements&quot;,
+
+    &quot;commit&quot;: &quot;280770daa8b78274339d26ad45a58f62aeeda39b&quot;
+
+  },
+
+  &quot;cybr-light&quot;: {
+
+    &quot;url&quot;: &quot;https://github.com/cybrdelic/cybr-light&quot;,
+
+    &quot;commit&quot;: &quot;38f29ee2f6559311513c1f570be7a36224194ce8&quot;
+
+  },
+
+  &quot;cybr-scenes&quot;: {
+
+    &quot;url&quot;: &quot;https://github.com/cybrdelic/cybr-scenes&quot;,
+
+    &quot;commit&quot;: &quot;964619ccdadf4b159bba0467d207872cd304c56b&quot;
+
+  },
+
+  &quot;cybr-geo&quot;: {
+
+    &quot;url&quot;: &quot;https://github.com/cybrdelic/cybr-geo&quot;,
+
+    &quot;commit&quot;: &quot;7f246ebc78cbedf46ee3319c5e062a5313f6e789&quot;
+
+  }
+
+}</pre></div></details><details class="receipt"><summary><span class="receipt-number">05</span><span><strong>Visual review</strong><small>Review of the finished image, including the corrected gear-normal defect.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Artifact preview · <span class="source-unavailable">Open complete MD ↗ <small>(source unavailable)</small></span></p><pre># Visual review record
+
+
+
+The initial Elemental Orrery direction was rejected by the user. That draft was a logo display with thin ornament, poorly controlled light cards and generic staging; it did not meet the quality or scene intent of the existing CYBR work. Its production render was stopped.
+
+
+
+The replacement is a new hydraulic hall built around a tidewheel and a continuous water channel. The reference for materials and illumination was the actual retained Observatory IV render, inspected from the CYBR Scenes checkout.
+
+
+
+The small native renders checked camera framing, room closure, source placement, machinery readability and water. Kept changes include a continuous rear wall around the arch, physically closed water meshes, beveled stone blocks, shuttered daylight, a connected spill outlet, varied metal finishes and small service details. An excessively dark daylight revision was adjusted before the production pass.
+
+
+
+Full-size inspection then exposed inappropriate smoothing on the planar gear faces: normals averaged across extruded edges gave the faces a warped metallic appearance. The geometry now uses split vertices and flat face normals at those machining edges, while the original closed mesh is checked before the shading split. A separate native crop confirmed the correction. Pale moss patches were also given their intended green material instead of the accidentally selected linen map.
+
+
+
+`renders/tidal-engine-before-normal-fix.png` retains the image that exposed the shading defect. `renders/tidal-engine.png` is the corrected delivery after the final run. `verification.json` records actual final dimensions, invalid-path count, geometry checks, raw EXR fidelity and output hashes. `native-tests.json` records executed transport checks; the adapted self-test also checks the CYBR LIGHT water IOR.
+
+
+
+No image model or painted correction was used. Revisions changed scene geometry, normals, materials or lighting before rerendering. Component-separated reconstruction is the same non-neural method used by the Scenes pipeline; it can soften fine reflection detail. The unfiltered native image and raw EXR are retained.</pre></div></details></div></section></section><section class="library-project" id="proof-materials"><a href="index.html">LIVE PORTFOLIO / MATERIAL SOURCES ↗</a><section class="evidence-section"><div class="gallery-heading"><div><p class="eyebrow">SOURCE CREDITS</p><h2>Materials &amp; light</h2></div><span>Custom CYBR materials</span></div><p class="evidence-note">Current material maps were made for this instrument. Original ImageGen appearance is paired with independently authored physical surface data and separate alloy wear layers. Default studio illumination uses a separately credited photographed HDR panorama; original neutral strip-light radiance remains available for comparison. LIGHT and ELEMENTS optical transport uses the retained CAD geometry.</p><div class="receipt-list">
+<details class="receipt"><summary><span class="receipt-number">01</span><span><strong>Original CYBR material maps</strong><small>Custom brushed, lathe, diamond knurl and finer diamond-etch finishes.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p><strong>BrushedMetal, LatheMetal, DiamondKnurl and DiamondEtch</strong> are original CYBR materials, made for the portfolio instrument. Three OpenAI ImageGen images supply unlit appearance; deterministic local height fields independently supply normals and coherent roughness. No downloaded material maps are inputs to these custom sets.</p><p>The original appearance images are 1254 × 1254 and are resized to 2K for runtime. Numerical height and roughness maps are authored natively at 2K. Albedo is calibrated to bounded metal reflectance; source brightness does not control the geometry of the finish.</p><p>Source records · <a href="assets/pbr-custom/BrushedMetal/source.json" target="_blank" rel="noopener">Brushed ↗</a> · <a href="assets/pbr-custom/LatheMetal/source.json" target="_blank" rel="noopener">Lathe ↗</a> · <a href="assets/pbr-custom/DiamondKnurl/source.json" target="_blank" rel="noopener">Knurl ↗</a> · <a href="assets/pbr-custom/DiamondEtch/source.json" target="_blank" rel="noopener">Fine etch ↗</a></p></div></details>
+<details class="receipt"><summary><span class="receipt-number">02</span><span><strong>Physical surface recipes &amp; checks</strong><small>Millimeter charts, micron relief, coherent normal and roughness channels.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Irregular brush tracks follow the grain; centered radial lathe cuts serve both silver and bronze. Rounded diamond crowns and shallow crossed cuts use separate height recipes. Source height peak-to-valley ranges are about 14.06 µm for brushed metal, 15.01 µm for lathe metal, 75.32 µm for knurl and 9.82 µm for fine etch. Brushed faces and barrels shade the original height slopes at 0.35 strength, equivalent to about 4.92 µm of shaded relief; their source maps remain unchanged. Lathe, knurl and etch retain their full authored normal scale. Finite finishing passes and varied cut spacing preserve machining detail; broad roughness variation is restrained to avoid a smeared surface.</p><p>Tile sizes and relief are authored design values. Normals are derived from millimeter height gradients with OpenGL +Y orientation. Normal relief shades the retained CAD; height maps do not displace its positions. The height-normal frame retains the metric of curved charts and keeps the v8 correction that treats both RGB8 neutral codes, 127 and 128, as flat derivatives after mip filtering. This avoids a false tilt on flat surface samples; generic tangent normals retain their original decoding. The anisotropy grain frame stays orthonormal. Stronger directional roughness uses anisotropy 0.52 for brushed faces, 0.44 for barrels, 0.32 for turned silver and 0.30 for bronze, with the machining direction preserved. These are authored reflection settings, not measured alloy scattering data. Fine cavity, roughness and metallic are packed into R, G and B. Cavity affects indirect reflection and diffuse response in diamond valleys; white R leaves brushed and lathe metal unchanged. Periodic edges and complete image-tile repeats close the ring charts.</p><p>A coarse-roughness compression trial preserved the fine residual but did not resolve the visible cloudy pattern in matched live views. It was disabled. Current material profiles retain the original authored roughness channel and perform no extra macro-filter lookup.</p><p>Records · <a href="output/geo-working/pbr-custom/verification.json" target="_blank" rel="noopener">Executed material checks ↗</a> · <a href="output/geo-working/pbr-custom/custom-material-contact.jpg" target="_blank" rel="noopener">Map contact sheet ↗</a> · <a href="assets/pbr-custom/README.md" target="_blank" rel="noopener">Authoring &amp; transformations ↗</a> · <a href="assets/pbr-custom/NOTICE.md" target="_blank" rel="noopener">Authorship notice ↗</a> · <a href="output/realism-fast/material-candidate-receipt.json" target="_blank" rel="noopener">Material change record ↗</a></p></div></details>
+<details class="receipt"><summary><span class="receipt-number">03</span><span><strong>Original CYBR alloy wear layers</strong><small>Separate aluminum, steel and bronze hand contact, dirt and corrosion.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p><strong>AluminumWear, SteelWear and BronzeWear</strong> are original overlays made for the instrument. Two additional OpenAI ImageGen originals supply semantic contamination coverage and steel oxide color. Independent authored masks and millimeter pit fields supply material response and normals. No downloaded material bytes are inputs.</p><p>Broken fingerprint ridges, fine abrasion and sparse corrosion use a separate 128 mm macro chart, preserving the fine brushing, lathe cuts and diamond profiles underneath. Cylinder charts use the nearest whole number of repeats to preserve scale and close their seams. Aluminum uses neutral oxide and dirt; iron-rust appearance is used only for steel; bronze has independently authored brown and green patina. The actual native generated images are 1254 × 1254, resampled into lossless 2K runtime maps.</p><p>Color RGB is an sRGB contaminant target with linear blend alpha. Linear surface data stores target roughness in R, opaque dirt/oxide coverage in G and thin oil coverage in B. Oil retains the metallic substrate; opaque deposits attenuate metalness. OpenGL +Y normals come from independent physical pit height, not generated-image brightness.</p><p>The revised assets use authored sparse coverage at full runtime strength. Opaque deposit cores have coherent color, roughness and dielectric response; oil changes roughness while retaining the metal underneath. Deposit protection at outer rims is only 0.05–0.15 mm, while thin films continue to the edge. Independent micron abrasion and pits affect shading without displacing CAD. Scale and relief are authored values.</p><p>Source records · <a href="assets/pbr-custom-worn/AluminumWear/source.json" target="_blank" rel="noopener">Aluminum ↗</a> · <a href="assets/pbr-custom-worn/SteelWear/source.json" target="_blank" rel="noopener">Steel ↗</a> · <a href="assets/pbr-custom-worn/BronzeWear/source.json" target="_blank" rel="noopener">Bronze ↗</a> · <a href="assets/pbr-custom-worn/source-appearance/generation.json" target="_blank" rel="noopener">Originals, prompts &amp; hashes ↗</a></p><p>Records · <a href="output/geo-working/pbr-custom-worn/verification.json" target="_blank" rel="noopener">Executed wear checks ↗</a> · <a href="output/geo-working/pbr-custom-worn/wear-contact.jpg" target="_blank" rel="noopener">Wear contact sheet ↗</a> · <a href="assets/pbr-custom-worn/README.md" target="_blank" rel="noopener">Layers &amp; transformations ↗</a> · <a href="assets/pbr-custom-worn/NOTICE.md" target="_blank" rel="noopener">Wear authorship notice ↗</a></p></div></details>
+<details class="receipt"><summary><span class="receipt-number">04</span><span><strong>CYBR studio illumination</strong><small>Photographed HDR studio illumination / authored strip-light comparison retained.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Default live illumination uses the photographed HDR panorama <strong>“Studio Small 08” by Sergej Majboroda</strong>, from <a href="https://polyhaven.com/a/studio_small_08" target="_blank" rel="noopener">Poly Haven</a>, under <a href="https://polyhaven.com/license" target="_blank" rel="noopener">CC0 1.0</a>, at runtime intensity 0.38. This panorama supplies lighting only; the custom material maps remain original CYBR assets. A direct shadow key at 0.95 and the existing 2048-pixel shadows from actual opaque CAD and cables remain active, with settled local reflections.</p><p>The comparison mode <code>?pbr-env=authored</code> retains original neutral strip-light studio radiance, revision v5: a narrow tall key strip, restrained secondary/rim strips, controlled face reflection and reduced room fill. This alternate environment is authored radiance, with no object appearance baked into it.</p><p>Runtime changes: linear Radiance HDR decoding, area reduction to 1024 × 512, float32 RGBA storage and gzip compression. No exposure or tone mapping is baked into the runtime radiance.</p><p>Source record · <a href="assets/pbr-metal/studio/studio_small_08-source.json" target="_blank" rel="noopener">Capture, hashes &amp; conversion ↗</a></p></div></details>
+<details class="receipt"><summary><span class="receipt-number">05</span><span><strong>Retired material trials</strong><small>Historical ambientCG and Julio Sillet assets remain credited and retained.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>Earlier trials used <a href="https://ambientcg.com/a/Metal010" target="_blank" rel="noopener">Metal 010</a> and <a href="https://ambientcg.com/a/Metal051A" target="_blank" rel="noopener">Metal 051 A</a> from ambientCG, under <a href="https://docs.ambientcg.com/license/" target="_blank" rel="noopener">CC0 1.0</a>. Those downloaded maps are inactive in the current custom material loader.</p><p><strong>“Metal Knurled 01 03” by <a href="https://juliosillet.gumroad.com/" target="_blank" rel="noopener">Julio Sillet</a>, CC-BY; distributed via <a href="https://huggingface.co/datasets/gvecchio/MatSynth" target="_blank" rel="noopener">MatSynth</a> by Giuseppe Vecchio and Valentin Deschaintre</strong>, was also a retired trial. Its retained record specifies CC-BY without a version. Original files, hashes, attribution and runtime change notices remain available.</p><p>Historical source records · <a href="assets/pbr-metal/NOTICE.md" target="_blank" rel="noopener">Complete trial credits &amp; transformations ↗</a> · <a href="assets/pbr-metal/JulioKnurl/source.json" target="_blank" rel="noopener">Julio material record ↗</a></p></div></details>
+<details class="receipt"><summary><span class="receipt-number">06</span><span><strong>Native geometry optical transport</strong><small>Retained CAD boundaries, material indices, absorption and opaque-surface hits.</small></span><span class="receipt-plus">+</span></summary><div class="receipt-body"><p>The LIGHT lens and ELEMENTS glass vessel and water use three retained CAD optical meshes, containing 44,694 boundary triangles. A geometry acceleration structure queries the next optical boundary and the nearest actual opaque surface. The retained opaque atlas contains 1,936,852 triangles; source CAD positions remain unchanged. Smooth source normals guide the dielectric shading.</p><p>Material indices of refraction govern Snell transitions. Each transmitted interface applies Fresnel weighting, and distance through the current medium applies Beer–Lambert absorption. Total internal reflection follows the reflected ray. Opaque hits use the original custom PBR channels. Three's material roughness and IOR control bicubic sampling of the cached HDR transmission mips.</p><p>The trace follows one transmitted branch per color channel, including total internal reflection. Other internal reflected branches are not recursively traced. Illumination uses direct raster shadows, the HDR environment and local reflections; it does not solve full bounce GI. SCENES glass and water retain the separate layered thickness approximation.</p><p>Source record · <a href="output/geo-working/realism-fast/native-upload-water.json" target="_blank" rel="noopener">Retained geometry and live render inventory ↗</a> · <a href="instrument-native-staged-transport.mjs" target="_blank" rel="noopener">Transport implementation ↗</a></p></div></details>
+</div></section></section>
+</main>
+
+<footer><a href="index.html" class="footer-name" aria-label="Cybrdelic home"><svg viewBox="400 425 1120 500" role="img" aria-label="Cybrdelic approved sigil 02"><image href="../cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/artwork-02.png" width="1920" height="1080"/></svg></a><a href="#top">Back to top ↑</a></footer>
+
+<dialog id="lightbox" aria-label="Render viewer"><button class="close-view" aria-label="Close viewer">Close ×</button><button class="prev-view" aria-label="Previous image">←</button><img alt=""><button class="next-view" aria-label="Next image">→</button><div class="viewer-caption"></div><a class="original-link" target="_blank" rel="noopener">Open original ↗</a></dialog>
+
+<script src="archive.js"></script><script src="motion.js"></script></body></html>

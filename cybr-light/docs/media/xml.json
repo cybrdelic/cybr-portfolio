@@ -1,0 +1,18 @@
+{
+  "name": "xml",
+  "description": "XML references, PLY geometry, transformed instances",
+  "backend": "native-cpp-cpu",
+  "preset": "preview",
+  "width": 480,
+  "height": 320,
+  "packets_per_pixel": 64,
+  "wavelengths_per_packet": 8,
+  "max_depth": 9,
+  "photon_count": 0,
+  "render_seconds": 55.949763448,
+  "raw_film_sha256": "87dff006d8b41466749d7d2bd414672d6166dffc1f01abcd7e79c7042cdb1151",
+  "preview_sha256": "0ed285436d287ebe07dd9c26578bd0ad42ab0dc5bcc367a00d11540449f7fb50",
+  "raw_film_finite": true,
+  "denoised": false,
+  "preview_note": "Display transform only; no AI image generation or denoising"
+}

@@ -1,0 +1,43 @@
+{
+  "assetId": "Metal010",
+  "source": "https://ambientcg.com/a/Metal010",
+  "creationMethod": "PBRProcedural",
+  "license": "CC0-1.0",
+  "licenseURL": "https://docs.ambientcg.com/license/",
+  "downloadURL": "https://ambientcg.com/get?file=Metal010_2K-PNG.zip",
+  "archiveSHA256": "54ce013cbc2ae7a38766ee0325542be34bc61fad0ed82b75a84636f507314444",
+  "sourceDimensions": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "physicalDimensionsKnown": false,
+  "normalConvention": "OpenGL",
+  "maps": [
+    {
+      "file": "Metal010_2K-PNG_Color.png",
+      "bytes": 3990643,
+      "sha256": "ec979ac05bfec585506936f6b8258ee60f49b6a4877cdea8fdc241f881fdbea5"
+    },
+    {
+      "file": "Metal010_2K-PNG_Displacement.png",
+      "bytes": 7344559,
+      "sha256": "dafbfb116ed025947b75002c2e8d3065ba4457c149baff25872eec2fb4f741f2"
+    },
+    {
+      "file": "Metal010_2K-PNG_Metalness.png",
+      "bytes": 2581,
+      "sha256": "124d4d89e4d4962a109293536bbe06ab60653244743d02ca1c382d1419976187"
+    },
+    {
+      "file": "Metal010_2K-PNG_NormalGL.png",
+      "bytes": 18883171,
+      "sha256": "a360af11def4681d04e2abd24ad7eaf6bb2bab938efef807dcb19914803d42f0"
+    },
+    {
+      "file": "Metal010_2K-PNG_Roughness.png",
+      "bytes": 1881373,
+      "sha256": "929f325e4d6ff46f1948431685083cf43e3d5b36a7100df376911bfb1c3c56b2"
+    }
+  ]
+}

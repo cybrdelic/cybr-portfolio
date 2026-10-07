@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "path": "portfolio/assets/display-modules/combat-3.webp",
+      "bytes": 274760,
+      "sha256": "75f093d4eb859b6c0c238e05ab0b78fcdee29d382c2874b3b4e6ea62cc2e30e3",
+      "reason": "Unused historical Soldier model export; preserved in private snapshots, omitted from every public commit"
+    },
+    {
+      "path": "portfolio/assets/display-modules/combat.bin.gz",
+      "bytes": 1743709,
+      "sha256": "f5e54b65b53d0f37dc580464d7f0c7fe4dd5f2a487c99366aa5a62683c7d59ca",
+      "reason": "Unused historical Soldier model export; preserved in private snapshots, omitted from every public commit"
+    },
+    {
+      "path": "portfolio/assets/display-modules/combat.json",
+      "bytes": 3608,
+      "sha256": "afc20156be2ae277804837cdb3979326ce5f1406786046e76ac963e844e54da7",
+      "reason": "Unused historical Soldier model export; preserved in private snapshots, omitted from every public commit"
+    },
+    {
+      "path": "portfolio/assets/display-modules/cybr-combat-cartridge.glb",
+      "bytes": 17311836,
+      "sha256": "f81a003b8c0cef730430fcabc0835bdcf3e85e021cf694733f6669dd4545537b",
+      "reason": "Unused historical Soldier model export; preserved in private snapshots, omitted from every public commit"
+    }
+  ],
+  "originals_deleted": false,
+  "cache_files": [
+    {
+      "path": "portfolio/instrument/.venv/Scripts/python.exe",
+      "bytes": 274424,
+      "sha256": "0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14",
+      "reason": "Machine-specific Python environment configuration; excluded from public source"
+    },
+    {
+      "path": "portfolio/instrument/.venv/Scripts/pythonw.exe",
+      "bytes": 263400,
+      "sha256": "c946a75fdc676012b084f6dc056506bfca5098dad04c407419ce7605bd85108c",
+      "reason": "Machine-specific Python environment configuration; excluded from public source"
+    },
+    {
+      "path": "portfolio/instrument/.venv/pyvenv.cfg",
+      "bytes": 350,
+      "sha256": "fff1fd042227e8adf5a06830dcda39369ae152cd76d3996c5d5d0bd956cd6449",
+      "reason": "Machine-specific Python environment configuration; excluded from public source"
+    }
+  ]
+}

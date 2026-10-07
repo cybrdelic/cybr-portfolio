@@ -1,0 +1,53 @@
+{
+  "asset": "JulioKnurl",
+  "source": "../source.json",
+  "maps": {
+    "baseColor": {
+      "path": "baseColor.webp",
+      "sha256": "e4227b50f82fe2255b707e64edfe1d70817c93e1f609a101bb8ef42ffbcc041a",
+      "bytes": 1375776,
+      "size": [
+        2048,
+        2048
+      ],
+      "exactCopyOfOriginalRuntime": true
+    },
+    "normal": {
+      "path": "normal.webp",
+      "sha256": "00645fef3b5c5f19f503bcb77688620038e522c597326ea900f10cf3f7410412",
+      "bytes": 5586794,
+      "size": [
+        2048,
+        2048
+      ],
+      "exactCopyOfOriginalRuntime": true
+    },
+    "roughnessMetallic": {
+      "path": "roughness-metallic.webp",
+      "sha256": "c9339f9e06308ad8e3fc6da58f200304f4ff275af98dc60bd3e0e87d70e3de60",
+      "bytes": 2397152,
+      "size": [
+        2048,
+        2048
+      ],
+      "exactCopyOfOriginalRuntime": true,
+      "channels": {
+        "R": "constant 255 (unused)",
+        "G": "roughness",
+        "B": "metallic"
+      }
+    }
+  },
+  "conversion": "4096 to 2048 Lanczos downsample; no map-axis rotation or normal inversion; 8-bit lossless WebP; packed G roughness/B metallic equal independent resampled sources.",
+  "shaderSpaces": {
+    "baseColor": "sRGB",
+    "normal": "linear data",
+    "roughnessMetallic": "linear data"
+  },
+  "verification": {
+    "allThreeCopiedFileHashesEqual": true,
+    "allFiveRawMapHashesMatchExtractionReceipt": true,
+    "originalRawMapHashesUnchanged": true,
+    "sourceOriginalFilesRetained": true
+  }
+}

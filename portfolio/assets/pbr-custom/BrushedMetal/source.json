@@ -1,0 +1,107 @@
+{
+  "assetId": "BrushedMetal",
+  "revision": "machining-v3-refined",
+  "source": "Original CYBR material",
+  "customMadeFor": "CYBR portfolio instrument",
+  "creationMethod": "AI unlit appearance plus independently authored physical height, multi-scale finishing roughness and fine-scale cavity fields",
+  "downloadedInputs": [],
+  "authoredTileMM": [
+    32.0,
+    32.0
+  ],
+  "normalConvention": "OpenGL tangent +Y upward",
+  "normalScale": [
+    1,
+    1
+  ],
+  "heightNormals": true,
+  "cavity": false,
+  "physicalDimensionsKnown": false,
+  "physicalDimensionsAuthored": true,
+  "physicalScaleNote": "Tile dimensions and relief are explicit authoring values, not measurements of a manufactured alloy.",
+  "heightUnits": "millimeters",
+  "recipe": "assets/pbr-custom/BrushedMetal/source/recipe.json",
+  "recipeSHA256": "8ab9fc9e1528653c37cafeeeaeebc01ce6f27d6c1863cd4ca83274cda9b9b443",
+  "heightPNG": {
+    "path": "assets/pbr-custom/BrushedMetal/source/height.png",
+    "sha256": "827d1ddec9305e02ba307889dab1ceacb13b312458157dbd6eeef7aa5e2be4fe",
+    "bits": 16
+  },
+  "roughnessPNG": {
+    "path": "assets/pbr-custom/BrushedMetal/source/roughness.png",
+    "sha256": "5d539f31e305f5e9797e02d99895bfe536f0a4fb247d878aa87f511e9dd28bbb"
+  },
+  "cavityPNG": {
+    "path": "assets/pbr-custom/BrushedMetal/source/cavity.png",
+    "sha256": "7368a2762f0210ba889788e2c23314e77fc184beecf5c6b5ffbe8279ed4f308a"
+  },
+  "runtimeMaps": {
+    "normal": {
+      "path": "assets/pbr-custom/BrushedMetal/runtime/normal.webp",
+      "bytes": 220000,
+      "sha256": "f0ab88d23b15274e993d122478e0b7cf844236bc3aa274728dac19e1b218a441",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/BrushedMetal/runtime/roughness-metallic.webp",
+      "bytes": 317240,
+      "sha256": "b6e5d909a6b243d23b56cff8c17abc744df05ccd8e458a99b5ef36482a721393",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/BrushedMetal/runtime/baseColor.webp",
+      "bytes": 1458730,
+      "sha256": "56df2fa1bd91566972ac2e564a828bf37e27322a4e749ceaf4a77667b12ccc24",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "appearancePending": false,
+  "geometryDisplacement": false,
+  "geometryInferenceFromAppearance": false,
+  "authorship": "CYBR custom numerical material authoring; OpenAI ImageGen appearance directed for this project.",
+  "license": "Original custom project assets; no third-party material maps.",
+  "appearance": {
+    "file": "assets/pbr-custom/source-appearance/brushed-imagegen.png",
+    "sha256": "c97cc3d23a4cfe6161864a04efa88456691bf503c355e343417ff601c8bf3f29",
+    "nativeSize": [
+      1254,
+      1254
+    ],
+    "nativeMode": "RGB",
+    "generator": "OpenAI ImageGen",
+    "promptFile": "assets/pbr-custom/source-appearance/brushed-prompt.txt",
+    "promptSHA256": "f2bb7c70a871c7bf0d0618382ff0f55897c4f9c97f128de2f1a69f32524de742",
+    "heightInferenceFromImage": false,
+    "runtimeResize": "Lanczos to 2048 square; actual native dimensions retained above",
+    "calibration": {
+      "inputInterpretation": "sRGB appearance",
+      "linearReflectanceTargetRGB": [
+        0.6,
+        0.64,
+        0.69
+      ],
+      "method": "Periodic log-luminance correction and bounded normalized detail/mesoscopic components (2.9% and 1.9% RMS coefficients); mean-preserving metal reflectance calibration with coherent independent height marks. First/last edge texels share their average. No source brightness-to-height conversion.",
+      "reflectanceIsMeasured": false,
+      "imageCenterControlsHeight": false,
+      "pairedEdgeTexelsEqual": true
+    }
+  },
+  "authoringScriptSHA256": "9e62a0dd302fe6102ea6a517fcc6ff7179c7dd99c27f264e9f81d156301def78"
+}

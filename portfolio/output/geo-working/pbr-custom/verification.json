@@ -1,0 +1,415 @@
+{
+  "revision": "machining-v3-refined",
+  "scope": "Executed numerical/provenance/channel/seam/height-normal checks on custom maps; browser and CAD invariance evidence is maintained by the renderer task.",
+  "tests": {
+    "run": 15,
+    "failures": 0,
+    "errors": 0,
+    "passed": true,
+    "log": "material-tests.txt"
+  },
+  "checks": {
+    "allCustomMapTestsPass": true,
+    "fourCustomSets": true,
+    "noDownloadedInputs": true,
+    "allRuntimeMaps2K": true,
+    "allImageGenOriginalsRecordedAtActual1254": true,
+    "baseColorWrapEdgesEqual": true,
+    "normalAngularErrorUnderHalfDegree": true,
+    "wearV6TrackedBytesUnchanged": true,
+    "fineV1SnapshotBytesPreserved": true,
+    "roughnessHierarchyPresent": true,
+    "modestAppearanceVariationPresent": true,
+    "machiningV2SnapshotBytesPreserved": true,
+    "onlyBrushLatheRoughnessChannelsChanged": true
+  },
+  "preservation": {
+    "wearV6TrackedFileCount": 61,
+    "wearV6Receipt": "../pbr-custom-worn/source-hashes.json",
+    "fineV1SnapshotFileCount": 43,
+    "fineV1Snapshot": "history/fine-v1/snapshot-hashes.json",
+    "machiningV2SnapshotFileCount": 48,
+    "machiningV2Snapshot": "history/machining-v2/snapshot-hashes.json"
+  },
+  "runtimeMapCount": 12,
+  "customAppearanceOriginalCount": 3,
+  "materials": {
+    "BrushedMetal": {
+      "revision": "machining-v3-refined",
+      "seed": 2683,
+      "tileMM": [
+        32.0,
+        32.0
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "downloadedInputs": [],
+      "originalAppearanceSize": [
+        1254,
+        1254
+      ],
+      "heightPeakToValleyMicrons": 14.058085333090276,
+      "roughnessRange": [
+        0.2199999988079071,
+        0.46424776315689087
+      ],
+      "roughnessMedian": 0.3296881318092346,
+      "roughnessStd": 0.031539808958768845,
+      "roughnessMetricRegion": "fulltile",
+      "reflectanceLuminanceCV": 0.035005716830979305,
+      "cavityRange": [
+        1.0,
+        1.0
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.3306607279169681,
+        "mean": 0.22275468344746469,
+        "p99": 0.3062477926987633
+      },
+      "heightRoughnessCorrelation": -0.4631034607435983,
+      "heightSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 1.164885725302156e-05,
+          "adjacentMeanAbsolute": 1.1854070180561393e-05,
+          "ratio": 0.9826884269714355
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0003129098331555724,
+          "adjacentMeanAbsolute": 0.00042571037192828953,
+          "ratio": 0.7350298762321472
+        }
+      },
+      "roughnessSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.00039195286808535457,
+          "adjacentMeanAbsolute": 0.0003696476051118225,
+          "ratio": 1.0603419542312622
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0021283235400915146,
+          "adjacentMeanAbsolute": 0.0037451584357768297,
+          "ratio": 0.568286657333374
+        }
+      },
+      "cavitySeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.0,
+          "ratio": 0.0
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.0,
+          "ratio": 0.0
+        }
+      },
+      "baseColorEdgeTexelsEqual": true,
+      "linearBaseColorRGBMean": [
+        0.6000014399678975,
+        0.6400025801307976,
+        0.6900016613803217
+      ],
+      "normalScale": [
+        1,
+        1
+      ],
+      "geometryDisplacement": false,
+      "geometryInferenceFromAppearance": false
+    },
+    "LatheMetal": {
+      "revision": "machining-v3-refined",
+      "seed": 5117,
+      "tileMM": [
+        128.0,
+        128.0
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "downloadedInputs": [],
+      "originalAppearanceSize": [
+        1254,
+        1254
+      ],
+      "heightPeakToValleyMicrons": 15.00813860911876,
+      "roughnessRange": [
+        0.23000000417232513,
+        0.4425821006298065
+      ],
+      "roughnessMedian": 0.3374171257019043,
+      "roughnessStd": 0.0274945180863142,
+      "roughnessMetricRegion": "central64mm square",
+      "reflectanceLuminanceCV": 0.03626860978325284,
+      "cavityRange": [
+        1.0,
+        1.0
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.31793368823046775,
+        "mean": 0.23075296778851548,
+        "p99": 0.31775185295763164
+      },
+      "heightRoughnessCorrelation": -0.5293929711008415,
+      "heightSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.0003203173400834203,
+          "ratio": 0.0
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.00032138332608155906,
+          "ratio": 0.0
+        }
+      },
+      "roughnessSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.002054189797490835,
+          "ratio": 0.0
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.0020568622276186943,
+          "ratio": 0.0
+        }
+      },
+      "cavitySeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.0,
+          "ratio": 0.0
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0,
+          "adjacentMeanAbsolute": 0.0,
+          "ratio": 0.0
+        }
+      },
+      "baseColorEdgeTexelsEqual": true,
+      "linearBaseColorRGBMean": [
+        0.6890709027837545,
+        0.7214234525039984,
+        0.7604983331058435
+      ],
+      "normalScale": [
+        1,
+        1
+      ],
+      "geometryDisplacement": false,
+      "geometryInferenceFromAppearance": false
+    },
+    "DiamondKnurl": {
+      "revision": "machining-v2",
+      "seed": 8179,
+      "tileMM": [
+        16.41176470588235,
+        10.0
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "downloadedInputs": [],
+      "originalAppearanceSize": [
+        1254,
+        1254
+      ],
+      "heightPeakToValleyMicrons": 75.32493374310434,
+      "roughnessRange": [
+        0.2471984624862671,
+        0.49000000953674316
+      ],
+      "roughnessMedian": 0.37879395484924316,
+      "roughnessStd": 0.03819940984249115,
+      "roughnessMetricRegion": "fulltile",
+      "reflectanceLuminanceCV": 0.03509504684391958,
+      "cavityRange": [
+        0.7800571322441101,
+        1.0
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.36583251015725843,
+        "mean": 0.17166575629903544,
+        "p99": 0.2997430247599471
+      },
+      "heightRoughnessCorrelation": -0.7760126730436948,
+      "heightSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0002907816378865391,
+          "adjacentMeanAbsolute": 0.0009112508851103485,
+          "ratio": 0.31910163164138794
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.00029178831027820706,
+          "adjacentMeanAbsolute": 0.0005701913614757359,
+          "ratio": 0.5117375254631042
+        }
+      },
+      "roughnessSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0008054267382249236,
+          "adjacentMeanAbsolute": 0.0016463273204863071,
+          "ratio": 0.489226371049881
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0013365232152864337,
+          "adjacentMeanAbsolute": 0.0015894781099632382,
+          "ratio": 0.8408566117286682
+        }
+      },
+      "cavitySeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0013291751965880394,
+          "adjacentMeanAbsolute": 0.003366145770996809,
+          "ratio": 0.39486560225486755
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0014320210320875049,
+          "adjacentMeanAbsolute": 0.0023162050638347864,
+          "ratio": 0.6182617545127869
+        }
+      },
+      "baseColorEdgeTexelsEqual": true,
+      "linearBaseColorRGBMean": [
+        0.5800010450078901,
+        0.6100035549104206,
+        0.6500027022378703
+      ],
+      "normalScale": [
+        1,
+        1
+      ],
+      "geometryDisplacement": false,
+      "geometryInferenceFromAppearance": false
+    },
+    "DiamondEtch": {
+      "revision": "machining-v2",
+      "seed": 9317,
+      "tileMM": [
+        10.4,
+        6.5
+      ],
+      "resolution": [
+        2048,
+        2048
+      ],
+      "downloadedInputs": [],
+      "originalAppearanceSize": [
+        1254,
+        1254
+      ],
+      "heightPeakToValleyMicrons": 9.816679288633168,
+      "roughnessRange": [
+        0.24927474558353424,
+        0.44549262523651123
+      ],
+      "roughnessMedian": 0.3324839472770691,
+      "roughnessStd": 0.026213781908154488,
+      "roughnessMetricRegion": "fulltile",
+      "reflectanceLuminanceCV": 0.03496400546838296,
+      "cavityRange": [
+        0.9200000166893005,
+        1.0
+      ],
+      "heightNormalAngularErrorDegrees": {
+        "max": 0.334970566291895,
+        "mean": 0.17175683456322416,
+        "p99": 0.29564376845634865
+      },
+      "heightRoughnessCorrelation": -0.40652777839129234,
+      "heightSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 5.437318395706825e-05,
+          "adjacentMeanAbsolute": 8.93953547347337e-05,
+          "ratio": 0.6082327961921692
+        },
+        "V": {
+          "boundaryMeanAbsolute": 2.913059688580688e-05,
+          "adjacentMeanAbsolute": 6.231407314771786e-05,
+          "ratio": 0.46748021245002747
+        }
+      },
+      "roughnessSeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.0003838511183857918,
+          "adjacentMeanAbsolute": 0.0007968671270646155,
+          "ratio": 0.48170027136802673
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0007311670924536884,
+          "adjacentMeanAbsolute": 0.000954178161919117,
+          "ratio": 0.766279399394989
+        }
+      },
+      "cavitySeams": {
+        "U": {
+          "boundaryMeanAbsolute": 0.00035771806142292917,
+          "adjacentMeanAbsolute": 0.0008488810854032636,
+          "ratio": 0.4213995039463043
+        },
+        "V": {
+          "boundaryMeanAbsolute": 0.0002141412696801126,
+          "adjacentMeanAbsolute": 0.0006231636507436633,
+          "ratio": 0.3436356782913208
+        }
+      },
+      "baseColorEdgeTexelsEqual": true,
+      "linearBaseColorRGBMean": [
+        0.6300014211077496,
+        0.660001952136156,
+        0.7100013757352599
+      ],
+      "normalScale": [
+        1,
+        1
+      ],
+      "geometryDisplacement": false,
+      "geometryInferenceFromAppearance": false
+    }
+  },
+  "limitations": [
+    "AI images provide appearance, not measured reflectance or scanned surface geometry.",
+    "Physical tile size, micron relief, roughness and reflectance are authoring values.",
+    "Normal maps provide surface relief; native CAD positions are not displaced.",
+    "Fine-scale cavity is an authored valley-coverage proxy, not baked scene lighting or CAD ambient occlusion.",
+    "1254-square AI originals are resized to 2048 for runtime; numerical maps are authored natively at 2048."
+  ],
+  "refinement": {
+    "BrushedMetal": {
+      "heightGrooveScratchCavityTileFieldsIdentical": true,
+      "normalAndBaseColorBytesIdentical": true,
+      "packedCavityMetalnessBytesIdentical": true,
+      "packedAllChannelsIdentical": false,
+      "currentRoughnessMedian": 0.3296881318092346,
+      "currentRoughnessStd": 0.031539808958768845
+    },
+    "LatheMetal": {
+      "heightGrooveScratchCavityTileFieldsIdentical": true,
+      "normalAndBaseColorBytesIdentical": true,
+      "packedCavityMetalnessBytesIdentical": true,
+      "packedAllChannelsIdentical": false,
+      "currentRoughnessMedian": 0.3374171257019043,
+      "currentRoughnessStd": 0.0274945180863142
+    },
+    "DiamondKnurl": {
+      "heightGrooveScratchCavityTileFieldsIdentical": true,
+      "normalAndBaseColorBytesIdentical": true,
+      "packedCavityMetalnessBytesIdentical": true,
+      "packedAllChannelsIdentical": true,
+      "currentRoughnessMedian": 0.37879395484924316,
+      "currentRoughnessStd": 0.03819940984249115
+    },
+    "DiamondEtch": {
+      "heightGrooveScratchCavityTileFieldsIdentical": true,
+      "normalAndBaseColorBytesIdentical": true,
+      "packedCavityMetalnessBytesIdentical": true,
+      "packedAllChannelsIdentical": true,
+      "currentRoughnessMedian": 0.3324839472770691,
+      "currentRoughnessStd": 0.026213781908154488
+    }
+  }
+}

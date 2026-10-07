@@ -1,0 +1,47 @@
+{
+  "asset": "DiamondEtch",
+  "source": "../source.json",
+  "maps": {
+    "normal": {
+      "path": "assets/pbr-custom/DiamondEtch/runtime/normal.webp",
+      "bytes": 950376,
+      "sha256": "b86d040c7723a4f91807fa4daa038f9d08c182e152bd7caa928e29a8baed2393",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-custom/DiamondEtch/runtime/roughness-metallic.webp",
+      "bytes": 717750,
+      "sha256": "b71f2ab91947d1bf0731e82906267aa663caa41c5d216719e0fc839bc0eb42f9",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true,
+      "channels": {
+        "R": "authored fine-scale microcavity factor, white for brushed and lathe",
+        "G": "authored roughness",
+        "B": "255, bare-metal mask"
+      }
+    },
+    "baseColor": {
+      "path": "assets/pbr-custom/DiamondEtch/runtime/baseColor.webp",
+      "bytes": 2448616,
+      "sha256": "312c5942b550a8ff9f5ed265059f5ae5aef9223ca00b9ed68a5e924b84ea1a77",
+      "size": [
+        2048,
+        2048
+      ],
+      "losslessPixelEquality": true
+    }
+  },
+  "shaderSpaces": {
+    "baseColor": "sRGB",
+    "normal": "linear data",
+    "roughnessMetallic": "linear data"
+  },
+  "downloadedInputs": []
+}

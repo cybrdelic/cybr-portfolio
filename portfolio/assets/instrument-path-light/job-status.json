@@ -1,0 +1,23 @@
+{
+  "pid": 1272,
+  "renderer": "CYBR LIGHT OptiX spectral",
+  "backend": "optix",
+  "expected": 49,
+  "started": "2026-09-23T15:56:31.920343+00:00",
+  "width": 1280,
+  "spp": 128,
+  "bands": 8,
+  "phase": "complete",
+  "completed": 49,
+  "updated": "2026-09-23T16:22:27.827657+00:00",
+  "memory": {
+    "ramGiB": 15.71,
+    "availableRamGiB": 5.67,
+    "availableCommitGiB": 7.12
+  },
+  "checkpoint": null,
+  "workerPid": null,
+  "log": "D:\\CYBR-build\\exploded-instrument\\logs\\optix-path-047.log",
+  "sampleProgress": "D:\\CYBR-build\\exploded-instrument\\path-bake-light\\047\\native-progress.json",
+  "visualReviewPending": true
+}

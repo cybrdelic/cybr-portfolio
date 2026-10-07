@@ -1,0 +1,30 @@
+[
+  {
+    "id": "fire",
+    "title": "Fire / traveling combustion",
+    "video": "fire-v3-test.mp4",
+    "note": "Torn wake and finite burnout improved. The leading tip still reads too smoothly. Not approved for the full sigil.",
+    "physicalSpeed": 1
+  },
+  {
+    "id": "water",
+    "title": "Water / opposing jets",
+    "video": "water-test.mp4",
+    "note": "Earlier collision produces a sheet with simulated breakup. The surface is still too granular and reflective. No added spray. Not approved for the full sigil.",
+    "physicalSpeed": 3.3333333333333335
+  },
+  {
+    "id": "air",
+    "title": "Air / pulsed vortex",
+    "video": "air-v3-test.mp4",
+    "note": "A pulse now rolls into a wake instead of tracing a tube. It remains too compact and smoky for the intended sweeping air treatment. Not approved for the full sigil.",
+    "physicalSpeed": 1
+  },
+  {
+    "id": "earth",
+    "title": "Earth / impact and contact",
+    "video": "earth-test.mp4",
+    "note": "Volumetric rigid bodies, corrected floor contact and breakable bonds. Startup holds; impact fracture is still too weak. Neutral material test only. Not approved for the full sigil.",
+    "physicalSpeed": 1
+  }
+]

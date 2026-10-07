@@ -1,0 +1,418 @@
+{
+  "id": "JulioKnurl",
+  "materialName": "js_metal_knurled_001_003",
+  "source": "Julio Sillet via official MatSynth dataset",
+  "author": "Julio Sillet",
+  "license": "CC-BY",
+  "licenseVersion": "unspecified in dataset record",
+  "attribution": "Metal Knurled 01 03 by Julio Sillet, CC-BY; distributed via MatSynth by Giuseppe Vecchio and Valentin Deschaintre.",
+  "sourceURL": "https://juliosillet.gumroad.com/",
+  "packURL": "https://juliosillet.gumroad.com/l/Uiidb",
+  "datasetURL": "https://huggingface.co/datasets/gvecchio/MatSynth",
+  "datasetFileURL": "https://huggingface.co/datasets/gvecchio/MatSynth/resolve/main/data/train-00233-of-00431.parquet",
+  "datasetRow": 0,
+  "datasetShard": "data/train-00233-of-00431.parquet",
+  "datasetMetadata": {
+    "authors": [
+      "Julio Sillet"
+    ],
+    "description": "",
+    "height_factor": 0.009999999776482582,
+    "height_mean": 0.3930000066757202,
+    "license": "CC-BY",
+    "link": "https://juliosillet.gumroad.com/",
+    "maps": [
+      "basecolor",
+      "diffuse",
+      "displacement",
+      "height",
+      "metallic",
+      "normal",
+      "roughness",
+      "specular"
+    ],
+    "method": "procedural",
+    "name": "Metal Knurled 01 03",
+    "physical_size": null,
+    "source": "julio_sillet",
+    "stationary": true,
+    "tags": [
+      "knurled",
+      "metal"
+    ],
+    "version_date": "2023-10-31",
+    "category": "Metal"
+  },
+  "normalConvention": "OpenGL, +Y upward (MatSynth dataset standard)",
+  "physicalTileSizeMM": null,
+  "physicalScaleNote": "Source has no physical_size value. Runtime tile millimeters are an authored design choice, not a source measurement.",
+  "sourceMaps": {
+    "basecolor": {
+      "path": "assets/pbr-metal/JulioKnurl/source/4k/basecolor.png",
+      "sha256": "af5e96b74e93360dbd2711cd9cc70ace9ea83354e1f479d648a5315539c26fe9",
+      "bytes": 8372792,
+      "image": {
+        "mode": "RGB",
+        "size": [
+          4096,
+          4096
+        ],
+        "dtype": "uint8",
+        "min": 0,
+        "max": 48,
+        "mean": 12.648742020130157
+      },
+      "extraction": {
+        "dictionaryValues": 13,
+        "sourcePNGBytes": 8372792,
+        "dictionaryPrefixBytes": 8519680,
+        "firstRowDictionaryIndex": 0,
+        "transferredBytes": 8520704
+      }
+    },
+    "normal": {
+      "path": "assets/pbr-metal/JulioKnurl/source/4k/normal.png",
+      "sha256": "35fa83baaba3ddf718f51bbabb5d16bc16206d2f0234d42ecc01353babe429c9",
+      "bytes": 22389404,
+      "image": {
+        "mode": "RGB",
+        "size": [
+          4096,
+          4096
+        ],
+        "dtype": "uint8",
+        "min": 54,
+        "max": 255,
+        "mean": 169.08179507652918
+      },
+      "extraction": {
+        "dictionaryValues": 13,
+        "sourcePNGBytes": 22389404,
+        "dictionaryPrefixBytes": 25296896,
+        "firstRowDictionaryIndex": 0,
+        "transferredBytes": 25297920
+      }
+    },
+    "roughness": {
+      "path": "assets/pbr-metal/JulioKnurl/source/4k/roughness.png",
+      "sha256": "8f6cb4ade71d6a4543017ac9a9c9e39c654bbc27e5976a6be65db1a696fdc1f9",
+      "bytes": 8027998,
+      "image": {
+        "mode": "L",
+        "size": [
+          4096,
+          4096
+        ],
+        "dtype": "uint8",
+        "min": 25,
+        "max": 151,
+        "mean": 78.62093043327332
+      },
+      "extraction": {
+        "dictionaryValues": 13,
+        "sourcePNGBytes": 8027998,
+        "dictionaryPrefixBytes": 8519680,
+        "firstRowDictionaryIndex": 0,
+        "transferredBytes": 8520704
+      }
+    },
+    "metallic": {
+      "path": "assets/pbr-metal/JulioKnurl/source/4k/metallic.png",
+      "sha256": "f62b52b2c76917b440bef92eb6ed1302e75c305bfb0cde348f01748a7f515d45",
+      "bytes": 26378,
+      "image": {
+        "mode": "L",
+        "size": [
+          4096,
+          4096
+        ],
+        "dtype": "uint8",
+        "min": 255,
+        "max": 255,
+        "mean": 255.0
+      },
+      "extraction": {
+        "dictionaryValues": 7,
+        "sourcePNGBytes": 26378,
+        "dictionaryPrefixBytes": 131072,
+        "firstRowDictionaryIndex": 0,
+        "transferredBytes": 132096
+      }
+    },
+    "height": {
+      "path": "assets/pbr-metal/JulioKnurl/source/4k/height.png",
+      "sha256": "4483e2f0227cf455e0aeda6f2e34ec62a3cc0dcc95f086a8dba34e33454bbaff",
+      "bytes": 24888136,
+      "image": {
+        "mode": "I;16",
+        "size": [
+          4096,
+          4096
+        ],
+        "dtype": "uint16",
+        "min": 4184,
+        "max": 36807,
+        "mean": 17006.688865363598
+      },
+      "extraction": {
+        "dictionaryValues": 13,
+        "sourcePNGBytes": 24888136,
+        "dictionaryPrefixBytes": 25296896,
+        "firstRowDictionaryIndex": 0,
+        "transferredBytes": 25297920
+      }
+    }
+  },
+  "runtimeMaps": {
+    "basecolor": {
+      "path": "assets/pbr-metal/JulioKnurl/runtime/baseColor.webp",
+      "sha256": "e4227b50f82fe2255b707e64edfe1d70817c93e1f609a101bb8ef42ffbcc041a",
+      "bytes": 1375776,
+      "image": {
+        "mode": "RGB",
+        "size": [
+          2048,
+          2048
+        ],
+        "dtype": "uint8",
+        "min": 0,
+        "max": 48,
+        "mean": 12.643894910812378
+      },
+      "losslessRoundtripPixelEquality": true,
+      "transformation": "Pillow Lanczos downsample from 4096 to 2048, RGB lossless WebP; no axis rotation or normal inversion",
+      "originalRuntimePath": "assets/pbr-metal/JulioKnurl/basecolor.webp",
+      "runtimeCopySHA256Equality": true
+    },
+    "normal": {
+      "path": "assets/pbr-metal/JulioKnurl/runtime/normal.webp",
+      "sha256": "00645fef3b5c5f19f503bcb77688620038e522c597326ea900f10cf3f7410412",
+      "bytes": 5586794,
+      "image": {
+        "mode": "RGB",
+        "size": [
+          2048,
+          2048
+        ],
+        "dtype": "uint8",
+        "min": 56,
+        "max": 255,
+        "mean": 169.08486167589822
+      },
+      "losslessRoundtripPixelEquality": true,
+      "transformation": "Pillow Lanczos downsample from 4096 to 2048, RGB lossless WebP; no axis rotation or normal inversion",
+      "originalRuntimePath": "assets/pbr-metal/JulioKnurl/normal.webp",
+      "runtimeCopySHA256Equality": true
+    },
+    "roughnessMetallic": {
+      "path": "assets/pbr-metal/JulioKnurl/runtime/roughness-metallic.webp",
+      "sha256": "c9339f9e06308ad8e3fc6da58f200304f4ff275af98dc60bd3e0e87d70e3de60",
+      "bytes": 2397152,
+      "image": {
+        "mode": "RGB",
+        "size": [
+          2048,
+          2048
+        ],
+        "dtype": "uint8",
+        "min": 23,
+        "max": 255,
+        "mean": 196.20696099599203
+      },
+      "channels": {
+        "R": "constant 255 (unused)",
+        "G": "roughness",
+        "B": "metallic"
+      },
+      "roughnessChannelPixelEquality": true,
+      "metallicChannelPixelEquality": true,
+      "transformation": "Pillow Lanczos downsample source grayscale maps to 2048; unchanged resampled bytes in G/B; lossless WebP",
+      "originalRuntimePath": "assets/pbr-metal/JulioKnurl/roughness-metallic.webp",
+      "runtimeCopySHA256Equality": true
+    }
+  },
+  "extraction": {
+    "networkTransferredBytes": 67769344,
+    "requests": 26,
+    "wholeShardDownloaded": false,
+    "fullDatasetDownloaded": false,
+    "method": "Parquet dictionary entry zero verified from first row data-page index; bounded compressed-prefix byte ranges and partial Snappy decoding"
+  },
+  "datasetShardSHA256": "456ac89c4e97d818c81f63d87d76cc8e2fd2b4b04ba2b46986453b2eaf708d7e",
+  "mapColorSpaces": {
+    "basecolor": "sRGB",
+    "normal": "linear data / NoColorSpace",
+    "roughness": "linear data / NoColorSpace",
+    "metallic": "linear data / NoColorSpace",
+    "height": "linear 16-bit data; retained as source only, no geometry displacement"
+  },
+  "patternEvidence": {
+    "method": "2D FFT of original normal R channel box-reduced to 1024. Dominant harmonic (\u00b132,\u00b120), fundamental (\u00b116,\u00b110).",
+    "completeRepeatPeriodsPerSourceTile": [
+      16,
+      10
+    ],
+    "sourceRepeatPixels": [
+      256,
+      409.6
+    ],
+    "staggeredHalfCellPixels": [
+      128,
+      204.8
+    ],
+    "peaks": [
+      {
+        "cyclesU": -32,
+        "cyclesImageV": 20,
+        "magnitude": 59374.73
+      },
+      {
+        "cyclesU": 32,
+        "cyclesImageV": -20,
+        "magnitude": 59374.73
+      },
+      {
+        "cyclesU": -32,
+        "cyclesImageV": -20,
+        "magnitude": 59373.055
+      },
+      {
+        "cyclesU": 32,
+        "cyclesImageV": 20,
+        "magnitude": 59373.055
+      },
+      {
+        "cyclesU": -16,
+        "cyclesImageV": 10,
+        "magnitude": 41974.48
+      },
+      {
+        "cyclesU": 16,
+        "cyclesImageV": -10,
+        "magnitude": 41974.48
+      },
+      {
+        "cyclesU": 16,
+        "cyclesImageV": 10,
+        "magnitude": 41921.469
+      },
+      {
+        "cyclesU": -16,
+        "cyclesImageV": -10,
+        "magnitude": 41921.469
+      },
+      {
+        "cyclesU": -48,
+        "cyclesImageV": -10,
+        "magnitude": 36157.344
+      },
+      {
+        "cyclesU": 48,
+        "cyclesImageV": 10,
+        "magnitude": 36157.344
+      },
+      {
+        "cyclesU": 48,
+        "cyclesImageV": -10,
+        "magnitude": 36109.125
+      },
+      {
+        "cyclesU": -48,
+        "cyclesImageV": 10,
+        "magnitude": 36109.125
+      }
+    ],
+    "sourcePhysicalSizeKnown": false,
+    "authoredDesignScale": {
+      "diamond": {
+        "targetRepeatMM": [
+          1,
+          1
+        ],
+        "nominalTileMM": [
+          16,
+          10
+        ],
+        "serviceBandChartAngularLengthMM": 279,
+        "integerImageTilesAround": 17,
+        "closedUTileMM": 16.41176470588235,
+        "resultingChartURepeatMM": 1.025735294117647
+      },
+      "fine": {
+        "targetRepeatMM": [
+          0.65,
+          0.65
+        ],
+        "nominalTileMM": [
+          10.4,
+          6.5
+        ],
+        "lockingRingChartAngularLengthMM": 270.4,
+        "integerImageTilesAround": 26,
+        "closedUTileMM": 10.399999999999999,
+        "resultingChartURepeatMM": 0.6499999999999999
+      },
+      "note": "Image periods are measured; millimeter scales are chosen for the native CAD part. Closed U uses integer complete image tiles, including albedo/roughness variations, rather than closing only the diamond frequency."
+    }
+  },
+  "normalHeightOrientationCheck": {
+    "sampleResolution": [
+      1024,
+      1024
+    ],
+    "normalX_vs_negativeHeightImageX": 0.9936745655918077,
+    "normalY_vs_positiveHeightImageY": 0.9875358014545651,
+    "explanation": "Raster image rows increase downward. OpenGL +V points upward, so green normal has positive correlation with image-row height derivative. This checks orientation only, not physical height amplitude."
+  },
+  "assetId": "JulioKnurl",
+  "creationMethod": "procedural",
+  "physicalDimensionsKnown": false,
+  "authoredTileMM": [
+    16.41176470588235,
+    10
+  ],
+  "authoredEtchedTileMM": [
+    10.4,
+    6.5
+  ],
+  "authoredScaleBasis": {
+    "sourcePhysicalSizeKnown": false,
+    "imageFullRepeatPeriods": [
+      16,
+      10
+    ],
+    "knurl": {
+      "part": "geo__knurled_service_band",
+      "angularChartLengthMM": 279,
+      "wholeImageTilesAround": 17,
+      "tileMM": [
+        16.41176470588235,
+        10
+      ],
+      "chartRepeatMM": [
+        1.025735294117647,
+        1
+      ]
+    },
+    "etched": {
+      "part": "light__exploded_locking_ring",
+      "angularChartLengthMM": 270.4,
+      "wholeImageTilesAround": 26,
+      "tileMM": [
+        10.4,
+        6.5
+      ],
+      "chartRepeatMM": [
+        0.65,
+        0.65
+      ]
+    },
+    "note": "These tile millimeters are authored native-part mapping scales, not measured source-material dimensions. Etched scale is explicitly independent of the knurl scale so both profiles close at complete image-tile boundaries."
+  },
+  "runtimeLayoutVerification": {
+    "allThreeCopiedFileHashesEqual": true,
+    "allFiveRawMapHashesMatchExtractionReceipt": true,
+    "originalRawMapHashesUnchanged": true,
+    "sourceOriginalFilesRetained": true
+  }
+}

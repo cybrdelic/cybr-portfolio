@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Fire",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/fire-02.mp4",
+    "preview": "assets/play-elements-fire-02.mp4",
+    "bytes": 1516948,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Water",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/water-02-r8.mp4",
+    "preview": "assets/play-elements-water-02-r8.mp4",
+    "bytes": 2400584,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Earth",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/earth-02-r6.mp4",
+    "preview": "assets/play-elements-earth-02-r6.mp4",
+    "bytes": 701812,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Air",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/air-02.mp4",
+    "preview": "assets/play-elements-air-02.mp4",
+    "bytes": 655134,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Ice",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/ice-02.mp4",
+    "preview": "assets/play-elements-ice-02.mp4",
+    "bytes": 1615451,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Lava",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/lava-02.mp4",
+    "preview": "assets/play-elements-lava-02.mp4",
+    "bytes": 891522,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Lightning",
+    "project": "elements",
+    "original": "cybr-elements/outputs/cybrdelic-type/elements/motion/bending/sigils/02/lightning-02-r5.mp4",
+    "preview": "assets/play-elements-lightning-02-r5.mp4",
+    "bytes": 2079029,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Side-view leap study",
+    "project": "combat",
+    "original": "cybr-combat/demo-output/side-leap-study.mp4",
+    "preview": "assets/play-combat-side-leap-study.mp4",
+    "bytes": 93021,
+    "audio": "silent browser preview; original linked separately"
+  },
+  {
+    "title": "Counter study",
+    "project": "combat",
+    "original": "cybr-combat/demo-output/workbench/counter-study.mp4",
+    "preview": "assets/play-combat-counter-study.mp4",
+    "bytes": 256355,
+    "audio": "silent browser preview; original linked separately"
+  }
+]

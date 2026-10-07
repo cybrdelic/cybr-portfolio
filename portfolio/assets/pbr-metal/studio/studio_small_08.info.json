@@ -1,0 +1,46 @@
+{
+  "evs_cap": 17,
+  "type": 0,
+  "whitebalance": 6000,
+  "tags": [
+    "umbrella",
+    "softbox",
+    "infinity",
+    "lamp",
+    "studio",
+    "photo"
+  ],
+  "name": "Studio Small 08",
+  "categories": [
+    "low contrast",
+    "indoor",
+    "urban",
+    "artificial light",
+    "studio"
+  ],
+  "date_taken": 1629801600,
+  "authors": {
+    "Sergej Majboroda": "All"
+  },
+  "date_published": 1633564800,
+  "staging": null,
+  "sponsors": [
+    "37926413"
+  ],
+  "max_resolution": [
+    16384,
+    8192
+  ],
+  "files_hash": "fd97af68d48d8fe35ca4556b5a7a28938906d37a",
+  "description": "Free 16K HDRI, unclipped, soft, low-contrast indoor studio lighting with large softboxes and octabox highlights, neutral tone and even wraparound illumination.",
+  "category_id": "89252a4d-a94b-5519-846d-879971207c0e",
+  "category": "Studio/Photo Studios/Softbox & Lamp Setups",
+  "attributes": {
+    "light_type": "artificial",
+    "contrast": "low",
+    "environment": "indoor"
+  },
+  "img_version": "7e0dab4f",
+  "download_count": 593992,
+  "thumbnail_url": "https://cdn.polyhaven.com/asset_img/thumbs/studio_small_08.png?width=256&height=256&v=7e0dab4f"
+}

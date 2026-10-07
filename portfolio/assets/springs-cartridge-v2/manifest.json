@@ -1,0 +1,285 @@
+{
+  "meshes": [
+    {
+      "name": "Continuous_irregular_spring_shelf",
+      "material": "baked",
+      "sourceMaterial": 0,
+      "sourceTriangles": 2177514,
+      "position": {
+        "offset": 0,
+        "count": 300891,
+        "size": 3
+      },
+      "normal": {
+        "offset": 1203564,
+        "count": 300891,
+        "size": 3
+      },
+      "index": {
+        "offset": 2407128,
+        "count": 599997,
+        "size": 1
+      },
+      "color": {
+        "offset": 4807116,
+        "count": 300891,
+        "size": 3
+      }
+    },
+    {
+      "name": "Continuous_eroded_ridge_backbone",
+      "material": "baked",
+      "sourceMaterial": 5,
+      "sourceTriangles": 3393488,
+      "position": {
+        "offset": 6010680,
+        "count": 3038742,
+        "size": 3
+      },
+      "normal": {
+        "offset": 18165648,
+        "count": 3038742,
+        "size": 3
+      },
+      "index": {
+        "offset": 30320616,
+        "count": 3505839,
+        "size": 1
+      },
+      "color": {
+        "offset": 44343972,
+        "count": 3038742,
+        "size": 3
+      }
+    },
+    {
+      "name": "Closed_water_0",
+      "material": "water",
+      "sourceMaterial": 6,
+      "sourceTriangles": 739328,
+      "position": {
+        "offset": 56498940,
+        "count": 67506,
+        "size": 3
+      },
+      "normal": {
+        "offset": 56768964,
+        "count": 67506,
+        "size": 3
+      },
+      "index": {
+        "offset": 57038988,
+        "count": 135000,
+        "size": 1
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_1",
+      "material": "baked",
+      "sourceMaterial": 1,
+      "sourceTriangles": 2524558,
+      "position": {
+        "offset": 57578988,
+        "count": 288027,
+        "size": 3
+      },
+      "normal": {
+        "offset": 58731096,
+        "count": 288027,
+        "size": 3
+      },
+      "index": {
+        "offset": 59883204,
+        "count": 450000,
+        "size": 1
+      },
+      "color": {
+        "offset": 61683204,
+        "count": 288027,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_2",
+      "material": "baked",
+      "sourceMaterial": 2,
+      "sourceTriangles": 1541174,
+      "position": {
+        "offset": 62835312,
+        "count": 173691,
+        "size": 3
+      },
+      "normal": {
+        "offset": 63530076,
+        "count": 173691,
+        "size": 3
+      },
+      "index": {
+        "offset": 64224840,
+        "count": 299997,
+        "size": 1
+      },
+      "color": {
+        "offset": 65424828,
+        "count": 173691,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_4",
+      "material": "baked",
+      "sourceMaterial": 4,
+      "sourceTriangles": 50320,
+      "position": {
+        "offset": 66119592,
+        "count": 71274,
+        "size": 3
+      },
+      "normal": {
+        "offset": 66404688,
+        "count": 71274,
+        "size": 3
+      },
+      "index": {
+        "offset": 66689784,
+        "count": 135000,
+        "size": 1
+      },
+      "color": {
+        "offset": 67229784,
+        "count": 71274,
+        "size": 3
+      }
+    },
+    {
+      "name": "Cupped_dry_mud_microplates",
+      "material": "baked",
+      "sourceMaterial": 0,
+      "sourceTriangles": 40374,
+      "position": {
+        "offset": 67514880,
+        "count": 82995,
+        "size": 3
+      },
+      "normal": {
+        "offset": 67846860,
+        "count": 82995,
+        "size": 3
+      },
+      "index": {
+        "offset": 68178840,
+        "count": 121122,
+        "size": 1
+      },
+      "color": {
+        "offset": 68663328,
+        "count": 82995,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curved_dry_grass",
+      "material": "baked",
+      "sourceMaterial": 3,
+      "sourceTriangles": 20726,
+      "position": {
+        "offset": 68995308,
+        "count": 72576,
+        "size": 3
+      },
+      "normal": {
+        "offset": 69285612,
+        "count": 72576,
+        "size": 3
+      },
+      "index": {
+        "offset": 69575916,
+        "count": 62178,
+        "size": 1
+      },
+      "color": {
+        "offset": 69824628,
+        "count": 72576,
+        "size": 3
+      }
+    },
+    {
+      "name": "Desert_shrub_branches",
+      "material": "baked",
+      "sourceMaterial": 8,
+      "sourceTriangles": 165543,
+      "position": {
+        "offset": 70114932,
+        "count": 496635,
+        "size": 3
+      },
+      "normal": {
+        "offset": 72101472,
+        "count": 496635,
+        "size": 3
+      },
+      "index": {
+        "offset": 74088012,
+        "count": 496629,
+        "size": 1
+      },
+      "color": {
+        "offset": 76074528,
+        "count": 496635,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curled_small_leaves",
+      "material": "baked",
+      "sourceMaterial": 9,
+      "sourceTriangles": 641167,
+      "position": {
+        "offset": 78061068,
+        "count": 2405001,
+        "size": 3
+      },
+      "normal": {
+        "offset": 87681072,
+        "count": 2405001,
+        "size": 3
+      },
+      "index": {
+        "offset": 97301076,
+        "count": 1923501,
+        "size": 1
+      },
+      "color": {
+        "offset": 104995080,
+        "count": 2405001,
+        "size": 3
+      }
+    },
+    {
+      "name": "Open mineral section",
+      "material": "section",
+      "position": {
+        "offset": 114615084,
+        "count": 7116,
+        "size": 3
+      },
+      "normal": {
+        "offset": 114643548,
+        "count": 7116,
+        "size": 3
+      },
+      "index": {
+        "offset": 114672012,
+        "count": 3558,
+        "size": 1
+      }
+    }
+  ],
+  "triangles": 2577607,
+  "decodedBytes": 114686244,
+  "sha256": "aa3066f5a1c0fea33bec3a886913cba680f106a517cc4100bc7c3fbf484c36f1",
+  "source": "Recovered full CYBR GEO scene NPZ + R2 mineral deformation",
+  "bake": "Native material evaluation, sun visibility and 24-sample cosine sky visibility. Diffuse surface lighting; not full path tracing, water caustics or steam.",
+  "mountains": "Original full-resolution ridge, independently uniformly scaled rear insert; not recreated from a low-resolution generator.",
+  "sprites": false
+}

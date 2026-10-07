@@ -1,0 +1,46 @@
+{
+  "asset": "Metal051A",
+  "source": "../source.json",
+  "maps": {
+    "baseColor": {
+      "path": "baseColor.webp",
+      "sha256": "6454ae68a8ab056ca2fa3e233647cd7c40d703a8e83ec0b7d8a4a558d3f7ed6a",
+      "bytes": 1557724,
+      "size": [
+        2048,
+        2048
+      ],
+      "sourceSHA256": "93377bacb38626c823d7f2ac58bb097a2602e4104a23df7af5f296a278a6b818"
+    },
+    "normal": {
+      "path": "normal.webp",
+      "sha256": "4b2f2ed83f9b90d845f0f0ae59d9606a6d30e4c2c581cd9875108f3363b24f5d",
+      "bytes": 1535308,
+      "size": [
+        2048,
+        2048
+      ],
+      "sourceSHA256": "b591d6a23290cf817e14358354b3b23b399b29752a26110a1ac8177c606d3b22"
+    },
+    "roughnessMetallic": {
+      "path": "roughness-metallic.webp",
+      "sha256": "ae5aad55026a278ce8e2ceca3e9b53de54597957d4afa026320f943eb39ab5aa",
+      "bytes": 1884552,
+      "size": [
+        2048,
+        2048
+      ],
+      "channels": {
+        "R": "1",
+        "G": "roughness",
+        "B": "metallic"
+      }
+    }
+  },
+  "conversion": "Source RGB decoded to browser-compatible8bit; WebP encoding is lossless, channel packing verified byte-for-byte.",
+  "shaderSpaces": {
+    "baseColor": "sRGB",
+    "normal": "linear data",
+    "roughnessMetallic": "linear data"
+  }
+}

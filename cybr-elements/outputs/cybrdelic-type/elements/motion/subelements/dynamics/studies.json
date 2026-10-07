@@ -1,0 +1,291 @@
+[
+  {
+    "id": "lava",
+    "title": "Lava",
+    "group": "Earth",
+    "note": "Cooling crust over a hot viscous flow.",
+    "video": "lava-b4711c31f1.mp4",
+    "poster": "lava-b4711c31f1.jpg",
+    "previous": "../refined-lava.mp4?v=4ffbc8043d",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "ice",
+    "title": "Ice",
+    "group": "Water",
+    "note": "Cooling liquid forms brittle bonds and breaks into frozen fragments.",
+    "video": "ice-23a5212f07.mp4",
+    "poster": "ice-23a5212f07.jpg",
+    "previous": "../photo-ice.mp4?v=02b89896f5",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "foam",
+    "title": "Foam",
+    "group": "Water",
+    "note": "Surface-carried foam drains and separates into finer spray.",
+    "video": "foam-6571ba0ba5.mp4",
+    "poster": "foam-6571ba0ba5.jpg",
+    "previous": "../photo-foam.mp4?v=78461932b9",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "metal",
+    "title": "Metal",
+    "group": "Earth",
+    "note": "A steel sheet folds and retains its deformation.",
+    "video": "metal-f17dc59f98.mp4",
+    "poster": "metal-f17dc59f98.jpg",
+    "previous": "../photo-metal.mp4?v=b1d600b4fe",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "combustion",
+    "title": "Combustion",
+    "group": "Fire",
+    "note": "Resolved reaction-front radiance, incandescent soot and self-shadowed cooling gas.",
+    "video": "combustion-quality-ceca993c43.mp4",
+    "poster": "combustion-quality-ceca993c43.jpg",
+    "previous": "combustion-f8395eb877.mp4",
+    "rebuild": "material-quality",
+    "versions": [
+      {
+        "video": "combustion-f8395eb877.mp4",
+        "poster": "combustion-f8395eb877.jpg",
+        "note": "A reactive jet ends in a short expanding ignition."
+      }
+    ]
+  },
+  {
+    "id": "lightning",
+    "title": "Lightning",
+    "group": "Fire",
+    "note": "Jagged branching discharges, fine secondary channels and brief repeated return strokes.",
+    "video": "lightning-quality-c92bc22bf8.mp4",
+    "poster": "lightning-quality-c92bc22bf8.jpg",
+    "previous": "lightning-d9595c0277.mp4",
+    "rebuild": "material-quality",
+    "versions": [
+      {
+        "video": "lightning-d9595c0277.mp4",
+        "poster": "lightning-d9595c0277.jpg",
+        "note": "Brief branching channels with repeated return strokes."
+      }
+    ]
+  },
+  {
+    "id": "blue-fire",
+    "title": "Blue fire",
+    "group": "Fire",
+    "note": "Blue flame sheets curl and break apart.",
+    "video": "../blue-fire.mp4?v=9f0f6076d5",
+    "poster": "../blue-fire.jpg?v=9f0f6076d5"
+  },
+  {
+    "id": "sand",
+    "title": "Sand",
+    "group": "Earth",
+    "note": "Frictional grains spread and separate under the shared gesture.",
+    "video": "sand-2dca26fa04.mp4",
+    "poster": "sand-2dca26fa04.jpg",
+    "previous": "../sand.mp4?v=280ce41b3e",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "mud",
+    "title": "Mud",
+    "group": "Earth",
+    "note": "Dense wet earth with fine roughness and restrained surface reflections.",
+    "video": "mud-quality-dad590b8d2.mp4",
+    "poster": "mud-quality-dad590b8d2.jpg",
+    "previous": "mud-bfe8fd3682.mp4",
+    "rebuild": "material-quality",
+    "versions": [
+      {
+        "video": "mud-bfe8fd3682.mp4",
+        "poster": "mud-bfe8fd3682.jpg",
+        "note": "A wet viscous flow with fine mineral roughness."
+      }
+    ]
+  },
+  {
+    "id": "plants",
+    "title": "Plants",
+    "group": "Water",
+    "note": "Connected stems bend while attached leaves unfurl.",
+    "video": "plants-995e9b9f66.mp4",
+    "poster": "plants-995e9b9f66.jpg",
+    "previous": "../photo-plants.mp4?v=b9ae83db96",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "steam",
+    "title": "Steam / cloud",
+    "group": "Water",
+    "note": "Backlit vapor with fine rolling structure.",
+    "video": "../steam.mp4?v=8eb032f59f",
+    "poster": "../steam.jpg?v=8eb032f59f"
+  },
+  {
+    "id": "smoke",
+    "title": "Smoke",
+    "group": "Fire",
+    "note": "Dense smoke scatters and absorbs light.",
+    "video": "../smoke.mp4?v=a71f4b28a7",
+    "poster": "../smoke.jpg?v=a71f4b28a7"
+  },
+  {
+    "id": "snow",
+    "title": "Snow",
+    "group": "Water",
+    "note": "Compacting snow breaks apart into finer particles.",
+    "video": "snow-b8eb081f3c.mp4",
+    "poster": "snow-b8eb081f3c.jpg",
+    "previous": "../snow.mp4?v=a0491b96f9",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "glass",
+    "title": "Glass",
+    "group": "Earth",
+    "note": "Persistent glass fragments follow the gesture and release under rigid-body dynamics.",
+    "video": "glass-b3d00d7691.mp4",
+    "poster": "glass-b3d00d7691.jpg",
+    "previous": "../photo-glass.mp4?v=f2606bcfb7",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "crystal",
+    "title": "Crystal",
+    "group": "Earth",
+    "note": "Faceted mineral fragments with absorption and internal reflections.",
+    "video": "crystal-4cecfba3ab.mp4",
+    "poster": "crystal-4cecfba3ab.jpg",
+    "previous": "../photo-crystal.mp4?v=8dae5e23eb",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "blood",
+    "title": "Blood",
+    "group": "Water",
+    "note": "Dense red absorption, restrained wet highlights and native FLIP sheeting.",
+    "video": "blood-quality-0b1d146d95.mp4",
+    "poster": "blood-quality-0b1d146d95.jpg",
+    "previous": "blood-af50884694.mp4",
+    "rebuild": "material-quality",
+    "versions": [
+      {
+        "video": "blood-af50884694.mp4",
+        "poster": "blood-af50884694.jpg",
+        "note": "A cohesive red liquid with absorption through its depth."
+      }
+    ]
+  },
+  {
+    "id": "healing",
+    "title": "Healing",
+    "group": "Techniques",
+    "note": "A localized repair front closes damaged plant tissue.",
+    "video": "healing-2663201d55.mp4",
+    "poster": "healing-2663201d55.jpg",
+    "previous": "../field-healing.mp4?v=02bd58cb0c",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "spirit",
+    "title": "Spiritbending",
+    "group": "Techniques",
+    "note": "Organized luminous channels relax along the shared path.",
+    "video": "spirit-a99c4991a2.mp4",
+    "poster": "spirit-a99c4991a2.jpg",
+    "previous": "../field-spirit.mp4?v=805790d794",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "energy",
+    "title": "Energybending",
+    "group": "Techniques",
+    "note": "Two interwoven channels carry traveling light pulses.",
+    "video": "energy-0e6645b0ca.mp4",
+    "poster": "energy-0e6645b0ca.jpg",
+    "previous": "../field-energy.mp4?v=6c58d8ca1f",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "lightning-redirection",
+    "title": "Lightning redirection",
+    "group": "Techniques",
+    "note": "Incoming discharge, guided transfer and outgoing branched return strokes.",
+    "video": "lightning-redirection-quality-5b48e496f6.mp4",
+    "poster": "lightning-redirection-quality-5b48e496f6.jpg",
+    "previous": "lightning-redirection-409e3da580.mp4",
+    "rebuild": "material-quality",
+    "versions": [
+      {
+        "video": "lightning-redirection-409e3da580.mp4",
+        "poster": "lightning-redirection-409e3da580.jpg",
+        "note": "Incoming discharge, a guided middle section, and an outgoing release."
+      }
+    ]
+  },
+  {
+    "id": "seismic",
+    "title": "Seismic sense",
+    "group": "Techniques",
+    "note": "An elastic wave displaces a granular rock sample.",
+    "video": "seismic-64cd0be483.mp4",
+    "poster": "seismic-64cd0be483.jpg",
+    "previous": "../seismic.mp4?v=f715a7d84b",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "sound",
+    "title": "Sound",
+    "group": "Techniques",
+    "note": "An optical view of propagating compression and rarefaction wavefronts.",
+    "video": "sound-d7d46e7180.mp4",
+    "poster": "sound-d7d46e7180.jpg",
+    "previous": "../sound.mp4?v=6920656f63",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "flight",
+    "title": "Flight",
+    "group": "Techniques",
+    "note": "Fine tracers follow a counter-rotating wake.",
+    "video": "flight-a8b9bbe048.mp4",
+    "poster": "flight-a8b9bbe048.jpg",
+    "previous": "../flight.mp4?v=558a2086d7",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "spirit-projection",
+    "title": "Spirit projection",
+    "group": "Techniques",
+    "note": "A coherent copy of the original sigil separates from its source.",
+    "video": "spirit-projection-1a9de00a5e.mp4",
+    "poster": "spirit-projection-1a9de00a5e.jpg",
+    "previous": "../spirit-projection.mp4?v=6fe7d93c4f",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "pressure",
+    "title": "Pressure / vacuum",
+    "group": "Techniques",
+    "note": "Sparse rarefaction pulses and their rebound, viewed through index gradients.",
+    "video": "pressure-efdf7ad08f.mp4",
+    "poster": "pressure-efdf7ad08f.jpg",
+    "previous": "../pressure.mp4?v=9f42818ea5",
+    "rebuild": "dynamics"
+  },
+  {
+    "id": "heat",
+    "title": "Heat",
+    "group": "Techniques",
+    "note": "An optical visualization reveals the refractive gradients of heated air.",
+    "video": "heat-a879cbb054.mp4",
+    "poster": "heat-a879cbb054.jpg",
+    "previous": "../heat.mp4?v=3d8d19ad5a",
+    "rebuild": "dynamics"
+  }
+]

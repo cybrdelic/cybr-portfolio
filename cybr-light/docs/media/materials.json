@@ -1,0 +1,18 @@
+{
+  "name": "materials",
+  "description": "UV textures, normal maps, and material mixtures",
+  "backend": "native-cpp-cpu",
+  "preset": "preview",
+  "width": 480,
+  "height": 320,
+  "packets_per_pixel": 64,
+  "wavelengths_per_packet": 8,
+  "max_depth": 12,
+  "photon_count": 0,
+  "render_seconds": 81.334822849,
+  "raw_film_sha256": "8011780755a923742adf7ef40122e1e7a12cf48d2f62e9b726dd280a9effd233",
+  "preview_sha256": "3e7cdab010913da5fe9453686a336c9a5faec445ce00f98689f37752da464b2c",
+  "raw_film_finite": true,
+  "denoised": false,
+  "preview_note": "Display transform only; no AI image generation or denoising"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "fire",
+    "title": "Fire",
+    "video": "fire-sheets.mp4",
+    "note": "Thin fuel sheets fold and break up, with temperature-dependent emission and restrained bloom.",
+    "baseline": "fire-shared.mp4",
+    "poster": "fire-sheets-poster.jpg",
+    "previous": "fire-material-v2.mp4"
+  },
+  {
+    "id": "water",
+    "title": "Water",
+    "video": "water-optical.mp4",
+    "note": "Native FLIP surface with ray-traced reflection, refraction, and absorption.",
+    "baseline": "water-shared.mp4",
+    "poster": "water-optical-poster.jpg",
+    "previous": "water-material.mp4"
+  },
+  {
+    "id": "air",
+    "title": "Air",
+    "video": "air-filaments-lit.mp4",
+    "note": "Sparse tracer strands advect through the shared flow, with directional scattering.",
+    "baseline": "air-shared.mp4",
+    "poster": "air-filaments-poster.jpg",
+    "previous": "air-material-v2.mp4"
+  },
+  {
+    "id": "earth",
+    "title": "Earth",
+    "video": "earth-mass.mp4",
+    "note": "Large fractured slabs, smaller chips, and fine grit with momentum, drag, and ground contact.",
+    "poster": "earth-mass-poster.jpg",
+    "baseline": "earth-packed.mp4",
+    "previous": "earth-strata.mp4"
+  }
+]

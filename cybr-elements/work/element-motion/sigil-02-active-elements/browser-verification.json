@@ -1,0 +1,63 @@
+{
+  "browser": "Existing in-app sigil 02 player",
+  "verified": {
+    "water": {
+      "movie": "water-02-r8.mp4",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "duration": 11.2,
+      "readyState": 4,
+      "error": null,
+      "previousMovie": "water-02-r7.mp4",
+      "previousDuration": 10,
+      "downloadLinkMatches": true
+    },
+    "lightning": {
+      "movie": "lightning-02-r5.mp4",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "duration": 10,
+      "readyState": 4,
+      "error": null,
+      "previousMovie": "lightning-02-r4.mp4",
+      "downloadLinkMatches": true
+    },
+    "lava": {
+      "movie": "lava-02.mp4",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "duration": 10,
+      "readyState": 4,
+      "error": null,
+      "downloadLinkMatches": true
+    },
+    "ice": {
+      "movie": "ice-02.mp4",
+      "resolution": [
+        1920,
+        1080
+      ],
+      "duration": 10,
+      "readyState": 4,
+      "paused": false,
+      "error": null,
+      "downloadLinkMatches": true
+    }
+  },
+  "elementButtons": [
+    "fire",
+    "water",
+    "earth",
+    "air",
+    "ice",
+    "lava",
+    "lightning"
+  ],
+  "allRequestedFilmsVerified": true
+}

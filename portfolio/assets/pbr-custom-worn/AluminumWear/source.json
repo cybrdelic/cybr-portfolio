@@ -1,0 +1,93 @@
+{
+  "assetId": "AluminumWear",
+  "revision": "microstructure-v6-sparse",
+  "source": "Original CYBR material wear",
+  "customMadeFor": "CYBR portfolio instrument",
+  "creationMethod": "Original ImageGen semantic smear/ridge coverage and steel oxide color plus independently authored granular deposits, abrasion and physical pits",
+  "downloadedInputs": [],
+  "alloy": "aluminum",
+  "authoredTileMM": [
+    128.0,
+    128.0
+  ],
+  "runtimeMaps": {
+    "colorCoverage": {
+      "path": "assets/pbr-custom-worn/AluminumWear/runtime/color-coverage.webp",
+      "sha256": "b0eac1c6b511a2b3a8eed89e61544539d41c808c04e515b9719d6e5d8eec2ffc",
+      "bytes": 84918,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "surface": {
+      "path": "assets/pbr-custom-worn/AluminumWear/runtime/surface.webp",
+      "sha256": "aa3f722902c106791a7fa231b51441f9b3c1fd61dd99a6af06f4bdcb6dd40247",
+      "bytes": 377304,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGBA",
+      "losslessPixelEquality": true
+    },
+    "normal": {
+      "path": "assets/pbr-custom-worn/AluminumWear/runtime/normal.webp",
+      "sha256": "d03b37b221516e5a4f469a872b4938dd782696e19191add8357cdb9ed55f8ced",
+      "bytes": 110136,
+      "size": [
+        2048,
+        2048
+      ],
+      "mode": "RGB",
+      "losslessPixelEquality": true
+    }
+  },
+  "channels": {
+    "colorCoverage": {
+      "RGB": "sRGB target color, pale/neutral metal film or localized contaminant",
+      "A": "linear color coverage; <=.035 pure oil, paired with G for deposit cores"
+    },
+    "surface": {
+      "R": "target roughness; linear",
+      "G": "opaque deposit coverage; dielectric core response",
+      "B": "thin oil/fingerprint roughness coverage; retains substrate metalness",
+      "A": "255 reserved"
+    },
+    "normal": "OpenGL +Y tangent normal from independent abrasion and pit height; linear"
+  },
+  "normalConvention": "OpenGL tangent +Y upward",
+  "normalScale": [
+    1,
+    1
+  ],
+  "originalInputs": [
+    {
+      "path": "assets/pbr-custom-worn/source-appearance/contamination-imagegen.png",
+      "sha256": "14725da475150ad586df7511df347d948006aa38a2d3afdc08dcf16890ca0376",
+      "nativeSize": [
+        1254,
+        1254
+      ],
+      "nativeMode": "RGB",
+      "generator": "OpenAI ImageGen",
+      "prompt": "assets/pbr-custom-worn/source-appearance/contamination-prompt.txt",
+      "promptSHA256": "0b72fb5f6e1e8edcca8013d6933b357ecfd3e0cd71b25e8533d6c603a84eaed2"
+    }
+  ],
+  "recipe": "assets/pbr-custom-worn/AluminumWear/source/recipe.json",
+  "recipeSHA256": "62e554d6104b0553310da256b26a991c282da1ecca24ccb65001683f9c5620c1",
+  "authoringScriptSHA256": "d318e39114e93a78de1ba1c65c5642debb608bdf1edf478e0c696a138ef094ee",
+  "geometryInferenceFromAppearance": false,
+  "geometryDisplacement": false,
+  "physicalScaleNote": "Ridge pitch, footprints, pit relief and layer properties are authored values, not measured. Exact chart scale is supplied by renderer.",
+  "cleanPackPreserved": true,
+  "fineSourceSets": [
+    "BrushedMetal",
+    "LatheMetal",
+    "DiamondKnurl",
+    "DiamondEtch"
+  ]
+}

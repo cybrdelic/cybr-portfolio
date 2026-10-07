@@ -1,0 +1,16 @@
+{
+  "reference": "cybr-scenes/environments/renders/desert-hot-springs/hero/hero.png",
+  "reproduced": "D:\\CYBR-build\\exploded-instrument\\springs-faithful-v1\\hero.png",
+  "size": [
+    960,
+    640
+  ],
+  "mean_absolute_error_255": 1.3281873914930555,
+  "p99_absolute_error_255": 14.0,
+  "source_hash_matches": false,
+  "r2_hash_matches": false,
+  "renderer": "CYBR SCENES R2 / Hot Springs: stochastic sinter/mineral surfaces and sky MIS",
+  "visual_approval": false,
+  "recovered_after_shutdown_error": true,
+  "note": "Original R2 finish, original full geometry recipe. No compression, texture projection or image generation."
+}

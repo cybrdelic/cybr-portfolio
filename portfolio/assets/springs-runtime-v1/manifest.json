@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "meshes": [
+    {
+      "name": "Continuous fused terrain and ridge",
+      "material": "landscape",
+      "ior": 1.5,
+      "position": {
+        "offset": 0,
+        "count": 98031,
+        "size": 3
+      },
+      "normal": {
+        "offset": 392124,
+        "count": 98031,
+        "size": 3
+      },
+      "index": {
+        "offset": 784248,
+        "count": 194997,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 1564236,
+        "count": 98031,
+        "size": 3
+      }
+    },
+    {
+      "name": "Closed_water_0",
+      "material": "water",
+      "sourceMaterial": 6,
+      "sourceTriangles": 739328,
+      "position": {
+        "offset": 1956360,
+        "count": 32331,
+        "size": 3
+      },
+      "normal": {
+        "offset": 2085684,
+        "count": 32331,
+        "size": 3
+      },
+      "index": {
+        "offset": 2215008,
+        "count": 64650,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_1",
+      "material": "landscape",
+      "sourceMaterial": 1,
+      "sourceTriangles": 2524558,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 2473608,
+        "count": 40134,
+        "size": 3
+      },
+      "normal": {
+        "offset": 2634144,
+        "count": 40134,
+        "size": 3
+      },
+      "index": {
+        "offset": 2794680,
+        "count": 36000,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 2938680,
+        "count": 40134,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_2",
+      "material": "landscape",
+      "sourceMaterial": 2,
+      "sourceTriangles": 1541174,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 3099216,
+        "count": 21213,
+        "size": 3
+      },
+      "normal": {
+        "offset": 3184068,
+        "count": 21213,
+        "size": 3
+      },
+      "index": {
+        "offset": 3268920,
+        "count": 26997,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 3376908,
+        "count": 21213,
+        "size": 3
+      }
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_4",
+      "material": "landscape",
+      "sourceMaterial": 4,
+      "sourceTriangles": 50320,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 3461760,
+        "count": 15774,
+        "size": 3
+      },
+      "normal": {
+        "offset": 3524856,
+        "count": 15774,
+        "size": 3
+      },
+      "index": {
+        "offset": 3587952,
+        "count": 24000,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 3683952,
+        "count": 15774,
+        "size": 3
+      }
+    },
+    {
+      "name": "Cupped_dry_mud_microplates",
+      "material": "landscape",
+      "sourceMaterial": 0,
+      "sourceTriangles": 40374,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 3747048,
+        "count": 26457,
+        "size": 3
+      },
+      "normal": {
+        "offset": 3852876,
+        "count": 26457,
+        "size": 3
+      },
+      "index": {
+        "offset": 3958704,
+        "count": 35364,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 4100160,
+        "count": 26457,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curved_dry_grass",
+      "material": "landscape",
+      "sourceMaterial": 3,
+      "sourceTriangles": 20726,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 4205988,
+        "count": 40755,
+        "size": 3
+      },
+      "normal": {
+        "offset": 4369008,
+        "count": 40755,
+        "size": 3
+      },
+      "index": {
+        "offset": 4532028,
+        "count": 30000,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 4652028,
+        "count": 40755,
+        "size": 3
+      }
+    },
+    {
+      "name": "Desert_shrub_branches",
+      "material": "landscape",
+      "sourceMaterial": 8,
+      "sourceTriangles": 165543,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 4815048,
+        "count": 148320,
+        "size": 3
+      },
+      "normal": {
+        "offset": 5408328,
+        "count": 148320,
+        "size": 3
+      },
+      "index": {
+        "offset": 6001608,
+        "count": 66000,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 6265608,
+        "count": 148320,
+        "size": 3
+      }
+    },
+    {
+      "name": "Curled_small_leaves",
+      "material": "landscape",
+      "sourceMaterial": 9,
+      "sourceTriangles": 641167,
+      "ior": 1.4800000190734863,
+      "position": {
+        "offset": 6858888,
+        "count": 360309,
+        "size": 3
+      },
+      "normal": {
+        "offset": 8300124,
+        "count": 360309,
+        "size": 3
+      },
+      "index": {
+        "offset": 9741360,
+        "count": 240000,
+        "size": 3
+      },
+      "albedo": {
+        "offset": 10701360,
+        "count": 360309,
+        "size": 3
+      }
+    },
+    {
+      "name": "Sealed mineral section",
+      "material": "landscape",
+      "ior": 1.5,
+      "position": {
+        "offset": 12142596,
+        "count": 36456,
+        "size": 3
+      },
+      "normal": {
+        "offset": 12288420,
+        "count": 36456,
+        "size": 3
+      },
+      "index": {
+        "offset": 12434244,
+        "count": 18228,
+        "size": 1
+      },
+      "albedo": {
+        "offset": 12507156,
+        "count": 36456,
+        "size": 3
+      }
+    }
+  ],
+  "decodedBytes": 12652980,
+  "sha256": "6c7baff5b2574836f0f5cbb52bc9a0d226e84e9c4c3dc21a4cf3f1724989f68f",
+  "sourceGeometry": "b97440fcf9e63af1c3d2ce321c51c64077d1fe22d5592d8fee95560ccb3bebaa",
+  "triangles": 245412,
+  "sprites": 0,
+  "productionApproved": false,
+  "audit": [
+    {
+      "name": "Continuous fused terrain and ridge",
+      "sourceTriangles": 1241310,
+      "runtimeTriangles": 64999,
+      "maxSourceVertexDistance": 0.0055513658799094924,
+      "p95SourceVertexDistance": 0.003317165122363661
+    },
+    {
+      "name": "Closed_water_0",
+      "sourceTriangles": 45000,
+      "runtimeTriangles": 21550,
+      "maxSourceVertexDistance": 0.04693018442392351,
+      "p95SourceVertexDistance": 0.0
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_1",
+      "sourceTriangles": 150000,
+      "runtimeTriangles": 12000,
+      "maxSourceVertexDistance": 0.012276447300089357,
+      "p95SourceVertexDistance": 0.0051729593792038085
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_2",
+      "sourceTriangles": 99999,
+      "runtimeTriangles": 8999,
+      "maxSourceVertexDistance": 0.011786532629422355,
+      "p95SourceVertexDistance": 0.005917349074422022
+    },
+    {
+      "name": "Buried_weathered_rock_and_sediment_4",
+      "sourceTriangles": 45000,
+      "runtimeTriangles": 8000,
+      "maxSourceVertexDistance": 0.0025765120648444453,
+      "p95SourceVertexDistance": 0.0012962703613603414
+    },
+    {
+      "name": "Cupped_dry_mud_microplates",
+      "sourceTriangles": 40374,
+      "runtimeTriangles": 11788,
+      "maxSourceVertexDistance": 0.012315849009526935,
+      "p95SourceVertexDistance": 0.0036839671642845545
+    },
+    {
+      "name": "Curved_dry_grass",
+      "sourceTriangles": 20726,
+      "runtimeTriangles": 10000,
+      "maxSourceVertexDistance": 0.004774851087897319,
+      "p95SourceVertexDistance": 0.00015676837333510873
+    },
+    {
+      "name": "Desert_shrub_branches",
+      "sourceTriangles": 165543,
+      "runtimeTriangles": 22000,
+      "maxSourceVertexDistance": 0.016883953862685225,
+      "p95SourceVertexDistance": 0.0027454804835676913
+    },
+    {
+      "name": "Curled_small_leaves",
+      "sourceTriangles": 641167,
+      "runtimeTriangles": 80000,
+      "maxSourceVertexDistance": 0.002192752077838025,
+      "p95SourceVertexDistance": 0.0017386169954398613
+    },
+    {
+      "name": "Sealed mineral section",
+      "sourceTriangles": 6076,
+      "runtimeTriangles": 6076,
+      "maxSourceVertexDistance": 0.0,
+      "p95SourceVertexDistance": 0.0
+    }
+  ]
+}

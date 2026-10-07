@@ -1,0 +1,18 @@
+{
+  "name": "cloud",
+  "description": "Authored heterogeneous multiple-scattering cloud",
+  "backend": "native-cpp-cpu",
+  "preset": "preview",
+  "width": 480,
+  "height": 320,
+  "packets_per_pixel": 64,
+  "wavelengths_per_packet": 8,
+  "max_depth": 64,
+  "photon_count": 0,
+  "render_seconds": 406.376759356,
+  "raw_film_sha256": "1ccfe932431f976337d62cb05fef0f48a12a45ec7bae9fee48058b358de379e5",
+  "preview_sha256": "d6df2ffd03e1fb5f3c4557c77e5a85923b7dc0442bc34670319e8797ee42f5b9",
+  "raw_film_finite": true,
+  "denoised": false,
+  "preview_note": "Display transform only; no AI image generation or denoising"
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "file": "cybr-combat-cartridge.glb",
+    "meshes": 88,
+    "triangles": 104374,
+    "textures": 6,
+    "bytes": 17311836,
+    "finite": true
+  },
+  {
+    "file": "cybr-springs-cartridge.glb",
+    "meshes": 85,
+    "triangles": 637229,
+    "textures": 1,
+    "bytes": 22573588,
+    "finite": true
+  }
+]
