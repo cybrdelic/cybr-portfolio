@@ -42,7 +42,7 @@ for(const scrollDriven of [false,true])test(`starter retains original GEO geomet
     for(const p of [.473,.617,.31]){
       const previousCamera=lastCamera.position.clone();starter.setProgress(p);
       for(const [id,fn] of [...frames]){frames.delete(id);fn();}
-      assert.ok(lastCamera.position.distanceTo(previousCamera)>1);assert.equal(starter.snapshot().progress,p);
+      assert.ok(lastCamera.position.distanceTo(previousCamera)>0);assert.equal(starter.snapshot().progress,p);
     }
     assert.deepEqual(userProgress,[.7],'scroll synchronization must not recursively publish slider input');
     if(scrollDriven){

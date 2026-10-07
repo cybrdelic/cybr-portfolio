@@ -1,3 +1,4 @@
+import {fitMobileView} from './instrument-mobile-story.mjs';
 import {attachMetalCoordinates} from './instrument-metal-coordinates.mjs';
 import {setupRasterLighting} from './instrument-raster-lighting.mjs';
 import {createRasterPaper} from './instrument-raster-paper.mjs';
@@ -49,11 +50,13 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
   function fit(){
     const width=surface.clientWidth,height=surface.clientHeight,aspect=width/height;
     if(width!==lastWidth||height!==lastHeight){renderer.setSize(width,height,false);lastWidth=width;lastHeight=height;}
-    const view=radius*2.25/Math.min(aspect,1);
-    camera.left=-view*aspect/2;camera.right=-camera.left;camera.top=view/2;camera.bottom=-camera.top;
+    let view=radius*2.25/Math.min(aspect,1);
     camera.near=.1;camera.far=radius*12;camera.up.set(0,0,1);
     camera.position.set(center.x+Math.cos(yaw)*Math.cos(pitch)*radius*4,center.y+Math.sin(yaw)*Math.cos(pitch)*radius*4,center.z+Math.sin(pitch)*radius*4);
-    camera.lookAt(center);camera.updateProjectionMatrix();camera.updateMatrixWorld();
+    camera.lookAt(center);camera.updateMatrixWorld();
+    if(scrollDriven)view=fitMobileView(camera,bounds,aspect,0,radius*4,.80);
+    camera.left=-view*aspect/2;camera.right=-camera.left;camera.top=view/2;camera.bottom=-camera.top;
+    camera.updateProjectionMatrix();
   }
   function render(){
     frame=0;if(disposed||document.hidden)return;
@@ -61,7 +64,7 @@ export async function createGeoStarter({THREE,renderer,surface,manifest,buffer,e
     renderer.setRenderTarget(null);renderer.render(scene,camera);drawCount++;onFrame();
   }
   function schedule(){if(!frame&&!disposed)frame=requestAnimationFrame(render);}
-  function rotate(){angle=Number(slider.value);yaw=Math.atan2(-80,50)+(scrollDriven?angle:angle-50)/100*Math.PI*2;slider.setAttribute('aria-valuetext',`Rotate GEO: ${Math.round((angle-50)*3.6)} degrees`);schedule();}
+  function rotate(){angle=Number(slider.value);yaw=Math.atan2(-80,50)+(scrollDriven?angle/100*.22:(angle-50)/100*Math.PI*2);slider.setAttribute('aria-valuetext',`Rotate GEO: ${Math.round((angle-50)*3.6)} degrees`);schedule();}
   function input(){rotate();onProgress(angle/100);}
   function pointerDown(event){drag={id:event.pointerId,x:event.clientX,y:event.clientY,angle};}
   function pointerMove(event){

@@ -4,7 +4,7 @@ export function createRenderGate({gl,onReady=()=>{},onState=()=>{},onComplete=()
   clock=()=>performance.now(),setTimer=setTimeout,clearTimer=clearTimeout,pollMs=16}={}){
   const supported=!!gl&&['fenceSync','clientWaitSync','deleteSync','flush'].every(name=>typeof gl[name]==='function');
   let sync,job,timer=0,paused=false,held=false,quietUntil=0,wanted=false,disposed=false,error=null;
-  const stats={submitted:0,completed:0,polls:0,maxPollMs:0,coalesced:0,lastCompletionWaitMs:null};
+  const stats={submitted:0,completed:0,polls:0,maxPollMs:0,coalesced:0,lastCompletionWaitMs:null,maxCompletionWaitMs:0};
   const blocked=()=>paused||held||clock()<quietUntil;
   const state=()=>({supported,inFlight:!!sync,paused,held,quietUntil,wanted,disposed,error,...stats});
   function notify(){onState(state());}
@@ -22,6 +22,7 @@ export function createRenderGate({gl,onReady=()=>{},onState=()=>{},onComplete=()
       if(result===gl.TIMEOUT_EXPIRED){arm();return;}
       if(result!==gl.ALREADY_SIGNALED&&result!==gl.CONDITION_SATISFIED){error='WebGL frame fence failed';paused=true;notify();return;}
       gl.deleteSync(sync);sync=undefined;stats.completed++;stats.lastCompletionWaitMs=clock()-job.started;
+      stats.maxCompletionWaitMs=Math.max(stats.maxCompletionWaitMs,stats.lastCompletionWaitMs);
       const completed=job;job=undefined;onComplete(completed.value);notify();
     }
     if(wanted&&!blocked()){wanted=false;onReady();}

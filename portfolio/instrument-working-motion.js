@@ -258,7 +258,12 @@ export function createWorkingMotion({manifest,route,groups,objects,cables=[]}){
     for(const record of records){record.object.matrix.copy(workingRigMatrix(record.motion,theta,rig,record.shift*condense));record.object.matrixWorldNeedsUpdate=true;}
     return inspectionRoute;
   }
-  function cameraFrame(){
+  function cameraFrame(moduleName){
+    if(moduleName){
+      const envelope=envelopes.get(moduleName);if(!envelope)throw Error('Unknown working camera module: '+moduleName);
+      const bounds=envelope.clone().translate(groups.get(moduleName).position);
+      return {bounds,center:bounds.getCenter(new THREE.Vector3()),span:bounds.getSize(new THREE.Vector3())};
+    }
     const box=new THREE.Box3();for(let i=0;i<names.length;i++){const moved=envelopes.get(names[i]).clone().translate(groups.get(names[i]).position);box.union(moved);}return {bounds:box,center:box.getCenter(new THREE.Vector3()),span:box.getSize(new THREE.Vector3())};
   }
   function fitViewHeight(camera,height,p,aspect,perspectiveBlend,distance){
