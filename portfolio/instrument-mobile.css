@@ -105,6 +105,10 @@
 }
 @media(max-width:900px) and (prefers-reduced-motion:reduce){
   /* Explicit controls remain when the user opts out of scroll animation. */
-  .scroll-score .explode-control{display:flex}
   .scroll-score .chapter-stops{display:grid}
+}
+
+/* A touch phone can exceed 900px in landscape; the tour needs no slider. */
+@media(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse){
+  .scroll-score .explode-control{display:none}
 }
