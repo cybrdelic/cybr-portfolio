@@ -1859,7 +1859,7 @@
     {
       "path": "docs/source-manifest.json",
       "bytes": 504714,
-      "sha256": "1f0c690478e86d90afbaa22599a67e35c255494b1684ad0a8d818179aadfd7eb",
+      "sha256": "612014bbf602f9fe0df3cfe06820ff71ced6c3597e5f16abe54b1ceb8ec7f76e",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -6418,8 +6418,8 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6567,
-      "sha256": "d2ff0961cb117e93cc3a0693ca2c592522dd3be48aff2a828782f1c5717bcd5a",
+      "bytes": 6568,
+      "sha256": "b7b793e50747a31f5175f9377ad2125362b7d8468861d6535f07a234f88b393d",
       "mobile_declutter_baseline_sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
       "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained",
       "mobile_slider_baseline_sha256": "fbdd37c26ad7b507dd15c6b3ade76ce193223c583d062741d488bdeeed079c19",
@@ -6449,8 +6449,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 84768,
-      "sha256": "2013116d791746119e7c37edffc131c67ed7e5a2f145c73739d4a1695967f492",
+      "bytes": 84864,
+      "sha256": "09a16e5a14cb0bfb4381a0c4d5e3393cc5fe4832f0ed443123cfa43da9031b71",
       "phone_media_baseline_sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
       "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
       "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
@@ -6923,8 +6923,8 @@
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 3810,
-      "sha256": "c385dacf34399d31f53d96cdf9b77622e66125220a0b9200edeaea546ef9c5b3",
+      "bytes": 8215,
+      "sha256": "012b3a338c4bd87933993059442f28c96fb74746e2eeda5cc102a900e9687861",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",

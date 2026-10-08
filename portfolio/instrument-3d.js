@@ -574,7 +574,7 @@ function configureRenderGate(){
   renderGate=createRenderGate({gl:renderer.getContext(),onReady:schedule,onState:updateRenderDependents,
     onComplete:job=>{
       displayedProgress=job.progress;
-      if(!fullFrameComplete){fullFrameComplete=true;startup.fullReadyMs=performance.now()-startup.started;startup.gpuFullReadyMs=startup.fullReadyMs;}
+      if(!fullFrameComplete){fullFrameComplete=true;startup.fullReadyMs=performance.now()-startup.started;startup.gpuFullReadyMs=startup.fullReadyMs;stage.classList.remove('mobile-loading');}
       if(Math.abs(displayedProgress-target)<.000025)status.textContent='';
     }});
   updateRenderPause();
@@ -909,7 +909,7 @@ async function init(){
       await new Promise(resolve=>setTimeout(resolve,0));
     }
   }
-  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&query.get('startup')==='warmup'){
+  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&[null,'profile','warmup'].includes(query.get('startup'))){
     startupPhase('texture-preparation','Preparing the original finishes.');
     startup.texturePreparation=await prepareStartupTextures({renderer,materials:[...objects,...cables.map(c=>c.mesh)].flatMap(object=>Array.isArray(object.material)?object.material:[object.material]),cancelled:()=>rasterResourcesDisposed});
   }
@@ -923,11 +923,11 @@ async function init(){
   finally{startup.initialSubmitMs=performance.now()-initialSubmit;if(firstFrameProfiler){startup.firstFrameSubmission=firstFrameProfiler.snapshot();firstFrameProfiler=undefined;}}
   lastRender=startup.initialSubmitMs;drawCount++;
   renderGate?.submitted({progress:current});if(!renderGate){displayedProgress=current;fullFrameComplete=true;}
-  stage.classList.add('three-ready');status.textContent='';
+  stage.classList.add('three-ready');if(!renderGate)status.textContent='';
   startupPhase('ready');startup.readyMs=performance.now()-startup.started;startup.cpuFullReadyMs=startup.readyMs;if(!renderGate)startup.fullReadyMs=startup.readyMs;
   if(!startup.firstUsable3DMs)startup.firstUsable3DMs=startup.readyMs;
   slider.disabled=false;document.querySelectorAll('[data-end]').forEach(button=>button.disabled=false);
-  measureScroll();interfaceController.ready();stage.classList.remove('mobile-loading');mobilePrelude(current);
+  measureScroll();interfaceController.ready();if(!renderGate)stage.classList.remove('mobile-loading');mobilePrelude(current);
   document.querySelector('[data-end="100"]').textContent='Next →';
   document.querySelector('.scroll-position>span:last-child').textContent='Scroll to assemble & inspect ↓';
   slider.addEventListener('input',()=>jump(Number(slider.value)/100));

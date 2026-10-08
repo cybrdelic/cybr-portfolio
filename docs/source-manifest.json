@@ -9377,8 +9377,8 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6567,
-      "sha256": "d2ff0961cb117e93cc3a0693ca2c592522dd3be48aff2a828782f1c5717bcd5a",
+      "bytes": 6568,
+      "sha256": "b7b793e50747a31f5175f9377ad2125362b7d8468861d6535f07a234f88b393d",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
@@ -9415,8 +9415,8 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 84768,
-      "sha256": "2013116d791746119e7c37edffc131c67ed7e5a2f145c73739d4a1695967f492",
+      "bytes": 84864,
+      "sha256": "09a16e5a14cb0bfb4381a0c4d5e3393cc5fe4832f0ed443123cfa43da9031b71",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
@@ -10001,8 +10001,8 @@
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 3810,
-      "sha256": "c385dacf34399d31f53d96cdf9b77622e66125220a0b9200edeaea546ef9c5b3",
+      "bytes": 8215,
+      "sha256": "012b3a338c4bd87933993059442f28c96fb74746e2eeda5cc102a900e9687861",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",
