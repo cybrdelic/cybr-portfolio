@@ -1,7 +1,7 @@
 import {mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs?v=story-1';
 import {createRenderGate} from './instrument-render-gate.mjs';
 import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=2';
-import {createTextureDecodeClient,textureWorkerEligible} from './instrument-texture-decode.mjs?v=1';
+import {createTextureDecodeClient,textureWorkerEligible} from './instrument-texture-decode.mjs?v=2';
 import {createStartupInputGate} from './instrument-startup-input.mjs?v=1';
 // Register before async initialization so loading gestures are already tracked.
 const startupInputGate=createStartupInputGate();

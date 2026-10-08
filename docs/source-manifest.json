@@ -9416,7 +9416,7 @@
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
       "bytes": 86081,
-      "sha256": "76e3fae4f7599b58cc5eff8be741e935534545ce0587728817bb16c4026be047",
+      "sha256": "c6a31a5d5d4be6d15b0bf28be233f8fdf61451a4dc268d68688d377ce21e9063",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
@@ -10057,8 +10057,8 @@
     },
     {
       "path": "portfolio/instrument-texture-decode.mjs",
-      "bytes": 3019,
-      "sha256": "2744e1e9fcf84815283e3e06190f716c32fff3df17caf6741e3f000f03e0ebad",
+      "bytes": 3191,
+      "sha256": "6e2eb1ea65abca3e8f14f6e5e9b174be74068e4dea94677d9381cb03667bee12",
       "reason": "Original texture worker decode candidate and deterministic CPU validation",
       "referenced_by": [
         "portfolio/instrument-3d.js"
@@ -10066,8 +10066,8 @@
     },
     {
       "path": "portfolio/instrument-texture-decode.test.mjs",
-      "bytes": 6838,
-      "sha256": "2aa22c431f21d11996518460c114cccff32b607a7736d8cae5cc150505c2c26c",
+      "bytes": 8573,
+      "sha256": "e085a3bd4697ff17330ecc29aac79707d24fbbf063e7c34cbe9b95b759b1cdea",
       "reason": "Original texture worker decode candidate and deterministic CPU validation",
       "referenced_by": [
         "portfolio/instrument-3d.js"

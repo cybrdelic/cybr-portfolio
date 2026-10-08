@@ -1859,7 +1859,7 @@
     {
       "path": "docs/source-manifest.json",
       "bytes": 506458,
-      "sha256": "ae4613f58dc37dd95c3ad26c9e2d1b0b3fbfe30db12ef4903cd21efb062c6142",
+      "sha256": "1776b31b71a557386249e3a26149f01ab625cbdf020137a8d630cad343e21fce",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -6450,7 +6450,7 @@
     {
       "path": "portfolio/instrument-3d.js",
       "bytes": 86081,
-      "sha256": "76e3fae4f7599b58cc5eff8be741e935534545ce0587728817bb16c4026be047",
+      "sha256": "c6a31a5d5d4be6d15b0bf28be233f8fdf61451a4dc268d68688d377ce21e9063",
       "phone_media_baseline_sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
       "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
       "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
@@ -6971,13 +6971,13 @@
     },
     {
       "path": "portfolio/instrument-texture-decode.mjs",
-      "bytes": 3019,
-      "sha256": "2744e1e9fcf84815283e3e06190f716c32fff3df17caf6741e3f000f03e0ebad"
+      "bytes": 3191,
+      "sha256": "6e2eb1ea65abca3e8f14f6e5e9b174be74068e4dea94677d9381cb03667bee12"
     },
     {
       "path": "portfolio/instrument-texture-decode.test.mjs",
-      "bytes": 6838,
-      "sha256": "2aa22c431f21d11996518460c114cccff32b607a7736d8cae5cc150505c2c26c"
+      "bytes": 8573,
+      "sha256": "e085a3bd4697ff17330ecc29aac79707d24fbbf063e7c34cbe9b95b759b1cdea"
     },
     {
       "path": "portfolio/instrument-trace-environment.mjs",

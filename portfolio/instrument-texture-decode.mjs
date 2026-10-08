@@ -1,6 +1,6 @@
-// Experimental original-map path; enable only after native texel/mip acceptance.
-export function textureWorkerEligible({requested,mobile,bakedElements,qualityMode,opticalMode}){
-  return requested==='worker'&&mobile&&bakedElements&&!qualityMode&&opticalMode==='thickness';
+// Verified original-map path, with explicit DOM rollback and API support guards.
+export function textureWorkerEligible({requested,mobile,bakedElements,qualityMode,opticalMode,workerSupported=typeof globalThis.Worker==='function',bitmapSupported=typeof globalThis.createImageBitmap==='function'}){
+  return (requested==null||requested==='worker')&&workerSupported&&bitmapSupported&&mobile&&bakedElements&&!qualityMode&&opticalMode==='thickness';
 }
 export function createTextureDecodeClient({THREE,baseURL,makeWorker=()=>new Worker(new URL('./instrument-texture-decode-worker.mjs',import.meta.url),{type:'module'})}={}){
   let worker,nextID=0,disposed=false,failed=false;

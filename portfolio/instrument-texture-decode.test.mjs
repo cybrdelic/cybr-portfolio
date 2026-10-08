@@ -13,10 +13,29 @@ function fixture(){
   const deliver=(id,b=bitmap())=>{worker.onmessage({data:{id,bitmap:b,decodeMs:7}});return b;};
   return{worker,client,bitmap,deliver};
 }
-test('experimental selection excludes secondary CPU optics and quality renderers',()=>{
-  const options={requested:'worker',mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness'};
+test('default selection excludes secondary CPU optics and quality renderers',()=>{
+  const options={requested:'worker',mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness',workerSupported:true,bitmapSupported:true};
   assert.equal(textureWorkerEligible(options),true);
-  for(const patch of [{requested:null},{mobile:false},{bakedElements:false},{qualityMode:true},{opticalMode:'geometry'},{opticalMode:'staged'}])assert.equal(textureWorkerEligible({...options,...patch}),false);
+  for(const patch of [{requested:'dom'},{mobile:false},{bakedElements:false},{qualityMode:true},{opticalMode:'geometry'},{opticalMode:'staged'}])assert.equal(textureWorkerEligible({...options,...patch}),false);
+});
+test('queryless eligible mobile visitors select worker; DOM and unknown overrides select DOM',()=>{
+  const options={mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness',workerSupported:true,bitmapSupported:true};
+  for(const requested of [undefined,null,'worker'])assert.equal(textureWorkerEligible({...options,requested}),true);
+  for(const requested of ['dom','off','unknown',''])assert.equal(textureWorkerEligible({...options,requested}),false);
+});
+test('missing worker or ImageBitmap APIs select DOM, including explicit worker requests',()=>{
+  const options={mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness',workerSupported:true,bitmapSupported:true};
+  for(const requested of [undefined,'worker'])for(const patch of [{workerSupported:false},{bitmapSupported:false},{workerSupported:false,bitmapSupported:false}])assert.equal(textureWorkerEligible({...options,requested,...patch}),false);
+});
+test('API support defaults reflect actual global functions and explicit DOM always wins',()=>{
+  const oldWorker=globalThis.Worker,oldBitmap=globalThis.createImageBitmap;
+  const options={mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness'};
+  try{
+    globalThis.Worker=class{};globalThis.createImageBitmap=()=>{};assert.equal(textureWorkerEligible(options),true);
+    assert.equal(textureWorkerEligible({...options,requested:'dom'}),false);
+    globalThis.Worker=undefined;assert.equal(textureWorkerEligible(options),false);
+    globalThis.Worker=class{};globalThis.createImageBitmap=undefined;assert.equal(textureWorkerEligible(options),false);
+  }finally{globalThis.Worker=oldWorker;globalThis.createImageBitmap=oldBitmap;}
 });
 test('worker starts fetches together, serializes decode, transfers original bitmap with explicit semantics',async()=>{
   const fetched=[],decoded=[],sent=[];let unblock,active=0,maxActive=0;
