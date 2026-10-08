@@ -1,6 +1,7 @@
 import {mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs?v=story-1';
 import {createRenderGate} from './instrument-render-gate.mjs';
 import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=2';
+import {createTextureDecodeClient,textureWorkerEligible} from './instrument-texture-decode.mjs?v=1';
 import {createStartupInputGate} from './instrument-startup-input.mjs?v=1';
 // Register before async initialization so loading gestures are already tracked.
 const startupInputGate=createStartupInputGate();
@@ -104,12 +105,14 @@ function recoverQuality(error){
 }
 let lastCondense=-1, lastUI=-1, frameTimes=[], lastRender=0,lastWidth=0,lastHeight=0;
 let fluid,glassShell,opticalLens,layeredTarget,workingOuterTarget,optics,workingTransmissionLayers;
+let textureDecodeClient;
 let rasterEnvironmentTarget,rasterSourceEnvironment,rasterPaperBackground,rasterResourcesDisposed=false;
 function disposeRasterResources(){
   if(rasterResourcesDisposed)return;
   rasterResourcesDisposed=true;renderGate?.dispose();renderGate=undefined;geoStarter?.dispose();geoStarter=undefined;
   pbrAssets?.dispose();
   pbrWearAssets?.dispose();
+  textureDecodeClient?.dispose();
   elementPlayback?.dispose();fluid?.dispose?.();
   hdrComposite?.dispose();
   hitPbrArrays?.dispose();
@@ -645,6 +648,12 @@ async function init(){
   const photographedEnvironment={file:'./assets/pbr-metal/studio/studio_small_08-1024x512-rgba.f32.gz',width:1024,height:512,sha256:'a924864ac722d9bb7706b308c5be65df3d0feb27408c02ce34eed8a8158b7a5f',source:'Poly Haven Studio Small 08',author:'Sergej Majboroda',license:'CC0 1.0',method:'photographed HDR studio',rotationX:90,rotationZ:0,intensity:.38};
   renderer=new THREE.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});
   const customPbr=manifest.workingGeometry&&!qualityMode&&!debugNoFinish&&!['legacy','procedural'].includes(query.get('metal'));
+  const workerTextures=customPbr&&textureWorkerEligible({requested:query.get('texture-decode'),mobile:mobileLayout.matches,bakedElements,qualityMode,opticalMode:rasterOpticalMode});
+  if(workerTextures){
+    textureDecodeClient=createTextureDecodeClient({THREE,baseURL:location.href});
+    window.addEventListener('pagehide',event=>{if(!event.persisted)textureDecodeClient?.dispose();});
+  }
+  const loadTexture=textureDecodeClient?url=>textureDecodeClient.loadAsync(url):undefined;
   const progressive=mobileLayout.matches&&bakedElements&&photographedStudio&&manifest.progressiveGeo&&typeof Worker!=='undefined'&&globalThis.crypto?.subtle&&query.get('startup')!=='full';
   let seed;
   if(progressive){
@@ -681,9 +690,10 @@ async function init(){
   const [buffer,environment,texture,customAssets,wearAssets]=await Promise.all([
     loadGeometry(manifest,geometryBase,{onProgress:message=>status.textContent=(progressive?'GEO is interactive. ':'')+message,legacy:query.get('transfer')==='legacy',metrics:startup.geometry}),seed?Promise.resolve(seed.environment):photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
     seed?Promise.resolve(seed.texture):new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`),
-    customPbr?loadInstrumentPbrAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrAssets=value;return value;}):null,
-    customPbr&&query.get('wear')!=='clean'?loadInstrumentPbrWearAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy()}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrWearAssets=value;return value;}):null
+    customPbr?loadInstrumentPbrAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy(),loadTexture}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrAssets=value;return value;}):null,
+    customPbr&&query.get('wear')!=='clean'?loadInstrumentPbrWearAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy(),loadTexture}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrWearAssets=value;return value;}):null
   ]);pbrAssets=customAssets;pbrWearAssets=wearAssets;
+  if(textureDecodeClient){textureDecodeClient.finish();startup.textureDecode=textureDecodeClient.snapshot();}
   startupPhase('mesh-setup','Preparing the complete instrument.');
   geoStarter?.dispose();geoStarter=undefined;
   stage.classList.remove('geo-starter');slider.disabled=true;

@@ -1,8 +1,8 @@
 // Original CYBR appearances and physical height-derived material data.
 // No material-library maps are read by this loader.
 export const CUSTOM_PBR_ASSETS_VERSION='cybr-custom-pbr-v7';
-export async function loadInstrumentPbrAssets(THREE,{base='./assets/pbr-custom/',maxAnisotropy=8}={}){
-  const loader=new THREE.TextureLoader(),owned=new Set();
+export async function loadInstrumentPbrAssets(THREE,{base='./assets/pbr-custom/',maxAnisotropy=8,loadTexture}={}){
+  const loader=loadTexture?{loadAsync:loadTexture}:new THREE.TextureLoader(),owned=new Set();
   const names=['BrushedMetal','LatheMetal','DiamondKnurl','DiamondEtch'];
   try{
     const results=await Promise.allSettled(names.map(async name=>{

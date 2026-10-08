@@ -1858,8 +1858,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 505405,
-      "sha256": "06b0a6124850d427ca011b3ff48df21e425f4de40417a90a1857a568d8a74b82",
+      "bytes": 506458,
+      "sha256": "c27362bdf74553c0e03aab5f208bf2ce3a01b7e066224243befb0e5a510f8ee1",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -6449,8 +6449,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 85232,
-      "sha256": "d72d5508b5184b7524bf007a4c616c06583e85efcf4e554ff4d78eb0eb5947d8",
+      "bytes": 86019,
+      "sha256": "b62481a10b394f8d60d0bfdd899caf59662310a6a2b597dd0ad390b4e0618abd",
       "phone_media_baseline_sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
       "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
       "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
@@ -6697,8 +6697,8 @@
     },
     {
       "path": "portfolio/instrument-pbr-custom-assets.mjs",
-      "bytes": 4013,
-      "sha256": "b321096a280dac376c4a4dfde7ee87522d1e8d7df3652d2203cafe4dc6bd8725"
+      "bytes": 4061,
+      "sha256": "4a4a0109967644bbd4964d5e45d37d3f50c426ffeafbca450914d19805c9bcc1"
     },
     {
       "path": "portfolio/instrument-pbr-custom-assets.test.mjs",
@@ -6722,8 +6722,8 @@
     },
     {
       "path": "portfolio/instrument-pbr-wear-assets.mjs",
-      "bytes": 2943,
-      "sha256": "5b40ec7d000b9dfac4d109cc66f119b86eccc9abdb366e209be30cc18c427c5e"
+      "bytes": 2991,
+      "sha256": "0bd32c1f952024cc7ac1464d39eb02b6d76292d3ba9c52525b05ecf0aa66893c"
     },
     {
       "path": "portfolio/instrument-pbr-wear-assets.test.mjs",
@@ -6963,6 +6963,21 @@
       "path": "portfolio/instrument-temporal.test.mjs",
       "bytes": 10743,
       "sha256": "fd5318c921022a08857ea46189e850eab2e4659e40e614d1e83215a8c4fc2d53"
+    },
+    {
+      "path": "portfolio/instrument-texture-decode-worker.mjs",
+      "bytes": 1507,
+      "sha256": "a0483b8ed2e85f3cfada72052121d28aa00baaed6b514bfda3cbbdd6cb756e7d"
+    },
+    {
+      "path": "portfolio/instrument-texture-decode.mjs",
+      "bytes": 3019,
+      "sha256": "2744e1e9fcf84815283e3e06190f716c32fff3df17caf6741e3f000f03e0ebad"
+    },
+    {
+      "path": "portfolio/instrument-texture-decode.test.mjs",
+      "bytes": 6838,
+      "sha256": "2aa22c431f21d11996518460c114cccff32b607a7736d8cae5cc150505c2c26c"
     },
     {
       "path": "portfolio/instrument-trace-environment.mjs",
