@@ -14,8 +14,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5115,
-      "sha256": "5410f1ed8982ea68718507f53aecaf1e69e94a3084967a0aba508765371552cb",
+      "bytes": 5385,
+      "sha256": "2cc4d40f98517945b14d7e03ef1d24ac50975975dc1668855ad80ffcb098ddb3",
       "mobile_experience_baseline_sha256": "2c64166dfb6abb53eee393a1e82a3730c9e8d20c9c895ac5022e75eeb4804266",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "93dba6fc317a05334d77f16db5ef4c9d8aadd798ad5de47cc0a3a7539914b2bf",
@@ -1749,8 +1749,8 @@
     },
     {
       "path": "docs/KNOWN_ISSUES.md",
-      "bytes": 4197,
-      "sha256": "e0488550e9fda1cef3fb2290e194c1b4483e781ce401f9a363984d4c3a0f25c4"
+      "bytes": 4648,
+      "sha256": "0414b43c334a6f8e225abddf9a516733942bb09394320632496b13f9f41808b4"
     },
     {
       "path": "docs/LICENSE_INVENTORY.md",
@@ -1785,8 +1785,8 @@
     },
     {
       "path": "docs/MOBILE_STARTUP_FOLLOWUP.md",
-      "bytes": 5217,
-      "sha256": "6b26d42831b85d966ab2110de31ed8097d2641e3a077acf7838c99348b058b30",
+      "bytes": 9990,
+      "sha256": "3644dbd5655ab55e0cf03467b9c74b4bb8786cdbe89fae9d46c977a1c58a3fa7",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",
@@ -1859,7 +1859,7 @@
     {
       "path": "docs/source-manifest.json",
       "bytes": 504714,
-      "sha256": "612014bbf602f9fe0df3cfe06820ff71ced6c3597e5f16abe54b1ceb8ec7f76e",
+      "sha256": "c7c6bfc9da1922c86e98670c0a99e873d15ee8289153bec739a54a57ea1cfc21",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -6923,8 +6923,8 @@
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 8215,
-      "sha256": "012b3a338c4bd87933993059442f28c96fb74746e2eeda5cc102a900e9687861",
+      "bytes": 8175,
+      "sha256": "30f5458ea245d7e077483a9a35d333395c9992b9923fe67f248dc8ec96634561",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",

@@ -10001,8 +10001,8 @@
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 8215,
-      "sha256": "012b3a338c4bd87933993059442f28c96fb74746e2eeda5cc102a900e9687861",
+      "bytes": 8175,
+      "sha256": "30f5458ea245d7e077483a9a35d333395c9992b9923fe67f248dc8ec96634561",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",

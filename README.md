@@ -2,7 +2,7 @@
 
 The current laptop portfolio, organized as a self-contained source tree. The
 main entry is `portfolio/index.html`, loading
-`instrument-3d.js?v=startup-repair-local-1`. It presents the working CAD instrument,
+`instrument-3d.js?v=mobile-warmup-default-1`. It presents the working CAD instrument,
 cached ELEMENTS water/fire playback, and six project pages. The publication baseline preserves the original behavior and known defects.
 Mobile uses the continuous scroll-driven assembly and camera tour, with a
 sticky touch-safe scene. Progressive real GEO and lossless full geometry remain.
@@ -10,6 +10,9 @@ See [scroll-tour correction](docs/MOBILE_SCROLL_TOUR.md) and
 [startup notes](docs/MOBILE_STARTUP.md), and the validated
 [mobile experience pass](docs/MOBILE_EXPERIENCE.md) and the separate
 [native-tested startup repair](docs/MOBILE_STARTUP_FOLLOWUP.md) for scope and verification.
+Mobile now prepares the original texture uploads across tasks by default;
+`?startup=off` restores the previous upload timing. See the
+[reverse-order warmup review](docs/MOBILE_STARTUP_FOLLOWUP.md#mobile-default-warmup-review-2026-10-08), including remaining stalls.
 Source publication and Site versioning are separate; this PR does not deploy
 a Site. Final art quality is not certified.
 
