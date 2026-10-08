@@ -68,6 +68,16 @@ test('stationary fields are cached and changes to camera, optical geometry or na
  const f=fixture();f.helper.render(f.camera);assert.deepEqual(f.helper.render(f.camera),{calls:0,triangles:0,cached:true});assert.equal(f.renderer.frames.length,2);f.camera.position.x=1;f.helper.render(f.camera);assert.equal(f.renderer.frames.length,4);
  f.glass.position.x=3;f.helper.render(f.camera);assert.equal(f.renderer.frames.length,6);f.glass.geometry.attributes.position.needsUpdate=true;f.helper.render(f.camera);assert.equal(f.renderer.frames.length,8);f.fullSize.value.set(1265,720);f.helper.render(f.camera);assert.equal(f.renderer.frames.length,10);assert.deepEqual(f.helper.snapshot().size,[1265,720]);assert.equal(f.helper.snapshot().stationaryCacheHits,1);f.helper.dispose();
 });
+
+test('startup field descriptors retain exact original/filtered geometry and material identities without drawing or changing live state',()=>{
+ const f=fixture(),state=f.renderer.state(),materials=f.objects.map(o=>o.material),geometries=f.objects.map(o=>o.geometry);
+ const variants=f.helper.startupVariants(f.camera);assert.deepEqual(variants.map(v=>v.name),['glass-thickness-field','water-thickness-field']);
+ assert.deepEqual(variants[0].objects.map(v=>v.object),[f.glass,f.secondGlass]);assert.deepEqual(variants[1].objects.map(v=>v.object),[f.water]);
+ assert.equal(variants[0].objects[0].material.side,THREE.BackSide);assert.equal(variants[0].objects[0].material.toneMapped,false);
+ assert.equal(variants[1].objects[0].geometry,f.water.geometry);assert.equal(variants[0].target.width,600);assert.equal(variants[1].target.height,600);
+ assert.deepEqual(f.renderer.state(),state);assert.equal(f.renderer.frames.length,0);assert.equal(f.helper.snapshot().fieldsReady,false);
+ f.objects.forEach((o,i)=>{assert.equal(o.material,materials[i]);assert.equal(o.geometry,geometries[i]);});f.helper.dispose();
+});
 test('failed field renders restore pending shadows, materials and target state and leave authored fallback enabled',()=>{
  const f=fixture(),state=f.renderer.state(),materials=f.objects.map(object=>object.material);f.renderer.throwAt=2;assert.throws(()=>f.helper.render(f.camera),/field draw failed/);assert.deepEqual(f.renderer.state(),state);assert.equal(f.light.shadow.needsUpdate,true);f.objects.forEach((object,i)=>assert.equal(object.material,materials[i]));assert.equal(f.helper.snapshot().fieldsReady,false);assert.equal(f.helper.snapshot().failures,1);f.helper.dispose();
 });

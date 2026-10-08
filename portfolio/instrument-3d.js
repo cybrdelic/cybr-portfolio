@@ -1,11 +1,14 @@
 import {mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs?v=story-1';
 import {createRenderGate} from './instrument-render-gate.mjs';
+import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=1';
+import {prepareWaterBoundaries} from './instrument-water-boundary-preparation.mjs';
+import {prepareShaderVariants,visibleShaderObjects} from './instrument-shader-preparation.mjs';
 import {createScrollTour} from './instrument-scroll-tour.mjs?v=story-1';
 import * as THREE from './vendor/three-r180/three.module.min.js';
 import {loadGeometry} from './instrument-geometry-loader.mjs';
 import {loadFluid} from './instrument-fluid.js?v=shared-3';
 import {loadElementsComposite} from './instrument-elements-composite.mjs?v=shared-3';
-import {createHdrComposite} from './instrument-hdr-composite.mjs?v=1';
+import {createHdrComposite} from './instrument-hdr-composite.mjs?v=startup-variants-1';
 import {opticalGeometryInView} from './instrument-visible-bounds.mjs';
 import {span,takeup,takeupForLength,internal,length as routeLength} from './instrument-routing.js';
 import {volumeDepth} from './instrument-volume.js';
@@ -30,13 +33,15 @@ const slider=document.querySelector('#explosion'), reduced=matchMedia('(prefers-
 const names=['geo','light','elements','song','combat','scenes'];
 const mobileLayout=matchMedia('(max-width:900px), (orientation:landscape) and (max-height:600px) and (hover:none) and (pointer:coarse)');
 const startup={started:performance.now(),phase:'metadata',geometry:{},phases:{}};
+let firstFrameProfiler;
+function startupBlock(name,work){return firstFrameProfiler?firstFrameProfiler.run(name,work):work();}
 window.instrumentStartup=startup;
 let canvasVisible=true,lastNativeScroll=-Infinity,mobileScrollWake;
 const mobileIntro=document.querySelector('.mobile-intro');
 stage.classList.add('mobile-loading');
 function mobilePrelude(p,preview=false){
   if(!mobileLayout.matches)return;
-  mobileIntro.querySelector('h2').innerHTML=preview?'GEO':p<.28?'Six systems.<br>One instrument.':p<.46?'Follow<br>the cable.':'One connected<br>instrument.';
+  mobileIntro.querySelector('h2').innerHTML=preview?'GEO':p<.28?'Six systems.<br> One instrument.':p<.46?'Follow<br> the cable.':'One connected<br> instrument.';
   mobileIntro.querySelector('.mobile-kicker').textContent=preview?'01 / 06 — GEOMETRY':'CYBRDELIC / SIX SYSTEMS';
   mobileIntro.querySelector('.mobile-hint').textContent=preview?'The real GEO component. The other systems are loading.':p<.28?'Scroll to assemble and explore.':p<.46?'Six projects along one continuous route.':'Scroll back to explore, or open the projects.';
 }
@@ -471,21 +476,21 @@ function drawScene(){
   }
   const moving=mobileMoving()||Math.abs(current-target)>.000025,geometryChanged=current!==lastRasterPose,now=performance.now();
   scene.updateMatrixWorld(true);
-  rasterLighting?.update(camera,{progress:current,moving,geometryChanged,now});
+  startupBlock('lighting.update',()=>rasterLighting?.update(camera,{progress:current,moving,geometryChanged,now}));
   rasterOptics?.update(camera);
   // Optical rays refine after scrolling; the visible CAD remains full size.
   rasterTransport?.setScale?.(Number(query.get('optics-scale'))|| (moving ? (stagedGeometryOptics ? .18 : .35) : .5));
   rasterTiming?.begin(lastRasterPose<0?'startup':moving?'moving':rasterProbes?.snapshot().pending?'probe-update':'stationary');
   try{
     const beforeProbe=rasterProbes?.snapshot();
-    rasterProbes?.update(camera,{progress:current,moving,geometryChanged,now});
+    startupBlock('probes.update',()=>rasterProbes?.update(camera,{progress:current,moving,geometryChanged,now}));
     const afterProbe=rasterProbes?.snapshot();
     // Cube capture writes another target. Present the retained full-resolution
     // HDR image when no visible scene state changed, including a partial cube.
     const retained=mobileLayout.matches&&bakedElements&&afterProbe?.timeSliced&&!moving&&!geometryChanged&&!elementFrameDirty&&
       !rasterLighting?.needsFrame()&&beforeProbe?.blend===afterProbe.blend&&beforeProbe?.diffuseBlend===afterProbe.diffuseBlend&&hdrComposite?.present(renderer);
     if(retained){frameCalls+=retained.calls;frameTriangles+=retained.triangles;}
-    else drawRasterScene();
+    else startupBlock('drawRasterScene',()=>drawRasterScene());
     lastRasterPose=current;
   }finally{rasterTiming?.end();}
   return true;
@@ -499,7 +504,7 @@ function drawRasterScene(){
     if(layeredTarget.width!==size.x||layeredTarget.height!==size.y)layeredTarget.setSize(size.x,size.y);
     if(workingOuterTarget.width!==size.x||workingOuterTarget.height!==size.y)workingOuterTarget.setSize(size.x,size.y);
     layeredSize.value.copy(size);
-    const thicknessPass=rasterThickness?.render(camera);if(thicknessPass){frameCalls+=thicknessPass.calls||0;frameTriangles+=thicknessPass.triangles||0;}
+    const thicknessPass=startupBlock('thickness.fields',()=>rasterThickness?.render(camera));if(thicknessPass){frameCalls+=thicknessPass.calls||0;frameTriangles+=thicknessPass.triangles||0;}
     const optical=objects.filter(o=>!Array.isArray(o.material)&&(o.material.userData.cadTransmission??o.material.transmission)>0).map(o=>({object:o,visible:o.visible})),background=scene.background,previousTarget=renderer.getRenderTarget();
     // Water reads the opaque scene. The outer vessel reads a separate HDR
     // scene containing that actual water, avoiding both optical feedback and
@@ -508,7 +513,7 @@ function drawRasterScene(){
     // output remains transparent; IOR, Fresnel and absorption remain physical.
     try{
       optical.forEach(({object})=>object.visible=false);scene.background=rasterPaperBackground;
-      renderer.setRenderTarget(layeredTarget);renderer.render(scene,camera);
+      renderer.setRenderTarget(layeredTarget);startupBlock('opaque-HDR',()=>renderer.render(scene,camera));
       frameCalls+=renderer.info.render.calls;frameTriangles+=renderer.info.render.triangles;
       if(partialRayOptics&&rasterTransport){
         optical.filter(({object})=>['light','elements'].includes(object.userData.meshRecord.module)).forEach(({object,visible})=>object.visible=visible);
@@ -519,7 +524,7 @@ function drawRasterScene(){
       }
       if(!rasterOptics||partialRayOptics){
         optical.filter(({object})=>object.userData.staticWater).forEach(({object,visible})=>object.visible=visible);
-        renderer.setRenderTarget(workingOuterTarget);renderer.render(scene,camera);
+        renderer.setRenderTarget(workingOuterTarget);startupBlock('water-HDR',()=>renderer.render(scene,camera));
         frameCalls+=renderer.info.render.calls;frameTriangles+=renderer.info.render.triangles;
       }
       workingTransmissionLayers={inner:nativeGeometryOptics?'real opaque CAD hits with custom PBR; retained SCENES opaque HDR':'live opaque geometry HDR, native depth and page paper',outer:nativeGeometryOptics?'native LIGHT/ELEMENTS optical primitives, duct and opaque CAD intersections':partialRayOptics?'selected CAD boundary rays plus retained SCENES water and opaque HDR':rasterOptics?'actual glass/water boundary rays into opaque HDR':'live opaque geometry, actual CAD water and page paper',
@@ -543,7 +548,7 @@ function drawRasterScene(){
     frameCalls+=renderer.info.render.calls;frameTriangles+=renderer.info.render.triangles;
     glassShell.visible=true;renderer.setRenderTarget(null);
   }
-  if(hdrComposite){const pass=hdrComposite.render(renderer,scene,camera,rasterPaperBackground);frameCalls+=pass.calls;frameTriangles+=pass.triangles;}
+  if(hdrComposite){const pass=startupBlock('final-HDR-composite',()=>hdrComposite.render(renderer,scene,camera,rasterPaperBackground));frameCalls+=pass.calls;frameTriangles+=pass.triangles;}
   else{renderer.render(scene,camera);frameCalls+=renderer.info.render.calls;frameTriangles+=renderer.info.render.triangles;}
   if(auditElement&&window.instrument3D)auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());
 }
@@ -820,8 +825,15 @@ async function init(){
       // Rasterized CAD exit depths preserve physical thickness without BVH
       // traversal. Existing HDR depth buffers reject foreground sample leaks.
       if(rasterOpticalMode==='thickness'||partialRayOptics){
-        const {setupRasterThickness}=await import('./instrument-raster-thickness.mjs?v=water-boundary-11');
-        rasterThickness=setupRasterThickness({THREE,renderer,scene,objects:partialRayOptics?objects.filter(o=>o.userData.meshRecord.module==='scenes'):objects,fullSize:layeredSize,schedule,innerDepth:{value:layeredTarget.depthTexture},outerDepth:{value:workingOuterTarget.depthTexture},paperColor:rasterPaperBackground});
+        const {setupRasterThickness}=await import('./instrument-raster-thickness.mjs?v=water-worker-1');
+        const thicknessObjects=partialRayOptics?objects.filter(o=>o.userData.meshRecord.module==='scenes'):objects;
+        let waterBoundaries;
+        if(mobileLayout.matches){
+          startupPhase('water-boundary-preparation','Preparing the instrument.');
+          startup.waterBoundaryPreparation={};
+          waterBoundaries=await prepareWaterBoundaries(thicknessObjects,{metrics:startup.waterBoundaryPreparation,cancelled:()=>rasterResourcesDisposed});
+        }
+        rasterThickness=setupRasterThickness({THREE,renderer,scene,objects:thicknessObjects,waterBoundaries,fullSize:layeredSize,schedule,innerDepth:{value:layeredTarget.depthTexture},outerDepth:{value:workingOuterTarget.depthTexture},paperColor:rasterPaperBackground});
       }
       // Expensive ray candidates remain available for explicit inspection.
       if(['ray','boundary'].includes(rasterOpticalMode)){
@@ -866,6 +878,20 @@ async function init(){
     startupPhase('shader-compile','Compiling the original materials.');
     const shaderCompileStarted=performance.now();
     await renderer.compileAsync(scene,camera);
+    if(mobileLayout.matches&&working&&hdrComposite&&!rasterOptics&&!rasterTransport){
+      startupPhase('shader-variant-preparation','Preparing the instrument.');
+      const size=renderer.getDrawingBufferSize(new THREE.Vector2());
+      if(layeredTarget.width!==size.x||layeredTarget.height!==size.y)layeredTarget.setSize(size.x,size.y);
+      if(workingOuterTarget.width!==size.x||workingOuterTarget.height!==size.y)workingOuterTarget.setSize(size.x,size.y);
+      layeredSize.value.copy(size);
+      const visible=visibleShaderObjects(scene,camera),isOptical=object=>!Array.isArray(object.material)&&(object.material.userData.cadTransmission??object.material.transmission)>0;
+      const opaque=visible.filter(object=>!isOptical(object)),water=visible.filter(object=>!isOptical(object)||object.userData.staticWater);
+      const variants=[...(rasterThickness?.startupVariants(camera)??[]),
+        {name:'opaque-HDR',scene,camera,target:layeredTarget,background:rasterPaperBackground,objects:opaque},
+        {name:'water-HDR',scene,camera,target:workingOuterTarget,background:rasterPaperBackground,objects:water},
+        ...hdrComposite.startupVariants(renderer,scene,camera,rasterPaperBackground,visible)];
+      startup.shaderPreparation=await prepareShaderVariants({THREE,renderer,variants,cancelled:()=>rasterResourcesDisposed});
+    }
     if(nativeGeometryOptics){
       nativeStartup.mainCompileMs=performance.now()-shaderCompileStarted;
       status.textContent='Compiling native glass and water…';
@@ -883,11 +909,19 @@ async function init(){
       await new Promise(resolve=>setTimeout(resolve,0));
     }
   }
+  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&query.get('startup')==='warmup'){
+    startupPhase('texture-preparation','Preparing the original finishes.');
+    startup.texturePreparation=await prepareStartupTextures({renderer,materials:[...objects,...cables.map(c=>c.mesh)].flatMap(object=>Array.isArray(object.material)?object.material:[object.material]),cancelled:()=>rasterResourcesDisposed});
+  }
+  if(['profile','warmup'].includes(query.get('startup')))firstFrameProfiler=createStartupProfiler();
   startupPhase('first-frame','Rendering the instrument.');
   root.classList.add('is-enhanced');measureScroll();
   if(!reduced.matches||mobileLayout.matches){current=target=scrollTour.progress();resize();pose(current,surface.clientWidth/surface.clientHeight);elementPlayback?.update(camera,current);}
   ready=true;configureRenderGate();
-  const initialSubmit=performance.now();drawScene();lastRender=performance.now()-initialSubmit;drawCount++;
+  const initialSubmit=performance.now();
+  try{startupBlock('drawScene',()=>drawScene());}
+  finally{startup.initialSubmitMs=performance.now()-initialSubmit;if(firstFrameProfiler){startup.firstFrameSubmission=firstFrameProfiler.snapshot();firstFrameProfiler=undefined;}}
+  lastRender=startup.initialSubmitMs;drawCount++;
   renderGate?.submitted({progress:current});if(!renderGate){displayedProgress=current;fullFrameComplete=true;}
   stage.classList.add('three-ready');status.textContent='';
   startupPhase('ready');startup.readyMs=performance.now()-startup.started;startup.cpuFullReadyMs=startup.readyMs;if(!renderGate)startup.fullReadyMs=startup.readyMs;
