@@ -9377,8 +9377,8 @@
     {
       "path": "portfolio/index.html",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 6568,
-      "sha256": "b7b793e50747a31f5175f9377ad2125362b7d8468861d6535f07a234f88b393d",
+      "bytes": 6566,
+      "sha256": "22f97e05fabebe2de7b3ef08724505ee0b42158ad6d241d5e523207acc5bd182",
       "mobile_baseline_sha256": "14001d4f3612df9b58d0c2b9d413562163594da886a689f88c026214c0fc4c09",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "dbe433b37b744a7734d80630eb93642dc8dc59f163f604e128f840563fd45788",
@@ -9415,8 +9415,8 @@
     {
       "path": "portfolio/instrument-3d.js",
       "reason": "Current source, retained regression test, runtime asset or native tooling",
-      "bytes": 84864,
-      "sha256": "09a16e5a14cb0bfb4381a0c4d5e3393cc5fe4832f0ed443123cfa43da9031b71",
+      "bytes": 85232,
+      "sha256": "d72d5508b5184b7524bf007a4c616c06583e85efcf4e554ff4d78eb0eb5947d8",
       "mobile_baseline_sha256": "603498098d013b328bb48b014d6b349239d23ccfb1da8ce63dc5fd724c967cac",
       "mobile_update": "Authorized mobile layout and lossless startup change; original publication baseline preserved in Git",
       "mobile_scroll_baseline_sha256": "55c7f8fb7ded7ab5dd2c9850d3fc34add257403c4fb40a7f4e2c528d5b2304a4",
@@ -9991,9 +9991,23 @@
       "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
+      "path": "portfolio/instrument-startup-input.mjs",
+      "reason": "Authored input-aware startup gate and deterministic CPU regression",
+      "provenance": "Isolated follow-up; original texture assets unchanged",
+      "bytes": 2282,
+      "sha256": "e92c8fa8643c8be6fb834eddb1f3bbb591a790358d016eeed38b9860743bad87"
+    },
+    {
+      "path": "portfolio/instrument-startup-input.test.mjs",
+      "reason": "Authored input-aware startup gate and deterministic CPU regression",
+      "provenance": "Isolated follow-up; original texture assets unchanged",
+      "bytes": 7015,
+      "sha256": "1a8921382a7401fba67247e58c239c95e431397c006ca4368fdb990558f6965d"
+    },
+    {
       "path": "portfolio/instrument-startup.mjs",
-      "bytes": 2570,
-      "sha256": "d500d5ef29791f487185ecbcbbe6ddab386356dae4973f658f97f91b23036d54",
+      "bytes": 2683,
+      "sha256": "19b32ce0d75f9111b3862bd60d83b8f8acdb854e503123504acab1c6026dfd10",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
@@ -10001,8 +10015,8 @@
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 8175,
-      "sha256": "30f5458ea245d7e077483a9a35d333395c9992b9923fe67f248dc8ec96634561",
+      "bytes": 8249,
+      "sha256": "b0cfd77768053c21b6485f56066f8011e3b55ec46b6cf3e28a2ca3d33bb081ab",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",

@@ -162,3 +162,25 @@ matched-pose after-scroll appearance remain unverified. Individual upload
 stalls remain about470ms (493ms in this slot). Smooth loading and final optical
 art quality remain unresolved. Review and Site saving do not deploy; the
 parent coordinates the final merge and any later deployment.
+
+
+## Input-aware warmup candidate (CPU only, 2026-10-08)
+
+Based on 0bdf6d934ec9094fd6b975608e34a873547a5ab4. Passive loading-time
+listeners track touch/pen pointers, touch fallback and native scroll before
+initialization. Before each original initTexture call, preparation waits for
+all contacts to end and 180ms of scroll/input quiet, with an optional continuous
+pending-input check. Every texture upload yields afterward, including the last.
+Continuous gestures or scroll make no preparation progress; there is no timeout
+that forces an upload through active input. Full-ready may therefore be delayed
+indefinitely until interaction settles. An already-running whole-image upload
+is still atomic and cannot be interrupted. Texture order, original encodings,
+mips and quality are preserved; all preparation remains awaited before the
+full frame and the existing GPU fence still clears loading.
+
+Page disposal cancels pending gate waits. Preparation success or failure removes
+all temporary listeners and timers; initialization failure also cleans up.
+CPU tests cover release/cancel, multiple contacts, touch fallback, inertia,
+disposal, optional inputPending, atomic-call boundaries and preparation errors.
+Native input latency, first-draw cost, total-ready delay and image equality are
+unvalidated for this candidate. No native slot, PR, push or deployment used.

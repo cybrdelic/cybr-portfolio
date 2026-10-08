@@ -18,21 +18,22 @@ export function collectStartupTextures(materials){
   return [...textures];
 }
 
-export async function prepareStartupTextures({renderer,materials,clock=()=>performance.now(),yieldTask=()=>new Promise(resolve=>setTimeout(resolve,0)),budgetMs=4,cancelled=()=>false}){
+export async function prepareStartupTextures({renderer,materials,clock=()=>performance.now(),yieldTask=()=>new Promise(resolve=>setTimeout(resolve,0)),budgetMs=4,cancelled=()=>false,beforeUpload=async()=>{}}){
   if(typeof renderer?.initTexture!=='function'||!Array.isArray(materials)||!Number.isFinite(budgetMs)||budgetMs<=0)throw Error('Invalid startup texture preparation');
   const textures=collectStartupTextures(materials),records=[],started=clock();
-  let yields=0,batchStart=started;
+  let yields=0;
   for(const texture of textures){
+    await beforeUpload(cancelled);
     if(cancelled())throw Error('Startup texture preparation cancelled');
     const at=clock();
     renderer.initTexture(texture);
     records.push({name:texture.name||texture.uuid||'texture',durationMs:clock()-at,width:texture.image?.width??null,height:texture.image?.height??null});
-    // Each GL upload is atomic; a large single upload can exceed this budget.
-    if(clock()-batchStart>=budgetMs&&records.length<textures.length){
-      await yieldTask();yields++;batchStart=clock();
-    }
+    // Every original upload remains atomic. Let input run after every texture,
+    // including the last one, before declaring preparation complete.
+    await yieldTask();yields++;
+    if(cancelled())throw Error('Startup texture preparation cancelled');
   }
-  return {mode:'original unique texture uploads across main-thread tasks',textures:records.length,yields,budgetMs,elapsedMs:clock()-started,maxUploadMs:Math.max(0,...records.map(r=>r.durationMs)),records};
+  return {mode:'original unique texture uploads with pre-upload input gate and per-texture yields',textures:records.length,yields,budgetMs,elapsedMs:clock()-started,maxUploadMs:Math.max(0,...records.map(r=>r.durationMs)),records};
 }
 
 export function createStartupProfiler({clock=()=>performance.now()}={}){

@@ -1785,8 +1785,8 @@
     },
     {
       "path": "docs/MOBILE_STARTUP_FOLLOWUP.md",
-      "bytes": 9826,
-      "sha256": "7e19e83a3c4987c32c4a43a43ad2cd289da104b6f395d89e057605b7aeac8682",
+      "bytes": 11213,
+      "sha256": "bb092544fa4b5489162614a62a7988450dcbdcf0da46fc81574816c9495f081c",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",
@@ -1858,8 +1858,8 @@
     },
     {
       "path": "docs/source-manifest.json",
-      "bytes": 504714,
-      "sha256": "c7c6bfc9da1922c86e98670c0a99e873d15ee8289153bec739a54a57ea1cfc21",
+      "bytes": 505405,
+      "sha256": "06b0a6124850d427ca011b3ff48df21e425f4de40417a90a1857a568d8a74b82",
       "mobile_experience_baseline_sha256": "b83a73f2de327422c7876f706be4ec9ace7d42c498cdd7ffc6dbc40ad616a325",
       "mobile_experience_update": "Focused mobile CAD-envelope framing, continuous page pacing, native touch tracking and visible context/loading; visual acceptance pending",
       "mobile_experience_review_baseline_sha256": "67e86c0ba2bfbbf48c8cc508ba14396e7927031bbc2549968376dad806057df4",
@@ -6418,8 +6418,8 @@
     },
     {
       "path": "portfolio/index.html",
-      "bytes": 6568,
-      "sha256": "b7b793e50747a31f5175f9377ad2125362b7d8468861d6535f07a234f88b393d",
+      "bytes": 6566,
+      "sha256": "22f97e05fabebe2de7b3ef08724505ee0b42158ad6d241d5e523207acc5bd182",
       "mobile_declutter_baseline_sha256": "bbb17a87616f6507082bb50b74ea6414d48365358db376ac5b6de0a610df1753",
       "mobile_declutter_update": "Mobile-only visible clutter removed; desktop and continuous scroll runtime retained",
       "mobile_slider_baseline_sha256": "fbdd37c26ad7b507dd15c6b3ade76ce193223c583d062741d488bdeeed079c19",
@@ -6449,8 +6449,8 @@
     },
     {
       "path": "portfolio/instrument-3d.js",
-      "bytes": 84864,
-      "sha256": "09a16e5a14cb0bfb4381a0c4d5e3393cc5fe4832f0ed443123cfa43da9031b71",
+      "bytes": 85232,
+      "sha256": "d72d5508b5184b7524bf007a4c616c06583e85efcf4e554ff4d78eb0eb5947d8",
       "phone_media_baseline_sha256": "e94cd0b02db695b072543d148b7381522f5bebcd08d80e81ce74c811e5d2e169",
       "phone_media_update": "Apply the existing complete mobile layout and runtime sizing to short coarse-touch no-hover landscape; desktop mouse behavior and motion preference retained",
       "native_touch_baseline_sha256": "151aa6fb77e5656aed61a84e35a3e7c580340144dbdda45bd564efdc188f44b4",
@@ -6913,9 +6913,23 @@
       "local_startup_repair_update": "Local CPU repair candidate; no export, remote write, native acceptance or deployment"
     },
     {
+      "path": "portfolio/instrument-startup-input.mjs",
+      "reason": "Authored input-aware startup gate and deterministic CPU regression",
+      "provenance": "Isolated follow-up; original texture assets unchanged",
+      "bytes": 2282,
+      "sha256": "e92c8fa8643c8be6fb834eddb1f3bbb591a790358d016eeed38b9860743bad87"
+    },
+    {
+      "path": "portfolio/instrument-startup-input.test.mjs",
+      "reason": "Authored input-aware startup gate and deterministic CPU regression",
+      "provenance": "Isolated follow-up; original texture assets unchanged",
+      "bytes": 7015,
+      "sha256": "1a8921382a7401fba67247e58c239c95e431397c006ca4368fdb990558f6965d"
+    },
+    {
       "path": "portfolio/instrument-startup.mjs",
-      "bytes": 2570,
-      "sha256": "d500d5ef29791f487185ecbcbbe6ddab386356dae4973f658f97f91b23036d54",
+      "bytes": 2683,
+      "sha256": "19b32ce0d75f9111b3862bd60d83b8f8acdb854e503123504acab1c6026dfd10",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e2b152eba52bfeab01aeeaf82138ac6a0cdc56e6d031b0775c0f0b995f4d2e08",
@@ -6923,8 +6937,8 @@
     },
     {
       "path": "portfolio/instrument-startup.test.mjs",
-      "bytes": 8175,
-      "sha256": "30f5458ea245d7e077483a9a35d333395c9992b9923fe67f248dc8ec96634561",
+      "bytes": 8249,
+      "sha256": "b0cfd77768053c21b6485f56066f8011e3b55ec46b6cf3e28a2ca3d33bb081ab",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "0edb04ebd6f5b99a9218bbc14697a4c3f2dfc4d5bfec7efc6ff0025997ea6fcd",

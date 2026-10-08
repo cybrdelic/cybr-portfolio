@@ -17,7 +17,7 @@ test('startup preparation finds original material and compiled uniform textures 
 test('a completed upload budget yields before the next original texture and reports slow atomic uploads honestly',async()=>{
   const a=texture('a'),b=texture('b'),c=texture('c'),order=[];let now=0;
   const result=await prepareStartupTextures({renderer:{initTexture(t){order.push(t.name);now+=t===b?11:3;}},materials:[{map:a,normalMap:b,roughnessMap:c}],clock:()=>now,yieldTask:async()=>{order.push('yield');now+=2;},budgetMs:4});
-  assert.deepEqual(order,['a','b','yield','c']);assert.equal(result.textures,3);assert.equal(result.yields,1);assert.equal(result.maxUploadMs,11);assert.equal(result.elapsedMs,19);
+  assert.deepEqual(order,['a','yield','b','yield','c','yield']);assert.equal(result.textures,3);assert.equal(result.yields,3);assert.equal(result.maxUploadMs,11);assert.equal(result.elapsedMs,23);
   assert.deepEqual(result.records.map(r=>r.durationMs),[3,11,3]);
 });
 test('a rejected upload stops the queue and a cancelled continuation initializes no further resources',async()=>{
@@ -44,7 +44,7 @@ test('actual mobile startup selects the original warmup by default and retains e
   const {readFile}=await import('node:fs/promises'),source=await readFile(new URL('./instrument-3d.js',import.meta.url),'utf8');
   const start=source.indexOf('  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&'),end=source.indexOf("  if(['profile','warmup']",start);
   assert.ok(start>=0&&end>start);
-  const execute=new (Object.getPrototypeOf(async function(){}).constructor)('mobileLayout','pathTracer','rasterResourcesDisposed','query','startup','startupPhase','prepareStartupTextures','renderer','objects','cables',source.slice(start,end));
+  const execute=new (Object.getPrototypeOf(async function(){}).constructor)('mobileLayout','pathTracer','rasterResourcesDisposed','query','startup','startupPhase','prepareStartupTextures','renderer','objects','cables','startupInputGate={beforeUpload:async()=>{},dispose(){}}',source.slice(start,end));
   const material={map:texture('original')},cableMaterial={normalMap:texture('cable')};
   for(const mobile of [false,true])for(const tracing of [false,true])for(const disposed of [false,true])for(const mode of [null,'profile','warmup','off','full','whole','tiles','unknown']){
     const startup={},phases=[],calls=[];
