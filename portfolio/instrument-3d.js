@@ -662,7 +662,7 @@ async function init(){
       losslessTransfer:manifest.progressiveGeo,stats:{...manifest.stats,decodedGeometryBytes:manifest.progressiveGeo.decodedBytes,sha256:manifest.progressiveGeo.sha256Decoded}};
     startup.geo={};
     const [geoBuffer,environment,texture]=await Promise.all([
-      loadGeometry(geoManifest,geometryBase,{onProgress:message=>status.textContent=message,metrics:startup.geo}),
+      loadGeometry(geoManifest,geometryBase,{onProgress:message=>{if(!rasterResourcesDisposed)status.textContent=message;},metrics:startup.geo}),
       inflate(photographedEnvironment.file),
       new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`)
     ]);
@@ -688,7 +688,7 @@ async function init(){
   }
   startupPhase('assets','Loading the full CAD and original materials.');
   const [buffer,environment,texture,customAssets,wearAssets]=await Promise.all([
-    loadGeometry(manifest,geometryBase,{onProgress:message=>status.textContent=(progressive?'GEO is interactive. ':'')+message,legacy:query.get('transfer')==='legacy',metrics:startup.geometry}),seed?Promise.resolve(seed.environment):photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
+    loadGeometry(manifest,geometryBase,{onProgress:message=>{if(!rasterResourcesDisposed)status.textContent=(progressive?'GEO is interactive. ':'')+message;},legacy:query.get('transfer')==='legacy',metrics:startup.geometry}),seed?Promise.resolve(seed.environment):photographedStudio?inflate(photographedEnvironment.file):studioLighting?Promise.resolve(null):inflate(`${geometryBase}${manifest.environment.file}?v=${manifest.environment.sha256||manifest.stats.sha256}`),
     seed?Promise.resolve(seed.texture):new THREE.TextureLoader().loadAsync(`${geometryBase}machined-roughness.png?v=${manifest.stats.sha256}`),
     customPbr?loadInstrumentPbrAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy(),loadTexture}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrAssets=value;return value;}):null,
     customPbr&&query.get('wear')!=='clean'?loadInstrumentPbrWearAssets(THREE,{maxAnisotropy:renderer.capabilities.getMaxAnisotropy(),loadTexture}).then(value=>{if(rasterResourcesDisposed)value.dispose();else pbrWearAssets=value;return value;}):null
