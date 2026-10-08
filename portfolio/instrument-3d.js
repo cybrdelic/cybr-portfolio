@@ -1,6 +1,9 @@
 import {mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs?v=story-1';
 import {createRenderGate} from './instrument-render-gate.mjs';
-import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=1';
+import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=2';
+import {createStartupInputGate} from './instrument-startup-input.mjs?v=1';
+// Register before async initialization so loading gestures are already tracked.
+const startupInputGate=createStartupInputGate();
 import {prepareWaterBoundaries} from './instrument-water-boundary-preparation.mjs';
 import {prepareShaderVariants,visibleShaderObjects} from './instrument-shader-preparation.mjs';
 import {createScrollTour} from './instrument-scroll-tour.mjs?v=story-1';
@@ -574,7 +577,7 @@ function configureRenderGate(){
   renderGate=createRenderGate({gl:renderer.getContext(),onReady:schedule,onState:updateRenderDependents,
     onComplete:job=>{
       displayedProgress=job.progress;
-      if(!fullFrameComplete){fullFrameComplete=true;startup.fullReadyMs=performance.now()-startup.started;startup.gpuFullReadyMs=startup.fullReadyMs;}
+      if(!fullFrameComplete){fullFrameComplete=true;startup.fullReadyMs=performance.now()-startup.started;startup.gpuFullReadyMs=startup.fullReadyMs;stage.classList.remove('mobile-loading');}
       if(Math.abs(displayedProgress-target)<.000025)status.textContent='';
     }});
   updateRenderPause();
@@ -909,9 +912,11 @@ async function init(){
       await new Promise(resolve=>setTimeout(resolve,0));
     }
   }
-  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&query.get('startup')==='warmup'){
+  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&[null,'profile','warmup'].includes(query.get('startup'))){
     startupPhase('texture-preparation','Preparing the original finishes.');
-    startup.texturePreparation=await prepareStartupTextures({renderer,materials:[...objects,...cables.map(c=>c.mesh)].flatMap(object=>Array.isArray(object.material)?object.material:[object.material]),cancelled:()=>rasterResourcesDisposed});
+    try{
+      startup.texturePreparation=await prepareStartupTextures({renderer,materials:[...objects,...cables.map(c=>c.mesh)].flatMap(object=>Array.isArray(object.material)?object.material:[object.material]),cancelled:()=>rasterResourcesDisposed,beforeUpload:cancelled=>startupInputGate.beforeUpload(cancelled)});
+    }finally{startupInputGate.dispose();}
   }
   if(['profile','warmup'].includes(query.get('startup')))firstFrameProfiler=createStartupProfiler();
   startupPhase('first-frame','Rendering the instrument.');
@@ -923,11 +928,11 @@ async function init(){
   finally{startup.initialSubmitMs=performance.now()-initialSubmit;if(firstFrameProfiler){startup.firstFrameSubmission=firstFrameProfiler.snapshot();firstFrameProfiler=undefined;}}
   lastRender=startup.initialSubmitMs;drawCount++;
   renderGate?.submitted({progress:current});if(!renderGate){displayedProgress=current;fullFrameComplete=true;}
-  stage.classList.add('three-ready');status.textContent='';
+  stage.classList.add('three-ready');if(!renderGate)status.textContent='';
   startupPhase('ready');startup.readyMs=performance.now()-startup.started;startup.cpuFullReadyMs=startup.readyMs;if(!renderGate)startup.fullReadyMs=startup.readyMs;
   if(!startup.firstUsable3DMs)startup.firstUsable3DMs=startup.readyMs;
   slider.disabled=false;document.querySelectorAll('[data-end]').forEach(button=>button.disabled=false);
-  measureScroll();interfaceController.ready();stage.classList.remove('mobile-loading');mobilePrelude(current);
+  measureScroll();interfaceController.ready();if(!renderGate)stage.classList.remove('mobile-loading');mobilePrelude(current);
   document.querySelector('[data-end="100"]').textContent='Next →';
   document.querySelector('.scroll-position>span:last-child').textContent='Scroll to assemble & inspect ↓';
   slider.addEventListener('input',()=>jump(Number(slider.value)/100));
@@ -997,4 +1002,4 @@ async function init(){
 const interfaceController=createInstrumentInterface({stage,root,jump,isReady:name=>ready||!!geoStarter&&(!name||name==='geo'),getTarget:()=>target,reduced,onInspect:()=>{},onPaneChange:open=>{interfacePaused=open;updateRenderPause();if(open){cancelAnimationFrame(frame);frame=0;}else{lastTime=0;measureScroll();scroll();schedule();}}});
 measureScroll();window.addEventListener('scroll',scroll,{passive:true});
 window.addEventListener('resize',()=>{scrollTour.resize({preserve:mobileLayout.matches});schedule();},{passive:true});
-init().catch(error=>{console.error(error);if(qualityMode&&/gpu|adapter|device|context/i.test(error.message||''))recoverQuality(error);else if(/creating WebGL context|context.*lost/i.test(error.message||''))fallback('This browser cannot start 3D graphics. Reopen the browser to retry, or explore the project links below.');else fallback('3D could not load. Use the project links or reload to retry.'+(query.has('audit')?' '+error.message:''));});
+init().catch(error=>{console.error(error);if(qualityMode&&/gpu|adapter|device|context/i.test(error.message||''))recoverQuality(error);else if(/creating WebGL context|context.*lost/i.test(error.message||''))fallback('This browser cannot start 3D graphics. Reopen the browser to retry, or explore the project links below.');else fallback('3D could not load. Use the project links or reload to retry.'+(query.has('audit')?' '+error.message:''));}).finally(()=>startupInputGate.dispose());

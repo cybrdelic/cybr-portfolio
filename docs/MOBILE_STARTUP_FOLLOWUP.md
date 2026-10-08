@@ -32,7 +32,8 @@ advance readiness/completion flags. Explicit ray/pathtrace preparation remains.
 
 `?startup=profile` records inclusive first-draw substep timings and retains the
 initial submit duration separately from later frames. Texture initialization
-remains opt-in with `?startup=warmup`; ordinary visits keep it disabled. Original
+was opt-in at PR9 with `?startup=warmup`. The later default-warmup review
+below supersedes that selection policy. Original
 texture bytes, mesh data, materials, camera/pacing, resolution and completion
 semantics remain. The loading caption reads "Preparing the instrument."
 Runtime caption spaces survive wide layouts that hide line breaks.
@@ -79,10 +80,169 @@ Startup is still heavy. The repair's first-draw main-thread task lasted about
 3.15 seconds, predominantly sampled `texSubImage2D` texture upload (~2.98s).
 The water worker and shader preparation address earlier classification and
 late shader reflection; they do not solve this remaining upload stall. A
-single GL upload/query is atomic and can exceed a scheduling budget. Keep
-texture warmup opt-in until independently validated during that phase.
+single GL upload/query is atomic and can exceed a scheduling budget. That
+phase is independently checked in the default-warmup follow-up below.
 
 Physical-phone performance, memory pressure, cold mobile network delivery and
 inherited optical refinement remain unverified. This laptop pair establishes
 functional preservation and the observed timings, not a solved phone experience
 or final art acceptance. Merge and Site deployment are coordinated separately.
+
+
+## Mobile default warmup review (2026-10-08)
+
+This focused follow-up selects the existing, unchanged `prepareStartupTextures`
+path for ordinary mobile visits and `?startup=profile` or `?startup=warmup`.
+`?startup=off` restores the PR9 first-draw upload timing; `?startup=full`, other
+explicit startup variants, desktop and path tracing retain their earlier paths.
+Whole-texture and tiled experiments are not included. No texture, resolution,
+material, geometry, camera, motion or scroll-policy change is made.
+
+The mobile loading class and rendering caption remain until the existing
+first-frame GPU fence completes. CPU submission and full GPU-ready remain
+separate timestamps. Queued texture work does not signal GPU completion.
+Ungated compatibility rendering retains its original completion behavior.
+
+CPU validation: all340 tests pass (338 retained plus two source-bound runtime
+contracts covering selection/rollback, pending preparation and loading/fence
+semantics). Syntax,15pages/1256references/0missing/9films and actual HTTP byte
+checks pass. Both source manifests, all1548 tracked source files and all22
+original texture encodings were verified. The helper is byte-identical to PR9.
+
+One reverse-order native sequence tested warmup before baseline, first normal
+motion then reduced motion. The native-tested implementation is
+`a598a364345484f1be04e7e64ef17711ea17ebfb`, based on merged
+`fc4847686acef4dd86b49fa14f411efe84d40777`. Later review edits change only
+existing docs, test-prefix newline preservation and provenance hashes. Runtime
+and all assets remain identical to the tested implementation.
+
+Chrome145.0.7632.160, native Intel UHD ANGLE/D3D11,390x844,DPR1,touch/mobile,
+CPUx4,80ms local latency, no bandwidth cap. Fresh contexts used the default
+candidate with `?audit` and exact baseline bytes with `?startup=profile&audit`.
+Chrome's sandbox stayed enabled; no security-relaxing flags were used. The
+single browser slot lasted75.625s and all owned resources closed at
+2026-10-08T03:57:45.776655Z, with no page errors or forced cleanup.
+
+| Observation | Normal warmup | Normal baseline | Reduced warmup | Reduced baseline |
+| --- | ---: | ---: | ---: | ---: |
+| First full draw CPU submission |165.8ms|3100.9ms|141.9ms|3171.3ms|
+| Loading touchstart processing delay |260.5ms|3105.8ms|282.1ms|3089.2ms|
+| GPU full-ready from startup |17.782s|12.690s|13.943s|13.921s|
+| Longest original warmup call |458.7ms|n/a|493.0ms|n/a|
+| Document position at ready touchend |455px|455px|455px|455px|
+
+The observed first-draw/input benefit survived reverse order. Total startup
+was not consistently faster: the first warmup context took longer overall.
+Shared driver/program warmth, profiling instrumentation and one fixed-order
+sequence prevent a statistical, causal or physical-phone performance claim.
+Normal loading touchmove delay still reached548ms; reduced reached598ms.
+Original full-size GPU memory and atomic allocation/upload/mip work remain.
+
+Actual normal opening and after-scroll PNGs were RGBA-identical (0changed
+pixels across329160pixels each). Reduced opening images also matched exactly.
+Both reduced touchend coordinates were455px; native inertia then advanced
+warmup to619px while baseline stayed455px. Each GPU-completed displayed pose
+matched its actual document coordinate. The reduced after-scroll images are
+different poses (12248changed pixels) and do not establish matched-pose visual
+parity. No synthetic images were used. All modes retained56meshes,
+2096316triangles and decoded geometry SHA256
+`486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756`.
+
+The raw audit, phase/input checkpoints and eight actual PNGs are retained in
+the isolated checkout's ignored `.local/native-reverse/`. Raw receipt SHA256:
+`42366bf354b805dcdd68bfbc357aedb2a7675dabeb57f4d9d9e67a137a84bb94`.
+Native mip readback was not repeated in this slot. The preceding baseline vs
+existing warmup comparison retained equality for four original maps across47
+mip levels; all22encoded source files are unchanged here. The failed tiled
+candidate and its negative results remain independently preserved.
+
+Physical-phone performance, coldWAN delivery, memory pressure, native context
+loss/restoration, actual rollback-query browser navigation and reduced-motion
+matched-pose after-scroll appearance remain unverified. Individual upload
+stalls remain about470ms (493ms in this slot). Smooth loading and final optical
+art quality remain unresolved. Review and Site saving do not deploy; the
+parent coordinates the final merge and any later deployment.
+
+
+## Input-aware warmup candidate (2026-10-08)
+
+Based on 0bdf6d934ec9094fd6b975608e34a873547a5ab4. Passive loading-time
+listeners track touch/pen pointers, touch fallback and native scroll before
+initialization. Before each original initTexture call, preparation waits for
+all contacts to end and 180ms of scroll/input quiet, with an optional continuous
+pending-input check. Every texture upload yields afterward, including the last.
+Continuous gestures or scroll make no preparation progress; there is no timeout
+that forces an upload through active input. Full-ready may therefore be delayed
+indefinitely until interaction settles. An already-running whole-image upload
+is still atomic and cannot be interrupted. Texture order, original encodings,
+mips and quality are preserved; all preparation remains awaited before the
+full frame and the existing GPU fence still clears loading.
+
+Page disposal cancels pending gate waits. Preparation success or failure removes
+all temporary listeners and timers; initialization failure also cleans up.
+CPU tests cover release/cancel, multiple contacts, touch fallback, inertia,
+disposal, optional inputPending, atomic-call boundaries and preparation errors.
+Native acceptance and its limits are recorded below. Review and Site saving
+remain separate from merge and deployment.
+
+
+### Bounded native acceptance
+
+Native-tested runtime and CPU tests: `4d12e24847e044c5f5c022c2dfa68e1a771efaad`.
+Baseline: `0bdf6d934ec9094fd6b975608e34a873547a5ab4`. Later acceptance edits
+change only this document and its source/public manifests. All 349 CPU tests
+pass, including nine deterministic input-gate tests; syntax, reference closure,
+HTTP byte integrity and original asset hashes pass.
+
+Chrome 145.0.7632.160 used sandboxed native Intel UHD ANGLE/D3D11, 390x844,
+DPR1, touch/mobile emulation, CPU x4 and 80ms local latency with no bandwidth
+cap. Normal motion tested candidate first; reduced motion tested baseline
+first. All completed cases had no page errors and reached GPU full-ready.
+
+| Observation | Normal gate | Normal prior warmup | Reduced gate | Reduced prior warmup |
+| --- | ---: | ---: | ---: | ---: |
+| First full draw CPU submission |202.7ms|164.0ms|142.9ms|177.7ms|
+| Loading touchstart delay |233.6ms|270.7ms|133.7ms|225.7ms|
+| Maximum loading touchmove delay |37.1ms|591.4ms|65.3ms|612.5ms|
+| GPU full-ready with loading gesture |18.432s|14.558s|15.216s|17.626s|
+
+In the normal pair no PBR uploads started after delivered touchstart while the
+contact remained active, versus twelve in the prior warmup. The loading gesture
+protocol took 609ms versus 3000ms. Initial touchstart still waited 233.6ms behind
+an atomic upload. These observations support improved subsequent touch delivery,
+not a promise of smooth loading or faster total startup. The normal no-gesture
+pair reached GPU full-ready at14.429s versus14.057s. Active gestures or inertia
+intentionally postpone preparation and can delay full-ready indefinitely.
+
+Actual opening and matched455px post-scroll captures were RGBA-identical for
+normal and reduced motion. The original decoded geometry SHA256 remained
+`486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756`.
+Matched coordinates were aligned after actual trusted pans and inertia; snapshots
+confirmed GPU-completed displayed poses equaled actual document poses.
+
+Browser-navigated `?startup=off&audit` in reduced motion skipped preparation,
+restored the approximately3.143s initial draw and3.112s loading touchstart delay,
+and retained exact opening/post-scroll pixels and geometry. Completion removed
+all temporary gate listeners. No pixel/mip quality or texture ordering change
+was made; representative native mip equality was established earlier, not
+repeated in these slots.
+
+The planned held-preparation navigation-to-about:blank case remains incomplete.
+Its first attempt had an early trigger deadline; its second harness incorrectly
+assumed the final instrument3D API existed before full-ready. The second attempt
+did capture actual trusted touch holding texture preparation with no subsequent
+uploads or GPU-ready timestamp. Actual context closure then dispatched pagehide
+and removed the tracked gate listener identities to zero. CPU tests separately
+cover cancellation, disposal and preparation failures. This is observed held-page
+context-close cleanup, not proof of the unexecuted about:blank navigation case.
+
+Owned browsers and local servers closed with no forced survivors: normal slot
+74.922s, released2026-10-08T04:54:13.925882Z; reduced/rollback slot68.265s,
+released2026-10-08T04:58:22.248541Z; cleanup-only slot15.500s, released
+2026-10-08T05:01:00.613028Z. Raw audits and captures remain local and are not
+included in public source or Site runtime packages.
+
+One sequence per motion preference, shared driver warmth and instrumentation
+prevent statistical or causal startup-speed claims. Physical phones, cold WAN,
+memory pressure, native context restoration and final optical art acceptance
+remain unverified. The initial atomic-upload delay and full-ready tradeoff remain.

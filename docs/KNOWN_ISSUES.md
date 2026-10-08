@@ -69,3 +69,10 @@ follow-up. SwiftShader and synthesized-scroll diagnostics retain separate
 failures. Their exact scope and native passes are documented in
 [MOBILE_STARTUP.md](MOBILE_STARTUP.md); physical Android, optional WebGPU and
 current cold-network performance are not certified.
+
+Current mobile warmup review: first-draw and loading touchstart improved in a
+reverse-order desktop comparison, but individual original uploads still reached
+493ms and total startup was not consistently faster. Smooth phone loading is
+unresolved. Reduced touch scrolling passed; different native inertia prevented
+matched-pose after-scroll visual comparison. See the latest section of
+[MOBILE_STARTUP_FOLLOWUP.md](MOBILE_STARTUP_FOLLOWUP.md).
