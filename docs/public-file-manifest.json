@@ -1785,8 +1785,8 @@
     },
     {
       "path": "docs/MOBILE_STARTUP_FOLLOWUP.md",
-      "bytes": 11213,
-      "sha256": "bb092544fa4b5489162614a62a7988450dcbdcf0da46fc81574816c9495f081c",
+      "bytes": 14985,
+      "sha256": "0d7ca2783cc571b3c7a6d2fedc5f7bbddfc0cf1191f2db4ad4679aa279773dc1",
       "reason": "Authored opt-in startup scheduling/diagnostics, CPU regression or scope notes",
       "provenance": "Separate follow-up from parent-merged PR8; no imported or regenerated assets",
       "startup_depth_guard_previous_sha256": "e6b4f1c3828f2bedef3bc0c35239a0600d115f0f41ae718a6b12e3cb5aa71590",

@@ -164,7 +164,7 @@ art quality remain unresolved. Review and Site saving do not deploy; the
 parent coordinates the final merge and any later deployment.
 
 
-## Input-aware warmup candidate (CPU only, 2026-10-08)
+## Input-aware warmup candidate (2026-10-08)
 
 Based on 0bdf6d934ec9094fd6b975608e34a873547a5ab4. Passive loading-time
 listeners track touch/pen pointers, touch fallback and native scroll before
@@ -182,5 +182,67 @@ Page disposal cancels pending gate waits. Preparation success or failure removes
 all temporary listeners and timers; initialization failure also cleans up.
 CPU tests cover release/cancel, multiple contacts, touch fallback, inertia,
 disposal, optional inputPending, atomic-call boundaries and preparation errors.
-Native input latency, first-draw cost, total-ready delay and image equality are
-unvalidated for this candidate. No native slot, PR, push or deployment used.
+Native acceptance and its limits are recorded below. Review and Site saving
+remain separate from merge and deployment.
+
+
+### Bounded native acceptance
+
+Native-tested runtime and CPU tests: `4d12e24847e044c5f5c022c2dfa68e1a771efaad`.
+Baseline: `0bdf6d934ec9094fd6b975608e34a873547a5ab4`. Later acceptance edits
+change only this document and its source/public manifests. All 349 CPU tests
+pass, including nine deterministic input-gate tests; syntax, reference closure,
+HTTP byte integrity and original asset hashes pass.
+
+Chrome 145.0.7632.160 used sandboxed native Intel UHD ANGLE/D3D11, 390x844,
+DPR1, touch/mobile emulation, CPU x4 and 80ms local latency with no bandwidth
+cap. Normal motion tested candidate first; reduced motion tested baseline
+first. All completed cases had no page errors and reached GPU full-ready.
+
+| Observation | Normal gate | Normal prior warmup | Reduced gate | Reduced prior warmup |
+| --- | ---: | ---: | ---: | ---: |
+| First full draw CPU submission |202.7ms|164.0ms|142.9ms|177.7ms|
+| Loading touchstart delay |233.6ms|270.7ms|133.7ms|225.7ms|
+| Maximum loading touchmove delay |37.1ms|591.4ms|65.3ms|612.5ms|
+| GPU full-ready with loading gesture |18.432s|14.558s|15.216s|17.626s|
+
+In the normal pair no PBR uploads started after delivered touchstart while the
+contact remained active, versus twelve in the prior warmup. The loading gesture
+protocol took 609ms versus 3000ms. Initial touchstart still waited 233.6ms behind
+an atomic upload. These observations support improved subsequent touch delivery,
+not a promise of smooth loading or faster total startup. The normal no-gesture
+pair reached GPU full-ready at14.429s versus14.057s. Active gestures or inertia
+intentionally postpone preparation and can delay full-ready indefinitely.
+
+Actual opening and matched455px post-scroll captures were RGBA-identical for
+normal and reduced motion. The original decoded geometry SHA256 remained
+`486afb1b0c1ea6bb75642626beb6fb4b284db9824d99bdbb21de7ee7456fc756`.
+Matched coordinates were aligned after actual trusted pans and inertia; snapshots
+confirmed GPU-completed displayed poses equaled actual document poses.
+
+Browser-navigated `?startup=off&audit` in reduced motion skipped preparation,
+restored the approximately3.143s initial draw and3.112s loading touchstart delay,
+and retained exact opening/post-scroll pixels and geometry. Completion removed
+all temporary gate listeners. No pixel/mip quality or texture ordering change
+was made; representative native mip equality was established earlier, not
+repeated in these slots.
+
+The planned held-preparation navigation-to-about:blank case remains incomplete.
+Its first attempt had an early trigger deadline; its second harness incorrectly
+assumed the final instrument3D API existed before full-ready. The second attempt
+did capture actual trusted touch holding texture preparation with no subsequent
+uploads or GPU-ready timestamp. Actual context closure then dispatched pagehide
+and removed the tracked gate listener identities to zero. CPU tests separately
+cover cancellation, disposal and preparation failures. This is observed held-page
+context-close cleanup, not proof of the unexecuted about:blank navigation case.
+
+Owned browsers and local servers closed with no forced survivors: normal slot
+74.922s, released2026-10-08T04:54:13.925882Z; reduced/rollback slot68.265s,
+released2026-10-08T04:58:22.248541Z; cleanup-only slot15.500s, released
+2026-10-08T05:01:00.613028Z. Raw audits and captures remain local and are not
+included in public source or Site runtime packages.
+
+One sequence per motion preference, shared driver warmth and instrumentation
+prevent statistical or causal startup-speed claims. Physical phones, cold WAN,
+memory pressure, native context restoration and final optical art acceptance
+remain unverified. The initial atomic-upload delay and full-ready tradeoff remain.
