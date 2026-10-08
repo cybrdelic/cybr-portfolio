@@ -1,7 +1,7 @@
 // Original part-scale contaminants; fine machining maps remain independently tiled.
 export const PBR_WEAR_ASSETS_VERSION='cybr-custom-wear-v2';
-export async function loadInstrumentPbrWearAssets(THREE,{base='./assets/pbr-custom-worn/',maxAnisotropy=8}={}){
-  const loader=new THREE.TextureLoader(),owned=new Set();
+export async function loadInstrumentPbrWearAssets(THREE,{base='./assets/pbr-custom-worn/',maxAnisotropy=8,loadTexture}={}){
+  const loader=loadTexture?{loadAsync:loadTexture}:new THREE.TextureLoader(),owned=new Set();
   const specifications=[['aluminum','AluminumWear'],['steel','SteelWear'],['bronze','BronzeWear']];
   try{
     const results=await Promise.allSettled(specifications.map(async ([alloy,name])=>{
