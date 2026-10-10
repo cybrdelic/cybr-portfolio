@@ -1,0 +1,223 @@
+{
+  "name": "elements",
+  "version": 1,
+  "units": "mm",
+  "parts": [
+    {
+      "name": "native-rig-15",
+      "material": 3,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 0,
+        "count": 27876,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 111504,
+        "count": 27876,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 167256,
+        "count": 42264,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "native-rig-16",
+      "material": 0,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 336312,
+        "count": 270033,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 1416444,
+        "count": 270033,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 1956512,
+        "count": 335016,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "native-rig-17",
+      "material": 1,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 3296576,
+        "count": 352866,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4708040,
+        "count": 352866,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5413772,
+        "count": 509148,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "native-rig-19",
+      "material": 2,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 7450364,
+        "count": 27693,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7561136,
+        "count": 27693,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7616524,
+        "count": 41580,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "native-rig-20",
+      "material": 4,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 7782844,
+        "count": 123834,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8278180,
+        "count": 123834,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8525848,
+        "count": 164310,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "elements-cell-0",
+      "material": 0,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 9183088,
+        "count": 16296,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9248272,
+        "count": 16296,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9280864,
+        "count": 15744,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "elements-cell-1",
+      "material": 1,
+      "motion": "fixed",
+      "group": "vessel",
+      "role": "Original ELEMENTS glass vessel and support",
+      "positions": {
+        "offset": 9343840,
+        "count": 24516,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9441904,
+        "count": 24516,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9490936,
+        "count": 23136,
+        "dtype": "<u4"
+      }
+    }
+  ],
+  "materials": [
+    {
+      "name": "Aluminium",
+      "color": [
+        0.74,
+        0.76,
+        0.78
+      ],
+      "metalness": 1,
+      "roughness": 0.28
+    },
+    {
+      "name": "Steel",
+      "color": [
+        0.52,
+        0.56,
+        0.59
+      ],
+      "metalness": 1,
+      "roughness": 0.24
+    },
+    {
+      "name": "Seal",
+      "color": [
+        0.025,
+        0.03,
+        0.035
+      ],
+      "metalness": 0,
+      "roughness": 0.55
+    },
+    {
+      "name": "Glass",
+      "color": [
+        0.86,
+        0.96,
+        0.96
+      ],
+      "metalness": 0,
+      "roughness": 0.06,
+      "transmission": 1,
+      "ior": 1.52
+    }
+  ],
+  "source": {
+    "geometrySHA256": "2dc793354ab518d175a8aafae90b317928926137f5a8db63bf843020b6325087",
+    "fluid": "instrument-elements-bake/water-shared-v3",
+    "simulation": "Recorded APIC/FLIP",
+    "cavityMM": [
+      53,
+      55,
+      59
+    ]
+  },
+  "geometry": {
+    "file": "geometry.bin.gz",
+    "bytes": 4772417,
+    "decodedBytes": 9583480,
+    "sha256": "e21e1a167d06c1fd21fe4077e6a840a671ce9eaa20d44998e683cb0e9ad9b9db",
+    "compressedSHA256": "e2cf72e692156f97abc4c5790d0bcd7cb0ed199b2b068a2d2aef5a5ccce3ed1c"
+  },
+  "triangles": 377066
+}

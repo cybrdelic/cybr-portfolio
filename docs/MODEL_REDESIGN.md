@@ -1,4 +1,33 @@
-# Precision instrument model redesign
+# Working specimens — current portfolio
+
+The homepage now shows source-backed specimens. Its first paint uses small
+recorded demonstrations; interactive geometry is fetched only after Inspect.
+The original six-part instrument remains available at portfolio/instrument.html.
+
+GEO uses all 148 parts from ORBIT revision 3. Browser poses match the original
+pose_parameters at both wrist and jaw limits, including the 72/20 tooth ratio,
+3 mm opposed screw lead and 21.8–33.8 mm jaw gap. Reveal drive is an inspection
+cutaway, not a service-removal sequence. New mesh sampling uses absolute OCC
+surface deflection of 0.035 mm, preserving every original analytic solid.
+
+LIGHT uses the exact cross-section and Cauchy coefficients from
+cybr-light/examples/prism.py. The interactive geometric rays obey Snell
+refraction and total internal reflection; wavelength-dependent detector
+positions change with incidence and prism rotation. This is an explanatory
+ray demonstration; it does not claim to run the native photon renderer.
+
+ELEMENTS keeps the original vessel and streams its recorded APIC/FLIP surface
+one requested frame at a time. View tilt rotates the inspection specimen;
+it does not recalculate the gravity forcing. Demo playback is visibly recorded.
+
+GEO, LIGHT and ELEMENTS each have a 720 × 540 demonstration at 24 fps. SONG,
+COMBAT and SCENES retain original score, movement film and architectural render
+entry points. A single interactive stage owns its GPU and fluid resources;
+selection changes abort stale requests and dispose the old stage.
+
+## Retained instrument redesign history
+
+### Precision instrument model redesign
 
 The v14 instrument's three front modules need distinct readable forms at the
 overview scale, credible optical depth in close-ups, and a consistent finish.

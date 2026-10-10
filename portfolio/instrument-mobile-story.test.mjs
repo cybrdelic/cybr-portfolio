@@ -8,7 +8,7 @@ import {MOBILE_PAGE_STOPS,mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fi
 import {createScrollTour} from './instrument-scroll-tour.mjs';
 
 test('opening copy retains its sentence separator when the wide layout hides its line break',()=>{
-  const html=readFileSync(new URL('./index.html',import.meta.url),'utf8');
+  const html=readFileSync(new URL('./instrument.html',import.meta.url),'utf8');
   const heading=html.match(/<div class="mobile-intro">[\s\S]*?<h2>(.*?)<\/h2>/)?.[1];
   assert.ok(heading,'the mobile opening heading exists');
   assert.equal(heading.replace(/<br\s*\/?\s*>/gi,'').replace(/\s+/g,' ').trim(),'Six systems. One instrument.');

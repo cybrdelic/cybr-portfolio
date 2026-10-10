@@ -1,0 +1,3439 @@
+{
+  "name": "geo",
+  "version": 1,
+  "units": "mm",
+  "parts": [
+    {
+      "name": "B01_Mounting_shoe",
+      "material": 0,
+      "group": "base",
+      "motion": "fixed",
+      "role": "B01 Mounting shoe",
+      "positions": {
+        "offset": 0,
+        "count": 37431,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 149724,
+        "count": 37431,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 224588,
+        "count": 44784,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B02_0_Nonmarking_foot",
+      "material": 4,
+      "group": "base",
+      "motion": "fixed",
+      "role": "B02 0 Nonmarking foot",
+      "positions": {
+        "offset": 403724,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 408788,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 411320,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B02_1_Nonmarking_foot",
+      "material": 4,
+      "group": "base",
+      "motion": "fixed",
+      "role": "B02 1 Nonmarking foot",
+      "positions": {
+        "offset": 416312,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 421376,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 423908,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B02_2_Nonmarking_foot",
+      "material": 4,
+      "group": "base",
+      "motion": "fixed",
+      "role": "B02 2 Nonmarking foot",
+      "positions": {
+        "offset": 428900,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 433964,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 436496,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B02_3_Nonmarking_foot",
+      "material": 4,
+      "group": "base",
+      "motion": "fixed",
+      "role": "B02 3 Nonmarking foot",
+      "positions": {
+        "offset": 441488,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 446552,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 449084,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B03_Rear_bearing_pedestal",
+      "material": 0,
+      "group": "pedestal",
+      "motion": "fixed",
+      "role": "B03 Rear bearing pedestal",
+      "positions": {
+        "offset": 454076,
+        "count": 28710,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 568916,
+        "count": 28710,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 626336,
+        "count": 33462,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B04_0_Pedestal_clamp",
+      "material": 2,
+      "group": "fasteners",
+      "motion": "fixed",
+      "role": "B04 0 Pedestal clamp",
+      "positions": {
+        "offset": 760184,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 841976,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 882872,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "B04_1_Pedestal_clamp",
+      "material": 2,
+      "group": "fasteners",
+      "motion": "fixed",
+      "role": "B04 1 Pedestal clamp",
+      "positions": {
+        "offset": 1029272,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 1111064,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 1151960,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H01_Removable_gear_shell",
+      "material": 0,
+      "group": "housing",
+      "motion": "fixed",
+      "role": "H01 Removable gear shell",
+      "positions": {
+        "offset": 1298360,
+        "count": 34092,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 1434728,
+        "count": 34092,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 1502912,
+        "count": 33618,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H03_00_Cover_socket_screw",
+      "material": 2,
+      "group": "cover_fasteners",
+      "motion": "fixed",
+      "role": "H03 00 Cover socket screw",
+      "positions": {
+        "offset": 1637384,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 1719176,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 1760072,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H03_01_Cover_socket_screw",
+      "material": 2,
+      "group": "cover_fasteners",
+      "motion": "fixed",
+      "role": "H03 01 Cover socket screw",
+      "positions": {
+        "offset": 1906472,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 1988264,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 2029160,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H03_02_Cover_socket_screw",
+      "material": 2,
+      "group": "cover_fasteners",
+      "motion": "fixed",
+      "role": "H03 02 Cover socket screw",
+      "positions": {
+        "offset": 2175560,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 2257352,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 2298248,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H03_03_Cover_socket_screw",
+      "material": 2,
+      "group": "cover_fasteners",
+      "motion": "fixed",
+      "role": "H03 03 Cover socket screw",
+      "positions": {
+        "offset": 2444648,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 2526440,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 2567336,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H03_04_Cover_socket_screw",
+      "material": 2,
+      "group": "cover_fasteners",
+      "motion": "fixed",
+      "role": "H03 04 Cover socket screw",
+      "positions": {
+        "offset": 2713736,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 2795528,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 2836424,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H03_05_Cover_socket_screw",
+      "material": 2,
+      "group": "cover_fasteners",
+      "motion": "fixed",
+      "role": "H03 05 Cover socket screw",
+      "positions": {
+        "offset": 2982824,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 3064616,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 3105512,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H02_-1_Split_front_bearing_cover",
+      "material": 1,
+      "group": "cover",
+      "motion": "fixed",
+      "role": "H02 -1 Split front bearing cover",
+      "positions": {
+        "offset": 3251912,
+        "count": 9714,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 3290768,
+        "count": 9714,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 3310196,
+        "count": 9618,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "H02_1_Split_front_bearing_cover",
+      "material": 1,
+      "group": "cover",
+      "motion": "fixed",
+      "role": "H02 1 Split front bearing cover",
+      "positions": {
+        "offset": 3348668,
+        "count": 12564,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 3398924,
+        "count": 12564,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 3424052,
+        "count": 12420,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Outer_race",
+      "material": 2,
+      "group": "bearings",
+      "motion": "fixed",
+      "role": "R01 Rear Outer race",
+      "positions": {
+        "offset": 3473732,
+        "count": 18432,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 3547460,
+        "count": 18432,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 3584324,
+        "count": 32130,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Inner_race",
+      "material": 2,
+      "group": "bearings",
+      "motion": "wrist",
+      "role": "R01 Rear Inner race",
+      "positions": {
+        "offset": 3712844,
+        "count": 17478,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 3782756,
+        "count": 17478,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 3817712,
+        "count": 30870,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_00",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 00",
+      "positions": {
+        "offset": 3941192,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 3975572,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 3992764,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_01",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 01",
+      "positions": {
+        "offset": 4060180,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4094560,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4111752,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_02",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 02",
+      "positions": {
+        "offset": 4179168,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4213548,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4230740,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_03",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 03",
+      "positions": {
+        "offset": 4298156,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4332536,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4349728,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_04",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 04",
+      "positions": {
+        "offset": 4417144,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4451524,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4468716,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_05",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 05",
+      "positions": {
+        "offset": 4536132,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4570512,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4587704,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_06",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 06",
+      "positions": {
+        "offset": 4655120,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4689500,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4706692,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_07",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 07",
+      "positions": {
+        "offset": 4774108,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4808488,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4825680,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_08",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 08",
+      "positions": {
+        "offset": 4893096,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 4927476,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 4944668,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_09",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 09",
+      "positions": {
+        "offset": 5012084,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 5046464,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5063656,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_10",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 10",
+      "positions": {
+        "offset": 5131072,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 5165452,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5182644,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Ball_11",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R01 Rear Ball 11",
+      "positions": {
+        "offset": 5250060,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 5284440,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5301632,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R01_Rear_Pocketed_cage",
+      "material": 3,
+      "group": "bearings",
+      "motion": "fixed",
+      "role": "R01 Rear Pocketed cage",
+      "positions": {
+        "offset": 5369048,
+        "count": 20346,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 5450432,
+        "count": 20346,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5491124,
+        "count": 30276,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Outer_race",
+      "material": 2,
+      "group": "bearings",
+      "motion": "fixed",
+      "role": "R02 Front Outer race",
+      "positions": {
+        "offset": 5612228,
+        "count": 18432,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 5685956,
+        "count": 18432,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5722820,
+        "count": 32130,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Inner_race",
+      "material": 2,
+      "group": "bearings",
+      "motion": "wrist",
+      "role": "R02 Front Inner race",
+      "positions": {
+        "offset": 5851340,
+        "count": 17478,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 5921252,
+        "count": 17478,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 5956208,
+        "count": 30870,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_00",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 00",
+      "positions": {
+        "offset": 6079688,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6114068,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6131260,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_01",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 01",
+      "positions": {
+        "offset": 6198676,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6233056,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6250248,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_02",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 02",
+      "positions": {
+        "offset": 6317664,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6352044,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6369236,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_03",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 03",
+      "positions": {
+        "offset": 6436652,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6471032,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6488224,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_04",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 04",
+      "positions": {
+        "offset": 6555640,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6590020,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6607212,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_05",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 05",
+      "positions": {
+        "offset": 6674628,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6709008,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6726200,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_06",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 06",
+      "positions": {
+        "offset": 6793616,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6827996,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6845188,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_07",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 07",
+      "positions": {
+        "offset": 6912604,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 6946984,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 6964176,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_08",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 08",
+      "positions": {
+        "offset": 7031592,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7065972,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7083164,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_09",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 09",
+      "positions": {
+        "offset": 7150580,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7184960,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7202152,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_10",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 10",
+      "positions": {
+        "offset": 7269568,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7303948,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7321140,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Ball_11",
+      "material": 2,
+      "group": "bearing_balls",
+      "motion": "fixed",
+      "role": "R02 Front Ball 11",
+      "positions": {
+        "offset": 7388556,
+        "count": 8595,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7422936,
+        "count": 8595,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7440128,
+        "count": 16854,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "R02_Front_Pocketed_cage",
+      "material": 3,
+      "group": "bearings",
+      "motion": "fixed",
+      "role": "R02 Front Pocketed cage",
+      "positions": {
+        "offset": 7507544,
+        "count": 20346,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7588928,
+        "count": 20346,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7629620,
+        "count": 30276,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W01_Revolved_hollow_shaft_and_flange",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W01 Revolved hollow shaft and flange",
+      "positions": {
+        "offset": 7750724,
+        "count": 10272,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7791812,
+        "count": 10272,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7812356,
+        "count": 10236,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W02_Parallel_drive_key",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W02 Parallel drive key",
+      "positions": {
+        "offset": 7853300,
+        "count": 12048,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 7901492,
+        "count": 12048,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 7925588,
+        "count": 19860,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W03_Front_thrust_washer",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W03 Front thrust washer",
+      "positions": {
+        "offset": 8005028,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8015156,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8020220,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W04_Rear_thrust_washer",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W04 Rear thrust washer",
+      "positions": {
+        "offset": 8030300,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8040428,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8045492,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W07_Rear_gear_spacer",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W07 Rear gear spacer",
+      "positions": {
+        "offset": 8055572,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8065700,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8070764,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W07_Front_gear_spacer",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W07 Front gear spacer",
+      "positions": {
+        "offset": 8080844,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8090972,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8096036,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W05_-1_Split_rear_clamp_collar",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W05 -1 Split rear clamp collar",
+      "positions": {
+        "offset": 8106116,
+        "count": 4212,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8122964,
+        "count": 4212,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8131388,
+        "count": 4188,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W05_1_Split_rear_clamp_collar",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W05 1 Split rear clamp collar",
+      "positions": {
+        "offset": 8148140,
+        "count": 6258,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8173172,
+        "count": 6258,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8185688,
+        "count": 6198,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W06_0_Collar_clamp_screw",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W06 0 Collar clamp screw",
+      "positions": {
+        "offset": 8210480,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8292272,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8333168,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "W06_1_Collar_clamp_screw",
+      "material": 2,
+      "group": "wrist",
+      "motion": "wrist",
+      "role": "W06 1 Collar clamp screw",
+      "positions": {
+        "offset": 8479568,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8561360,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 8602256,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G01_72T_Involute_wrist_gear",
+      "material": 2,
+      "group": "gears",
+      "motion": "wrist",
+      "role": "G01 72T Involute wrist gear",
+      "positions": {
+        "offset": 8748656,
+        "count": 52314,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 8957912,
+        "count": 52314,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9062540,
+        "count": 37056,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G02_20T_Involute_input_pinion",
+      "material": 3,
+      "group": "gears",
+      "motion": "pinion",
+      "role": "G02 20T Involute input pinion",
+      "positions": {
+        "offset": 9210764,
+        "count": 17520,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9280844,
+        "count": 17520,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9315884,
+        "count": 13296,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G03_Input_shaft",
+      "material": 2,
+      "group": "input",
+      "motion": "pinion",
+      "role": "G03 Input shaft",
+      "positions": {
+        "offset": 9369068,
+        "count": 1884,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9376604,
+        "count": 1884,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9380372,
+        "count": 1818,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G04_0_Input_plain_bearing",
+      "material": 3,
+      "group": "input",
+      "motion": "fixed",
+      "role": "G04 0 Input plain bearing",
+      "positions": {
+        "offset": 9387644,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9397772,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9402836,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G04_1_Input_plain_bearing",
+      "material": 3,
+      "group": "input",
+      "motion": "fixed",
+      "role": "G04 1 Input plain bearing",
+      "positions": {
+        "offset": 9412916,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9423044,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9428108,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G05_Fluted_rotary_input_knob",
+      "material": 5,
+      "group": "input",
+      "motion": "pinion",
+      "role": "G05 Fluted rotary input knob",
+      "positions": {
+        "offset": 9438188,
+        "count": 34692,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9576956,
+        "count": 34692,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9646340,
+        "count": 33900,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G06_Input_shaft_retaining_collar",
+      "material": 2,
+      "group": "input",
+      "motion": "pinion",
+      "role": "G06 Input shaft retaining collar",
+      "positions": {
+        "offset": 9781940,
+        "count": 4278,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9799052,
+        "count": 4278,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9807608,
+        "count": 4260,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G07_0_Flat_engaging_grub_screw",
+      "material": 2,
+      "group": "input",
+      "motion": "pinion",
+      "role": "G07 0 Flat engaging grub screw",
+      "positions": {
+        "offset": 9824648,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9830144,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9832892,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G07_1_Flat_engaging_grub_screw",
+      "material": 2,
+      "group": "input",
+      "motion": "pinion",
+      "role": "G07 1 Flat engaging grub screw",
+      "positions": {
+        "offset": 9838172,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9843668,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9846416,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "G07_2_Flat_engaging_grub_screw",
+      "material": 2,
+      "group": "input",
+      "motion": "pinion",
+      "role": "G07 2 Flat engaging grub screw",
+      "positions": {
+        "offset": 9851696,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9857192,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9859940,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P00_-16.0_-26.0_Flange_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P00 -16.0 -26.0 Flange screw",
+      "positions": {
+        "offset": 9865220,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 9947012,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 9987908,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P00_-16.0_26.0_Flange_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P00 -16.0 26.0 Flange screw",
+      "positions": {
+        "offset": 10134308,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 10216100,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 10256996,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P00_16.0_-26.0_Flange_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P00 16.0 -26.0 Flange screw",
+      "positions": {
+        "offset": 10403396,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 10485188,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 10526084,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P00_16.0_26.0_Flange_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P00 16.0 26.0 Flange screw",
+      "positions": {
+        "offset": 10672484,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 10754276,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 10795172,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P01_Hollow_sculpted_palm",
+      "material": 5,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P01 Hollow sculpted palm",
+      "positions": {
+        "offset": 10941572,
+        "count": 104361,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 11359016,
+        "count": 104361,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 11567740,
+        "count": 173682,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P03_-1_51_Support_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P03 -1 51 Support screw",
+      "positions": {
+        "offset": 12262468,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 12344260,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 12385156,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P03_-1_89_Support_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P03 -1 89 Support screw",
+      "positions": {
+        "offset": 12531556,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 12613348,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 12654244,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L05_-1_56_Guide_rod_lock_screw",
+      "material": 2,
+      "group": "guides",
+      "motion": "wrist",
+      "role": "L05 -1 56 Guide rod lock screw",
+      "positions": {
+        "offset": 12800644,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 12806140,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 12808888,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L05_-1_84_Guide_rod_lock_screw",
+      "material": 2,
+      "group": "guides",
+      "motion": "wrist",
+      "role": "L05 -1 84 Guide rod lock screw",
+      "positions": {
+        "offset": 12814168,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 12819664,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 12822412,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P02_-1_Guide_end_support",
+      "material": 1,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P02 -1 Guide end support",
+      "positions": {
+        "offset": 12827692,
+        "count": 21162,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 12912340,
+        "count": 21162,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 12954664,
+        "count": 29016,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P04_-1_Screw_end_bushing",
+      "material": 3,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P04 -1 Screw end bushing",
+      "positions": {
+        "offset": 13070728,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13080856,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13085920,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P03_1_51_Support_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P03 1 51 Support screw",
+      "positions": {
+        "offset": 13096000,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13177792,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13218688,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P03_1_89_Support_screw",
+      "material": 2,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P03 1 89 Support screw",
+      "positions": {
+        "offset": 13365088,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13446880,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13487776,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L05_1_56_Guide_rod_lock_screw",
+      "material": 2,
+      "group": "guides",
+      "motion": "wrist",
+      "role": "L05 1 56 Guide rod lock screw",
+      "positions": {
+        "offset": 13634176,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13639672,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13642420,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L05_1_84_Guide_rod_lock_screw",
+      "material": 2,
+      "group": "guides",
+      "motion": "wrist",
+      "role": "L05 1 84 Guide rod lock screw",
+      "positions": {
+        "offset": 13647700,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13653196,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13655944,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P02_1_Guide_end_support",
+      "material": 1,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P02 1 Guide end support",
+      "positions": {
+        "offset": 13661224,
+        "count": 21162,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13745872,
+        "count": 21162,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13788196,
+        "count": 29016,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "P04_1_Screw_end_bushing",
+      "material": 3,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "P04 1 Screw end bushing",
+      "positions": {
+        "offset": 13904260,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13914388,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13919452,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L01_0_Ground_guide_rod",
+      "material": 2,
+      "group": "guides",
+      "motion": "wrist",
+      "role": "L01 0 Ground guide rod",
+      "positions": {
+        "offset": 13929532,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13934596,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13937128,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L01_1_Ground_guide_rod",
+      "material": 2,
+      "group": "guides",
+      "motion": "wrist",
+      "role": "L01 1 Ground guide rod",
+      "positions": {
+        "offset": 13942120,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 13947184,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 13949716,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L02_Opposed_helical_lead_screw",
+      "material": 2,
+      "group": "leadscrew",
+      "motion": "leadscrew",
+      "role": "L02 Opposed helical lead screw",
+      "positions": {
+        "offset": 13954708,
+        "count": 67368,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 14224180,
+        "count": 67368,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 14358916,
+        "count": 67134,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L03_Fluted_gripper_input_knob",
+      "material": 5,
+      "group": "leadscrew",
+      "motion": "leadscrew",
+      "role": "L03 Fluted gripper input knob",
+      "positions": {
+        "offset": 14627452,
+        "count": 35562,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 14769700,
+        "count": 35562,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 14840824,
+        "count": 35070,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L04_Flat_engaging_knob_screw",
+      "material": 2,
+      "group": "leadscrew",
+      "motion": "leadscrew",
+      "role": "L04 Flat engaging knob screw",
+      "positions": {
+        "offset": 14981104,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 14986600,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 14989348,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L06_Screw_axial_retaining_collar",
+      "material": 2,
+      "group": "leadscrew",
+      "motion": "leadscrew",
+      "role": "L06 Screw axial retaining collar",
+      "positions": {
+        "offset": 14994628,
+        "count": 4038,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15010780,
+        "count": 4038,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15018856,
+        "count": 4032,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L07_Screw_collar_lock",
+      "material": 2,
+      "group": "leadscrew",
+      "motion": "leadscrew",
+      "role": "L07 Screw collar lock",
+      "positions": {
+        "offset": 15034984,
+        "count": 1374,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15040480,
+        "count": 1374,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15043228,
+        "count": 1320,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L08_-1_Screw_thrust_washer",
+      "material": 3,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "L08 -1 Screw thrust washer",
+      "positions": {
+        "offset": 15048508,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15058636,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15063700,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "L08_1_Screw_thrust_washer",
+      "material": 3,
+      "group": "palm",
+      "motion": "wrist",
+      "role": "L08 1 Screw thrust washer",
+      "positions": {
+        "offset": 15073780,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15083908,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15088972,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J02_-1_56_Guide_bushing",
+      "material": 3,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J02 -1 56 Guide bushing",
+      "positions": {
+        "offset": 15099052,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15109180,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15114244,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J02_-1_84_Guide_bushing",
+      "material": 3,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J02 -1 84 Guide bushing",
+      "positions": {
+        "offset": 15124324,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15134452,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15139516,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J03_-1_Helically_cut_bronze_nut",
+      "material": 3,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J03 -1 Helically cut bronze nut",
+      "positions": {
+        "offset": 15149596,
+        "count": 13770,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15204676,
+        "count": 13770,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15232216,
+        "count": 13686,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_-1_-1_61_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J08 -1 -1 61 Nut plate screw",
+      "positions": {
+        "offset": 15286960,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15368752,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15409648,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_-1_-1_79_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J08 -1 -1 79 Nut plate screw",
+      "positions": {
+        "offset": 15556048,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15637840,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15678736,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J07_-1_-1_Nut_retaining_plate",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J07 -1 -1 Nut retaining plate",
+      "positions": {
+        "offset": 15825136,
+        "count": 15888,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 15888688,
+        "count": 15888,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 15920464,
+        "count": 23652,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_-1_1_61_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J08 -1 1 61 Nut plate screw",
+      "positions": {
+        "offset": 16015072,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 16096864,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 16137760,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_-1_1_79_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J08 -1 1 79 Nut plate screw",
+      "positions": {
+        "offset": 16284160,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 16365952,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 16406848,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J07_-1_1_Nut_retaining_plate",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J07 -1 1 Nut retaining plate",
+      "positions": {
+        "offset": 16553248,
+        "count": 15888,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 16616800,
+        "count": 15888,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 16648576,
+        "count": 23652,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J04_-1_Lofted_windowed_finger",
+      "material": 0,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "One-piece lofted finger and guide carriage with hexagonal captive-nut seat",
+      "positions": {
+        "offset": 16743184,
+        "count": 106479,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 17169100,
+        "count": 106479,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 17382060,
+        "count": 194790,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J06_-1_Grooved_elastomer_pad",
+      "material": 4,
+      "group": "jaws",
+      "motion": "jaw_minus",
+      "role": "J06 -1 Grooved elastomer pad",
+      "positions": {
+        "offset": 18161220,
+        "count": 17208,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 18230052,
+        "count": 17208,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 18264468,
+        "count": 24762,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J02_1_56_Guide_bushing",
+      "material": 3,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J02 1 56 Guide bushing",
+      "positions": {
+        "offset": 18363516,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 18373644,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 18378708,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J02_1_84_Guide_bushing",
+      "material": 3,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J02 1 84 Guide bushing",
+      "positions": {
+        "offset": 18388788,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 18398916,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 18403980,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J03_1_Helically_cut_bronze_nut",
+      "material": 3,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J03 1 Helically cut bronze nut",
+      "positions": {
+        "offset": 18414060,
+        "count": 13746,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 18469044,
+        "count": 13746,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 18496536,
+        "count": 13662,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_1_-1_61_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J08 1 -1 61 Nut plate screw",
+      "positions": {
+        "offset": 18551184,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 18632976,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 18673872,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_1_-1_79_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J08 1 -1 79 Nut plate screw",
+      "positions": {
+        "offset": 18820272,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 18902064,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 18942960,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J07_1_-1_Nut_retaining_plate",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J07 1 -1 Nut retaining plate",
+      "positions": {
+        "offset": 19089360,
+        "count": 15888,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 19152912,
+        "count": 15888,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 19184688,
+        "count": 23652,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_1_1_61_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J08 1 1 61 Nut plate screw",
+      "positions": {
+        "offset": 19279296,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 19361088,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 19401984,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J08_1_1_79_Nut_plate_screw",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J08 1 1 79 Nut plate screw",
+      "positions": {
+        "offset": 19548384,
+        "count": 20448,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 19630176,
+        "count": 20448,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 19671072,
+        "count": 36600,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J07_1_1_Nut_retaining_plate",
+      "material": 2,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J07 1 1 Nut retaining plate",
+      "positions": {
+        "offset": 19817472,
+        "count": 15888,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 19881024,
+        "count": 15888,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 19912800,
+        "count": 23652,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J04_1_Lofted_windowed_finger",
+      "material": 0,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "One-piece lofted finger and guide carriage with hexagonal captive-nut seat",
+      "positions": {
+        "offset": 20007408,
+        "count": 106479,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 20433324,
+        "count": 106479,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 20646284,
+        "count": 194790,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "J06_1_Grooved_elastomer_pad",
+      "material": 4,
+      "group": "jaws",
+      "motion": "jaw_plus",
+      "role": "J06 1 Grooved elastomer pad",
+      "positions": {
+        "offset": 21425444,
+        "count": 17208,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 21494276,
+        "count": 17208,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 21528692,
+        "count": 24762,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C01_Through_bore_service_conduit",
+      "material": 4,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "Analytic routed harness envelope; removed with the palm by axial feeding through the shaft",
+      "positions": {
+        "offset": 21627740,
+        "count": 42132,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 21796268,
+        "count": 42132,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 21880532,
+        "count": 82542,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C03_0_Connector_contact",
+      "material": 7,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C03 0 Connector contact",
+      "positions": {
+        "offset": 22210700,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22215764,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22218296,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C03_1_Connector_contact",
+      "material": 7,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C03 1 Connector contact",
+      "positions": {
+        "offset": 22223288,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22228352,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22230884,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C03_2_Connector_contact",
+      "material": 7,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C03 2 Connector contact",
+      "positions": {
+        "offset": 22235876,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22240940,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22243472,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C03_3_Connector_contact",
+      "material": 7,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C03 3 Connector contact",
+      "positions": {
+        "offset": 22248464,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22253528,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22256060,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C03_4_Connector_contact",
+      "material": 7,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C03 4 Connector contact",
+      "positions": {
+        "offset": 22261052,
+        "count": 1266,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22266116,
+        "count": 1266,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22268648,
+        "count": 1248,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C02_Rear_service_connector",
+      "material": 2,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C02 Rear service connector",
+      "positions": {
+        "offset": 22273640,
+        "count": 3798,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22288832,
+        "count": 3798,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22296428,
+        "count": 3780,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C02b_Connector_insulator",
+      "material": 4,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C02b Connector insulator",
+      "positions": {
+        "offset": 22311548,
+        "count": 8862,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22346996,
+        "count": 8862,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22364720,
+        "count": 8880,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "C04_Palm_service_gland",
+      "material": 2,
+      "group": "conduit",
+      "motion": "wrist",
+      "role": "C04 Palm service gland",
+      "positions": {
+        "offset": 22400240,
+        "count": 2532,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22410368,
+        "count": 2532,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22415432,
+        "count": 2520,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M02_Mount_identification",
+      "material": 6,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M02 Mount identification",
+      "positions": {
+        "offset": 22425512,
+        "count": 14943,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22485284,
+        "count": 14943,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22515172,
+        "count": 14262,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M04_Recessed_serial_infill",
+      "material": 6,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M04 Recessed serial infill",
+      "positions": {
+        "offset": 22572220,
+        "count": 12606,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22622644,
+        "count": 12606,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22647856,
+        "count": 12108,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_00_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 00 Angular scale tick",
+      "positions": {
+        "offset": 22696288,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22696576,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22696720,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_02_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 02 Angular scale tick",
+      "positions": {
+        "offset": 22696864,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22697152,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22697296,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_03_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 03 Angular scale tick",
+      "positions": {
+        "offset": 22697440,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22697728,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22697872,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_04_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 04 Angular scale tick",
+      "positions": {
+        "offset": 22698016,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22698304,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22698448,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_05_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 05 Angular scale tick",
+      "positions": {
+        "offset": 22698592,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22698880,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22699024,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_06_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 06 Angular scale tick",
+      "positions": {
+        "offset": 22699168,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22699456,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22699600,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_07_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 07 Angular scale tick",
+      "positions": {
+        "offset": 22699744,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22700032,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22700176,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_08_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 08 Angular scale tick",
+      "positions": {
+        "offset": 22700320,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22700608,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22700752,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_09_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 09 Angular scale tick",
+      "positions": {
+        "offset": 22700896,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22701184,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22701328,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_10_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 10 Angular scale tick",
+      "positions": {
+        "offset": 22701472,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22701760,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22701904,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_11_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 11 Angular scale tick",
+      "positions": {
+        "offset": 22702048,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22702336,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22702480,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_13_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 13 Angular scale tick",
+      "positions": {
+        "offset": 22702624,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22702912,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22703056,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_14_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 14 Angular scale tick",
+      "positions": {
+        "offset": 22703200,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22703488,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22703632,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_15_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 15 Angular scale tick",
+      "positions": {
+        "offset": 22703776,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22704064,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22704208,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_16_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 16 Angular scale tick",
+      "positions": {
+        "offset": 22704352,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22704640,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22704784,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_17_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 17 Angular scale tick",
+      "positions": {
+        "offset": 22704928,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22705216,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22705360,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_18_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 18 Angular scale tick",
+      "positions": {
+        "offset": 22705504,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22705792,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22705936,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_19_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 19 Angular scale tick",
+      "positions": {
+        "offset": 22706080,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22706368,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22706512,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_20_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 20 Angular scale tick",
+      "positions": {
+        "offset": 22706656,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22706944,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22707088,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_21_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 21 Angular scale tick",
+      "positions": {
+        "offset": 22707232,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22707520,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22707664,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_22_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 22 Angular scale tick",
+      "positions": {
+        "offset": 22707808,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22708096,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22708240,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    },
+    {
+      "name": "M03_24_Angular_scale_tick",
+      "material": 0,
+      "group": "markings",
+      "motion": "fixed",
+      "role": "M03 24 Angular scale tick",
+      "positions": {
+        "offset": 22708384,
+        "count": 72,
+        "dtype": "<f4"
+      },
+      "normals": {
+        "offset": 22708672,
+        "count": 72,
+        "dtype": "<i2"
+      },
+      "indices": {
+        "offset": 22708816,
+        "count": 36,
+        "dtype": "<u4"
+      }
+    }
+  ],
+  "materials": [
+    {
+      "name": "Graphite anodized aluminium",
+      "color": [
+        0.065,
+        0.08,
+        0.095
+      ],
+      "metal": 1.0,
+      "rough": 0.34,
+      "ior": 1.5,
+      "coat": 0.18,
+      "coat_rough": 0.28,
+      "anisotropy": 0.15,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "anodized",
+      "material_source": ""
+    },
+    {
+      "name": "Satin machined aluminium",
+      "color": [
+        0.62,
+        0.65,
+        0.68
+      ],
+      "metal": 1.0,
+      "rough": 0.29,
+      "ior": 1.5,
+      "coat": 0.0,
+      "coat_rough": 0.2,
+      "anisotropy": 0.65,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "brushed",
+      "material_source": ""
+    },
+    {
+      "name": "Hardened steel",
+      "color": [
+        0.48,
+        0.52,
+        0.56
+      ],
+      "metal": 1.0,
+      "rough": 0.22,
+      "ior": 1.5,
+      "coat": 0.0,
+      "coat_rough": 0.2,
+      "anisotropy": 0.38,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "machined",
+      "material_source": ""
+    },
+    {
+      "name": "Warm bronze",
+      "color": [
+        0.58,
+        0.35,
+        0.135
+      ],
+      "metal": 1.0,
+      "rough": 0.3,
+      "ior": 1.5,
+      "coat": 0.0,
+      "coat_rough": 0.2,
+      "anisotropy": 0.32,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "turned",
+      "material_source": ""
+    },
+    {
+      "name": "Black elastomer",
+      "color": [
+        0.012,
+        0.014,
+        0.017
+      ],
+      "metal": 0.0,
+      "rough": 0.68,
+      "ior": 1.46,
+      "coat": 0.0,
+      "coat_rough": 0.2,
+      "anisotropy": 0.0,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "polymer",
+      "material_source": ""
+    },
+    {
+      "name": "Teal anodized aluminium",
+      "color": [
+        0.012,
+        0.195,
+        0.16
+      ],
+      "metal": 1.0,
+      "rough": 0.31,
+      "ior": 1.5,
+      "coat": 0.3,
+      "coat_rough": 0.23,
+      "anisotropy": 0.18,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "anodized",
+      "material_source": ""
+    },
+    {
+      "name": "Ceramic white marking",
+      "color": [
+        0.78,
+        0.83,
+        0.86
+      ],
+      "metal": 0.1,
+      "rough": 0.42,
+      "ior": 1.5,
+      "coat": 0.0,
+      "coat_rough": 0.2,
+      "anisotropy": 0.0,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "none",
+      "material_source": ""
+    },
+    {
+      "name": "Connector copper",
+      "color": [
+        0.58,
+        0.245,
+        0.1
+      ],
+      "metal": 0.95,
+      "rough": 0.22,
+      "ior": 1.5,
+      "coat": 0.0,
+      "coat_rough": 0.2,
+      "anisotropy": 0.0,
+      "anisotropy_rotation": 0.0,
+      "opacity": 1.0,
+      "microfinish": "copper-wire",
+      "material_source": ""
+    }
+  ],
+  "source": {
+    "recipe": "cybr-geo/examples/orbit_inspection_wrist.py",
+    "recipeSHA256": "02110edd79460b0d12bd09058f418e01d3578564c290e08a98e165aa2c76e676",
+    "revision": 3,
+    "assembly": "ORBIT inspection wrist",
+    "gearTeeth": [
+      72,
+      20
+    ],
+    "gearCenterMM": 46,
+    "leadMM": 3,
+    "jawTravelMM": 6,
+    "jawGapMM": [
+      21.8,
+      33.8
+    ],
+    "tessellation": {
+      "absoluteDeflectionMM": 0.035,
+      "angularRad": 0.12
+    },
+    "parts": 148
+  },
+  "geometry": {
+    "file": "geometry.bin.gz",
+    "bytes": 9326964,
+    "decodedBytes": 22708960,
+    "sha256": "917d4bdbab62ed13d62e39777083692576f371545becb8f579a2cb68cb0a1719",
+    "compressedSHA256": "2a9eb2ddc891e04d55c4a764a85f8333a2b955541b4f5de48149b93f8f228af9"
+  },
+  "triangles": 964048
+}
