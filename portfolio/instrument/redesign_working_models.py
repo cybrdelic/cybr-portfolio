@@ -37,11 +37,13 @@ def build(name):
         q = ring(ro, ri, x, x+length)
         if bevel: q = cq.Workplane(obj=q).edges().chamfer(bevel).val()
         add(label, q, material)
-    def bolt(label, x, y, z, length=6):
+    def bolt(label, x, y, z, length=6, direction=1):
         q = ring(2.4, 0, x, x+2.7).translate((0,y,z))
         socket = cq.Workplane('YZ').polygon(6,2.7).extrude(2).val().translate((x+1.1,y,z))
-        add(label+'_head', q.cut(socket), 1)
-        add(label+'_shaft', ring(1.2,0,x-length,x).translate((0,y,z)), 1)
+        head=q.cut(socket);shaft=ring(1.2,0,x-length,x).translate((0,y,z))
+        if direction==-1:
+            head=head.rotate((x,y,z),(x,y+1,z),180);shaft=shaft.rotate((x,y,z),(x,y+1,z),180)
+        add(label+'_head',head,1);add(label+'_shaft',shaft,1)
     def flange(label,x,ro,ri,count=6):
         centers=bolt_circle(ro-4.4,count,math.pi/6)
         q=drill(ring(ro,ri,x,x+3.5),centers,1.45,x-1,x+5)
@@ -108,12 +110,14 @@ def build(name):
             x=side*22
             outer=cq.Workplane('YZ').rect(69,73).extrude(2.5).edges('|X').fillet(8).val()
             inner=cq.Workplane('YZ').rect(63,67).extrude(5).edges('|X').fillet(6).val().translate((-1,0,0))
-            q=outer.cut(inner).translate((x-1.25,0,0))
-            add('protective_frame_'+str(side),cq.Workplane(obj=q).edges().chamfer(.2).val(),0)
-            for j,(y,z) in enumerate([(-30,-31),(30,-31),(-30,31),(30,31)]):
-                bolt(f'frame_socket_{side}_{j}',x+1.25,y,z,4)
-        for j,(y,z) in enumerate([(-32,-34),(32,-34),(-32,34),(32,34)]):
-            add(f'frame_tie_{j}',ring(1.25,0,-27,27).translate((0,y,z)),1)
+            corners=[(-31,-33),(31,-33),(-31,33),(31,33)]
+            q=cq.Workplane(obj=outer.cut(inner)).edges().chamfer(.2).val().translate((x-1.25,0,0))
+            q=drill(q,corners,1.3,x-2,x+3)
+            add('protective_frame_'+str(side),q,0)
+            for j,(y,z) in enumerate(corners):
+                bolt(f'frame_socket_{side}_{j}',side*23.25,y,z,4,direction=side)
+        for j,(y,z) in enumerate(corners):
+            add(f'frame_tie_{j}',ring(1.7,1.2,-20.75,20.75).translate((0,y,z)),1)
     return Assembly('refined_'+name,parts,MATERIALS,metadata={'purpose':'Portfolio concept sculpture','revision':'hero-refined-1'})
 
 def package(out,source,evidence,reuse=False):
@@ -179,6 +183,13 @@ def package(out,source,evidence,reuse=False):
         'elementsVolumePreserved':True,'routesPreserved':True,'legacyBeautyProjection':False}
     manifest.pop('losslessTransfer',None);manifest.pop('progressiveGeo',None)
     manifest['cadValidation']['redesign']=reports
+    for key in ('core','coreMesh','runtimeCoreMesh'):
+        if key in manifest['cadValidation']:
+            manifest['cadValidation']['historical'+key[0].upper()+key[1:]]=manifest['cadValidation'].pop(key)
+    manifest['runtimeTessellation']={'method':'Absolute OpenCascade surface tessellation for new CAD; exact retained attributes for original inserts',
+        'newLinearDeflectionMM':.055,'newAngularDeflectionRad':.16,'retainedMeshBatchesByteIdentical':41}
+    manifest['surfaceVisibility']['scope']='Exact retained source visibility plus new 12-ray local CAD visibility on revised parts'
+    manifest['surfaceVisibility'].pop('rigidCasterGroups',None)
     (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     (evidence/'validation.json').write_text(json.dumps(reports,indent=2))
     print(json.dumps({'package':str(out),'bytes':stats['geometryBytes'],'sha256':stats['sha256']}))

@@ -2470,46 +2470,46 @@
         {
           "name": "elements__protective_frame_-1",
           "firstVertex": 0,
-          "vertexCount": 1444,
+          "vertexCount": 2716,
           "firstIndex": 0,
-          "indexCount": 4032
+          "indexCount": 7872
         },
         {
           "name": "elements__protective_frame_1",
-          "firstVertex": 1444,
-          "vertexCount": 1444,
-          "firstIndex": 4032,
-          "indexCount": 4032
+          "firstVertex": 2716,
+          "vertexCount": 2716,
+          "firstIndex": 7872,
+          "indexCount": 7872
         }
       ],
       "positions": {
         "offset": 24653012,
-        "count": 8664,
+        "count": 16296,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 24687668,
-        "count": 8664,
+        "offset": 24718196,
+        "count": 16296,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 24704996,
-        "count": 8064,
+        "offset": 24750788,
+        "count": 15744,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 24737252,
-        "count": 5776,
+        "offset": 24813764,
+        "count": 10864,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 24760356,
-        "count": 2888,
+        "offset": 24857220,
+        "count": 5432,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 24771908,
-        "count": 5776,
+        "offset": 24878948,
+        "count": 10864,
         "dtype": "float32"
       }
     },
@@ -2547,172 +2547,172 @@
         {
           "name": "elements__frame_socket_-1_0_head",
           "firstVertex": 0,
-          "vertexCount": 370,
+          "vertexCount": 369,
           "firstIndex": 0,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_-1_0_shaft",
-          "firstVertex": 370,
+          "firstVertex": 369,
           "vertexCount": 330,
           "firstIndex": 1008,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_-1_1_head",
-          "firstVertex": 700,
-          "vertexCount": 370,
+          "firstVertex": 699,
+          "vertexCount": 369,
           "firstIndex": 1944,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_-1_1_shaft",
-          "firstVertex": 1070,
-          "vertexCount": 330,
+          "firstVertex": 1068,
+          "vertexCount": 336,
           "firstIndex": 2952,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_-1_2_head",
-          "firstVertex": 1400,
-          "vertexCount": 370,
+          "firstVertex": 1404,
+          "vertexCount": 367,
           "firstIndex": 3888,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_-1_2_shaft",
-          "firstVertex": 1770,
+          "firstVertex": 1771,
           "vertexCount": 330,
           "firstIndex": 4896,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_-1_3_head",
-          "firstVertex": 2100,
-          "vertexCount": 370,
+          "firstVertex": 2101,
+          "vertexCount": 367,
           "firstIndex": 5832,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_-1_3_shaft",
-          "firstVertex": 2470,
-          "vertexCount": 330,
+          "firstVertex": 2468,
+          "vertexCount": 326,
           "firstIndex": 6840,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_1_0_head",
-          "firstVertex": 2800,
+          "firstVertex": 2794,
           "vertexCount": 370,
           "firstIndex": 7776,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_1_0_shaft",
-          "firstVertex": 3170,
+          "firstVertex": 3164,
           "vertexCount": 330,
           "firstIndex": 8784,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_1_1_head",
-          "firstVertex": 3500,
+          "firstVertex": 3494,
           "vertexCount": 370,
           "firstIndex": 9720,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_1_1_shaft",
-          "firstVertex": 3870,
-          "vertexCount": 330,
+          "firstVertex": 3864,
+          "vertexCount": 326,
           "firstIndex": 10728,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_1_2_head",
-          "firstVertex": 4200,
+          "firstVertex": 4190,
           "vertexCount": 370,
           "firstIndex": 11664,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_1_2_shaft",
-          "firstVertex": 4570,
+          "firstVertex": 4560,
           "vertexCount": 330,
           "firstIndex": 12672,
           "indexCount": 936
         },
         {
           "name": "elements__frame_socket_1_3_head",
-          "firstVertex": 4900,
+          "firstVertex": 4890,
           "vertexCount": 370,
           "firstIndex": 13608,
           "indexCount": 1008
         },
         {
           "name": "elements__frame_socket_1_3_shaft",
-          "firstVertex": 5270,
-          "vertexCount": 330,
+          "firstVertex": 5260,
+          "vertexCount": 336,
           "firstIndex": 14616,
           "indexCount": 936
         },
         {
           "name": "elements__frame_tie_0",
-          "firstVertex": 5600,
-          "vertexCount": 326,
+          "firstVertex": 5596,
+          "vertexCount": 644,
           "firstIndex": 15552,
-          "indexCount": 936
+          "indexCount": 1896
         },
         {
           "name": "elements__frame_tie_1",
-          "firstVertex": 5926,
-          "vertexCount": 322,
-          "firstIndex": 16488,
-          "indexCount": 936
+          "firstVertex": 6240,
+          "vertexCount": 644,
+          "firstIndex": 17448,
+          "indexCount": 1896
         },
         {
           "name": "elements__frame_tie_2",
-          "firstVertex": 6248,
-          "vertexCount": 326,
-          "firstIndex": 17424,
-          "indexCount": 936
+          "firstVertex": 6884,
+          "vertexCount": 644,
+          "firstIndex": 19344,
+          "indexCount": 1896
         },
         {
           "name": "elements__frame_tie_3",
-          "firstVertex": 6574,
-          "vertexCount": 322,
-          "firstIndex": 18360,
-          "indexCount": 936
+          "firstVertex": 7528,
+          "vertexCount": 644,
+          "firstIndex": 21240,
+          "indexCount": 1896
         }
       ],
       "positions": {
-        "offset": 24795012,
-        "count": 20688,
+        "offset": 24922404,
+        "count": 24516,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 24877764,
-        "count": 20688,
+        "offset": 25020468,
+        "count": 24516,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 24919140,
-        "count": 19296,
+        "offset": 25069500,
+        "count": 23136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 24996324,
-        "count": 13792,
+        "offset": 25162044,
+        "count": 16344,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 25051492,
-        "count": 6896,
+        "offset": 25227420,
+        "count": 8172,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 25079076,
-        "count": 13792,
+        "offset": 25260108,
+        "count": 16344,
         "dtype": "float32"
       }
     },
@@ -2753,32 +2753,32 @@
       ],
       "feature": "native-rig-21",
       "positions": {
-        "offset": 25134244,
+        "offset": 25325484,
         "count": 97407,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 25523872,
+        "offset": 25715112,
         "count": 97407,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 25718688,
+        "offset": 25909928,
         "count": 177054,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 26426904,
+        "offset": 26618144,
         "count": 64938,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 26686656,
+        "offset": 26877896,
         "count": 32469,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 26816532,
+        "offset": 27007772,
         "count": 64938,
         "dtype": "float32"
       }
@@ -2820,32 +2820,32 @@
       ],
       "feature": "native-rig-22",
       "positions": {
-        "offset": 27076284,
+        "offset": 27267524,
         "count": 56124,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 27300780,
+        "offset": 27492020,
         "count": 56124,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 27413028,
+        "offset": 27604268,
         "count": 53820,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 27628308,
+        "offset": 27819548,
         "count": 37416,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 27777972,
+        "offset": 27969212,
         "count": 18708,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 27852804,
+        "offset": 28044044,
         "count": 37416,
         "dtype": "float32"
       }
@@ -2943,32 +2943,32 @@
       ],
       "feature": "native-rig-23",
       "positions": {
-        "offset": 28002468,
+        "offset": 28193708,
         "count": 246714,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 28989324,
+        "offset": 29180564,
         "count": 246714,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 29482752,
+        "offset": 29673992,
         "count": 301860,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 30690192,
+        "offset": 30881432,
         "count": 164476,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 31348096,
+        "offset": 31539336,
         "count": 82238,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 31677048,
+        "offset": 31868288,
         "count": 164476,
         "dtype": "float32"
       }
@@ -2994,32 +2994,32 @@
       ],
       "feature": "native-rig-24",
       "positions": {
-        "offset": 32334952,
+        "offset": 32526192,
         "count": 1302,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32340160,
+        "offset": 32531400,
         "count": 1302,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32342764,
+        "offset": 32534004,
         "count": 1248,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 32347756,
+        "offset": 32538996,
         "count": 868,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 32351228,
+        "offset": 32542468,
         "count": 434,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 32352964,
+        "offset": 32544204,
         "count": 868,
         "dtype": "float32"
       }
@@ -3057,32 +3057,32 @@
       ],
       "feature": "native-rig-25",
       "positions": {
-        "offset": 32356436,
+        "offset": 32547676,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32389556,
+        "offset": 32580796,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32406116,
+        "offset": 32597356,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 32438660,
+        "offset": 32629900,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 32460740,
+        "offset": 32651980,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 32471780,
+        "offset": 32663020,
         "count": 5520,
         "dtype": "float32"
       }
@@ -3120,32 +3120,32 @@
       ],
       "feature": "native-rig-26",
       "positions": {
-        "offset": 32493860,
+        "offset": 32685100,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32518124,
+        "offset": 32709364,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32530256,
+        "offset": 32721496,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 32554448,
+        "offset": 32745688,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 32570624,
+        "offset": 32761864,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 32578712,
+        "offset": 32769952,
         "count": 4044,
         "dtype": "float32"
       }
@@ -3260,32 +3260,32 @@
       ],
       "feature": "native-rig-27",
       "positions": {
-        "offset": 32594888,
+        "offset": 32786128,
         "count": 65136,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32855432,
+        "offset": 33046672,
         "count": 65136,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32985704,
+        "offset": 33176944,
         "count": 64752,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 33244712,
+        "offset": 33435952,
         "count": 43424,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 33418408,
+        "offset": 33609648,
         "count": 21712,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 33505256,
+        "offset": 33696496,
         "count": 43424,
         "dtype": "float32"
       }
@@ -3336,32 +3336,32 @@
       ],
       "feature": "native-rig-28",
       "positions": {
-        "offset": 33678952,
+        "offset": 33870192,
         "count": 13944,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 33734728,
+        "offset": 33925968,
         "count": 13944,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 33762616,
+        "offset": 33953856,
         "count": 13776,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 33817720,
+        "offset": 34008960,
         "count": 9296,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 33854904,
+        "offset": 34046144,
         "count": 4648,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 33873496,
+        "offset": 34064736,
         "count": 9296,
         "dtype": "float32"
       }
@@ -3421,32 +3421,32 @@
       ],
       "feature": "native-rig-29",
       "positions": {
-        "offset": 33910680,
+        "offset": 34101920,
         "count": 26376,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 34016184,
+        "offset": 34207424,
         "count": 26376,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 34068936,
+        "offset": 34260176,
         "count": 26244,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 34173912,
+        "offset": 34365152,
         "count": 17584,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 34244248,
+        "offset": 34435488,
         "count": 8792,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 34279416,
+        "offset": 34470656,
         "count": 17584,
         "dtype": "float32"
       }
@@ -3562,32 +3562,32 @@
       ],
       "feature": "native-rig-30",
       "positions": {
-        "offset": 34349752,
+        "offset": 34540992,
         "count": 65136,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 34610296,
+        "offset": 34801536,
         "count": 65136,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 34740568,
+        "offset": 34931808,
         "count": 64752,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 34999576,
+        "offset": 35190816,
         "count": 43424,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35173272,
+        "offset": 35364512,
         "count": 21712,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35260120,
+        "offset": 35451360,
         "count": 43424,
         "dtype": "float32"
       }
@@ -3639,32 +3639,32 @@
       ],
       "feature": "native-rig-31",
       "positions": {
-        "offset": 35433816,
+        "offset": 35625056,
         "count": 13944,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 35489592,
+        "offset": 35680832,
         "count": 13944,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 35517480,
+        "offset": 35708720,
         "count": 13776,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35572584,
+        "offset": 35763824,
         "count": 9296,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35609768,
+        "offset": 35801008,
         "count": 4648,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35628360,
+        "offset": 35819600,
         "count": 9296,
         "dtype": "float32"
       }
@@ -3702,32 +3702,32 @@
       ],
       "feature": "native-rig-32",
       "positions": {
-        "offset": 35665544,
+        "offset": 35856784,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 35698664,
+        "offset": 35889904,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 35715224,
+        "offset": 35906464,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35747768,
+        "offset": 35939008,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35769848,
+        "offset": 35961088,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35780888,
+        "offset": 35972128,
         "count": 5520,
         "dtype": "float32"
       }
@@ -3765,32 +3765,32 @@
       ],
       "feature": "native-rig-33",
       "positions": {
-        "offset": 35802968,
+        "offset": 35994208,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 35827232,
+        "offset": 36018472,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 35839364,
+        "offset": 36030604,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35863556,
+        "offset": 36054796,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35879732,
+        "offset": 36070972,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35887820,
+        "offset": 36079060,
         "count": 4044,
         "dtype": "float32"
       }
@@ -3828,32 +3828,32 @@
       ],
       "feature": "native-rig-34",
       "positions": {
-        "offset": 35903996,
+        "offset": 36095236,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 35937116,
+        "offset": 36128356,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 35953676,
+        "offset": 36144916,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35986220,
+        "offset": 36177460,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36008300,
+        "offset": 36199540,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36019340,
+        "offset": 36210580,
         "count": 5520,
         "dtype": "float32"
       }
@@ -3891,32 +3891,32 @@
       ],
       "feature": "native-rig-35",
       "positions": {
-        "offset": 36041420,
+        "offset": 36232660,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36065684,
+        "offset": 36256924,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36077816,
+        "offset": 36269056,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36102008,
+        "offset": 36293248,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36118184,
+        "offset": 36309424,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36126272,
+        "offset": 36317512,
         "count": 4044,
         "dtype": "float32"
       }
@@ -3954,32 +3954,32 @@
       ],
       "feature": "native-rig-36",
       "positions": {
-        "offset": 36142448,
+        "offset": 36333688,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36175568,
+        "offset": 36366808,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36192128,
+        "offset": 36383368,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36224672,
+        "offset": 36415912,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36246752,
+        "offset": 36437992,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36257792,
+        "offset": 36449032,
         "count": 5520,
         "dtype": "float32"
       }
@@ -4017,32 +4017,32 @@
       ],
       "feature": "native-rig-37",
       "positions": {
-        "offset": 36279872,
+        "offset": 36471112,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36304136,
+        "offset": 36495376,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36316268,
+        "offset": 36507508,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36340460,
+        "offset": 36531700,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36356636,
+        "offset": 36547876,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36364724,
+        "offset": 36555964,
         "count": 4044,
         "dtype": "float32"
       }
@@ -4070,32 +4070,32 @@
       ],
       "feature": "native-rig-38",
       "positions": {
-        "offset": 36380900,
+        "offset": 36572140,
         "count": 23616,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36475364,
+        "offset": 36666604,
         "count": 23616,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36522596,
+        "offset": 36713836,
         "count": 22968,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36614468,
+        "offset": 36805708,
         "count": 15744,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36677444,
+        "offset": 36868684,
         "count": 7872,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36708932,
+        "offset": 36900172,
         "count": 15744,
         "dtype": "float32"
       }
@@ -4137,32 +4137,32 @@
       ],
       "feature": "native-rig-39",
       "positions": {
-        "offset": 36771908,
+        "offset": 36963148,
         "count": 34104,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36908324,
+        "offset": 37099564,
         "count": 34104,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36976532,
+        "offset": 37167772,
         "count": 33432,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37110260,
+        "offset": 37301500,
         "count": 22736,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37201204,
+        "offset": 37392444,
         "count": 11368,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37246676,
+        "offset": 37437916,
         "count": 22736,
         "dtype": "float32"
       }
@@ -4196,32 +4196,32 @@
       ],
       "feature": "native-rig-40",
       "positions": {
-        "offset": 37337620,
+        "offset": 37528860,
         "count": 4260,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37354660,
+        "offset": 37545900,
         "count": 4260,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37363180,
+        "offset": 37554420,
         "count": 4176,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37379884,
+        "offset": 37571124,
         "count": 2840,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37391244,
+        "offset": 37582484,
         "count": 1420,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37396924,
+        "offset": 37588164,
         "count": 2840,
         "dtype": "float32"
       }
@@ -4255,32 +4255,32 @@
       ],
       "feature": "native-rig-41",
       "positions": {
-        "offset": 37408284,
+        "offset": 37599524,
         "count": 8088,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37440636,
+        "offset": 37631876,
         "count": 8088,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37456812,
+        "offset": 37648052,
         "count": 8064,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37489068,
+        "offset": 37680308,
         "count": 5392,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37510636,
+        "offset": 37701876,
         "count": 2696,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37521420,
+        "offset": 37712660,
         "count": 5392,
         "dtype": "float32"
       }
@@ -4306,32 +4306,32 @@
       ],
       "feature": "native-rig-42",
       "positions": {
-        "offset": 37542988,
+        "offset": 37734228,
         "count": 2022,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37551076,
+        "offset": 37742316,
         "count": 2022,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37555120,
+        "offset": 37746360,
         "count": 2004,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37563136,
+        "offset": 37754376,
         "count": 1348,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37568528,
+        "offset": 37759768,
         "count": 674,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37571224,
+        "offset": 37762464,
         "count": 1348,
         "dtype": "float32"
       }
@@ -4358,32 +4358,32 @@
       ],
       "feature": "native-rig-49",
       "positions": {
-        "offset": 37576616,
+        "offset": 37767856,
         "count": 134601,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 38115020,
+        "offset": 38306260,
         "count": 134601,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 38384224,
+        "offset": 38575464,
         "count": 268374,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 39457720,
+        "offset": 39648960,
         "count": 89734,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 39816656,
+        "offset": 40007896,
         "count": 44867,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 39996124,
+        "offset": 40187364,
         "count": 89734,
         "dtype": "float32"
       }
@@ -4410,32 +4410,32 @@
       ],
       "feature": "native-rig-50",
       "positions": {
-        "offset": 40355060,
+        "offset": 40546300,
         "count": 51852,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 40562468,
+        "offset": 40753708,
         "count": 51852,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 40666172,
+        "offset": 40857412,
         "count": 97248,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 41055164,
+        "offset": 41246404,
         "count": 34568,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 41193436,
+        "offset": 41384676,
         "count": 17284,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 41262572,
+        "offset": 41453812,
         "count": 34568,
         "dtype": "float32"
       }
@@ -4462,32 +4462,32 @@
       ],
       "feature": "native-rig-51",
       "positions": {
-        "offset": 41400844,
+        "offset": 41592084,
         "count": 4860,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 41420284,
+        "offset": 41611524,
         "count": 4860,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 41430004,
+        "offset": 41621244,
         "count": 6480,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 41455924,
+        "offset": 41647164,
         "count": 3240,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 41468884,
+        "offset": 41660124,
         "count": 1620,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 41475364,
+        "offset": 41666604,
         "count": 3240,
         "dtype": "float32"
       }
@@ -4514,32 +4514,32 @@
       ],
       "feature": "native-rig-52",
       "positions": {
-        "offset": 41488324,
+        "offset": 41679564,
         "count": 24690,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 41587084,
+        "offset": 41778324,
         "count": 24690,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 41636464,
+        "offset": 41827704,
         "count": 45120,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 41816944,
+        "offset": 42008184,
         "count": 16460,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 41882784,
+        "offset": 42074024,
         "count": 8230,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 41915704,
+        "offset": 42106944,
         "count": 16460,
         "dtype": "float32"
       }
@@ -4566,32 +4566,32 @@
       ],
       "feature": "native-rig-53",
       "positions": {
-        "offset": 41981544,
+        "offset": 42172784,
         "count": 3204,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 41994360,
+        "offset": 42185600,
         "count": 3204,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 42000768,
+        "offset": 42192008,
         "count": 4272,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 42017856,
+        "offset": 42209096,
         "count": 2136,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 42026400,
+        "offset": 42217640,
         "count": 1068,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 42030672,
+        "offset": 42221912,
         "count": 2136,
         "dtype": "float32"
       }
@@ -4617,32 +4617,32 @@
       ],
       "feature": "native-rig-43",
       "positions": {
-        "offset": 42039216,
+        "offset": 42230456,
         "count": 41562,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 42205464,
+        "offset": 42396704,
         "count": 41562,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 42288588,
+        "offset": 42479828,
         "count": 76596,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 42594972,
+        "offset": 42786212,
         "count": 27708,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 42705804,
+        "offset": 42897044,
         "count": 13854,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 42761220,
+        "offset": 42952460,
         "count": 27708,
         "dtype": "float32"
       }
@@ -4692,32 +4692,32 @@
       ],
       "feature": "native-rig-44",
       "positions": {
-        "offset": 42872052,
+        "offset": 43063292,
         "count": 92442,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 43241820,
+        "offset": 43433060,
         "count": 92442,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 43426704,
+        "offset": 43617944,
         "count": 90786,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 43789848,
+        "offset": 43981088,
         "count": 61628,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 44036360,
+        "offset": 44227600,
         "count": 30814,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 44159616,
+        "offset": 44350856,
         "count": 61628,
         "dtype": "float32"
       }
@@ -4743,32 +4743,32 @@
       ],
       "feature": "native-rig-45",
       "positions": {
-        "offset": 44406128,
+        "offset": 44597368,
         "count": 4044,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 44422304,
+        "offset": 44613544,
         "count": 4044,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 44430392,
+        "offset": 44621632,
         "count": 4032,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 44446520,
+        "offset": 44637760,
         "count": 2696,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 44457304,
+        "offset": 44648544,
         "count": 1348,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 44462696,
+        "offset": 44653936,
         "count": 2696,
         "dtype": "float32"
       }
@@ -4858,32 +4858,32 @@
       ],
       "feature": "native-rig-46",
       "positions": {
-        "offset": 44473480,
+        "offset": 44664720,
         "count": 22602,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 44563888,
+        "offset": 44755128,
         "count": 22602,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 44609092,
+        "offset": 44800332,
         "count": 22284,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 44698228,
+        "offset": 44889468,
         "count": 15068,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 44758500,
+        "offset": 44949740,
         "count": 7534,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 44788636,
+        "offset": 44979876,
         "count": 15068,
         "dtype": "float32"
       }
@@ -4981,32 +4981,32 @@
       ],
       "feature": "native-rig-47",
       "positions": {
-        "offset": 44848908,
+        "offset": 45040148,
         "count": 29388,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 44966460,
+        "offset": 45157700,
         "count": 29388,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 45025236,
+        "offset": 45216476,
         "count": 28896,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 45140820,
+        "offset": 45332060,
         "count": 19592,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 45219188,
+        "offset": 45410428,
         "count": 9796,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 45258372,
+        "offset": 45449612,
         "count": 19592,
         "dtype": "float32"
       }
@@ -5032,32 +5032,32 @@
       ],
       "feature": "native-rig-48",
       "positions": {
-        "offset": 45336740,
+        "offset": 45527980,
         "count": 2022,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 45344828,
+        "offset": 45536068,
         "count": 2022,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 45348872,
+        "offset": 45540112,
         "count": 2004,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 45356888,
+        "offset": 45548128,
         "count": 1348,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 45362280,
+        "offset": 45553520,
         "count": 674,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 45364976,
+        "offset": 45556216,
         "count": 1348,
         "dtype": "float32"
       }
@@ -5123,37 +5123,37 @@
       ],
       "feature": "native-rig-54",
       "positions": {
-        "offset": 45370368,
+        "offset": 45561608,
         "count": 2203053,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 54182580,
+        "offset": 54373820,
         "count": 2203053,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 58588688,
+        "offset": 58779928,
         "count": 2559516,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 68826752,
+        "offset": 69017992,
         "count": 1468702,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 74701560,
+        "offset": 74892800,
         "count": 734351,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 77638964,
+        "offset": 77830204,
         "count": 1468702,
         "dtype": "float32"
       },
       "colors": {
-        "offset": 83513772,
+        "offset": 83705012,
         "count": 2203053,
         "dtype": "float32"
       }
@@ -5179,43 +5179,43 @@
       ],
       "feature": "native-rig-55",
       "positions": {
-        "offset": 92325984,
+        "offset": 92517224,
         "count": 197289,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 93115140,
+        "offset": 93306380,
         "count": 197289,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 93509720,
+        "offset": 93700960,
         "count": 376194,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 95014496,
+        "offset": 95205736,
         "count": 131526,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 95540600,
+        "offset": 95731840,
         "count": 65763,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 95803652,
+        "offset": 95994892,
         "count": 131526,
         "dtype": "float32"
       }
     }
   ],
   "stats": {
-    "triangles": 2110168,
+    "triangles": 2114008,
     "drawGroups": 52,
-    "geometryBytes": 44504726,
-    "decodedGeometryBytes": 96329756,
-    "sha256": "ccf75149056426dd0a79c70763d3ce0dd9e44c926c5faa04ce7a49fa28da72f5",
+    "geometryBytes": 44525149,
+    "decodedGeometryBytes": 96520996,
+    "sha256": "50d9ab3fa146446abd9def6565c0b63880056d80c3c9eaa93607150b7bcd0063",
     "sourceParts": 339
   },
   "customMaterials": {
@@ -24917,12 +24917,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -23.250000000000004,
+          -23.25,
           -34.5,
           -36.5
         ],
         [
-          -20.749999999999996,
+          -20.75,
           34.5,
           36.5
         ]
@@ -24942,12 +24942,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          20.749999999999996,
+          20.75,
           -34.5,
           -36.5
         ],
         [
-          23.250000000000004,
+          23.25,
           34.5,
           36.5
         ]
@@ -24967,14 +24967,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -20.75,
-          -32.398102553345524,
-          -33.39952559144816
+          -25.950000000000003,
+          -33.398102553345524,
+          -35.39952559144816
         ],
         [
-          -18.05,
-          -27.6,
-          -28.600474408551843
+          -23.250000000000004,
+          -28.6,
+          -30.600474408551843
         ]
       ],
       "tags": [
@@ -24992,14 +24992,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -24.75,
-          -31.199051276672762,
-          -32.19976279572408
+          -23.250000000000004,
+          -32.19905127667276,
+          -34.19976279572408
         ],
         [
-          -20.75,
-          -28.8,
-          -29.80023720427592
+          -19.250000000000004,
+          -29.8,
+          -31.80023720427592
         ]
       ],
       "tags": [
@@ -25017,14 +25017,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -20.75,
-          27.601897446654476,
-          -33.39952559144816
+          -25.950000000000003,
+          28.601897446654476,
+          -35.39952559144816
         ],
         [
-          -18.05,
-          32.4,
-          -28.600474408551843
+          -23.250000000000004,
+          33.4,
+          -30.600474408551843
         ]
       ],
       "tags": [
@@ -25042,14 +25042,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -24.75,
-          28.800948723327238,
-          -32.19976279572408
+          -23.250000000000004,
+          29.800948723327238,
+          -34.19976279572408
         ],
         [
-          -20.75,
-          31.2,
-          -29.80023720427592
+          -19.250000000000004,
+          32.2,
+          -31.80023720427592
         ]
       ],
       "tags": [
@@ -25067,14 +25067,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -20.75,
-          -32.398102553345524,
-          28.600474408551843
+          -25.949999999999996,
+          -33.398102553345524,
+          30.600474408551843
         ],
         [
-          -18.05,
-          -27.6,
-          33.39952559144816
+          -23.249999999999996,
+          -28.6,
+          35.39952559144816
         ]
       ],
       "tags": [
@@ -25092,14 +25092,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -24.75,
-          -31.199051276672762,
-          29.80023720427592
+          -23.249999999999996,
+          -32.19905127667276,
+          31.80023720427592
         ],
         [
-          -20.75,
-          -28.8,
-          32.19976279572408
+          -19.249999999999996,
+          -29.8,
+          34.19976279572408
         ]
       ],
       "tags": [
@@ -25117,14 +25117,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -20.75,
-          27.601897446654476,
-          28.600474408551843
+          -25.949999999999996,
+          28.601897446654476,
+          30.600474408551843
         ],
         [
-          -18.05,
-          32.4,
-          33.39952559144816
+          -23.249999999999996,
+          33.4,
+          35.39952559144816
         ]
       ],
       "tags": [
@@ -25142,14 +25142,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -24.75,
-          28.800948723327238,
-          29.80023720427592
+          -23.249999999999996,
+          29.800948723327238,
+          31.80023720427592
         ],
         [
-          -20.75,
-          31.2,
-          32.19976279572408
+          -19.249999999999996,
+          32.2,
+          34.19976279572408
         ]
       ],
       "tags": [
@@ -25168,13 +25168,13 @@
       "boundsMM": [
         [
           23.25,
-          -32.398102553345524,
-          -33.39952559144816
+          -33.398102553345524,
+          -35.39952559144816
         ],
         [
           25.95,
-          -27.6,
-          -28.600474408551843
+          -28.6,
+          -30.600474408551843
         ]
       ],
       "tags": [
@@ -25193,13 +25193,13 @@
       "boundsMM": [
         [
           19.25,
-          -31.199051276672762,
-          -32.19976279572408
+          -32.19905127667276,
+          -34.19976279572408
         ],
         [
           23.25,
-          -28.8,
-          -29.80023720427592
+          -29.8,
+          -31.80023720427592
         ]
       ],
       "tags": [
@@ -25218,13 +25218,13 @@
       "boundsMM": [
         [
           23.25,
-          27.601897446654476,
-          -33.39952559144816
+          28.601897446654476,
+          -35.39952559144816
         ],
         [
           25.95,
-          32.4,
-          -28.600474408551843
+          33.4,
+          -30.600474408551843
         ]
       ],
       "tags": [
@@ -25243,13 +25243,13 @@
       "boundsMM": [
         [
           19.25,
-          28.800948723327238,
-          -32.19976279572408
+          29.800948723327238,
+          -34.19976279572408
         ],
         [
           23.25,
-          31.2,
-          -29.80023720427592
+          32.2,
+          -31.80023720427592
         ]
       ],
       "tags": [
@@ -25268,13 +25268,13 @@
       "boundsMM": [
         [
           23.25,
-          -32.398102553345524,
-          28.600474408551843
+          -33.398102553345524,
+          30.600474408551843
         ],
         [
           25.95,
-          -27.6,
-          33.39952559144816
+          -28.6,
+          35.39952559144816
         ]
       ],
       "tags": [
@@ -25293,13 +25293,13 @@
       "boundsMM": [
         [
           19.25,
-          -31.199051276672762,
-          29.80023720427592
+          -32.19905127667276,
+          31.80023720427592
         ],
         [
           23.25,
-          -28.8,
-          32.19976279572408
+          -29.8,
+          34.19976279572408
         ]
       ],
       "tags": [
@@ -25318,13 +25318,13 @@
       "boundsMM": [
         [
           23.25,
-          27.601897446654476,
-          28.600474408551843
+          28.601897446654476,
+          30.600474408551843
         ],
         [
           25.95,
-          32.4,
-          33.39952559144816
+          33.4,
+          35.39952559144816
         ]
       ],
       "tags": [
@@ -25343,13 +25343,13 @@
       "boundsMM": [
         [
           19.25,
-          28.800948723327238,
-          29.80023720427592
+          29.800948723327238,
+          31.80023720427592
         ],
         [
           23.25,
-          31.2,
-          32.19976279572408
+          32.2,
+          34.19976279572408
         ]
       ],
       "tags": [
@@ -25367,14 +25367,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -27.0,
-          -33.24901174653413,
-          -35.249752912212585
+          -20.75,
+          -32.698655975286414,
+          -34.699663960609115
         ],
         [
-          27.0,
-          -30.75,
-          -32.750247087787415
+          20.75,
+          -29.3,
+          -31.30033603939089
         ]
       ],
       "tags": [
@@ -25392,14 +25392,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -27.0,
-          30.750988253465874,
-          -35.249752912212585
+          -20.75,
+          29.301344024713586,
+          -34.699663960609115
         ],
         [
-          27.0,
-          33.25,
-          -32.750247087787415
+          20.75,
+          32.7,
+          -31.30033603939089
         ]
       ],
       "tags": [
@@ -25417,14 +25417,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -27.0,
-          -33.24901174653413,
-          32.750247087787415
+          -20.75,
+          -32.698655975286414,
+          31.30033603939089
         ],
         [
-          27.0,
-          -30.75,
-          35.249752912212585
+          20.75,
+          -29.3,
+          34.699663960609115
         ]
       ],
       "tags": [
@@ -25442,14 +25442,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -27.0,
-          30.750988253465874,
-          32.750247087787415
+          -20.75,
+          29.301344024713586,
+          31.30033603939089
         ],
         [
-          27.0,
-          33.25,
-          35.249752912212585
+          20.75,
+          32.7,
+          34.699663960609115
         ]
       ],
       "tags": [
@@ -30374,16 +30374,16 @@
       "elements": {
         "model": "refined_elements",
         "parts": 22,
-        "triangles": 9120,
+        "triangles": 12960,
         "units": "mm",
         "bounds_mm": [
           [
-            -27.0,
+            -25.950000000000003,
             -34.5,
             -36.5
           ],
           [
-            27.0,
+            25.95,
             34.5,
             36.5
           ]
@@ -30393,154 +30393,154 @@
             "name": "elements__protective_frame_-1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_0_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_0_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_1_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_1_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_2_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_2_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_3_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_3_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__protective_frame_1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_0_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_0_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_1_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_1_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_2_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_2_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_3_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_3_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_0",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_2",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_3",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           }
         ],
@@ -30748,11 +30748,6 @@
     "historicalCoreMesh": {
       "passed": true,
       "checked": 165
-    },
-    "newCAD": {
-      "checked": 190,
-      "validClosedPositiveSolids": true,
-      "scope": "Exact saved STEP solids; no new assembly contact certification"
     }
   },
   "generatedImages": false,
@@ -30762,9 +30757,9 @@
     "type": "Actual native geometry ray visibility",
     "samples": 12,
     "reachMM": 12.0,
-    "rigidCasterGroups": 18,
     "differentMotionCasters": false,
-    "beautyImages": false
+    "beautyImages": false,
+    "scope": "Exact retained source visibility plus new 12-ray local CAD visibility on revised parts"
   },
   "runtimeTessellation": {
     "method": "Absolute OpenCascade surface tessellation for new CAD; exact retained attributes for original inserts",
@@ -30788,10 +30783,10 @@
   "losslessTransfer": {
     "format": "attribute-xor-byteplanes-gzip-v1",
     "file": "instrument.lossless-v1.bin.gz",
-    "bytes": 34629710,
-    "sha256": "c261c195eded59e9bca0489f21b180582f00cd0d9f624dadaabe96f9da959299",
-    "originalCompressedBytes": 44504726,
-    "decodedSHA256": "ccf75149056426dd0a79c70763d3ce0dd9e44c926c5faa04ce7a49fa28da72f5"
+    "bytes": 34643703,
+    "sha256": "f27333950d40972f87e1db0bb2d49293af474455bc6e34d7d7d9109eb0de8168",
+    "originalCompressedBytes": 44525149,
+    "decodedSHA256": "50d9ab3fa146446abd9def6565c0b63880056d80c3c9eaa93607150b7bcd0063"
   },
   "progressiveGeo": {
     "format": "attribute-xor-byteplanes-gzip-v1",
