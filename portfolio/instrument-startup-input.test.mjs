@@ -68,7 +68,7 @@ test('actual integration passes the gate before upload and disposes it on prepar
   const source=await readFile(new URL('./instrument-3d.js',import.meta.url),'utf8');
   assert.ok(source.indexOf('const startupInputGate=createStartupInputGate();')<source.indexOf('async function init()'));
   assert.ok(source.trimEnd().endsWith('.finally(()=>startupInputGate.dispose());'));
-  const start=source.indexOf('  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&'),end=source.indexOf("  if(['profile','warmup']",start);
+  const start=source.indexOf('  if(!pathTracer&&!rasterResourcesDisposed&&'),end=source.indexOf("  if(['profile','warmup']",start);
   const execute=new (Object.getPrototypeOf(async function(){}).constructor)('mobileLayout','pathTracer','rasterResourcesDisposed','query','startup','startupPhase','prepareStartupTextures','renderer','objects','cables','startupInputGate',source.slice(start,end));
   const h=harness();h.emit('touchstart',{touches:[{}]});let calls=0;
   const pending=execute({matches:true},false,false,new URLSearchParams(),{},()=>{},async options=>{

@@ -1,7 +1,7 @@
 import {mobilePageToPose,mobilePoseToPage,mobileCameraFrame,fitMobileView} from './instrument-mobile-story.mjs?v=story-1';
 import {createRenderGate} from './instrument-render-gate.mjs';
 import {prepareStartupTextures,createStartupProfiler} from './instrument-startup.mjs?v=2';
-import {createTextureDecodeClient,textureWorkerEligible} from './instrument-texture-decode.mjs?v=2';
+import {createTextureDecodeClient,textureWorkerEligible} from './instrument-texture-decode.mjs?v=3';
 import {createStartupInputGate} from './instrument-startup-input.mjs?v=1';
 // Register before async initialization so loading gestures are already tracked.
 const startupInputGate=createStartupInputGate();
@@ -204,7 +204,7 @@ function materialFor(index,texture,module,pbrProfile=null){
         if(transmission>0)useWorkingTransmissionBuffer(shader,water?'inner':'outer');
         bindRasterMaterial(shader,mat,module);
       };
-      mat.customProgramCacheKey=()=>`working-cad-diffuse-contact-transmission-v5-${physicalMetal(index)?METAL_FINISH_VERSION:'plain'}-${module}-${index}`;
+      mat.customProgramCacheKey=()=>`working-cad-diffuse-contact-transmission-v5-${physicalMetal(index)?METAL_FINISH_VERSION:'plain'}-${transmission>0?module:'shared-opaque'}-${index}`;
       if(pbrAssets&&!pbrProfile)mat.anisotropy=0;
       if(pbrProfile){mat.vertexColors=false;configurePbrMetal(mat,{THREE,...pbrProfile});}
       externalTransmission(mat,module);
@@ -271,7 +271,7 @@ function materialFor(index,texture,module,pbrProfile=null){
     }
     bindRasterMaterial(shader,material,module);
   };
-  material.customProgramCacheKey=()=>`instrument-material-${manifest.workingGeometry?'diffuse-contact-v5':'v2'}-${physicalMetal(index)?METAL_FINISH_VERSION:'plain'}-${module}-${index}`;
+  material.customProgramCacheKey=()=>`instrument-material-${manifest.workingGeometry?'diffuse-contact-v5':'v2'}-${physicalMetal(index)?METAL_FINISH_VERSION:'plain'}-${[3,7].includes(index)?module:'shared-opaque'}-${index}`;
   if(pbrAssets&&!pbrProfile&&physicalMetal(index))material.anisotropy=0;
   if(pbrProfile){material.vertexColors=false;configurePbrMetal(material,{THREE,...pbrProfile});}
   externalTransmission(material,module);
@@ -605,7 +605,7 @@ function measureScroll(){scrollTour.measure();}
 function setTarget(p){
   const wasSettled=Math.abs(current-target)<=.000025;target=clamp(p);
   if(mobileLayout.matches)interfaceController.target(target);
-  if(geoStarter&&!ready)geoStarter.setProgress(target);
+  if(geoStarter&&!ready&&mobileLayout.matches)geoStarter.setProgress(target);
   if(wasSettled)lastTime=0;schedule();
 }
 function scroll(){
@@ -655,8 +655,8 @@ async function init(){
     textureDecodeClient=createTextureDecodeClient({THREE,baseURL:location.href});
     window.addEventListener('pagehide',event=>{if(!event.persisted)textureDecodeClient?.dispose();});
   }
-  const loadTexture=textureDecodeClient?url=>textureDecodeClient.loadAsync(url):undefined;
-  const progressive=mobileLayout.matches&&bakedElements&&photographedStudio&&manifest.progressiveGeo&&typeof Worker!=='undefined'&&globalThis.crypto?.subtle&&query.get('startup')!=='full';
+  const loadTexture=textureDecodeClient?url=>textureDecodeClient.loadAsync(url).catch(()=>new THREE.TextureLoader().loadAsync(url)):undefined;
+  const progressive=bakedElements&&photographedStudio&&manifest.progressiveGeo&&typeof Worker!=='undefined'&&globalThis.crypto?.subtle&&query.get('startup')!=='full';
   let seed;
   if(progressive){
     startupPhase('geo-assets','Loading the complete GEO component.');
@@ -672,19 +672,20 @@ async function init(){
     const {createGeoStarter}=await import('./instrument-geo-starter.mjs?v=story-1');
     startupPhase('geo-setup','Preparing the complete GEO component.');
     geoStarter=await createGeoStarter({THREE,renderer,surface,manifest,buffer:geoBuffer,environment,texture,slider,reduced,
-      makeMaterial:materialFor,forgetMaterial:material=>{const index=materials.indexOf(material);if(index>=0)materials.splice(index,1);},scrollDriven:true,onProgress:jump});
+      makeMaterial:materialFor,forgetMaterial:material=>{const index=materials.indexOf(material);if(index>=0)materials.splice(index,1);},scrollDriven:mobileLayout.matches,onProgress:mobileLayout.matches?jump:()=>{}});
     startupPhase('first-usable-3d');startup.firstUsable3DMs=performance.now()-startup.started;
     stage.classList.add('three-ready','geo-starter');root.classList.add('is-enhanced');
     measureScroll();scroll();
-    interfaceController.ready(['geo']);interfaceController.update(target,0);mobilePrelude(target,true);
+    interfaceController.ready(['geo']);interfaceController.update(target,0);if(mobileLayout.matches)mobilePrelude(target,true);
     document.querySelector('.phase-name').textContent='01 / GEO component';
-    document.querySelector('.scroll-position>span:last-child').textContent='Scroll to explore ↓';
+    document.querySelector('.scroll-position>span:last-child').textContent=mobileLayout.matches?'Scroll to explore ↓':'Drag to rotate GEO ↓';
     const study=document.querySelector('.study-link');study.tabIndex=0;study.setAttribute('aria-hidden','false');
     study.dataset.project='geo';study.querySelector('.study-description').textContent='Complete native GEO component';
     document.querySelectorAll('[data-end]').forEach(button=>button.disabled=true);
-    window.instrument3D={setProgress:jump,snapshot:()=>({...geoStarter.snapshot(),mobileLayout:true,
+    window.instrument3D={setProgress:jump,snapshot:()=>({...geoStarter.snapshot(),mobileLayout:mobileLayout.matches,
       renderMode:'native-geo-progressive-webgl2',scrollTour:scrollTour.snapshot(),fullGeometryVerified:false,geometryVerificationScope:'GEO only'})};
     status.textContent='GEO is interactive. Loading the full instrument and finishes.';
+    if(query.has('audit')){auditElement=document.querySelector('#audit-output')||document.createElement('output');auditElement.id='audit-output';auditElement.hidden=true;document.body.append(auditElement);auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());}
     // Allow the real model and its controls to paint before starting the large background transfer.
     await new Promise(resolve=>requestAnimationFrame(resolve));
   }
@@ -765,7 +766,7 @@ async function init(){
             let profile={...pbrAssets.profiles[name],chartKind};
             if(mesh.material===2)profile={...profile,colorMultiplier:[.12,.14,.16]};
             if(manifest.modelRedesign?.modules.includes(mesh.module)){
-              profile={...profile,normalScale:[.18,.18],roughnessMacroContrast:.3,roughnessMacroReference:.28,
+              profile={...profile,normalScale:[.045,.045],roughnessMacroContrast:.12,roughnessMacroReference:.28,
                 constantBaseReflectance:mesh.material===2?[.028,.032,.035]:mesh.material===0?[.82,.83,.84]:[.56,.59,.62]};
             }
             if(pbrWearAssets&&!manifest.modelRedesign?.modules.includes(mesh.module)){
@@ -896,8 +897,11 @@ async function init(){
     }
     startupPhase('shader-compile','Compiling the original materials.');
     const shaderCompileStarted=performance.now();
-    await renderer.compileAsync(scene,camera);
-    if(mobileLayout.matches&&working&&hdrComposite&&!rasterOptics&&!rasterTransport){
+    // HDR renders different target/color-space variants. Compiling the unused
+    // default framebuffer first doubled the expensive physical-material work.
+    const prepareActualPasses=working&&hdrComposite&&!rasterOptics&&!rasterTransport;
+    if(!prepareActualPasses)await renderer.compileAsync(scene,camera);
+    if(prepareActualPasses){
       startupPhase('shader-variant-preparation','Preparing the instrument.');
       const size=renderer.getDrawingBufferSize(new THREE.Vector2());
       if(layeredTarget.width!==size.x||layeredTarget.height!==size.y)layeredTarget.setSize(size.x,size.y);
@@ -928,7 +932,7 @@ async function init(){
       await new Promise(resolve=>setTimeout(resolve,0));
     }
   }
-  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&[null,'profile','warmup'].includes(query.get('startup'))){
+  if(!pathTracer&&!rasterResourcesDisposed&&[null,'profile','warmup'].includes(query.get('startup'))){
     startupPhase('texture-preparation','Preparing the original finishes.');
     try{
       startup.texturePreparation=await prepareStartupTextures({renderer,materials:[...objects,...cables.map(c=>c.mesh)].flatMap(object=>Array.isArray(object.material)?object.material:[object.material]),cancelled:()=>rasterResourcesDisposed,beforeUpload:cancelled=>startupInputGate.beforeUpload(cancelled)});
@@ -992,7 +996,7 @@ async function init(){
     transmissionLayers:working&&!pathTracer?workingTransmissionLayers:undefined,
     surfaceVisibility:working?manifest.surfaceVisibility:undefined,
     cadValidation:manifest.cadValidation||manifest.validation,approximateReflections:!pathTracer,route:'camera follows the working cable from outside narrow bores; GEO loop preserves cable length'})};
-  if(query.has('audit')){auditElement=document.createElement('output');auditElement.id='audit-output';auditElement.hidden=true;document.body.append(auditElement);auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());}
+  if(query.has('audit')){auditElement=document.querySelector('#audit-output')||document.createElement('output');auditElement.id='audit-output';auditElement.hidden=true;document.body.append(auditElement);auditElement.textContent=JSON.stringify(window.instrument3D.snapshot());}
   if(bakeAuthor)window.instrument3D.exportBakePose=p=>{
     pose(p,1.6);scene.updateMatrixWorld(true);camera.updateMatrixWorld(true);
     return {progress:p,projection:camera.projectionMatrix.toArray(),world:camera.matrixWorld.toArray(),

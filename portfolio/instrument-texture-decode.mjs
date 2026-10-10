@@ -1,6 +1,6 @@
 // Verified original-map path, with explicit DOM rollback and API support guards.
 export function textureWorkerEligible({requested,mobile,bakedElements,qualityMode,opticalMode,workerSupported=typeof globalThis.Worker==='function',bitmapSupported=typeof globalThis.createImageBitmap==='function'}){
-  return (requested==null||requested==='worker')&&workerSupported&&bitmapSupported&&mobile&&bakedElements&&!qualityMode&&opticalMode==='thickness';
+  return (requested==null||requested==='worker')&&workerSupported&&bitmapSupported&&bakedElements&&!qualityMode&&opticalMode==='thickness';
 }
 export function createTextureDecodeClient({THREE,baseURL,makeWorker=()=>new Worker(new URL('./instrument-texture-decode-worker.mjs',import.meta.url),{type:'module'})}={}){
   let worker,nextID=0,disposed=false,failed=false;
@@ -17,7 +17,7 @@ export function createTextureDecodeClient({THREE,baseURL,makeWorker=()=>new Work
       const entry=pending.get(data.id);
       if(!entry){data.bitmap?.close();return;}
       pending.delete(data.id);
-      if(data.error){entry.reject(Error(data.error));return;}
+      if(data.error){entry.reject(Error(data.error+' ['+entry.url+']'));return;}
       const bitmap=data.bitmap;
       if(!bitmap||!(bitmap.width>0&&bitmap.height>0)){bitmap?.close();entry.reject(Error('Invalid decoded texture'));return;}
       try{

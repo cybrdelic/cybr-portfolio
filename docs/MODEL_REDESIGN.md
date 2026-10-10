@@ -13,9 +13,11 @@ Three directions were considered:
 | Organic sculptures and liquid metal | Strong individual objects; weak connection to the existing instrument | Rejected |
 | Precision cells with exposed internals | Clear mechanical hierarchy, restrained optics, readable vessel | Selected |
 
-GEO becomes a slotted housing with swept internal vanes, a graphite liner,
-visible bearing races and restrained grip details. The central cable take-up
-bay stays open. Separate bored sleeves terminate at the original cable ports.
+GEO is a seated cable cartridge. A six-window cage meets both spoke endplates
+at their mounting faces. Bored service sleeves fit the center seats. The front
+graphite bushing sits inside the endplate; the central winding envelope stays
+open. Unsupported vanes, invented bearing races and the floating flange were
+removed. This is a mechanically readable enclosure, not a working turbine.
 
 LIGHT becomes two seated biconvex lenses, each with its own optical mesh, in
 black cells with turned silver lips and three collimation tie rods. A restrained
@@ -32,3 +34,11 @@ All new forms are authored CAD geometry. No beauty-image projection or
 generated material images are introduced. Raw CAD, mesh integrity results and
 browser evidence stay in the local model-redesign evidence directory. This is
 a portfolio sculpture, with no manufacturing or pressure-rating claim.
+
+Startup revision: desktop now uses the same verified complete GEO prefix as
+mobile (478,907 compressed bytes). Full mesh transfer is 33,187,786 bytes.
+Textures decode off the document thread, with original TextureLoader fallback.
+Exact HDR shader passes prepare asynchronously; unused default-framebuffer
+variants are skipped, and identical opaque shaders share program keys across
+modules. The gateway gives matching geometry SHA fingerprints a one-year
+immutable cache, while stale fingerprints and page source still revalidate.

@@ -26,7 +26,7 @@
         0.013704767325378953,
         -3.552713678800501e-15
       ],
-      "parts": 120
+      "parts": 82
     },
     {
       "name": "light",
@@ -156,67 +156,59 @@
       "partNames": [
         "geo__slotted_shell",
         "geo__rear_mount",
-        "geo__front_mount",
-        "geo__detached_interface"
+        "geo__front_mount"
       ],
       "partRanges": [
         {
           "name": "geo__slotted_shell",
           "firstVertex": 0,
-          "vertexCount": 76934,
+          "vertexCount": 31738,
           "firstIndex": 0,
-          "indexCount": 359892
+          "indexCount": 146088
         },
         {
           "name": "geo__rear_mount",
-          "firstVertex": 76934,
-          "vertexCount": 5708,
-          "firstIndex": 359892,
-          "indexCount": 18408
+          "firstVertex": 31738,
+          "vertexCount": 9548,
+          "firstIndex": 146088,
+          "indexCount": 29856
         },
         {
           "name": "geo__front_mount",
-          "firstVertex": 82642,
-          "vertexCount": 5708,
-          "firstIndex": 378300,
-          "indexCount": 18408
-        },
-        {
-          "name": "geo__detached_interface",
-          "firstVertex": 88350,
-          "vertexCount": 4220,
-          "firstIndex": 396708,
-          "indexCount": 13488
+          "firstVertex": 41286,
+          "vertexCount": 9548,
+          "firstIndex": 175944,
+          "indexCount": 29856
         }
       ],
       "positions": {
         "offset": 0,
-        "count": 277710,
+        "count": 152502,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 1110840,
-        "count": 277710,
+        "offset": 610008,
+        "count": 152502,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 1666260,
-        "count": 410196,
+        "offset": 915012,
+        "count": 205800,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 3307044,
-        "count": 185140,
+        "offset": 1738212,
+        "count": 101668,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 4047604,
-        "count": 92570,
+        "offset": 2144884,
+        "count": 50834,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 4417884,
-        "count": 185140,
+        "offset": 2348220,
+        "count": 101668,
         "dtype": "float32"
       }
     },
@@ -254,45 +246,9 @@
         "geo__front_mount_bolt_5_head",
         "geo__front_mount_bolt_5_shaft",
         "geo__turned_shoulder_-36",
-        "geo__turned_shoulder_2",
+        "geo__turned_shoulder_29",
         "geo__takeup_guard_-35",
         "geo__takeup_guard_35",
-        "geo__helical_stator_0",
-        "geo__helical_stator_1",
-        "geo__helical_stator_2",
-        "geo__helical_stator_3",
-        "geo__helical_stator_4",
-        "geo__helical_stator_5",
-        "geo__helical_stator_6",
-        "geo__helical_stator_7",
-        "geo__helical_stator_8",
-        "geo__helical_stator_9",
-        "geo__bearing_outer_race",
-        "geo__bearing_inner_race",
-        "geo__bearing_ball_0",
-        "geo__bearing_ball_1",
-        "geo__bearing_ball_2",
-        "geo__bearing_ball_3",
-        "geo__bearing_ball_4",
-        "geo__bearing_ball_5",
-        "geo__bearing_ball_6",
-        "geo__bearing_ball_7",
-        "geo__bearing_ball_8",
-        "geo__bearing_ball_9",
-        "geo__bearing_ball_10",
-        "geo__bearing_ball_11",
-        "geo__bearing_ball_12",
-        "geo__bearing_ball_13",
-        "geo__bearing_ball_14",
-        "geo__bearing_ball_15",
-        "geo__detached_interface_bolt_0_head",
-        "geo__detached_interface_bolt_0_shaft",
-        "geo__detached_interface_bolt_1_head",
-        "geo__detached_interface_bolt_1_shaft",
-        "geo__detached_interface_bolt_2_head",
-        "geo__detached_interface_bolt_2_shaft",
-        "geo__detached_interface_bolt_3_head",
-        "geo__detached_interface_bolt_3_shaft",
         "geo__rear_service_sleeve",
         "geo__front_service_sleeve"
       ],
@@ -300,494 +256,242 @@
         {
           "name": "geo__rear_mount_bolt_0_head",
           "firstVertex": 0,
-          "vertexCount": 368,
+          "vertexCount": 365,
           "firstIndex": 0,
           "indexCount": 1008
         },
         {
           "name": "geo__rear_mount_bolt_0_shaft",
-          "firstVertex": 368,
-          "vertexCount": 326,
+          "firstVertex": 365,
+          "vertexCount": 331,
           "firstIndex": 1008,
           "indexCount": 936
         },
         {
           "name": "geo__rear_mount_bolt_1_head",
-          "firstVertex": 694,
-          "vertexCount": 364,
+          "firstVertex": 696,
+          "vertexCount": 361,
           "firstIndex": 1944,
           "indexCount": 1008
         },
         {
           "name": "geo__rear_mount_bolt_1_shaft",
-          "firstVertex": 1058,
+          "firstVertex": 1057,
           "vertexCount": 334,
           "firstIndex": 2952,
           "indexCount": 936
         },
         {
           "name": "geo__rear_mount_bolt_2_head",
-          "firstVertex": 1392,
-          "vertexCount": 368,
+          "firstVertex": 1391,
+          "vertexCount": 367,
           "firstIndex": 3888,
           "indexCount": 1008
         },
         {
           "name": "geo__rear_mount_bolt_2_shaft",
-          "firstVertex": 1760,
-          "vertexCount": 338,
+          "firstVertex": 1758,
+          "vertexCount": 336,
           "firstIndex": 4896,
           "indexCount": 936
         },
         {
           "name": "geo__rear_mount_bolt_3_head",
-          "firstVertex": 2098,
-          "vertexCount": 368,
+          "firstVertex": 2094,
+          "vertexCount": 365,
           "firstIndex": 5832,
           "indexCount": 1008
         },
         {
           "name": "geo__rear_mount_bolt_3_shaft",
-          "firstVertex": 2466,
-          "vertexCount": 334,
+          "firstVertex": 2459,
+          "vertexCount": 336,
           "firstIndex": 6840,
           "indexCount": 936
         },
         {
           "name": "geo__rear_mount_bolt_4_head",
-          "firstVertex": 2800,
-          "vertexCount": 364,
+          "firstVertex": 2795,
+          "vertexCount": 361,
           "firstIndex": 7776,
           "indexCount": 1008
         },
         {
           "name": "geo__rear_mount_bolt_4_shaft",
-          "firstVertex": 3164,
+          "firstVertex": 3156,
           "vertexCount": 332,
           "firstIndex": 8784,
           "indexCount": 936
         },
         {
           "name": "geo__rear_mount_bolt_5_head",
-          "firstVertex": 3496,
-          "vertexCount": 368,
+          "firstVertex": 3488,
+          "vertexCount": 367,
           "firstIndex": 9720,
           "indexCount": 1008
         },
         {
           "name": "geo__rear_mount_bolt_5_shaft",
-          "firstVertex": 3864,
-          "vertexCount": 338,
+          "firstVertex": 3855,
+          "vertexCount": 336,
           "firstIndex": 10728,
           "indexCount": 936
         },
         {
           "name": "geo__front_mount_bolt_0_head",
-          "firstVertex": 4202,
+          "firstVertex": 4191,
           "vertexCount": 368,
           "firstIndex": 11664,
           "indexCount": 1008
         },
         {
           "name": "geo__front_mount_bolt_0_shaft",
-          "firstVertex": 4570,
+          "firstVertex": 4559,
           "vertexCount": 326,
           "firstIndex": 12672,
           "indexCount": 936
         },
         {
           "name": "geo__front_mount_bolt_1_head",
-          "firstVertex": 4896,
+          "firstVertex": 4885,
           "vertexCount": 364,
           "firstIndex": 13608,
           "indexCount": 1008
         },
         {
           "name": "geo__front_mount_bolt_1_shaft",
-          "firstVertex": 5260,
+          "firstVertex": 5249,
           "vertexCount": 334,
           "firstIndex": 14616,
           "indexCount": 936
         },
         {
           "name": "geo__front_mount_bolt_2_head",
-          "firstVertex": 5594,
+          "firstVertex": 5583,
           "vertexCount": 368,
           "firstIndex": 15552,
           "indexCount": 1008
         },
         {
           "name": "geo__front_mount_bolt_2_shaft",
-          "firstVertex": 5962,
+          "firstVertex": 5951,
           "vertexCount": 338,
           "firstIndex": 16560,
           "indexCount": 936
         },
         {
           "name": "geo__front_mount_bolt_3_head",
-          "firstVertex": 6300,
+          "firstVertex": 6289,
           "vertexCount": 368,
           "firstIndex": 17496,
           "indexCount": 1008
         },
         {
           "name": "geo__front_mount_bolt_3_shaft",
-          "firstVertex": 6668,
+          "firstVertex": 6657,
           "vertexCount": 334,
           "firstIndex": 18504,
           "indexCount": 936
         },
         {
           "name": "geo__front_mount_bolt_4_head",
-          "firstVertex": 7002,
+          "firstVertex": 6991,
           "vertexCount": 364,
           "firstIndex": 19440,
           "indexCount": 1008
         },
         {
           "name": "geo__front_mount_bolt_4_shaft",
-          "firstVertex": 7366,
+          "firstVertex": 7355,
           "vertexCount": 332,
           "firstIndex": 20448,
           "indexCount": 936
         },
         {
           "name": "geo__front_mount_bolt_5_head",
-          "firstVertex": 7698,
+          "firstVertex": 7687,
           "vertexCount": 368,
           "firstIndex": 21384,
           "indexCount": 1008
         },
         {
           "name": "geo__front_mount_bolt_5_shaft",
-          "firstVertex": 8066,
+          "firstVertex": 8055,
           "vertexCount": 338,
           "firstIndex": 22392,
           "indexCount": 936
         },
         {
           "name": "geo__turned_shoulder_-36",
-          "firstVertex": 8404,
-          "vertexCount": 1384,
+          "firstVertex": 8393,
+          "vertexCount": 1436,
           "firstIndex": 23328,
-          "indexCount": 4068
+          "indexCount": 4224
         },
         {
-          "name": "geo__turned_shoulder_2",
-          "firstVertex": 9788,
-          "vertexCount": 1384,
-          "firstIndex": 27396,
-          "indexCount": 4068
+          "name": "geo__turned_shoulder_29",
+          "firstVertex": 9829,
+          "vertexCount": 1436,
+          "firstIndex": 27552,
+          "indexCount": 4224
         },
         {
           "name": "geo__takeup_guard_-35",
-          "firstVertex": 11172,
+          "firstVertex": 11265,
           "vertexCount": 1292,
-          "firstIndex": 31464,
+          "firstIndex": 31776,
           "indexCount": 3792
         },
         {
           "name": "geo__takeup_guard_35",
-          "firstVertex": 12464,
+          "firstVertex": 12557,
           "vertexCount": 1292,
-          "firstIndex": 35256,
+          "firstIndex": 35568,
           "indexCount": 3792
-        },
-        {
-          "name": "geo__helical_stator_0",
-          "firstVertex": 13756,
-          "vertexCount": 120,
-          "firstIndex": 39048,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_1",
-          "firstVertex": 13876,
-          "vertexCount": 126,
-          "firstIndex": 39552,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_2",
-          "firstVertex": 14002,
-          "vertexCount": 126,
-          "firstIndex": 40056,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_3",
-          "firstVertex": 14128,
-          "vertexCount": 126,
-          "firstIndex": 40560,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_4",
-          "firstVertex": 14254,
-          "vertexCount": 124,
-          "firstIndex": 41064,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_5",
-          "firstVertex": 14378,
-          "vertexCount": 120,
-          "firstIndex": 41568,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_6",
-          "firstVertex": 14498,
-          "vertexCount": 126,
-          "firstIndex": 42072,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_7",
-          "firstVertex": 14624,
-          "vertexCount": 126,
-          "firstIndex": 42576,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_8",
-          "firstVertex": 14750,
-          "vertexCount": 126,
-          "firstIndex": 43080,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__helical_stator_9",
-          "firstVertex": 14876,
-          "vertexCount": 124,
-          "firstIndex": 43584,
-          "indexCount": 504
-        },
-        {
-          "name": "geo__bearing_outer_race",
-          "firstVertex": 15000,
-          "vertexCount": 1292,
-          "firstIndex": 44088,
-          "indexCount": 3792
-        },
-        {
-          "name": "geo__bearing_inner_race",
-          "firstVertex": 16292,
-          "vertexCount": 1292,
-          "firstIndex": 47880,
-          "indexCount": 3792
-        },
-        {
-          "name": "geo__bearing_ball_0",
-          "firstVertex": 17584,
-          "vertexCount": 1801,
-          "firstIndex": 51672,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_1",
-          "firstVertex": 19385,
-          "vertexCount": 1801,
-          "firstIndex": 61398,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_2",
-          "firstVertex": 21186,
-          "vertexCount": 1801,
-          "firstIndex": 71124,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_3",
-          "firstVertex": 22987,
-          "vertexCount": 1801,
-          "firstIndex": 80850,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_4",
-          "firstVertex": 24788,
-          "vertexCount": 1801,
-          "firstIndex": 90576,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_5",
-          "firstVertex": 26589,
-          "vertexCount": 1801,
-          "firstIndex": 100302,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_6",
-          "firstVertex": 28390,
-          "vertexCount": 1801,
-          "firstIndex": 110028,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_7",
-          "firstVertex": 30191,
-          "vertexCount": 1801,
-          "firstIndex": 119754,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_8",
-          "firstVertex": 31992,
-          "vertexCount": 1801,
-          "firstIndex": 129480,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_9",
-          "firstVertex": 33793,
-          "vertexCount": 1801,
-          "firstIndex": 139206,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_10",
-          "firstVertex": 35594,
-          "vertexCount": 1801,
-          "firstIndex": 148932,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_11",
-          "firstVertex": 37395,
-          "vertexCount": 1801,
-          "firstIndex": 158658,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_12",
-          "firstVertex": 39196,
-          "vertexCount": 1801,
-          "firstIndex": 168384,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_13",
-          "firstVertex": 40997,
-          "vertexCount": 1801,
-          "firstIndex": 178110,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_14",
-          "firstVertex": 42798,
-          "vertexCount": 1801,
-          "firstIndex": 187836,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__bearing_ball_15",
-          "firstVertex": 44599,
-          "vertexCount": 1801,
-          "firstIndex": 197562,
-          "indexCount": 9726
-        },
-        {
-          "name": "geo__detached_interface_bolt_0_head",
-          "firstVertex": 46400,
-          "vertexCount": 369,
-          "firstIndex": 207288,
-          "indexCount": 1008
-        },
-        {
-          "name": "geo__detached_interface_bolt_0_shaft",
-          "firstVertex": 46769,
-          "vertexCount": 336,
-          "firstIndex": 208296,
-          "indexCount": 936
-        },
-        {
-          "name": "geo__detached_interface_bolt_1_head",
-          "firstVertex": 47105,
-          "vertexCount": 367,
-          "firstIndex": 209232,
-          "indexCount": 1008
-        },
-        {
-          "name": "geo__detached_interface_bolt_1_shaft",
-          "firstVertex": 47472,
-          "vertexCount": 330,
-          "firstIndex": 210240,
-          "indexCount": 936
-        },
-        {
-          "name": "geo__detached_interface_bolt_2_head",
-          "firstVertex": 47802,
-          "vertexCount": 366,
-          "firstIndex": 211176,
-          "indexCount": 1008
-        },
-        {
-          "name": "geo__detached_interface_bolt_2_shaft",
-          "firstVertex": 48168,
-          "vertexCount": 322,
-          "firstIndex": 212184,
-          "indexCount": 936
-        },
-        {
-          "name": "geo__detached_interface_bolt_3_head",
-          "firstVertex": 48490,
-          "vertexCount": 369,
-          "firstIndex": 213120,
-          "indexCount": 1008
-        },
-        {
-          "name": "geo__detached_interface_bolt_3_shaft",
-          "firstVertex": 48859,
-          "vertexCount": 336,
-          "firstIndex": 214128,
-          "indexCount": 936
         },
         {
           "name": "geo__rear_service_sleeve",
-          "firstVertex": 49195,
+          "firstVertex": 13849,
           "vertexCount": 1292,
-          "firstIndex": 215064,
+          "firstIndex": 39360,
           "indexCount": 3792
         },
         {
           "name": "geo__front_service_sleeve",
-          "firstVertex": 50487,
+          "firstVertex": 15141,
           "vertexCount": 1292,
-          "firstIndex": 218856,
+          "firstIndex": 43152,
           "indexCount": 3792
         }
       ],
       "positions": {
-        "offset": 5158444,
-        "count": 155337,
+        "offset": 2754892,
+        "count": 49299,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 5779792,
-        "count": 155337,
+        "offset": 2952088,
+        "count": 49299,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 6090468,
-        "count": 222648,
+        "offset": 3050688,
+        "count": 46944,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 6981060,
-        "count": 103558,
+        "offset": 3238464,
+        "count": 32866,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 7395292,
-        "count": 51779,
+        "offset": 3369928,
+        "count": 16433,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 7602408,
-        "count": 103558,
+        "offset": 3435660,
+        "count": 32866,
         "dtype": "float32"
       }
     },
@@ -801,7 +505,6 @@
       },
       "partNames": [
         "geo__graphite_inner_liner",
-        "geo__bearing_dust_seal",
         "geo__service_grip_0",
         "geo__service_grip_1",
         "geo__service_grip_2",
@@ -860,377 +563,370 @@
           "indexCount": 3792
         },
         {
-          "name": "geo__bearing_dust_seal",
-          "firstVertex": 1292,
-          "vertexCount": 1292,
-          "firstIndex": 3792,
-          "indexCount": 3792
-        },
-        {
           "name": "geo__service_grip_0",
-          "firstVertex": 2584,
+          "firstVertex": 1292,
           "vertexCount": 24,
-          "firstIndex": 7584,
+          "firstIndex": 3792,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_1",
-          "firstVertex": 2608,
+          "firstVertex": 1316,
           "vertexCount": 24,
-          "firstIndex": 7620,
+          "firstIndex": 3828,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_2",
-          "firstVertex": 2632,
+          "firstVertex": 1340,
           "vertexCount": 24,
-          "firstIndex": 7656,
+          "firstIndex": 3864,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_3",
-          "firstVertex": 2656,
+          "firstVertex": 1364,
           "vertexCount": 24,
-          "firstIndex": 7692,
+          "firstIndex": 3900,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_4",
-          "firstVertex": 2680,
+          "firstVertex": 1388,
           "vertexCount": 24,
-          "firstIndex": 7728,
+          "firstIndex": 3936,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_5",
-          "firstVertex": 2704,
+          "firstVertex": 1412,
           "vertexCount": 24,
-          "firstIndex": 7764,
+          "firstIndex": 3972,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_6",
-          "firstVertex": 2728,
+          "firstVertex": 1436,
           "vertexCount": 24,
-          "firstIndex": 7800,
+          "firstIndex": 4008,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_7",
-          "firstVertex": 2752,
+          "firstVertex": 1460,
           "vertexCount": 24,
-          "firstIndex": 7836,
+          "firstIndex": 4044,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_8",
-          "firstVertex": 2776,
+          "firstVertex": 1484,
           "vertexCount": 24,
-          "firstIndex": 7872,
+          "firstIndex": 4080,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_9",
-          "firstVertex": 2800,
+          "firstVertex": 1508,
           "vertexCount": 24,
-          "firstIndex": 7908,
+          "firstIndex": 4116,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_10",
-          "firstVertex": 2824,
+          "firstVertex": 1532,
           "vertexCount": 24,
-          "firstIndex": 7944,
+          "firstIndex": 4152,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_11",
-          "firstVertex": 2848,
+          "firstVertex": 1556,
           "vertexCount": 24,
-          "firstIndex": 7980,
+          "firstIndex": 4188,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_12",
-          "firstVertex": 2872,
+          "firstVertex": 1580,
           "vertexCount": 24,
-          "firstIndex": 8016,
+          "firstIndex": 4224,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_13",
-          "firstVertex": 2896,
+          "firstVertex": 1604,
           "vertexCount": 24,
-          "firstIndex": 8052,
+          "firstIndex": 4260,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_14",
-          "firstVertex": 2920,
+          "firstVertex": 1628,
           "vertexCount": 24,
-          "firstIndex": 8088,
+          "firstIndex": 4296,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_15",
-          "firstVertex": 2944,
+          "firstVertex": 1652,
           "vertexCount": 24,
-          "firstIndex": 8124,
+          "firstIndex": 4332,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_16",
-          "firstVertex": 2968,
+          "firstVertex": 1676,
           "vertexCount": 24,
-          "firstIndex": 8160,
+          "firstIndex": 4368,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_17",
-          "firstVertex": 2992,
+          "firstVertex": 1700,
           "vertexCount": 24,
-          "firstIndex": 8196,
+          "firstIndex": 4404,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_18",
-          "firstVertex": 3016,
+          "firstVertex": 1724,
           "vertexCount": 24,
-          "firstIndex": 8232,
+          "firstIndex": 4440,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_19",
-          "firstVertex": 3040,
+          "firstVertex": 1748,
           "vertexCount": 24,
-          "firstIndex": 8268,
+          "firstIndex": 4476,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_20",
-          "firstVertex": 3064,
+          "firstVertex": 1772,
           "vertexCount": 24,
-          "firstIndex": 8304,
+          "firstIndex": 4512,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_21",
-          "firstVertex": 3088,
+          "firstVertex": 1796,
           "vertexCount": 24,
-          "firstIndex": 8340,
+          "firstIndex": 4548,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_22",
-          "firstVertex": 3112,
+          "firstVertex": 1820,
           "vertexCount": 24,
-          "firstIndex": 8376,
+          "firstIndex": 4584,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_23",
-          "firstVertex": 3136,
+          "firstVertex": 1844,
           "vertexCount": 24,
-          "firstIndex": 8412,
+          "firstIndex": 4620,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_24",
-          "firstVertex": 3160,
+          "firstVertex": 1868,
           "vertexCount": 24,
-          "firstIndex": 8448,
+          "firstIndex": 4656,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_25",
-          "firstVertex": 3184,
+          "firstVertex": 1892,
           "vertexCount": 24,
-          "firstIndex": 8484,
+          "firstIndex": 4692,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_26",
-          "firstVertex": 3208,
+          "firstVertex": 1916,
           "vertexCount": 24,
-          "firstIndex": 8520,
+          "firstIndex": 4728,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_27",
-          "firstVertex": 3232,
+          "firstVertex": 1940,
           "vertexCount": 24,
-          "firstIndex": 8556,
+          "firstIndex": 4764,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_28",
-          "firstVertex": 3256,
+          "firstVertex": 1964,
           "vertexCount": 24,
-          "firstIndex": 8592,
+          "firstIndex": 4800,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_29",
-          "firstVertex": 3280,
+          "firstVertex": 1988,
           "vertexCount": 24,
-          "firstIndex": 8628,
+          "firstIndex": 4836,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_30",
-          "firstVertex": 3304,
+          "firstVertex": 2012,
           "vertexCount": 24,
-          "firstIndex": 8664,
+          "firstIndex": 4872,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_31",
-          "firstVertex": 3328,
+          "firstVertex": 2036,
           "vertexCount": 24,
-          "firstIndex": 8700,
+          "firstIndex": 4908,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_32",
-          "firstVertex": 3352,
+          "firstVertex": 2060,
           "vertexCount": 24,
-          "firstIndex": 8736,
+          "firstIndex": 4944,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_33",
-          "firstVertex": 3376,
+          "firstVertex": 2084,
           "vertexCount": 24,
-          "firstIndex": 8772,
+          "firstIndex": 4980,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_34",
-          "firstVertex": 3400,
+          "firstVertex": 2108,
           "vertexCount": 24,
-          "firstIndex": 8808,
+          "firstIndex": 5016,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_35",
-          "firstVertex": 3424,
+          "firstVertex": 2132,
           "vertexCount": 24,
-          "firstIndex": 8844,
+          "firstIndex": 5052,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_36",
-          "firstVertex": 3448,
+          "firstVertex": 2156,
           "vertexCount": 24,
-          "firstIndex": 8880,
+          "firstIndex": 5088,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_37",
-          "firstVertex": 3472,
+          "firstVertex": 2180,
           "vertexCount": 24,
-          "firstIndex": 8916,
+          "firstIndex": 5124,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_38",
-          "firstVertex": 3496,
+          "firstVertex": 2204,
           "vertexCount": 24,
-          "firstIndex": 8952,
+          "firstIndex": 5160,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_39",
-          "firstVertex": 3520,
+          "firstVertex": 2228,
           "vertexCount": 24,
-          "firstIndex": 8988,
+          "firstIndex": 5196,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_40",
-          "firstVertex": 3544,
+          "firstVertex": 2252,
           "vertexCount": 24,
-          "firstIndex": 9024,
+          "firstIndex": 5232,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_41",
-          "firstVertex": 3568,
+          "firstVertex": 2276,
           "vertexCount": 24,
-          "firstIndex": 9060,
+          "firstIndex": 5268,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_42",
-          "firstVertex": 3592,
+          "firstVertex": 2300,
           "vertexCount": 24,
-          "firstIndex": 9096,
+          "firstIndex": 5304,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_43",
-          "firstVertex": 3616,
+          "firstVertex": 2324,
           "vertexCount": 24,
-          "firstIndex": 9132,
+          "firstIndex": 5340,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_44",
-          "firstVertex": 3640,
+          "firstVertex": 2348,
           "vertexCount": 24,
-          "firstIndex": 9168,
+          "firstIndex": 5376,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_45",
-          "firstVertex": 3664,
+          "firstVertex": 2372,
           "vertexCount": 24,
-          "firstIndex": 9204,
+          "firstIndex": 5412,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_46",
-          "firstVertex": 3688,
+          "firstVertex": 2396,
           "vertexCount": 24,
-          "firstIndex": 9240,
+          "firstIndex": 5448,
           "indexCount": 36
         },
         {
           "name": "geo__service_grip_47",
-          "firstVertex": 3712,
+          "firstVertex": 2420,
           "vertexCount": 24,
-          "firstIndex": 9276,
+          "firstIndex": 5484,
           "indexCount": 36
         }
       ],
       "positions": {
-        "offset": 8016640,
-        "count": 11208,
+        "offset": 3567124,
+        "count": 7332,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 8061472,
-        "count": 11208,
+        "offset": 3596452,
+        "count": 7332,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 8083888,
-        "count": 9312,
+        "offset": 3611116,
+        "count": 5520,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 8121136,
-        "count": 7472,
+        "offset": 3633196,
+        "count": 4888,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 8151024,
-        "count": 3736,
+        "offset": 3652748,
+        "count": 2444,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 8165968,
-        "count": 7472,
+        "offset": 3662524,
+        "count": 4888,
         "dtype": "float32"
       }
     },
@@ -1263,32 +959,32 @@
         }
       ],
       "positions": {
-        "offset": 8195856,
+        "offset": 3682076,
         "count": 8328,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 8229168,
+        "offset": 3715388,
         "count": 8328,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 8245824,
+        "offset": 3732044,
         "count": 8160,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 8278464,
+        "offset": 3764684,
         "count": 5552,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 8300672,
+        "offset": 3786892,
         "count": 2776,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 8311776,
+        "offset": 3797996,
         "count": 5552,
         "dtype": "float32"
       }
@@ -1418,32 +1114,32 @@
         }
       ],
       "positions": {
-        "offset": 8333984,
+        "offset": 3820204,
         "count": 29751,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 8452988,
+        "offset": 3939208,
         "count": 29751,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 8512492,
+        "offset": 3998712,
         "count": 28704,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 8627308,
+        "offset": 4113528,
         "count": 19834,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 8706644,
+        "offset": 4192864,
         "count": 9917,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 8746312,
+        "offset": 4232532,
         "count": 19834,
         "dtype": "float32"
       }
@@ -1469,32 +1165,32 @@
         }
       ],
       "positions": {
-        "offset": 8825648,
+        "offset": 4311868,
         "count": 2484,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 8835584,
+        "offset": 4321804,
         "count": 2484,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 8840552,
+        "offset": 4326772,
         "count": 3270,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 8853632,
+        "offset": 4339852,
         "count": 1656,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 8860256,
+        "offset": 4346476,
         "count": 828,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 8863568,
+        "offset": 4349788,
         "count": 1656,
         "dtype": "float32"
       }
@@ -1520,32 +1216,32 @@
         }
       ],
       "positions": {
-        "offset": 8870192,
+        "offset": 4356412,
         "count": 2646,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 8880776,
+        "offset": 4366996,
         "count": 2646,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 8886068,
+        "offset": 4372288,
         "count": 3594,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 8900444,
+        "offset": 4386664,
         "count": 1764,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 8907500,
+        "offset": 4393720,
         "count": 882,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 8911028,
+        "offset": 4397248,
         "count": 1764,
         "dtype": "float32"
       }
@@ -1611,32 +1307,32 @@
         }
       ],
       "positions": {
-        "offset": 8918084,
+        "offset": 4404304,
         "count": 11592,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 8964452,
+        "offset": 4450672,
         "count": 11592,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 8987636,
+        "offset": 4473856,
         "count": 11376,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 9033140,
+        "offset": 4519360,
         "count": 7728,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 9064052,
+        "offset": 4550272,
         "count": 3864,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 9079508,
+        "offset": 4565728,
         "count": 7728,
         "dtype": "float32"
       }
@@ -1846,32 +1542,32 @@
         }
       ],
       "positions": {
-        "offset": 9110420,
+        "offset": 4596640,
         "count": 1728,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 9117332,
+        "offset": 4603552,
         "count": 1728,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 9120788,
+        "offset": 4607008,
         "count": 864,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 9124244,
+        "offset": 4610464,
         "count": 1152,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 9128852,
+        "offset": 4615072,
         "count": 576,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 9131156,
+        "offset": 4617376,
         "count": 1152,
         "dtype": "float32"
       }
@@ -1897,32 +1593,32 @@
       ],
       "feature": "native-rig-15",
       "positions": {
-        "offset": 9135764,
+        "offset": 4621984,
         "count": 27876,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 9247268,
+        "offset": 4733488,
         "count": 27876,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 9303020,
+        "offset": 4789240,
         "count": 42264,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 9472076,
+        "offset": 4958296,
         "count": 18584,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 9546412,
+        "offset": 5032632,
         "count": 9292,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 9583580,
+        "offset": 5069800,
         "count": 18584,
         "dtype": "float32"
       }
@@ -1948,32 +1644,32 @@
       ],
       "feature": "native-rig-16",
       "positions": {
-        "offset": 9657916,
+        "offset": 5144136,
         "count": 270033,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 10738048,
+        "offset": 6224268,
         "count": 270033,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 11278116,
+        "offset": 6764336,
         "count": 335016,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 12618180,
+        "offset": 8104400,
         "count": 180022,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 13338268,
+        "offset": 8824488,
         "count": 90011,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 13698312,
+        "offset": 9184532,
         "count": 180022,
         "dtype": "float32"
       }
@@ -2151,32 +1847,32 @@
       ],
       "feature": "native-rig-17",
       "positions": {
-        "offset": 14418400,
+        "offset": 9904620,
         "count": 352866,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 15829864,
+        "offset": 11316084,
         "count": 352866,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 16535596,
+        "offset": 12021816,
         "count": 509148,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 18572188,
+        "offset": 14058408,
         "count": 235244,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 19513164,
+        "offset": 14999384,
         "count": 117622,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 19983652,
+        "offset": 15469872,
         "count": 235244,
         "dtype": "float32"
       }
@@ -2202,32 +1898,32 @@
       ],
       "feature": "native-rig-18",
       "positions": {
-        "offset": 20924628,
+        "offset": 16410848,
         "count": 50568,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 21126900,
+        "offset": 16613120,
         "count": 50568,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 21228036,
+        "offset": 16714256,
         "count": 86238,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 21572988,
+        "offset": 17059208,
         "count": 33712,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 21707836,
+        "offset": 17194056,
         "count": 16856,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 21775260,
+        "offset": 17261480,
         "count": 33712,
         "dtype": "float32"
       }
@@ -2277,32 +1973,32 @@
       ],
       "feature": "native-rig-19",
       "positions": {
-        "offset": 21910108,
+        "offset": 17396328,
         "count": 27693,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 22020880,
+        "offset": 17507100,
         "count": 27693,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 22076268,
+        "offset": 17562488,
         "count": 41580,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 22242588,
+        "offset": 17728808,
         "count": 18462,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 22316436,
+        "offset": 17802656,
         "count": 9231,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 22353360,
+        "offset": 17839580,
         "count": 18462,
         "dtype": "float32"
       }
@@ -2424,32 +2120,32 @@
       ],
       "feature": "native-rig-20",
       "positions": {
-        "offset": 22427208,
+        "offset": 17913428,
         "count": 123834,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 22922544,
+        "offset": 18408764,
         "count": 123834,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 23170212,
+        "offset": 18656432,
         "count": 164310,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 23827452,
+        "offset": 19313672,
         "count": 82556,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 24157676,
+        "offset": 19643896,
         "count": 41278,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 24322788,
+        "offset": 19809008,
         "count": 82556,
         "dtype": "float32"
       }
@@ -2483,32 +2179,32 @@
         }
       ],
       "positions": {
-        "offset": 24653012,
+        "offset": 20139232,
         "count": 16296,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 24718196,
+        "offset": 20204416,
         "count": 16296,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 24750788,
+        "offset": 20237008,
         "count": 15744,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 24813764,
+        "offset": 20299984,
         "count": 10864,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 24857220,
+        "offset": 20343440,
         "count": 5432,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 24878948,
+        "offset": 20365168,
         "count": 10864,
         "dtype": "float32"
       }
@@ -2686,32 +2382,32 @@
         }
       ],
       "positions": {
-        "offset": 24922404,
+        "offset": 20408624,
         "count": 24516,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 25020468,
+        "offset": 20506688,
         "count": 24516,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 25069500,
+        "offset": 20555720,
         "count": 23136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 25162044,
+        "offset": 20648264,
         "count": 16344,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 25227420,
+        "offset": 20713640,
         "count": 8172,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 25260108,
+        "offset": 20746328,
         "count": 16344,
         "dtype": "float32"
       }
@@ -2753,32 +2449,32 @@
       ],
       "feature": "native-rig-21",
       "positions": {
-        "offset": 25325484,
+        "offset": 20811704,
         "count": 97407,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 25715112,
+        "offset": 21201332,
         "count": 97407,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 25909928,
+        "offset": 21396148,
         "count": 177054,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 26618144,
+        "offset": 22104364,
         "count": 64938,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 26877896,
+        "offset": 22364116,
         "count": 32469,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 27007772,
+        "offset": 22493992,
         "count": 64938,
         "dtype": "float32"
       }
@@ -2820,32 +2516,32 @@
       ],
       "feature": "native-rig-22",
       "positions": {
-        "offset": 27267524,
+        "offset": 22753744,
         "count": 56124,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 27492020,
+        "offset": 22978240,
         "count": 56124,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 27604268,
+        "offset": 23090488,
         "count": 53820,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 27819548,
+        "offset": 23305768,
         "count": 37416,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 27969212,
+        "offset": 23455432,
         "count": 18708,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 28044044,
+        "offset": 23530264,
         "count": 37416,
         "dtype": "float32"
       }
@@ -2943,32 +2639,32 @@
       ],
       "feature": "native-rig-23",
       "positions": {
-        "offset": 28193708,
+        "offset": 23679928,
         "count": 246714,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 29180564,
+        "offset": 24666784,
         "count": 246714,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 29673992,
+        "offset": 25160212,
         "count": 301860,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 30881432,
+        "offset": 26367652,
         "count": 164476,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 31539336,
+        "offset": 27025556,
         "count": 82238,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 31868288,
+        "offset": 27354508,
         "count": 164476,
         "dtype": "float32"
       }
@@ -2994,32 +2690,32 @@
       ],
       "feature": "native-rig-24",
       "positions": {
-        "offset": 32526192,
+        "offset": 28012412,
         "count": 1302,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32531400,
+        "offset": 28017620,
         "count": 1302,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32534004,
+        "offset": 28020224,
         "count": 1248,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 32538996,
+        "offset": 28025216,
         "count": 868,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 32542468,
+        "offset": 28028688,
         "count": 434,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 32544204,
+        "offset": 28030424,
         "count": 868,
         "dtype": "float32"
       }
@@ -3057,32 +2753,32 @@
       ],
       "feature": "native-rig-25",
       "positions": {
-        "offset": 32547676,
+        "offset": 28033896,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32580796,
+        "offset": 28067016,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32597356,
+        "offset": 28083576,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 32629900,
+        "offset": 28116120,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 32651980,
+        "offset": 28138200,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 32663020,
+        "offset": 28149240,
         "count": 5520,
         "dtype": "float32"
       }
@@ -3120,32 +2816,32 @@
       ],
       "feature": "native-rig-26",
       "positions": {
-        "offset": 32685100,
+        "offset": 28171320,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 32709364,
+        "offset": 28195584,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 32721496,
+        "offset": 28207716,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 32745688,
+        "offset": 28231908,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 32761864,
+        "offset": 28248084,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 32769952,
+        "offset": 28256172,
         "count": 4044,
         "dtype": "float32"
       }
@@ -3260,32 +2956,32 @@
       ],
       "feature": "native-rig-27",
       "positions": {
-        "offset": 32786128,
+        "offset": 28272348,
         "count": 65136,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 33046672,
+        "offset": 28532892,
         "count": 65136,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 33176944,
+        "offset": 28663164,
         "count": 64752,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 33435952,
+        "offset": 28922172,
         "count": 43424,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 33609648,
+        "offset": 29095868,
         "count": 21712,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 33696496,
+        "offset": 29182716,
         "count": 43424,
         "dtype": "float32"
       }
@@ -3336,32 +3032,32 @@
       ],
       "feature": "native-rig-28",
       "positions": {
-        "offset": 33870192,
+        "offset": 29356412,
         "count": 13944,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 33925968,
+        "offset": 29412188,
         "count": 13944,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 33953856,
+        "offset": 29440076,
         "count": 13776,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 34008960,
+        "offset": 29495180,
         "count": 9296,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 34046144,
+        "offset": 29532364,
         "count": 4648,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 34064736,
+        "offset": 29550956,
         "count": 9296,
         "dtype": "float32"
       }
@@ -3421,32 +3117,32 @@
       ],
       "feature": "native-rig-29",
       "positions": {
-        "offset": 34101920,
+        "offset": 29588140,
         "count": 26376,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 34207424,
+        "offset": 29693644,
         "count": 26376,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 34260176,
+        "offset": 29746396,
         "count": 26244,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 34365152,
+        "offset": 29851372,
         "count": 17584,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 34435488,
+        "offset": 29921708,
         "count": 8792,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 34470656,
+        "offset": 29956876,
         "count": 17584,
         "dtype": "float32"
       }
@@ -3562,32 +3258,32 @@
       ],
       "feature": "native-rig-30",
       "positions": {
-        "offset": 34540992,
+        "offset": 30027212,
         "count": 65136,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 34801536,
+        "offset": 30287756,
         "count": 65136,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 34931808,
+        "offset": 30418028,
         "count": 64752,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35190816,
+        "offset": 30677036,
         "count": 43424,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35364512,
+        "offset": 30850732,
         "count": 21712,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35451360,
+        "offset": 30937580,
         "count": 43424,
         "dtype": "float32"
       }
@@ -3639,32 +3335,32 @@
       ],
       "feature": "native-rig-31",
       "positions": {
-        "offset": 35625056,
+        "offset": 31111276,
         "count": 13944,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 35680832,
+        "offset": 31167052,
         "count": 13944,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 35708720,
+        "offset": 31194940,
         "count": 13776,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35763824,
+        "offset": 31250044,
         "count": 9296,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35801008,
+        "offset": 31287228,
         "count": 4648,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35819600,
+        "offset": 31305820,
         "count": 9296,
         "dtype": "float32"
       }
@@ -3702,32 +3398,32 @@
       ],
       "feature": "native-rig-32",
       "positions": {
-        "offset": 35856784,
+        "offset": 31343004,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 35889904,
+        "offset": 31376124,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 35906464,
+        "offset": 31392684,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 35939008,
+        "offset": 31425228,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 35961088,
+        "offset": 31447308,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 35972128,
+        "offset": 31458348,
         "count": 5520,
         "dtype": "float32"
       }
@@ -3765,32 +3461,32 @@
       ],
       "feature": "native-rig-33",
       "positions": {
-        "offset": 35994208,
+        "offset": 31480428,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36018472,
+        "offset": 31504692,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36030604,
+        "offset": 31516824,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36054796,
+        "offset": 31541016,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36070972,
+        "offset": 31557192,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36079060,
+        "offset": 31565280,
         "count": 4044,
         "dtype": "float32"
       }
@@ -3828,32 +3524,32 @@
       ],
       "feature": "native-rig-34",
       "positions": {
-        "offset": 36095236,
+        "offset": 31581456,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36128356,
+        "offset": 31614576,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36144916,
+        "offset": 31631136,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36177460,
+        "offset": 31663680,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36199540,
+        "offset": 31685760,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36210580,
+        "offset": 31696800,
         "count": 5520,
         "dtype": "float32"
       }
@@ -3891,32 +3587,32 @@
       ],
       "feature": "native-rig-35",
       "positions": {
-        "offset": 36232660,
+        "offset": 31718880,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36256924,
+        "offset": 31743144,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36269056,
+        "offset": 31755276,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36293248,
+        "offset": 31779468,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36309424,
+        "offset": 31795644,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36317512,
+        "offset": 31803732,
         "count": 4044,
         "dtype": "float32"
       }
@@ -3954,32 +3650,32 @@
       ],
       "feature": "native-rig-36",
       "positions": {
-        "offset": 36333688,
+        "offset": 31819908,
         "count": 8280,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36366808,
+        "offset": 31853028,
         "count": 8280,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36383368,
+        "offset": 31869588,
         "count": 8136,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36415912,
+        "offset": 31902132,
         "count": 5520,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36437992,
+        "offset": 31924212,
         "count": 2760,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36449032,
+        "offset": 31935252,
         "count": 5520,
         "dtype": "float32"
       }
@@ -4017,32 +3713,32 @@
       ],
       "feature": "native-rig-37",
       "positions": {
-        "offset": 36471112,
+        "offset": 31957332,
         "count": 6066,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36495376,
+        "offset": 31981596,
         "count": 6066,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36507508,
+        "offset": 31993728,
         "count": 6048,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36531700,
+        "offset": 32017920,
         "count": 4044,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36547876,
+        "offset": 32034096,
         "count": 2022,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36555964,
+        "offset": 32042184,
         "count": 4044,
         "dtype": "float32"
       }
@@ -4070,32 +3766,32 @@
       ],
       "feature": "native-rig-38",
       "positions": {
-        "offset": 36572140,
+        "offset": 32058360,
         "count": 23616,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 36666604,
+        "offset": 32152824,
         "count": 23616,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 36713836,
+        "offset": 32200056,
         "count": 22968,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 36805708,
+        "offset": 32291928,
         "count": 15744,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 36868684,
+        "offset": 32354904,
         "count": 7872,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 36900172,
+        "offset": 32386392,
         "count": 15744,
         "dtype": "float32"
       }
@@ -4137,32 +3833,32 @@
       ],
       "feature": "native-rig-39",
       "positions": {
-        "offset": 36963148,
+        "offset": 32449368,
         "count": 34104,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37099564,
+        "offset": 32585784,
         "count": 34104,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37167772,
+        "offset": 32653992,
         "count": 33432,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37301500,
+        "offset": 32787720,
         "count": 22736,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37392444,
+        "offset": 32878664,
         "count": 11368,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37437916,
+        "offset": 32924136,
         "count": 22736,
         "dtype": "float32"
       }
@@ -4196,32 +3892,32 @@
       ],
       "feature": "native-rig-40",
       "positions": {
-        "offset": 37528860,
+        "offset": 33015080,
         "count": 4260,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37545900,
+        "offset": 33032120,
         "count": 4260,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37554420,
+        "offset": 33040640,
         "count": 4176,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37571124,
+        "offset": 33057344,
         "count": 2840,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37582484,
+        "offset": 33068704,
         "count": 1420,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37588164,
+        "offset": 33074384,
         "count": 2840,
         "dtype": "float32"
       }
@@ -4255,32 +3951,32 @@
       ],
       "feature": "native-rig-41",
       "positions": {
-        "offset": 37599524,
+        "offset": 33085744,
         "count": 8088,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37631876,
+        "offset": 33118096,
         "count": 8088,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37648052,
+        "offset": 33134272,
         "count": 8064,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37680308,
+        "offset": 33166528,
         "count": 5392,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37701876,
+        "offset": 33188096,
         "count": 2696,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37712660,
+        "offset": 33198880,
         "count": 5392,
         "dtype": "float32"
       }
@@ -4306,32 +4002,32 @@
       ],
       "feature": "native-rig-42",
       "positions": {
-        "offset": 37734228,
+        "offset": 33220448,
         "count": 2022,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 37742316,
+        "offset": 33228536,
         "count": 2022,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 37746360,
+        "offset": 33232580,
         "count": 2004,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 37754376,
+        "offset": 33240596,
         "count": 1348,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 37759768,
+        "offset": 33245988,
         "count": 674,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 37762464,
+        "offset": 33248684,
         "count": 1348,
         "dtype": "float32"
       }
@@ -4358,32 +4054,32 @@
       ],
       "feature": "native-rig-49",
       "positions": {
-        "offset": 37767856,
+        "offset": 33254076,
         "count": 134601,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 38306260,
+        "offset": 33792480,
         "count": 134601,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 38575464,
+        "offset": 34061684,
         "count": 268374,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 39648960,
+        "offset": 35135180,
         "count": 89734,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 40007896,
+        "offset": 35494116,
         "count": 44867,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 40187364,
+        "offset": 35673584,
         "count": 89734,
         "dtype": "float32"
       }
@@ -4410,32 +4106,32 @@
       ],
       "feature": "native-rig-50",
       "positions": {
-        "offset": 40546300,
+        "offset": 36032520,
         "count": 51852,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 40753708,
+        "offset": 36239928,
         "count": 51852,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 40857412,
+        "offset": 36343632,
         "count": 97248,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 41246404,
+        "offset": 36732624,
         "count": 34568,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 41384676,
+        "offset": 36870896,
         "count": 17284,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 41453812,
+        "offset": 36940032,
         "count": 34568,
         "dtype": "float32"
       }
@@ -4462,32 +4158,32 @@
       ],
       "feature": "native-rig-51",
       "positions": {
-        "offset": 41592084,
+        "offset": 37078304,
         "count": 4860,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 41611524,
+        "offset": 37097744,
         "count": 4860,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 41621244,
+        "offset": 37107464,
         "count": 6480,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 41647164,
+        "offset": 37133384,
         "count": 3240,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 41660124,
+        "offset": 37146344,
         "count": 1620,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 41666604,
+        "offset": 37152824,
         "count": 3240,
         "dtype": "float32"
       }
@@ -4514,32 +4210,32 @@
       ],
       "feature": "native-rig-52",
       "positions": {
-        "offset": 41679564,
+        "offset": 37165784,
         "count": 24690,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 41778324,
+        "offset": 37264544,
         "count": 24690,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 41827704,
+        "offset": 37313924,
         "count": 45120,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 42008184,
+        "offset": 37494404,
         "count": 16460,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 42074024,
+        "offset": 37560244,
         "count": 8230,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 42106944,
+        "offset": 37593164,
         "count": 16460,
         "dtype": "float32"
       }
@@ -4566,32 +4262,32 @@
       ],
       "feature": "native-rig-53",
       "positions": {
-        "offset": 42172784,
+        "offset": 37659004,
         "count": 3204,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 42185600,
+        "offset": 37671820,
         "count": 3204,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 42192008,
+        "offset": 37678228,
         "count": 4272,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 42209096,
+        "offset": 37695316,
         "count": 2136,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 42217640,
+        "offset": 37703860,
         "count": 1068,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 42221912,
+        "offset": 37708132,
         "count": 2136,
         "dtype": "float32"
       }
@@ -4617,32 +4313,32 @@
       ],
       "feature": "native-rig-43",
       "positions": {
-        "offset": 42230456,
+        "offset": 37716676,
         "count": 41562,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 42396704,
+        "offset": 37882924,
         "count": 41562,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 42479828,
+        "offset": 37966048,
         "count": 76596,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 42786212,
+        "offset": 38272432,
         "count": 27708,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 42897044,
+        "offset": 38383264,
         "count": 13854,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 42952460,
+        "offset": 38438680,
         "count": 27708,
         "dtype": "float32"
       }
@@ -4692,32 +4388,32 @@
       ],
       "feature": "native-rig-44",
       "positions": {
-        "offset": 43063292,
+        "offset": 38549512,
         "count": 92442,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 43433060,
+        "offset": 38919280,
         "count": 92442,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 43617944,
+        "offset": 39104164,
         "count": 90786,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 43981088,
+        "offset": 39467308,
         "count": 61628,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 44227600,
+        "offset": 39713820,
         "count": 30814,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 44350856,
+        "offset": 39837076,
         "count": 61628,
         "dtype": "float32"
       }
@@ -4743,32 +4439,32 @@
       ],
       "feature": "native-rig-45",
       "positions": {
-        "offset": 44597368,
+        "offset": 40083588,
         "count": 4044,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 44613544,
+        "offset": 40099764,
         "count": 4044,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 44621632,
+        "offset": 40107852,
         "count": 4032,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 44637760,
+        "offset": 40123980,
         "count": 2696,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 44648544,
+        "offset": 40134764,
         "count": 1348,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 44653936,
+        "offset": 40140156,
         "count": 2696,
         "dtype": "float32"
       }
@@ -4858,32 +4554,32 @@
       ],
       "feature": "native-rig-46",
       "positions": {
-        "offset": 44664720,
+        "offset": 40150940,
         "count": 22602,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 44755128,
+        "offset": 40241348,
         "count": 22602,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 44800332,
+        "offset": 40286552,
         "count": 22284,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 44889468,
+        "offset": 40375688,
         "count": 15068,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 44949740,
+        "offset": 40435960,
         "count": 7534,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 44979876,
+        "offset": 40466096,
         "count": 15068,
         "dtype": "float32"
       }
@@ -4981,32 +4677,32 @@
       ],
       "feature": "native-rig-47",
       "positions": {
-        "offset": 45040148,
+        "offset": 40526368,
         "count": 29388,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 45157700,
+        "offset": 40643920,
         "count": 29388,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 45216476,
+        "offset": 40702696,
         "count": 28896,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 45332060,
+        "offset": 40818280,
         "count": 19592,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 45410428,
+        "offset": 40896648,
         "count": 9796,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 45449612,
+        "offset": 40935832,
         "count": 19592,
         "dtype": "float32"
       }
@@ -5032,32 +4728,32 @@
       ],
       "feature": "native-rig-48",
       "positions": {
-        "offset": 45527980,
+        "offset": 41014200,
         "count": 2022,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 45536068,
+        "offset": 41022288,
         "count": 2022,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 45540112,
+        "offset": 41026332,
         "count": 2004,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 45548128,
+        "offset": 41034348,
         "count": 1348,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 45553520,
+        "offset": 41039740,
         "count": 674,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 45556216,
+        "offset": 41042436,
         "count": 1348,
         "dtype": "float32"
       }
@@ -5123,37 +4819,37 @@
       ],
       "feature": "native-rig-54",
       "positions": {
-        "offset": 45561608,
+        "offset": 41047828,
         "count": 2203053,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 54373820,
+        "offset": 49860040,
         "count": 2203053,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 58779928,
+        "offset": 54266148,
         "count": 2559516,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 69017992,
+        "offset": 64504212,
         "count": 1468702,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 74892800,
+        "offset": 70379020,
         "count": 734351,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 77830204,
+        "offset": 73316424,
         "count": 1468702,
         "dtype": "float32"
       },
       "colors": {
-        "offset": 83705012,
+        "offset": 79191232,
         "count": 2203053,
         "dtype": "float32"
       }
@@ -5179,44 +4875,44 @@
       ],
       "feature": "native-rig-55",
       "positions": {
-        "offset": 92517224,
+        "offset": 88003444,
         "count": 197289,
         "dtype": "float32"
       },
       "normals": {
-        "offset": 93306380,
+        "offset": 88792600,
         "count": 197289,
         "dtype": "int16"
       },
       "indices": {
-        "offset": 93700960,
+        "offset": 89187180,
         "count": 376194,
         "dtype": "uint32"
       },
       "uv": {
-        "offset": 95205736,
+        "offset": 90691956,
         "count": 131526,
         "dtype": "float32"
       },
       "occlusion": {
-        "offset": 95731840,
+        "offset": 91218060,
         "count": 65763,
         "dtype": "float32"
       },
       "finish": {
-        "offset": 95994892,
+        "offset": 91481112,
         "count": 131526,
         "dtype": "float32"
       }
     }
   ],
   "stats": {
-    "triangles": 2114008,
+    "triangles": 1986044,
     "drawGroups": 52,
-    "geometryBytes": 44525149,
-    "decodedGeometryBytes": 96520996,
-    "sha256": "50d9ab3fa146446abd9def6565c0b63880056d80c3c9eaa93607150b7bcd0063",
-    "sourceParts": 339
+    "geometryBytes": 43081365,
+    "decodedGeometryBytes": 92007216,
+    "sha256": "2dc793354ab518d175a8aafae90b317928926137f5a8db63bf843020b6325087",
+    "sourceParts": 301
   },
   "customMaterials": {
     "8": {
@@ -20717,13 +20413,13 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -38.0,
-          -41.97458996317444,
+          -39.5,
+          -42.00000000000001,
           -41.993154443714936
         ],
         [
-          9.0,
-          42.0,
+          35.599999999999994,
+          42.00000000000001,
           41.993154443714936
         ]
       ],
@@ -20767,39 +20463,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          10.0,
+          35.6,
           -45.97259046534924,
           -45.993147105879075
         ],
         [
-          13.5,
+          39.1,
           46.0,
           45.99314710587907
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface": {
-      "module": "geo",
-      "material": 0,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          35.0,
-          -39.97268240572092,
-          -39.99317001832211
-        ],
-        [
-          38.5,
-          40.0,
-          39.99317001832211
         ]
       ],
       "tags": [
@@ -20817,14 +20488,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -39.5,
+          -45.7,
           33.62855424408713,
-          18.40047440855184
+          18.400474408551844
         ],
         [
-          -36.8,
+          -43.0,
           38.42665679743265,
-          23.199525591448154
+          23.199525591448158
         ]
       ],
       "tags": [
@@ -20842,14 +20513,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -45.5,
+          -43.0,
           34.82760552075989,
-          19.600237204275917
+          19.60023720427592
         ],
         [
-          -39.5,
+          -37.0,
           37.22665679743265,
-          21.999762795724077
+          21.999762795724084
         ]
       ],
       "tags": [
@@ -20867,14 +20538,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -39.5,
+          -45.699999999999996,
           -2.398102553345522,
-          39.20047440855184
+          39.200474408551834
         ],
         [
-          -36.8,
+          -42.99999999999999,
           2.4000000000000026,
-          43.99952559144816
+          43.999525591448155
         ]
       ],
       "tags": [
@@ -20892,14 +20563,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -45.5,
+          -42.99999999999999,
           -1.19905127667276,
-          40.400237204275925
+          40.40023720427592
         ],
         [
-          -39.5,
+          -36.99999999999999,
           1.2000000000000024,
-          42.79976279572408
+          42.79976279572407
         ]
       ],
       "tags": [
@@ -20917,14 +20588,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -39.5,
+          -45.7,
           -38.42475935077817,
-          18.400474408551858
+          18.400474408551855
         ],
         [
-          -36.8,
+          -43.0,
           -33.626656797432645,
-          23.19952559144817
+          23.199525591448168
         ]
       ],
       "tags": [
@@ -20942,12 +20613,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -45.5,
+          -43.0,
           -37.225708074105405,
-          19.600237204275935
+          19.60023720427593
         ],
         [
-          -39.5,
+          -37.0,
           -34.82665679743264,
           21.999762795724095
         ]
@@ -20967,14 +20638,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -39.5,
+          -45.7,
           -38.42475935077818,
-          -23.199525591448147
+          -23.199525591448143
         ],
         [
-          -36.8,
+          -43.0,
           -33.62665679743266,
-          -18.400474408551833
+          -18.40047440855183
         ]
       ],
       "tags": [
@@ -20992,14 +20663,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -45.5,
+          -43.0,
           -37.22570807410542,
-          -21.99976279572407
+          -21.999762795724067
         ],
         [
-          -39.5,
+          -37.0,
           -34.826656797432655,
-          -19.60023720427591
+          -19.600237204275903
         ]
       ],
       "tags": [
@@ -21017,14 +20688,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -39.5,
+          -45.70000000000001,
           -2.3981025533455322,
-          -43.99952559144816
+          -43.99952559144817
         ],
         [
-          -36.8,
+          -43.00000000000001,
           2.3999999999999924,
-          -39.20047440855184
+          -39.20047440855185
         ]
       ],
       "tags": [
@@ -21042,14 +20713,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -45.5,
+          -43.00000000000001,
           -1.19905127667277,
-          -42.79976279572408
+          -42.799762795724085
         ],
         [
-          -39.5,
+          -37.00000000000001,
           1.1999999999999924,
-          -40.400237204275925
+          -40.40023720427593
         ]
       ],
       "tags": [
@@ -21067,14 +20738,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -39.5,
+          -45.7,
           33.628554244087134,
-          -23.199525591448143
+          -23.199525591448147
         ],
         [
-          -36.8,
+          -43.0,
           38.426656797432656,
-          -18.40047440855183
+          -18.400474408551833
         ]
       ],
       "tags": [
@@ -21092,12 +20763,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -45.5,
+          -43.0,
           34.827605520759896,
-          -21.999762795724067
+          -21.99976279572407
         ],
         [
-          -39.5,
+          -37.0,
           37.22665679743266,
           -19.600237204275906
         ]
@@ -21117,12 +20788,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          13.5,
+          39.1,
           33.62855424408713,
           18.40047440855184
         ],
         [
-          16.2,
+          41.800000000000004,
           38.42665679743265,
           23.199525591448154
         ]
@@ -21142,12 +20813,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          7.5,
+          33.1,
           34.82760552075989,
           19.600237204275917
         ],
         [
-          13.5,
+          39.1,
           37.22665679743265,
           21.999762795724077
         ]
@@ -21167,12 +20838,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          13.5,
+          39.1,
           -2.398102553345522,
           39.20047440855184
         ],
         [
-          16.2,
+          41.800000000000004,
           2.4000000000000026,
           43.99952559144816
         ]
@@ -21192,12 +20863,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          7.5,
+          33.1,
           -1.19905127667276,
           40.400237204275925
         ],
         [
-          13.5,
+          39.1,
           1.2000000000000024,
           42.79976279572408
         ]
@@ -21217,12 +20888,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          13.5,
+          39.1,
           -38.42475935077817,
           18.400474408551858
         ],
         [
-          16.2,
+          41.800000000000004,
           -33.626656797432645,
           23.19952559144817
         ]
@@ -21242,12 +20913,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          7.5,
+          33.1,
           -37.225708074105405,
           19.600237204275935
         ],
         [
-          13.5,
+          39.1,
           -34.82665679743264,
           21.999762795724095
         ]
@@ -21267,12 +20938,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          13.5,
+          39.1,
           -38.42475935077818,
           -23.199525591448147
         ],
         [
-          16.2,
+          41.800000000000004,
           -33.62665679743266,
           -18.400474408551833
         ]
@@ -21292,12 +20963,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          7.5,
+          33.1,
           -37.22570807410542,
           -21.99976279572407
         ],
         [
-          13.5,
+          39.1,
           -34.826656797432655,
           -19.60023720427591
         ]
@@ -21317,12 +20988,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          13.5,
+          39.1,
           -2.3981025533455322,
           -43.99952559144816
         ],
         [
-          16.2,
+          41.800000000000004,
           2.3999999999999924,
           -39.20047440855184
         ]
@@ -21342,12 +21013,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          7.5,
+          33.1,
           -1.19905127667277,
           -42.79976279572408
         ],
         [
-          13.5,
+          39.1,
           1.1999999999999924,
           -40.400237204275925
         ]
@@ -21367,12 +21038,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          13.5,
+          39.1,
           33.628554244087134,
           -23.199525591448143
         ],
         [
-          16.2,
+          41.800000000000004,
           38.426656797432656,
           -18.40047440855183
         ]
@@ -21392,12 +21063,12 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          7.5,
+          33.1,
           34.827605520759896,
           -21.999762795724067
         ],
         [
-          13.5,
+          39.1,
           37.22665679743266,
           -19.600237204275906
         ]
@@ -21431,23 +21102,23 @@
         "structural"
       ]
     },
-    "geo__turned_shoulder_2": {
+    "geo__turned_shoulder_29": {
       "module": "geo",
       "material": 1,
       "motion": {
         "kind": "static"
       },
       "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / turned_shoulder_2",
+      "role": "Refined portfolio sculpture / turned_shoulder_29",
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          2.0,
+          29.0,
           -43.173089089717465,
           -43.19327174847834
         ],
         [
-          8.0,
+          35.0,
           43.2,
           43.19327174847834
         ]
@@ -21506,906 +21177,6 @@
         "structural"
       ]
     },
-    "geo__helical_stator_0": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_0",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          28.030009491996626,
-          -2.49314978950917
-        ],
-        [
-          5.0,
-          35.96999050800337,
-          2.49314978950917
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_1": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_1",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          22.292538602716668,
-          14.975052932700581
-        ],
-        [
-          5.0,
-          29.484549037279972,
-          22.6432032140177
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_2": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_2",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          7.970085154714658,
-          26.462822151447103
-        ],
-        [
-          5.0,
-          11.80700248528198,
-          34.40479489144273
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_3": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_3",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          -13.214962819163306,
-          26.492925362112604
-        ],
-        [
-          5.0,
-          -6.562124820833331,
-          34.37469168077723
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_4": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_4",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          -29.85496911381049,
-          15.910002843637287
-        ],
-        [
-          5.0,
-          -21.92211852618615,
-          21.708253303081005
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_5": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_5",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          -35.96999050800337,
-          -2.4931497895091654
-        ],
-        [
-          5.0,
-          -28.030009491996626,
-          2.4931497895091734
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_6": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_6",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          -29.484549037279972,
-          -22.643203214017696
-        ],
-        [
-          5.0,
-          -22.292538602716668,
-          -14.975052932700578
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_7": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_7",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          -11.80700248528198,
-          -34.40479489144273
-        ],
-        [
-          5.0,
-          -7.970085154714658,
-          -26.462822151447103
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_8": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_8",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          6.562124820833326,
-          -34.37469168077723
-        ],
-        [
-          5.0,
-          13.214962819163299,
-          -26.492925362112604
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__helical_stator_9": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / helical_stator_9",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          -33.0,
-          21.922118526186146,
-          -21.70825330308101
-        ],
-        [
-          5.0,
-          29.85496911381049,
-          -15.91000284363729
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_outer_race": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_outer_race",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.0,
-          -31.974700711273663,
-          -31.993674552642098
-        ],
-        [
-          22.0,
-          32.0,
-          31.993674552642098
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_inner_race": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_inner_race",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.0,
-          -24.98023493068255,
-          -24.995058244251638
-        ],
-        [
-          22.0,
-          25.0,
-          24.995058244251638
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_0": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_0",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          24.85304544174792,
-          -1.65
-        ],
-        [
-          20.65,
-          28.14695455825208,
-          1.65
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_1": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_1",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          22.83585305329702,
-          8.491110957674879
-        ],
-        [
-          20.65,
-          26.12976216980118,
-          11.79111095767488
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_2": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_2",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          17.09137514319143,
-          17.088329701443513
-        ],
-        [
-          20.65,
-          20.38528425969559,
-          20.38832970144351
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_3": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_3",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          8.4941563994228,
-          22.8328076115491
-        ],
-        [
-          20.65,
-          11.788065515926961,
-          26.132807611549097
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_4": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_4",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -1.6469545582520786,
-          24.85
-        ],
-        [
-          20.65,
-          1.6469545582520817,
-          28.15
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_5": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_5",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -11.788065515926958,
-          22.8328076115491
-        ],
-        [
-          20.65,
-          -8.494156399422797,
-          26.132807611549097
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_6": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_6",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -20.385284259695588,
-          17.088329701443513
-        ],
-        [
-          20.65,
-          -17.091375143191428,
-          20.38832970144351
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_7": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_7",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -26.12976216980118,
-          8.491110957674882
-        ],
-        [
-          20.65,
-          -22.83585305329702,
-          11.791110957674883
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_8": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_8",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -28.14695455825208,
-          -1.6499999999999966
-        ],
-        [
-          20.65,
-          -24.85304544174792,
-          1.6500000000000032
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_9": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_9",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -26.129762169801182,
-          -11.791110957674876
-        ],
-        [
-          20.65,
-          -22.835853053297022,
-          -8.491110957674875
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_10": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_10",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -20.385284259695595,
-          -20.388329701443507
-        ],
-        [
-          20.65,
-          -17.091375143191435,
-          -17.08832970144351
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_11": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_11",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -11.788065515926974,
-          -26.13280761154909
-        ],
-        [
-          20.65,
-          -8.494156399422813,
-          -22.832807611549093
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_12": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_12",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          -1.646954558252085,
-          -28.15
-        ],
-        [
-          20.65,
-          1.6469545582520753,
-          -24.85
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_13": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_13",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          8.494156399422804,
-          -26.132807611549094
-        ],
-        [
-          20.65,
-          11.788065515926965,
-          -22.832807611549097
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_14": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_14",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          17.091375143191424,
-          -20.388329701443514
-        ],
-        [
-          20.65,
-          20.385284259695585,
-          -17.088329701443516
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_ball_15": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_ball_15",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          17.352419867145645,
-          22.83585305329701,
-          -11.791110957674896
-        ],
-        [
-          20.65,
-          26.12976216980117,
-          -8.491110957674895
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_0_head": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_0_head",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          38.5,
-          28.432401821380495,
-          15.40047440855184
-        ],
-        [
-          41.2,
-          33.23050437472602,
-          20.199525591448154
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_0_shaft": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_0_shaft",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          32.5,
-          29.631453098053257,
-          16.600237204275917
-        ],
-        [
-          38.5,
-          32.03050437472602,
-          18.999762795724077
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_1_head": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_1_head",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          38.5,
-          -20.198102553345517,
-          28.43097878327786
-        ],
-        [
-          41.2,
-          -15.399999999999993,
-          33.23002996617418
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_1_shaft": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_1_shaft",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          32.5,
-          -18.999051276672756,
-          29.63074157900194
-        ],
-        [
-          38.5,
-          -16.599999999999994,
-          32.030267170450095
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_2_head": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_2_head",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          38.5,
-          -33.22860692807155,
-          -20.199525591448147
-        ],
-        [
-          41.2,
-          -28.430504374726024,
-          -15.400474408551833
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_2_shaft": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_2_shaft",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          32.5,
-          -32.02955565139879,
-          -18.99976279572407
-        ],
-        [
-          38.5,
-          -29.630504374726023,
-          -16.60023720427591
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_3_head": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_3_head",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          38.5,
-          15.40189744665448,
-          -33.23002996617417
-        ],
-        [
-          41.2,
-          20.200000000000003,
-          -28.430978783277858
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__detached_interface_bolt_3_shaft": {
-      "module": "geo",
-      "material": 1,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / detached_interface_bolt_3_shaft",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          32.5,
-          16.600948723327242,
-          -32.030267170450095
-        ],
-        [
-          38.5,
-          19.000000000000004,
-          -29.630741579001935
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
     "geo__rear_service_sleeve": {
       "module": "geo",
       "material": 1,
@@ -22418,13 +21189,13 @@
       "boundsMM": [
         [
           -47.0,
-          -3.796995709463747,
-          -3.799248853126249
+          -4.096758528631938,
+          -4.099189552057268
         ],
         [
           -35.0,
-          3.8,
-          3.799248853126249
+          4.1,
+          4.099189552057268
         ]
       ],
       "tags": [
@@ -22443,13 +21214,13 @@
       "boundsMM": [
         [
           35.0,
-          -3.796995709463747,
-          -3.799248853126249
+          -4.096758528631938,
+          -4.099189552057268
         ],
         [
           61.0,
-          3.8,
-          3.799248853126249
+          4.1,
+          4.099189552057268
         ]
       ],
       "tags": [
@@ -22467,39 +21238,14 @@
       "provenance": "CYBR GEO authored CAD redesign",
       "boundsMM": [
         [
-          -33.0,
-          -29.976281916819058,
-          -29.994069893101965
+          35.6,
+          -7.993675177818416,
+          -7.9984186381605245
         ],
         [
+          39.1,
           8.0,
-          30.0,
-          29.994069893101965
-        ]
-      ],
-      "tags": [
-        "structural"
-      ]
-    },
-    "geo__bearing_dust_seal": {
-      "module": "geo",
-      "material": 2,
-      "motion": {
-        "kind": "static"
-      },
-      "assemblyShiftX": 0,
-      "role": "Refined portfolio sculpture / bearing_dust_seal",
-      "provenance": "CYBR GEO authored CAD redesign",
-      "boundsMM": [
-        [
-          22.2,
-          -30.975491314046362,
-          -30.99387222287203
-        ],
-        [
-          23.4,
-          31.0,
-          30.99387222287203
+          7.9984186381605245
         ]
       ],
       "tags": [
@@ -27779,8 +26525,8 @@
     "redesign": {
       "geo": {
         "model": "refined_geo",
-        "parts": 120,
-        "triangles": 214052,
+        "parts": 82,
+        "triangles": 86088,
         "units": "mm",
         "bounds_mm": [
           [
@@ -27799,840 +26545,574 @@
             "name": "geo__slotted_shell",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_0_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_0_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_1_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_1_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_2_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_2_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_3_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_3_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_4_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_4_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_5_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_mount_bolt_5_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_0_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_0_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_1_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_1_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_2_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_2_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_3_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_3_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_4_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_4_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_5_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_mount_bolt_5_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__turned_shoulder_-36",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
-            "name": "geo__turned_shoulder_2",
+            "name": "geo__turned_shoulder_29",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__graphite_inner_liner",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__takeup_guard_-35",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__takeup_guard_35",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_0",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_1",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_2",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_3",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_4",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_5",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_6",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_7",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_8",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__helical_stator_9",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_outer_race",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_inner_race",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_0",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_1",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_2",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_3",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_4",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_5",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_6",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_7",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_8",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_9",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_10",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_11",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_12",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_13",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_14",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_ball_15",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__bearing_dust_seal",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_0_head",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_0_shaft",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_1_head",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_1_shaft",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_2_head",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_2_shaft",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_3_head",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
-            "provenance": "designed-concept"
-          },
-          {
-            "name": "geo__detached_interface_bolt_3_shaft",
-            "finite": true,
-            "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__rear_service_sleeve",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__front_service_sleeve",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_0",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_2",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_3",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_4",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_5",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_6",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_7",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_8",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_9",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_10",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_11",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_12",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_13",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_14",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_15",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_16",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_17",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_18",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_19",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_20",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_21",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_22",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_23",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_24",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_25",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_26",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_27",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_28",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_29",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_30",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_31",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_32",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_33",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_34",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_35",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_36",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_37",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_38",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_39",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_40",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_41",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_42",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_43",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_44",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_45",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_46",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           },
           {
             "name": "geo__service_grip_47",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": null,
+            "analytic_valid": true,
             "provenance": "designed-concept"
           }
         ],
@@ -28642,9 +27122,9 @@
           "resolved_intent": "inspection",
           "allow_estimates": false,
           "passed": true,
-          "part_count": 120,
+          "part_count": 82,
           "tier_counts": {
-            "designed": 120
+            "designed": 82
           },
           "blocked": [],
           "uncertain": [],
@@ -28874,9 +27354,9 @@
               "allowed": true
             },
             {
-              "name": "geo__turned_shoulder_2",
+              "name": "geo__turned_shoulder_29",
               "group": "geo",
-              "role": "Refined portfolio sculpture / turned_shoulder_2",
+              "role": "Refined portfolio sculpture / turned_shoulder_29",
               "provenance": "designed-concept",
               "tier": "designed",
               "allowed": true
@@ -28901,310 +27381,6 @@
               "name": "geo__takeup_guard_35",
               "group": "geo",
               "role": "Refined portfolio sculpture / takeup_guard_35",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_0",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_0",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_1",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_1",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_2",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_2",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_3",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_3",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_4",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_4",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_5",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_5",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_6",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_6",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_7",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_7",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_8",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_8",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__helical_stator_9",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / helical_stator_9",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_outer_race",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_outer_race",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_inner_race",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_inner_race",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_0",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_0",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_1",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_1",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_2",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_2",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_3",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_3",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_4",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_4",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_5",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_5",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_6",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_6",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_7",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_7",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_8",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_8",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_9",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_9",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_10",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_10",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_11",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_11",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_12",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_12",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_13",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_13",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_14",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_14",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_ball_15",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_ball_15",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__bearing_dust_seal",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / bearing_dust_seal",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_0_head",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_0_head",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_0_shaft",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_0_shaft",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_1_head",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_1_head",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_1_shaft",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_1_shaft",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_2_head",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_2_head",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_2_shaft",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_2_shaft",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_3_head",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_3_head",
-              "provenance": "designed-concept",
-              "tier": "designed",
-              "allowed": true
-            },
-            {
-              "name": "geo__detached_interface_bolt_3_shaft",
-              "group": "geo",
-              "role": "Refined portfolio sculpture / detached_interface_bolt_3_shaft",
               "provenance": "designed-concept",
               "tier": "designed",
               "allowed": true
@@ -30393,154 +28569,154 @@
             "name": "elements__protective_frame_-1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_0_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_0_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_1_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_1_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_2_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_2_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_3_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_-1_3_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__protective_frame_1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_0_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_0_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_1_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_1_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_2_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_2_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_3_head",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_socket_1_3_shaft",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_0",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_1",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_2",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           },
           {
             "name": "elements__frame_tie_3",
             "finite": true,
             "valid_indices": true,
-            "analytic_valid": true,
+            "analytic_valid": null,
             "provenance": "designed-concept"
           }
         ],
@@ -30783,18 +28959,18 @@
   "losslessTransfer": {
     "format": "attribute-xor-byteplanes-gzip-v1",
     "file": "instrument.lossless-v1.bin.gz",
-    "bytes": 34643703,
-    "sha256": "f27333950d40972f87e1db0bb2d49293af474455bc6e34d7d7d9109eb0de8168",
-    "originalCompressedBytes": 44525149,
-    "decodedSHA256": "50d9ab3fa146446abd9def6565c0b63880056d80c3c9eaa93607150b7bcd0063"
+    "bytes": 33187786,
+    "sha256": "eecbb192c737b3e644c39ef6c9cc81ab0cd80ddf70549e707bd3ed6cd570f77d",
+    "originalCompressedBytes": 43081365,
+    "decodedSHA256": "2dc793354ab518d175a8aafae90b317928926137f5a8db63bf843020b6325087"
   },
   "progressiveGeo": {
     "format": "attribute-xor-byteplanes-gzip-v1",
     "file": "geo.lossless-v1.bin.gz",
-    "bytes": 1771021,
-    "sha256": "f64c5852c86295eb06e4e2e32f9cd8118a1203b3a9c328004ed544476cc8f4bd",
-    "sha256Decoded": "1da488d768509d33739ae328674083d9c22c1bd869719e7fe6b01e4e58ac387a",
-    "decodedBytes": 8195856,
+    "bytes": 478907,
+    "sha256": "f602d0cebd38e5b9e246664c737b216abb802a7447a597e2e5068f4da1c9d40c",
+    "sha256Decoded": "e88e92ac0dc7ca5b737004dd1f0876f6ca1f0d8c256730e0458bedebdcffa3a1",
+    "decodedBytes": 3682076,
     "meshes": 3
   }
 }

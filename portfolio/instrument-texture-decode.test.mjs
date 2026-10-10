@@ -16,7 +16,8 @@ function fixture(){
 test('default selection excludes secondary CPU optics and quality renderers',()=>{
   const options={requested:'worker',mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness',workerSupported:true,bitmapSupported:true};
   assert.equal(textureWorkerEligible(options),true);
-  for(const patch of [{requested:'dom'},{mobile:false},{bakedElements:false},{qualityMode:true},{opticalMode:'geometry'},{opticalMode:'staged'}])assert.equal(textureWorkerEligible({...options,...patch}),false);
+  assert.equal(textureWorkerEligible({...options,mobile:false}),true);
+  for(const patch of [{requested:'dom'},{bakedElements:false},{qualityMode:true},{opticalMode:'geometry'},{opticalMode:'staged'}])assert.equal(textureWorkerEligible({...options,...patch}),false);
 });
 test('queryless eligible mobile visitors select worker; DOM and unknown overrides select DOM',()=>{
   const options={mobile:true,bakedElements:true,qualityMode:false,opticalMode:'thickness',workerSupported:true,bitmapSupported:true};

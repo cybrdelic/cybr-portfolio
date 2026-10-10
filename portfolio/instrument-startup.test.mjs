@@ -40,16 +40,16 @@ test('first-frame diagnostics preserve nested return values and failures with in
 });
 
 
-test('actual mobile startup selects the original warmup by default and retains explicit rollback/renderer variants',async()=>{
+test('actual desktop and mobile startup select the original warmup by default and retains explicit rollback/renderer variants',async()=>{
   const {readFile}=await import('node:fs/promises'),source=await readFile(new URL('./instrument-3d.js',import.meta.url),'utf8');
-  const start=source.indexOf('  if(mobileLayout.matches&&!pathTracer&&!rasterResourcesDisposed&&'),end=source.indexOf("  if(['profile','warmup']",start);
+  const start=source.indexOf('  if(!pathTracer&&!rasterResourcesDisposed&&'),end=source.indexOf("  if(['profile','warmup']",start);
   assert.ok(start>=0&&end>start);
   const execute=new (Object.getPrototypeOf(async function(){}).constructor)('mobileLayout','pathTracer','rasterResourcesDisposed','query','startup','startupPhase','prepareStartupTextures','renderer','objects','cables','startupInputGate={beforeUpload:async()=>{},dispose(){}}',source.slice(start,end));
   const material={map:texture('original')},cableMaterial={normalMap:texture('cable')};
   for(const mobile of [false,true])for(const tracing of [false,true])for(const disposed of [false,true])for(const mode of [null,'profile','warmup','off','full','whole','tiles','unknown']){
     const startup={},phases=[],calls=[];
     await execute({matches:mobile},tracing,disposed,new URLSearchParams(mode===null?'':'startup='+mode),startup,(...args)=>phases.push(args),async options=>{calls.push(options);assert.deepEqual(options.materials,[material,cableMaterial]);assert.equal(options.cancelled(),disposed);return {textures:2,maxUploadMs:470};},{},[{material}],[{mesh:{material:cableMaterial}}]);
-    const selected=mobile&&!tracing&&!disposed&&[null,'profile','warmup'].includes(mode);
+    const selected=!tracing&&!disposed&&[null,'profile','warmup'].includes(mode);
     assert.equal(calls.length,selected?1:0,`${mobile}/${tracing}/${disposed}/${mode}`);
     assert.equal(phases.length,calls.length);assert.equal(startup.fullReadyMs,undefined);assert.equal(startup.gpuFullReadyMs,undefined);
   }

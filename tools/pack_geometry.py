@@ -20,7 +20,7 @@ for mesh in manifest['meshes']:
         words=np.frombuffer(raw,dtype=f'<u{width}',offset=off,count=n)
         predicted=words.copy();predicted[stride:]=words[stride:]^words[:-stride]
         encoded[off:off+n*width]=predicted.view(np.uint8).reshape(-1,width).T.copy().tobytes()
-packed=gzip.compress(encoded,compresslevel=6,mtime=0)
+packed=gzip.compress(encoded,compresslevel=9,mtime=0)
 name='instrument.lossless-v1.bin.gz'
 (BASE/name).write_bytes(packed)
 manifest['losslessTransfer']=dict(format='attribute-xor-byteplanes-gzip-v1',file=name,bytes=len(packed),
@@ -35,7 +35,7 @@ geo_end=max(end for start,end in segments)
 assert min(start for start,end in segments)==0
 assert all(spec['offset']>=geo_end for mesh in manifest['meshes'] if mesh['module']!='geo'
     for key,spec in mesh.items() if key in strides)
-geo_raw=raw[:geo_end];geo_packed=gzip.compress(encoded[:geo_end],compresslevel=6,mtime=0)
+geo_raw=raw[:geo_end];geo_packed=gzip.compress(encoded[:geo_end],compresslevel=9,mtime=0)
 geo_name='geo.lossless-v1.bin.gz';(BASE/geo_name).write_bytes(geo_packed)
 manifest['progressiveGeo']=dict(format='attribute-xor-byteplanes-gzip-v1',file=geo_name,
     bytes=len(geo_packed),sha256=hashlib.sha256(geo_packed).hexdigest(),

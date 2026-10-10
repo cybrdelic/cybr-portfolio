@@ -51,30 +51,30 @@ def build(name):
         add(label,q)
         for j,(y,z) in enumerate(centers): bolt(label+f'_bolt_{j}',x+3.5,y,z)
     if name == 'geo':
-        # A slotted machined shell exposes a spiral stator and central bearing.
-        barrel=ring(42,36,-38,9)
-        for j in range(10):
-            cutter=cq.Workplane('XY').box(33,16,15).edges('|Z').fillet(3).val().translate((-14,42,0)).rotate((0,0,0),(1,0,0),j*36)
+        # A seated cable cartridge: windowed cage, spoke endplates and bored
+        # service hubs. Every endplate touches the cage; no unsupported turbine
+        # vanes, ornamental bearings or floating flange are implied.
+        barrel=ring(42,36,-39.5,35.6)
+        for j in range(6):
+            cutter=cq.Workplane('XY').box(56,26,18).edges('|Z').fillet(4).val().translate((-2.25,42,0)).rotate((0,0,0),(1,0,0),j*60)
             barrel=barrel.cut(cutter)
         add('slotted_shell',cq.Workplane(obj=barrel).edges().fillet(.28).val())
-        flange('rear_mount',-43,46,22)
-        flange('front_mount',10,46,27)
-        for x in (-36,2): rim('turned_shoulder_'+str(x),43.2,36,x,6,1,.5)
-        rim('graphite_inner_liner',30,28,-33,41,2,.25)
-        for x in (-35,35): rim('takeup_guard_'+str(x),17,4,x-.6,1.2,1,.1)
-        # Individually twisted vanes, anchored between the two flange planes.
-        for j in range(10):
-            a=j*36
-            vane=cq.Workplane('YZ',origin=(-33,0,0)).center(32,0).rect(7.8,1.5).twistExtrude(38,28).val().rotate((0,0,0),(1,0,0),a)
-            add(f'helical_stator_{j}',vane,1)
-        rim('bearing_outer_race',32,28,17,5,1)
-        rim('bearing_inner_race',25,20,17,5,1)
-        for j,(y,z) in enumerate(bolt_circle(26.5,16)):
-            add(f'bearing_ball_{j}',cq.Solid.makeSphere(1.65,cq.Vector(19,y,z),angleDegrees1=-90),1)
-        rim('bearing_dust_seal',31,20,22.2,1.2,2,.1)
-        flange('detached_interface',35,40,27,4)
-        rim('rear_service_sleeve',3.8,2.8,-47,12,1,.12)
-        rim('front_service_sleeve',3.8,2.8,35,26,1,.12)
+        for label,x in [('rear_mount',-43),('front_mount',35.6)]:
+            q=ring(46,8 if x>0 else 4.1,x,x+3.5)
+            # Apertures leave six radial spokes joining the service hub to
+            # the cage. Fasteners sit on solid outer land, not in the windows.
+            q=drill(q,bolt_circle(25,6),8.5,x-1,x+5)
+            centers=bolt_circle(41.6,6,math.pi/6)
+            q=drill(q,centers,1.45,x-1,x+5)
+            add(label,cq.Workplane(obj=q).edges().chamfer(.22).val())
+            for j,(y,z) in enumerate(centers):
+                bolt(label+f'_bolt_{j}',x+3.5 if x>0 else x,y,z,6,direction=1 if x>0 else -1)
+        for x in (-36,29): rim('turned_shoulder_'+str(x),43.2,42,x,6,1,.3)
+        # The graphite insert is a hub bushing seated in the front endplate.
+        rim('graphite_inner_liner',8,4.1,35.6,3.5,2,.15)
+        for x in (-35,35): rim('takeup_guard_'+str(x),17,4.1,x-.6,1.2,1,.1)
+        rim('rear_service_sleeve',4.1,2.8,-47,12,1,.12)
+        rim('front_service_sleeve',4.1,2.8,35,26,1,.12)
         # Coarse enough to read at hero scale, without thousands of tiny ribs.
         for j in range(48):
             a=j*7.5

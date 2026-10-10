@@ -49,7 +49,7 @@ test('production metal charts preserve every native position, normal, index and 
 });
 
 test('wear phases and physical bounds are constant per native part and reproduce independently of attachment order',()=>{
-  const names=['geo__front_mount','geo__front_mount_bolt_0_head','geo__front_mount_bolt_1_head','geo__takeup_guard_-35','geo__helical_stator_7','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier'];
+  const names=['geo__front_mount','geo__front_mount_bolt_0_head','geo__front_mount_bolt_1_head','geo__takeup_guard_-35','geo__rear_mount','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier'];
   const first=new Map();
   for(const name of names){
     const p=part(name),phase=p.geometry.getAttribute('metalWearPhase'),wearBounds=p.geometry.getAttribute('metalWearBounds'),position=p.geometry.getAttribute('position');
@@ -125,16 +125,13 @@ test('both actual spoke-supported takeup guards use planar brushed face charts w
   }
 });
 
-test('all ten helical stators retain physical axial brush coordinates on their swept CAD surfaces',()=>{
-  const names=Object.keys(manifest.namedParts).filter(name=>name.startsWith('geo__helical_stator_'));
-  assert.equal(names.length,10);
-  for(const name of names){
-    const p=part(name),normal=p.geometry.getAttribute('normal'),chart=p.geometry.getAttribute('metalChart');
-    assert.equal(p.metadata.mode,'planar-X');
-    const sides=vertices(p).filter(i=>Math.abs(normal.getX(i))<.05);assert.ok(sides.length>16);
-    for(const i of vertices(p)){assert.equal(style(p,i),METAL_STYLES.brushed);assert.equal(chart.getX(i),METAL_CHARTS.linear);}
-    for(const i of sides)close(coordinates(p,i)[0],xyz(p,i)[0]);
-  }
+test('GEO replaces unsupported vanes and floating interfaces with seated endplates',()=>{
+  assert.ok(!Object.keys(manifest.namedParts).some(name=>/geo__helical_stator_|geo__bearing_|geo__detached_interface/.test(name)));
+  const shell=manifest.namedParts.geo__slotted_shell.boundsMM;
+  const rear=manifest.namedParts.geo__rear_mount.boundsMM;
+  const front=manifest.namedParts.geo__front_mount.boundsMM;
+  close(rear[1][0],shell[0][0]);close(shell[1][0],front[0][0]);
+  for(const name of ['geo__rear_service_sleeve','geo__front_service_sleeve'])assert.ok(manifest.namedParts[name]);
 });
 
 test('felt, glass, polymers and seals stay disabled while named black metal remains eligible',()=>{
@@ -155,7 +152,7 @@ test('combat deck top uses an XY brush chart and the specimen pan uses its real 
 });
 
 test('part-local Cartesian finish positions preserve actual native origins and X/Z machining axes',()=>{
-  for(const name of['geo__detached_interface_bolt_0_head','geo__slotted_shell','geo__turned_shoulder_-36','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier']){
+  for(const name of['geo__front_mount_bolt_0_head','geo__slotted_shell','geo__turned_shoulder_-36','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier']){
     const p=part(name),local=p.geometry.getAttribute('metalLocalPosition'),chart=p.geometry.getAttribute('metalChart');
     for(const i of vertices(p)){
       const [x,y,z]=xyz(p,i),expected=p.metadata.axis==='Z'?[z,x,y]:[x,y,z];
@@ -169,7 +166,7 @@ test('part-local Cartesian finish positions preserve actual native origins and X
 });
 
 test('fragment reconstruction corrects radial interpolation across large native front-interface CAD triangles',()=>{
-  const p=part('geo__detached_interface'),index=p.geometry.index,local=p.geometry.getAttribute('metalLocalPosition'),chart=p.geometry.getAttribute('metalChart');
+  const p=part('geo__front_mount'),index=p.geometry.index,local=p.geometry.getAttribute('metalLocalPosition'),chart=p.geometry.getAttribute('metalChart');
   let largestError=0,example;
   for(let k=p.range.firstIndex;k<p.range.firstIndex+p.range.indexCount;k+=3){
     const ids=[index.getX(k),index.getX(k+1),index.getX(k+2)];if(!ids.every(i=>chart.getX(i)===METAL_CHARTS.polarRadial))continue;

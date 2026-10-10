@@ -15,3 +15,9 @@
 @media(max-width:900px){.social-card{padding:10px;min-height:140px}.social-heading{font-size:16px}.social-card>p{font-size:7px;margin-bottom:14px}.social-card>a{grid-template-columns:48px 1fr auto;gap:3px;font-size:7px;padding:8px 0}.social-card>a strong{font-size:9px}.social-baseline{font-size:6px}.three-active .sculpture{top:0;height:100%;transform:none}.three-active .study-link{left:7%;bottom:18%;width:65%;font-size:10px}.render-status{font-size:8px;right:8px;bottom:6px}}
 @media(prefers-reduced-motion:reduce){.scroll-score.is-enhanced{height:auto}.three-active .sculpture{top:10%;height:auto;aspect-ratio:1.6}.three-active .study-link{display:none}}
 @media(max-width:900px){.scroll-score .social-card{top:33%;min-height:0}}
+
+/* The first real component has its own readable desktop inspection state. */
+@media(min-width:901px){
+  .geo-starter .project-labels,.geo-starter .social-card,.geo-starter .inspection-note{visibility:hidden}
+  .geo-starter .study-link{opacity:1!important;left:4%;top:auto;bottom:18%;width:24%;padding:16px;background:#f4f4f2e8;pointer-events:auto}
+}
