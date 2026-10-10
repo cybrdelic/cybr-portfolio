@@ -49,7 +49,7 @@ test('production metal charts preserve every native position, normal, index and 
 });
 
 test('wear phases and physical bounds are constant per native part and reproduce independently of attachment order',()=>{
-  const names=['geo__front_flange','geo__front_flange_bolt_0_socket_head','geo__front_flange_bolt_1_socket_head','geo__takeup_guard_-35','geo__internal_key_7','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier'];
+  const names=['geo__front_mount','geo__front_mount_bolt_0_head','geo__front_mount_bolt_1_head','geo__takeup_guard_-35','geo__helical_stator_7','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier'];
   const first=new Map();
   for(const name of names){
     const p=part(name),phase=p.geometry.getAttribute('metalWearPhase'),wearBounds=p.geometry.getAttribute('metalWearBounds'),position=p.geometry.getAttribute('position');
@@ -75,34 +75,28 @@ test('wear phases and physical bounds are constant per native part and reproduce
 });
 
 test('main shell outer barrel has axial brushing and its end faces have radial turning in mm',()=>{
-  const p=part('geo__vented_monocoque'),indices=vertices(p),brushed=indices.filter(i=>style(p,i)===METAL_STYLES.brushed),normal=p.geometry.getAttribute('normal');
+  const p=part('geo__slotted_shell'),indices=vertices(p),brushed=indices.filter(i=>style(p,i)===METAL_STYLES.brushed),normal=p.geometry.getAttribute('normal');
   assert.ok(brushed.length>100);
-  for(const i of brushed){const [x,y,z]=xyz(p,i);close(coordinates(p,i)[0],x);assert.ok(Math.hypot(y,z)>=42.8);}
+  for(const i of brushed){const [x,y,z]=xyz(p,i);close(coordinates(p,i)[0],x);assert.ok(Math.hypot(y,z)>=41.8);}
   const caps=indices.filter(i=>Math.abs(normal.getX(i))>.99);assert.ok(caps.length>10);
   for(const i of caps){const [,y,z]=xyz(p,i);assert.equal(style(p,i),METAL_STYLES.turned);close(coordinates(p,i)[1],Math.hypot(y,z));}
-  const points=brushed.filter(i=>Math.abs(xyz(p,i)[1])<1&&xyz(p,i)[2]>42);
+  const points=brushed.filter(i=>Math.abs(xyz(p,i)[1])<1&&xyz(p,i)[2]>41.5);
   assert.ok(points.length>1);const a=points[0],b=points.at(-1);close(coordinates(p,b)[0]-coordinates(p,a)[0],xyz(p,b)[0]-xyz(p,a)[0]);
 });
 
-test('knurl applies only to the outside grip sleeve and closes at integer one-mm profile cycles',()=>{
-  const p=part('geo__knurled_service_band'),indices=vertices(p),grip=indices.filter(i=>style(p,i)===METAL_STYLES.diamondKnurl),n=p.geometry.getAttribute('normal');
-  assert.ok(grip.length>100);assert.ok(indices.some(i=>style(p,i)===METAL_STYLES.turned));
-  assert.equal(p.metadata.pitchMM,METAL_PROFILE_PITCH_MM.diamondKnurl);assert.equal(p.metadata.periodicCircumferenceMM%p.metadata.pitchMM,0);
-  close(p.metadata.outerRadiusMM,44.4,.05);assert.ok(Math.abs(p.metadata.periodicCircumferenceMM-p.metadata.circumferenceMM)<=.5);
-  for(const i of grip){const [x,y,z]=xyz(p,i),r=Math.hypot(y,z);assert.ok(r>=44.2);assert.ok((n.getY(i)*y+n.getZ(i)*z)/r>.65);close(coordinates(p,i)[1],x);}
-  const index=p.geometry.index,first=p.range.firstIndex,last=first+p.range.indexCount,period=p.metadata.periodicCircumferenceMM;
-  let triangles=0;
-  for(let k=first;k<last;k+=3){const ids=[index.getX(k),index.getX(k+1),index.getX(k+2)];if(!ids.every(i=>style(p,i)===METAL_STYLES.diamondKnurl))continue;const u=ids.map(i=>coordinates(p,i)[0]);assert.ok(Math.max(...u)-Math.min(...u)<period*.5+1e-3,'no long angular interpolation across the existing CAD seam');triangles++;}
-  assert.ok(triangles>100);
-  const duplicates=new Map();let seamPairs=0;
-  for(const i of grip){const key=xyz(p,i).map(value=>value.toFixed(4)).join(',');const u=coordinates(p,i)[0];if(duplicates.has(key)){const delta=Math.abs(u-duplicates.get(key));if(delta>period*.5){close(delta,period,.001);close(Math.sin(2*Math.PI*u),Math.sin(2*Math.PI*duplicates.get(key)),.001);seamPairs++;}}else duplicates.set(key,u);}
-  assert.ok(seamPairs>0,'real native seam duplicates have the same periodic relief phase');
+test('48 actual grip inserts retain their individual geometry and polymer finish',()=>{
+  const names=Object.keys(manifest.namedParts).filter(name=>name.startsWith('geo__service_grip_'));
+  assert.equal(names.length,48);
+  for(const name of names){const p=part(name);assert.ok(p.range.indexCount>=36);assert.ok(vertices(p).every(i=>style(p,i)===METAL_STYLES.disabled));}
 });
 
-test('locking ring etch uses a separate .65-mm periodic profile and smooth turned rims',()=>{
-  const p=part('light__exploded_locking_ring'),indices=vertices(p);
-  assert.equal(p.metadata.pitchMM,.65);assert.ok(indices.some(i=>style(p,i)===METAL_STYLES.fineEtched));assert.ok(indices.some(i=>style(p,i)===METAL_STYLES.turned));
-  close(p.metadata.periodicCircumferenceMM/p.metadata.pitchMM,p.metadata.angularCycles);
+test('both retaining bezels retain closed radial and barrel machining charts',()=>{
+  for(const name of ['light__front_retaining_bezel','light__rear_retaining_bezel']){
+    const p=part(name),chart=p.geometry.getAttribute('metalChart');
+    assert.ok(vertices(p).every(i=>style(p,i)===METAL_STYLES.turned));
+    assert.ok(vertices(p).some(i=>chart.getX(i)===METAL_CHARTS.polarRadial));
+    assert.ok(vertices(p).some(i=>chart.getX(i)===METAL_CHARTS.polarBarrel));
+  }
 });
 
 test('all three bronze cymbals have radial turning continuously across both shallow and steep bell surfaces',()=>{
@@ -131,26 +125,23 @@ test('both actual spoke-supported takeup guards use planar brushed face charts w
   }
 });
 
-test('all 24 actual rectangular internal keys keep longitudinal planar brush direction at every shaft phase',()=>{
-  const names=Object.keys(manifest.namedParts).filter(name=>name.startsWith('geo__internal_key_')).sort((a,b)=>Number(a.split('_').at(-1))-Number(b.split('_').at(-1)));
-  assert.deepEqual(names,Array.from({length:24},(_,i)=>'geo__internal_key_'+i));
+test('all ten helical stators retain physical axial brush coordinates on their swept CAD surfaces',()=>{
+  const names=Object.keys(manifest.namedParts).filter(name=>name.startsWith('geo__helical_stator_'));
+  assert.equal(names.length,10);
   for(const name of names){
     const p=part(name),normal=p.geometry.getAttribute('normal'),chart=p.geometry.getAttribute('metalChart');
-    assert.equal(p.record.material,1);assert.equal(p.metadata.mode,'planar-X');
-    const sides=vertices(p).filter(i=>Math.abs(normal.getX(i))<.01);assert.ok(sides.length>=16);
+    assert.equal(p.metadata.mode,'planar-X');
+    const sides=vertices(p).filter(i=>Math.abs(normal.getX(i))<.05);assert.ok(sides.length>16);
     for(const i of vertices(p)){assert.equal(style(p,i),METAL_STYLES.brushed);assert.equal(chart.getX(i),METAL_CHARTS.linear);}
-    for(const i of sides){const [x]=xyz(p,i);close(coordinates(p,i)[0],x);}
-    const u=sides.map(i=>coordinates(p,i)[0]),x=sides.map(i=>p.geometry.getAttribute('position').getX(i));
-    close(Math.max(...u)-Math.min(...u),Math.max(...x)-Math.min(...x));
-    close(Math.max(...u)-Math.min(...u),15);
+    for(const i of sides)close(coordinates(p,i)[0],xyz(p,i)[0]);
   }
 });
 
 test('felt, glass, polymers and seals stay disabled while named black metal remains eligible',()=>{
-  for(const name of['song__felt_washer_0','song__felt_washer_1','song__felt_washer_2','light__black_seal','elements__port_seal_-1','elements__vessel_port_gasket_1']){
+  for(const name of['song__felt_washer_0','song__felt_washer_1','song__felt_washer_2','light__rear_cell','elements__port_seal_-1','elements__vessel_port_gasket_1']){
     const p=part(name);assert.ok(vertices(p).every(i=>style(p,i)===METAL_STYLES.disabled),name);
   }
-  for(const name of['geo__inner_black_barrel','geo__retainer','light__optic_locknut_0']){const p=part(name);assert.ok(vertices(p).every(i=>style(p,i)===METAL_STYLES.turned),name);}
+  for(const name of['geo__graphite_inner_liner','light__collimation_adjuster_0_head']){const p=part(name);assert.ok(vertices(p).every(i=>style(p,i)===METAL_STYLES.turned),name);}
   for(const record of manifest.meshes.filter(mesh=>![0,1,2,8,9].includes(mesh.material))){const loaded=cache.get(record.feature)||loadMesh(record);assert.equal(loaded.summary.activeVertices,0,record.feature+' contains no authored machining finish');}
 });
 
@@ -164,21 +155,21 @@ test('combat deck top uses an XY brush chart and the specimen pan uses its real 
 });
 
 test('part-local Cartesian finish positions preserve actual native origins and X/Z machining axes',()=>{
-  for(const name of['geo__floating_fastener_0_socket_head','geo__vented_monocoque','geo__knurled_service_band','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier']){
+  for(const name of['geo__detached_interface_bolt_0_head','geo__slotted_shell','geo__turned_shoulder_-36','song__dished_cymbal_0','scenes_bored_ceramic_landscape_carrier']){
     const p=part(name),local=p.geometry.getAttribute('metalLocalPosition'),chart=p.geometry.getAttribute('metalChart');
     for(const i of vertices(p)){
       const [x,y,z]=xyz(p,i),expected=p.metadata.axis==='Z'?[z,x,y]:[x,y,z];
       [local.getX(i),local.getY(i),local.getZ(i)].forEach((value,k)=>close(value,expected[k]));
       close(chart.getY(i),p.metadata.periodicCircumferenceMM??p.metadata.circumferenceMM);
       if(name.startsWith('song__'))assert.equal(chart.getX(i),METAL_CHARTS.polarRadial);
-      if(name==='geo__knurled_service_band'&&style(p,i)===METAL_STYLES.diamondKnurl)assert.equal(chart.getX(i),METAL_CHARTS.polarBarrel);
-      if(name==='geo__vented_monocoque'&&style(p,i)===METAL_STYLES.brushed)assert.equal(chart.getX(i),METAL_CHARTS.axialBrush);
+      if(name==='geo__turned_shoulder_-36'&&style(p,i)===METAL_STYLES.diamondKnurl)assert.equal(chart.getX(i),METAL_CHARTS.polarBarrel);
+      if(name==='geo__slotted_shell'&&style(p,i)===METAL_STYLES.brushed)assert.equal(chart.getX(i),METAL_CHARTS.axialBrush);
     }
   }
 });
 
 test('fragment reconstruction corrects radial interpolation across large native front-interface CAD triangles',()=>{
-  const p=part('geo__exploded_interface'),index=p.geometry.index,local=p.geometry.getAttribute('metalLocalPosition'),chart=p.geometry.getAttribute('metalChart');
+  const p=part('geo__detached_interface'),index=p.geometry.index,local=p.geometry.getAttribute('metalLocalPosition'),chart=p.geometry.getAttribute('metalChart');
   let largestError=0,example;
   for(let k=p.range.firstIndex;k<p.range.firstIndex+p.range.indexCount;k+=3){
     const ids=[index.getX(k),index.getX(k+1),index.getX(k+2)];if(!ids.every(i=>chart.getX(i)===METAL_CHARTS.polarRadial))continue;

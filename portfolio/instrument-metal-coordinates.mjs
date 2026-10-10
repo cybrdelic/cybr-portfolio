@@ -5,7 +5,7 @@ export const METAL_CHARTS=Object.freeze({linear:0,polarRadial:1,polarBarrel:2,ax
 export const METAL_PROFILE_PITCH_MM=Object.freeze({diamondKnurl:1,fineEtched:.65});
 const TAU=2*Math.PI;
 const styleNames=['disabled','brushed','turned','diamondKnurl','fineEtched'];
-const blackMetal=name=>name==='geo__inner_black_barrel'||name==='geo__retainer'||name.startsWith('geo__flange_recess_')||name.startsWith('light__optic_locknut_');
+const blackMetal=name=>name==='geo__graphite_inner_liner'||name==='geo__inner_black_barrel'||name==='geo__retainer'||name.startsWith('geo__flange_recess_')||name.startsWith('light__optic_locknut_');
 const eligible=(material,name)=>[0,1,8,9].includes(material)||(material===2&&blackMetal(name));
 
 function prescription(name,module,material){
@@ -14,7 +14,8 @@ function prescription(name,module,material){
   // Spoke-supported flat guards and rectangular longitudinal keys are milled
   // pieces. Their whole-part bounds do not define a lathe's circular center.
   if(name==='geo__takeup_guard_-35'||name==='geo__takeup_guard_35'||/^geo__internal_key_\d+$/.test(name))return {mode:'planar-X',style:1,axis:'X'};
-  if(name==='geo__vented_monocoque')return {mode:'monocoque',style:2,axis:'X'};
+  if(name==='geo__vented_monocoque'||name==='geo__slotted_shell')return {mode:'monocoque',style:2,axis:'X'};
+  if(/^geo__helical_stator_|^elements__protective_frame_|^geo__service_grip_/.test(name))return {mode:'planar-X',style:1,axis:'X'};
   if(name==='geo__knurled_service_band')return {mode:'diamond',style:2,axis:'X',pitch:METAL_PROFILE_PITCH_MM.diamondKnurl};
   if(name==='light__exploded_locking_ring')return {mode:'etched',style:2,axis:'X',pitch:METAL_PROFILE_PITCH_MM.fineEtched};
   if(name==='geo__identity_plate')return {mode:'planar-XZ',style:1,axis:'X'};

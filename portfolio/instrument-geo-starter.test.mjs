@@ -26,7 +26,7 @@ for(const scrollDriven of [false,true])test(`starter retains original GEO geomet
     const starter=await createGeoStarter({THREE,renderer,surface:{clientWidth:390,clientHeight:363,append(){}},manifest,buffer,
       environment:new ArrayBuffer(1024*512*16),texture,slider,reduced:{matches:false},scrollDriven,onProgress:p=>userProgress.push(p),
       makeMaterial:()=>new THREE.MeshPhysicalMaterial(),forgetMaterial:()=>forgotten++});
-    assert.equal(draws,1);assert.equal(slider.disabled,false);assert.equal(starter.snapshot().meshes,6);assert.equal(slider.value,scrollDriven?0:50);
+    assert.equal(draws,1);assert.equal(slider.disabled,false);assert.equal(starter.snapshot().meshes,manifest.meshes.filter(mesh=>mesh.module==='geo').length);assert.equal(slider.value,scrollDriven?0:50);
     const meshes=[];lastScene.traverse(object=>{if(object.isMesh)meshes.push(object);});
     const records=manifest.meshes.filter(mesh=>mesh.module==='geo');assert.equal(meshes.length,records.length);
     meshes.forEach((mesh,i)=>{

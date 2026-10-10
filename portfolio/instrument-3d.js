@@ -218,13 +218,14 @@ function materialFor(index,texture,module,pbrProfile=null){
     {color:0xe6e7e8,metalness:1,roughness:.32,anisotropy:.35},
     {color:0xc4c7cb,metalness:1,roughness:.18,anisotropy:.18},
     {color:0x25292d,metalness:.65,roughness:.48},
-    {color:0xffffff,metalness:0,roughness:.035,transmission:1,thickness:module==='light'?12:3,ior:1.52,dispersion:module==='light'?.12:0,iridescence:module==='light'?.5:0,iridescenceIOR:1.38,iridescenceThicknessRange:[280,420]},
+    {color:module==='light'?0xc8e0e1:0xd1e5e3,metalness:0,roughness:module==='light'?.024:.045,transmission:1,thickness:module==='light'?10:3,ior:1.52,dispersion:module==='light'?.035:0,iridescence:module==='light'?.28:0,iridescenceIOR:1.38,iridescenceThicknessRange:[105,145],attenuationColor:0xb6d6d7,attenuationDistance:module==='light'?55:45,clearcoat:module==='elements'?.16:0,clearcoatRoughness:.09},
     {color:0x9e0c21,metalness:.15,roughness:.28},
     {color:0xd1c5ac,metalness:1,roughness:.42,anisotropy:.6},
     {color:0x080909,metalness:0,roughness:.62},
     {color:0xffffff,metalness:0,roughness:.025,transmission:1,thickness:42,ior:1.333,attenuationColor:0xc1e5e8,attenuationDistance:280}
   ];
   const material=new THREE.MeshPhysicalMaterial({...specs[index],side:THREE.DoubleSide,envMapIntensity:1,dithering:true});
+  if(index===3&&manifest.modelRedesign)material.envMapIntensity=module==='light'?2.2:1.6;
   material.userData.secondarySourceFinish=!pbrProfile;
   if(physicalMetal(index))material.anisotropy=metalAnisotropy(index);
   if((index===3||index===7)&&!manifest.workingGeometry){material.transparent=true;material.depthWrite=false;}
@@ -641,7 +642,8 @@ async function init(){
   ]);assembled=routeSpec.assembled;
   if(manifest.workingGeometry){
     const thumbnails=document.querySelectorAll('.rail-art img');
-    for(const [index,name] of[[3,'song'],[4,'combat'],[5,'scenes']])if(thumbnails[index])thumbnails[index].src=`${geometryBase}thumb-${name}.webp?v=${manifest.stats.sha256}`;
+    const railModels=manifest.modelRedesign?names.map((name,index)=>[index,name]):[[3,'song'],[4,'combat'],[5,'scenes']];
+    for(const [index,name] of railModels)if(thumbnails[index])thumbnails[index].src=`${geometryBase}thumb-${name}.webp?v=${manifest.stats.sha256}`;
   }
   const studioLighting=manifest.workingGeometry&&!qualityMode&&query.get('lighting')!=='workshop';
   const photographedStudio=studioLighting&&query.get('pbr-env')!=='authored';
@@ -762,7 +764,11 @@ async function init(){
           if(!materialCache.has(profileKey)){
             let profile={...pbrAssets.profiles[name],chartKind};
             if(mesh.material===2)profile={...profile,colorMultiplier:[.12,.14,.16]};
-            if(pbrWearAssets){
+            if(manifest.modelRedesign?.modules.includes(mesh.module)){
+              profile={...profile,normalScale:[.18,.18],roughnessMacroContrast:.3,roughnessMacroReference:.28,
+                constantBaseReflectance:mesh.material===2?[.028,.032,.035]:mesh.material===0?[.82,.83,.84]:[.56,.59,.62]};
+            }
+            if(pbrWearAssets&&!manifest.modelRedesign?.modules.includes(mesh.module)){
               const alloy=mesh.material===8?'bronze':[0,9].includes(mesh.material)?'aluminum':'steel';
               const wear=pbrWearAssets.alloys[alloy];
               profile={...profile,wearMaps:wear.wearMaps,wearTileMM:wear.wearTileMM,wearAlloy:alloy,wearStrength:wear.wearStrength};
@@ -799,7 +805,7 @@ async function init(){
     // The verified FLIP cache replaces only the static CAD liquid. The vessel,
     // jacket and the rest of the instrument retain their actual geometry.
     objects.filter(object=>object.userData.staticWater&&object.userData.meshRecord.module==='elements').forEach(object=>object.visible=false);
-    const waterMaterial=new THREE.MeshPhysicalMaterial({color:0xffffff,roughness:.012,transmission:1,ior:1.333,thickness:42,attenuationColor:0xe3eff1,attenuationDistance:400,envMapIntensity:1,dithering:true});
+    const waterMaterial=new THREE.MeshPhysicalMaterial({color:manifest.modelRedesign?0xd5e8e9:0xffffff,roughness:.012,transmission:1,ior:1.333,thickness:42,attenuationColor:manifest.modelRedesign?0xc1dedf:0xe3eff1,attenuationDistance:manifest.modelRedesign?180:400,envMapIntensity:manifest.modelRedesign?1.3:1,dithering:true});
     externalTransmission(waterMaterial,'elements');
     waterMaterial.onBeforeCompile=shader=>{useWorkingTransmissionBuffer(shader,'inner');bindRasterMaterial(shader,waterMaterial,'elements');};
     waterMaterial.customProgramCacheKey=()=> 'CYBR-native-FLIP-live-optics-v1';materials.push(waterMaterial);
