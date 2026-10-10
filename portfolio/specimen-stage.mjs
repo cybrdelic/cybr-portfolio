@@ -69,7 +69,9 @@ export async function createSpecimen(host,name,{signal,onChange=()=>{}}={}){
         const spindle=new THREE.Mesh(new THREE.CylinderGeometry(3,3,14,24),stand.material);spindle.position.set(0,Math.sign(y)*56,90);root.add(spindle);meshes.push(spindle);
       }
       const detector=new THREE.Mesh(new THREE.BoxGeometry(2,64,136),materialFor({color:[.12,.13,.14],metalness:.2,roughness:.48}));detector.position.set(121,0,110);root.add(detector);meshes.push(detector);
-      const screen=new THREE.Mesh(new THREE.PlaneGeometry(60,130),materialFor({color:[.96,.96,.94],metalness:0,roughness:.8}));screen.rotation.y=-Math.PI/2;screen.position.set(119.85,0,110);root.add(screen);meshes.push(screen);
+      const screen=new THREE.Mesh(new THREE.PlaneGeometry(130,60),materialFor({color:[.96,.96,.94],metalness:0,roughness:.8}));screen.rotation.y=-Math.PI/2;screen.position.set(119.85,0,110);root.add(screen);meshes.push(screen);
+      for(const y of [-24,24]){const post=new THREE.Mesh(new THREE.CylinderGeometry(2.5,2.5,42,24),detector.material);post.rotation.x=Math.PI/2;post.position.set(121,y,21);root.add(post);meshes.push(post);}
+      const foot=new THREE.Mesh(new THREE.BoxGeometry(20,78,3),detector.material);foot.position.set(121,0,1.5);root.add(foot);meshes.push(foot);
       laser=new THREE.Mesh(new THREE.CylinderGeometry(5,5,23,32),materialFor({color:[.07,.08,.09],metalness:.7,roughness:.3}));root.add(laser);meshes.push(laser);opticalGroup=new THREE.Group();root.add(opticalGroup);
     }
     abort();host.append(renderer.domElement);renderer.domElement.setAttribute('aria-label',`${name.toUpperCase()} interactive specimen`);renderer.domElement.style.touchAction='pan-y';
