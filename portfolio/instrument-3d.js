@@ -207,6 +207,7 @@ function materialFor(index,texture,module,pbrProfile=null){
       mat.customProgramCacheKey=()=>`working-cad-diffuse-contact-transmission-v5-${physicalMetal(index)?METAL_FINISH_VERSION:'plain'}-${transmission>0?module:'shared-opaque'}-${index}`;
       if(pbrAssets&&!pbrProfile)mat.anisotropy=0;
       if(pbrProfile){mat.vertexColors=false;configurePbrMetal(mat,{THREE,...pbrProfile});}
+      if(pbrProfile&&manifest.modelRedesign?.modules.includes(module)){mat.roughnessMap=null;mat.roughness=index===2?.4:.28;}
       externalTransmission(mat,module);
       materials.push(mat);return mat;
     }
@@ -274,6 +275,7 @@ function materialFor(index,texture,module,pbrProfile=null){
   material.customProgramCacheKey=()=>`instrument-material-${manifest.workingGeometry?'diffuse-contact-v5':'v2'}-${physicalMetal(index)?METAL_FINISH_VERSION:'plain'}-${[3,7].includes(index)?module:'shared-opaque'}-${index}`;
   if(pbrAssets&&!pbrProfile&&physicalMetal(index))material.anisotropy=0;
   if(pbrProfile){material.vertexColors=false;configurePbrMetal(material,{THREE,...pbrProfile});}
+  if(pbrProfile&&manifest.modelRedesign?.modules.includes(module)){material.roughnessMap=null;material.roughness=index===2?.4:.28;}
   externalTransmission(material,module);
   materials.push(material);return material;
 }
