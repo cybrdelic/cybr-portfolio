@@ -24,3 +24,21 @@ Validation: JavaScript syntax check; 1,269 local HTML references with no
 missing files; nine retained films validated. Browser review at desktop,
 390 px and 320 px widths covered all six routes, media switching, inline
 phone preview, keyboard activation and Escape. No console errors observed.
+
+## Rich project previews
+
+The preview catalog contains 57 retained project artifacts: GEO 11, LIGHT 8,
+ELEMENTS 13, SONG 3 score pages, COMBAT 9 and SCENES 13. SONG also retains its
+explicit Lantern Steps audio control. Each preview has a two-row thumbnail
+strip, previous/next controls, a position counter, captions and full-size
+links for original stills. Arrow keys navigate when focus is inside the
+preview. Video and audio sources are released on project change or dismissal.
+
+The 57 generated thumbnails total 81,902 bytes. Thumbnail sources are only
+assigned after project selection; full images and films load per selection.
+No generated concept artwork is included. The collection uses existing
+project-gallery WebP renders and source films.
+
+Browser checks traversed all 57 thumbnail selections, verified end counters
+and navigation boundaries for all six projects, checked keyboard navigation
+and media cleanup, and reviewed the 390 px inline gallery.
