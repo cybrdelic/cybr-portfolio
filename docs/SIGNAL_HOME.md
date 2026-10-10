@@ -42,3 +42,22 @@ project-gallery WebP renders and source films.
 Browser checks traversed all 57 thumbnail selections, verified end counters
 and navigation boundaries for all six projects, checked keyboard navigation
 and media cleanup, and reviewed the 390 px inline gallery.
+
+## Large selected media
+
+Selecting a project now condenses the desktop index into a left rail and gives
+the media stage 60–64% of the viewport width, up to 1,100 px. The main image
+area grows with viewport height; on short screens it keeps a useful minimum
+height and the viewer scrolls. The close control remains sticky. Images and
+videos use contain sizing so content is not cropped.
+
+Phone previews extend to the screen edges and use their natural aspect ratio
+with a 65svh height limit. Thumbnails are larger and use a single scrolling
+row to leave more room for the selected image. Closing restores the original
+typographic index.
+
+Browser checks covered desktop, 390 px and 320 px phones, the 701 px breakpoint
+and a 900 by 560 short viewport. At the normal 1,072 px desktop width, the
+media stage is 650 px wide, replacing the earlier approximately 240 px area.
+Gallery navigation and closing were verified; the phone layout does not
+overflow horizontally.

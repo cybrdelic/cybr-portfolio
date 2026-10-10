@@ -25,7 +25,7 @@ function stopMedia(){
   document.querySelector('#preview-audio-label').hidden=true;
 }
 function close(){
-  clearTimeout(hoverTimer);request++;stopMedia();preview.hidden=true;current=null;
+  clearTimeout(hoverTimer);request++;stopMedia();preview.hidden=true;current=null;document.body.classList.remove("preview-open");
   image.removeAttribute('src');rail.replaceChildren();
   for(const row of rows){row.classList.remove('selected');row.querySelector('button').setAttribute('aria-pressed','false');}
 }
@@ -71,7 +71,7 @@ function show(id){
     if(item.film){const mark=document.createElement('span');mark.textContent='▶';mark.setAttribute('aria-hidden','true');button.append(mark);}
     button.addEventListener('click',()=>select(index));rail.append(button);
   }
-  preview.hidden=false;
+  preview.hidden=false;document.body.classList.add("preview-open");
   if(mobile.matches)rows.find(row=>row.dataset.project===id).append(preview);
   else document.querySelector('main').append(preview);
   select(positions.get(id)??0);
