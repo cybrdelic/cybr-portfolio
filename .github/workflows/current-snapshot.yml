@@ -1,0 +1,42 @@
+name: Current portfolio snapshot
+on:
+  push:
+    paths: ['snapshots/2026-10-22-current/**', '.github/workflows/current-snapshot.yml']
+  pull_request:
+    paths: ['snapshots/2026-10-22-current/**', '.github/workflows/current-snapshot.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  snapshot:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: snapshots/2026-10-22-current
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            snapshots/2026-10-22-current
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: snapshots/2026-10-22-current/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+        if: runner.os == 'Linux'
+      - run: npx playwright install chromium
+        if: runner.os != 'Linux'
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: snapshot-browser-${{ matrix.os }}
+          path: snapshots/2026-10-22-current/evidence/browser

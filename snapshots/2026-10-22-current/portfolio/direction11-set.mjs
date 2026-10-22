@@ -39,7 +39,7 @@ export function createShadowSet(){
   shader.uniforms.liquidWetness=wetness;
   const reflection=root.userData.wetReflection;
   if(!reflection){
-   shader.fragmentShader=shader.fragmentShader.replace('#include <lights_physical_fragment>','#include <lights_physical_fragment>\nmaterial.clearcoat=0.;');
+   shader.fragmentShader=shader.fragmentShader.replace('#include <lights_physical_fragment>','#include <lights_physical_fragment>\n#ifdef USE_CLEARCOAT\nmaterial.clearcoat=0.;\n#endif');
    return;
   }
   shader.uniforms.stageReflection=reflection?.texture||{value:null};shader.uniforms.stageReflectionMatrix=reflection?.matrix||{value:new T.Matrix4()};shader.uniforms.stageReflectionReady=reflection?.ready||{value:0};
@@ -50,7 +50,7 @@ export function createShadowSet(){
    float wetRadius=length((stagePoint.xz-vec2(.12,.08))/vec2(7.,6.));
    float wet=liquidWetness*(1.-smoothstep(.65,1.,wetRadius))*(1.-smoothstep(.02,.12,abs(stagePoint.y+3.35)));
    roughnessFactor=mix(roughnessFactor,.65,wet);`);
-  shader.fragmentShader=shader.fragmentShader.replace('#include <lights_physical_fragment>','#include <lights_physical_fragment>\nmaterial.clearcoat*=wet*.35;');
+  shader.fragmentShader=shader.fragmentShader.replace('#include <lights_physical_fragment>','#include <lights_physical_fragment>\n#ifdef USE_CLEARCOAT\nmaterial.clearcoat*=wet*.35;\n#endif');
   shader.fragmentShader=shader.fragmentShader.replace('#include <opaque_fragment>',`vec4 reflectedPoint=stageReflectionMatrix*vec4(stagePoint,1.);
    vec2 reflectedUV=reflectedPoint.xy/reflectedPoint.w;
    float reflectionBounds=step(0.,reflectedUV.x)*step(reflectedUV.x,1.)*step(0.,reflectedUV.y)*step(reflectedUV.y,1.);
@@ -59,7 +59,7 @@ export function createShadowSet(){
    outgoingLight=mix(outgoingLight,reflectionSample.rgb,wet*stageReflectionReady*reflectionBounds*fresnel*reflectionSample.a);
    #include <opaque_fragment>`);
  };
- material.customProgramCacheKey=()=> 'shadow-stage-calibrated-mineral-v2';
+ material.customProgramCacheKey=()=> 'shadow-stage-calibrated-mineral-v3-clearcoat-guard';
  material.addEventListener('dispose',()=>relief.dispose());
  const wallMaterial=material.clone();wallMaterial.clearcoat=0;wallMaterial.color.set(SHADOW_STUDIO.wallColor);wallMaterial.bumpScale=.002;wallMaterial.roughness=.97;
  wallMaterial.onBeforeCompile=mineralRoomFinish;wallMaterial.customProgramCacheKey=()=> 'shadow-wall-calibrated-mineral-v2';

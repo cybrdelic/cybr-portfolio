@@ -79,10 +79,30 @@ test('transport has a fixed primary budget with no recursive trace or extra targ
   'int boundaryIndex=0;boundaryIndex<5;boundaryIndex++',
   'int reflectionReceiver=0;reflectionReceiver<8;reflectionReceiver++',
   'int receiverIndex=0;receiverIndex<8;receiverIndex++',
+  'int fireLightTap=0;fireLightTap<3;fireLightTap++',
   'int volumeIndex=0;volumeIndex<64;volumeIndex++',
   'int stepIndex=0;stepIndex<96;stepIndex++',
   'int reflectionBody=0;reflectionBody<4;reflectionBody++',
  ]);
+ // Build the user-defined GLSL call graph, including all bounded helpers,
+ // and reject direct or indirect recursion (not just while-loop spelling).
+ const functions=new Map();
+ for(const match of elementsFragmentShader.matchAll(/\b(?:void|float|int|bool|vec[234]|mat[234]|NativeWaterPath)\s+(\w+)\s*\([^;{}]*\)\s*\{/g)){
+  const start=match.index+match[0].length;let end=start,depth=1;
+  for(;depth&&end<elementsFragmentShader.length;end++){if(elementsFragmentShader[end]==='{')depth++;if(elementsFragmentShader[end]==='}')depth--;}
+  functions.set(match[1],elementsFragmentShader.slice(start,end-1));
+ }
+ assert.ok(functions.has('main')&&functions.has('traceNativeWaterTransport')&&functions.has('nearbyFireLighting'));
+ const visit=(name,stack=[])=>{
+  assert.ok(!stack.includes(name),`recursive shader call: ${[...stack,name].join(' -> ')}`);
+  const callees=new Set([...functions.get(name).matchAll(/\b(\w+)\s*\(/g)].map(m=>m[1]).filter(n=>functions.has(n)));
+  for(const next of callees)visit(next,[...stack,name]);
+ };
+ for(const name of functions.keys())visit(name);
+ const fire=functions.get('nearbyFireLighting');
+ assert.equal([...fire.matchAll(/for\s*\(/g)].length,1);
+ assert.equal([...fire.matchAll(/textureLod\(/g)].length,1,'three fixed native lighting taps only');
+ assert.doesNotMatch(fire,/traceNativeWaterTransport|integrateAtmosphereInterval|shadeSurface/);
  assert.match(elementsFragmentShader,/nativeWaterBoundary\(ro,direction,true,96-result\.cells,20\.0\)/,'internal boundaries share one per-body cell budget');
  assert.match(elementsFragmentShader,/waterBodies>=4/);assert.doesNotMatch(elementsFragmentShader,/sourceWaterExit|waterStep<48/);
  assert.match(elementsFragmentShader,/stride=min\(stride,segmentLength-cursor\)/);assert.match(elementsFragmentShader,/gl_FragDepth=/);
@@ -398,18 +418,27 @@ test('native volume optimization preserves an internal full-sampling baseline',(
  optimized.dispose();baseline.dispose();
 });
 
-test('air support culling is conservative for all authored widths and radii',()=>{
- const minimumCenter=.84,maximumHalfWidth=.093/.6,minimumRadius=minimumCenter-maximumHalfWidth;
- assert.ok(Math.abs(minimumRadius-.685)<1e-12);
- for(let i=0;i<128;i++){
-  const radius=.68499*i/127;
-  for(let direction=0;direction<32;direction++){
-   const angle=2*Math.PI*direction/32,x=Math.cos(angle)*radius,z=Math.sin(angle)*radius;
-   const coordinateX=(x-minimumCenter)/.093,coordinateY=z/.35;
-   assert.ok(1-(coordinateX*coordinateX+coordinateY*coordinateY)*.36<0);
-  }
+test('filtered air culling removes only the exact-zero annulus support',()=>{
+ // Gaussian filtering has infinite support; the OLD .685 radius is invalid.
+ // The final authored annulus is zero at r<=.55 and r>=1.65 for ANY
+ // Gaussian width, raster footprint, ray interval, height, phase or time.
+ const source=elementsFragmentShader.slice(elementsFragmentShader.indexOf('float filteredAirFilament'),elementsFragmentShader.indexOf('void main()'));
+ const cutoff=source.match(/dot\(p\.xz,p\.xz\)<([\d.]+)\|\|dot\(p\.xz,p\.xz\)>([\d.]+)/);
+ const edges=source.match(/annulus=smoothstep\(([\d.]+),([\d.]+),radial\)\*\(1\.0-smoothstep\(([\d.]+),([\d.]+),radial\)\)/);
+ assert.ok(cutoff&&edges,'derive the proof from the shipped skip and support expression');
+ const [inner,innerFull,outerFull,outer]=edges.slice(1).map(Number);
+ assert.ok(inner<innerFull&&innerFull<outerFull&&outerFull<outer);
+ assert.ok(Number(cutoff[1])<=inner*inner+1e-15);
+ assert.ok(Number(cutoff[2])>=outer*outer-1e-15);
+ const smoothstep=(a,b,x)=>{const t=Math.max(0,Math.min(1,(x-a)/(b-a)));return t*t*(3-2*t);};
+ const annulus=r=>smoothstep(inner,innerFull,r)*(1-smoothstep(outerFull,outer,r));
+ for(let k=0;k<=4096;k++){
+  const r=k*2/4096;
+  if(r*r<Number(cutoff[1])||r*r>Number(cutoff[2]))assert.equal(annulus(r),0);
  }
- assert.match(elementsFragmentShader,/dot\(p\.xz,p\.xz\)<\.469225/);
+ assert.equal(annulus((innerFull+outerFull)/2),1);
+ assert.match(source,/float air=\(wisp\*\.72\+fineWisp\*\.42\)\*envelope\*breaks\*annulus/);
+ assert.match(source,/if\(envelope<=0\.0\|\|/);
 });
 
 test('camera uniforms use each actual draw camera and full mesh matrix, including reflection',()=>{
@@ -455,24 +484,36 @@ test('ablation can compare runtime skips with compile-time elimination and resto
  assert.match(elementsFragmentShader,/if\(elementMode\(\)==7\)discard/);
 });
 
-test('fracture polyhedra stay inside the conservative sphere and three-neighbor vertical search',()=>{
+test('rounded fracture bodies fit their sphere and three-neighbor search at every authored scale',()=>{
  const source=elementsFragmentShader.slice(elementsFragmentShader.indexOf('float rockPiece'),elementsFragmentShader.indexOf('vec2 earthDistance'));
- const planes=[...source.matchAll(/dot\(q,vec3\(([\d.-]+),([\d.-]+),([\d.-]+)\)\)-([\d.]+)/g)].map(m=>({n:new T.Vector3(+m[1],+m[2],+m[3]),d:+m[4]}));
- assert.equal(planes.length,12);
- const vertices=[],matrix=new T.Matrix3();
- for(let a=0;a<12;a++)for(let b=a+1;b<12;b++)for(let c=b+1;c<12;c++){
-  const x=planes[a],y=planes[b],z=planes[c];matrix.set(x.n.x,x.n.y,x.n.z,y.n.x,y.n.y,y.n.z,z.n.x,z.n.y,z.n.z);
-  if(Math.abs(matrix.determinant())<1e-7)continue;
-  const v=new T.Vector3(x.d,y.d,z.d).applyMatrix3(matrix.invert());
-  if(planes.every(p=>p.n.dot(v)<=p.d+1e-6))vertices.push(v);
+ // sin products and sin(dot) are in [-1,1]. Thus d<=0 implies
+ // |q|<=1+.045+.023=1.068. Rounded max and all three cuts only remove volume.
+ assert.match(source,/length\(q\)-1\.0\+\.045\*sin\(q\.x\*3\.1\+seed\)\*sin\(q\.y\*3\.7\+q\.z\*2\.2\)/);
+ assert.match(source,/\+\.023\*sin\(dot\(q,vec3\(-6\.4,4\.8,3\.6\)\)\+seed\)/);
+ assert.equal([...source.matchAll(/d=roundedIntersection\(/g)].length,3);
+ assert.match(elementsFragmentShader,/return max\(a,b\)\+h\*h\*radius\*\.25/);
+ const radius=1+.045+.023;
+ // Gradient bound: |grad d| <=1+.045*|(3.1,3.7,2.2)|+.023*|(-6.4,4.8,3.6)|.
+ // The convex derivative weights of rounded max preserve this Lipschitz bound.
+ const lipschitz=1+.045*Math.hypot(3.1,3.7,2.2)+.023*Math.hypot(6.4,4.8,3.6);
+ assert.ok(lipschitz<1.45);
+ assert.match(source,/d\*\(min\(size\.x,min\(size\.y,size\.z\)\)\/1\.45\)/);
+ assert.match(elementsFragmentShader,/for\(int k=0;k<3;k\+\+\)/);
+ assert.match(elementsFragmentShader,/candidate=clamp\(nearest\+float\(k\)-1\.0,0\.0,8\.0\)/);
+ for(const native of [false,true]){
+  const event=createElementsShader(),u=event.root.children[0].material.uniforms;
+  if(native){event.setSourceWaterVolume(decodedFixture('water'));event.setSourceFireVolume(decodedFixture('fire'));}
+  for(const progress of [0,.5,1]){
+   event.update(progress,{time:12});
+   for(let i=0;i<9;i++){
+    const size=u.uStoneSizes.value[i],bound=radius*Math.max(size.x,size.y,size.z);
+    assert.ok(bound<=u.uStoneBounds.value[i],'sphere includes the full radial body, including hero enlargement');
+    const offset=Math.abs(u.uStoneCenters.value[i].y-(u.uStoneBase.value+i*u.uStoneSpacing.value));
+    // Orthogonal rotations cannot enlarge the radial bound. An omitted body
+    // is at least 1.5 cells away: radius + authored y-jitter must remain inside.
+    assert.ok(bound+offset<1.5*u.uStoneSpacing.value,`stone ${i} must remain searchable`);
+   }
+  }
+  event.dispose();
  }
- assert.ok(vertices.length>=20);assert.ok(Math.max(...vertices.map(v=>v.length()))<1.65);
- const event=createElementsShader(),u=event.root.children[0].material.uniforms;
- for(let i=0;i<9;i++)for(const v of vertices){
-  const size=u.uStoneSizes.value[i],scaled=v.clone().multiply(size);
-  assert.ok(scaled.length()<=u.uStoneBounds.value[i]+1e-7);
-  const height=Math.abs(Math.sin(i*.78)*scaled.x+Math.cos(i*.78)*scaled.y);
-  assert.ok(height+.075<.49*1.5,'a fragment must not reach a y-cell whose three-neighbor search excludes it');
- }
- event.dispose();
 });

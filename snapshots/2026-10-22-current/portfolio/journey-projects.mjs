@@ -8,9 +8,9 @@ import {applyNativeSpringsFinish} from './native-springs-finish.mjs';
 import {loadTextureAsset,loadTextureAssets} from './texture-asset-load.mjs';
 
 // Source-backed assets. Loading and decoding happen outside the animation loop.
-export async function loadJourneyProjects(scene,onChange,{lazy=false,fluidBase='./assets/instrument-fluid/',combatPose=null,combatAnimation='stance',combatAnimationBase=null,combatModel='geometry',landscapeModel='reference27-springs',nativeSprings=false,spatialSprings=false,prepareTexture}={}){
+export async function loadJourneyProjects(scene,onChange,{lazy=false,fluidBase='./assets/instrument-fluid/',combatPose=null,combatAnimation='stance',combatAnimationBase=null,combatModel='geometry',landscapeModel='reference27-springs',nativeSprings=false,nativeSpringsFinish=true,spatialSprings=false,prepareTexture}={}){
  const root=new T.Group();root.position.set(0,-1.8,-8);scene.add(root);
- const state={elements:false,song:false,combat:false,scenes:false,errors:[]};
+ const state={elements:false,song:false,combat:false,scenes:false,errors:[],warnings:[]};
  const fluidRoot=new T.Group();fluidRoot.rotation.x=-Math.PI/2;fluidRoot.scale.setScalar(.038);fluidRoot.position.x=.5;root.add(fluidRoot);
  const combatRoot=new T.Group();combatRoot.position.set(0,-2.5,-9);combatRoot.rotation.y=Math.PI;combatRoot.scale.setScalar(2);root.add(combatRoot);
  const springsRoot=new T.Group();springsRoot.position.set(0,-2,-24);root.add(springsRoot);
@@ -116,7 +116,8 @@ export async function loadJourneyProjects(scene,onChange,{lazy=false,fluidBase='
     }
    }
   }
-  if(nativeSprings){nativeFinish=await applyNativeSpringsFinish(springsRoot,meta,{prepareTexture});state.nativeSprings=true;}
+  if(nativeSprings&&nativeSpringsFinish){nativeFinish=await applyNativeSpringsFinish(springsRoot,meta,{prepareTexture});state.nativeSprings=true;}
+  else if(nativeSprings){state.nativeSprings=false;state.warnings.push('SCENES: source geometry and base materials. Full finish unavailable: two external rock maps excluded.');}
  });
  const matrix=new T.Matrix4(),q0=new T.Quaternion(),q1=new T.Quaternion(),v0=new T.Vector3(),v1=new T.Vector3(),s0=new T.Vector3(),s1=new T.Vector3();
  function update(p,audioTime=null,activeKey=null){

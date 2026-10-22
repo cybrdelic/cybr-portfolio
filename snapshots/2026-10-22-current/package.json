@@ -1,0 +1,16 @@
+{
+  "name": "cybr-current-portfolio-snapshot",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "serve": "node scripts/serve.mjs",
+    "test": "node --test portfolio/iris09-source.test.mjs portfolio/direction11-elements-shader.test.mjs portfolio/elements-volume-data.test.mjs portfolio/elements-water-transport.test.mjs portfolio/elements-hdr-composite.test.mjs portfolio/elements-room-probe.test.mjs portfolio/elements-projected-region.test.mjs portfolio/canvas-demo-recorder.test.mjs portfolio/direction11-elements-integration.test.mjs portfolio/direction11-studio-rig.test.mjs portfolio/directions-readiness.test.mjs portfolio/direction11-source-finishes.test.mjs",
+    "test:browser": "node scripts/browser-smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}
