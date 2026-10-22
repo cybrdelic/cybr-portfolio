@@ -1,0 +1,176 @@
+{
+  "format": "cybr-fire-volume",
+  "version": 1,
+  "dimensions": [
+    589,
+    455,
+    56
+  ],
+  "encoding": {
+    "type": "float16",
+    "endianness": "little",
+    "channels": [
+      "source.r",
+      "source.g",
+      "source.b",
+      "extinction"
+    ],
+    "colorSpace": "linear",
+    "order": "zyxc",
+    "compression": "gzip"
+  },
+  "domain": {
+    "minimum": [
+      -4.356424581005586,
+      -0.8777833001988072,
+      -0.6
+    ],
+    "extent": [
+      9.197765363128491,
+      7.107852882703777,
+      1.2
+    ]
+  },
+  "sampling": {
+    "origin": [
+      -4.356424581005586,
+      -0.8777833001988072,
+      -0.6
+    ],
+    "spacing": [
+      0.01564245810055866,
+      0.015656063618290257,
+      0.021818181818181816
+    ],
+    "convention": "endpoints"
+  },
+  "source": {
+    "engine": "CYBR ELEMENTS native offline reactive flow",
+    "runtimeFile": "cybr-elements/work/element-motion/sigil_02_fire_v2.py",
+    "sourceSha256": "99b19f9725a755244f623433bdc8beb128bc1535d02f83d12b094dc204104005",
+    "sourceFieldsFile": "cybr-elements/work/element-motion/sigil-02-v2/source.npz",
+    "sourceFieldsSha256": "e0c2e79d15b6d3097e2219c22bae028b82cd9c9f0a7cb55663fb2f7de5127262",
+    "solverAstSha256": "4bdea43979e7f771e66dfce3d4d88350448446fbdd44d6043af27f04b764648b",
+    "nativeAxisTransform": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        -1,
+        0
+      ]
+    ],
+    "nativeGrid": [
+      896,
+      56,
+      504
+    ],
+    "nativeMinimum": [
+      -7,
+      -0.6,
+      -1.05
+    ],
+    "nativeExtent": [
+      14,
+      1.2,
+      7.875
+    ],
+    "sourceTerms": "Native emission + captured soot in-scattering from unchanged radiance().",
+    "preset": "Approved style-02 sigil fuel sheet with native directed pressure-projected flow",
+    "solverParameters": {
+      "size": [
+        896,
+        56,
+        504
+      ],
+      "fps": 30,
+      "substeps": 3,
+      "wind": 0,
+      "control": "directed",
+      "control_strength": 1,
+      "gesture_version": "19",
+      "padded_domain": false
+    },
+    "channelStatistics": {
+      "fuel": {
+        "min": 0.0,
+        "max": 0.9159232974052429,
+        "sum": 78436.5625
+      },
+      "oxygen": {
+        "min": 7.122672116728692e-21,
+        "max": 1.0,
+        "sum": 24447918.0
+      },
+      "temperature": {
+        "min": 0.0,
+        "max": 2.1153666973114014,
+        "sum": 637573.0
+      },
+      "soot": {
+        "min": 0.0,
+        "max": 0.3057415783405304,
+        "sum": 88897.71875
+      },
+      "reaction": {
+        "min": 0.0,
+        "max": 2.9982872009277344,
+        "sum": 107906.15625
+      }
+    },
+    "limitations": [
+      "One frozen native simulated field, not a time sequence.",
+      "Source coefficient includes native fixed soot illumination, not only self emission.",
+      "Art-directed source and graphics combustion, not calibrated spectroscopy or a new four-element coupled simulation.",
+      "Native source fields preserved; outer exactly-zero half voxels cropped without resampling."
+    ]
+  },
+  "capture": {
+    "timeSeconds": 3.0,
+    "steps": 270,
+    "dt": 0.011111111111111112,
+    "resampled": false,
+    "reactionSource": "Native state channel7 = actual burn/dt, not inferred from temperature.",
+    "cropStartOriginalYUpXYZ": [
+      169,
+      11,
+      0
+    ],
+    "cropEndOriginalYUpXYZExclusive": [
+      758,
+      466,
+      56
+    ],
+    "divergenceRMS": 1.3056883290119004e-05,
+    "wallSeconds": 106.75,
+    "peakGpuMiB": 5897.6953125,
+    "zeroHaloCells": 1,
+    "zeroHaloProof": "Original crop bounded every nonzero half voxel; all restored neighboring native cells were exactly zero."
+  },
+  "statistics": {
+    "minima": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "maxima": [
+      18.453125,
+      8.40625,
+      4.38671875,
+      1.3671875
+    ]
+  },
+  "payload": {
+    "bytes": 120061760,
+    "sha256": "b91d1740d5816355e6205e7afa8e7c1a369918c9e908dd0be8da2fbff7b747d8"
+  }
+}

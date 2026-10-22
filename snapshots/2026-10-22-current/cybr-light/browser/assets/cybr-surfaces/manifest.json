@@ -1,0 +1,143 @@
+{
+  "encoding": "linear RGBA16F, full mip chain",
+  "materials": [
+    {
+      "id": "05_champagne_brass",
+      "name": "Champagne Brass / Satin Brushed",
+      "family": "Metal",
+      "tile_m": 0.2,
+      "height_scale_m": 0.0002,
+      "roughness": 0.37,
+      "ior": 1.5,
+      "metallic": 1,
+      "anisotropy": 0.35,
+      "preview_diameter_m": 0.1,
+      "description": "Intact satin-brushed brass; fine directional tooling and restrained isolated scores.",
+      "resolution": 4096,
+      "maps": {
+        "BaseColor.png": "sRGB RGB8; intrinsic color, no lighting",
+        "Normal_OpenGL.png": "Non-Color tangent +Y RGB8",
+        "Normal_DirectX.png": "Non-Color tangent -Y RGB8",
+        "Normal_Micro_OpenGL.png": "Non-Color +Y RGB8; residual height only, paired with Height_Macro",
+        "Height.png": "Non-Color linear grayscale16; displacement = (height - .5) * height_scale_m",
+        "Height_Macro.png": "Non-Color linear grayscale16; band-limited geometry, same physical scale",
+        "Roughness.png": "Non-Color linear grayscale8",
+        "Metallic.png": "Non-Color grayscale8; exposed metal versus dielectric oxides",
+        "AO.png": "Non-Color grayscale8; local cavity approximation, do not bake into color",
+        "WearMask.png": "Non-Color grayscale8; material-specific abrasion or weathering",
+        "ORM.png": "Non-Color RGB8; AO / roughness / metallic",
+        "Opacity.png": "Non-Color grayscale8; woven openings for linen, opaque for other materials"
+      },
+      "source": "cybr-material/materials/05_champagne_brass",
+      "sourceHashes": {
+        "BaseColor.png": "2859e59886d034b9f3cd59f2a6ea12387e82ba75a02a3a3b2e9c6b7f6b2bba4c",
+        "ORM.png": "9fbeef7f3cc5001b83f3a0fe7ad4028f8a596f8d689e381ad6443674ea93f7e8",
+        "Normal_OpenGL.png": "23f1356276a8e7929bf6f2e714245383131d1e346efd483cac515290a4c3886e"
+      },
+      "runtimeSize": 1024,
+      "runtimeMaps": [
+        {
+          "file": "05_champagne_brass-BaseColor.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "ee0d72911cf02c267f8ceb84260cac2069946a2ad3bc0078cf366c71caa42bfc"
+        },
+        {
+          "file": "05_champagne_brass-ORM.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "95eace837905eeb43d9a9a3009c94a25bb1ac9d8de7d47c088af03337bd72487"
+        },
+        {
+          "file": "05_champagne_brass-Normal_OpenGL.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "11b669bdfa3b72c9740bff7df5a7d139a0e56e5c6b94bd7a875d53f30d7a533d"
+        }
+      ]
+    },
+    {
+      "id": "06_blackened_steel",
+      "name": "Blackened Steel / Satin Oxide",
+      "family": "Metal",
+      "tile_m": 0.25,
+      "height_scale_m": 0.00055,
+      "roughness": 0.49,
+      "ior": 1.5,
+      "metallic": 0,
+      "anisotropy": 0.14,
+      "preview_diameter_m": 0.12,
+      "description": "Intact black oxide on satin machined steel; exposed edges are assigned on fabricated meshes.",
+      "resolution": 4096,
+      "maps": {
+        "BaseColor.png": "sRGB RGB8; intrinsic color, no lighting",
+        "Normal_OpenGL.png": "Non-Color tangent +Y RGB8",
+        "Normal_DirectX.png": "Non-Color tangent -Y RGB8",
+        "Normal_Micro_OpenGL.png": "Non-Color +Y RGB8; residual height only, paired with Height_Macro",
+        "Height.png": "Non-Color linear grayscale16; displacement = (height - .5) * height_scale_m",
+        "Height_Macro.png": "Non-Color linear grayscale16; band-limited geometry, same physical scale",
+        "Roughness.png": "Non-Color linear grayscale8",
+        "Metallic.png": "Non-Color grayscale8; exposed metal versus dielectric oxides",
+        "AO.png": "Non-Color grayscale8; local cavity approximation, do not bake into color",
+        "WearMask.png": "Non-Color grayscale8; material-specific abrasion or weathering",
+        "ORM.png": "Non-Color RGB8; AO / roughness / metallic",
+        "Opacity.png": "Non-Color grayscale8; woven openings for linen, opaque for other materials"
+      },
+      "source": "cybr-material/materials/06_blackened_steel",
+      "sourceHashes": {
+        "BaseColor.png": "df2b805e5d8dde5e4d9889c8c525c1bc4c1d7445baf2dcd0d1f75440aa55d77a",
+        "ORM.png": "e3895e950fd518fd79c038362137758e592094fd5928024a659f5c182b5d8752",
+        "Normal_OpenGL.png": "6cac3068b2c95b0c1bfc7bc2faa6faf97f2f342b46ab4933c6b17daaa88fd100"
+      },
+      "runtimeSize": 1024,
+      "runtimeMaps": [
+        {
+          "file": "06_blackened_steel-BaseColor.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "2a6758ace3823989970aefcbeef77b429645c730c674df14d175e09c0a4c9de5"
+        },
+        {
+          "file": "06_blackened_steel-ORM.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "f6900e7f4a1d5935a0d6525c4bf6ca6302aeb0090e55598ce6a5823a76141548"
+        },
+        {
+          "file": "06_blackened_steel-Normal_OpenGL.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "696cb78df89b70885d79c8a6a3fee675e2350ed4e19deecf1665d7dc43557c17"
+        }
+      ]
+    },
+    {
+      "id": "BrushedMetal",
+      "name": "CYBR machined satin metal",
+      "tile_m": 0.032,
+      "metallic": 1,
+      "roughness": 0.44,
+      "anisotropy": 0.18,
+      "authoredScale": true,
+      "runtimeFinish": "Satin variant: roughness 0.44 + 0.5 * (authored roughness - 0.33); original source retained.",
+      "source": "portfolio\\assets\\pbr-custom\\BrushedMetal",
+      "sourceHashes": {
+        "BaseColor.png": "56df2fa1bd91566972ac2e564a828bf37e27322a4e749ceaf4a77667b12ccc24",
+        "ORM.png": "b6e5d909a6b243d23b56cff8c17abc744df05ccd8e458a99b5ef36482a721393",
+        "Normal_OpenGL.png": "f0ab88d23b15274e993d122478e0b7cf844236bc3aa274728dac19e1b218a441"
+      },
+      "runtimeSize": 1024,
+      "runtimeMaps": [
+        {
+          "file": "BrushedMetal-BaseColor.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "08643888929a2db10716191fe34600c3e62a662f3d8ab7e2ece98bb6969fb8a0"
+        },
+        {
+          "file": "BrushedMetal-ORM.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "53443bd605c0a06bb620b5ec706947212e6b1f6eaa5e9b73ee5f91c609422831"
+        },
+        {
+          "file": "BrushedMetal-Normal_OpenGL.rgba16f.gz",
+          "bytes": 11184808,
+          "sha256": "a5d0c776fb1db933c5c8bb0c20649ee69f3f12c1a9616d072654ed0de2347c7f"
+        }
+      ]
+    }
+  ]
+}

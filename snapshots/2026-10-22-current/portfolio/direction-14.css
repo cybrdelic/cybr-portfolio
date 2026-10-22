@@ -1,0 +1,41 @@
+/* Seven scroll chapters share a red photographic stage. */
+body[data-design="14"]{--paper:#7c130b;--ink:#f3ead5;--accent:#f3ead5}
+body[data-design="14"] .backdrop{background:radial-gradient(ellipse at 60% 70%,#981b0d 0%,#7e140b 55%,#610e08 100%)}
+body[data-design="14"] header{top:3.2%;left:4%;right:4%}
+body[data-design="14"] .brand{width:auto}
+body[data-design="14"] .brand span{font:20px/1.2 'Arial Narrow',monospace;font-weight:700;letter-spacing:.19em;transform:scaleX(.78);transform-origin:left}
+body[data-design="14"] .brand .reference-lettering{display:block;width:138px;height:19px}
+body[data-design="14"] .header-links{font:11px/1.3 monospace;letter-spacing:.16em}
+body[data-design="14"] .header-links[hidden]{display:none}
+body[data-design="14"] .counter{font:52svh/.8 Impact,sans-serif;letter-spacing:-.035em;left:-2.5%;top:15%;transform:scaleX(.48);transform-origin:left top;color:var(--ink)}
+body[data-design="14"][data-chapter="elements"] .counter{z-index:2}
+body[data-design="14"] .caption{left:4%;bottom:9%;width:32%}
+body[data-design="14"] .caption h1{font:400 25px/1.18 Arial,sans-serif;letter-spacing:-.025em;margin:0}
+body[data-design="14"] .caption a{display:none}
+body[data-design="14"] footer{display:none}
+body[data-design="14"]:not([data-chapter="geo"]) footer{display:none}
+body[data-design="14"] .progress{display:none}
+body[data-design="14"] .notes-button{right:1%;bottom:1%;opacity:.4;font-size:13px}
+.event-poses{display:none}
+body[data-design="14"] .event-poses{position:absolute;display:flex;right:4%;bottom:3%;gap:12px;z-index:6}
+.event-poses button{min-width:38px;min-height:44px;font:14px Arial,sans-serif;opacity:.5;border-bottom:1px solid transparent}
+.event-poses button[aria-current="step"]{opacity:1;border-color:currentColor}
+body[data-design="14"] .loading{bottom:2%;left:4%;right:auto;text-align:left;max-width:65%}
+body[data-design="14"][data-chapter="material"] .counter,body[data-design="14"][data-chapter="scenes"] .counter{z-index:2}
+body[data-design="14"][data-chapter="scenes"] #scene{clip-path:none}
+body[data-design="14"][data-chapter="scenes"] .caption{text-shadow:0 1px 12px #210602}
+body[data-design="14"] #score{left:18%;top:20%;width:86%;height:61%;transform:rotate(-9deg);color:var(--ink)}
+body[data-design="14"] #sound{left:4%;bottom:4%;font-size:11px}
+@media(max-width:700px){
+ body[data-design="14"] .counter{font-size:51svh;left:-8%;top:15%;transform:scaleX(.30)}
+ body[data-design="14"] header{left:6%;right:6%}
+ body[data-design="14"] .brand span{font-size:17px}
+ body[data-design="14"] .header-links{font-size:8px;max-width:120px;text-align:right}
+ body[data-design="14"] .caption{left:6%;bottom:14%;width:68%}
+ body[data-design="14"] .caption h1{font-size:22px}
+ body[data-design="14"] .event-poses{bottom:3%;left:6%;right:6%;gap:4px;justify-content:space-between}
+ body[data-design="14"] .event-poses button{font-size:12px;min-width:30px}
+ body[data-design="14"] #sound{bottom:9%}
+}
+body[data-design="14"] #score{display:none!important}
+body[data-design="14"][data-chapter="song"] .counter{z-index:2;pointer-events:none}

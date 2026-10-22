@@ -1,0 +1,527 @@
+{
+  "format": "cybr-water-sdf-volume",
+  "version": 1,
+  "dimensions": [
+    192,
+    53,
+    105
+  ],
+  "encoding": {
+    "type": "float16",
+    "endianness": "little",
+    "channels": [
+      "signedDistance"
+    ],
+    "order": "zyxc",
+    "compression": "gzip"
+  },
+  "domain": {
+    "minimum": [
+      -65.62445568647541,
+      -18.89789318647541,
+      -41.82758068647541
+    ],
+    "extent": [
+      140.14344262295083,
+      38.685429474043715,
+      76.64094518442623
+    ]
+  },
+  "sampling": {
+    "origin": [
+      -65.2594988046448,
+      -18.53293630464481,
+      -41.46262380464481
+    ],
+    "spacing": [
+      0.7299137636612022,
+      0.7299137636612022,
+      0.7299137636612022
+    ],
+    "location": "voxel-centres"
+  },
+  "coordinates": {
+    "units": "mm",
+    "upAxis": "z",
+    "handedness": "right",
+    "sourceAxisOrder": "simulation X,Z,Y"
+  },
+  "source": {
+    "source": "portfolio\\assets\\reference27-wave-v15",
+    "frame": 12,
+    "sourceFile": "012.bin.gz",
+    "sha256": "a273307bfa99e9b14817a422b20a52bb421cd7a8a25e5de7b0fe26851e934a10",
+    "solver": "CYBR FLIP III / authored volumetric curl initial condition",
+    "surfaceReconstruction": null,
+    "vertices": 49876,
+    "triangles": 99676,
+    "boundsMillimetres": [
+      [
+        -62.33984375,
+        -15.61328125,
+        -38.54296875
+      ],
+      [
+        71.234375,
+        16.33203125,
+        31.25
+      ]
+    ],
+    "extentMillimetres": [
+      133.57421875,
+      31.9453125,
+      69.79296875
+    ],
+    "watertight": true,
+    "windingConsistent": false,
+    "signedTriangleVolumeUnvalidatedMmCubed": 24518.183173129957,
+    "components": 22,
+    "nonWatertightComponents": 0,
+    "componentVertexCounts": [
+      48517,
+      146,
+      138,
+      138,
+      131,
+      114,
+      100,
+      90,
+      78,
+      78,
+      68,
+      54,
+      50,
+      48,
+      44,
+      38,
+      10,
+      10,
+      6,
+      6,
+      6,
+      6
+    ],
+    "nativeGridMetres": 0.001,
+    "complete": true,
+    "removedDegenerateOrDuplicateFaces": 196,
+    "manifestSha256": "70db199cf06ed4e070f1bcdfac201db306bf5fc9e7a74f1f4bc6f6a50db41cea",
+    "simulationFrameDt": 0.0020833333333333333,
+    "particles": 197122,
+    "pressure": {
+      "method": "Galerkin aggregation MG-PCG / reliable residual",
+      "iterations": 7,
+      "restarts": 0,
+      "residual": 0.00016999510217581383,
+      "relativeResidual": 1.5506608247249883e-05,
+      "initialResidual": 10.9627521031856,
+      "tolerance": 0.00021925504206371204,
+      "converged": true,
+      "levels": [
+        30828,
+        5530,
+        1161,
+        300,
+        97,
+        55
+      ],
+      "warmStarted": true,
+      "gauges": 0,
+      "closedComponentFluxError": 0
+    },
+    "presentationTransform": "Original exporter centres millimetres and follows freefall translation. No SDF-stage shape deformation.",
+    "geometryProcessing": "Exact position welding; zero-area and duplicate triangle removal only; no movement, hole fill, smoothing, or component deletion."
+  },
+  "reconstruction": {
+    "method": "Exact Euclidean nearest-triangle distance via BVH; orientation-independent closed-surface ray parity sign",
+    "surfaceErrorMm": {
+      "mean": 0.03792022541165352,
+      "p95": 0.11593645066022873,
+      "max": 0.4993990957736969
+    },
+    "r16fMaxQuantizationMm": 0.015621185302734375,
+    "componentChecks": [
+      {
+        "triangles": 97042,
+        "bounds": [
+          [
+            -62.33984375,
+            -15.61328125,
+            -38.54296875
+          ],
+          [
+            71.234375,
+            16.33203125,
+            31.25
+          ]
+        ],
+        "negativeSamples": 62588,
+        "sampledVolumeEstimateMmCubed": 24339.168255903896
+      },
+      {
+        "triangles": 8,
+        "bounds": [
+          [
+            -60.0078125,
+            13.30859375,
+            -4.7265625
+          ],
+          [
+            -59.5625,
+            13.72265625,
+            -4.625
+          ]
+        ],
+        "negativeSamples": 0,
+        "sampledVolumeEstimateMmCubed": 0.0
+      },
+      {
+        "triangles": 72,
+        "bounds": [
+          [
+            -45.21875,
+            -12.9140625,
+            -1.74609375
+          ],
+          [
+            -43.23828125,
+            -11.01953125,
+            0.1015625
+          ]
+        ],
+        "negativeSamples": 13,
+        "sampledVolumeEstimateMmCubed": 5.055428953261818
+      },
+      {
+        "triangles": 196,
+        "bounds": [
+          [
+            -40.5625,
+            2.6484375,
+            23.59375
+          ],
+          [
+            -37.078125,
+            5.8671875,
+            26.80859375
+          ]
+        ],
+        "negativeSamples": 36,
+        "sampledVolumeEstimateMmCubed": 13.999649409032727
+      },
+      {
+        "triangles": 132,
+        "bounds": [
+          [
+            -29.12890625,
+            -12.609375,
+            12.7265625
+          ],
+          [
+            -26.80078125,
+            -10.0546875,
+            15.19921875
+          ]
+        ],
+        "negativeSamples": 15,
+        "sampledVolumeEstimateMmCubed": 5.8331872537636364
+      },
+      {
+        "triangles": 272,
+        "bounds": [
+          [
+            -18.6640625,
+            5.66015625,
+            -0.609375
+          ],
+          [
+            -14.78125,
+            9.34765625,
+            3.21875
+          ]
+        ],
+        "negativeSamples": 56,
+        "sampledVolumeEstimateMmCubed": 21.777232414050907
+      },
+      {
+        "triangles": 84,
+        "bounds": [
+          [
+            -6.9921875,
+            -1.55078125,
+            -0.1640625
+          ],
+          [
+            -4.73828125,
+            0.4140625,
+            1.9609375
+          ]
+        ],
+        "negativeSamples": 13,
+        "sampledVolumeEstimateMmCubed": 5.055428953261818
+      },
+      {
+        "triangles": 272,
+        "bounds": [
+          [
+            3.63671875,
+            -11.875,
+            11.390625
+          ],
+          [
+            7.01953125,
+            -7.83203125,
+            15.2890625
+          ]
+        ],
+        "negativeSamples": 53,
+        "sampledVolumeEstimateMmCubed": 20.61059496329818
+      },
+      {
+        "triangles": 96,
+        "bounds": [
+          [
+            9.62890625,
+            -4.3515625,
+            5.3515625
+          ],
+          [
+            11.89453125,
+            -2.328125,
+            7.58984375
+          ]
+        ],
+        "negativeSamples": 11,
+        "sampledVolumeEstimateMmCubed": 4.2776706527599995
+      },
+      {
+        "triangles": 152,
+        "bounds": [
+          [
+            14.73828125,
+            7.93359375,
+            23.83984375
+          ],
+          [
+            17.640625,
+            10.5546875,
+            26.8359375
+          ]
+        ],
+        "negativeSamples": 22,
+        "sampledVolumeEstimateMmCubed": 8.555341305519999
+      },
+      {
+        "triangles": 288,
+        "bounds": [
+          [
+            19.63671875,
+            -10.22265625,
+            -2.734375
+          ],
+          [
+            23.57421875,
+            -5.98828125,
+            1.171875
+          ]
+        ],
+        "negativeSamples": 67,
+        "sampledVolumeEstimateMmCubed": 26.05490306681091
+      },
+      {
+        "triangles": 176,
+        "bounds": [
+          [
+            25.7421875,
+            -6.921875,
+            24.05078125
+          ],
+          [
+            28.76171875,
+            -3.8984375,
+            27.03125
+          ]
+        ],
+        "negativeSamples": 27,
+        "sampledVolumeEstimateMmCubed": 10.499737056774546
+      },
+      {
+        "triangles": 104,
+        "bounds": [
+          [
+            31.72265625,
+            9.01953125,
+            4.703125
+          ],
+          [
+            33.71484375,
+            10.9921875,
+            7.05078125
+          ]
+        ],
+        "negativeSamples": 13,
+        "sampledVolumeEstimateMmCubed": 5.055428953261818
+      },
+      {
+        "triangles": 224,
+        "bounds": [
+          [
+            36.234375,
+            -7.8671875,
+            11.9296875
+          ],
+          [
+            40.06640625,
+            -4.2109375,
+            15.4296875
+          ]
+        ],
+        "negativeSamples": 43,
+        "sampledVolumeEstimateMmCubed": 16.72180346078909
+      },
+      {
+        "triangles": 258,
+        "bounds": [
+          [
+            42.0546875,
+            -9.21875,
+            18.2421875
+          ],
+          [
+            45.30859375,
+            -5.25390625,
+            21.96484375
+          ]
+        ],
+        "negativeSamples": 53,
+        "sampledVolumeEstimateMmCubed": 20.61059496329818
+      },
+      {
+        "triangles": 92,
+        "bounds": [
+          [
+            47.9453125,
+            8.515625,
+            0.3046875
+          ],
+          [
+            50.296875,
+            10.60546875,
+            2.4140625
+          ]
+        ],
+        "negativeSamples": 10,
+        "sampledVolumeEstimateMmCubed": 3.8887915025090907
+      },
+      {
+        "triangles": 16,
+        "bounds": [
+          [
+            51.7109375,
+            -12.5625,
+            0.734375
+          ],
+          [
+            51.83984375,
+            -11.62109375,
+            0.7890625
+          ]
+        ],
+        "negativeSamples": 0,
+        "sampledVolumeEstimateMmCubed": 0.0
+      },
+      {
+        "triangles": 8,
+        "bounds": [
+          [
+            53.15234375,
+            -10.64453125,
+            -0.0546875
+          ],
+          [
+            54.0625,
+            -9.67578125,
+            0.4765625
+          ]
+        ],
+        "negativeSamples": 0,
+        "sampledVolumeEstimateMmCubed": 0.0
+      },
+      {
+        "triangles": 152,
+        "bounds": [
+          [
+            53.14453125,
+            -5.5078125,
+            25.86328125
+          ],
+          [
+            56.00390625,
+            -2.41015625,
+            28.625
+          ]
+        ],
+        "negativeSamples": 26,
+        "sampledVolumeEstimateMmCubed": 10.110857906523636
+      },
+      {
+        "triangles": 16,
+        "bounds": [
+          [
+            54.08203125,
+            -10.23046875,
+            0.06640625
+          ],
+          [
+            55.01171875,
+            -9.2109375,
+            0.84765625
+          ]
+        ],
+        "negativeSamples": 0,
+        "sampledVolumeEstimateMmCubed": 0.0
+      },
+      {
+        "triangles": 8,
+        "bounds": [
+          [
+            54.90234375,
+            -9.33984375,
+            0.71875
+          ],
+          [
+            55.26953125,
+            -8.8671875,
+            0.796875
+          ]
+        ],
+        "negativeSamples": 0,
+        "sampledVolumeEstimateMmCubed": 0.0
+      },
+      {
+        "triangles": 8,
+        "bounds": [
+          [
+            65.2890625,
+            -7.640625,
+            -9.47265625
+          ],
+          [
+            65.40234375,
+            -7.55078125,
+            -9.4140625
+          ]
+        ],
+        "negativeSamples": 0,
+        "sampledVolumeEstimateMmCubed": 0.0
+      }
+    ],
+    "unrepresentedComponents": 6,
+    "insideVoxels": 63046,
+    "seconds": 12.240152100013802
+  },
+  "payload": {
+    "bytes": 2136960,
+    "sha256": "6c2cb438d43ac325454a16fb106f9d66a4ab9e143f197ec743162297577876f4"
+  },
+  "file": "flip-012-192.cybrvol"
+}

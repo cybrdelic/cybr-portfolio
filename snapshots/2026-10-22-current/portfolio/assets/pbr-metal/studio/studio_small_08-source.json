@@ -1,0 +1,75 @@
+{
+  "asset": "Studio Small 08",
+  "assetId": "studio_small_08",
+  "method": "Photographed HDR studio panorama; linear Radiance HDR to float32 RGBA",
+  "captureEvidence": {
+    "author": {
+      "Sergej Majboroda": "All"
+    },
+    "dateTakenUTC": "2021-08-24T10:40:00+00:00",
+    "capturedEVs": 17,
+    "whiteBalanceKelvin": 6000,
+    "officialCategory": "Studio/Photo Studios/Softbox & Lamp Setups"
+  },
+  "license": "CC0 1.0",
+  "licenseURL": "https://polyhaven.com/license",
+  "assetPage": "https://polyhaven.com/a/studio_small_08",
+  "officialInfoAPI": "https://api.polyhaven.com/info/studio_small_08",
+  "officialFilesAPI": "https://api.polyhaven.com/files/studio_small_08",
+  "sourceURL": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/studio_small_08_2k.hdr",
+  "sourceFile": "portfolio/assets/pbr-metal/studio/studio_small_08_2k.hdr",
+  "sourceBytes": 5930381,
+  "sourceSHA256": "6e677b7421f4a14f0844dece04243c4ab3f4bf1a05bf4bb79e29368b3ecc7746",
+  "officialSourceMD5": "18571cc63a24b0b7b9e9e7c909b3e8ee",
+  "sourceDimensions": [
+    2048,
+    1024
+  ],
+  "sourceStats": {
+    "luminanceMean": 0.6836594881047248,
+    "luminanceP50": 0.25085390625,
+    "luminanceP95": 0.9107828125,
+    "luminanceMaximum": 102.0028,
+    "rgbMaximum": 109.0,
+    "rgbMinimum": 0.0,
+    "nonfiniteValues": 0
+  },
+  "runtimeFile": "portfolio/assets/pbr-metal/studio/studio_small_08-1024x512-rgba.f32.gz",
+  "runtimeDimensions": [
+    1024,
+    512
+  ],
+  "runtimeBytes": 2461875,
+  "decodedBytes": 8388608,
+  "runtimeSHA256": "a924864ac722d9bb7706b308c5be65df3d0feb27408c02ce34eed8a8158b7a5f",
+  "decodedSHA256": "126ccc431a21d55b89ca00b3bb916b8e86771c5d53068655f53d4a18a7464492",
+  "runtimeStats": {
+    "luminanceMean": 0.6836594881047247,
+    "luminanceP50": 0.25153442382812496,
+    "luminanceP95": 0.9127931054687494,
+    "luminanceMaximum": 96.73659999999998,
+    "rgbMaximum": 105.5,
+    "rgbMinimum": 0.0,
+    "nonfiniteValues": 0
+  },
+  "encoding": "little-endian float32 RGBA, linear RGB radiance, alpha=1, bottom-up rows",
+  "conversion": {
+    "decoder": "OpenCV native Radiance HDR reader",
+    "decoderVersion": "4.10.0",
+    "downsampling": "2x2 INTER_AREA in linear RGB",
+    "exposureAppliedToRuntime": false,
+    "tonemappingAppliedToRuntime": false,
+    "mipmaps": "renderer PMREM pipeline"
+  },
+  "previewFile": "portfolio/output/pbr-real/studio_small_08-preview.png",
+  "previewDimensions": [
+    1024,
+    512
+  ],
+  "previewBytes": 324881,
+  "previewOnly": {
+    "exposureMultiplier": 0.7668769579942509,
+    "toneMap": "ACES fitted display transform",
+    "transfer": "sRGB"
+  }
+}
