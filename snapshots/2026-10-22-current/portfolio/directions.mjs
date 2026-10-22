@@ -626,15 +626,21 @@ if(id==='11')Promise.all([irisPreparation,sourceReady]).then(async()=>{
  const warmDirector=createShadowChoreography();
  const displayWarmTarget=new T.WebGLRenderTarget(16,16,{colorSpace:renderer.outputColorSpace});
  displayWarmTarget.isXRRenderTarget=true;
+ let completedWarmups=0;
  try{
  for(const beat of [2.85,3.1,3.85,4.1,4.85,5.1,5.85,6.1]){
   await new Promise(resolve=>{if('requestIdleCallback'in window)requestIdleCallback(resolve,{timeout:2500});else setTimeout(resolve,120);});
   if(disposed)return;
+  // Speculative preparation must not queue unrelated GPU work behind the
+  // chapter the user is now inspecting. Its exact visible variant already
+  // has the on-demand preparation path above; no content is skipped.
+  if(journeyState(target).index>=3)break;
   const warm=warmDirector.apply(beat/7,shadowInputs()),key=shadowProgramKey(warm.state);
   const snapshot=preparationSnapshot(T,scene,warm.camera);
   shadowChoreography.apply(progress,shadowInputs());
   await enqueuePreparation(key,snapshot);
   if(disposed)return;
+  if(journeyState(target).index>=3)break;
   // Three stores transmission buffers per scene AND camera. Exercise the real
   // camera identities, not the temporary compilation camera, before entry.
   // A full drawing-buffer viewport allocates the correct transmission size;
@@ -646,10 +652,10 @@ if(id==='11')Promise.all([irisPreparation,sourceReady]).then(async()=>{
    withReflectionPreparation(T,renderer,scene,()=>{renderer.setRenderTarget(displayWarmTarget);renderer.render(scene,actual.camera);});
    if(projects.groups.scenes.visible)springReflection?.prepare(actual.camera);
   }finally{shadowChoreography.apply(progress,shadowInputs());scene.background=background;}
-  request();
+  completedWarmups++;request();
  }
  }finally{displayWarmTarget.dispose();}
- chapterPreparationComplete=!shaderFailures.length&&[...preparedPrograms.values()].every(Boolean);request();
+ chapterPreparationComplete=completedWarmups===8&&!shaderFailures.length&&[...preparedPrograms.values()].every(Boolean);request();
 }).catch(error=>{errors.push(error.message);request();});
 addEventListener('pagehide',e=>{if(!e.persisted){sceneRecorder.dispose();scrollBenchmark.dispose();elementsSourceAbort.abort();elementsComposite?.dispose();elementsRoomProbe?.dispose();}});
 addEventListener('pagehide',e=>{if(!e.persisted){sourceFinishes.forEach(f=>f.dispose());stopBackgroundObservation();transmissionRegion.dispose();frameProfile.dispose();}});

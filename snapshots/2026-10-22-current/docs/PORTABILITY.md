@@ -61,4 +61,12 @@ The captures above are from the final Windows browser run. The source volume dat
 
 The capability fallback decoration was then corrected after pixel review; a focused four-case rerun passed in 7.735 seconds without repeating the full walkthrough.
 
+### Hosted capture follow-up
+
+The first hosted run at `7455755` passed all 118 CPU checks on Windows, Ubuntu and macOS. Its macOS browser walkthrough passed, while Windows and Ubuntu reached ELEMENTS command-submission readiness but exceeded the unchanged 30-second screenshot deadline. Those failures remain recorded in [run 39865294099](https://github.com/cybrdelic/cybr-portfolio/actions/runs/39865294099).
+
+Speculative later-chapter warmup now stops once the user leaves the opening chapters. Every visible chapter still uses its exact on-demand compilation path; shaders, input fields, geometry and sampling budgets are unchanged. The browser harness separately waits for a real WebGL2 fence before recording a completed rendering and capturing pixels. This nonblocking completion check has a 180-second budget and rejects context loss or failed fences; it does not increase the screenshot timeout or substitute a fixed delay. The results record GPU completion latency separately from navigation/capture duration. Hosted reruns must establish whether this fixes the original capture failure.
+
+The revised Windows run passed all 118 CPU tests and all 18 browser checks with Chrome 145 / SwiftShader. All 14 chapter/viewport combinations produced signaled fences. Desktop ELEMENTS took 23.416 seconds including 16.204 seconds of GPU completion; SCENES took 14.198 seconds including 10.755 seconds of GPU completion. Actual mobile ELEMENTS and desktop SCENES pixels were inspected; the full-finish warning remains visible.
+
 ![Actual unsupported-WebGL2 message](media/audit-webgl-fallback.png)
