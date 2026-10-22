@@ -1,0 +1,57 @@
+{
+  "name": "IRIS / 09",
+  "revision": 3,
+  "revisionLabel": "Revision III",
+  "source": {
+    "file": "IRIS-09.glsl",
+    "bytes": 43865,
+    "sha256": "455e1ba9b0740a6ab925f9c022eea5f217fd3bbfc08ffec3177fb3b1d925843b",
+    "preservation": "Exact immutable copy of the downloaded Revision III GLSL; integration camera overrides live in iris09-stage.mjs, not this source file.",
+    "retrievedOn": "2026-10-21",
+    "downloadLabel": "Download IRIS-09.glsl"
+  },
+  "implementation": {
+    "type": "procedural-fragment-scene",
+    "language": "GLSL ES 3.00",
+    "hostContract": "FragCoord uniforms and fragment output supplied by the host",
+    "passes": 1,
+    "externalAssetCount": 0,
+    "aaPerAxis": 2,
+    "cameraSamplesPerPixel": 4,
+    "maximumOpticalInterfaceSteps": 24,
+    "sourceCycleSeconds": 10,
+    "geometry": {
+      "irisLeaves": 9,
+      "bladeIntersection": "Analytic intersections of two circular prisms, an outer cylinder and a finite-thickness canted slab; leaves rotate about individually placed hinges.",
+      "housing": "Signed-distance-field raymarching of annular machined forms, modeled grip flutes, mounting ears, through-bores, recessed screws and actuator lever.",
+      "gripFlutes": 120,
+      "refractiveElements": 2,
+      "opticalVolumes": "Two closed, recessed plano-convex elements separated by air.",
+      "units": "Authored scene units; no calibrated manufacturing scale."
+    },
+    "appearance": [
+      "Anisotropic GGX with height-correlated Smith masking and Fresnel response",
+      "Three finite rectangular studio emitters with shared illumination and reflection profiles",
+      "Interleaved Gauss-Legendre area-light quadrature",
+      "Filtered machining detail, vector engraving and sparse handling marks",
+      "Three-channel geometric dispersion, coated Fresnel interfaces and Beer-Lambert absorption",
+      "Thin-lens depth of field",
+      "Source ACES-style display curve and gamma 1/2.2"
+    ]
+  },
+  "limitations": [
+    "A complete authored shader scene, not an exported CAD mesh or a full path tracer.",
+    "Actuator and leaf motion share an authored parameter; this is not a force simulation or a manufacturing, strength or fatigue certification.",
+    "Indirect illumination and ambient occlusion are approximations, not solved global illumination.",
+    "Secondary optical reflections evaluate opaque geometry or the analytic environment; they do not recursively traverse all glass branches.",
+    "Shadow visibility is approximated separately from area-light quadrature; three-point iris occlusion is applied to leaf shading, not universally to every receiver.",
+    "Three RGB wavelengths and reconstructed material values are not measured full-spectrum transport.",
+    "This provenance record establishes source identity and code features, not browser frame rate or visual equivalence to an offline reference."
+  ],
+  "excludedArchive": {
+    "directory": "../iris09-original/",
+    "revision": 2,
+    "sourceSha256": "9dc1ef146ad72aee61d6e6f14324847d590a61f780c42ebd8b567254af66d51b",
+    "reason": "The later cleanup ZIP contained Revision 2. Its shader, captures, README and validation results are archival and must not substitute for or certify this production Revision III source."
+  }
+}

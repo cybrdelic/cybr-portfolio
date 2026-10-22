@@ -1,0 +1,50 @@
+{
+  "format": "cybr-fire-exact-zero-occupancy",
+  "version": 1,
+  "file": "native-fire-occupancy.r8.bin",
+  "sourceFile": "native-fire.cybrvol",
+  "dimensions": [
+    74,
+    57,
+    7
+  ],
+  "sourceDimensions": [
+    589,
+    455,
+    56
+  ],
+  "blockSize": [
+    8,
+    8,
+    8
+  ],
+  "haloVoxels": 1,
+  "encoding": {
+    "type": "uint8",
+    "channels": [
+      "occupied"
+    ],
+    "order": "zyxc",
+    "compression": "none",
+    "values": [
+      0,
+      255
+    ]
+  },
+  "sourceSha256": "b91d1740d5816355e6205e7afa8e7c1a369918c9e908dd0be8da2fbff7b747d8",
+  "sidecarSha256": "f75be1e461cf2374eedd289911a415be902ace0edc103dd2cc2c375a51c2d727",
+  "bytes": 29526,
+  "sampling": {
+    "coordinate": "(sourcePosition - source.sampling.origin) / source.sampling.spacing",
+    "macrocellIndex": "floor(sourceSampleCoordinate / blockSize)",
+    "filter": "nearest"
+  },
+  "invariant": "0 iff every RGBA half sample in the core brick expanded by one native sample in each direction is exactly zero; no threshold.",
+  "statistics": {
+    "activeSourceVoxels": 5607317,
+    "sourceVoxels": 15007720,
+    "occupiedMacrocells": 16979,
+    "macrocells": 29526,
+    "exactZeroMacrocellFraction": 0.4249475038948723
+  }
+}

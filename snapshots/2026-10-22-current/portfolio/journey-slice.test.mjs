@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {sliceState,impactHeight} from './journey-slice-state.mjs';
+test('ordered causes: open, illuminate, travel, impact',()=>{assert.equal(sliceState(.28).drive,1);assert.equal(sliceState(.45).solid,1);assert.equal(sliceState(.45).travel,0);assert.equal(sliceState(.76).impact,0);assert.equal(sliceState(1).impact,1);});
+test('scroll is reversible and bounded',()=>{for(let i=0;i<=1000;i++){const p=i/1000;const a=sliceState(p);assert.deepEqual(a,sliceState(p));for(const k of ['drive','solid','travel','impact','drop'])assert.ok(a[k]>=0&&a[k]<=1);}});
+test('impact is finite, quiet before contact and damped away from contact',()=>{assert.equal(impactHeight(0,0,0),0);for(let i=0;i<100;i++)assert.ok(Number.isFinite(impactHeight(i/10,0,i/100)));assert.ok(Math.abs(impactHeight(8,8,.5))<1e-6);});

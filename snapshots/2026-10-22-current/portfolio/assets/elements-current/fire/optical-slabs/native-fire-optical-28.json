@@ -1,0 +1,117 @@
+{
+  "format": "cybr-fire-volume",
+  "version": 1,
+  "dimensions": [
+    589,
+    455,
+    28
+  ],
+  "encoding": {
+    "type": "float16",
+    "endianness": "little",
+    "channels": [
+      "source.r",
+      "source.g",
+      "source.b",
+      "extinction"
+    ],
+    "colorSpace": "linear",
+    "order": "zyxc",
+    "compression": "gzip"
+  },
+  "coordinates": {
+    "upAxis": "y",
+    "handedness": "right"
+  },
+  "domain": {
+    "minimum": [
+      -4.356424581005586,
+      -0.8777833001988072,
+      -0.6
+    ],
+    "extent": [
+      9.197765363128491,
+      7.107852882703777,
+      1.2
+    ]
+  },
+  "sampling": {
+    "origin": [
+      -4.356424581005586,
+      -0.8777833001988072,
+      -0.5785714285714285
+    ],
+    "spacing": [
+      0.01564245810055866,
+      0.015656063618290257,
+      0.04285714285714286
+    ],
+    "convention": "xy-endpoints-z-slabs"
+  },
+  "source": {
+    "engine": "CYBR ELEMENTS directional optical slab derivative",
+    "sourceFile": "portfolio/assets/elements-current/fire/native-fire.cybrvol",
+    "sourcePayloadSha256": "b91d1740d5816355e6205e7afa8e7c1a369918c9e908dd0be8da2fbff7b747d8",
+    "sourceDimensions": [
+      589,
+      455,
+      56
+    ],
+    "sourceTerms": "Native emission + captured soot in-scattering from unchanged radiance().",
+    "derivationScript": "portfolio/tools/derive-elements-fire-optical-slabs.py",
+    "derivationSha256": "f3833975e28e54c111d32911ad3c850dfe208e1e5f0bc56dbdc7e4ae0baac044",
+    "method": "Exact front-to-back Beer-Lambert composition of native adjacent-endpoint midpoint coefficient cells; effective source coefficient and extinction, not averaged RGB.",
+    "limitations": [
+      "Controlled directional optical approximation, not a replacement native simulation.",
+      "Exact frontal composition before half quantization against native midpoint integration; not exact arbitrary-angle transport.",
+      "Native full XY samples preserved; source-space depth is preintegrated.",
+      "Frozen soot in-scattering retained; no new spectral or multiple-scattering solution."
+    ]
+  },
+  "opticalSlabs": {
+    "axis": "z",
+    "count": 28,
+    "width": 0.04285714285714286,
+    "frontToBackDirection": [
+      0,
+      0,
+      -1
+    ],
+    "depthSampling": "piecewise-constant; snap Z to slab center, retain XY linear filtering",
+    "raySteps": "clip entry and exit and each source-space slab face; do not interpolate adjacent effective slabs"
+  },
+  "capture": {
+    "timeSeconds": 3.0,
+    "steps": 270,
+    "dt": 0.011111111111111112,
+    "resampled": false,
+    "reactionSource": "Native state channel7 = actual burn/dt, not inferred from temperature.",
+    "cropStartOriginalYUpXYZ": [
+      169,
+      11,
+      0
+    ],
+    "cropEndOriginalYUpXYZExclusive": [
+      758,
+      466,
+      56
+    ],
+    "divergenceRMS": 1.3056883290119004e-05,
+    "wallSeconds": 106.75,
+    "peakGpuMiB": 5897.6953125,
+    "zeroHaloCells": {
+      "x": 1,
+      "y": 1,
+      "z": 0
+    },
+    "zeroHaloProof": "Original crop bounded every nonzero half voxel; all restored neighboring native cells were exactly zero.",
+    "derived": true,
+    "depthPreintegrated": true,
+    "sourceZeroHaloCells": 1,
+    "depthBoundary": "Each boundary slab stores its complete native optical transfer; its effective coefficient is not an exactly-zero boundary sample."
+  },
+  "payload": {
+    "bytes": 60030880,
+    "sha256": "2af027a874c330e5984cb50f423b312c6a591e0ada8468a71e2fd5cea3edd16c"
+  }
+}

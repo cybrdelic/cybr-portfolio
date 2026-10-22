@@ -1,0 +1,8 @@
+.artifact-redesign .sculpture{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;aspect-ratio:auto!important;transform:none!important;pointer-events:none}
+.artifact-redesign .rail-art{display:none}
+.scroll-score.is-enhanced{height:800svh}
+.scroll-score.is-enhanced .instrument{position:sticky;top:0;height:100svh;min-height:640px}
+.artifact-redesign .study-link{transition:opacity .15s;bottom:23%;width:250px}
+.artifact-redesign .project-labels p{max-width:115px}
+@media(max-width:900px){.scroll-score.is-enhanced .instrument{min-height:650px}.artifact-redesign .sculpture{height:63%!important;top:12%!important}.artifact-redesign.artifact-detail .sculpture{height:75%!important;top:0!important}.artifact-redesign .inspection{top:18%!important}.artifact-redesign .study-link{bottom:25%;width:65%}.artifact-redesign .project-labels{top:57%!important}}
+@media(prefers-reduced-motion:reduce){.scroll-score.is-enhanced{height:100svh}}

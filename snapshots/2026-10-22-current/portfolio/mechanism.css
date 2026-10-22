@@ -1,0 +1,21 @@
+@import url('./aperture.css');
+.presentation .journey{height:920svh}
+.presentation .stage{min-height:0;height:100svh}
+.presentation .chapter-copy h2{white-space:pre-line}
+.presentation .sequence-footer nav{justify-content:space-between;gap:12px}
+.presentation .sequence-footer button{font-size:10px}
+.presentation dialog#work{position:fixed;inset:24px;width:min(1100px,calc(100% - 48px));max-height:calc(100svh - 48px);padding:50px;border:1px solid #aaa99e;overscroll-behavior:contain}
+.presentation dialog#work::backdrop{background:#17221faa;backdrop-filter:blur(8px)}
+.close-work{display:block;margin-left:auto;border:0;border-bottom:1px solid #aaa99e;background:none;padding:12px 0;font:10px monospace}
+@media(max-width:760px){.presentation .journey{height:760svh}.presentation .sequence-footer nav{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}.presentation .sequence-footer button{font-size:7px;letter-spacing:0}.presentation .sequence-footer button span{display:block;margin:0 0 6px}.presentation dialog#work{inset:12px;padding:24px;width:calc(100% - 24px);max-height:calc(100svh - 24px)}}
+.hybrid-instrument{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;z-index:1}
+.stage header,.chapter-copy,.sequence-footer,.object-label,.gesture{z-index:2}
+@media(max-aspect-ratio:1.3){.optics-copy a{display:none}}
+@media(max-width:760px){.mechanism-panel #inspect-note{display:block;font-size:8px;line-height:1.45;margin-top:10px;min-height:0}}
+.chapter-copy{top:20vh;width:33vw;max-width:470px}.chapter-copy h1,.chapter-copy h2{font-size:clamp(44px,4.7vw,72px)}
+.mechanism-panel{position:absolute;z-index:3;top:53vh;left:5vw;width:31vw;max-width:390px;opacity:0}
+.inspection-tabs{display:flex;gap:0;border-bottom:1px solid #84918455}.inspection-tabs button{font:10px monospace;border:0;background:none;padding:13px 12px;color:var(--muted);min-height:44px}.inspection-tabs button:first-child{padding-left:0}.inspection-tabs button[aria-pressed=true]{color:var(--ink);box-shadow:0 2px var(--accent)}
+.telemetry{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:14px;margin:23px 0}.telemetry dt{font:8px monospace;color:var(--muted);letter-spacing:1px}.telemetry dd{font:14px monospace;margin:7px 0 0;white-space:nowrap}.drive-controls{display:flex;align-items:center;gap:15px;flex-wrap:wrap}.drive-controls button{border:1px solid #87948877;background:transparent;padding:11px 13px;min-height:44px;font:10px monospace}.drive-controls>span{font:8px monospace;letter-spacing:.7px}#home{color:var(--muted)}#home[data-home=true]{color:#62a68b}.ratio{color:var(--muted)}#inspect-note{font:10px/1.65 monospace;color:var(--muted);margin:16px 0 0;max-width:360px;min-height:50px}
+.optics-copy a{margin-top:12px}.object-label,.gesture{bottom:140px}.journey{height:430svh}
+@media(min-width:761px) and (max-aspect-ratio:1.3){.chapter-copy{top:110px;width:82vw;max-width:none}.chapter-copy h1,.chapter-copy h2{font-size:48px}.mechanism-panel{top:230px;width:80vw;max-width:620px;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.inspection-tabs{align-self:start}.telemetry{margin:8px 0 16px}.drive-controls{align-self:start}#inspect-note{margin:0;font-size:9px}.object-label,.gesture{bottom:126px}}
+@media(max-width:760px){.chapter-copy{top:102px;left:24px;width:88vw}.chapter-copy h1,.chapter-copy h2{font-size:40px;line-height:1}.chapter-copy .description{display:none}.kicker{font-size:8px;letter-spacing:1px}.chapter-copy .instruction{font-size:8px}.mechanism-panel{left:24px;right:24px;top:232px;width:auto;max-width:none}.inspection-tabs button{font-size:9px;padding:8px 12px;min-height:36px}.telemetry{margin:12px 0;gap:12px}.telemetry dt{font-size:7px}.telemetry dd{font-size:11px;margin-top:5px}.drive-controls{gap:14px}.drive-controls button{font-size:9px;min-height:35px;padding:8px 10px}.drive-controls>span{font-size:7px}#inspect-note{display:none}.object-label,.gesture{font-size:6px;letter-spacing:.3px;bottom:120px}.sequence-footer button{font-size:8px}.journey{height:410svh}.optics-copy a{margin-top:8px}.sequence-footer{bottom:16px}}

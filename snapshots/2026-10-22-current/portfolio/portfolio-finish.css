@@ -1,0 +1,25 @@
+/* Match the instrument's paper, graphite and red-wire identity. */
+:root{--paper:#f4f4f2;--ink:#191919;--blue:#9c2231;--line:#c9c9c5}
+.studio-rail{background:var(--paper);color:var(--ink);border-right:1px solid var(--line)}
+.rail-projects .all-work{border-color:var(--line)}
+.rail-description,.rail-bottom,.rail-projects a>span,.eyebrow,.intro-meta{font-family:'Courier New',monospace}
+.rail-logo svg{filter:invert(1);mix-blend-mode:multiply}
+.tile-open{background:transparent;color:var(--ink);border:0}
+.tile-open::after{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+.source-unavailable{color:#686860;font-size:12px}.source-unavailable small{font-family:'Courier New',monospace}
+.mobile-menu nav{background:var(--paper);border-bottom:1px solid var(--line)}
+.work-opening{padding:50px var(--pad) 34px;display:flex;justify-content:space-between;gap:30px;align-items:end}
+.work-opening h2{font:54px/1 Bahnschrift,Arial,sans-serif;letter-spacing:-2px;margin:0}
+.work-opening p{font:12px/1.6 'Courier New',monospace;margin:0}
+@media(max-width:700px){.work-opening{display:block;padding-top:30px}.work-opening h2{font-size:42px;margin-bottom:20px}}
+/* Shared reading hierarchy for the full project views. */
+:root{--font-interface:Bahnschrift,'Arial Narrow',Arial,sans-serif;--font-annotation:Consolas,'SFMono-Regular',monospace}
+body{font-family:var(--font-interface);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.rail-description,.rail-bottom,.rail-projects a>span,.eyebrow,.intro-meta,.project-heading>a,.project-heading>p,.project-facts,.chapter-number,.gallery-heading>span,.section-number{font-family:var(--font-annotation);letter-spacing:.025em}
+.project-heading h1{font:500 clamp(52px,7vw,104px)/.96 var(--font-interface);letter-spacing:-.055em}
+.project-heading>p{font-size:11px;line-height:1.6}
+.context-lead{font:400 clamp(23px,2.5vw,32px)/1.35 var(--font-interface);letter-spacing:-.02em;max-width:34ch}
+.gallery-heading h2,.process-note h2,.project-story h2,.resources h2,.bench h3{font-family:var(--font-interface);font-weight:500;letter-spacing:-.025em;line-height:1.2}
+.process-note p,.project-story p{font-size:16px;line-height:1.75;max-width:62ch}
+.receipt strong{font-size:17px;font-weight:500}.receipt small{font-size:12px;line-height:1.7}
+.project-facts{font-size:11px;line-height:1.8}.gallery-item figcaption{font-size:12px;line-height:1.6}
