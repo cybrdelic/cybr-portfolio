@@ -12,7 +12,7 @@ These are existing application captures from 22 October, not generated mockups. 
 
 ## Run locally
 
-Requirements: Python 3.10+ for a static server; a desktop browser with WebGL2, floating-point textures, `DecompressionStream`, and secure-context Web Crypto. Node.js 20+ runs the CPU regression tests. Three.js r180 and three-mesh-bvh are bundled with their original MIT licenses; no npm installation is needed.
+Requirements: a current browser with WebGL2, floating-point render targets and filtering, `DecompressionStream`, and secure-context WebCrypto. The page reports missing capabilities before starting its renderer. Three.js r180 and three-mesh-bvh are bundled with their original MIT licenses. The static app needs no build or npm installation; use Python 3.10+ to serve it, or the optional Node 22 server below.
 
 From the repository checkout root, enter this isolated review snapshot:
 
@@ -21,9 +21,9 @@ cd snapshots/2026-10-22-current
 python -m http.server 4187 --bind 127.0.0.1
 ```
 
-Open <http://127.0.0.1:4187/portfolio/directions.html?concept=11>. Serve the repository root, because browser imports and selected assets use sibling `cybr-*` directories. Use chapter buttons or scroll. Loading source volumes can take time and consume substantial GPU memory. Keep the server on loopback.
+Open <http://127.0.0.1:4187/portfolio/directions.html?concept=11>. Serve the snapshot root (the directory containing this README), because browser imports and selected assets use sibling `cybr-*` directories. Use chapter buttons or scroll. Loading source volumes can take time and consume substantial GPU memory. Keep the server on loopback.
 
-This is a bounded current-source package. It is **not yet a complete standalone release** of every portfolio chapter and archive page. The native SCENES finish requires two excluded third-party rock textures, and the older fluid playback loader still references an unbundled historical mesh cache. Archive detail pages, design boards, other concept variants, and their historical assets are excluded. Missing resources are documented in [scope and blockers](docs/SCOPE.md); they must not be described as validated functionality.
+This is a bounded current-source package. It is **not yet a complete standalone release** of every portfolio chapter and archive page. SCENES deliberately shows included geometry and base materials, with a visible warning that its full native finish requires two excluded third-party rock textures. The older fluid playback loader references an unbundled historical mesh cache but is not used by the selected Concept 11 path. Archive detail pages, design boards, other concept variants, and their historical assets are excluded. These exclusions are documented in [scope and blockers](docs/SCOPE.md). Navigation stays within the included snapshot.
 
 ## Architecture
 
@@ -43,18 +43,31 @@ The default IRIS presentation uses raster PBR and bounded optical approximations
 
 ## Validation and current status
 
-The staged CPU run exercised 100 existing tests: **97 passed, 3 failed**. All three failures are in the retained `direction11-elements-shader.test.mjs`: the asserted loop inventory, air support-culling expression, and fracture-neighbor count differ from current shader source. The implementation and assertions were preserved; the failures were not hidden by changing them. Other tested volume-data, water-transport, HDR-composition, room-probe, projected-region, recorder and IRIS provenance checks passed.
+The fresh checkout reproduced the original **97/100** CPU result. The three failed tests described older shader versions: a missing fixed fire-light loop, old ellipse support, and replaced polyhedral geometry. The current renderer was preserved; the tests now prove the current loop/call bounds, exact-zero annulus support, and conservative rounded-stone bounds. See the derivations in [portability and audit notes](docs/PORTABILITY.md).
 
-To reproduce the targeted check:
+The expanded regression suite now passes **118/118** on Windows Node 22. A real Chrome walkthrough also found an unconditional clearcoat field write that failed shader compilation. Both dry and wet floor paths now respect Three.js’s compile-time field guard. This is a rendering defect fix, not a change to native data or simulation solvers.
 
-```sh
-node --test portfolio/iris09-source.test.mjs portfolio/direction11-elements-shader.test.mjs portfolio/elements-volume-data.test.mjs portfolio/elements-water-transport.test.mjs portfolio/elements-hdr-composite.test.mjs portfolio/elements-room-probe.test.mjs portfolio/elements-projected-region.test.mjs portfolio/canvas-demo-recorder.test.mjs
+To use the optional portable server and tests on Windows, Linux or macOS:
+
+```text
+npm ci
+npm test
+npm run serve
 ```
 
-No fresh full-browser walkthrough, full archive-link test, or GPU performance acceptance was performed on this reduced snapshot. Existing screenshots do not establish those results. See [scope and blockers](docs/SCOPE.md).
+For browser verification:
+
+```text
+npx playwright install chromium
+npm run test:browser
+```
+
+The final Windows Chrome run passed all **18 browser checks**: seven chapters at desktop/mobile viewport sizes and four capability failures. See [current screenshots, timings and retained timeout evidence](docs/PORTABILITY.md#observed-results-22-october-2026). Mobile viewport tests do not represent a physical phone.
+
+The repository-root workflow runs the same CPU and browser checks on Windows, Ubuntu and macOS. Hosted results are separate from local evidence. Browser coverage uses actual desktop-browser rendering at desktop and mobile viewport sizes; it does not certify physical phone GPU speed, every historical archive, or pixel identity with the older recordings above.
 
 ## Source and licenses
 
-Live source folders were not modified. Source bytes and staged hashes are recorded in the separately held snapshot audit; publication metadata omits personal absolute paths and chat identifiers. CYBRVOL1 metadata headers were sanitized while keeping compressed field payload bytes and their declared payload hashes unchanged. The IRIS provenance test was adjusted only to require the absence of private conversation metadata.
+Live source folders were not modified. This follow-up branch records the compatibility changes in Git; original staged source bytes and hashes are recorded in the separately held snapshot audit; publication metadata omits personal absolute paths and chat identifiers. CYBRVOL1 metadata headers were sanitized while keeping compressed field payload bytes and their declared payload hashes unchanged. The IRIS provenance test was adjusted only to require the absence of private conversation metadata.
 
 No new blanket license is assigned. Existing component and asset licenses are retained. See [third-party notices and asset scope](docs/THIRD_PARTY.md). Public distribution must use the reviewed file manifest and preserve these notices; the live workspace and historical output directories are outside the intended payload.

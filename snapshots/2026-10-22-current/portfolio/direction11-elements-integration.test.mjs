@@ -72,7 +72,9 @@ test('a dry studio material does not retain an unused reflection sampler',()=>{
   const shader={uniforms:{},vertexShader:'#include <begin_vertex>',fragmentShader:'#include <lights_physical_fragment>\n#include <roughnessmap_fragment>\n#include <opaque_fragment>'};
   set.material.onBeforeCompile(shader);
   assert.doesNotMatch(shader.fragmentShader,/sampler2D|texture2D|stageReflection/);
-  assert.match(shader.fragmentShader,/material\.clearcoat=0\./);
+  assert.match(shader.fragmentShader,/#ifdef USE_CLEARCOAT\nmaterial\.clearcoat=0\.;\n#endif/);
+  const dry=shader.fragmentShader.replace(/#ifdef USE_CLEARCOAT[\s\S]*?#endif/g,'');
+  assert.doesNotMatch(dry,/material\.clearcoat/,'Three omits this struct member when clearcoat=0');
   assert.equal(shader.uniforms.stageReflection,undefined);
  }finally{set.dispose();}
 });
@@ -92,4 +94,15 @@ test('page integration keeps continuous animation bounded and leaves native scen
  assert.match(source,/id==='11'\|\|s\.key!=='elements'\|\|!projects\?\.fluid\(\)\?\.pending/);
  assert.match(source,/springReflection\?\?=createSpringReflection/);
  assert.match(source,/const transmissionRegion=installTransmissionRegion\(T,renderer\)/);
+});
+
+test('optional wet floor also respects the disabled Three clearcoat struct',()=>{
+ const set=createShadowSet();
+ try{
+  set.root.userData.wetReflection={};
+  const shader={uniforms:{},vertexShader:'#include <begin_vertex>',fragmentShader:'#include <lights_physical_fragment>\n#include <roughnessmap_fragment>\n#include <opaque_fragment>'};
+  set.material.onBeforeCompile(shader);
+  assert.match(shader.fragmentShader,/#ifdef USE_CLEARCOAT\nmaterial\.clearcoat\*=wet\*\.35;\n#endif/);
+  assert.doesNotMatch(shader.fragmentShader.replace(/#ifdef USE_CLEARCOAT[\s\S]*?#endif/g,''),/material\.clearcoat/);
+ }finally{set.dispose();}
 });

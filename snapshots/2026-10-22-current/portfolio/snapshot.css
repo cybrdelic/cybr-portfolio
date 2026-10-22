@@ -1,0 +1,28 @@
+/* Snapshot navigation and capability state; rendering/physics are unchanged. */
+body[data-design="11"] .brand{min-width:85px;min-height:44px}
+body[data-design="11"] #chapters button{min-height:44px;min-width:44px}
+.notes-button{min-width:44px;min-height:44px}
+dialog{overflow:auto;overscroll-behavior:contain}dialog pre{overflow-wrap:anywhere}
+dialog button{min-height:44px}a:focus-visible,button:focus-visible{outline-offset:2px}
+body[data-runtime="unavailable"] #journey{height:100svh}
+body[data-runtime="unavailable"] #scene,body[data-runtime="unavailable"] .caption,body[data-runtime="unavailable"] footer{display:none}
+body[data-runtime="unavailable"] #status{top:25%;bottom:auto;left:8%;max-width:80%;font:18px/1.6 Arial,sans-serif;opacity:1}
+body[data-runtime="unavailable"] #status a{text-decoration:underline}
+@media(max-width:700px){
+ body[data-design="11"] #chapters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 6px}
+ body[data-design="11"] #chapters button{font-size:10px;letter-spacing:.04em}
+ body[data-design="11"] footer{bottom:max(28px,env(safe-area-inset-bottom));left:4%;right:4%}
+ body[data-design="11"] .loading{bottom:135px;max-width:90%;left:5%;font-size:11px}
+ body[data-design="11"] .caption h1{font-size:clamp(28px,7.5vw,48px)}
+ body[data-design="11"] .caption{top:14%;width:90%}
+ .notes-button{bottom:0;right:0}dialog{padding:20px;max-height:calc(100svh - 24px)}
+}
+@media(max-height:480px) and (min-width:701px){
+ body[data-design="11"] .caption{top:15%;width:35%}
+ body[data-design="11"] .caption h1{font-size:32px;margin:8px 0}
+ body[data-design="11"] .caption #description{font-size:11px}
+ body[data-design="11"] footer{bottom:5px}
+ body[data-design="11"] .loading{bottom:60px}
+}
+
+body[data-runtime="unavailable"] .shadow-headline,body[data-runtime="unavailable"] .poster,body[data-runtime="unavailable"] .counter,body[data-runtime="unavailable"] .guides,body[data-runtime="unavailable"] .trace,body[data-runtime="unavailable"] #optical,body[data-runtime="unavailable"] #score,body[data-runtime="unavailable"] .notes-button,body[data-runtime="unavailable"] .header-links{display:none}
